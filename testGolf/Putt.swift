@@ -16,13 +16,6 @@ import iMessageTools
 import JWSwiftTools
 
 class Putt: Game, TypeConstraint {
-    enum MessageKey: String {
-        enum Game: String {
-            case score, seed, desiredShapesQuantity
-        }
-        case gameName = "Putt"
-    }
-    
     typealias Session = PuttSession
     typealias SceneType = SCNScene
     
