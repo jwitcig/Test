@@ -1,0 +1,20 @@
+PODS:
+  - Game (1.0.6):
+    - JWSwiftTools
+  - iMessageTools (1.0.4):
+    - JWSwiftTools
+  - JWSwiftTools (1.1.14)
+
+DEPENDENCIES:
+  - Game
+  - iMessageTools
+  - JWSwiftTools
+
+SPEC CHECKSUMS:
+  Game: 7d15ab85264fa1791af1d15a66c85a3b2b882dd7
+  iMessageTools: f180b9f986835371d3f1d82b287ab5c9222e3de7
+  JWSwiftTools: c07152e274af4fbb834b350fc54ab52369a41f80
+
+PODFILE CHECKSUM: a69538869e277c67f64da4def776d1793984c249
+
+COCOAPODS: 1.1.1
