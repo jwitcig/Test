@@ -15,6 +15,12 @@ import Game
 import iMessageTools
 import JWSwiftTools
 
+struct Shot {
+    let power: Float
+    let angle: Float
+    let position: SCNVector3
+}
+
 class Putt: Game, TypeConstraint {
     typealias Session = PuttSession
     typealias SceneType = SCNScene
@@ -28,10 +34,11 @@ class Putt: Game, TypeConstraint {
     let lifeCycle: LifeCycle
     
     let previousSession: PuttSession?
+    
+    var shots: [Shot] = []
 
     init(previousSession: PuttSession?,
          initial: PuttInitialData?,
-         createShape: @escaping (CGPoint, CGFloat)->Void,
          padding: Padding?,
          cycle: LifeCycle) {
         
@@ -52,6 +59,9 @@ class Putt: Game, TypeConstraint {
         lifeCycle.finish()
     }
     
+    func shotTaken(shot: Shot) {
+        shots.append(shot)
+    }
 }
 
 struct PuttSession: SessionType, StringDictionaryRepresentable, Messageable {
