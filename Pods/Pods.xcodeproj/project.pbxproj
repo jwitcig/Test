@@ -10,6 +10,8 @@
 		0FFAAD1416C1679E48FC42FC68A0E9E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D47148048BAD42406EF406A39C0A9A71 /* Foundation.framework */; };
 		1116C361158B29427F1888621CCC3A86 /* Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BA5B00570995133CADD37820A3A262 /* Collections.swift */; };
 		1CD5CFEA2E6DBE72B7B6B939254CECDB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D47148048BAD42406EF406A39C0A9A71 /* Foundation.framework */; };
+		265205005CC622EFAEBA7A737A8D1697 /* Pods-testGolf-iMessageExtension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 74C43F872071FC7E83B98138B996320E /* Pods-testGolf-iMessageExtension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26882A0F1BA787E9989BBBD0445A98AB /* Pods-testGolf-iMessageExtension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F25D5678C3588F5D321249693A88A1 /* Pods-testGolf-iMessageExtension-dummy.m */; };
 		349EEC27048F7700C1ED174319ACE02A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7EDC85CC19B7301012AB562F8C75E83 /* UIKit.framework */; };
 		3B38ECD3E722D98C6E7A0A861FD33687 /* Representation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE772379D9671B642ECDDDDF3B925B5 /* Representation.swift */; };
 		3E9824EFC610EB17C46C4D46F75E0E6A /* iMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACE6A1C29A5C85EC9C15112EEF3B7CA /* iMessage.swift */; };
@@ -24,8 +26,9 @@
 		790E8FE77BB370B4427CE42E61226891 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7EDC85CC19B7301012AB562F8C75E83 /* UIKit.framework */; };
 		7D58479DF8BA372D3295BA43E5C1D3BD /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22863203E69D866C134C06E5B0AE2CF /* CoreData.swift */; };
 		84DA23A1E0F2DBDCEFAABC6929E255CD /* Miscellaneous.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60532094FEAF40F7E82DA412792ADD3 /* Miscellaneous.swift */; };
-		850E6014666C8F9D4B61D1F559844C25 /* Pods-testGolf-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 292DD417D20D81DB67A4FEA412DD26D4 /* Pods-testGolf-dummy.m */; };
+		850E6014666C8F9D4B61D1F559844C25 /* Pods-testGolf-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D06A2520244A1BCFA2FF26E0DB06A022 /* Pods-testGolf-dummy.m */; };
 		86997A937597E54E1D16F5E8D3C721A2 /* JWSwiftTools-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A8433ABC1C3AAD648E7D23D09068484D /* JWSwiftTools-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		879206920ADC901AA5FA7CA41D2C3145 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D47148048BAD42406EF406A39C0A9A71 /* Foundation.framework */; };
 		887B29B910A595DD720A76C60E14CDC6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D47148048BAD42406EF406A39C0A9A71 /* Foundation.framework */; };
 		8CEB5F32393641572916E4215A8E0704 /* Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = 9729C5FCB44156084F0724A0BE5ABBFF /* Info.plist */; };
 		9765ACC2D63A27FBAC35B1D7669497DC /* AssociatedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E525DF5F1A47D6CF56EAD4FAD3E08EF6 /* AssociatedList.swift */; };
@@ -47,7 +50,7 @@
 		C74D9FCAF45EC065760E8BDBBA68A12C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D47148048BAD42406EF406A39C0A9A71 /* Foundation.framework */; };
 		C8B6730CB2D76CD0643862F567692A30 /* Standard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92C952533329BA07458A26C109C96FC /* Standard.swift */; };
 		CADEEEE8B1B85DF55A054F6EB2B5BDB7 /* Game-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2420893FCF6F65E086BD62469B45DBE5 /* Game-dummy.m */; };
-		CB1E9615B36090CC0182424CEC6F4CDA /* Pods-testGolf-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DA2E7CDD8A62854A5037132E01EA994 /* Pods-testGolf-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CB1E9615B36090CC0182424CEC6F4CDA /* Pods-testGolf-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A61BE1DDC47A96FDAB98F1FAA1C2CF07 /* Pods-testGolf-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDA5F7F3D1B2E4F808660C0E06C3C874 /* Game-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 067441F4E79412946948916326AE028E /* Game-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE6732CA9784B14714909F6CA21E6251 /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77A7C6833E6E7557DFC3BBFD3263648 /* Process.swift */; };
 		D0061B9C58C931FE917AFACB98B99905 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6332B353BA231B05FCF4C8B4F0F57F /* Layout.swift */; };
@@ -94,77 +97,108 @@
 			remoteGlobalIDString = D1C5268CB8FEA285B715D56E92B679E2;
 			remoteInfo = JWSwiftTools;
 		};
+		7C4FEC32170A0ADBC2F6FCD7AA8E8532 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E6442FA12D412BD556AEF7D5D7F0EB0;
+			remoteInfo = Game;
+		};
+		852B9EC5559E1CBB378E08BB83347974 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 87C7682E5A5CE083AF84A36542E45482;
+			remoteInfo = iMessageTools;
+		};
+		CAA0BE2890135523CA361688DC431A31 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D1C5268CB8FEA285B715D56E92B679E2;
+			remoteInfo = JWSwiftTools;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		043926D292BB7202957A95EB7C29E21A /* Pods_testGolf_iMessageExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_testGolf_iMessageExtension.framework; path = "Pods-testGolf-iMessageExtension.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		067441F4E79412946948916326AE028E /* Game-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Game-umbrella.h"; sourceTree = "<group>"; };
 		0679DF86A2D202E31EDEC14F91B73D47 /* iMessageTools-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "iMessageTools-dummy.m"; sourceTree = "<group>"; };
 		072CC627A75867AE1FA4EEFCF6FC0FAB /* JWSwiftTools-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JWSwiftTools-dummy.m"; sourceTree = "<group>"; };
-		0FB367DC7878A7F07BFC5DDBD442B884 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1310AB852DB63FDA6602ED98DAE57DFE /* Pods-testGolf.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-testGolf.modulemap"; sourceTree = "<group>"; };
+		081EAF3A0E6D35E424CF1AEC82F9B926 /* iMessageTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = iMessageTools.framework; path = iMessageTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		12A290D8FEECE0031135B821CF173B48 /* Pods_testGolf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_testGolf.framework; path = "Pods-testGolf.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		151DA84E7484E661DCA69B7878754A33 /* Pods-testGolf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-testGolf.debug.xcconfig"; sourceTree = "<group>"; };
 		1ACE6A1C29A5C85EC9C15112EEF3B7CA /* iMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = iMessage.swift; path = iMessagePack/iMessage.swift; sourceTree = "<group>"; };
 		1ED11DBBD05F238AC92606A3F6E8DAB7 /* Game.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Game.xcconfig; sourceTree = "<group>"; };
+		20CD06B24B5A7A877562EACA972274A9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23617428D89B63B5ED91BB8369216300 /* SwiftTools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftTools.h; path = SwiftTools/SwiftTools.h; sourceTree = "<group>"; };
 		23BA5B00570995133CADD37820A3A262 /* Collections.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Collections.swift; path = SwiftTools/Collections.swift; sourceTree = "<group>"; };
 		2420893FCF6F65E086BD62469B45DBE5 /* Game-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Game-dummy.m"; sourceTree = "<group>"; };
-		266ADDF9E97BD1B7FC4092FE6D1F6B93 /* Pods_testGolf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_testGolf.framework; path = "Pods-testGolf.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		292DD417D20D81DB67A4FEA412DD26D4 /* Pods-testGolf-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-testGolf-dummy.m"; sourceTree = "<group>"; };
 		2A36E2C35BA0826B1133FBCD39607574 /* RandomGenerators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RandomGenerators.swift; path = SwiftTools/RandomGenerators.swift; sourceTree = "<group>"; };
 		2BE772379D9671B642ECDDDDF3B925B5 /* Representation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Representation.swift; path = SwiftTools/Representation.swift; sourceTree = "<group>"; };
-		3DA2E7CDD8A62854A5037132E01EA994 /* Pods-testGolf-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-testGolf-umbrella.h"; sourceTree = "<group>"; };
-		43D82524A4751618660B25708E9915E5 /* Pods-testGolf-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-testGolf-acknowledgements.plist"; sourceTree = "<group>"; };
+		3EED540A5441B90019107827859B10DD /* JWSwiftTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JWSwiftTools.framework; path = JWSwiftTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		41C4D925897566101F1D29AC2567371C /* Pods-testGolf-iMessageExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-testGolf-iMessageExtension.release.xcconfig"; sourceTree = "<group>"; };
 		45C50B87AE4F6E137DFCAF3C0BEF1D14 /* Game-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Game-prefix.pch"; sourceTree = "<group>"; };
+		472ACDDF74E3D3696A7AF541B54F9353 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A294CBFA3316EECC4AC18AF1FFAF031 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		515530412E7E3345D9B46D057464E235 /* Game.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Game.modulemap; sourceTree = "<group>"; };
 		546ABC657E396F66A1D65CFFA0D62348 /* Messages.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Messages.swift; path = SwiftTools/Messages.swift; sourceTree = "<group>"; };
 		54F87E354D568E28B3BC45AF337E1C55 /* JWSwiftTools.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JWSwiftTools.xcconfig; sourceTree = "<group>"; };
 		571694747AFE064500EC8E763809E370 /* LifeCycle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LifeCycle.swift; path = SwiftTools/LifeCycle.swift; sourceTree = "<group>"; };
+		609221B13A6BB327CD59193DC4836B78 /* Pods-testGolf-iMessageExtension-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-testGolf-iMessageExtension-resources.sh"; sourceTree = "<group>"; };
 		61D54978C4B77236B862D2B7BB8F2A1B /* Protocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = Game/Protocols.swift; sourceTree = "<group>"; };
 		6272D04FDD29722CBC0A73228853D3A6 /* Enums.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Enums.swift; path = Game/Enums.swift; sourceTree = "<group>"; };
 		6295039B042EBAFF830B1A63EF891739 /* UIKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIKit.swift; path = SwiftTools/UIKit.swift; sourceTree = "<group>"; };
 		641635E736B515E7674E3EF5B6BC8297 /* iMessageTools.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = iMessageTools.xcconfig; sourceTree = "<group>"; };
-		6CBA225D5F847330CAE267F01BF950CE /* Pods-testGolf-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-testGolf-resources.sh"; sourceTree = "<group>"; };
 		6EBFC5A1F91B3B9A93CC1A49C6188578 /* JWSwiftTools-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JWSwiftTools-prefix.pch"; sourceTree = "<group>"; };
 		71E7080E5CEDC3A575117B83BC508DB4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		72C3CCD1A761D9F50D5F81DC5B736F33 /* iMessageTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = iMessageTools.framework; path = iMessageTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7348F1DBAA516A443700271697F13EC4 /* LocationHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocationHandler.swift; path = SwiftTools/LocationHandler.swift; sourceTree = "<group>"; };
 		7384E4ECE1D2AC2FC47737F1C46D7D3E /* Session-Structure.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Session-Structure.swift"; path = "SwiftTools/Session-Structure.swift"; sourceTree = "<group>"; };
+		73E4085C05838729A74D0B8FF9B142AB /* Pods-testGolf-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-testGolf-frameworks.sh"; sourceTree = "<group>"; };
+		74C43F872071FC7E83B98138B996320E /* Pods-testGolf-iMessageExtension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-testGolf-iMessageExtension-umbrella.h"; sourceTree = "<group>"; };
+		7A995A4B969652E4F2A757E4DBE74537 /* Pods-testGolf-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-testGolf-acknowledgements.markdown"; sourceTree = "<group>"; };
 		7BD46EBF9EB672776505CDD9A7552E53 /* Interpreter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Interpreter.swift; path = iMessagePack/Interpreter.swift; sourceTree = "<group>"; };
+		7C25E421BE7A05B60D118FE7B757F911 /* Pods-testGolf.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-testGolf.modulemap"; sourceTree = "<group>"; };
 		7CA08E817EF9A00819A185585DBDABF0 /* iMessageTools-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iMessageTools-umbrella.h"; sourceTree = "<group>"; };
-		7F3381B78A660B6C6BC2900109FCDDEC /* JWSwiftTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JWSwiftTools.framework; path = JWSwiftTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FAC4CCEB2D35C5B37C7AC2D2E5BFF0A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = iMessagePack/Info.plist; sourceTree = "<group>"; };
 		813DEBAF5335D37C02742BFDC5F4B6AE /* CloudKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CloudKit.swift; path = SwiftTools/Extensions/CloudKit.swift; sourceTree = "<group>"; };
 		819FB0D084E82FC90C382DD902040EC2 /* iMessageTools-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iMessageTools-prefix.pch"; sourceTree = "<group>"; };
 		87AC43896BB6A41EEF7D9FFB6558BCD5 /* UI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UI.swift; path = SwiftTools/UI.swift; sourceTree = "<group>"; };
-		8DA0DADE243883CA56E321640616AB95 /* Pods-testGolf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-testGolf.debug.xcconfig"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93F25D5678C3588F5D321249693A88A1 /* Pods-testGolf-iMessageExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-testGolf-iMessageExtension-dummy.m"; sourceTree = "<group>"; };
 		96012624C511C8C9AC1B38BAFD36A0EA /* SortingAndFiltering.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SortingAndFiltering.swift; path = SwiftTools/SortingAndFiltering.swift; sourceTree = "<group>"; };
 		9729C5FCB44156084F0724A0BE5ABBFF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = SwiftTools/Info.plist; sourceTree = "<group>"; };
 		99139B648D7D131724AD2DD7F3A96876 /* Game.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Game.h; path = Game/Game.h; sourceTree = "<group>"; };
-		9FDA037B6973918A7D4AD204C46462E0 /* Pods-testGolf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-testGolf.release.xcconfig"; sourceTree = "<group>"; };
 		A0DD3892A0AD3AC128A0E0E0097BBC7B /* iMessageTools.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = iMessageTools.modulemap; sourceTree = "<group>"; };
+		A61BE1DDC47A96FDAB98F1FAA1C2CF07 /* Pods-testGolf-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-testGolf-umbrella.h"; sourceTree = "<group>"; };
 		A8433ABC1C3AAD648E7D23D09068484D /* JWSwiftTools-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JWSwiftTools-umbrella.h"; sourceTree = "<group>"; };
 		AABD15857F7D5FCB41ADC0053DB613FB /* Sequences.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sequences.swift; path = SwiftTools/Sequences.swift; sourceTree = "<group>"; };
 		B22863203E69D866C134C06E5B0AE2CF /* CoreData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoreData.swift; path = SwiftTools/Extensions/CoreData.swift; sourceTree = "<group>"; };
-		B30A1706AB643CB599BA42E536DF7F33 /* Game.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Game.framework; path = Game.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B76815CA0F5354D3005C74A1540ECF82 /* Pods-testGolf-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-testGolf-acknowledgements.plist"; sourceTree = "<group>"; };
 		B7EDC85CC19B7301012AB562F8C75E83 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		C4F2CB1A95FC362BE5D04028E72E5FB0 /* JWSwiftTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JWSwiftTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C93E597C2D946072853B1EC98E3949D1 /* Game.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Game.framework; path = Game.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD8195B034E0CC47A1351CA946283441 /* Game.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Game.swift; path = Game/Game.swift; sourceTree = "<group>"; };
+		D06A2520244A1BCFA2FF26E0DB06A022 /* Pods-testGolf-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-testGolf-dummy.m"; sourceTree = "<group>"; };
+		D2D317EC47D89916BF2742F69B39BAC9 /* Pods-testGolf-iMessageExtension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-testGolf-iMessageExtension.modulemap"; sourceTree = "<group>"; };
 		D47148048BAD42406EF406A39C0A9A71 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D60532094FEAF40F7E82DA412792ADD3 /* Miscellaneous.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Miscellaneous.swift; path = SwiftTools/Extensions/Miscellaneous.swift; sourceTree = "<group>"; };
-		DC8C60CEC0F2023AB91B8B799EDCC83E /* Pods-testGolf-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-testGolf-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D6FC9E300C4D94CC3B6290E4C0F30E80 /* Pods-testGolf-iMessageExtension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-testGolf-iMessageExtension-acknowledgements.plist"; sourceTree = "<group>"; };
+		E4FADA48EE059158FED2A7F25A3BBF80 /* Pods-testGolf-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-testGolf-resources.sh"; sourceTree = "<group>"; };
 		E525DF5F1A47D6CF56EAD4FAD3E08EF6 /* AssociatedList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssociatedList.swift; path = SwiftTools/AssociatedList.swift; sourceTree = "<group>"; };
 		E7890FE660214C1C52A1FDB2CBF2D7A4 /* Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Session.swift; path = SwiftTools/Session.swift; sourceTree = "<group>"; };
 		E92C952533329BA07458A26C109C96FC /* Standard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Standard.swift; path = SwiftTools/Standard.swift; sourceTree = "<group>"; };
 		ED6332B353BA231B05FCF4C8B4F0F57F /* Layout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Layout.swift; path = SwiftTools/Layout.swift; sourceTree = "<group>"; };
 		EE9A56F11AB8908FEA9B8716B151D103 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F12C600147E0AB0A31747DC1C3034FE4 /* JWSwiftTools.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = JWSwiftTools.modulemap; sourceTree = "<group>"; };
+		F19FE84C3DA604F8240F7BB2FEF8E336 /* Pods-testGolf-iMessageExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-testGolf-iMessageExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		F395B69F30E63C6A1CA7CA7CDF1213E1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = Game/Info.plist; sourceTree = "<group>"; };
 		F750280DBDE6F74DB8E1AB557E104252 /* iMessagePack.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = iMessagePack.h; path = iMessagePack/iMessagePack.h; sourceTree = "<group>"; };
 		F76A56F2E3D5880283AFE37F93B16B62 /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = SwiftTools/Operators.swift; sourceTree = "<group>"; };
 		F77A7C6833E6E7557DFC3BBFD3263648 /* Process.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Process.swift; path = SwiftTools/Process.swift; sourceTree = "<group>"; };
+		F8ED775702BF2DB369914FB3691D71EF /* Pods-testGolf-iMessageExtension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-testGolf-iMessageExtension-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F9A3D86499E8039BF8650C1544390606 /* MapKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MapKit.swift; path = SwiftTools/MapKit.swift; sourceTree = "<group>"; };
-		FD7E1ED303AD2C8891F87A5E760DE72A /* Pods-testGolf-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-testGolf-frameworks.sh"; sourceTree = "<group>"; };
+		FADABAE24C46C881352684C0D5E49C89 /* Pods-testGolf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-testGolf.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +209,14 @@
 				1CD5CFEA2E6DBE72B7B6B939254CECDB /* Foundation.framework in Frameworks */,
 				BC5EC992B2647573DF2C768E3C13F298 /* JWSwiftTools.framework in Frameworks */,
 				9E1D4E8C6BC86057513A1B656CF364C0 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DDF424F51582AED6EAAD66A3DE6890C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				879206920ADC901AA5FA7CA41D2C3145 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +250,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07AA0C3AFCF8CE1E501475BA4D096A0B /* Pods-testGolf */ = {
+			isa = PBXGroup;
+			children = (
+				20CD06B24B5A7A877562EACA972274A9 /* Info.plist */,
+				7C25E421BE7A05B60D118FE7B757F911 /* Pods-testGolf.modulemap */,
+				7A995A4B969652E4F2A757E4DBE74537 /* Pods-testGolf-acknowledgements.markdown */,
+				B76815CA0F5354D3005C74A1540ECF82 /* Pods-testGolf-acknowledgements.plist */,
+				D06A2520244A1BCFA2FF26E0DB06A022 /* Pods-testGolf-dummy.m */,
+				73E4085C05838729A74D0B8FF9B142AB /* Pods-testGolf-frameworks.sh */,
+				E4FADA48EE059158FED2A7F25A3BBF80 /* Pods-testGolf-resources.sh */,
+				A61BE1DDC47A96FDAB98F1FAA1C2CF07 /* Pods-testGolf-umbrella.h */,
+				151DA84E7484E661DCA69B7878754A33 /* Pods-testGolf.debug.xcconfig */,
+				FADABAE24C46C881352684C0D5E49C89 /* Pods-testGolf.release.xcconfig */,
+			);
+			name = "Pods-testGolf";
+			path = "Target Support Files/Pods-testGolf";
+			sourceTree = "<group>";
+		};
 		1DCD8043913EDDD97FB5BB3670DC479A /* Game */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +293,23 @@
 			);
 			name = iMessageTools;
 			path = iMessageTools;
+			sourceTree = "<group>";
+		};
+		2A6B88880728F6FEEFF7FEADED9755D2 /* Pods-testGolf-iMessageExtension */ = {
+			isa = PBXGroup;
+			children = (
+				472ACDDF74E3D3696A7AF541B54F9353 /* Info.plist */,
+				D2D317EC47D89916BF2742F69B39BAC9 /* Pods-testGolf-iMessageExtension.modulemap */,
+				F8ED775702BF2DB369914FB3691D71EF /* Pods-testGolf-iMessageExtension-acknowledgements.markdown */,
+				D6FC9E300C4D94CC3B6290E4C0F30E80 /* Pods-testGolf-iMessageExtension-acknowledgements.plist */,
+				93F25D5678C3588F5D321249693A88A1 /* Pods-testGolf-iMessageExtension-dummy.m */,
+				609221B13A6BB327CD59193DC4836B78 /* Pods-testGolf-iMessageExtension-resources.sh */,
+				74C43F872071FC7E83B98138B996320E /* Pods-testGolf-iMessageExtension-umbrella.h */,
+				F19FE84C3DA604F8240F7BB2FEF8E336 /* Pods-testGolf-iMessageExtension.debug.xcconfig */,
+				41C4D925897566101F1D29AC2567371C /* Pods-testGolf-iMessageExtension.release.xcconfig */,
+			);
+			name = "Pods-testGolf-iMessageExtension";
+			path = "Target Support Files/Pods-testGolf-iMessageExtension";
 			sourceTree = "<group>";
 		};
 		3A2F88F01F50CC38860A5491995B39F5 /* JWSwiftTools */ = {
@@ -265,17 +342,6 @@
 			);
 			name = JWSwiftTools;
 			path = JWSwiftTools;
-			sourceTree = "<group>";
-		};
-		49F3A389A9EFD986F461A98B45E3A911 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B30A1706AB643CB599BA42E536DF7F33 /* Game.framework */,
-				72C3CCD1A761D9F50D5F81DC5B736F33 /* iMessageTools.framework */,
-				7F3381B78A660B6C6BC2900109FCDDEC /* JWSwiftTools.framework */,
-				266ADDF9E97BD1B7FC4092FE6D1F6B93 /* Pods_testGolf.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		58BF65AC700D8C4F7C933F5413D9DDB7 /* iOS */ = {
@@ -331,17 +397,9 @@
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				D4913DB79F3EA8F45E49F69ABFAAC4A9 /* Frameworks */,
 				5B3EFB54F5C78A8FEF240874489D21D0 /* Pods */,
-				49F3A389A9EFD986F461A98B45E3A911 /* Products */,
-				86400E44CF176056C20D90EB083C1B56 /* Targets Support Files */,
+				D8D2474350E1025209D3B5D2A7BBD3E7 /* Products */,
+				BE15E014B3B308DE13C0145974F17D9A /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		86400E44CF176056C20D90EB083C1B56 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				DC835C1A6B80705A5E29D15FBE7CCC7D /* Pods-testGolf */,
-			);
-			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		8FB41C430E38909806FBEB4B1333A5BC /* Support Files */ = {
@@ -358,6 +416,15 @@
 			path = "../Target Support Files/JWSwiftTools";
 			sourceTree = "<group>";
 		};
+		BE15E014B3B308DE13C0145974F17D9A /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				07AA0C3AFCF8CE1E501475BA4D096A0B /* Pods-testGolf */,
+				2A6B88880728F6FEEFF7FEADED9755D2 /* Pods-testGolf-iMessageExtension */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
 		D4913DB79F3EA8F45E49F69ABFAAC4A9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -367,27 +434,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DC835C1A6B80705A5E29D15FBE7CCC7D /* Pods-testGolf */ = {
+		D8D2474350E1025209D3B5D2A7BBD3E7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0FB367DC7878A7F07BFC5DDBD442B884 /* Info.plist */,
-				1310AB852DB63FDA6602ED98DAE57DFE /* Pods-testGolf.modulemap */,
-				DC8C60CEC0F2023AB91B8B799EDCC83E /* Pods-testGolf-acknowledgements.markdown */,
-				43D82524A4751618660B25708E9915E5 /* Pods-testGolf-acknowledgements.plist */,
-				292DD417D20D81DB67A4FEA412DD26D4 /* Pods-testGolf-dummy.m */,
-				FD7E1ED303AD2C8891F87A5E760DE72A /* Pods-testGolf-frameworks.sh */,
-				6CBA225D5F847330CAE267F01BF950CE /* Pods-testGolf-resources.sh */,
-				3DA2E7CDD8A62854A5037132E01EA994 /* Pods-testGolf-umbrella.h */,
-				8DA0DADE243883CA56E321640616AB95 /* Pods-testGolf.debug.xcconfig */,
-				9FDA037B6973918A7D4AD204C46462E0 /* Pods-testGolf.release.xcconfig */,
+				C93E597C2D946072853B1EC98E3949D1 /* Game.framework */,
+				081EAF3A0E6D35E424CF1AEC82F9B926 /* iMessageTools.framework */,
+				3EED540A5441B90019107827859B10DD /* JWSwiftTools.framework */,
+				12A290D8FEECE0031135B821CF173B48 /* Pods_testGolf.framework */,
+				043926D292BB7202957A95EB7C29E21A /* Pods_testGolf_iMessageExtension.framework */,
 			);
-			name = "Pods-testGolf";
-			path = "Target Support Files/Pods-testGolf";
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		0024B6EBDE6A469D8D81A39BB7AC93A2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				265205005CC622EFAEBA7A737A8D1697 /* Pods-testGolf-iMessageExtension-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3D2532B8F8168F8830CA743F877B61D9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -441,7 +510,7 @@
 			);
 			name = Game;
 			productName = Game;
-			productReference = B30A1706AB643CB599BA42E536DF7F33 /* Game.framework */;
+			productReference = C93E597C2D946072853B1EC98E3949D1 /* Game.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		87C7682E5A5CE083AF84A36542E45482 /* iMessageTools */ = {
@@ -459,7 +528,27 @@
 			);
 			name = iMessageTools;
 			productName = iMessageTools;
-			productReference = 72C3CCD1A761D9F50D5F81DC5B736F33 /* iMessageTools.framework */;
+			productReference = 081EAF3A0E6D35E424CF1AEC82F9B926 /* iMessageTools.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8A159A6EEA572CE3DABECE1530EFBE1E /* Pods-testGolf-iMessageExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 125ACF4E83027DD0E76C73D8E444A8BA /* Build configuration list for PBXNativeTarget "Pods-testGolf-iMessageExtension" */;
+			buildPhases = (
+				799966BE5E3812AA996CCBCEC581A6E1 /* Sources */,
+				5DDF424F51582AED6EAAD66A3DE6890C /* Frameworks */,
+				0024B6EBDE6A469D8D81A39BB7AC93A2 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CACAC7537DFC808E61ECC90E0995268A /* PBXTargetDependency */,
+				4E91A8C206C071022B5FB6B06CFF960C /* PBXTargetDependency */,
+				909209A668696ABBCE14F8E8C48036D3 /* PBXTargetDependency */,
+			);
+			name = "Pods-testGolf-iMessageExtension";
+			productName = "Pods-testGolf-iMessageExtension";
+			productReference = 043926D292BB7202957A95EB7C29E21A /* Pods_testGolf_iMessageExtension.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		BED35DFB71C17AFB6744E69DB7A94CC5 /* Pods-testGolf */ = {
@@ -479,7 +568,7 @@
 			);
 			name = "Pods-testGolf";
 			productName = "Pods-testGolf";
-			productReference = 266ADDF9E97BD1B7FC4092FE6D1F6B93 /* Pods_testGolf.framework */;
+			productReference = 12A290D8FEECE0031135B821CF173B48 /* Pods_testGolf.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D1C5268CB8FEA285B715D56E92B679E2 /* JWSwiftTools */ = {
@@ -496,7 +585,7 @@
 			);
 			name = JWSwiftTools;
 			productName = JWSwiftTools;
-			productReference = 7F3381B78A660B6C6BC2900109FCDDEC /* JWSwiftTools.framework */;
+			productReference = 3EED540A5441B90019107827859B10DD /* JWSwiftTools.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -516,7 +605,7 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 49F3A389A9EFD986F461A98B45E3A911 /* Products */;
+			productRefGroup = D8D2474350E1025209D3B5D2A7BBD3E7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -524,6 +613,7 @@
 				87C7682E5A5CE083AF84A36542E45482 /* iMessageTools */,
 				D1C5268CB8FEA285B715D56E92B679E2 /* JWSwiftTools */,
 				BED35DFB71C17AFB6744E69DB7A94CC5 /* Pods-testGolf */,
+				8A159A6EEA572CE3DABECE1530EFBE1E /* Pods-testGolf-iMessageExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -579,6 +669,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		799966BE5E3812AA996CCBCEC581A6E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26882A0F1BA787E9989BBBD0445A98AB /* Pods-testGolf-iMessageExtension-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F7B6BADD1EF2E21D11B7CD2EFEBB96BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -599,6 +697,12 @@
 			target = D1C5268CB8FEA285B715D56E92B679E2 /* JWSwiftTools */;
 			targetProxy = 761BF63AA89EA6C8567362B89C396D82 /* PBXContainerItemProxy */;
 		};
+		4E91A8C206C071022B5FB6B06CFF960C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JWSwiftTools;
+			target = D1C5268CB8FEA285B715D56E92B679E2 /* JWSwiftTools */;
+			targetProxy = CAA0BE2890135523CA361688DC431A31 /* PBXContainerItemProxy */;
+		};
 		501BD8112A15E003776B475560FECEF7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = JWSwiftTools;
@@ -610,6 +714,18 @@
 			name = iMessageTools;
 			target = 87C7682E5A5CE083AF84A36542E45482 /* iMessageTools */;
 			targetProxy = 0CCA47491A1A66D0EF3B58EBBD391516 /* PBXContainerItemProxy */;
+		};
+		909209A668696ABBCE14F8E8C48036D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = iMessageTools;
+			target = 87C7682E5A5CE083AF84A36542E45482 /* iMessageTools */;
+			targetProxy = 852B9EC5559E1CBB378E08BB83347974 /* PBXContainerItemProxy */;
+		};
+		CACAC7537DFC808E61ECC90E0995268A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Game;
+			target = 2E6442FA12D412BD556AEF7D5D7F0EB0 /* Game */;
+			targetProxy = 7C4FEC32170A0ADBC2F6FCD7AA8E8532 /* PBXContainerItemProxy */;
 		};
 		CC14CA3AF397F8D86135653801E6917B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -628,7 +744,7 @@
 /* Begin XCBuildConfiguration section */
 		00220C9A641A410BFB55AC8814BC1169 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8DA0DADE243883CA56E321640616AB95 /* Pods-testGolf.debug.xcconfig */;
+			baseConfigurationReference = 151DA84E7484E661DCA69B7878754A33 /* Pods-testGolf.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -662,10 +778,11 @@
 			};
 			name = Debug;
 		};
-		08CC362B815BB0F04B8DD2F43DC6168E /* Debug */ = {
+		0FD1D5675802B57F0415FD1BBE06C759 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 54F87E354D568E28B3BC45AF337E1C55 /* JWSwiftTools.xcconfig */;
+			baseConfigurationReference = 641635E736B515E7674E3EF5B6BC8297 /* iMessageTools.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -677,47 +794,14 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/JWSwiftTools/JWSwiftTools-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/JWSwiftTools/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/iMessageTools/iMessageTools-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/iMessageTools/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/JWSwiftTools/JWSwiftTools.modulemap";
+				MODULEMAP_FILE = "Target Support Files/iMessageTools/iMessageTools.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = JWSwiftTools;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		098FA4AAFEFF41A7207EBCBCBD317F0F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1ED11DBBD05F238AC92606A3F6E8DAB7 /* Game.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Game/Game-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Game/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Game/Game.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Game;
+				PRODUCT_NAME = iMessageTools;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -772,10 +856,11 @@
 			};
 			name = Debug;
 		};
-		543A5285B8D1404732BEF0F34702B0E7 /* Release */ = {
+		44F47F0C4FC11C3A3FC1D0F48F5257B9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 54F87E354D568E28B3BC45AF337E1C55 /* JWSwiftTools.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -804,9 +889,46 @@
 			};
 			name = Release;
 		};
+		597DFF7056AB02596028C0F4C3F3778B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F19FE84C3DA604F8240F7BB2FEF8E336 /* Pods-testGolf-iMessageExtension.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-testGolf-iMessageExtension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-testGolf-iMessageExtension/Pods-testGolf-iMessageExtension.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_testGolf_iMessageExtension;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		650DA5E28655AAFE7C29E9353F3EA0CB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9FDA037B6973918A7D4AD204C46462E0 /* Pods-testGolf.release.xcconfig */;
+			baseConfigurationReference = FADABAE24C46C881352684C0D5E49C89 /* Pods-testGolf.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -839,43 +961,11 @@
 			};
 			name = Release;
 		};
-		770F7102ADE417B748EBA8F03CC6F948 /* Debug */ = {
+		8DF95832E6E4D91E4462E8242F3F0CE5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 641635E736B515E7674E3EF5B6BC8297 /* iMessageTools.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/iMessageTools/iMessageTools-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/iMessageTools/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/iMessageTools/iMessageTools.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = iMessageTools;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		8E814B71E1B986A6DF78A786E89D11F0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 641635E736B515E7674E3EF5B6BC8297 /* iMessageTools.xcconfig */;
-			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -904,15 +994,52 @@
 			};
 			name = Release;
 		};
-		92FCA2D54D82131D1A497B0DB4642544 /* Release */ = {
+		8E39429BF8E3FE4DF60CB586CC6D0DC9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1ED11DBBD05F238AC92606A3F6E8DAB7 /* Game.xcconfig */;
+			baseConfigurationReference = 41C4D925897566101F1D29AC2567371C /* Pods-testGolf-iMessageExtension.release.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-testGolf-iMessageExtension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-testGolf-iMessageExtension/Pods-testGolf-iMessageExtension.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_testGolf_iMessageExtension;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		91931D8AC9915314E515B82971CA013B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1ED11DBBD05F238AC92606A3F6E8DAB7 /* Game.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -925,16 +1052,51 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Game/Game.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = Game;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
+		};
+		B7DCDABD27F121018D7803B4D494D6C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54F87E354D568E28B3BC45AF337E1C55 /* JWSwiftTools.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/JWSwiftTools/JWSwiftTools-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JWSwiftTools/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/JWSwiftTools/JWSwiftTools.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = JWSwiftTools;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		E72E7977875C2D251FC62736BBDDC389 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -976,9 +1138,51 @@
 			};
 			name = Release;
 		};
+		E7AFB4207CEBC1D9001866EF9DAD9C40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1ED11DBBD05F238AC92606A3F6E8DAB7 /* Game.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Game/Game-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Game/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Game/Game.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Game;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		125ACF4E83027DD0E76C73D8E444A8BA /* Build configuration list for PBXNativeTarget "Pods-testGolf-iMessageExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				597DFF7056AB02596028C0F4C3F3778B /* Debug */,
+				8E39429BF8E3FE4DF60CB586CC6D0DC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1000,8 +1204,8 @@
 		BF55B0CA938E2F5336BCC5805E7DBF88 /* Build configuration list for PBXNativeTarget "Game" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				098FA4AAFEFF41A7207EBCBCBD317F0F /* Debug */,
-				92FCA2D54D82131D1A497B0DB4642544 /* Release */,
+				91931D8AC9915314E515B82971CA013B /* Debug */,
+				E7AFB4207CEBC1D9001866EF9DAD9C40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1009,8 +1213,8 @@
 		ECC4F65D81E7C3240A8CA0CCBC61247C /* Build configuration list for PBXNativeTarget "JWSwiftTools" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				08CC362B815BB0F04B8DD2F43DC6168E /* Debug */,
-				543A5285B8D1404732BEF0F34702B0E7 /* Release */,
+				B7DCDABD27F121018D7803B4D494D6C0 /* Debug */,
+				44F47F0C4FC11C3A3FC1D0F48F5257B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1018,8 +1222,8 @@
 		FE6F58DCA695A5074F8EAE78F6EBD490 /* Build configuration list for PBXNativeTarget "iMessageTools" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				770F7102ADE417B748EBA8F03CC6F948 /* Debug */,
-				8E814B71E1B986A6DF78A786E89D11F0 /* Release */,
+				0FD1D5675802B57F0415FD1BBE06C759 /* Debug */,
+				8DF95832E6E4D91E4462E8242F3F0CE5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

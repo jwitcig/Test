@@ -15,10 +15,6 @@ import Game
 import iMessageTools
 import JWSwiftTools
 
-class PuttScene: SCNScene {
-    
-}
-
 class Putt: Game, TypeConstraint {
     enum MessageKey: String {
         enum Game: String {
@@ -28,7 +24,7 @@ class Putt: Game, TypeConstraint {
     }
     
     typealias Session = PuttSession
-    typealias SceneType = PuttScene
+    typealias SceneType = SCNScene
     
     static let GameName = "Putt"
     
@@ -72,7 +68,7 @@ struct PuttSession: SessionType, StringDictionaryRepresentable, Messageable {
     typealias MessageWriterType = PuttMessageWriter
     typealias MessageLayoutBuilderType = PuttMessageLayoutBuilder
     
-    typealias Scene = PuttScene
+    typealias Scene = SCNScene
     
     let initial: InitialData
     let instance: InstanceData
@@ -153,24 +149,29 @@ struct PuttInitialData: InitialDataType, StringDictionaryRepresentable {
     typealias Constraint = Putt
     
     let holeNumber: Int
+    let holeSet: [Int]
     
     var dictionary: [String: String] {
         return [
             "initial-holeNumber": holeNumber.string!,
+            "initial-holeSet": holeSet.map(String.init).joined(separator: ","),
         ]
     }
     
-    init(holeNumber: Int) {
+    init(holeNumber: Int, holeSet: [Int]) {
         self.holeNumber = holeNumber
+        self.holeSet = holeSet
     }
     
     init?(dictionary: [String: String]) {
         guard let holeNumber = dictionary["initial-holeNumber"]?.int else { return nil }
-        self.init(holeNumber: holeNumber)
+        guard let holeSetString = dictionary["initial-holeSet"] else { return nil }
+        let holeSet = holeSetString.components(separatedBy: ",").map{$0.int!}
+        self.init(holeNumber: holeNumber, holeSet: holeSet)
     }
     
     static func random() -> PuttInitialData {
-        return PuttInitialData(holeNumber: 1)
+        return PuttInitialData(holeNumber: 1, holeSet: Array(1...9))
     }
 }
 
@@ -208,6 +209,7 @@ struct PuttMessageWriter: MessageWriter {
     func isValid(data: [String : String]) -> Bool {
         guard let _ = data["ended"]?.bool else { return false }
         guard let _ = data["initial-holeNumber"]?.int else { return false }
+        guard let _ = data["initial-holeSet"] else { return false }
         guard let _ = data["instance-shots"] else { return false }
         guard let _ = data["instance-opponentShots"] else { return false }
         guard let _ = data["instance-winner"] else { return false }

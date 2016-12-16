@@ -2,6 +2,16 @@
 # platform :ios, '9.0'
 
 target 'testGolf' do
+
+  target 'iMessageExtension' do
+    use_frameworks!
+
+    pod 'JWSwiftTools'
+    pod 'iMessageTools'
+    pod 'Game'
+
+  end
+
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
