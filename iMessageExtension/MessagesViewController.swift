@@ -26,7 +26,7 @@ class MessagesViewController: MSMessagesAppViewController {
         if let message = conversation.selectedMessage {
             handleStarterEvent(message: message, conversation: conversation)
         } else {
-            gameController = createGameController()
+            gameController = createGameController(fromReader: nil)
             present(gameController!)
         }
     }
@@ -44,11 +44,13 @@ class MessagesViewController: MSMessagesAppViewController {
     }
     
     fileprivate func showWaitingForOpponent() {
-       
+        
     }
     
-    func createGameController() -> GameViewController {
-        return storyboard!.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
+    func createGameController(fromReader reader: PuttMessageReader?) -> GameViewController {
+        let controller = storyboard!.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
+        controller.configureScene(previousSession: reader?.session)
+        return controller
     }
     
 }
@@ -64,13 +66,16 @@ extension MessagesViewController: iMessageCycle {
             return
         }
         
+        guard let reader = PuttMessageReader(message: message) else {
+            return
+        }
+        
         isAwaitingResponse = false
         
-        gameController = createGameController()
+        gameController = createGameController(fromReader: reader)
         present(gameController!)
     }
     
 }
 
 extension MessagesViewController: MessageSender { }
-

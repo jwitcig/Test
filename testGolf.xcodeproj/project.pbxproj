@@ -7,8 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8B2FD2F71E03BAFC00911A43 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2FD2F61E03BAFC00911A43 /* MessagesViewController.swift */; };
+		5447B46EE4D3632629279E65 /* Pods_testGolf_iMessageExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB52F2E29C1E166CE4CAA27 /* Pods_testGolf_iMessageExtension.framework */; };
 		8B2FD2F91E03BF8000911A43 /* Putt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2FD2F81E03BF8000911A43 /* Putt.swift */; };
+		8BCF770C1E03CD0200D48A61 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BCF770B1E03CD0200D48A61 /* Messages.framework */; };
+		8BCF770F1E03CD0200D48A61 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCF770E1E03CD0200D48A61 /* MessagesViewController.swift */; };
+		8BCF77121E03CD0200D48A61 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BCF77101E03CD0200D48A61 /* MainInterface.storyboard */; };
+		8BCF77141E03CD0200D48A61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BCF77131E03CD0200D48A61 /* Assets.xcassets */; };
+		8BCF77181E03CD0200D48A61 /* iMessageExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8BCF770A1E03CD0200D48A61 /* iMessageExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8BCF77301E03CF5800D48A61 /* PuttSharedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCF772F1E03CF5800D48A61 /* PuttSharedTests.swift */; };
+		8BCF77391E03CFB700D48A61 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83E069C1E039587005711E3 /* GameViewController.swift */; };
+		8BCF773A1E03D06F00D48A61 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = E83E069A1E039587005711E3 /* art.scnassets */; };
+		8BCF773B1E03D6D300D48A61 /* Putt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2FD2F81E03BF8000911A43 /* Putt.swift */; };
 		B32C8B88C8475AD690D372BC /* Pods_testGolf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EF7A8331CE3D7270482DE0 /* Pods_testGolf.framework */; };
 		E83E06991E039586005711E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83E06981E039586005711E3 /* AppDelegate.swift */; };
 		E83E069B1E039587005711E3 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = E83E069A1E039587005711E3 /* art.scnassets */; };
@@ -18,11 +27,46 @@
 		E83E06A51E039587005711E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E83E06A31E039587005711E3 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		8BCF77161E03CD0200D48A61 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E83E068D1E039586005711E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8BCF77091E03CD0200D48A61;
+			remoteInfo = iMessageExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8BCF771C1E03CD0200D48A61 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8BCF77181E03CD0200D48A61 /* iMessageExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0D2BE46640F29779EC002A25 /* Pods-testGolf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGolf.release.xcconfig"; path = "Pods/Target Support Files/Pods-testGolf/Pods-testGolf.release.xcconfig"; sourceTree = "<group>"; };
-		8B2FD2F61E03BAFC00911A43 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		7B8B9F42799F64010D73C350 /* Pods-testGolf-iMessageExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGolf-iMessageExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-testGolf-iMessageExtension/Pods-testGolf-iMessageExtension.release.xcconfig"; sourceTree = "<group>"; };
 		8B2FD2F81E03BF8000911A43 /* Putt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Putt.swift; sourceTree = "<group>"; };
+		8BCF770A1E03CD0200D48A61 /* iMessageExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = iMessageExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BCF770B1E03CD0200D48A61 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		8BCF770E1E03CD0200D48A61 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		8BCF77111E03CD0200D48A61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		8BCF77131E03CD0200D48A61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8BCF77151E03CD0200D48A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BCF772A1E03CF5800D48A61 /* PuttSharedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PuttSharedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BCF772F1E03CF5800D48A61 /* PuttSharedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuttSharedTests.swift; sourceTree = "<group>"; };
+		8BCF77311E03CF5800D48A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F233FA75BF56CABCE8E437B /* Pods-testGolf-iMessageExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGolf-iMessageExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testGolf-iMessageExtension/Pods-testGolf-iMessageExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		90256A5B1AAB50A8F1542411 /* Pods-testGolf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGolf.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testGolf/Pods-testGolf.debug.xcconfig"; sourceTree = "<group>"; };
+		AEB52F2E29C1E166CE4CAA27 /* Pods_testGolf_iMessageExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testGolf_iMessageExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2EF7A8331CE3D7270482DE0 /* Pods_testGolf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testGolf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E83E06951E039586005711E3 /* testGolf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testGolf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E83E06981E039586005711E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +79,22 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8BCF77071E03CD0200D48A61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BCF770C1E03CD0200D48A61 /* Messages.framework in Frameworks */,
+				5447B46EE4D3632629279E65 /* Pods_testGolf_iMessageExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BCF77271E03CF5800D48A61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E83E06921E039586005711E3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -50,8 +110,30 @@
 			isa = PBXGroup;
 			children = (
 				C2EF7A8331CE3D7270482DE0 /* Pods_testGolf.framework */,
+				8BCF770B1E03CD0200D48A61 /* Messages.framework */,
+				AEB52F2E29C1E166CE4CAA27 /* Pods_testGolf_iMessageExtension.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8BCF770D1E03CD0200D48A61 /* iMessageExtension */ = {
+			isa = PBXGroup;
+			children = (
+				8BCF770E1E03CD0200D48A61 /* MessagesViewController.swift */,
+				8BCF77101E03CD0200D48A61 /* MainInterface.storyboard */,
+				8BCF77131E03CD0200D48A61 /* Assets.xcassets */,
+				8BCF77151E03CD0200D48A61 /* Info.plist */,
+			);
+			path = iMessageExtension;
+			sourceTree = "<group>";
+		};
+		8BCF772E1E03CF5800D48A61 /* PuttSharedTests */ = {
+			isa = PBXGroup;
+			children = (
+				8BCF772F1E03CF5800D48A61 /* PuttSharedTests.swift */,
+				8BCF77311E03CF5800D48A61 /* Info.plist */,
+			);
+			path = PuttSharedTests;
 			sourceTree = "<group>";
 		};
 		B91A53434767D68885EB7AAD /* Pods */ = {
@@ -59,6 +141,8 @@
 			children = (
 				90256A5B1AAB50A8F1542411 /* Pods-testGolf.debug.xcconfig */,
 				0D2BE46640F29779EC002A25 /* Pods-testGolf.release.xcconfig */,
+				8F233FA75BF56CABCE8E437B /* Pods-testGolf-iMessageExtension.debug.xcconfig */,
+				7B8B9F42799F64010D73C350 /* Pods-testGolf-iMessageExtension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -67,6 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				E83E06971E039586005711E3 /* testGolf */,
+				8BCF770D1E03CD0200D48A61 /* iMessageExtension */,
+				8BCF772E1E03CF5800D48A61 /* PuttSharedTests */,
 				E83E06961E039586005711E3 /* Products */,
 				B91A53434767D68885EB7AAD /* Pods */,
 				6716DDD00F3A4E0F3459183A /* Frameworks */,
@@ -77,6 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				E83E06951E039586005711E3 /* testGolf.app */,
+				8BCF770A1E03CD0200D48A61 /* iMessageExtension.appex */,
+				8BCF772A1E03CF5800D48A61 /* PuttSharedTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,7 +174,6 @@
 			children = (
 				E83E06981E039586005711E3 /* AppDelegate.swift */,
 				E83E069A1E039587005711E3 /* art.scnassets */,
-				8B2FD2F61E03BAFC00911A43 /* MessagesViewController.swift */,
 				8B2FD2F81E03BF8000911A43 /* Putt.swift */,
 				E83E069C1E039587005711E3 /* GameViewController.swift */,
 				E83E069E1E039587005711E3 /* Main.storyboard */,
@@ -100,6 +187,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8BCF77091E03CD0200D48A61 /* iMessageExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BCF771B1E03CD0200D48A61 /* Build configuration list for PBXNativeTarget "iMessageExtension" */;
+			buildPhases = (
+				AFCDCDE80877EEAAB006FA58 /* [CP] Check Pods Manifest.lock */,
+				8BCF77061E03CD0200D48A61 /* Sources */,
+				8BCF77071E03CD0200D48A61 /* Frameworks */,
+				8BCF77081E03CD0200D48A61 /* Resources */,
+				D4898356BAC59D8C7EF41675 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iMessageExtension;
+			productName = iMessageExtension;
+			productReference = 8BCF770A1E03CD0200D48A61 /* iMessageExtension.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
+		};
+		8BCF77291E03CF5800D48A61 /* PuttSharedTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BCF77381E03CF5800D48A61 /* Build configuration list for PBXNativeTarget "PuttSharedTests" */;
+			buildPhases = (
+				8BCF77261E03CF5800D48A61 /* Sources */,
+				8BCF77271E03CF5800D48A61 /* Frameworks */,
+				8BCF77281E03CF5800D48A61 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PuttSharedTests;
+			productName = PuttSharedTests;
+			productReference = 8BCF772A1E03CF5800D48A61 /* PuttSharedTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E83E06941E039586005711E3 /* testGolf */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E83E06A91E039587005711E3 /* Build configuration list for PBXNativeTarget "testGolf" */;
@@ -110,10 +233,12 @@
 				E83E06931E039586005711E3 /* Resources */,
 				0F8EACD25443713C4C7B5B5C /* [CP] Embed Pods Frameworks */,
 				4041775BA68B6FF9355126FC /* [CP] Copy Pods Resources */,
+				8BCF771C1E03CD0200D48A61 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8BCF77171E03CD0200D48A61 /* PBXTargetDependency */,
 			);
 			name = testGolf;
 			productName = testGolf;
@@ -126,13 +251,23 @@
 		E83E068D1E039586005711E3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0800;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = CodeWithKenny;
 				TargetAttributes = {
+					8BCF77091E03CD0200D48A61 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 349WFX4WJR;
+						ProvisioningStyle = Automatic;
+					};
+					8BCF77291E03CF5800D48A61 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 349WFX4WJR;
+						ProvisioningStyle = Automatic;
+					};
 					E83E06941E039586005711E3 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = M4TN2QX7K6;
+						DevelopmentTeam = 349WFX4WJR;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -151,11 +286,30 @@
 			projectRoot = "";
 			targets = (
 				E83E06941E039586005711E3 /* testGolf */,
+				8BCF77091E03CD0200D48A61 /* iMessageExtension */,
+				8BCF77291E03CF5800D48A61 /* PuttSharedTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8BCF77081E03CD0200D48A61 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BCF77141E03CD0200D48A61 /* Assets.xcassets in Resources */,
+				8BCF773A1E03D06F00D48A61 /* art.scnassets in Resources */,
+				8BCF77121E03CD0200D48A61 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BCF77281E03CF5800D48A61 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E83E06931E039586005711E3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -215,14 +369,61 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-testGolf/Pods-testGolf-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		AFCDCDE80877EEAAB006FA58 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D4898356BAC59D8C7EF41675 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-testGolf-iMessageExtension/Pods-testGolf-iMessageExtension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8BCF77061E03CD0200D48A61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BCF77391E03CFB700D48A61 /* GameViewController.swift in Sources */,
+				8BCF773B1E03D6D300D48A61 /* Putt.swift in Sources */,
+				8BCF770F1E03CD0200D48A61 /* MessagesViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BCF77261E03CF5800D48A61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BCF77301E03CF5800D48A61 /* PuttSharedTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E83E06911E039586005711E3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B2FD2F71E03BAFC00911A43 /* MessagesViewController.swift in Sources */,
 				8B2FD2F91E03BF8000911A43 /* Putt.swift in Sources */,
 				E83E069D1E039587005711E3 /* GameViewController.swift in Sources */,
 				E83E06991E039586005711E3 /* AppDelegate.swift in Sources */,
@@ -231,7 +432,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		8BCF77171E03CD0200D48A61 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8BCF77091E03CD0200D48A61 /* iMessageExtension */;
+			targetProxy = 8BCF77161E03CD0200D48A61 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		8BCF77101E03CD0200D48A61 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8BCF77111E03CD0200D48A61 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		E83E069E1E039587005711E3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -251,6 +468,68 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8BCF77191E03CD0200D48A61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F233FA75BF56CABCE8E437B /* Pods-testGolf-iMessageExtension.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEVELOPMENT_TEAM = 349WFX4WJR;
+				INFOPLIST_FILE = iMessageExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Kenny.testGolf.iMessageExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		8BCF771A1E03CD0200D48A61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B8B9F42799F64010D73C350 /* Pods-testGolf-iMessageExtension.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEVELOPMENT_TEAM = 349WFX4WJR;
+				INFOPLIST_FILE = iMessageExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Kenny.testGolf.iMessageExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		8BCF77351E03CF5800D48A61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEVELOPMENT_TEAM = 349WFX4WJR;
+				INFOPLIST_FILE = PuttSharedTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jwitapps.PuttSharedTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		8BCF77361E03CF5800D48A61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEVELOPMENT_TEAM = 349WFX4WJR;
+				INFOPLIST_FILE = PuttSharedTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jwitapps.PuttSharedTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		E83E06A71E039587005711E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -346,8 +625,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 90256A5B1AAB50A8F1542411 /* Pods-testGolf.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = M4TN2QX7K6;
+				DEVELOPMENT_TEAM = 349WFX4WJR;
 				INFOPLIST_FILE = testGolf/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Kenny.testGolf;
@@ -360,8 +640,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0D2BE46640F29779EC002A25 /* Pods-testGolf.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = M4TN2QX7K6;
+				DEVELOPMENT_TEAM = 349WFX4WJR;
 				INFOPLIST_FILE = testGolf/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Kenny.testGolf;
@@ -373,6 +654,23 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8BCF771B1E03CD0200D48A61 /* Build configuration list for PBXNativeTarget "iMessageExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BCF77191E03CD0200D48A61 /* Debug */,
+				8BCF771A1E03CD0200D48A61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BCF77381E03CF5800D48A61 /* Build configuration list for PBXNativeTarget "PuttSharedTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BCF77351E03CF5800D48A61 /* Debug */,
+				8BCF77361E03CF5800D48A61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		E83E06901E039586005711E3 /* Build configuration list for PBXProject "testGolf" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
