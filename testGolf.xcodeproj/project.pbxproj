@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B2FD2F71E03BAFC00911A43 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2FD2F61E03BAFC00911A43 /* MessagesViewController.swift */; };
+		8B2FD2F91E03BF8000911A43 /* Putt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2FD2F81E03BF8000911A43 /* Putt.swift */; };
+		B32C8B88C8475AD690D372BC /* Pods_testGolf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EF7A8331CE3D7270482DE0 /* Pods_testGolf.framework */; };
 		E83E06991E039586005711E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83E06981E039586005711E3 /* AppDelegate.swift */; };
 		E83E069B1E039587005711E3 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = E83E069A1E039587005711E3 /* art.scnassets */; };
 		E83E069D1E039587005711E3 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83E069C1E039587005711E3 /* GameViewController.swift */; };
@@ -16,6 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D2BE46640F29779EC002A25 /* Pods-testGolf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGolf.release.xcconfig"; path = "Pods/Target Support Files/Pods-testGolf/Pods-testGolf.release.xcconfig"; sourceTree = "<group>"; };
+		8B2FD2F61E03BAFC00911A43 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		8B2FD2F81E03BF8000911A43 /* Putt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Putt.swift; sourceTree = "<group>"; };
+		90256A5B1AAB50A8F1542411 /* Pods-testGolf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGolf.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testGolf/Pods-testGolf.debug.xcconfig"; sourceTree = "<group>"; };
+		C2EF7A8331CE3D7270482DE0 /* Pods_testGolf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testGolf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E83E06951E039586005711E3 /* testGolf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testGolf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E83E06981E039586005711E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E83E069A1E039587005711E3 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -31,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B32C8B88C8475AD690D372BC /* Pods_testGolf.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6716DDD00F3A4E0F3459183A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C2EF7A8331CE3D7270482DE0 /* Pods_testGolf.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B91A53434767D68885EB7AAD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				90256A5B1AAB50A8F1542411 /* Pods-testGolf.debug.xcconfig */,
+				0D2BE46640F29779EC002A25 /* Pods-testGolf.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E83E068C1E039586005711E3 = {
 			isa = PBXGroup;
 			children = (
 				E83E06971E039586005711E3 /* testGolf */,
 				E83E06961E039586005711E3 /* Products */,
+				B91A53434767D68885EB7AAD /* Pods */,
+				6716DDD00F3A4E0F3459183A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +86,8 @@
 			children = (
 				E83E06981E039586005711E3 /* AppDelegate.swift */,
 				E83E069A1E039587005711E3 /* art.scnassets */,
+				8B2FD2F61E03BAFC00911A43 /* MessagesViewController.swift */,
+				8B2FD2F81E03BF8000911A43 /* Putt.swift */,
 				E83E069C1E039587005711E3 /* GameViewController.swift */,
 				E83E069E1E039587005711E3 /* Main.storyboard */,
 				E83E06A11E039587005711E3 /* Assets.xcassets */,
@@ -74,9 +104,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E83E06A91E039587005711E3 /* Build configuration list for PBXNativeTarget "testGolf" */;
 			buildPhases = (
+				3252CCBAA94D259D89FDFF79 /* [CP] Check Pods Manifest.lock */,
 				E83E06911E039586005711E3 /* Sources */,
 				E83E06921E039586005711E3 /* Frameworks */,
 				E83E06931E039586005711E3 /* Resources */,
+				0F8EACD25443713C4C7B5B5C /* [CP] Embed Pods Frameworks */,
+				4041775BA68B6FF9355126FC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -136,11 +169,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0F8EACD25443713C4C7B5B5C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-testGolf/Pods-testGolf-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3252CCBAA94D259D89FDFF79 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4041775BA68B6FF9355126FC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-testGolf/Pods-testGolf-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E83E06911E039586005711E3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B2FD2F71E03BAFC00911A43 /* MessagesViewController.swift in Sources */,
+				8B2FD2F91E03BF8000911A43 /* Putt.swift in Sources */,
 				E83E069D1E039587005711E3 /* GameViewController.swift in Sources */,
 				E83E06991E039586005711E3 /* AppDelegate.swift in Sources */,
 			);
@@ -261,6 +344,7 @@
 		};
 		E83E06AA1E039587005711E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90256A5B1AAB50A8F1542411 /* Pods-testGolf.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = M4TN2QX7K6;
@@ -274,6 +358,7 @@
 		};
 		E83E06AB1E039587005711E3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D2BE46640F29779EC002A25 /* Pods-testGolf.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = M4TN2QX7K6;
