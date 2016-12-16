@@ -27,6 +27,9 @@ class GameScene: SKScene {
     var angleSlider = SKSpriteNode()
     var degrees = SKLabelNode()
     
+    var test = 5
+    
+    
     let trailNode = SKNode()
 
     
