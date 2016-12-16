@@ -11,19 +11,48 @@ import QuartzCore
 import SceneKit
 
 class GameViewController: UIViewController {
-
+    
+    var sceneView: SCNView {
+        return view as! SCNView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // allows the user to manipulate the camera
+        sceneView.allowsCameraControl = true
+        
+        // show statistics such as fps and timing information
+        sceneView.showsStatistics = true
+        
+        // configure the view
+        sceneView.backgroundColor = UIColor.black
+        
+        // add a tap gesture recognizer
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        sceneView.addGestureRecognizer(tapGesture)
+    }
+    
+    func configureScene(previousSession: PuttSession?) {
+        // setup any visuals with data specific to the previous session; if nil, start fresh
+        
+        if let session = previousSession {
+            
+        } else {
+            
+        }
+        
+        let initial = previousSession?.initial ?? PuttInitialData.random()
+        let firstHole = initial.holeSet[0]
+        
         // create a new scene
-        let scene = SCNScene(named: "art.scnassets/course0.scn")!
-        
-        
-        
+        let scene = SCNScene(named: "art.scnassets/course\(firstHole).scn")!
+        sceneView.scene = scene
+
         // create and add a camera to the scene
         let cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
-        scene.rootNode.addChildNode(cameraNode)
+        sceneView.scene!.rootNode.addChildNode(cameraNode)
         
         // place the camera
         cameraNode.position = SCNVector3(x: 0, y: 0, z: 15)
@@ -33,24 +62,21 @@ class GameViewController: UIViewController {
         lightNode.light = SCNLight()
         lightNode.light!.type = .omni
         lightNode.position = SCNVector3(x: 0, y: 10, z: 10)
-        scene.rootNode.addChildNode(lightNode)
+        sceneView.scene!.rootNode.addChildNode(lightNode)
         
         // create and add an ambient light to the scene
         let ambientLightNode = SCNNode()
         ambientLightNode.light = SCNLight()
         ambientLightNode.light!.type = .ambient
         ambientLightNode.light!.color = UIColor.darkGray
-        scene.rootNode.addChildNode(ambientLightNode)
-        
-        
+        sceneView.scene!.rootNode.addChildNode(ambientLightNode)
         
         // retrieve the ship node
         let ship = scene.rootNode.childNode(withName: "ship", recursively: true)!
         
         let ball = scene.rootNode.childNode(withName: "sphere", recursively: true)!
-
-        let light1 = scene.rootNode.childNode(withName: "light1", recursively: true)!
         
+        let light1 = scene.rootNode.childNode(withName: "light1", recursively: true)!
         
         let box1 = scene.rootNode.childNode(withName: "box1", recursively: true)!
         
@@ -60,31 +86,8 @@ class GameViewController: UIViewController {
         
         ball.physicsBody?.applyForce(SCNVector3(0,1,2), asImpulse: true)
         
-        
-        
-        
-        
         // animate the 3d object
         ship.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 1)))
-        
-        // retrieve the SCNView
-        let scnView = self.view as! SCNView
-        
-        // set the scene to the view
-        scnView.scene = scene
-        
-        // allows the user to manipulate the camera
-        scnView.allowsCameraControl = true
-        
-        // show statistics such as fps and timing information
-        scnView.showsStatistics = true
-        
-        // configure the view
-        scnView.backgroundColor = UIColor.black
-        
-        // add a tap gesture recognizer
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
-        scnView.addGestureRecognizer(tapGesture)
     }
     
     func handleTap(_ gestureRecognize: UIGestureRecognizer) {
@@ -137,10 +140,4 @@ class GameViewController: UIViewController {
             return .all
         }
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
-    }
-
 }
