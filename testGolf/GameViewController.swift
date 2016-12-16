@@ -10,11 +10,15 @@ import UIKit
 import QuartzCore
 import SceneKit
 
+import JWSwiftTools
+
 class GameViewController: UIViewController {
     
     var sceneView: SCNView {
         return view as! SCNView
     }
+    
+    var game: Putt!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +48,8 @@ class GameViewController: UIViewController {
         
         let initial = previousSession?.initial ?? PuttInitialData.random()
         let firstHole = initial.holeSet[0]
+        
+        game = Putt(previousSession: previousSession, initial: initial, padding: nil, cycle: SessionCycle(started: started, finished: finished, generateSession: gatherSessionData))
         
         // create a new scene
         let scene = SCNScene(named: "art.scnassets/course\(firstHole).scn")!
@@ -88,6 +94,18 @@ class GameViewController: UIViewController {
         
         // animate the 3d object
         ship.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 1)))
+    }
+    
+    func started() {
+        
+    }
+    
+    func finished(session: PuttSession) {
+        
+    }
+    
+    func gatherSessionData() -> PuttSession {
+        return PuttSession(dictionary: [:])!
     }
     
     func handleTap(_ gestureRecognize: UIGestureRecognizer) {
