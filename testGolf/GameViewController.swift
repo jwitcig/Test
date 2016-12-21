@@ -21,10 +21,38 @@ class GameViewController: UIViewController {
         
         sceneView.showsFPS = true
         
-        sceneView.backgroundColor = UIColor.black
+        sceneView.backgroundColor = .black
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         sceneView.addGestureRecognizer(tapGesture)
+        
+        // create a new scene
+        let scene = SKScene(fileNamed: "Hole1")!
+        sceneView.presentScene(scene)
+        
+        let camera = SKCameraNode()
+        camera.setScale(2)
+        scene.addChild(camera)
+        
+        scene.camera = camera
+        
+        let tileMap = scene.childNode(withName: "tilemap") as! SKTileMapNode
+        
+        var bodies: [SKPhysicsBody] = []
+        for column in 0...tileMap.numberOfColumns {
+            for row in 0...tileMap.numberOfRows {
+                        
+                if let tile = tileMap.tileDefinition(atColumn: column, row: row), let isEdge = tile.userData?["isEdge"] as? Bool, isEdge {
+
+                    let body = SKPhysicsBody(rectangleOf: tileMap.tileSize, center: tileMap.centerOfTile(atColumn: column, row: row))
+                    
+                    bodies.append(body)
+                }
+            }
+        }
+        
+        tileMap.physicsBody = SKPhysicsBody(bodies: bodies)
+        tileMap.physicsBody?.isDynamic = false
     }
     
     func configureScene(previousSession: PuttSession?) {
@@ -38,15 +66,10 @@ class GameViewController: UIViewController {
         
         let initial = previousSession?.initial ?? PuttInitialData.random()
         let firstHole = initial.holeSet[0]
-        
-        // create a new scene
-        let scene = SKScene(fileNamed: "art.scnassets/course\(firstHole).scn")!
-        
-        
-        // create and add a camera to the scene
-        let camera = SKCameraNode()
-        scene.camera = camera
-        scene.addChild(camera)
+                // create and add a camera to the scene
+//        let camera = SKCameraNode()
+//        scene.camera = camera
+//        scene.addChild(camera)
     }
     
     func handleTap(_ gestureRecognize: UIGestureRecognizer) {
