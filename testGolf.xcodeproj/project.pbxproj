@@ -17,11 +17,12 @@
 		8BCF77181E03CD0200D48A61 /* iMessageExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8BCF770A1E03CD0200D48A61 /* iMessageExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8BCF77301E03CF5800D48A61 /* PuttSharedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCF772F1E03CF5800D48A61 /* PuttSharedTests.swift */; };
 		8BCF77391E03CFB700D48A61 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83E069C1E039587005711E3 /* GameViewController.swift */; };
-		8BCF773A1E03D06F00D48A61 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = E83E069A1E039587005711E3 /* art.scnassets */; };
 		8BCF773B1E03D6D300D48A61 /* Putt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2FD2F81E03BF8000911A43 /* Putt.swift */; };
+		8BD4AA331E09C42F0086A00E /* CourseTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BD4AA321E09C42F0086A00E /* CourseTileSet.sks */; };
+		8BD4AA351E09C4EC0086A00E /* Hole1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BD4AA341E09C4EC0086A00E /* Hole1.sks */; };
+		8BD4AA381E09CA260086A00E /* Hole1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BD4AA341E09C4EC0086A00E /* Hole1.sks */; };
 		B32C8B88C8475AD690D372BC /* Pods_testGolf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EF7A8331CE3D7270482DE0 /* Pods_testGolf.framework */; };
 		E83E06991E039586005711E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83E06981E039586005711E3 /* AppDelegate.swift */; };
-		E83E069B1E039587005711E3 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = E83E069A1E039587005711E3 /* art.scnassets */; };
 		E83E069D1E039587005711E3 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83E069C1E039587005711E3 /* GameViewController.swift */; };
 		E83E06A01E039587005711E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E83E069E1E039587005711E3 /* Main.storyboard */; };
 		E83E06A21E039587005711E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E83E06A11E039587005711E3 /* Assets.xcassets */; };
@@ -66,13 +67,14 @@
 		8BCF772A1E03CF5800D48A61 /* PuttSharedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PuttSharedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BCF772F1E03CF5800D48A61 /* PuttSharedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuttSharedTests.swift; sourceTree = "<group>"; };
 		8BCF77311E03CF5800D48A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BD4AA321E09C42F0086A00E /* CourseTileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CourseTileSet.sks; sourceTree = "<group>"; };
+		8BD4AA341E09C4EC0086A00E /* Hole1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hole1.sks; sourceTree = "<group>"; };
 		8F233FA75BF56CABCE8E437B /* Pods-testGolf-iMessageExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGolf-iMessageExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testGolf-iMessageExtension/Pods-testGolf-iMessageExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		90256A5B1AAB50A8F1542411 /* Pods-testGolf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGolf.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testGolf/Pods-testGolf.debug.xcconfig"; sourceTree = "<group>"; };
 		AEB52F2E29C1E166CE4CAA27 /* Pods_testGolf_iMessageExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testGolf_iMessageExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2EF7A8331CE3D7270482DE0 /* Pods_testGolf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testGolf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E83E06951E039586005711E3 /* testGolf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testGolf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E83E06981E039586005711E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E83E069A1E039587005711E3 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		E83E069C1E039587005711E3 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		E83E069F1E039587005711E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E83E06A11E039587005711E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -175,9 +177,10 @@
 			isa = PBXGroup;
 			children = (
 				E83E06981E039586005711E3 /* AppDelegate.swift */,
-				E83E069A1E039587005711E3 /* art.scnassets */,
 				8B2FD2F81E03BF8000911A43 /* Putt.swift */,
 				E83E069C1E039587005711E3 /* GameViewController.swift */,
+				8BD4AA321E09C42F0086A00E /* CourseTileSet.sks */,
+				8BD4AA341E09C4EC0086A00E /* Hole1.sks */,
 				8B9470C61E0884A50085B124 /* PuttScene.swift */,
 				E83E069E1E039587005711E3 /* Main.storyboard */,
 				E83E06A11E039587005711E3 /* Assets.xcassets */,
@@ -301,7 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BCF77141E03CD0200D48A61 /* Assets.xcassets in Resources */,
-				8BCF773A1E03D06F00D48A61 /* art.scnassets in Resources */,
+				8BD4AA381E09CA260086A00E /* Hole1.sks in Resources */,
 				8BCF77121E03CD0200D48A61 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,10 +320,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E83E069B1E039587005711E3 /* art.scnassets in Resources */,
 				E83E06A51E039587005711E3 /* LaunchScreen.storyboard in Resources */,
+				8BD4AA331E09C42F0086A00E /* CourseTileSet.sks in Resources */,
 				E83E06A21E039587005711E3 /* Assets.xcassets in Resources */,
 				E83E06A01E039587005711E3 /* Main.storyboard in Resources */,
+				8BD4AA351E09C4EC0086A00E /* Hole1.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
