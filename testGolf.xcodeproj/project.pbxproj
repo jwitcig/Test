@@ -27,6 +27,21 @@
 		E83E06A01E039587005711E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E83E069E1E039587005711E3 /* Main.storyboard */; };
 		E83E06A21E039587005711E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E83E06A11E039587005711E3 /* Assets.xcassets */; };
 		E83E06A51E039587005711E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E83E06A31E039587005711E3 /* LaunchScreen.storyboard */; };
+		E8DFE03F1E0C24A000DA666A /* sample.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0301E0C24A000DA666A /* sample.mp3 */; };
+		E8DFE0401E0C24A000DA666A /* ambience.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0311E0C24A000DA666A /* ambience.mp3 */; };
+		E8DFE0411E0C24A000DA666A /* applause.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0321E0C24A000DA666A /* applause.mp3 */; };
+		E8DFE0421E0C24A000DA666A /* notch.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0331E0C24A000DA666A /* notch.wav */; };
+		E8DFE0431E0C24A000DA666A /* clubHit.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0341E0C24A000DA666A /* clubHit.wav */; };
+		E8DFE0441E0C24A000DA666A /* clubHit2.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0351E0C24A000DA666A /* clubHit2.wav */; };
+		E8DFE0451E0C24A000DA666A /* HoleMade.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0361E0C24A000DA666A /* HoleMade.wav */; };
+		E8DFE0461E0C24A000DA666A /* ballDrop.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0371E0C24A000DA666A /* ballDrop.wav */; };
+		E8DFE0471E0C24A000DA666A /* click.WAV in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0381E0C24A000DA666A /* click.WAV */; };
+		E8DFE0481E0C24A000DA666A /* click2.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0391E0C24A000DA666A /* click2.wav */; };
+		E8DFE0491E0C24A000DA666A /* click3.WAV in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE03A1E0C24A000DA666A /* click3.WAV */; };
+		E8DFE04A1E0C24A000DA666A /* click4.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE03B1E0C24A000DA666A /* click4.wav */; };
+		E8DFE04B1E0C24A000DA666A /* click5.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE03C1E0C24A000DA666A /* click5.wav */; };
+		E8DFE04C1E0C24A000DA666A /* close.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE03D1E0C24A000DA666A /* close.wav */; };
+		E8DFE04D1E0C24A000DA666A /* open.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE03E1E0C24A000DA666A /* open.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +95,21 @@
 		E83E06A11E039587005711E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E83E06A41E039587005711E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E83E06A61E039587005711E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8DFE0301E0C24A000DA666A /* sample.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sample.mp3; sourceTree = "<group>"; };
+		E8DFE0311E0C24A000DA666A /* ambience.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ambience.mp3; sourceTree = "<group>"; };
+		E8DFE0321E0C24A000DA666A /* applause.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = applause.mp3; sourceTree = "<group>"; };
+		E8DFE0331E0C24A000DA666A /* notch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = notch.wav; sourceTree = "<group>"; };
+		E8DFE0341E0C24A000DA666A /* clubHit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = clubHit.wav; sourceTree = "<group>"; };
+		E8DFE0351E0C24A000DA666A /* clubHit2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = clubHit2.wav; sourceTree = "<group>"; };
+		E8DFE0361E0C24A000DA666A /* HoleMade.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HoleMade.wav; sourceTree = "<group>"; };
+		E8DFE0371E0C24A000DA666A /* ballDrop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ballDrop.wav; sourceTree = "<group>"; };
+		E8DFE0381E0C24A000DA666A /* click.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.WAV; sourceTree = "<group>"; };
+		E8DFE0391E0C24A000DA666A /* click2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click2.wav; sourceTree = "<group>"; };
+		E8DFE03A1E0C24A000DA666A /* click3.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click3.WAV; sourceTree = "<group>"; };
+		E8DFE03B1E0C24A000DA666A /* click4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click4.wav; sourceTree = "<group>"; };
+		E8DFE03C1E0C24A000DA666A /* click5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click5.wav; sourceTree = "<group>"; };
+		E8DFE03D1E0C24A000DA666A /* close.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = close.wav; sourceTree = "<group>"; };
+		E8DFE03E1E0C24A000DA666A /* open.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = open.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,10 +214,34 @@
 				8B9470C61E0884A50085B124 /* PuttScene.swift */,
 				E83E069E1E039587005711E3 /* Main.storyboard */,
 				E83E06A11E039587005711E3 /* Assets.xcassets */,
+				E8DFE02F1E0C248F00DA666A /* Music */,
 				E83E06A31E039587005711E3 /* LaunchScreen.storyboard */,
 				E83E06A61E039587005711E3 /* Info.plist */,
 			);
 			path = testGolf;
+			sourceTree = "<group>";
+		};
+		E8DFE02F1E0C248F00DA666A /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				E8DFE0301E0C24A000DA666A /* sample.mp3 */,
+				E8DFE0311E0C24A000DA666A /* ambience.mp3 */,
+				E8DFE0321E0C24A000DA666A /* applause.mp3 */,
+				E8DFE0331E0C24A000DA666A /* notch.wav */,
+				E8DFE0341E0C24A000DA666A /* clubHit.wav */,
+				E8DFE0351E0C24A000DA666A /* clubHit2.wav */,
+				E8DFE0361E0C24A000DA666A /* HoleMade.wav */,
+				E8DFE0371E0C24A000DA666A /* ballDrop.wav */,
+				E8DFE0381E0C24A000DA666A /* click.WAV */,
+				E8DFE0391E0C24A000DA666A /* click2.wav */,
+				E8DFE03A1E0C24A000DA666A /* click3.WAV */,
+				E8DFE03B1E0C24A000DA666A /* click4.wav */,
+				E8DFE03C1E0C24A000DA666A /* click5.wav */,
+				E8DFE03D1E0C24A000DA666A /* close.wav */,
+				E8DFE03E1E0C24A000DA666A /* open.wav */,
+			);
+			name = Music;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,17 +317,17 @@
 				TargetAttributes = {
 					8BCF77091E03CD0200D48A61 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 349WFX4WJR;
+						DevelopmentTeam = M4TN2QX7K6;
 						ProvisioningStyle = Automatic;
 					};
 					8BCF77291E03CF5800D48A61 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 349WFX4WJR;
+						DevelopmentTeam = M4TN2QX7K6;
 						ProvisioningStyle = Automatic;
 					};
 					E83E06941E039586005711E3 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 349WFX4WJR;
+						DevelopmentTeam = M4TN2QX7K6;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -320,11 +374,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8DFE0421E0C24A000DA666A /* notch.wav in Resources */,
 				E83E06A51E039587005711E3 /* LaunchScreen.storyboard in Resources */,
+				E8DFE0461E0C24A000DA666A /* ballDrop.wav in Resources */,
+				E8DFE0401E0C24A000DA666A /* ambience.mp3 in Resources */,
+				E8DFE0451E0C24A000DA666A /* HoleMade.wav in Resources */,
+				E8DFE0471E0C24A000DA666A /* click.WAV in Resources */,
+				E8DFE0441E0C24A000DA666A /* clubHit2.wav in Resources */,
 				8BD4AA331E09C42F0086A00E /* CourseTileSet.sks in Resources */,
+				E8DFE03F1E0C24A000DA666A /* sample.mp3 in Resources */,
+				E8DFE0481E0C24A000DA666A /* click2.wav in Resources */,
+				E8DFE04D1E0C24A000DA666A /* open.wav in Resources */,
+				E8DFE04C1E0C24A000DA666A /* close.wav in Resources */,
 				E83E06A21E039587005711E3 /* Assets.xcassets in Resources */,
+				E8DFE0431E0C24A000DA666A /* clubHit.wav in Resources */,
+				E8DFE0411E0C24A000DA666A /* applause.mp3 in Resources */,
 				E83E06A01E039587005711E3 /* Main.storyboard in Resources */,
+				E8DFE04A1E0C24A000DA666A /* click4.wav in Resources */,
+				E8DFE04B1E0C24A000DA666A /* click5.wav in Resources */,
 				8BD4AA351E09C4EC0086A00E /* Hole1.sks in Resources */,
+				E8DFE0491E0C24A000DA666A /* click3.WAV in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,7 +551,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				DEVELOPMENT_TEAM = 349WFX4WJR;
+				DEVELOPMENT_TEAM = M4TN2QX7K6;
 				INFOPLIST_FILE = iMessageExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -499,7 +568,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				DEVELOPMENT_TEAM = 349WFX4WJR;
+				DEVELOPMENT_TEAM = M4TN2QX7K6;
 				INFOPLIST_FILE = iMessageExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -514,7 +583,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				DEVELOPMENT_TEAM = 349WFX4WJR;
+				DEVELOPMENT_TEAM = M4TN2QX7K6;
 				INFOPLIST_FILE = PuttSharedTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -528,7 +597,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				DEVELOPMENT_TEAM = 349WFX4WJR;
+				DEVELOPMENT_TEAM = M4TN2QX7K6;
 				INFOPLIST_FILE = PuttSharedTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -635,7 +704,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 349WFX4WJR;
+				DEVELOPMENT_TEAM = M4TN2QX7K6;
 				INFOPLIST_FILE = testGolf/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Kenny.testGolf;
@@ -650,7 +719,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 349WFX4WJR;
+				DEVELOPMENT_TEAM = M4TN2QX7K6;
 				INFOPLIST_FILE = testGolf/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Kenny.testGolf;
