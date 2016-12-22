@@ -9,8 +9,19 @@
 import UIKit
 import QuartzCore
 import SpriteKit
+import AVFoundation
+
 
 class GameViewController: UIViewController {
+    
+    
+    
+    
+    
+    //Audio Player(s)
+    var audioPlayer = AVAudioPlayer()
+    var winPlayer = AVAudioPlayer()
+    
     
     var sceneView: SKView {
         return view as! SKView
@@ -35,6 +46,41 @@ class GameViewController: UIViewController {
         scene.addChild(camera)
         
         scene.camera = camera
+        
+        let sky = scene.childNode(withName: "sky") as! SKSpriteNode!
+        let clouds = scene.childNode(withName: "clouds") as! SKSpriteNode!
+        let birds = scene.childNode(withName: "birds") as! SKSpriteNode!
+        let golfBall1 = scene.childNode(withName: "golfBall1") as! SKSpriteNode!
+        let shotPathLine = scene.childNode(withName: "shotPathLine") as! SKSpriteNode!
+        
+        let moveSlow = SKAction.move(by: CGVector(dx: -2000 ,dy: 0), duration: 200.0)
+        
+        
+        
+        
+        //Play Background Music
+        
+        do{
+            
+            audioPlayer = try  AVAudioPlayer(contentsOf: URL.init( fileURLWithPath: Bundle.main.path(forResource: "ambience", ofType: "mp3")!))
+            audioPlayer.prepareToPlay()
+            audioPlayer.play()
+            audioPlayer.volume = 0.8
+            audioPlayer.numberOfLoops = 100000000000000
+            
+            
+        }
+            
+        catch{
+            print(error)
+        }
+        
+        
+        
+        
+        clouds?.run(moveSlow)
+        
+        birds?.run(moveSlow)
         
         let tileMap = scene.childNode(withName: "tilemap") as! SKTileMapNode
         
