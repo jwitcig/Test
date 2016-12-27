@@ -19,7 +19,7 @@ class PuttScene: SKScene {
     }()
     
     lazy var golfBall1: SKNode = {
-        return self.childNode(withName: "golfBall1")!
+        return self.childNode(withName: "golfBall")!
     }()
 
     
