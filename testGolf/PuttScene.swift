@@ -6,132 +6,149 @@
 //  Copyright © 2016 CodeWithKenny. All rights reserved.
 //
 
+import AVFoundation
 import SpriteKit
+
+import JWSwiftTools
 
 class PuttScene: SKScene {
     
-    lazy var ball: SKNode = {
-        return self.childNode(withName: "ball")!
+    // audio player(s)
+    var audioPlayer = AVAudioPlayer()
+    var winPlayer = AVAudioPlayer()
+    
+    lazy var powerSlider: SKNode = {
+        return self.childNode(withName: "powerSlider")!
     }()
-
-    lazy var shotPathLine: SKNode = {
-        return self.childNode(withName: "shotPathLine")!
+    
+    var holeComplete = false
+    
+    lazy var ball: Ball = {
+        return self.childNode(withName: "//\(Ball.name)") as! Ball
     }()
     
-    lazy var golfBall1: SKNode = {
-        return self.childNode(withName: "golfBall")!
-    }()
-
+    // MARK: Scene Lifecycle
     
-    override init(size: CGSize) {
-        super.init(size: size)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override func didMove(to view: SKView) {
+        view.showsFPS = true
+        view.showsPhysics = true
+        view.backgroundColor = .black
         
-        for touch in touches{
-            let location = touch.location(in: self)
-            //Change position of powerBar based on balls position
+        // sends contact notifications to didBegin(contact:)
+        physicsWorld.contactDelegate = self
+        
+        let camera = SKCameraNode()
+        camera.setScale(0.6)
+        addChild(camera)
+        self.camera = camera
+        
+        startBackgroundAnimations()
+    }
+    
+    // MARK: Animations
+    
+    func startBackgroundAnimations() {
+        let ambientNoise = SKAudioNode(fileNamed: "ambience")
+        ambientNoise.autoplayLooped = true
+        addChild(ambientNoise)
+        
+        let moveSlow = SKAction.move(by: CGVector(dx: -2000, dy: 0), duration: 200)
+        childNode(withName: "clouds")?.run(moveSlow)
+        childNode(withName: "birds")?.run(moveSlow)
+    }
+    
+    // MARK: Touch Handling
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for _ in touches {
+            
+            if ball.physicsBody?.velocity == .zero {
+                if powerSlider.parent == nil {
+                    // if powerSlider isn't in the scene, add it
+                    addChild(powerSlider)
+                }
+                
+                // move power slider to ball's position
+                powerSlider.position = ball.parent!.convert(ball.position, to: powerSlider.parent!)
+            }
         }
     }
-    
-    
-    
+
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
+            let touchLocation = touch.location(in: self)
             
-            let location = touch.location(in: self)
+            let ballPosition = ball.parent!.convert(ball.position, to: self)
             
-          //  ball.position = location
-            
-            // Get sprite's current position (a.k.a. starting point).
-            let currentPosition = shotPathLine.position
-            
-            // Calculate the angle using the relative positions of the sprite and touch.
-            let angle = atan2(currentPosition.y - location.y, currentPosition.x - location.x)
-            
-            // Define actions for the ship to take.
-            let rotateAction = SKAction.rotate(toAngle: angle + CGFloat(M_PI*0.5) , duration: 0.0)
-            
-            // Tell the ship to execute actions.
-            //   direction.run(SKAction.sequence([rotateAction]))
-            
-            shotPathLine.run(rotateAction)
-            
-            
-            
-            
+            // rotate slider to the angle of your touch
+            powerSlider.zRotation = ballPosition.angle(toPoint: touchLocation) - .pi / 2
         }
     }
-    
-    
-    
-    //------------------------------  Touches Ended  something in the comment  --------------------------------//
-    
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        
-        
-        
-        
-        for touch in touches{
+        for touch in touches {
+            let touchLocation = touch.location(in: self)
+            let ballPosition = ball.parent!.convert(ball.position, to: self)
+
+            let power = ballPosition.distance(toPoint: touchLocation)
+            let angle = powerSlider.zRotation + .pi / 2
             
-            
-            /*
-            let strokeForce = abs((powerSlider.position.y - 330) * 0.01 )
-            let degrees2 = angleSlider.position.x
-            
-            let radians = (.pi / 180) *  -degrees2 + (.pi/2)
-            
-            
-            
-            let impulse = CGVector(dx: cos(radians) * strokeForce , dy: sin(radians) * strokeForce )
-            
-            
-            
-            if (location.y < 630) && (location.x < -280) && (location.y < 300) {
-                direction.alpha = 0
-                ball.physicsBody?.applyImpulse(impulse)
-                run(SKAction.playSoundFileNamed("clubHit.wav", waitForCompletion: false))
-                
-                
-                
-                
-                playerHitCount = playerHitCount + 1
-                playerScore.text = "\(playerHitCount)"
-                
-            }
-            
-            let resetPowerSlider = SKAction.moveTo(y: 280, duration: 0.03)
-            powerSlider.run(resetPowerSlider)
-            
-      */
-            
-            
+            takeShot(at: angle, with: power)
         }
     }
-
     
-    
-    //------------------------------  Update Game Functions   --------------------------------//
-    
-    override func update(_ currentTime: TimeInterval) {
+    func takeShot(at angle: CGFloat, with power: CGFloat) {
+        let stroke = CGVector(dx: cos(angle) * power,
+                              dy: sin(angle) * power)
         
+        let sound = SKAction.playSoundFileNamed("clubHit.wav", waitForCompletion: false)
+        let physics = SKAction.applyImpulse(stroke, duration: 1)
+        let afterStroke = SKAction.run {
+            self.powerSlider.removeFromParent()
+        }
         
-        //Sets up positioning for the directional path image
-        shotPathLine.position.x = golfBall1.position.x
-        shotPathLine.position.y = golfBall1.position.y 
-        
-        
-        
-        
+        ball.run(physics)
+        run(sound)
+        run(afterStroke)
     }
     
+    // MARK: Game Loop
     
-    
+    override func update(_ currentTime: TimeInterval) {
+        // runs every frame
+    }
+}
+
+// MARK: Contact Delegate
+
+extension PuttScene: SKPhysicsContactDelegate {
+
+    func didBegin(_ contact: SKPhysicsContact) {
+        let bodies = [contact.bodyA, contact.bodyB]
+        
+        func node(withName name: String) -> SKNode? {
+            return bodies.filter{$0.node?.name==name}.first?.node
+        }
+        
+        if let ball = node(withName: Ball.name), let hole = node(withName: Hole.name) {
+            // if one node was the ball and another was the hole
+            
+            guard !holeComplete else { return }
+            // if hole isn't already completed
+
+            if let drop = SKAction(named: "Drop") {
+                let holePosition = hole.parent!.convert(hole.position, to: ball.parent!)
+                
+                let insideHole = SKAction.move(to: holePosition, duration: drop.duration/3)
+                insideHole.timingMode = .easeOut
+                let group = SKAction.group([drop, insideHole])
+                
+                // stop ball's existing motion
+                ball.physicsBody?.velocity = .zero
+                
+                ball.run(group)
+            }
+            holeComplete = true
+        }
+    }
 }
