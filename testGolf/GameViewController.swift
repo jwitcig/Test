@@ -12,7 +12,7 @@ import SpriteKit
 import AVFoundation
 
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController , SKPhysicsContactDelegate {
     
     
     
@@ -27,6 +27,8 @@ class GameViewController: UIViewController {
         return view as! SKView
     }
     
+    var scene: SKScene!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,7 +40,7 @@ class GameViewController: UIViewController {
         sceneView.addGestureRecognizer(tapGesture)
         
         // create a new scene
-        let scene = SKScene(fileNamed: "Hole1")!
+        scene = SKScene(fileNamed: "Hole1")!
         sceneView.presentScene(scene)
         
         let camera = SKCameraNode()
@@ -46,17 +48,43 @@ class GameViewController: UIViewController {
         scene.addChild(camera)
         
         scene.camera = camera
+        //Checks physics contacts 
+        scene.physicsWorld.contactDelegate = self
         
-        let sky = scene.childNode(withName: "sky") as! SKSpriteNode!
-        let clouds = scene.childNode(withName: "clouds") as! SKSpriteNode!
+        
+        scene.enumerateChildNodes(withName: "//wall") { (node, bool) in
+            let body = SKPhysicsBody(rectangleOf: CGSize(width: 80 , height: 20))
+            
+            node.physicsBody = body
+            
+            body.isDynamic = false
+            body.categoryBitMask = 2
+            body.collisionBitMask = 1
+            body.restitution = 0.5
+            body.friction = 0
+            body.mass = 2
+            body.contactTestBitMask = 0
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                let clouds = scene.childNode(withName: "clouds") as! SKSpriteNode!
         let birds = scene.childNode(withName: "birds") as! SKSpriteNode!
-        let golfBall1 = scene.childNode(withName: "golfBall1") as! SKSpriteNode!
-        let shotPathLine = scene.childNode(withName: "shotPathLine") as! SKSpriteNode!
-        
+        let golfBall = scene.childNode(withName: "golfBall") as! SKSpriteNode!
+       
         let moveSlow = SKAction.move(by: CGVector(dx: -2000 ,dy: 0), duration: 200.0)
         
-        
-        
+        golfBall?.physicsBody?.contactTestBitMask = 4
         
         //Play Background Music
         
@@ -81,26 +109,56 @@ class GameViewController: UIViewController {
         clouds?.run(moveSlow)
         
         birds?.run(moveSlow)
-        
-        let tileMap = scene.childNode(withName: "tilemap") as! SKTileMapNode
-        
-        var bodies: [SKPhysicsBody] = []
-        for column in 0...tileMap.numberOfColumns {
-            for row in 0...tileMap.numberOfRows {
-                        
-                if let tile = tileMap.tileDefinition(atColumn: column, row: row), let isEdge = tile.userData?["isEdge"] as? Bool, isEdge {
-
-                    let body = SKPhysicsBody(rectangleOf: tileMap.tileSize, center: tileMap.centerOfTile(atColumn: column, row: row))
-                    
-                    bodies.append(body)
-                }
-            }
-        }
-        
-        tileMap.physicsBody = SKPhysicsBody(bodies: bodies)
-        tileMap.physicsBody?.isDynamic = false
     }
     
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+        
+            
+            let location = touch.location(in: scene)
+            let golfBall = scene.childNode(withName: "golfBall") as! SKSpriteNode!
+        //    golfBall?.position = location
+            
+        }
+        
+    }
+  
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            
+            
+            let location = touch.location(in: scene)
+            let golfBall = scene.childNode(withName: "golfBall")! as! SKSpriteNode
+            
+            
+            
+            let v1 = CGVector(dx: location.x - golfBall.position.x, dy: location.y - golfBall.position.y)
+            let v2 = CGVector(dx: location.x - golfBall.position.x, dy: location.y - golfBall.position.y)
+            
+            let angle = atan2(v2.dy, v2.dx) - atan2(v1.dy, v1.dx)
+            
+            
+            let power: CGFloat = 20
+            
+            golfBall.physicsBody?.applyImpulse(CGVector(dx: cos(angle) * power ,dy: sin(angle) * power ))
+            
+            print("\(angle)")
+            
+            
+        }
+        
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        
+        print("Yay we made contact Houston")
+        
+        
+    }
+    
+    
+        
     func configureScene(previousSession: PuttSession?) {
         // setup any visuals with data specific to the previous session; if nil, start fresh
         
