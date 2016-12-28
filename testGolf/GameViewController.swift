@@ -51,13 +51,13 @@ class GameViewController: UIViewController {
     func configureScene(previousSession: PuttSession?) {
         // setup any visuals with data specific to the previous session; if nil, start fresh
         
-        if let session = previousSession {
+        if let _ = previousSession {
             
         } else {
             
         }
         
         let initial = previousSession?.initial ?? PuttInitialData.random()
-        let firstHole = initial.holeSet[0]
+        let _ = initial.holeSet[0]
     }
 }

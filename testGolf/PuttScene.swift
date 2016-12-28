@@ -34,13 +34,13 @@ class PuttScene: SKScene {
         physicsWorld.contactDelegate = self
         
         let camera = SKCameraNode()
-        camera.setScale(0.6)
         addChild(camera)
         self.camera = camera
         
         startBackgroundAnimations()
         
         ball.updateTrailEmitter()
+        // combineWalls()
     }
     
     // MARK: Animations
@@ -54,7 +54,7 @@ class PuttScene: SKScene {
         childNode(withName: "clouds")?.run(moveSlow)
         childNode(withName: "birds")?.run(moveSlow)
     }
-    
+
     // MARK: Touch Handling
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -100,14 +100,10 @@ class PuttScene: SKScene {
                               dy: sin(angle) * power)
         
         let sound = SKAction.playSoundFileNamed("clubHit.wav", waitForCompletion: false)
-        let physics = SKAction.applyImpulse(stroke, duration: 1)
-        let afterStroke = SKAction.run {
-            self.powerSlider.removeFromParent()
-        }
         
-        ball.run(physics)
+        ball.physicsBody?.applyImpulse(stroke)
         run(sound)
-        run(afterStroke)
+        powerSlider.removeFromParent()
     }
     
     // MARK: Game Loop

@@ -20,7 +20,7 @@ class Wall: SKSpriteNode {
     
     func adjustedPhysicsBody() -> SKPhysicsBody? {
         let existing = physicsBody
-        let corrected = SKPhysicsBody(rectangleOf: size)
+        let corrected = SKPhysicsBody(rectangleOf: frame.size)
         corrected.isDynamic = existing?.isDynamic ?? false
         corrected.restitution = existing?.restitution ?? 0.5
         corrected.friction = existing?.friction ?? 0
