@@ -54,9 +54,10 @@ class PuttScene: SKScene {
         ambientNoise.autoplayLooped = true
         addChild(ambientNoise)
         
-        let moveSlow = SKAction.move(by: CGVector(dx: -2000, dy: 0), duration: 200)
-        childNode(withName: "clouds")?.run(moveSlow)
-        childNode(withName: "birds")?.run(moveSlow)
+        let moveSlow = SKAction.move(by: CGVector(dx: -20, dy: 0), duration: 2)
+        let repeatMove = SKAction.repeatForever(moveSlow)
+        childNode(withName: "clouds")?.run(repeatMove)
+        childNode(withName: "birds")?.run(repeatMove)
     }
 
     // MARK: Touch Handling
@@ -94,6 +95,9 @@ class PuttScene: SKScene {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let touchLocation = touch.location(in: self)
+            
+            guard adjustingShot else { return }
+
             let ballPosition = ball.parent!.convert(ball.position, to: self)
 
             let power = ballPosition.distance(toPoint: touchLocation)
