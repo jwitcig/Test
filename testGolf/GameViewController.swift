@@ -11,8 +11,33 @@ import QuartzCore
 import SpriteKit
 import UIKit
 
-<<<<<<< HEAD
 import JWSwiftTools
+
+public extension CGPoint {
+    public func angle(toPoint point: CGPoint) -> CGFloat {
+        let origin = CGPoint(x: point.x - self.x, y: point.y - self.y)
+        let radians = CGFloat(atan2f(Float(origin.y), Float(origin.x)))
+        let corrected = radians < 0 ? radians + 2 * .pi : radians
+        return corrected
+    }
+    
+    public func distance(toPoint point: CGPoint) -> CGFloat {
+        return sqrt( pow(self.x-point.x, 2) + pow(self.y - point.y, 2) )
+    }
+}
+
+public extension CGVector {
+    public var magnitude: CGFloat {
+        return sqrt( dx*dx + dy*dy )
+    }
+}
+
+enum Category: UInt32 {
+    case none = 0
+    case ball = 1
+    case wall = 2
+    case hole = 4
+}
 
 class GameViewController: UIViewController {
     
@@ -56,26 +81,6 @@ class GameViewController: UIViewController {
         // create a new scene
         let scene = SCNScene(named: "art.scnassets/course\(firstHole).scn")!
         sceneView.scene = scene
-=======
-public extension CGPoint {
-    public func angle(toPoint point: CGPoint) -> CGFloat {
-        let origin = CGPoint(x: point.x - self.x, y: point.y - self.y)
-        let radians = CGFloat(atan2f(Float(origin.y), Float(origin.x)))
-        let corrected = radians < 0 ? radians + 2 * .pi : radians
-        return corrected
-    }
-    
-    public func distance(toPoint point: CGPoint) -> CGFloat {
-        return sqrt( pow(self.x-point.x, 2) + pow(self.y - point.y, 2) )
-    }
-}
->>>>>>> spritekit
-
-public extension CGVector {
-    public var magnitude: CGFloat {
-        return sqrt( dx*dx + dy*dy )
-    }
-<<<<<<< HEAD
     
     func started() {
         
@@ -130,21 +135,12 @@ public extension CGVector {
     
     override var prefersStatusBarHidden: Bool {
         return true
-=======
-}
-
-enum Category: UInt32 {
-    case none = 0
-    case ball = 1
-    case wall = 2
-    case hole = 4
 }
 
 class GameViewController: UIViewController {
 
     var sceneView: SKView {
         return view as! SKView
->>>>>>> spritekit
     }
     
     var scene: SKScene!
