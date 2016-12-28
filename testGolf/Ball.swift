@@ -10,8 +10,9 @@ import SpriteKit
 import UIKit
 
 class Ball: SKSpriteNode {
+    static let fileName = "Ball"
     static let name = "ball"
-    
+ 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
