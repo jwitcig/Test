@@ -15,6 +15,12 @@ import Game
 import iMessageTools
 import JWSwiftTools
 
+struct Shot {
+    let power: Float
+    let angle: Float
+    let position: CGVector
+}
+
 class ClockTimer {
     var startTime: TimeInterval? = nil
     var endTime: TimeInterval? = nil
@@ -107,6 +113,8 @@ class Putt: Game, TypeConstraint {
     
     let previousSession: PuttSession?
     
+    var shots: [Shot] = []
+
     var shotClock: Stopwatch! // countdown
     var shotTimer = ClockTimer() // countup
 
@@ -134,6 +142,11 @@ class Putt: Game, TypeConstraint {
     
     func finish() {
         lifeCycle.finish()
+    }
+    
+
+    func shotTaken(shot: Shot) {
+        shots.append(shot)
     }
     
     func startShotClock() {
