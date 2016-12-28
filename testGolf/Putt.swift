@@ -112,7 +112,6 @@ class Putt: Game, TypeConstraint {
 
     init(previousSession: PuttSession?,
          initial: PuttInitialData?,
-         createShape: @escaping (CGPoint, CGFloat)->Void,
          padding: Padding?,
          cycle: LifeCycle) {
         
