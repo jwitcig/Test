@@ -13,19 +13,15 @@ import JWSwiftTools
 
 class PuttScene: SKScene {
     
-    // audio player(s)
-    var audioPlayer = AVAudioPlayer()
-    var winPlayer = AVAudioPlayer()
+    lazy var ball: Ball = {
+        return self.childNode(withName: "//\(Ball.name)") as! Ball
+    }()
     
     lazy var powerSlider: SKNode = {
         return self.childNode(withName: "powerSlider")!
     }()
     
     var holeComplete = false
-    
-    lazy var ball: Ball = {
-        return self.childNode(withName: "//\(Ball.name)") as! Ball
-    }()
     
     // MARK: Scene Lifecycle
     
@@ -43,6 +39,8 @@ class PuttScene: SKScene {
         self.camera = camera
         
         startBackgroundAnimations()
+        
+        ball.updateTrailEmitter()
     }
     
     // MARK: Animations
@@ -141,7 +139,10 @@ extension PuttScene: SKPhysicsContactDelegate {
                 
                 let insideHole = SKAction.move(to: holePosition, duration: drop.duration/3)
                 insideHole.timingMode = .easeOut
-                let group = SKAction.group([drop, insideHole])
+                let stopTrail = SKAction.run {
+                    self.ball.disableTrail()
+                }
+                let group = SKAction.group([drop, insideHole, stopTrail])
                 
                 // stop ball's existing motion
                 ball.physicsBody?.velocity = .zero

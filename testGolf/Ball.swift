@@ -24,4 +24,17 @@ class Ball: SKSpriteNode {
         physicsBody?.contactTestBitMask = Category.hole.rawValue
         return physicsBody
     }
+    
+    /* Should be called once ball is added to scene */
+    func updateTrailEmitter() {
+        guard let ballTrail = childNode(withName: "//ballTrail") as? SKEmitterNode else { return }
+        ballTrail.targetNode = scene
+        ballTrail.particleScale *= xScale
+        ballTrail.particleScaleSpeed *= xScale
+    }
+    
+    func disableTrail() {
+        guard let ballTrail = childNode(withName: "//ballTrail") as? SKEmitterNode else { return }
+        ballTrail.particleBirthRate = 0
+    }
 }

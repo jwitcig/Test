@@ -38,6 +38,8 @@
 		8BCF77181E03CD0200D48A61 /* iMessageExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8BCF770A1E03CD0200D48A61 /* iMessageExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8BCF77301E03CF5800D48A61 /* PuttSharedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCF772F1E03CF5800D48A61 /* PuttSharedTests.swift */; };
 		8BD4AA351E09C4EC0086A00E /* Hole1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BD4AA341E09C4EC0086A00E /* Hole1.sks */; };
+		8BE6F1C21E132218000EE216 /* BallTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BE6F1C11E132218000EE216 /* BallTrail.sks */; };
+		8BE6F1C31E132218000EE216 /* BallTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BE6F1C11E132218000EE216 /* BallTrail.sks */; };
 		B32C8B88C8475AD690D372BC /* Pods_testGolf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EF7A8331CE3D7270482DE0 /* Pods_testGolf.framework */; };
 		E821BF3C1E11F56400CA8948 /* StraightTile.sks in Resources */ = {isa = PBXBuildFile; fileRef = E821BF3B1E11F56400CA8948 /* StraightTile.sks */; };
 		E821BF3E1E11F6D000CA8948 /* UTile.sks in Resources */ = {isa = PBXBuildFile; fileRef = E821BF3D1E11F6D000CA8948 /* UTile.sks */; };
@@ -110,6 +112,7 @@
 		8BCF772F1E03CF5800D48A61 /* PuttSharedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuttSharedTests.swift; sourceTree = "<group>"; };
 		8BCF77311E03CF5800D48A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BD4AA341E09C4EC0086A00E /* Hole1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hole1.sks; sourceTree = "<group>"; };
+		8BE6F1C11E132218000EE216 /* BallTrail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BallTrail.sks; sourceTree = "<group>"; };
 		8F233FA75BF56CABCE8E437B /* Pods-testGolf-iMessageExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGolf-iMessageExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testGolf-iMessageExtension/Pods-testGolf-iMessageExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		90256A5B1AAB50A8F1542411 /* Pods-testGolf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGolf.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testGolf/Pods-testGolf.debug.xcconfig"; sourceTree = "<group>"; };
 		AEB52F2E29C1E166CE4CAA27 /* Pods_testGolf_iMessageExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testGolf_iMessageExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -235,6 +238,14 @@
 			path = PuttSharedTests;
 			sourceTree = "<group>";
 		};
+		8BE6F1C41E13221E000EE216 /* Emitters */ = {
+			isa = PBXGroup;
+			children = (
+				8BE6F1C11E132218000EE216 /* BallTrail.sks */,
+			);
+			name = Emitters;
+			sourceTree = "<group>";
+		};
 		8BEBEC191E123AA0004CDE4C /* SKActions */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +315,7 @@
 				8B9470C61E0884A50085B124 /* PuttScene.swift */,
 				8B31EB6B1E122C99007A0082 /* Game Nodes */,
 				8BEBEC1A1E123AA9004CDE4C /* Holes */,
+				8BE6F1C41E13221E000EE216 /* Emitters */,
 				8BEBEC191E123AA0004CDE4C /* SKActions */,
 				8B9D37C51E121F5E00CEA296 /* Components */,
 				E83E069E1E039587005711E3 /* Main.storyboard */,
@@ -411,7 +423,7 @@
 				TargetAttributes = {
 					8BCF77091E03CD0200D48A61 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = M4TN2QX7K6;
+						DevelopmentTeam = 349WFX4WJR;
 						ProvisioningStyle = Automatic;
 					};
 					8BCF77291E03CF5800D48A61 = {
@@ -421,7 +433,7 @@
 					};
 					E83E06941E039586005711E3 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = M4TN2QX7K6;
+						DevelopmentTeam = 349WFX4WJR;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -455,6 +467,7 @@
 				8BA5FE931E12E7D700C8470B /* CurvedWallShort.sks in Resources */,
 				8BCF77121E03CD0200D48A61 /* MainInterface.storyboard in Resources */,
 				8B66A7201E12394F0078FE32 /* Hole1.sks in Resources */,
+				8BE6F1C31E132218000EE216 /* BallTrail.sks in Resources */,
 				8B66A7251E12394F0078FE32 /* UTile.sks in Resources */,
 				8B66A7241E12394F0078FE32 /* StraightTile.sks in Resources */,
 				8B66A7231E12394F0078FE32 /* HoleTile.sks in Resources */,
@@ -496,6 +509,7 @@
 				E84FEA7E1E12023900A150F2 /* HoleTile.sks in Resources */,
 				E83E06A01E039587005711E3 /* Main.storyboard in Resources */,
 				8BA5FE8D1E12E36200C8470B /* StraightWall.sks in Resources */,
+				8BE6F1C21E132218000EE216 /* BallTrail.sks in Resources */,
 				E8DFE04A1E0C24A000DA666A /* click4.wav in Resources */,
 				E8DFE04B1E0C24A000DA666A /* click5.wav in Resources */,
 				8BD4AA351E09C4EC0086A00E /* Hole1.sks in Resources */,
@@ -665,7 +679,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				DEVELOPMENT_TEAM = M4TN2QX7K6;
+				DEVELOPMENT_TEAM = 349WFX4WJR;
 				INFOPLIST_FILE = iMessageExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -682,7 +696,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				DEVELOPMENT_TEAM = M4TN2QX7K6;
+				DEVELOPMENT_TEAM = 349WFX4WJR;
 				INFOPLIST_FILE = iMessageExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -818,7 +832,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = M4TN2QX7K6;
+				DEVELOPMENT_TEAM = 349WFX4WJR;
 				INFOPLIST_FILE = testGolf/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Kenny.testGolf;
@@ -833,7 +847,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = M4TN2QX7K6;
+				DEVELOPMENT_TEAM = 349WFX4WJR;
 				INFOPLIST_FILE = testGolf/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Kenny.testGolf;
