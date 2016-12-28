@@ -14,11 +14,15 @@ import JWSwiftTools
 class PuttScene: SKScene {
     
     lazy var ball: Ball = {
-        return self.childNode(withName: "//\(Ball.name)") as! Ball
+        return self.childNode(withName: "//\(Ball.name)")! as! Ball
     }()
     
     lazy var powerSlider: SKNode = {
         return self.childNode(withName: "powerSlider")!
+    }()
+    
+    lazy var mat: SKNode = {
+        return self.childNode(withName: "//\(Mat.name)")! as! Mat
     }()
     
     var holeComplete = false
@@ -40,7 +44,6 @@ class PuttScene: SKScene {
         startBackgroundAnimations()
         
         ball.updateTrailEmitter()
-        // combineWalls()
     }
     
     // MARK: Animations
