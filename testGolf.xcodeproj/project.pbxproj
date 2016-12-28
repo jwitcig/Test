@@ -9,22 +9,64 @@
 /* Begin PBXBuildFile section */
 		5447B46EE4D3632629279E65 /* Pods_testGolf_iMessageExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB52F2E29C1E166CE4CAA27 /* Pods_testGolf_iMessageExtension.framework */; };
 		8B2FD2F91E03BF8000911A43 /* Putt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2FD2F81E03BF8000911A43 /* Putt.swift */; };
+		8B31EB6A1E122C42007A0082 /* Hole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B31EB691E122C42007A0082 /* Hole.swift */; };
+		8B31EB6D1E122DB4007A0082 /* Ball.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B31EB6C1E122DB4007A0082 /* Ball.sks */; };
+		8B31EB701E1236B6007A0082 /* BallInHole.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B31EB6F1E1236B6007A0082 /* BallInHole.sks */; };
+		8B66A71B1E12394F0078FE32 /* Putt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2FD2F81E03BF8000911A43 /* Putt.swift */; };
+		8B66A71C1E12394F0078FE32 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83E069C1E039587005711E3 /* GameViewController.swift */; };
+		8B66A71D1E12394F0078FE32 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8B89441E1219E50011ECF2 /* Ball.swift */; };
+		8B66A71E1E12394F0078FE32 /* Wall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8B89471E121C840011ECF2 /* Wall.swift */; };
+		8B66A71F1E12394F0078FE32 /* Hole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B31EB691E122C42007A0082 /* Hole.swift */; };
+		8B66A7201E12394F0078FE32 /* Hole1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BD4AA341E09C4EC0086A00E /* Hole1.sks */; };
+		8B66A7211E12394F0078FE32 /* BallInHole.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B31EB6F1E1236B6007A0082 /* BallInHole.sks */; };
+		8B66A7221E12394F0078FE32 /* Ball.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B31EB6C1E122DB4007A0082 /* Ball.sks */; };
+		8B66A7231E12394F0078FE32 /* HoleTile.sks in Resources */ = {isa = PBXBuildFile; fileRef = E84FEA7D1E12023900A150F2 /* HoleTile.sks */; };
+		8B66A7241E12394F0078FE32 /* StraightTile.sks in Resources */ = {isa = PBXBuildFile; fileRef = E821BF3B1E11F56400CA8948 /* StraightTile.sks */; };
+		8B66A7251E12394F0078FE32 /* UTile.sks in Resources */ = {isa = PBXBuildFile; fileRef = E821BF3D1E11F6D000CA8948 /* UTile.sks */; };
+		8B66A7261E12394F0078FE32 /* PuttScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9470C61E0884A50085B124 /* PuttScene.swift */; };
+		8B8B89451E1219E50011ECF2 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8B89441E1219E50011ECF2 /* Ball.swift */; };
+		8B8B89481E121C840011ECF2 /* Wall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8B89471E121C840011ECF2 /* Wall.swift */; };
+		8B9470C71E0884A50085B124 /* PuttScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9470C61E0884A50085B124 /* PuttScene.swift */; };
+		8BA5FE8D1E12E36200C8470B /* StraightWall.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BA5FE8C1E12E36200C8470B /* StraightWall.sks */; };
+		8BA5FE901E12E63400C8470B /* CurvedWallShort.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BA5FE8F1E12E63400C8470B /* CurvedWallShort.sks */; };
+		8BA5FE921E12E7D700C8470B /* StraightWall.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BA5FE8C1E12E36200C8470B /* StraightWall.sks */; };
+		8BA5FE931E12E7D700C8470B /* CurvedWallShort.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BA5FE8F1E12E63400C8470B /* CurvedWallShort.sks */; };
 		8BCF770C1E03CD0200D48A61 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BCF770B1E03CD0200D48A61 /* Messages.framework */; };
 		8BCF770F1E03CD0200D48A61 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCF770E1E03CD0200D48A61 /* MessagesViewController.swift */; };
 		8BCF77121E03CD0200D48A61 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BCF77101E03CD0200D48A61 /* MainInterface.storyboard */; };
 		8BCF77141E03CD0200D48A61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BCF77131E03CD0200D48A61 /* Assets.xcassets */; };
 		8BCF77181E03CD0200D48A61 /* iMessageExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8BCF770A1E03CD0200D48A61 /* iMessageExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8BCF77301E03CF5800D48A61 /* PuttSharedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCF772F1E03CF5800D48A61 /* PuttSharedTests.swift */; };
-		8BCF77391E03CFB700D48A61 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83E069C1E039587005711E3 /* GameViewController.swift */; };
-		8BCF773A1E03D06F00D48A61 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = E83E069A1E039587005711E3 /* art.scnassets */; };
-		8BCF773B1E03D6D300D48A61 /* Putt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2FD2F81E03BF8000911A43 /* Putt.swift */; };
+		8BD4AA351E09C4EC0086A00E /* Hole1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BD4AA341E09C4EC0086A00E /* Hole1.sks */; };
+		8BE6F1C21E132218000EE216 /* BallTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BE6F1C11E132218000EE216 /* BallTrail.sks */; };
+		8BE6F1C31E132218000EE216 /* BallTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BE6F1C11E132218000EE216 /* BallTrail.sks */; };
+		8BE770AD1E143B840089FCF2 /* Mat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE770AC1E143B840089FCF2 /* Mat.swift */; };
+		8BE770AF1E143D250089FCF2 /* Mat.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BE770AE1E143D250089FCF2 /* Mat.sks */; };
+		8BE770B01E14522E0089FCF2 /* Mat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE770AC1E143B840089FCF2 /* Mat.swift */; };
 		B32C8B88C8475AD690D372BC /* Pods_testGolf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EF7A8331CE3D7270482DE0 /* Pods_testGolf.framework */; };
+		E821BF3C1E11F56400CA8948 /* StraightTile.sks in Resources */ = {isa = PBXBuildFile; fileRef = E821BF3B1E11F56400CA8948 /* StraightTile.sks */; };
+		E821BF3E1E11F6D000CA8948 /* UTile.sks in Resources */ = {isa = PBXBuildFile; fileRef = E821BF3D1E11F6D000CA8948 /* UTile.sks */; };
 		E83E06991E039586005711E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83E06981E039586005711E3 /* AppDelegate.swift */; };
-		E83E069B1E039587005711E3 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = E83E069A1E039587005711E3 /* art.scnassets */; };
 		E83E069D1E039587005711E3 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83E069C1E039587005711E3 /* GameViewController.swift */; };
 		E83E06A01E039587005711E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E83E069E1E039587005711E3 /* Main.storyboard */; };
 		E83E06A21E039587005711E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E83E06A11E039587005711E3 /* Assets.xcassets */; };
 		E83E06A51E039587005711E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E83E06A31E039587005711E3 /* LaunchScreen.storyboard */; };
+		E84FEA7E1E12023900A150F2 /* HoleTile.sks in Resources */ = {isa = PBXBuildFile; fileRef = E84FEA7D1E12023900A150F2 /* HoleTile.sks */; };
+		E8DFE03F1E0C24A000DA666A /* sample.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0301E0C24A000DA666A /* sample.mp3 */; };
+		E8DFE0401E0C24A000DA666A /* ambience.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0311E0C24A000DA666A /* ambience.mp3 */; };
+		E8DFE0411E0C24A000DA666A /* applause.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0321E0C24A000DA666A /* applause.mp3 */; };
+		E8DFE0421E0C24A000DA666A /* notch.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0331E0C24A000DA666A /* notch.wav */; };
+		E8DFE0431E0C24A000DA666A /* clubHit.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0341E0C24A000DA666A /* clubHit.wav */; };
+		E8DFE0441E0C24A000DA666A /* clubHit2.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0351E0C24A000DA666A /* clubHit2.wav */; };
+		E8DFE0451E0C24A000DA666A /* HoleMade.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0361E0C24A000DA666A /* HoleMade.wav */; };
+		E8DFE0461E0C24A000DA666A /* ballDrop.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0371E0C24A000DA666A /* ballDrop.wav */; };
+		E8DFE0471E0C24A000DA666A /* click.WAV in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0381E0C24A000DA666A /* click.WAV */; };
+		E8DFE0481E0C24A000DA666A /* click2.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0391E0C24A000DA666A /* click2.wav */; };
+		E8DFE0491E0C24A000DA666A /* click3.WAV in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE03A1E0C24A000DA666A /* click3.WAV */; };
+		E8DFE04A1E0C24A000DA666A /* click4.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE03B1E0C24A000DA666A /* click4.wav */; };
+		E8DFE04B1E0C24A000DA666A /* click5.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE03C1E0C24A000DA666A /* click5.wav */; };
+		E8DFE04C1E0C24A000DA666A /* close.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE03D1E0C24A000DA666A /* close.wav */; };
+		E8DFE04D1E0C24A000DA666A /* open.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE03E1E0C24A000DA666A /* open.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +97,14 @@
 		0D2BE46640F29779EC002A25 /* Pods-testGolf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGolf.release.xcconfig"; path = "Pods/Target Support Files/Pods-testGolf/Pods-testGolf.release.xcconfig"; sourceTree = "<group>"; };
 		7B8B9F42799F64010D73C350 /* Pods-testGolf-iMessageExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGolf-iMessageExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-testGolf-iMessageExtension/Pods-testGolf-iMessageExtension.release.xcconfig"; sourceTree = "<group>"; };
 		8B2FD2F81E03BF8000911A43 /* Putt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Putt.swift; sourceTree = "<group>"; };
+		8B31EB691E122C42007A0082 /* Hole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hole.swift; sourceTree = "<group>"; };
+		8B31EB6C1E122DB4007A0082 /* Ball.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Ball.sks; sourceTree = "<group>"; };
+		8B31EB6F1E1236B6007A0082 /* BallInHole.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BallInHole.sks; sourceTree = "<group>"; };
+		8B8B89441E1219E50011ECF2 /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
+		8B8B89471E121C840011ECF2 /* Wall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wall.swift; sourceTree = "<group>"; };
+		8B9470C61E0884A50085B124 /* PuttScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuttScene.swift; sourceTree = "<group>"; };
+		8BA5FE8C1E12E36200C8470B /* StraightWall.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StraightWall.sks; sourceTree = "<group>"; };
+		8BA5FE8F1E12E63400C8470B /* CurvedWallShort.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CurvedWallShort.sks; sourceTree = "<group>"; };
 		8BCF770A1E03CD0200D48A61 /* iMessageExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = iMessageExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BCF770B1E03CD0200D48A61 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		8BCF770E1E03CD0200D48A61 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
@@ -64,18 +114,39 @@
 		8BCF772A1E03CF5800D48A61 /* PuttSharedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PuttSharedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BCF772F1E03CF5800D48A61 /* PuttSharedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuttSharedTests.swift; sourceTree = "<group>"; };
 		8BCF77311E03CF5800D48A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BD4AA341E09C4EC0086A00E /* Hole1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hole1.sks; sourceTree = "<group>"; };
+		8BE6F1C11E132218000EE216 /* BallTrail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BallTrail.sks; sourceTree = "<group>"; };
+		8BE770AC1E143B840089FCF2 /* Mat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mat.swift; sourceTree = "<group>"; };
+		8BE770AE1E143D250089FCF2 /* Mat.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Mat.sks; sourceTree = "<group>"; };
 		8F233FA75BF56CABCE8E437B /* Pods-testGolf-iMessageExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGolf-iMessageExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testGolf-iMessageExtension/Pods-testGolf-iMessageExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		90256A5B1AAB50A8F1542411 /* Pods-testGolf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGolf.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testGolf/Pods-testGolf.debug.xcconfig"; sourceTree = "<group>"; };
 		AEB52F2E29C1E166CE4CAA27 /* Pods_testGolf_iMessageExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testGolf_iMessageExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2EF7A8331CE3D7270482DE0 /* Pods_testGolf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testGolf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E821BF3B1E11F56400CA8948 /* StraightTile.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StraightTile.sks; sourceTree = "<group>"; };
+		E821BF3D1E11F6D000CA8948 /* UTile.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = UTile.sks; sourceTree = "<group>"; };
 		E83E06951E039586005711E3 /* testGolf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testGolf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E83E06981E039586005711E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E83E069A1E039587005711E3 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		E83E069C1E039587005711E3 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		E83E069F1E039587005711E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E83E06A11E039587005711E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E83E06A41E039587005711E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E83E06A61E039587005711E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E84FEA7D1E12023900A150F2 /* HoleTile.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HoleTile.sks; sourceTree = "<group>"; };
+		E8DFE0301E0C24A000DA666A /* sample.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sample.mp3; sourceTree = "<group>"; };
+		E8DFE0311E0C24A000DA666A /* ambience.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ambience.mp3; sourceTree = "<group>"; };
+		E8DFE0321E0C24A000DA666A /* applause.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = applause.mp3; sourceTree = "<group>"; };
+		E8DFE0331E0C24A000DA666A /* notch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = notch.wav; sourceTree = "<group>"; };
+		E8DFE0341E0C24A000DA666A /* clubHit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = clubHit.wav; sourceTree = "<group>"; };
+		E8DFE0351E0C24A000DA666A /* clubHit2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = clubHit2.wav; sourceTree = "<group>"; };
+		E8DFE0361E0C24A000DA666A /* HoleMade.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HoleMade.wav; sourceTree = "<group>"; };
+		E8DFE0371E0C24A000DA666A /* ballDrop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ballDrop.wav; sourceTree = "<group>"; };
+		E8DFE0381E0C24A000DA666A /* click.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.WAV; sourceTree = "<group>"; };
+		E8DFE0391E0C24A000DA666A /* click2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click2.wav; sourceTree = "<group>"; };
+		E8DFE03A1E0C24A000DA666A /* click3.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click3.WAV; sourceTree = "<group>"; };
+		E8DFE03B1E0C24A000DA666A /* click4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click4.wav; sourceTree = "<group>"; };
+		E8DFE03C1E0C24A000DA666A /* click5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click5.wav; sourceTree = "<group>"; };
+		E8DFE03D1E0C24A000DA666A /* close.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = close.wav; sourceTree = "<group>"; };
+		E8DFE03E1E0C24A000DA666A /* open.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = open.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +187,44 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8B31EB6B1E122C99007A0082 /* Game Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				8B8B89441E1219E50011ECF2 /* Ball.swift */,
+				8B8B89471E121C840011ECF2 /* Wall.swift */,
+				8B31EB691E122C42007A0082 /* Hole.swift */,
+				8BE770AC1E143B840089FCF2 /* Mat.swift */,
+			);
+			name = "Game Nodes";
+			sourceTree = "<group>";
+		};
+		8B9D37C51E121F5E00CEA296 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8B31EB6C1E122DB4007A0082 /* Ball.sks */,
+				8BE770AE1E143D250089FCF2 /* Mat.sks */,
+				8BEBEC1B1E123AC3004CDE4C /* Tiles */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		8BA5FE8E1E12E37400C8470B /* Primatives */ = {
+			isa = PBXGroup;
+			children = (
+				8BA5FE911E12E6D900C8470B /* Walls */,
+			);
+			name = Primatives;
+			sourceTree = "<group>";
+		};
+		8BA5FE911E12E6D900C8470B /* Walls */ = {
+			isa = PBXGroup;
+			children = (
+				8BA5FE8C1E12E36200C8470B /* StraightWall.sks */,
+				8BA5FE8F1E12E63400C8470B /* CurvedWallShort.sks */,
+			);
+			name = Walls;
+			sourceTree = "<group>";
+		};
 		8BCF770D1E03CD0200D48A61 /* iMessageExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +243,41 @@
 				8BCF77311E03CF5800D48A61 /* Info.plist */,
 			);
 			path = PuttSharedTests;
+			sourceTree = "<group>";
+		};
+		8BE6F1C41E13221E000EE216 /* Emitters */ = {
+			isa = PBXGroup;
+			children = (
+				8BE6F1C11E132218000EE216 /* BallTrail.sks */,
+			);
+			name = Emitters;
+			sourceTree = "<group>";
+		};
+		8BEBEC191E123AA0004CDE4C /* SKActions */ = {
+			isa = PBXGroup;
+			children = (
+				8B31EB6F1E1236B6007A0082 /* BallInHole.sks */,
+			);
+			name = SKActions;
+			sourceTree = "<group>";
+		};
+		8BEBEC1A1E123AA9004CDE4C /* Holes */ = {
+			isa = PBXGroup;
+			children = (
+				8BD4AA341E09C4EC0086A00E /* Hole1.sks */,
+			);
+			name = Holes;
+			sourceTree = "<group>";
+		};
+		8BEBEC1B1E123AC3004CDE4C /* Tiles */ = {
+			isa = PBXGroup;
+			children = (
+				E84FEA7D1E12023900A150F2 /* HoleTile.sks */,
+				E821BF3B1E11F56400CA8948 /* StraightTile.sks */,
+				E821BF3D1E11F6D000CA8948 /* UTile.sks */,
+				8BA5FE8E1E12E37400C8470B /* Primatives */,
+			);
+			name = Tiles;
 			sourceTree = "<group>";
 		};
 		B91A53434767D68885EB7AAD /* Pods */ = {
@@ -173,15 +317,44 @@
 			isa = PBXGroup;
 			children = (
 				E83E06981E039586005711E3 /* AppDelegate.swift */,
-				E83E069A1E039587005711E3 /* art.scnassets */,
 				8B2FD2F81E03BF8000911A43 /* Putt.swift */,
 				E83E069C1E039587005711E3 /* GameViewController.swift */,
+				8B9470C61E0884A50085B124 /* PuttScene.swift */,
+				8B31EB6B1E122C99007A0082 /* Game Nodes */,
+				8BEBEC1A1E123AA9004CDE4C /* Holes */,
+				8BE6F1C41E13221E000EE216 /* Emitters */,
+				8BEBEC191E123AA0004CDE4C /* SKActions */,
+				8B9D37C51E121F5E00CEA296 /* Components */,
 				E83E069E1E039587005711E3 /* Main.storyboard */,
 				E83E06A11E039587005711E3 /* Assets.xcassets */,
+				E8DFE02F1E0C248F00DA666A /* Music */,
 				E83E06A31E039587005711E3 /* LaunchScreen.storyboard */,
 				E83E06A61E039587005711E3 /* Info.plist */,
 			);
 			path = testGolf;
+			sourceTree = "<group>";
+		};
+		E8DFE02F1E0C248F00DA666A /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				E8DFE0301E0C24A000DA666A /* sample.mp3 */,
+				E8DFE0311E0C24A000DA666A /* ambience.mp3 */,
+				E8DFE0321E0C24A000DA666A /* applause.mp3 */,
+				E8DFE0331E0C24A000DA666A /* notch.wav */,
+				E8DFE0341E0C24A000DA666A /* clubHit.wav */,
+				E8DFE0351E0C24A000DA666A /* clubHit2.wav */,
+				E8DFE0361E0C24A000DA666A /* HoleMade.wav */,
+				E8DFE0371E0C24A000DA666A /* ballDrop.wav */,
+				E8DFE0381E0C24A000DA666A /* click.WAV */,
+				E8DFE0391E0C24A000DA666A /* click2.wav */,
+				E8DFE03A1E0C24A000DA666A /* click3.WAV */,
+				E8DFE03B1E0C24A000DA666A /* click4.wav */,
+				E8DFE03C1E0C24A000DA666A /* click5.wav */,
+				E8DFE03D1E0C24A000DA666A /* close.wav */,
+				E8DFE03E1E0C24A000DA666A /* open.wav */,
+			);
+			name = Music;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,7 +425,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = CodeWithKenny;
 				TargetAttributes = {
 					8BCF77091E03CD0200D48A61 = {
@@ -262,7 +435,7 @@
 					};
 					8BCF77291E03CF5800D48A61 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 349WFX4WJR;
+						DevelopmentTeam = M4TN2QX7K6;
 						ProvisioningStyle = Automatic;
 					};
 					E83E06941E039586005711E3 = {
@@ -298,8 +471,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BCF77141E03CD0200D48A61 /* Assets.xcassets in Resources */,
-				8BCF773A1E03D06F00D48A61 /* art.scnassets in Resources */,
+				8BA5FE931E12E7D700C8470B /* CurvedWallShort.sks in Resources */,
 				8BCF77121E03CD0200D48A61 /* MainInterface.storyboard in Resources */,
+				8B66A7201E12394F0078FE32 /* Hole1.sks in Resources */,
+				8BE6F1C31E132218000EE216 /* BallTrail.sks in Resources */,
+				8B66A7251E12394F0078FE32 /* UTile.sks in Resources */,
+				8B66A7241E12394F0078FE32 /* StraightTile.sks in Resources */,
+				8B66A7231E12394F0078FE32 /* HoleTile.sks in Resources */,
+				8B66A7221E12394F0078FE32 /* Ball.sks in Resources */,
+				8B66A7211E12394F0078FE32 /* BallInHole.sks in Resources */,
+				8BA5FE921E12E7D700C8470B /* StraightWall.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,10 +495,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E83E069B1E039587005711E3 /* art.scnassets in Resources */,
+				E821BF3C1E11F56400CA8948 /* StraightTile.sks in Resources */,
+				E8DFE0421E0C24A000DA666A /* notch.wav in Resources */,
 				E83E06A51E039587005711E3 /* LaunchScreen.storyboard in Resources */,
+				E8DFE0461E0C24A000DA666A /* ballDrop.wav in Resources */,
+				E8DFE0401E0C24A000DA666A /* ambience.mp3 in Resources */,
+				E8DFE0451E0C24A000DA666A /* HoleMade.wav in Resources */,
+				E8DFE0471E0C24A000DA666A /* click.WAV in Resources */,
+				E821BF3E1E11F6D000CA8948 /* UTile.sks in Resources */,
+				8BE770AF1E143D250089FCF2 /* Mat.sks in Resources */,
+				E8DFE0441E0C24A000DA666A /* clubHit2.wav in Resources */,
+				E8DFE03F1E0C24A000DA666A /* sample.mp3 in Resources */,
+				E8DFE0481E0C24A000DA666A /* click2.wav in Resources */,
+				E8DFE04D1E0C24A000DA666A /* open.wav in Resources */,
+				E8DFE04C1E0C24A000DA666A /* close.wav in Resources */,
+				8BA5FE901E12E63400C8470B /* CurvedWallShort.sks in Resources */,
 				E83E06A21E039587005711E3 /* Assets.xcassets in Resources */,
+				E8DFE0431E0C24A000DA666A /* clubHit.wav in Resources */,
+				8B31EB701E1236B6007A0082 /* BallInHole.sks in Resources */,
+				E8DFE0411E0C24A000DA666A /* applause.mp3 in Resources */,
+				E84FEA7E1E12023900A150F2 /* HoleTile.sks in Resources */,
 				E83E06A01E039587005711E3 /* Main.storyboard in Resources */,
+				8BA5FE8D1E12E36200C8470B /* StraightWall.sks in Resources */,
+				8BE6F1C21E132218000EE216 /* BallTrail.sks in Resources */,
+				E8DFE04A1E0C24A000DA666A /* click4.wav in Resources */,
+				E8DFE04B1E0C24A000DA666A /* click5.wav in Resources */,
+				8BD4AA351E09C4EC0086A00E /* Hole1.sks in Resources */,
+				E8DFE0491E0C24A000DA666A /* click3.WAV in Resources */,
+				8B31EB6D1E122DB4007A0082 /* Ball.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,8 +611,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BCF77391E03CFB700D48A61 /* GameViewController.swift in Sources */,
-				8BCF773B1E03D6D300D48A61 /* Putt.swift in Sources */,
+				8B66A71D1E12394F0078FE32 /* Ball.swift in Sources */,
+				8B66A71F1E12394F0078FE32 /* Hole.swift in Sources */,
+				8B66A71B1E12394F0078FE32 /* Putt.swift in Sources */,
+				8B66A71E1E12394F0078FE32 /* Wall.swift in Sources */,
+				8B66A7261E12394F0078FE32 /* PuttScene.swift in Sources */,
+				8B66A71C1E12394F0078FE32 /* GameViewController.swift in Sources */,
+				8BE770B01E14522E0089FCF2 /* Mat.swift in Sources */,
 				8BCF770F1E03CD0200D48A61 /* MessagesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,8 +634,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B31EB6A1E122C42007A0082 /* Hole.swift in Sources */,
 				8B2FD2F91E03BF8000911A43 /* Putt.swift in Sources */,
+				8B8B89481E121C840011ECF2 /* Wall.swift in Sources */,
+				8B9470C71E0884A50085B124 /* PuttScene.swift in Sources */,
+				8B8B89451E1219E50011ECF2 /* Ball.swift in Sources */,
 				E83E069D1E039587005711E3 /* GameViewController.swift in Sources */,
+				8BE770AD1E143B840089FCF2 /* Mat.swift in Sources */,
 				E83E06991E039586005711E3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,7 +721,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				DEVELOPMENT_TEAM = 349WFX4WJR;
+				DEVELOPMENT_TEAM = M4TN2QX7K6;
 				INFOPLIST_FILE = PuttSharedTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -520,7 +735,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				DEVELOPMENT_TEAM = 349WFX4WJR;
+				DEVELOPMENT_TEAM = M4TN2QX7K6;
 				INFOPLIST_FILE = PuttSharedTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -548,6 +763,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -597,6 +813,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -670,6 +887,7 @@
 				8BCF77361E03CF5800D48A61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E83E06901E039586005711E3 /* Build configuration list for PBXProject "testGolf" */ = {
 			isa = XCConfigurationList;

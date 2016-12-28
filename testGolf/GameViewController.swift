@@ -6,10 +6,12 @@
 //  Copyright © 2016 CodeWithKenny. All rights reserved.
 //
 
-import UIKit
+import AVFoundation
 import QuartzCore
-import SceneKit
+import SpriteKit
+import UIKit
 
+<<<<<<< HEAD
 import JWSwiftTools
 
 class GameViewController: UIViewController {
@@ -54,47 +56,26 @@ class GameViewController: UIViewController {
         // create a new scene
         let scene = SCNScene(named: "art.scnassets/course\(firstHole).scn")!
         sceneView.scene = scene
-
-        // create and add a camera to the scene
-        let cameraNode = SCNNode()
-        cameraNode.camera = SCNCamera()
-        sceneView.scene!.rootNode.addChildNode(cameraNode)
-        
-        // place the camera
-        cameraNode.position = SCNVector3(x: 0, y: 0, z: 15)
-        
-        // create and add a light to the scene
-        let lightNode = SCNNode()
-        lightNode.light = SCNLight()
-        lightNode.light!.type = .omni
-        lightNode.position = SCNVector3(x: 0, y: 10, z: 10)
-        sceneView.scene!.rootNode.addChildNode(lightNode)
-        
-        // create and add an ambient light to the scene
-        let ambientLightNode = SCNNode()
-        ambientLightNode.light = SCNLight()
-        ambientLightNode.light!.type = .ambient
-        ambientLightNode.light!.color = UIColor.darkGray
-        sceneView.scene!.rootNode.addChildNode(ambientLightNode)
-        
-        // retrieve the ship node
-        let ship = scene.rootNode.childNode(withName: "ship", recursively: true)!
-        
-        let ball = scene.rootNode.childNode(withName: "sphere", recursively: true)!
-        
-        let light1 = scene.rootNode.childNode(withName: "light1", recursively: true)!
-        
-        let box1 = scene.rootNode.childNode(withName: "box1", recursively: true)!
-        
-        let rotateBox = SCNAction.rotateBy(x: 20, y: 0, z: 0, duration: 3.0)
-        
-        box1.runAction(rotateBox)
-        
-        ball.physicsBody?.applyForce(SCNVector3(0,1,2), asImpulse: true)
-        
-        // animate the 3d object
-        ship.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 1)))
+=======
+public extension CGPoint {
+    public func angle(toPoint point: CGPoint) -> CGFloat {
+        let origin = CGPoint(x: point.x - self.x, y: point.y - self.y)
+        let radians = CGFloat(atan2f(Float(origin.y), Float(origin.x)))
+        let corrected = radians < 0 ? radians + 2 * .pi : radians
+        return corrected
     }
+    
+    public func distance(toPoint point: CGPoint) -> CGFloat {
+        return sqrt( pow(self.x-point.x, 2) + pow(self.y - point.y, 2) )
+    }
+}
+>>>>>>> spritekit
+
+public extension CGVector {
+    public var magnitude: CGFloat {
+        return sqrt( dx*dx + dy*dy )
+    }
+<<<<<<< HEAD
     
     func started() {
         
@@ -149,13 +130,31 @@ class GameViewController: UIViewController {
     
     override var prefersStatusBarHidden: Bool {
         return true
+=======
+}
+
+enum Category: UInt32 {
+    case none = 0
+    case ball = 1
+    case wall = 2
+    case hole = 4
+}
+
+class GameViewController: UIViewController {
+
+    var sceneView: SKView {
+        return view as! SKView
+>>>>>>> spritekit
     }
     
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
-        } else {
-            return .all
-        }
+    var scene: SKScene!
+        
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let sceneName = "Hole1"
+        scene = PuttScene(fileNamed: sceneName)!
+        
+        sceneView.presentScene(scene)
     }
 }
