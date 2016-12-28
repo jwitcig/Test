@@ -40,47 +40,35 @@ enum Category: UInt32 {
 }
 
 class GameViewController: UIViewController {
-    
-    var sceneView: SCNView {
-        return view as! SCNView
+
+    var sceneView: SKView {
+        return view as! SKView
     }
     
-    var game: Putt!
+    var opponentSession: PuttSession?
     
+    var scene: PuttScene!
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // allows the user to manipulate the camera
-        sceneView.allowsCameraControl = true
-        
-        // show statistics such as fps and timing information
-        sceneView.showsStatistics = true
-        
-        // configure the view
-        sceneView.backgroundColor = UIColor.black
-        
-        // add a tap gesture recognizer
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
-        sceneView.addGestureRecognizer(tapGesture)
+        let sceneName = "Hole1"
+        scene = PuttScene(fileNamed: sceneName)!
+        sceneView.presentScene(scene)
     }
     
     func configureScene(previousSession: PuttSession?) {
         // setup any visuals with data specific to the previous session; if nil, start fresh
+    
+        let number = previousSession?.initial.holeNumber ?? 1
+        scene = SKScene(fileNamed: "Hole\(number)")! as! PuttScene
         
-        if let session = previousSession {
-            
-        } else {
-            
-        }
-        
-        let initial = previousSession?.initial ?? PuttInitialData.random()
-        let firstHole = initial.holeSet[0]
-        
-        game = Putt(previousSession: previousSession, initial: initial, padding: nil, cycle: SessionCycle(started: started, finished: finished, generateSession: gatherSessionData))
-        
-        // create a new scene
-        let scene = SCNScene(named: "art.scnassets/course\(firstHole).scn")!
-        sceneView.scene = scene
+        let cycle = SessionCycle(started: started, finished: finished, generateSession: generateSession)
+
+        scene.game = Putt(previousSession: previousSession, initial: previousSession?.initial, padding: nil, cycle: cycle)
+    }
+    
+    // MARK: Game Cycle
     
     func started() {
         
@@ -90,67 +78,10 @@ class GameViewController: UIViewController {
         
     }
     
-    func gatherSessionData() -> PuttSession {
-        return PuttSession(dictionary: [:])!
+    func generateSession() -> PuttSession {
+        let instance = PuttInstanceData(shots: [], opponentShots: nil, winner: nil)
+        let initial = PuttInitialData(holeNumber: 1, holeSet: [])
+        return PuttSession(instance: instance, initial: initial, ended: false, messageSession: opponentSession?.messageSession)
     }
-    
-    func handleTap(_ gestureRecognize: UIGestureRecognizer) {
-        // retrieve the SCNView
-        let scnView = self.view as! SCNView
-        
-        // check what nodes are tapped
-        let p = gestureRecognize.location(in: scnView)
-        let hitResults = scnView.hitTest(p, options: [:])
-        // check that we clicked on at least one object
-        if hitResults.count > 0 {
-            // retrieved the first clicked object
-            let result: AnyObject = hitResults[0]
-            
-            // get its material
-            let material = result.node!.geometry!.firstMaterial!
-            
-            // highlight it
-            SCNTransaction.begin()
-            SCNTransaction.animationDuration = 0.5
-            
-            // on completion - unhighlight
-            SCNTransaction.completionBlock = {
-                SCNTransaction.begin()
-                SCNTransaction.animationDuration = 0.5
-                
-                material.emission.contents = UIColor.black
-                
-                SCNTransaction.commit()
-            }
-            
-            material.emission.contents = UIColor.red
-            
-            SCNTransaction.commit()
-        }
-    }
-    
-    override var shouldAutorotate: Bool {
-        return true
-    }
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
-}
 
-class GameViewController: UIViewController {
-
-    var sceneView: SKView {
-        return view as! SKView
-    }
-    
-    var scene: SKScene!
-        
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let sceneName = "Hole1"
-        scene = PuttScene(fileNamed: sceneName)!
-        
-        sceneView.presentScene(scene)
-    }
 }
