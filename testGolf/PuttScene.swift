@@ -45,37 +45,7 @@ class PuttScene: SKScene {
         startBackgroundAnimations()
         
         ball.updateTrailEmitter()
-    }
-    
-    func configureScene(previousSession: PuttSession?) {
-        // setup any visuals with data specific to the previous session; if nil, start fresh
-        self.opponentsSession = previousSession
-        if let _ = previousSession {
-            
-        } else {
-            
-        }
-        
-        let initial = previousSession?.initial ?? PuttInitialData.random()
-        let _ = initial.holeSet[0]
-        
-        let cycle = SessionCycle(started: started, finished: finished, generateSession: generateSession)
-        game = Putt(previousSession: previousSession, initial: initial, padding: nil, cycle: cycle)
-    }
-    
-    func started() {
-        
-    }
-    
-    func finished(session: PuttSession) {
-        
-    }
-    
-    func generateSession() -> PuttSession {
-        let instance = PuttInstanceData(shots: [], opponentShots: nil, winner: nil)
-        let initial = PuttInitialData(holeNumber: 1, holeSet: [])
-        return PuttSession(instance: instance, initial: initial, ended: false, messageSession: opponentsSession?.messageSession)
-    }
+    }    
     
     // MARK: Animations
     

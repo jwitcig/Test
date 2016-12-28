@@ -52,7 +52,6 @@ class MessagesViewController: MSMessagesAppViewController {
         controller.configureScene(previousSession: reader?.session)
         return controller
     }
-    
 }
 
 extension MessagesViewController: iMessageCycle {
