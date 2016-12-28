@@ -24,6 +24,12 @@ public extension CGPoint {
     }
 }
 
+public extension CGVector {
+    public var magnitude: CGFloat {
+        return sqrt( dx*dx + dy*dy )
+    }
+}
+
 enum Category: UInt32 {
     case none = 0
     case ball = 1
@@ -46,18 +52,5 @@ class GameViewController: UIViewController {
         scene = PuttScene(fileNamed: sceneName)!
         
         sceneView.presentScene(scene)
-    }
-    
-    func configureScene(previousSession: PuttSession?) {
-        // setup any visuals with data specific to the previous session; if nil, start fresh
-        
-        if let _ = previousSession {
-            
-        } else {
-            
-        }
-        
-        let initial = previousSession?.initial ?? PuttInitialData.random()
-        let _ = initial.holeSet[0]
     }
 }

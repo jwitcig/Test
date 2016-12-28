@@ -9,6 +9,7 @@
 import AVFoundation
 import SpriteKit
 
+import Game
 import JWSwiftTools
 
 class PuttScene: SKScene {
@@ -17,15 +18,15 @@ class PuttScene: SKScene {
         return self.childNode(withName: "//\(Ball.name)")! as! Ball
     }()
     
-    lazy var powerSlider: SKNode = {
-        return self.childNode(withName: "powerSlider")!
-    }()
-    
     lazy var mat: SKNode = {
         return self.childNode(withName: "//\(Mat.name)")! as! Mat
     }()
     
+    var game: Putt!
+    
     var holeComplete = false
+    
+    var opponentsSession: PuttSession?
     
     // MARK: Scene Lifecycle
     
@@ -46,6 +47,36 @@ class PuttScene: SKScene {
         ball.updateTrailEmitter()
     }
     
+    func configureScene(previousSession: PuttSession?) {
+        // setup any visuals with data specific to the previous session; if nil, start fresh
+        self.opponentsSession = previousSession
+        if let _ = previousSession {
+            
+        } else {
+            
+        }
+        
+        let initial = previousSession?.initial ?? PuttInitialData.random()
+        let _ = initial.holeSet[0]
+        
+        let cycle = SessionCycle(started: started, finished: finished, generateSession: generateSession)
+        game = Putt(previousSession: previousSession, initial: initial, padding: nil, cycle: cycle)
+    }
+    
+    func started() {
+        
+    }
+    
+    func finished(session: PuttSession) {
+        
+    }
+    
+    func generateSession() -> PuttSession {
+        let instance = PuttInstanceData(shots: [], opponentShots: nil, winner: nil)
+        let initial = PuttInitialData(holeNumber: 1, holeSet: [])
+        return PuttSession(instance: instance, initial: initial, ended: false, messageSession: opponentsSession?.messageSession)
+    }
+    
     // MARK: Animations
     
     func startBackgroundAnimations() {
@@ -60,17 +91,19 @@ class PuttScene: SKScene {
 
     // MARK: Touch Handling
 
+    var adjustingShot = false
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for _ in touches {
             
-            if ball.physicsBody?.velocity == .zero {
-                if powerSlider.parent == nil {
-                    // if powerSlider isn't in the scene, add it
-                    addChild(powerSlider)
+            if let ballBody = ball.physicsBody {
+                if ballBody.velocity.magnitude < CGFloat(1) {
+                    ballBody.velocity = .zero
+                    if ball.shotIndicator.parent == nil {
+                        // if shotIndicator isn't in the scene, add it
+                        ball.addChild(ball.shotIndicator)
+                    }
+                    adjustingShot = true
                 }
-                
-                // move power slider to ball's position
-                powerSlider.position = ball.parent!.convert(ball.position, to: powerSlider.parent!)
             }
         }
     }
@@ -79,10 +112,12 @@ class PuttScene: SKScene {
         for touch in touches {
             let touchLocation = touch.location(in: self)
             
+            guard adjustingShot else { return }
+            
             let ballPosition = ball.parent!.convert(ball.position, to: self)
             
             // rotate slider to the angle of your touch
-            powerSlider.zRotation = ballPosition.angle(toPoint: touchLocation) - .pi / 2
+            ball.shotIndicator.zRotation = ballPosition.angle(toPoint: touchLocation) - .pi / 2
         }
     }
     
@@ -92,8 +127,9 @@ class PuttScene: SKScene {
             let ballPosition = ball.parent!.convert(ball.position, to: self)
 
             let power = ballPosition.distance(toPoint: touchLocation)
-            let angle = powerSlider.zRotation + .pi / 2
+            let angle = ball.shotIndicator.zRotation + .pi / 2
             
+            adjustingShot = false
             takeShot(at: angle, with: power)
         }
     }
@@ -106,7 +142,7 @@ class PuttScene: SKScene {
         
         ball.physicsBody?.applyImpulse(stroke)
         run(sound)
-        powerSlider.removeFromParent()
+        ball.shotIndicator.removeFromParent()
     }
     
     // MARK: Game Loop

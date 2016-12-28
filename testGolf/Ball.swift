@@ -12,6 +12,10 @@ import UIKit
 class Ball: SKSpriteNode {
     static let fileName = "Ball"
     static let name = "ball"
+    
+    lazy var shotIndicator: SKSpriteNode = {
+        return self.childNode(withName: "shotIndicator")! as! SKSpriteNode
+    }()
  
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
