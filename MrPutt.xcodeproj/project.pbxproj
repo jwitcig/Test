@@ -31,12 +31,28 @@
 		8BA5FE901E12E63400C8470B /* CurvedWallShort.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BA5FE8F1E12E63400C8470B /* CurvedWallShort.sks */; };
 		8BA5FE921E12E7D700C8470B /* StraightWall.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BA5FE8C1E12E36200C8470B /* StraightWall.sks */; };
 		8BA5FE931E12E7D700C8470B /* CurvedWallShort.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BA5FE8F1E12E63400C8470B /* CurvedWallShort.sks */; };
+		8BB312751E147A7700967DA4 /* Mat.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BE770AE1E143D250089FCF2 /* Mat.sks */; };
+		8BB312761E147A9C00967DA4 /* sample.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0301E0C24A000DA666A /* sample.mp3 */; };
+		8BB312771E147A9C00967DA4 /* ambience.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0311E0C24A000DA666A /* ambience.mp3 */; };
+		8BB312781E147A9C00967DA4 /* applause.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0321E0C24A000DA666A /* applause.mp3 */; };
+		8BB312791E147A9C00967DA4 /* notch.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0331E0C24A000DA666A /* notch.wav */; };
+		8BB3127A1E147A9C00967DA4 /* clubHit.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0341E0C24A000DA666A /* clubHit.wav */; };
+		8BB3127B1E147A9C00967DA4 /* clubHit2.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0351E0C24A000DA666A /* clubHit2.wav */; };
+		8BB3127C1E147A9C00967DA4 /* HoleMade.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0361E0C24A000DA666A /* HoleMade.wav */; };
+		8BB3127D1E147A9C00967DA4 /* ballDrop.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0371E0C24A000DA666A /* ballDrop.wav */; };
+		8BB3127E1E147A9C00967DA4 /* click.WAV in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0381E0C24A000DA666A /* click.WAV */; };
+		8BB3127F1E147A9C00967DA4 /* click2.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0391E0C24A000DA666A /* click2.wav */; };
+		8BB312801E147A9C00967DA4 /* click3.WAV in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE03A1E0C24A000DA666A /* click3.WAV */; };
+		8BB312811E147A9C00967DA4 /* click4.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE03B1E0C24A000DA666A /* click4.wav */; };
+		8BB312821E147A9C00967DA4 /* click5.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE03C1E0C24A000DA666A /* click5.wav */; };
+		8BB312831E147A9C00967DA4 /* close.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE03D1E0C24A000DA666A /* close.wav */; };
+		8BB312841E147A9C00967DA4 /* open.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE03E1E0C24A000DA666A /* open.wav */; };
+		8BB312851E147A9F00967DA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E83E06A11E039587005711E3 /* Assets.xcassets */; };
 		8BCF770C1E03CD0200D48A61 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BCF770B1E03CD0200D48A61 /* Messages.framework */; };
 		8BCF770F1E03CD0200D48A61 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCF770E1E03CD0200D48A61 /* MessagesViewController.swift */; };
 		8BCF77121E03CD0200D48A61 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BCF77101E03CD0200D48A61 /* MainInterface.storyboard */; };
 		8BCF77141E03CD0200D48A61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BCF77131E03CD0200D48A61 /* Assets.xcassets */; };
 		8BCF77181E03CD0200D48A61 /* iMessageExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8BCF770A1E03CD0200D48A61 /* iMessageExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		8BCF77301E03CF5800D48A61 /* PuttSharedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCF772F1E03CF5800D48A61 /* PuttSharedTests.swift */; };
 		8BD4AA351E09C4EC0086A00E /* Hole1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BD4AA341E09C4EC0086A00E /* Hole1.sks */; };
 		8BE6F1C21E132218000EE216 /* BallTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BE6F1C11E132218000EE216 /* BallTrail.sks */; };
 		8BE6F1C31E132218000EE216 /* BallTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BE6F1C11E132218000EE216 /* BallTrail.sks */; };
@@ -96,13 +112,13 @@
 /* Begin PBXFileReference section */
 		0D2BE46640F29779EC002A25 /* Pods-testGolf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGolf.release.xcconfig"; path = "Pods/Target Support Files/Pods-testGolf/Pods-testGolf.release.xcconfig"; sourceTree = "<group>"; };
 		7B8B9F42799F64010D73C350 /* Pods-testGolf-iMessageExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGolf-iMessageExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-testGolf-iMessageExtension/Pods-testGolf-iMessageExtension.release.xcconfig"; sourceTree = "<group>"; };
-		8B2FD2F81E03BF8000911A43 /* Putt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Putt.swift; sourceTree = "<group>"; };
+		8B2FD2F81E03BF8000911A43 /* Putt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Putt.swift; path = testGolf/Putt.swift; sourceTree = "<group>"; };
 		8B31EB691E122C42007A0082 /* Hole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hole.swift; sourceTree = "<group>"; };
 		8B31EB6C1E122DB4007A0082 /* Ball.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Ball.sks; sourceTree = "<group>"; };
 		8B31EB6F1E1236B6007A0082 /* BallInHole.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BallInHole.sks; sourceTree = "<group>"; };
 		8B8B89441E1219E50011ECF2 /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 		8B8B89471E121C840011ECF2 /* Wall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wall.swift; sourceTree = "<group>"; };
-		8B9470C61E0884A50085B124 /* PuttScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuttScene.swift; sourceTree = "<group>"; };
+		8B9470C61E0884A50085B124 /* PuttScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PuttScene.swift; path = testGolf/PuttScene.swift; sourceTree = "<group>"; };
 		8BA5FE8C1E12E36200C8470B /* StraightWall.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StraightWall.sks; sourceTree = "<group>"; };
 		8BA5FE8F1E12E63400C8470B /* CurvedWallShort.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CurvedWallShort.sks; sourceTree = "<group>"; };
 		8BCF770A1E03CD0200D48A61 /* iMessageExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = iMessageExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,9 +127,6 @@
 		8BCF77111E03CD0200D48A61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		8BCF77131E03CD0200D48A61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8BCF77151E03CD0200D48A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8BCF772A1E03CF5800D48A61 /* PuttSharedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PuttSharedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8BCF772F1E03CF5800D48A61 /* PuttSharedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuttSharedTests.swift; sourceTree = "<group>"; };
-		8BCF77311E03CF5800D48A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BD4AA341E09C4EC0086A00E /* Hole1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hole1.sks; sourceTree = "<group>"; };
 		8BE6F1C11E132218000EE216 /* BallTrail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BallTrail.sks; sourceTree = "<group>"; };
 		8BE770AC1E143B840089FCF2 /* Mat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mat.swift; sourceTree = "<group>"; };
@@ -124,11 +137,11 @@
 		C2EF7A8331CE3D7270482DE0 /* Pods_testGolf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testGolf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E821BF3B1E11F56400CA8948 /* StraightTile.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StraightTile.sks; sourceTree = "<group>"; };
 		E821BF3D1E11F6D000CA8948 /* UTile.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = UTile.sks; sourceTree = "<group>"; };
-		E83E06951E039586005711E3 /* testGolf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testGolf.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E83E06951E039586005711E3 /* MrPutt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MrPutt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E83E06981E039586005711E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E83E069C1E039587005711E3 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		E83E069C1E039587005711E3 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = testGolf/GameViewController.swift; sourceTree = "<group>"; };
 		E83E069F1E039587005711E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E83E06A11E039587005711E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E83E06A11E039587005711E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = testGolf/Assets.xcassets; sourceTree = "<group>"; };
 		E83E06A41E039587005711E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E83E06A61E039587005711E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E84FEA7D1E12023900A150F2 /* HoleTile.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HoleTile.sks; sourceTree = "<group>"; };
@@ -156,13 +169,6 @@
 			files = (
 				8BCF770C1E03CD0200D48A61 /* Messages.framework in Frameworks */,
 				5447B46EE4D3632629279E65 /* Pods_testGolf_iMessageExtension.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8BCF77271E03CF5800D48A61 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +202,7 @@
 				8BE770AC1E143B840089FCF2 /* Mat.swift */,
 			);
 			name = "Game Nodes";
+			path = testGolf;
 			sourceTree = "<group>";
 		};
 		8B9D37C51E121F5E00CEA296 /* Components */ = {
@@ -206,6 +213,7 @@
 				8BEBEC1B1E123AC3004CDE4C /* Tiles */,
 			);
 			name = Components;
+			path = testGolf;
 			sourceTree = "<group>";
 		};
 		8BA5FE8E1E12E37400C8470B /* Primatives */ = {
@@ -225,6 +233,23 @@
 			name = Walls;
 			sourceTree = "<group>";
 		};
+		8BB312741E147A4900967DA4 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				8B2FD2F81E03BF8000911A43 /* Putt.swift */,
+				E83E069C1E039587005711E3 /* GameViewController.swift */,
+				8B9470C61E0884A50085B124 /* PuttScene.swift */,
+				8B31EB6B1E122C99007A0082 /* Game Nodes */,
+				8BEBEC1A1E123AA9004CDE4C /* Holes */,
+				8BE6F1C41E13221E000EE216 /* Emitters */,
+				8BEBEC191E123AA0004CDE4C /* SKActions */,
+				8B9D37C51E121F5E00CEA296 /* Components */,
+				E83E06A11E039587005711E3 /* Assets.xcassets */,
+				E8DFE02F1E0C248F00DA666A /* Music */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
 		8BCF770D1E03CD0200D48A61 /* iMessageExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,21 +261,13 @@
 			path = iMessageExtension;
 			sourceTree = "<group>";
 		};
-		8BCF772E1E03CF5800D48A61 /* PuttSharedTests */ = {
-			isa = PBXGroup;
-			children = (
-				8BCF772F1E03CF5800D48A61 /* PuttSharedTests.swift */,
-				8BCF77311E03CF5800D48A61 /* Info.plist */,
-			);
-			path = PuttSharedTests;
-			sourceTree = "<group>";
-		};
 		8BE6F1C41E13221E000EE216 /* Emitters */ = {
 			isa = PBXGroup;
 			children = (
 				8BE6F1C11E132218000EE216 /* BallTrail.sks */,
 			);
 			name = Emitters;
+			path = testGolf;
 			sourceTree = "<group>";
 		};
 		8BEBEC191E123AA0004CDE4C /* SKActions */ = {
@@ -259,6 +276,7 @@
 				8B31EB6F1E1236B6007A0082 /* BallInHole.sks */,
 			);
 			name = SKActions;
+			path = testGolf;
 			sourceTree = "<group>";
 		};
 		8BEBEC1A1E123AA9004CDE4C /* Holes */ = {
@@ -267,6 +285,7 @@
 				8BD4AA341E09C4EC0086A00E /* Hole1.sks */,
 			);
 			name = Holes;
+			path = testGolf;
 			sourceTree = "<group>";
 		};
 		8BEBEC1B1E123AC3004CDE4C /* Tiles */ = {
@@ -294,9 +313,9 @@
 		E83E068C1E039586005711E3 = {
 			isa = PBXGroup;
 			children = (
-				E83E06971E039586005711E3 /* testGolf */,
+				8BB312741E147A4900967DA4 /* Shared */,
+				E83E06971E039586005711E3 /* MrPutt */,
 				8BCF770D1E03CD0200D48A61 /* iMessageExtension */,
-				8BCF772E1E03CF5800D48A61 /* PuttSharedTests */,
 				E83E06961E039586005711E3 /* Products */,
 				B91A53434767D68885EB7AAD /* Pods */,
 				6716DDD00F3A4E0F3459183A /* Frameworks */,
@@ -306,31 +325,21 @@
 		E83E06961E039586005711E3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E83E06951E039586005711E3 /* testGolf.app */,
+				E83E06951E039586005711E3 /* MrPutt.app */,
 				8BCF770A1E03CD0200D48A61 /* iMessageExtension.appex */,
-				8BCF772A1E03CF5800D48A61 /* PuttSharedTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E83E06971E039586005711E3 /* testGolf */ = {
+		E83E06971E039586005711E3 /* MrPutt */ = {
 			isa = PBXGroup;
 			children = (
 				E83E06981E039586005711E3 /* AppDelegate.swift */,
-				8B2FD2F81E03BF8000911A43 /* Putt.swift */,
-				E83E069C1E039587005711E3 /* GameViewController.swift */,
-				8B9470C61E0884A50085B124 /* PuttScene.swift */,
-				8B31EB6B1E122C99007A0082 /* Game Nodes */,
-				8BEBEC1A1E123AA9004CDE4C /* Holes */,
-				8BE6F1C41E13221E000EE216 /* Emitters */,
-				8BEBEC191E123AA0004CDE4C /* SKActions */,
-				8B9D37C51E121F5E00CEA296 /* Components */,
 				E83E069E1E039587005711E3 /* Main.storyboard */,
-				E83E06A11E039587005711E3 /* Assets.xcassets */,
-				E8DFE02F1E0C248F00DA666A /* Music */,
 				E83E06A31E039587005711E3 /* LaunchScreen.storyboard */,
 				E83E06A61E039587005711E3 /* Info.plist */,
 			);
+			name = MrPutt;
 			path = testGolf;
 			sourceTree = "<group>";
 		};
@@ -354,7 +363,6 @@
 				E8DFE03E1E0C24A000DA666A /* open.wav */,
 			);
 			name = Music;
-			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,26 +387,9 @@
 			productReference = 8BCF770A1E03CD0200D48A61 /* iMessageExtension.appex */;
 			productType = "com.apple.product-type.app-extension.messages";
 		};
-		8BCF77291E03CF5800D48A61 /* PuttSharedTests */ = {
+		E83E06941E039586005711E3 /* MrPutt */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8BCF77381E03CF5800D48A61 /* Build configuration list for PBXNativeTarget "PuttSharedTests" */;
-			buildPhases = (
-				8BCF77261E03CF5800D48A61 /* Sources */,
-				8BCF77271E03CF5800D48A61 /* Frameworks */,
-				8BCF77281E03CF5800D48A61 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = PuttSharedTests;
-			productName = PuttSharedTests;
-			productReference = 8BCF772A1E03CF5800D48A61 /* PuttSharedTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		E83E06941E039586005711E3 /* testGolf */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E83E06A91E039587005711E3 /* Build configuration list for PBXNativeTarget "testGolf" */;
+			buildConfigurationList = E83E06A91E039587005711E3 /* Build configuration list for PBXNativeTarget "MrPutt" */;
 			buildPhases = (
 				3252CCBAA94D259D89FDFF79 /* [CP] Check Pods Manifest.lock */,
 				E83E06911E039586005711E3 /* Sources */,
@@ -413,9 +404,9 @@
 			dependencies = (
 				8BCF77171E03CD0200D48A61 /* PBXTargetDependency */,
 			);
-			name = testGolf;
+			name = MrPutt;
 			productName = testGolf;
-			productReference = E83E06951E039586005711E3 /* testGolf.app */;
+			productReference = E83E06951E039586005711E3 /* MrPutt.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -433,11 +424,6 @@
 						DevelopmentTeam = 349WFX4WJR;
 						ProvisioningStyle = Automatic;
 					};
-					8BCF77291E03CF5800D48A61 = {
-						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = M4TN2QX7K6;
-						ProvisioningStyle = Automatic;
-					};
 					E83E06941E039586005711E3 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 349WFX4WJR;
@@ -445,7 +431,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E83E06901E039586005711E3 /* Build configuration list for PBXProject "testGolf" */;
+			buildConfigurationList = E83E06901E039586005711E3 /* Build configuration list for PBXProject "MrPutt" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -458,9 +444,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E83E06941E039586005711E3 /* testGolf */,
+				E83E06941E039586005711E3 /* MrPutt */,
 				8BCF77091E03CD0200D48A61 /* iMessageExtension */,
-				8BCF77291E03CF5800D48A61 /* PuttSharedTests */,
 			);
 		};
 /* End PBXProject section */
@@ -470,24 +455,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BB312751E147A7700967DA4 /* Mat.sks in Resources */,
+				8BB3127B1E147A9C00967DA4 /* clubHit2.wav in Resources */,
+				8BB312791E147A9C00967DA4 /* notch.wav in Resources */,
 				8BCF77141E03CD0200D48A61 /* Assets.xcassets in Resources */,
 				8BA5FE931E12E7D700C8470B /* CurvedWallShort.sks in Resources */,
 				8BCF77121E03CD0200D48A61 /* MainInterface.storyboard in Resources */,
 				8B66A7201E12394F0078FE32 /* Hole1.sks in Resources */,
+				8BB312831E147A9C00967DA4 /* close.wav in Resources */,
 				8BE6F1C31E132218000EE216 /* BallTrail.sks in Resources */,
 				8B66A7251E12394F0078FE32 /* UTile.sks in Resources */,
+				8BB312821E147A9C00967DA4 /* click5.wav in Resources */,
+				8BB3127A1E147A9C00967DA4 /* clubHit.wav in Resources */,
+				8BB312781E147A9C00967DA4 /* applause.mp3 in Resources */,
+				8BB312801E147A9C00967DA4 /* click3.WAV in Resources */,
+				8BB312761E147A9C00967DA4 /* sample.mp3 in Resources */,
+				8BB3127E1E147A9C00967DA4 /* click.WAV in Resources */,
+				8BB312771E147A9C00967DA4 /* ambience.mp3 in Resources */,
+				8BB3127F1E147A9C00967DA4 /* click2.wav in Resources */,
+				8BB312851E147A9F00967DA4 /* Assets.xcassets in Resources */,
+				8BB312811E147A9C00967DA4 /* click4.wav in Resources */,
 				8B66A7241E12394F0078FE32 /* StraightTile.sks in Resources */,
 				8B66A7231E12394F0078FE32 /* HoleTile.sks in Resources */,
 				8B66A7221E12394F0078FE32 /* Ball.sks in Resources */,
+				8BB3127D1E147A9C00967DA4 /* ballDrop.wav in Resources */,
 				8B66A7211E12394F0078FE32 /* BallInHole.sks in Resources */,
+				8BB312841E147A9C00967DA4 /* open.wav in Resources */,
 				8BA5FE921E12E7D700C8470B /* StraightWall.sks in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8BCF77281E03CF5800D48A61 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				8BB3127C1E147A9C00967DA4 /* HoleMade.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,14 +617,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8BCF77261E03CF5800D48A61 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8BCF77301E03CF5800D48A61 /* PuttSharedTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E83E06911E039586005711E3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -713,34 +700,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Kenny.testGolf.iMessageExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		8BCF77351E03CF5800D48A61 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				DEVELOPMENT_TEAM = M4TN2QX7K6;
-				INFOPLIST_FILE = PuttSharedTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jwitapps.PuttSharedTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		8BCF77361E03CF5800D48A61 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				DEVELOPMENT_TEAM = M4TN2QX7K6;
-				INFOPLIST_FILE = PuttSharedTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jwitapps.PuttSharedTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -880,16 +839,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8BCF77381E03CF5800D48A61 /* Build configuration list for PBXNativeTarget "PuttSharedTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8BCF77351E03CF5800D48A61 /* Debug */,
-				8BCF77361E03CF5800D48A61 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E83E06901E039586005711E3 /* Build configuration list for PBXProject "testGolf" */ = {
+		E83E06901E039586005711E3 /* Build configuration list for PBXProject "MrPutt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E83E06A71E039587005711E3 /* Debug */,
@@ -898,7 +848,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E83E06A91E039587005711E3 /* Build configuration list for PBXNativeTarget "testGolf" */ = {
+		E83E06A91E039587005711E3 /* Build configuration list for PBXNativeTarget "MrPutt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E83E06AA1E039587005711E3 /* Debug */,
