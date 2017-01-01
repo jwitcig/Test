@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1B30DC35C25F768DE6DA506C /* Pods_MrPutt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F495C1ADA843DFFC65FCFC3C /* Pods_MrPutt.framework */; };
-		5447B46EE4D3632629279E65 /* Pods_testGolf_iMessageExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB52F2E29C1E166CE4CAA27 /* Pods_testGolf_iMessageExtension.framework */; };
 		8111B4F2A1B580F730B18283 /* Pods_MrPutt_iMessageExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EC3BB72C39C396407F4004 /* Pods_MrPutt_iMessageExtension.framework */; };
 		8B2FD2F91E03BF8000911A43 /* Putt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2FD2F81E03BF8000911A43 /* Putt.swift */; };
 		8B31EB6A1E122C42007A0082 /* Hole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B31EB691E122C42007A0082 /* Hole.swift */; };
@@ -61,7 +60,6 @@
 		8BE770AD1E143B840089FCF2 /* Mat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE770AC1E143B840089FCF2 /* Mat.swift */; };
 		8BE770AF1E143D250089FCF2 /* Mat.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BE770AE1E143D250089FCF2 /* Mat.sks */; };
 		8BE770B01E14522E0089FCF2 /* Mat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE770AC1E143B840089FCF2 /* Mat.swift */; };
-		B32C8B88C8475AD690D372BC /* Pods_testGolf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EF7A8331CE3D7270482DE0 /* Pods_testGolf.framework */; };
 		E821BF3C1E11F56400CA8948 /* StraightTile.sks in Resources */ = {isa = PBXBuildFile; fileRef = E821BF3B1E11F56400CA8948 /* StraightTile.sks */; };
 		E821BF3E1E11F6D000CA8948 /* UTile.sks in Resources */ = {isa = PBXBuildFile; fileRef = E821BF3D1E11F6D000CA8948 /* UTile.sks */; };
 		E83E06991E039586005711E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83E06981E039586005711E3 /* AppDelegate.swift */; };
@@ -176,7 +174,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BCF770C1E03CD0200D48A61 /* Messages.framework in Frameworks */,
-				5447B46EE4D3632629279E65 /* Pods_testGolf_iMessageExtension.framework in Frameworks */,
 				8111B4F2A1B580F730B18283 /* Pods_MrPutt_iMessageExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,7 +182,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B32C8B88C8475AD690D372BC /* Pods_testGolf.framework in Frameworks */,
 				1B30DC35C25F768DE6DA506C /* Pods_MrPutt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
