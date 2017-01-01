@@ -1,7 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'testGolf' do
+target 'MrPutt' do
 
   target 'iMessageExtension' do
     use_frameworks!
