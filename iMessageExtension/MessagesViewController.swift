@@ -9,7 +9,7 @@
 import Messages
 import UIKit
 
-import iMessageTools
+//import iMessageTools
 
 class MessagesViewController: MSMessagesAppViewController {
     fileprivate var gameController: UIViewController?
@@ -24,7 +24,7 @@ class MessagesViewController: MSMessagesAppViewController {
     
     override func willBecomeActive(with conversation: MSConversation) {
         if let message = conversation.selectedMessage {
-            handleStarterEvent(message: message, conversation: conversation)
+//            handleStarterEvent(message: message, conversation: conversation)
         } else {
             gameController = createGameController(fromReader: nil)
 //            present(gameController!)
@@ -57,27 +57,27 @@ class MessagesViewController: MSMessagesAppViewController {
     }
 }
 
-extension MessagesViewController: iMessageCycle {
-    func handleStarterEvent(message: MSMessage, conversation: MSConversation) {
-        if let controller = gameController {
-            throwAway(controller: controller)
-        }
-        
-        guard !MSMessage.isFromCurrentDevice(message: message, conversation: conversation) else {
-            showWaitingForOpponent()
-            return
-        }
-        
-        guard let reader = PuttMessageReader(message: message) else {
-            return
-        }
-        
-        isAwaitingResponse = false
-        
-        gameController = createGameController(fromReader: reader)
-        present(gameController!)
-    }
-    
-}
-
-extension MessagesViewController: MessageSender { }
+//extension MessagesViewController: iMessageCycle {
+//    func handleStarterEvent(message: MSMessage, conversation: MSConversation) {
+//        if let controller = gameController {
+//            throwAway(controller: controller)
+//        }
+//        
+//        guard !MSMessage.isFromCurrentDevice(message: message, conversation: conversation) else {
+//            showWaitingForOpponent()
+//            return
+//        }
+//        
+//        guard let reader = PuttMessageReader(message: message) else {
+//            return
+//        }
+//        
+//        isAwaitingResponse = false
+//        
+//        gameController = createGameController(fromReader: reader)
+//        present(gameController!)
+//    }
+//    
+//}
+//
+//extension MessagesViewController: MessageSender { }
