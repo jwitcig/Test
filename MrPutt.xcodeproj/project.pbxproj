@@ -17,8 +17,6 @@
 		8B4AE2311E19A62E0057D65C /* WindField.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B4AE22F1E19A62E0057D65C /* WindField.sks */; };
 		8B4AE2331E19A7AE0057D65C /* HoleSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4AE2321E19A7AE0057D65C /* HoleSetup.swift */; };
 		8B4AE2341E19A7AE0057D65C /* HoleSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4AE2321E19A7AE0057D65C /* HoleSetup.swift */; };
-		8B4AE2361E19B31C0057D65C /* CourseSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B4AE2351E19B31C0057D65C /* CourseSelectionView.xib */; };
-		8B4AE2371E19B31C0057D65C /* CourseSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B4AE2351E19B31C0057D65C /* CourseSelectionView.xib */; };
 		8B4AE2391E19B35A0057D65C /* CoursePreviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B4AE2381E19B35A0057D65C /* CoursePreviewView.xib */; };
 		8B4AE23A1E19B35A0057D65C /* CoursePreviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B4AE2381E19B35A0057D65C /* CoursePreviewView.xib */; };
 		8B4AE23D1E19B5250057D65C /* CoursePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4AE23C1E19B5250057D65C /* CoursePreviewView.swift */; };
@@ -42,6 +40,7 @@
 		8BA5FE901E12E63400C8470B /* CurvedWallShort.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BA5FE8F1E12E63400C8470B /* CurvedWallShort.sks */; };
 		8BA5FE921E12E7D700C8470B /* StraightWall.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BA5FE8C1E12E36200C8470B /* StraightWall.sks */; };
 		8BA5FE931E12E7D700C8470B /* CurvedWallShort.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BA5FE8F1E12E63400C8470B /* CurvedWallShort.sks */; };
+		8BAC6B151E1A0CB400B8886B /* CourseSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAC6B131E1A0CB400B8886B /* CourseSelectionViewController.swift */; };
 		8BB312751E147A7700967DA4 /* Mat.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BE770AE1E143D250089FCF2 /* Mat.sks */; };
 		8BB312761E147A9C00967DA4 /* sample.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0301E0C24A000DA666A /* sample.mp3 */; };
 		8BB312771E147A9C00967DA4 /* ambience.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0311E0C24A000DA666A /* ambience.mp3 */; };
@@ -65,6 +64,8 @@
 		8BCF77141E03CD0200D48A61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BCF77131E03CD0200D48A61 /* Assets.xcassets */; };
 		8BCF77181E03CD0200D48A61 /* iMessageExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8BCF770A1E03CD0200D48A61 /* iMessageExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8BD4AA351E09C4EC0086A00E /* Hole1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BD4AA341E09C4EC0086A00E /* Hole1.sks */; };
+		8BDC6D2F1E1A0FF90038D10B /* Neutra2Display-Titling.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BDC6D2E1E1A0FF90038D10B /* Neutra2Display-Titling.otf */; };
+		8BDC6D301E1A10000038D10B /* Neutra2Display-Titling.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BDC6D2E1E1A0FF90038D10B /* Neutra2Display-Titling.otf */; };
 		8BE6F1C21E132218000EE216 /* BallTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BE6F1C11E132218000EE216 /* BallTrail.sks */; };
 		8BE6F1C31E132218000EE216 /* BallTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BE6F1C11E132218000EE216 /* BallTrail.sks */; };
 		8BE770AD1E143B840089FCF2 /* Mat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE770AC1E143B840089FCF2 /* Mat.swift */; };
@@ -130,7 +131,6 @@
 		8B31EB6F1E1236B6007A0082 /* BallInHole.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BallInHole.sks; sourceTree = "<group>"; };
 		8B4AE22F1E19A62E0057D65C /* WindField.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = WindField.sks; sourceTree = "<group>"; };
 		8B4AE2321E19A7AE0057D65C /* HoleSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoleSetup.swift; sourceTree = "<group>"; };
-		8B4AE2351E19B31C0057D65C /* CourseSelectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CourseSelectionView.xib; sourceTree = "<group>"; };
 		8B4AE2381E19B35A0057D65C /* CoursePreviewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoursePreviewView.xib; sourceTree = "<group>"; };
 		8B4AE23C1E19B5250057D65C /* CoursePreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursePreviewView.swift; sourceTree = "<group>"; };
 		8B8B89441E1219E50011ECF2 /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
@@ -138,6 +138,7 @@
 		8B9470C61E0884A50085B124 /* PuttScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PuttScene.swift; path = testGolf/PuttScene.swift; sourceTree = "<group>"; };
 		8BA5FE8C1E12E36200C8470B /* StraightWall.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StraightWall.sks; sourceTree = "<group>"; };
 		8BA5FE8F1E12E63400C8470B /* CurvedWallShort.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CurvedWallShort.sks; sourceTree = "<group>"; };
+		8BAC6B131E1A0CB400B8886B /* CourseSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CourseSelectionViewController.swift; path = ../CourseSelectionViewController.swift; sourceTree = "<group>"; };
 		8BCF770A1E03CD0200D48A61 /* iMessageExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = iMessageExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BCF770B1E03CD0200D48A61 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		8BCF770E1E03CD0200D48A61 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +146,7 @@
 		8BCF77131E03CD0200D48A61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8BCF77151E03CD0200D48A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BD4AA341E09C4EC0086A00E /* Hole1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hole1.sks; sourceTree = "<group>"; };
+		8BDC6D2E1E1A0FF90038D10B /* Neutra2Display-Titling.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Neutra2Display-Titling.otf"; path = "../../../Desktop/Neutra2Display-Titling.otf"; sourceTree = "<group>"; };
 		8BE6F1C11E132218000EE216 /* BallTrail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BallTrail.sks; sourceTree = "<group>"; };
 		8BE770AC1E143B840089FCF2 /* Mat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mat.swift; sourceTree = "<group>"; };
 		8BE770AE1E143D250089FCF2 /* Mat.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Mat.sks; sourceTree = "<group>"; };
@@ -233,7 +235,6 @@
 			children = (
 				8B4AE2381E19B35A0057D65C /* CoursePreviewView.xib */,
 				8B4AE23C1E19B5250057D65C /* CoursePreviewView.swift */,
-				8B4AE2351E19B31C0057D65C /* CourseSelectionView.xib */,
 			);
 			name = "Course Menu";
 			sourceTree = "<group>";
@@ -290,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				8BCF770E1E03CD0200D48A61 /* MessagesViewController.swift */,
+				8BAC6B131E1A0CB400B8886B /* CourseSelectionViewController.swift */,
 				8BCF77101E03CD0200D48A61 /* MainInterface.storyboard */,
 				8BCF77131E03CD0200D48A61 /* Assets.xcassets */,
 				8BCF77151E03CD0200D48A61 /* Info.plist */,
@@ -353,6 +355,7 @@
 		E83E068C1E039586005711E3 = {
 			isa = PBXGroup;
 			children = (
+				8BDC6D2E1E1A0FF90038D10B /* Neutra2Display-Titling.otf */,
 				8BB312741E147A4900967DA4 /* Shared */,
 				E83E06971E039586005711E3 /* MrPutt */,
 				8BCF770D1E03CD0200D48A61 /* iMessageExtension */,
@@ -511,6 +514,7 @@
 				8BB3127A1E147A9C00967DA4 /* clubHit.wav in Resources */,
 				8BB312781E147A9C00967DA4 /* applause.mp3 in Resources */,
 				8BB312801E147A9C00967DA4 /* click3.WAV in Resources */,
+				8BDC6D301E1A10000038D10B /* Neutra2Display-Titling.otf in Resources */,
 				8BB312761E147A9C00967DA4 /* sample.mp3 in Resources */,
 				8BB3127E1E147A9C00967DA4 /* click.WAV in Resources */,
 				8BB312771E147A9C00967DA4 /* ambience.mp3 in Resources */,
@@ -524,7 +528,6 @@
 				8B66A7211E12394F0078FE32 /* BallInHole.sks in Resources */,
 				8BB312841E147A9C00967DA4 /* open.wav in Resources */,
 				8BA5FE921E12E7D700C8470B /* StraightWall.sks in Resources */,
-				8B4AE2371E19B31C0057D65C /* CourseSelectionView.xib in Resources */,
 				8BB3127C1E147A9C00967DA4 /* HoleMade.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -549,6 +552,7 @@
 				E8DFE0481E0C24A000DA666A /* click2.wav in Resources */,
 				E8DFE04D1E0C24A000DA666A /* open.wav in Resources */,
 				E8DFE04C1E0C24A000DA666A /* close.wav in Resources */,
+				8BDC6D2F1E1A0FF90038D10B /* Neutra2Display-Titling.otf in Resources */,
 				8BA5FE901E12E63400C8470B /* CurvedWallShort.sks in Resources */,
 				E83E06A21E039587005711E3 /* Assets.xcassets in Resources */,
 				E8DFE0431E0C24A000DA666A /* clubHit.wav in Resources */,
@@ -562,7 +566,6 @@
 				E8DFE04B1E0C24A000DA666A /* click5.wav in Resources */,
 				8BD4AA351E09C4EC0086A00E /* Hole1.sks in Resources */,
 				E8DFE0491E0C24A000DA666A /* click3.WAV in Resources */,
-				8B4AE2361E19B31C0057D65C /* CourseSelectionView.xib in Resources */,
 				8B31EB6D1E122DB4007A0082 /* Ball.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -656,6 +659,7 @@
 				8B66A71F1E12394F0078FE32 /* Hole.swift in Sources */,
 				8B66A71B1E12394F0078FE32 /* Putt.swift in Sources */,
 				8B66A71E1E12394F0078FE32 /* Wall.swift in Sources */,
+				8BAC6B151E1A0CB400B8886B /* CourseSelectionViewController.swift in Sources */,
 				8B66A7261E12394F0078FE32 /* PuttScene.swift in Sources */,
 				8B4AE2341E19A7AE0057D65C /* HoleSetup.swift in Sources */,
 				8B4AE23E1E19B5250057D65C /* CoursePreviewView.swift in Sources */,

@@ -95,7 +95,7 @@ class PuttScene: SKScene {
     }
 
     // MARK: Touch Handling
-/*
+
     var adjustingShot = false
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for _ in touches {
@@ -141,7 +141,6 @@ class PuttScene: SKScene {
             takeShot(at: angle, with: power)
         }
     }
-*/
  
     func takeShot(at angle: CGFloat, with power: CGFloat) {
         let stroke = CGVector(dx: cos(angle) * power,
