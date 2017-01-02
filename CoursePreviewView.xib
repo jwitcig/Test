@@ -68,6 +68,7 @@
                 <outlet property="courseHoleCountLabel" destination="cCn-iy-wMZ" id="vbx-g6-Plp"/>
                 <outlet property="courseNameLabel" destination="C1d-o0-AlT" id="6Rr-Nd-YPq"/>
                 <outlet property="imageView" destination="9cO-Ky-ARf" id="9g3-hL-Dnx"/>
+                <outlet property="playButton" destination="8aJ-85-SsF" id="sNb-ab-UBc"/>
             </connections>
             <point key="canvasLocation" x="23" y="46"/>
         </view>

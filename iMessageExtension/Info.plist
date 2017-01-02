@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>iMessageExtension</string>
+	<string>Dr. Putt</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -22,6 +22,7 @@
 	<string>1</string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Bebas.ttf</string>
 		<string>Neutra2Display-Titling.otf</string>
 	</array>
 	<key>NSExtension</key>

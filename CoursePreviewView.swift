@@ -12,6 +12,10 @@ class CoursePreviewView: UIView {
     @IBOutlet weak private var imageView: UIImageView!
     @IBOutlet weak private var courseNameLabel: UILabel!
     @IBOutlet weak private var courseHoleCountLabel: UILabel!
+
+    @IBOutlet weak private var playButton: UIButton!
+    
+    var playPressedBlock: ()->Void = { }
     
     var courseName: String {
         get { return courseNameLabel.text ?? "" }
@@ -31,8 +35,8 @@ class CoursePreviewView: UIView {
     var fontShadowColor: UIColor? {
         get { return nil }
         set {
-//            courseNameLabel.shadowColor = newValue
-//            courseHoleCountLabel.shadowColor = newValue
+            courseNameLabel.shadowColor = newValue
+            courseHoleCountLabel.shadowColor = newValue
         }
     }
     
@@ -44,6 +48,14 @@ class CoursePreviewView: UIView {
     }
     
     static func create() -> CoursePreviewView {
-        return Bundle(for: CoursePreviewView.self).loadNibNamed("CoursePreviewView", owner: nil, options: nil)!.first! as! CoursePreviewView
+        let bundle = Bundle(for: CoursePreviewView.self)
+        let preview = bundle.loadNibNamed("CoursePreviewView", owner: nil, options: nil)!.first! as! CoursePreviewView
+        
+        preview.playButton.setImage(#imageLiteral(resourceName: "PlayButton"), for: [.selected, .highlighted])
+        return preview
+    }
+    
+    @IBAction func playPressed(sender: Any) {
+        playPressedBlock()
     }
 }
