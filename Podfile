@@ -10,6 +10,8 @@ target 'MrPutt' do
     pod 'iMessageTools'
     pod 'Game'
 
+    pod 'Cartography'
+
   end
 
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -20,5 +22,7 @@ target 'MrPutt' do
   pod 'JWSwiftTools'
   pod 'iMessageTools'
   pod 'Game'
+
+  pod 'Cartography'
 
 end

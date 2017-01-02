@@ -27,7 +27,10 @@ class MessagesViewController: MSMessagesAppViewController {
             handleStarterEvent(message: message, conversation: conversation)
         } else {
             gameController = createGameController(fromReader: nil)
-            present(gameController!)
+//            present(gameController!)
+
+            let controller = storyboard!.instantiateViewController(withIdentifier: "CourseSelectionViewController") as! CourseSelectionViewController
+            present(controller)
         }
     }
     

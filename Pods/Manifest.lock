@@ -1,4 +1,5 @@
 PODS:
+  - Cartography (1.0.1)
   - Game (1.0.6):
     - JWSwiftTools
   - iMessageTools (1.0.4):
@@ -6,15 +7,17 @@ PODS:
   - JWSwiftTools (1.1.14)
 
 DEPENDENCIES:
+  - Cartography
   - Game
   - iMessageTools
   - JWSwiftTools
 
 SPEC CHECKSUMS:
+  Cartography: c1460e99395b824d9d75360b0382faeb0b33dcd7
   Game: 7d15ab85264fa1791af1d15a66c85a3b2b882dd7
   iMessageTools: f180b9f986835371d3f1d82b287ab5c9222e3de7
   JWSwiftTools: c07152e274af4fbb834b350fc54ab52369a41f80
 
-PODFILE CHECKSUM: c5731efac54c6a68ca8cdab88df3d8687a0fa896
+PODFILE CHECKSUM: 7b97445131b5bf4e0e016ee6dbb01b2e70e49651
 
 COCOAPODS: 1.1.1

@@ -41,6 +41,53 @@
             </objects>
             <point key="canvasLocation" x="141" y="123"/>
         </scene>
+        <!--Course Selection View Controller-->
+        <scene sceneID="NKJ-24-ga2">
+            <objects>
+                <viewController storyboardIdentifier="CourseSelectionViewController" id="O4D-eS-uHU" customClass="CourseSelectionViewController" customModule="iMessageExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BDj-cZ-dTz"/>
+                        <viewControllerLayoutGuide type="bottom" id="0K5-cI-TmE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tns-IW-MKR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4f-mG-lVD">
+                                <rect key="frame" x="0.0" y="20" width="320" height="180"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z0D-6H-47O">
+                                        <rect key="frame" x="8" y="8" width="304" height="164"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Z0D-6H-47O" firstAttribute="leading" secondItem="E4f-mG-lVD" secondAttribute="leading" id="IMp-YM-j6w"/>
+                                    <constraint firstAttribute="trailing" secondItem="Z0D-6H-47O" secondAttribute="trailing" id="Kpn-bt-i75"/>
+                                    <constraint firstItem="Z0D-6H-47O" firstAttribute="width" secondItem="E4f-mG-lVD" secondAttribute="width" id="bKQ-9U-efD"/>
+                                    <constraint firstAttribute="bottom" secondItem="Z0D-6H-47O" secondAttribute="bottom" id="scB-Sg-112"/>
+                                    <constraint firstItem="Z0D-6H-47O" firstAttribute="top" secondItem="E4f-mG-lVD" secondAttribute="top" id="shb-Hk-b4k"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0K5-cI-TmE" firstAttribute="top" secondItem="E4f-mG-lVD" secondAttribute="bottom" id="SlA-g2-PuP"/>
+                            <constraint firstItem="E4f-mG-lVD" firstAttribute="top" secondItem="BDj-cZ-dTz" secondAttribute="bottom" id="T9J-0B-OkN"/>
+                            <constraint firstAttribute="trailing" secondItem="E4f-mG-lVD" secondAttribute="trailing" id="a2f-g7-i7j"/>
+                            <constraint firstItem="E4f-mG-lVD" firstAttribute="leading" secondItem="tns-IW-MKR" secondAttribute="leading" id="bhR-1p-Cd3"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="200"/>
+                    <connections>
+                        <outlet property="contentView" destination="Z0D-6H-47O" id="Br2-6O-YjT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R4D-Qt-uQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="760" y="122.33883058470765"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="kyg-yI-4Cw">
             <objects>
@@ -49,7 +96,7 @@
                         <viewControllerLayoutGuide type="top" id="X6R-ns-XRe"/>
                         <viewControllerLayoutGuide type="bottom" id="bap-np-1i0"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="n7X-At-Lev" customClass="SCNView">
+                    <view key="view" contentMode="scaleToFill" id="n7X-At-Lev" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -57,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T0h-BU-xcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="841" y="124"/>
+            <point key="canvasLocation" x="1434" y="123"/>
         </scene>
     </scenes>
 </document>
