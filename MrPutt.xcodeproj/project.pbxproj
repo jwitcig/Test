@@ -13,6 +13,16 @@
 		8B31EB6A1E122C42007A0082 /* Hole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B31EB691E122C42007A0082 /* Hole.swift */; };
 		8B31EB6D1E122DB4007A0082 /* Ball.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B31EB6C1E122DB4007A0082 /* Ball.sks */; };
 		8B31EB701E1236B6007A0082 /* BallInHole.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B31EB6F1E1236B6007A0082 /* BallInHole.sks */; };
+		8B4AE2301E19A62E0057D65C /* WindField.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B4AE22F1E19A62E0057D65C /* WindField.sks */; };
+		8B4AE2311E19A62E0057D65C /* WindField.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B4AE22F1E19A62E0057D65C /* WindField.sks */; };
+		8B4AE2331E19A7AE0057D65C /* HoleSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4AE2321E19A7AE0057D65C /* HoleSetup.swift */; };
+		8B4AE2341E19A7AE0057D65C /* HoleSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4AE2321E19A7AE0057D65C /* HoleSetup.swift */; };
+		8B4AE2361E19B31C0057D65C /* CourseSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B4AE2351E19B31C0057D65C /* CourseSelectionView.xib */; };
+		8B4AE2371E19B31C0057D65C /* CourseSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B4AE2351E19B31C0057D65C /* CourseSelectionView.xib */; };
+		8B4AE2391E19B35A0057D65C /* CoursePreviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B4AE2381E19B35A0057D65C /* CoursePreviewView.xib */; };
+		8B4AE23A1E19B35A0057D65C /* CoursePreviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B4AE2381E19B35A0057D65C /* CoursePreviewView.xib */; };
+		8B4AE23D1E19B5250057D65C /* CoursePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4AE23C1E19B5250057D65C /* CoursePreviewView.swift */; };
+		8B4AE23E1E19B5250057D65C /* CoursePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4AE23C1E19B5250057D65C /* CoursePreviewView.swift */; };
 		8B66A71B1E12394F0078FE32 /* Putt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2FD2F81E03BF8000911A43 /* Putt.swift */; };
 		8B66A71C1E12394F0078FE32 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83E069C1E039587005711E3 /* GameViewController.swift */; };
 		8B66A71D1E12394F0078FE32 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8B89441E1219E50011ECF2 /* Ball.swift */; };
@@ -118,6 +128,11 @@
 		8B31EB691E122C42007A0082 /* Hole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hole.swift; sourceTree = "<group>"; };
 		8B31EB6C1E122DB4007A0082 /* Ball.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Ball.sks; sourceTree = "<group>"; };
 		8B31EB6F1E1236B6007A0082 /* BallInHole.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BallInHole.sks; sourceTree = "<group>"; };
+		8B4AE22F1E19A62E0057D65C /* WindField.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = WindField.sks; sourceTree = "<group>"; };
+		8B4AE2321E19A7AE0057D65C /* HoleSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoleSetup.swift; sourceTree = "<group>"; };
+		8B4AE2351E19B31C0057D65C /* CourseSelectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CourseSelectionView.xib; sourceTree = "<group>"; };
+		8B4AE2381E19B35A0057D65C /* CoursePreviewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoursePreviewView.xib; sourceTree = "<group>"; };
+		8B4AE23C1E19B5250057D65C /* CoursePreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursePreviewView.swift; sourceTree = "<group>"; };
 		8B8B89441E1219E50011ECF2 /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 		8B8B89471E121C840011ECF2 /* Wall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wall.swift; sourceTree = "<group>"; };
 		8B9470C61E0884A50085B124 /* PuttScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PuttScene.swift; path = testGolf/PuttScene.swift; sourceTree = "<group>"; };
@@ -213,11 +228,23 @@
 			path = testGolf;
 			sourceTree = "<group>";
 		};
+		8B4AE23B1E19B4FC0057D65C /* Course Menu */ = {
+			isa = PBXGroup;
+			children = (
+				8B4AE2381E19B35A0057D65C /* CoursePreviewView.xib */,
+				8B4AE23C1E19B5250057D65C /* CoursePreviewView.swift */,
+				8B4AE2351E19B31C0057D65C /* CourseSelectionView.xib */,
+			);
+			name = "Course Menu";
+			sourceTree = "<group>";
+		};
 		8B9D37C51E121F5E00CEA296 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				8B31EB6C1E122DB4007A0082 /* Ball.sks */,
+				8B4AE22F1E19A62E0057D65C /* WindField.sks */,
 				8BE770AE1E143D250089FCF2 /* Mat.sks */,
+				E84FEA7D1E12023900A150F2 /* HoleTile.sks */,
 				8BEBEC1B1E123AC3004CDE4C /* Tiles */,
 			);
 			name = Components;
@@ -247,6 +274,7 @@
 				8B2FD2F81E03BF8000911A43 /* Putt.swift */,
 				E83E069C1E039587005711E3 /* GameViewController.swift */,
 				8B9470C61E0884A50085B124 /* PuttScene.swift */,
+				8B4AE23B1E19B4FC0057D65C /* Course Menu */,
 				8B31EB6B1E122C99007A0082 /* Game Nodes */,
 				8BEBEC1A1E123AA9004CDE4C /* Holes */,
 				8BE6F1C41E13221E000EE216 /* Emitters */,
@@ -290,6 +318,7 @@
 		8BEBEC1A1E123AA9004CDE4C /* Holes */ = {
 			isa = PBXGroup;
 			children = (
+				8B4AE2321E19A7AE0057D65C /* HoleSetup.swift */,
 				8BD4AA341E09C4EC0086A00E /* Hole1.sks */,
 			);
 			name = Holes;
@@ -299,7 +328,6 @@
 		8BEBEC1B1E123AC3004CDE4C /* Tiles */ = {
 			isa = PBXGroup;
 			children = (
-				E84FEA7D1E12023900A150F2 /* HoleTile.sks */,
 				E821BF3B1E11F56400CA8948 /* StraightTile.sks */,
 				E821BF3D1E11F6D000CA8948 /* UTile.sks */,
 				8BA5FE8E1E12E37400C8470B /* Primatives */,
@@ -471,6 +499,8 @@
 				8BB3127B1E147A9C00967DA4 /* clubHit2.wav in Resources */,
 				8BB312791E147A9C00967DA4 /* notch.wav in Resources */,
 				8BCF77141E03CD0200D48A61 /* Assets.xcassets in Resources */,
+				8B4AE2311E19A62E0057D65C /* WindField.sks in Resources */,
+				8B4AE23A1E19B35A0057D65C /* CoursePreviewView.xib in Resources */,
 				8BA5FE931E12E7D700C8470B /* CurvedWallShort.sks in Resources */,
 				8BCF77121E03CD0200D48A61 /* MainInterface.storyboard in Resources */,
 				8B66A7201E12394F0078FE32 /* Hole1.sks in Resources */,
@@ -494,6 +524,7 @@
 				8B66A7211E12394F0078FE32 /* BallInHole.sks in Resources */,
 				8BB312841E147A9C00967DA4 /* open.wav in Resources */,
 				8BA5FE921E12E7D700C8470B /* StraightWall.sks in Resources */,
+				8B4AE2371E19B31C0057D65C /* CourseSelectionView.xib in Resources */,
 				8BB3127C1E147A9C00967DA4 /* HoleMade.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,6 +537,8 @@
 				E8DFE0421E0C24A000DA666A /* notch.wav in Resources */,
 				E83E06A51E039587005711E3 /* LaunchScreen.storyboard in Resources */,
 				E8DFE0461E0C24A000DA666A /* ballDrop.wav in Resources */,
+				8B4AE2301E19A62E0057D65C /* WindField.sks in Resources */,
+				8B4AE2391E19B35A0057D65C /* CoursePreviewView.xib in Resources */,
 				E8DFE0401E0C24A000DA666A /* ambience.mp3 in Resources */,
 				E8DFE0451E0C24A000DA666A /* HoleMade.wav in Resources */,
 				E8DFE0471E0C24A000DA666A /* click.WAV in Resources */,
@@ -529,6 +562,7 @@
 				E8DFE04B1E0C24A000DA666A /* click5.wav in Resources */,
 				8BD4AA351E09C4EC0086A00E /* Hole1.sks in Resources */,
 				E8DFE0491E0C24A000DA666A /* click3.WAV in Resources */,
+				8B4AE2361E19B31C0057D65C /* CourseSelectionView.xib in Resources */,
 				8B31EB6D1E122DB4007A0082 /* Ball.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -623,6 +657,8 @@
 				8B66A71B1E12394F0078FE32 /* Putt.swift in Sources */,
 				8B66A71E1E12394F0078FE32 /* Wall.swift in Sources */,
 				8B66A7261E12394F0078FE32 /* PuttScene.swift in Sources */,
+				8B4AE2341E19A7AE0057D65C /* HoleSetup.swift in Sources */,
+				8B4AE23E1E19B5250057D65C /* CoursePreviewView.swift in Sources */,
 				8B66A71C1E12394F0078FE32 /* GameViewController.swift in Sources */,
 				8BE770B01E14522E0089FCF2 /* Mat.swift in Sources */,
 				8BCF770F1E03CD0200D48A61 /* MessagesViewController.swift in Sources */,
@@ -638,6 +674,8 @@
 				8B8B89481E121C840011ECF2 /* Wall.swift in Sources */,
 				8B9470C71E0884A50085B124 /* PuttScene.swift in Sources */,
 				8B8B89451E1219E50011ECF2 /* Ball.swift in Sources */,
+				8B4AE2331E19A7AE0057D65C /* HoleSetup.swift in Sources */,
+				8B4AE23D1E19B5250057D65C /* CoursePreviewView.swift in Sources */,
 				E83E069D1E039587005711E3 /* GameViewController.swift in Sources */,
 				8BE770AD1E143B840089FCF2 /* Mat.swift in Sources */,
 				E83E06991E039586005711E3 /* AppDelegate.swift in Sources */,

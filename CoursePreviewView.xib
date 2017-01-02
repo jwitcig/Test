@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CoursePreviewView" customModule="MrPutt" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Y0g-xJ-Tcd">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lU1-eg-bbu">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1d-o0-AlT">
+                                    <rect key="frame" x="8" y="8" width="104.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9cO-Ky-ARf">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="C1d-o0-AlT" firstAttribute="leading" secondItem="lU1-eg-bbu" secondAttribute="leading" constant="8" id="2A8-mT-9rT"/>
+                                <constraint firstAttribute="trailing" secondItem="C1d-o0-AlT" secondAttribute="trailing" id="9Ui-sc-Ynj"/>
+                                <constraint firstAttribute="bottom" secondItem="9cO-Ky-ARf" secondAttribute="bottom" id="FIq-BK-FEb"/>
+                                <constraint firstItem="9cO-Ky-ARf" firstAttribute="top" secondItem="lU1-eg-bbu" secondAttribute="top" id="Ut4-8Y-hSd"/>
+                                <constraint firstAttribute="trailing" secondItem="9cO-Ky-ARf" secondAttribute="trailing" id="bv9-za-frS"/>
+                                <constraint firstItem="9cO-Ky-ARf" firstAttribute="leading" secondItem="lU1-eg-bbu" secondAttribute="leading" id="hky-zw-cmQ"/>
+                                <constraint firstItem="C1d-o0-AlT" firstAttribute="top" secondItem="lU1-eg-bbu" secondAttribute="top" constant="8" id="uND-EQ-ObQ"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8aJ-85-SsF">
+                            <rect key="frame" x="300" y="35" width="75" height="30"/>
+                            <state key="normal" title="Play"/>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="8aJ-85-SsF" firstAttribute="width" secondItem="Y0g-xJ-Tcd" secondAttribute="width" multiplier="0.2" id="NzU-bY-Dyt"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Y0g-xJ-Tcd" secondAttribute="trailing" id="8sM-S7-Y4U"/>
+                <constraint firstAttribute="bottom" secondItem="Y0g-xJ-Tcd" secondAttribute="bottom" id="iqw-mS-9MQ"/>
+                <constraint firstItem="Y0g-xJ-Tcd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="rO3-uD-M3o"/>
+                <constraint firstItem="Y0g-xJ-Tcd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vT8-97-Zvr"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="courseNameLabel" destination="C1d-o0-AlT" id="6Rr-Nd-YPq"/>
+                <outlet property="imageView" destination="9cO-Ky-ARf" id="9g3-hL-Dnx"/>
+            </connections>
+        </view>
+    </objects>
+</document>

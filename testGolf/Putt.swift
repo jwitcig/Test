@@ -243,30 +243,35 @@ struct PuttInstanceData: InstanceDataType, StringDictionaryRepresentable {
 struct PuttInitialData: InitialDataType, StringDictionaryRepresentable {
     typealias Constraint = Putt
     
+    let course: Course
     let holeNumber: Int
     let holeSet: [Int]
     
     var dictionary: [String: String] {
         return [
+            "initial-courseNumber": course.rawValue.string!,
             "initial-holeNumber": holeNumber.string!,
             "initial-holeSet": holeSet.map(String.init).joined(separator: ","),
         ]
     }
     
-    init(holeNumber: Int, holeSet: [Int]) {
+    init(course: Course, holeNumber: Int, holeSet: [Int]) {
+        self.course = course
         self.holeNumber = holeNumber
         self.holeSet = holeSet
     }
     
     init?(dictionary: [String: String]) {
+        guard let courseNumber = dictionary["initial-courseNumber"]?.int else { return nil }
         guard let holeNumber = dictionary["initial-holeNumber"]?.int else { return nil }
         guard let holeSetString = dictionary["initial-holeSet"] else { return nil }
+        let course = Course(rawValue: courseNumber)!
         let holeSet = holeSetString.components(separatedBy: ",").map{$0.int!}
-        self.init(holeNumber: holeNumber, holeSet: holeSet)
+        self.init(course: course, holeNumber: holeNumber, holeSet: holeSet)
     }
     
     static func random() -> PuttInitialData {
-        return PuttInitialData(holeNumber: 1, holeSet: Array(1...9))
+        return PuttInitialData(course: Course(rawValue: 1)!, holeNumber: 1, holeSet: Array(1...9))
     }
 }
 

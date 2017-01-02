@@ -45,10 +45,44 @@ class PuttScene: SKScene {
         startBackgroundAnimations()
         
         ball.updateTrailEmitter()
-    }    
+        
+        let _ = UIPanGestureRecognizer(target: self, action: #selector(PuttScene.handlePan(recognizer:)))
+        
+        let zoom = UIPinchGestureRecognizer(target: self, action: #selector(PuttScene.handleZoom(recognizer:)))
+        view.addGestureRecognizer(zoom)
+    }
     
+    func handleZoom(recognizer: UIPinchGestureRecognizer) {
+        if recognizer.state == .began, let camera = camera {
+            recognizer.scale = 1 / camera.xScale
+        }
+        
+        if recognizer.scale > 0.5 && recognizer.scale < 2 {
+            camera?.setScale(1 / recognizer.scale)
+        }
+    }
+
+    func handlePan(recognizer: UIPanGestureRecognizer) {
+        
+        if recognizer.state == .began {
+            recognizer.setTranslation(.zero, in: recognizer.view)
+            
+        } else if recognizer.state == .changed {
+            
+            var translation = recognizer.translation(in: recognizer.view)
+            translation = CGPoint(x: -translation.x, y: translation.y)
+            
+            scene?.position = CGPoint(x: scene!.position.x-translation.x, y: scene!.position.y-translation.y)
+
+            recognizer.setTranslation(.zero, in: recognizer.view)
+            
+        } else if (recognizer.state == .ended) {
+        
+        }
+    }
+
     // MARK: Animations
-    
+
     func startBackgroundAnimations() {
         let ambientNoise = SKAudioNode(fileNamed: "ambience")
         ambientNoise.autoplayLooped = true
@@ -61,7 +95,7 @@ class PuttScene: SKScene {
     }
 
     // MARK: Touch Handling
-
+/*
     var adjustingShot = false
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for _ in touches {
@@ -107,7 +141,8 @@ class PuttScene: SKScene {
             takeShot(at: angle, with: power)
         }
     }
-    
+*/
+ 
     func takeShot(at angle: CGFloat, with power: CGFloat) {
         let stroke = CGVector(dx: cos(angle) * power,
                               dy: sin(angle) * power)
@@ -135,6 +170,11 @@ extension PuttScene: SKPhysicsContactDelegate {
         
         func node(withName name: String) -> SKNode? {
             return bodies.filter{$0.node?.name==name}.first?.node
+        }
+        
+        if let _ = node(withName: Ball.name), let wall = node(withName: Wall.name) {
+            let wallSound = SKAction.playSoundFileNamed("click4.wav", waitForCompletion: false)
+            wall.run(wallSound)
         }
         
         if let ball = node(withName: Ball.name), let hole = node(withName: Hole.name) {

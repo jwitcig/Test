@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="549" height="271"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ueR-bV-NAt">
+                    <rect key="frame" x="0.0" y="0.0" width="549" height="271"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ueR-bV-NAt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="AGj-eg-Ou0"/>
+                <constraint firstItem="ueR-bV-NAt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="c0E-1A-WkP"/>
+                <constraint firstAttribute="trailing" secondItem="ueR-bV-NAt" secondAttribute="trailing" id="hkH-lU-ibE"/>
+                <constraint firstAttribute="bottom" secondItem="ueR-bV-NAt" secondAttribute="bottom" id="kEx-JM-oLR"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="131.5" y="-292.5"/>
+        </view>
+    </objects>
+</document>

@@ -54,6 +54,7 @@ class GameViewController: UIViewController {
         
         let sceneName = "Hole1"
         scene = PuttScene(fileNamed: sceneName)!
+        configureScene(previousSession: nil)
         sceneView.presentScene(scene)
     }
     
@@ -66,6 +67,8 @@ class GameViewController: UIViewController {
         let cycle = SessionCycle(started: started, finished: finished, generateSession: generateSession)
 
         scene.game = Putt(previousSession: previousSession, initial: previousSession?.initial, padding: nil, cycle: cycle)
+        
+        HoleSetup.setup(scene, forHole: number, inCourse: .Timber)
     }
     
     // MARK: Game Cycle
@@ -80,7 +83,7 @@ class GameViewController: UIViewController {
     
     func generateSession() -> PuttSession {
         let instance = PuttInstanceData(shots: [], opponentShots: nil, winner: nil)
-        let initial = PuttInitialData(holeNumber: 1, holeSet: [])
+        let initial = PuttInitialData(course: Course(rawValue: 1)!, holeNumber: 1, holeSet: [])
         return PuttSession(instance: instance, initial: initial, ended: false, messageSession: opponentSession?.messageSession)
     }
 

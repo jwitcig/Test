@@ -26,7 +26,7 @@ class Wall: SKSpriteNode {
         corrected.friction = existing?.friction ?? 0
         corrected.categoryBitMask = Category.wall.rawValue
         corrected.collisionBitMask = Category.ball.rawValue
-        corrected.contactTestBitMask = Category.none.rawValue
+        corrected.contactTestBitMask = Category.ball.rawValue
         return corrected
     }
 }
