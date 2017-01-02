@@ -16,6 +16,23 @@ class Hole: SKSpriteNode {
         super.init(coder: aDecoder)
         
         physicsBody = adjustedPhysicsBody()
+        
+        let innerIndicator = childNode(withName: "indicator_inner_ring")
+        let outterIndicator = childNode(withName: "indicator_outter_ring")
+        
+        let fadeOut = SKAction.fadeOut(withDuration: 1)
+        let fadeIn = SKAction.fadeIn(withDuration: 1)
+        fadeIn.duration = 2
+        
+        let clockwise = SKAction.rotate(byAngle: .pi, duration: 6)
+        
+        let fadeSequence = SKAction.sequence([fadeOut, fadeIn])
+        
+        let innerGroup = SKAction.group([fadeSequence, clockwise])
+        let outterGroup = SKAction.group([fadeSequence, clockwise.reversed()])
+        
+        innerIndicator?.run(SKAction.repeatForever(innerGroup))
+        outterIndicator?.run(SKAction.repeatForever(outterGroup))
     }
     
     func adjustedPhysicsBody() -> SKPhysicsBody? {
