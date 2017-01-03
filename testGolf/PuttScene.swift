@@ -28,6 +28,9 @@ class PuttScene: SKScene {
     
     var opponentsSession: PuttSession?
     
+    var shotPath: SKShapeNode? = nil
+    var shotIntersectionNode: SKShapeNode? = nil
+    
     // MARK: Scene Lifecycle
     
     override func didMove(to view: SKView) {
@@ -101,7 +104,7 @@ class PuttScene: SKScene {
         for _ in touches {
             
             if let ballBody = ball.physicsBody {
-                if ballBody.velocity.magnitude < CGFloat(1) {
+                if ballBody.velocity.magnitude < CGFloat(5) {
                     ballBody.velocity = .zero
                     if ball.shotIndicator.parent == nil {
                         // if shotIndicator isn't in the scene, add it
@@ -122,7 +125,57 @@ class PuttScene: SKScene {
             let ballPosition = ball.parent!.convert(ball.position, to: self)
             
             // rotate slider to the angle of your touch
+
             ball.shotIndicator.zRotation = ballPosition.angle(toPoint: touchLocation) - .pi / 2
+            
+            let angle = ballPosition.angle(toPoint: touchLocation)
+            let path = CGMutablePath()
+            path.move(to: ballPosition)
+            path.addLine(to: CGPoint(x: ballPosition.x+300*cos(angle), y: ballPosition.y+300*sin(angle)))
+//            let rayEnd = CGPoint(x: ballPosition.x+300*cos(angle), y: ballPosition.y+300*sin(angle))
+            
+            if let shotPath = shotPath {
+                shotPath.path = path
+            } else {
+                shotPath = shotPath ?? SKShapeNode(path: path)
+                shotPath?.lineWidth = 2
+                shotPath?.strokeColor = .black
+            }
+
+            if shotPath?.parent == nil {
+                addChild(shotPath!)
+            }
+            
+            let end = CGPoint(x: ballPosition.x+300*cos(angle), y: ballPosition.y+300*sin(angle))
+            
+            
+
+            if let shotIntersectionNode = shotIntersectionNode {
+                shotIntersectionNode.path = path
+            } else {
+                shotIntersectionNode = shotPath ?? SKShapeNode(path: path)
+                shotIntersectionNode?.lineWidth = 2
+                shotIntersectionNode?.strokeColor = .black
+            }
+            
+            if shotIntersectionNode?.parent == nil {
+                addChild(shotIntersectionNode!)
+            }
+            physicsWorld.enumerateBodies(alongRayStart: ballPosition, end: end) { body, point, normal, stop in
+
+                if let node = body.node, node.name == Wall.name {
+                    let reflectedPath = CGMutablePath()
+                    reflectedPath.move(to: point)
+                    
+                    let reflected = self.reflect(vector: CGVector(dx: end.x-ballPosition.x, dy: end.y-ballPosition.y), forNormal: normal, at: point, offOf: body)
+                    
+                    reflectedPath.addLine(to: CGPoint(x: point.x+reflected.dx/5.0, y: point.y+reflected.dy/5.0))
+                    
+                    self.shotIntersectionNode?.path = reflectedPath
+                    
+                    stop.pointee = true
+                }
+            }
         }
     }
     
@@ -158,11 +211,20 @@ class PuttScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         ballPrePhysicsVelocity = ball.physicsBody?.velocity ?? .zero
     }
+    
+    override func didFinishUpdate() {
+        if let reflection = reflectionVelocity {
+            ball.physicsBody?.velocity = reflection
+            reflectionVelocity = nil
+        }
+    }
 }
 
 // MARK: Contact Delegate
 
 var ballPrePhysicsVelocity: CGVector = .zero
+
+var reflectionVelocity: CGVector? = nil
 
 extension PuttScene: SKPhysicsContactDelegate {
    
@@ -177,9 +239,11 @@ extension PuttScene: SKPhysicsContactDelegate {
             let wallSound = SKAction.playSoundFileNamed("click4.wav", waitForCompletion: false)
             wall.run(wallSound)
             
-            ball.physicsBody?.velocity = reflect(velocity: ballPrePhysicsVelocity,
-                                                      for: contact,
-                                                     with: wall.physicsBody!)
+            reflectionVelocity = reflect(velocity: ballPrePhysicsVelocity,
+                                              for: contact,
+                                             with: wall.physicsBody!)
+        } else {
+            reflectionVelocity = nil
         }
         
         if let ball = node(withName: Ball.name), let hole = node(withName: Hole.name) {
@@ -220,13 +284,69 @@ extension PuttScene: SKPhysicsContactDelegate {
     }
     
     func reflect(velocity entrance: CGVector, for contact: SKPhysicsContact, with body: SKPhysicsBody) -> CGVector {
-        let xRayTest = CGPoint(x: contact.contactPoint.x-contact.contactNormal.dx*5, y: contact.contactPoint.y+contact.contactNormal.dy*5)
-        let yRayTest = CGPoint(x: contact.contactPoint.x+contact.contactNormal.dx*5, y: contact.contactPoint.y-contact.contactNormal.dy*5)
-
-        if physicsWorld.body(alongRayStart: contact.contactPoint, end: xRayTest) == body {
+        
+        let ballPosition = convert(ball.position, from: ball.parent!)
+        let xRayTest = CGPoint(x: ballPosition.x-contact.contactNormal.dx*5000,
+                               y: ballPosition.y+contact.contactNormal.dy*5000)
+        let yRayTest = CGPoint(x: ballPosition.x+contact.contactNormal.dx*5000,
+                               y: ballPosition.y-contact.contactNormal.dy*5000)
+        
+        var exit = entrance
+        physicsWorld.enumerateBodies(alongRayStart: ballPosition, end: xRayTest) { testBody, _, _, stop in
+            
+            if testBody == body {
+                exit = CGVector(dx: -entrance.dx, dy: entrance.dy)
+                stop.pointee = true
+            }
+        }
+        
+        physicsWorld.enumerateBodies(alongRayStart: ballPosition, end: yRayTest) { testBody, _, _, stop in
+        
+            if testBody == body {
+                exit = CGVector(dx: entrance.dx, dy: -entrance.dy)
+                stop.pointee = true
+            }
+        }
+        
+//        if physicsWorld.body(alongRayStart: contact.contactPoint, end: xRayTest) == body {
+//            return CGVector(dx: -entrance.dx, dy: entrance.dy)
+//        }
+//        if physicsWorld.body(alongRayStart: contact.contactPoint, end: yRayTest) == body {
+//            return CGVector(dx: entrance.dx, dy: -entrance.dy)
+//        }
+        return exit
+    }
+    
+    func reflect(vector entrance: CGVector, forNormal normal: CGVector, at point: CGPoint, offOf body: SKPhysicsBody) -> CGVector {
+        
+        let xRayTest = CGPoint(x: point.x-normal.dx*20, y: point.y+normal.dy*20)
+        let yRayTest = CGPoint(x: point.x+normal.dx*20, y: point.y-normal.dy*20)
+        
+        let xRayStart = CGPoint(x: xRayTest.x-entrance.dx, y: xRayTest.y-entrance.dy)
+        let yRayStart = CGPoint(x: yRayTest.x-entrance.dx, y: yRayTest.y-entrance.dy)
+        
+        
+//        let r =d−2(d⋅n)n
+//        let reflected = entrance − 2(entrance ⋅ normal)normal
+        
+//        r=d−(2d⋅n)‖n‖n
+        
+        let normalized = CGVector(dx: normal.dx/normal.magnitude, dy: normal.dy/normal.magnitude)
+        
+        let dot = entrance.dx*normalized.dx + entrance.dy*normalized.dy
+        let directed = CGVector(dx: dot*normalized.dx, dy: dot*normalized.dy)
+        let scaled = CGVector(dx: 2*directed.dx, dy: 2*directed.dy)
+        
+        let r = CGVector(dx: entrance.dx-scaled.dx, dy: entrance.dy-scaled.dy)
+        
+        return r
+        
+        
+        
+        if physicsWorld.body(alongRayStart: xRayStart, end: xRayTest) != body {
             return CGVector(dx: -entrance.dx, dy: entrance.dy)
         }
-        if physicsWorld.body(alongRayStart: contact.contactPoint, end: yRayTest) == body {
+        if physicsWorld.body(alongRayStart: yRayStart, end: yRayTest) != body {
             return CGVector(dx: entrance.dx, dy: -entrance.dy)
         }
         return entrance

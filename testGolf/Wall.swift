@@ -20,7 +20,7 @@ class Wall: SKSpriteNode {
     
     func adjustedPhysicsBody() -> SKPhysicsBody? {
         physicsBody?.isDynamic = false
-        physicsBody?.restitution = 0.5
+        physicsBody?.restitution = 1
         physicsBody?.friction = 0
         physicsBody?.categoryBitMask = Category.wall.rawValue
         physicsBody?.collisionBitMask = Category.ball.rawValue
