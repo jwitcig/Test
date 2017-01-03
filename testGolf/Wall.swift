@@ -19,23 +19,12 @@ class Wall: SKSpriteNode {
     }
     
     func adjustedPhysicsBody() -> SKPhysicsBody? {
-        let existing = physicsBody
-//        let corrected = SKPhysicsBody(rectangleOf: frame.size)
-        
-        let rect = CGRect(origin: CGPoint(x: -frame.width*anchorPoint.x, y: -frame.height*anchorPoint.y), size: frame.size)
-        
-        var transform = CGAffineTransform.identity
-        
-        let path = CGPath(rect: rect, transform: &transform)
-                
-        let corrected = SKPhysicsBody(polygonFrom: path)
-        
-        corrected.isDynamic = existing?.isDynamic ?? false
-        corrected.restitution = existing?.restitution ?? 0.5
-        corrected.friction = existing?.friction ?? 0
-        corrected.categoryBitMask = Category.wall.rawValue
-        corrected.collisionBitMask = Category.ball.rawValue
-        corrected.contactTestBitMask = Category.ball.rawValue
-        return corrected
+        physicsBody?.isDynamic = false
+        physicsBody?.restitution = 0.5
+        physicsBody?.friction = 0
+        physicsBody?.categoryBitMask = Category.wall.rawValue
+        physicsBody?.collisionBitMask = Category.ball.rawValue
+        physicsBody?.contactTestBitMask = Category.ball.rawValue
+        return physicsBody
     }
 }
