@@ -36,7 +36,6 @@ class Hole: SKSpriteNode {
     }
     
     func adjustedPhysicsBody() -> SKPhysicsBody? {
-        physicsBody?.isDynamic = false
         physicsBody?.categoryBitMask = Category.hole.rawValue
         physicsBody?.collisionBitMask = Category.none.rawValue
         physicsBody?.contactTestBitMask = Category.ball.rawValue

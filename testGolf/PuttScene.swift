@@ -7,6 +7,7 @@
 //
 
 import AVFoundation
+import GameplayKit
 import SpriteKit
 
 import Game
@@ -53,6 +54,36 @@ class PuttScene: SKScene {
         
         let zoom = UIPinchGestureRecognizer(target: self, action: #selector(PuttScene.handleZoom(recognizer:)))
         view.addGestureRecognizer(zoom)
+        
+        animateTilesIntoScene()
+    }
+    
+    func animateTilesIntoScene() {
+        guard let view = view else { return }
+        
+        let xRange = (low: Int(-view.frame.width*0.7), high: Int(view.frame.width*0.7))
+        let yRange = (low: Int(-view.frame.height*0.7), high: Int(view.frame.height*0.7))
+       
+        let generator = RandomPointGenerator(x: xRange, y: yRange, source: GKRandomSource())
+        
+        let randomDuration = GKRandomDistribution(lowestValue: 2, highestValue: 2)
+        enumerateChildNodes(withName: "*") { node, stop in
+            guard node is SKReferenceNode else { return }
+            
+            let finalPosition = node.position
+            
+            let newPosition = CGPoint(x: finalPosition.x, y: generator.newPoint().y)
+            
+            node.position = self.convert(newPosition, to: node.parent!)
+            node.alpha = 0
+            
+            let duration = TimeInterval(randomDuration.nextInt())
+            let fadeIn = SKAction.fadeIn(withDuration: duration)
+            let move = SKAction.move(to: finalPosition, duration: duration)
+            
+            let actions = SKAction.group([fadeIn, move])
+            node.run(actions)
+        }
     }
     
     func handleZoom(recognizer: UIPinchGestureRecognizer) {
