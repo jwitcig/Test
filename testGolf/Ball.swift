@@ -24,6 +24,7 @@ class Ball: SKSpriteNode {
     }
     
     func adjustedPhysicsBody() -> SKPhysicsBody? {
+        physicsBody?.usesPreciseCollisionDetection = true
         physicsBody?.categoryBitMask = Category.ball.rawValue
         physicsBody?.collisionBitMask = Category.wall.rawValue
         physicsBody?.contactTestBitMask = Category.hole.rawValue | Category.wall.rawValue
