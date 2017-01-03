@@ -61,14 +61,14 @@ class GameViewController: UIViewController {
     func configureScene(previousSession: PuttSession?) {
         // setup any visuals with data specific to the previous session; if nil, start fresh
     
-        let number = previousSession?.initial.holeNumber ?? 1
+        let number = previousSession?.initial.holeNumber ?? 2
         scene = SKScene(fileNamed: "Hole\(number)")! as! PuttScene
         
         let cycle = SessionCycle(started: started, finished: finished, generateSession: generateSession)
 
         scene.game = Putt(previousSession: previousSession, initial: previousSession?.initial, padding: nil, cycle: cycle)
         
-        HoleSetup.setup(scene, forHole: number, inCourse: .Timber)
+        HoleSetup.setup(scene, forHole: number, inCourse: Frost.self)
     }
     
     // MARK: Game Cycle
@@ -83,7 +83,7 @@ class GameViewController: UIViewController {
     
     func generateSession() -> PuttSession {
         let instance = PuttInstanceData(shots: [], opponentShots: nil, winner: nil)
-        let initial = PuttInitialData(course: Course(rawValue: 1)!, holeNumber: 1, holeSet: [])
+        let initial = PuttInitialData(course: Frost.self as CoursePack.Type, holeNumber: 1, holeSet: [])
         return PuttSession(instance: instance, initial: initial, ended: false, messageSession: opponentSession?.messageSession)
     }
 
