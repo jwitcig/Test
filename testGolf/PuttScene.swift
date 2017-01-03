@@ -156,14 +156,16 @@ class PuttScene: SKScene {
     // MARK: Game Loop
     
     override func update(_ currentTime: TimeInterval) {
-        // runs every frame
+        ballPrePhysicsVelocity = ball.physicsBody?.velocity ?? .zero
     }
 }
 
 // MARK: Contact Delegate
 
-extension PuttScene: SKPhysicsContactDelegate {
+var ballPrePhysicsVelocity: CGVector = .zero
 
+extension PuttScene: SKPhysicsContactDelegate {
+   
     func didBegin(_ contact: SKPhysicsContact) {
         let bodies = [contact.bodyA, contact.bodyB]
         
@@ -174,6 +176,10 @@ extension PuttScene: SKPhysicsContactDelegate {
         if let _ = node(withName: Ball.name), let wall = node(withName: Wall.name) {
             let wallSound = SKAction.playSoundFileNamed("click4.wav", waitForCompletion: false)
             wall.run(wallSound)
+            
+            ball.physicsBody?.velocity = reflect(velocity: ballPrePhysicsVelocity,
+                                                      for: contact,
+                                                     with: wall.physicsBody!)
         }
         
         if let ball = node(withName: Ball.name), let hole = node(withName: Hole.name) {
@@ -199,5 +205,30 @@ extension PuttScene: SKPhysicsContactDelegate {
             }
             holeComplete = true
         }
+    }
+    
+    func didEnd(_ contact: SKPhysicsContact) {
+        let bodies = [contact.bodyA, contact.bodyB]
+        
+        func node(withName name: String) -> SKNode? {
+            return bodies.filter{$0.node?.name==name}.first?.node
+        }
+        
+        if let _ = node(withName: Ball.name), let _ = node(withName: Wall.name) {
+            
+        }
+    }
+    
+    func reflect(velocity entrance: CGVector, for contact: SKPhysicsContact, with body: SKPhysicsBody) -> CGVector {
+        let xRayTest = CGPoint(x: contact.contactPoint.x-contact.contactNormal.dx*5, y: contact.contactPoint.y+contact.contactNormal.dy*5)
+        let yRayTest = CGPoint(x: contact.contactPoint.x+contact.contactNormal.dx*5, y: contact.contactPoint.y-contact.contactNormal.dy*5)
+
+        if physicsWorld.body(alongRayStart: contact.contactPoint, end: xRayTest) == body {
+            return CGVector(dx: -entrance.dx, dy: entrance.dy)
+        }
+        if physicsWorld.body(alongRayStart: contact.contactPoint, end: yRayTest) == body {
+            return CGVector(dx: entrance.dx, dy: -entrance.dy)
+        }
+        return entrance
     }
 }

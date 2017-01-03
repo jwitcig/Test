@@ -31,28 +31,17 @@ class CourseSelectionViewController: UIViewController {
             $0.height >= $1.height
         }
         
-//        view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "carbon_fibre"))
-        
         let playBlock = {
             
         }
         
-        let frost = CoursePreviewView.create()
-        frost.courseName = "Frost"
-        frost.courseHoleCount = 9
-        frost.backgroundImage = #imageLiteral(resourceName: "whiteout_preview_background")
+        let frost = CoursePreviewView.create(course: Frost.self as CoursePack.Type)
         frost.playPressedBlock = playBlock
         
-        let blaze = CoursePreviewView.create()
-        blaze.courseName = "Blaze"
-        blaze.courseHoleCount = 9
-        blaze.backgroundImage = #imageLiteral(resourceName: "blaze_preview_background")
+        let blaze = CoursePreviewView.create(course: Blaze.self)
         blaze.playPressedBlock = playBlock
         
-        let timber = CoursePreviewView.create()
-        timber.courseName = "Timber"
-        timber.courseHoleCount = 9
-        timber.backgroundImage = #imageLiteral(resourceName: "test")
+        let timber = CoursePreviewView.create(course: Timber.self)
         timber.playPressedBlock = playBlock
         
         let previews = [
