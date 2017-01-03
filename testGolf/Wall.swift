@@ -28,3 +28,28 @@ class Wall: SKSpriteNode {
         return physicsBody
     }
 }
+
+class CornerWall: Wall {
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        physicsBody = adjustedPhysicsBody()
+    }
+    
+    override func adjustedPhysicsBody() -> SKPhysicsBody? {
+        let center = CGPoint(x: -frame.width/2, y: -frame.width/2)
+        
+        let path = CGMutablePath()
+        path.addArc(center: center, radius: frame.width*0.8, startAngle: 0, endAngle: .pi/2, clockwise: false)
+    
+        let corrected = SKPhysicsBody(polygonFrom: path)
+        corrected.isDynamic = false
+        corrected.restitution = 1
+        corrected.friction = 0
+        corrected.categoryBitMask = Category.wall.rawValue
+        corrected.collisionBitMask = Category.ball.rawValue
+        corrected.contactTestBitMask = Category.ball.rawValue
+        return corrected
+    }
+}

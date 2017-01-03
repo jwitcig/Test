@@ -129,10 +129,14 @@ class PuttScene: SKScene {
             ball.shotIndicator.zRotation = ballPosition.angle(toPoint: touchLocation) - .pi / 2
             
             let angle = ballPosition.angle(toPoint: touchLocation)
+            let shotStart = ballPosition
+            let shotEnd = CGPoint(x: shotStart.x+300*cos(angle),
+                                  y: shotStart.y+300*sin(angle))
+            
+            let shot = CGVector(dx: shotStart.x-shotEnd.x, dy: shotStart.y-shotEnd.y)
             let path = CGMutablePath()
-            path.move(to: ballPosition)
-            path.addLine(to: CGPoint(x: ballPosition.x+300*cos(angle), y: ballPosition.y+300*sin(angle)))
-//            let rayEnd = CGPoint(x: ballPosition.x+300*cos(angle), y: ballPosition.y+300*sin(angle))
+            path.move(to: shotStart)
+            path.addLine(to: shotEnd)
             
             if let shotPath = shotPath {
                 shotPath.path = path
@@ -147,8 +151,6 @@ class PuttScene: SKScene {
             }
             
             let end = CGPoint(x: ballPosition.x+300*cos(angle), y: ballPosition.y+300*sin(angle))
-            
-            
 
             if let shotIntersectionNode = shotIntersectionNode {
                 shotIntersectionNode.path = path
@@ -164,12 +166,42 @@ class PuttScene: SKScene {
             physicsWorld.enumerateBodies(alongRayStart: ballPosition, end: end) { body, point, normal, stop in
 
                 if let node = body.node, node.name == Wall.name {
+                    var newPoint: CGPoint = .zero
+                    
+                    let linerEnd = CGPoint(x: point.x+normal.normalized.dx*self.ball.frame.width,
+                                             y: point.y+normal.normalized.dy*self.ball.frame.width)
+                    
+                    let linerStart = CGPoint(x: linerEnd.x-normal.normalized.dy*0.001, y: linerEnd.y-normal.normalized.dx*0.001)
+                    
+                    
+                    let liner = CGVector(dx: linerEnd.x-linerStart.x,
+                                         dy: linerEnd.y-linerStart.y)
+                    
+                    
+                    let cross = CGVector(dx: shotStart.x-linerStart.x, dy: shotStart.y-linerStart.x)
+                    
+                    let a = (shot.dx * liner.dx) + (cross.dx * shotStart.x)
+                    let b = (shotStart.y * liner.dx) + (shot.dx * linerStart.x)
+                    
+                    let t = a / b
+    
+                    newPoint = CGPoint(x: linerStart.x + (liner * t).dx, y: linerStart.y + (liner * t).dy)
+                    
+//                    (2, 5) (1, 1) cross: (-1,-4)
+//                    
+//                    <4, -5> <6, 1>
+//                    
+//                    t = (c * b) / (a * b)
+//                    
+//                    c*b = (4*6) + (-1*1) = 24 -1 = 23
+//                    a*b = (5*6) + (4*1) = 30 + 4 = 34
+                    
                     let reflectedPath = CGMutablePath()
-                    reflectedPath.move(to: point)
+                    reflectedPath.move(to: newPoint)
                     
-                    let reflected = self.reflect(vector: CGVector(dx: end.x-ballPosition.x, dy: end.y-ballPosition.y), forNormal: normal, at: point, offOf: body)
+                    let reflected = self.reflect(vector: CGVector(dx: end.x-shotStart.x, dy: end.y-shotStart.y), forNormal: normal, at: newPoint, offOf: body)
                     
-                    reflectedPath.addLine(to: CGPoint(x: point.x+reflected.dx/5.0, y: point.y+reflected.dy/5.0))
+                    reflectedPath.addLine(to: CGPoint(x: newPoint.x+reflected.dx/5.0, y: newPoint.y+reflected.dy/5.0))
                     
                     self.shotIntersectionNode?.path = reflectedPath
                     
@@ -326,20 +358,11 @@ extension PuttScene: SKPhysicsContactDelegate {
         let yRayStart = CGPoint(x: yRayTest.x-entrance.dx, y: yRayTest.y-entrance.dy)
         
         
-//        let r =d−2(d⋅n)n
-//        let reflected = entrance − 2(entrance ⋅ normal)normal
+
         
-//        r=d−(2d⋅n)‖n‖n
-        
-        let normalized = CGVector(dx: normal.dx/normal.magnitude, dy: normal.dy/normal.magnitude)
-        
-        let dot = entrance.dx*normalized.dx + entrance.dy*normalized.dy
-        let directed = CGVector(dx: dot*normalized.dx, dy: dot*normalized.dy)
-        let scaled = CGVector(dx: 2*directed.dx, dy: 2*directed.dy)
-        
-        let r = CGVector(dx: entrance.dx-scaled.dx, dy: entrance.dy-scaled.dy)
-        
-        return r
+        let directed = normal.normalized * (entrance • normal.normalized)
+        let scaled = directed * 2
+        return entrance - scaled
         
         
         
