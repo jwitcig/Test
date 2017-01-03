@@ -57,6 +57,7 @@
 		8B8B89451E1219E50011ECF2 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8B89441E1219E50011ECF2 /* Ball.swift */; };
 		8B8B89481E121C840011ECF2 /* Wall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8B89471E121C840011ECF2 /* Wall.swift */; };
 		8B9470C71E0884A50085B124 /* PuttScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9470C61E0884A50085B124 /* PuttScene.swift */; };
+		8BA136C31E1B4B0F00CCDA51 /* BallTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BA136C21E1B4B0F00CCDA51 /* BallTrail.sks */; };
 		8BA1902B1E1B19810089B0F3 /* Hole2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B5367531E1B1785008BFA6C /* Hole2.sks */; };
 		8BA1902C1E1B19810089B0F3 /* BlankTile.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B53674A1E1B1785008BFA6C /* BlankTile.sks */; };
 		8BA1902D1E1B19810089B0F3 /* BottomWall.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B53674B1E1B1785008BFA6C /* BottomWall.sks */; };
@@ -107,8 +108,6 @@
 		8BDC6D2F1E1A0FF90038D10B /* Neutra2Display-Titling.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BDC6D2E1E1A0FF90038D10B /* Neutra2Display-Titling.otf */; };
 		8BDC6D301E1A10000038D10B /* Neutra2Display-Titling.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BDC6D2E1E1A0FF90038D10B /* Neutra2Display-Titling.otf */; };
 		8BDC6D491E1AF7670038D10B /* Bebas.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8BDC6D481E1AF7670038D10B /* Bebas.ttf */; };
-		8BE6F1C21E132218000EE216 /* BallTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BE6F1C11E132218000EE216 /* BallTrail.sks */; };
-		8BE6F1C31E132218000EE216 /* BallTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BE6F1C11E132218000EE216 /* BallTrail.sks */; };
 		8BE770AD1E143B840089FCF2 /* Mat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE770AC1E143B840089FCF2 /* Mat.swift */; };
 		8BE770AF1E143D250089FCF2 /* Mat.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BE770AE1E143D250089FCF2 /* Mat.sks */; };
 		8BE770B01E14522E0089FCF2 /* Mat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE770AC1E143B840089FCF2 /* Mat.swift */; };
@@ -197,6 +196,7 @@
 		8B8B89441E1219E50011ECF2 /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 		8B8B89471E121C840011ECF2 /* Wall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wall.swift; sourceTree = "<group>"; };
 		8B9470C61E0884A50085B124 /* PuttScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PuttScene.swift; path = testGolf/PuttScene.swift; sourceTree = "<group>"; };
+		8BA136C21E1B4B0F00CCDA51 /* BallTrail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BallTrail.sks; sourceTree = "<group>"; };
 		8BA5FE8C1E12E36200C8470B /* StraightWall.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StraightWall.sks; sourceTree = "<group>"; };
 		8BA5FE8F1E12E63400C8470B /* CurvedWallShort.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CurvedWallShort.sks; sourceTree = "<group>"; };
 		8BAC6B131E1A0CB400B8886B /* CourseSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CourseSelectionViewController.swift; path = ../CourseSelectionViewController.swift; sourceTree = "<group>"; };
@@ -209,7 +209,6 @@
 		8BD4AA341E09C4EC0086A00E /* Hole1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hole1.sks; sourceTree = "<group>"; };
 		8BDC6D2E1E1A0FF90038D10B /* Neutra2Display-Titling.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Neutra2Display-Titling.otf"; path = "../../../Desktop/Neutra2Display-Titling.otf"; sourceTree = "<group>"; };
 		8BDC6D481E1AF7670038D10B /* Bebas.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Bebas.ttf; path = ../../../Desktop/Bebas.ttf; sourceTree = "<group>"; };
-		8BE6F1C11E132218000EE216 /* BallTrail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BallTrail.sks; sourceTree = "<group>"; };
 		8BE770AC1E143B840089FCF2 /* Mat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mat.swift; sourceTree = "<group>"; };
 		8BE770AE1E143D250089FCF2 /* Mat.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Mat.sks; sourceTree = "<group>"; };
 		8F233FA75BF56CABCE8E437B /* Pods-testGolf-iMessageExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGolf-iMessageExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testGolf-iMessageExtension/Pods-testGolf-iMessageExtension.debug.xcconfig"; sourceTree = "<group>"; };
@@ -364,7 +363,7 @@
 		8BE6F1C41E13221E000EE216 /* Emitters */ = {
 			isa = PBXGroup;
 			children = (
-				8BE6F1C11E132218000EE216 /* BallTrail.sks */,
+				8BA136C21E1B4B0F00CCDA51 /* BallTrail.sks */,
 			);
 			name = Emitters;
 			path = testGolf;
@@ -599,7 +598,6 @@
 				8BA190301E1B19810089B0F3 /* CornerTopLeft.sks in Resources */,
 				8B66A7201E12394F0078FE32 /* Hole1.sks in Resources */,
 				8BB312831E147A9C00967DA4 /* close.wav in Resources */,
-				8BE6F1C31E132218000EE216 /* BallTrail.sks in Resources */,
 				8B66A7251E12394F0078FE32 /* UTile.sks in Resources */,
 				8BB312821E147A9C00967DA4 /* click5.wav in Resources */,
 				8BB3127A1E147A9C00967DA4 /* clubHit.wav in Resources */,
@@ -683,9 +681,9 @@
 				8B5367601E1B1785008BFA6C /* CornerBottomLeft.sks in Resources */,
 				E8DFE0411E0C24A000DA666A /* applause.mp3 in Resources */,
 				E84FEA7E1E12023900A150F2 /* HoleTile.sks in Resources */,
+				8BA136C31E1B4B0F00CCDA51 /* BallTrail.sks in Resources */,
 				E83E06A01E039587005711E3 /* Main.storyboard in Resources */,
 				8BA5FE8D1E12E36200C8470B /* StraightWall.sks in Resources */,
-				8BE6F1C21E132218000EE216 /* BallTrail.sks in Resources */,
 				E8DFE04A1E0C24A000DA666A /* click4.wav in Resources */,
 				E8DFE04B1E0C24A000DA666A /* click5.wav in Resources */,
 				E8DFE0491E0C24A000DA666A /* click3.WAV in Resources */,
