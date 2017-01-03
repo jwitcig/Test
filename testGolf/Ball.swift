@@ -38,8 +38,8 @@ class Ball: SKSpriteNode {
     func updateTrailEmitter() {
         guard let ballTrail = fetchBallTrail() else { return }
         ballTrail.targetNode = scene
-        ballTrail.particleScale *= xScale
-        ballTrail.particleScaleSpeed *= xScale
+        ballTrail.particleScale *= 0.15
+        ballTrail.particleScaleSpeed *= 0.15
     }
     
     func disableTrail() {
