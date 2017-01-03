@@ -31,7 +31,7 @@ class PuttScene: SKScene {
     
     var shotPath: SKShapeNode? = nil
     var shotIntersectionNode: SKShapeNode? = nil
-    
+        
     // MARK: Scene Lifecycle
     
     override func didMove(to view: SKView) {
@@ -267,8 +267,7 @@ extension PuttScene: SKPhysicsContactDelegate {
         }
         
         if let _ = node(withName: Ball.name), let wall = node(withName: Wall.name) {
-            let wallSound = SKAction.playSoundFileNamed("click4.wav", waitForCompletion: false)
-            wall.run(wallSound)
+            wall.run(Action.with(name: .wallHit))
             
             reflectionVelocity = reflect(velocity: ballPrePhysicsVelocity,
                                               for: contact,

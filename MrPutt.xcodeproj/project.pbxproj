@@ -60,6 +60,13 @@
 		8BA136C31E1B4B0F00CCDA51 /* BallTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BA136C21E1B4B0F00CCDA51 /* BallTrail.sks */; };
 		8BA136C51E1B55E000CCDA51 /* ShotPathIndicator.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BA136C41E1B55E000CCDA51 /* ShotPathIndicator.sks */; };
 		8BA136C61E1B55E500CCDA51 /* ShotPathIndicator.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BA136C41E1B55E000CCDA51 /* ShotPathIndicator.sks */; };
+		8BA136C71E1C4A9000CCDA51 /* Bebas.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8BDC6D481E1AF7670038D10B /* Bebas.ttf */; };
+		8BA136C91E1C4F3400CCDA51 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA136C81E1C4F3400CCDA51 /* Data.swift */; };
+		8BA136CA1E1C4F3400CCDA51 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA136C81E1C4F3400CCDA51 /* Data.swift */; };
+		8BA136CC1E1C506400CCDA51 /* WallHit.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BA136CB1E1C506400CCDA51 /* WallHit.sks */; };
+		8BA136CD1E1C506400CCDA51 /* WallHit.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BA136CB1E1C506400CCDA51 /* WallHit.sks */; };
+		8BA136CF1E1C518200CCDA51 /* Actions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BA136CE1E1C518200CCDA51 /* Actions.plist */; };
+		8BA136D01E1C518200CCDA51 /* Actions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BA136CE1E1C518200CCDA51 /* Actions.plist */; };
 		8BA1902B1E1B19810089B0F3 /* Hole2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B5367531E1B1785008BFA6C /* Hole2.sks */; };
 		8BA1902C1E1B19810089B0F3 /* BlankTile.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B53674A1E1B1785008BFA6C /* BlankTile.sks */; };
 		8BA1902D1E1B19810089B0F3 /* BottomWall.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B53674B1E1B1785008BFA6C /* BottomWall.sks */; };
@@ -89,7 +96,7 @@
 		8BB312761E147A9C00967DA4 /* sample.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0301E0C24A000DA666A /* sample.mp3 */; };
 		8BB312771E147A9C00967DA4 /* ambience.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0311E0C24A000DA666A /* ambience.mp3 */; };
 		8BB312781E147A9C00967DA4 /* applause.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0321E0C24A000DA666A /* applause.mp3 */; };
-		8BB312791E147A9C00967DA4 /* notch.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0331E0C24A000DA666A /* notch.wav */; };
+		8BB312791E147A9C00967DA4 /* notch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0331E0C24A000DA666A /* notch.mp3 */; };
 		8BB3127A1E147A9C00967DA4 /* clubHit.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0341E0C24A000DA666A /* clubHit.wav */; };
 		8BB3127B1E147A9C00967DA4 /* clubHit2.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0351E0C24A000DA666A /* clubHit2.wav */; };
 		8BB3127C1E147A9C00967DA4 /* HoleMade.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0361E0C24A000DA666A /* HoleMade.wav */; };
@@ -124,7 +131,7 @@
 		E8DFE03F1E0C24A000DA666A /* sample.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0301E0C24A000DA666A /* sample.mp3 */; };
 		E8DFE0401E0C24A000DA666A /* ambience.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0311E0C24A000DA666A /* ambience.mp3 */; };
 		E8DFE0411E0C24A000DA666A /* applause.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0321E0C24A000DA666A /* applause.mp3 */; };
-		E8DFE0421E0C24A000DA666A /* notch.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0331E0C24A000DA666A /* notch.wav */; };
+		E8DFE0421E0C24A000DA666A /* notch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0331E0C24A000DA666A /* notch.mp3 */; };
 		E8DFE0431E0C24A000DA666A /* clubHit.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0341E0C24A000DA666A /* clubHit.wav */; };
 		E8DFE0441E0C24A000DA666A /* clubHit2.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0351E0C24A000DA666A /* clubHit2.wav */; };
 		E8DFE0451E0C24A000DA666A /* HoleMade.wav in Resources */ = {isa = PBXBuildFile; fileRef = E8DFE0361E0C24A000DA666A /* HoleMade.wav */; };
@@ -200,6 +207,9 @@
 		8B9470C61E0884A50085B124 /* PuttScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PuttScene.swift; path = testGolf/PuttScene.swift; sourceTree = "<group>"; };
 		8BA136C21E1B4B0F00CCDA51 /* BallTrail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BallTrail.sks; sourceTree = "<group>"; };
 		8BA136C41E1B55E000CCDA51 /* ShotPathIndicator.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ShotPathIndicator.sks; sourceTree = "<group>"; };
+		8BA136C81E1C4F3400CCDA51 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		8BA136CB1E1C506400CCDA51 /* WallHit.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = WallHit.sks; sourceTree = "<group>"; };
+		8BA136CE1E1C518200CCDA51 /* Actions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Actions.plist; sourceTree = "<group>"; };
 		8BA5FE8C1E12E36200C8470B /* StraightWall.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StraightWall.sks; sourceTree = "<group>"; };
 		8BA5FE8F1E12E63400C8470B /* CurvedWallShort.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CurvedWallShort.sks; sourceTree = "<group>"; };
 		8BAC6B131E1A0CB400B8886B /* CourseSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CourseSelectionViewController.swift; path = ../CourseSelectionViewController.swift; sourceTree = "<group>"; };
@@ -234,7 +244,7 @@
 		E8DFE0301E0C24A000DA666A /* sample.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sample.mp3; sourceTree = "<group>"; };
 		E8DFE0311E0C24A000DA666A /* ambience.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ambience.mp3; sourceTree = "<group>"; };
 		E8DFE0321E0C24A000DA666A /* applause.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = applause.mp3; sourceTree = "<group>"; };
-		E8DFE0331E0C24A000DA666A /* notch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = notch.wav; sourceTree = "<group>"; };
+		E8DFE0331E0C24A000DA666A /* notch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = notch.mp3; sourceTree = "<group>"; };
 		E8DFE0341E0C24A000DA666A /* clubHit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = clubHit.wav; sourceTree = "<group>"; };
 		E8DFE0351E0C24A000DA666A /* clubHit2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = clubHit2.wav; sourceTree = "<group>"; };
 		E8DFE0361E0C24A000DA666A /* HoleMade.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HoleMade.wav; sourceTree = "<group>"; };
@@ -340,6 +350,8 @@
 				8B2FD2F81E03BF8000911A43 /* Putt.swift */,
 				E83E069C1E039587005711E3 /* GameViewController.swift */,
 				8B9470C61E0884A50085B124 /* PuttScene.swift */,
+				8BA136C81E1C4F3400CCDA51 /* Data.swift */,
+				8BA136CE1E1C518200CCDA51 /* Actions.plist */,
 				8B4AE23B1E19B4FC0057D65C /* Course Menu */,
 				8B31EB6B1E122C99007A0082 /* Game Nodes */,
 				8BEBEC1A1E123AA9004CDE4C /* Holes */,
@@ -377,6 +389,7 @@
 			isa = PBXGroup;
 			children = (
 				8B31EB6F1E1236B6007A0082 /* BallInHole.sks */,
+				8BA136CB1E1C506400CCDA51 /* WallHit.sks */,
 			);
 			name = SKActions;
 			path = testGolf;
@@ -478,7 +491,7 @@
 				E8DFE0301E0C24A000DA666A /* sample.mp3 */,
 				E8DFE0311E0C24A000DA666A /* ambience.mp3 */,
 				E8DFE0321E0C24A000DA666A /* applause.mp3 */,
-				E8DFE0331E0C24A000DA666A /* notch.wav */,
+				E8DFE0331E0C24A000DA666A /* notch.mp3 */,
 				E8DFE0341E0C24A000DA666A /* clubHit.wav */,
 				E8DFE0351E0C24A000DA666A /* clubHit2.wav */,
 				E8DFE0361E0C24A000DA666A /* HoleMade.wav */,
@@ -587,8 +600,9 @@
 				8BB312751E147A7700967DA4 /* Mat.sks in Resources */,
 				8BB3127B1E147A9C00967DA4 /* clubHit2.wav in Resources */,
 				8BDC6D491E1AF7670038D10B /* Bebas.ttf in Resources */,
+				8BA136CD1E1C506400CCDA51 /* WallHit.sks in Resources */,
 				8BA1903E1E1B19810089B0F3 /* UTileWalls.sks in Resources */,
-				8BB312791E147A9C00967DA4 /* notch.wav in Resources */,
+				8BB312791E147A9C00967DA4 /* notch.mp3 in Resources */,
 				8BA1903C1E1B19810089B0F3 /* UTileRight.sks in Resources */,
 				8BA1902E1E1B19810089B0F3 /* CornerBottomLeft.sks in Resources */,
 				8BCF77141E03CD0200D48A61 /* Assets.xcassets in Resources */,
@@ -619,6 +633,7 @@
 				8BA1903B1E1B19810089B0F3 /* UTileLeft.sks in Resources */,
 				8BA190391E1B19810089B0F3 /* TopWall.sks in Resources */,
 				8BA190351E1B19810089B0F3 /* LeftWall.sks in Resources */,
+				8BA136D01E1C518200CCDA51 /* Actions.plist in Resources */,
 				8BA1902C1E1B19810089B0F3 /* BlankTile.sks in Resources */,
 				8B66A7241E12394F0078FE32 /* StraightTile.sks in Resources */,
 				8B66A7231E12394F0078FE32 /* HoleTile.sks in Resources */,
@@ -647,7 +662,7 @@
 				8B5367661E1B1785008BFA6C /* CurvePiece.sks in Resources */,
 				8B5367651E1B1785008BFA6C /* CurvedWallShort.sks in Resources */,
 				E821BF3C1E11F56400CA8948 /* StraightTile.sks in Resources */,
-				E8DFE0421E0C24A000DA666A /* notch.wav in Resources */,
+				E8DFE0421E0C24A000DA666A /* notch.mp3 in Resources */,
 				8B53675E1E1B1785008BFA6C /* BlankTile.sks in Resources */,
 				8B5367621E1B1785008BFA6C /* CornerTopLeft.sks in Resources */,
 				8B5367611E1B1785008BFA6C /* CornerBottomRight.sks in Resources */,
@@ -660,6 +675,7 @@
 				E8DFE0401E0C24A000DA666A /* ambience.mp3 in Resources */,
 				E8DFE0451E0C24A000DA666A /* HoleMade.wav in Resources */,
 				8B5367631E1B1785008BFA6C /* CornerTopRight.sks in Resources */,
+				8BA136CC1E1C506400CCDA51 /* WallHit.sks in Resources */,
 				8B53675F1E1B1785008BFA6C /* BottomWall.sks in Resources */,
 				E8DFE0471E0C24A000DA666A /* click.WAV in Resources */,
 				8B5367701E1B1785008BFA6C /* UTileUp.sks in Resources */,
@@ -681,6 +697,8 @@
 				E8DFE0431E0C24A000DA666A /* clubHit.wav in Resources */,
 				8B53676A1E1B1785008BFA6C /* StraightTileUpDown.sks in Resources */,
 				8B31EB701E1236B6007A0082 /* BallInHole.sks in Resources */,
+				8BA136C71E1C4A9000CCDA51 /* Bebas.ttf in Resources */,
+				8BA136CF1E1C518200CCDA51 /* Actions.plist in Resources */,
 				8B23C6191E1B0FD500D42A38 /* Hole1.sks in Resources */,
 				8B5367671E1B1785008BFA6C /* Hole2.sks in Resources */,
 				8B53676D1E1B1785008BFA6C /* UTileDown.sks in Resources */,
@@ -790,6 +808,7 @@
 				8BAC6B151E1A0CB400B8886B /* CourseSelectionViewController.swift in Sources */,
 				8B66A7261E12394F0078FE32 /* PuttScene.swift in Sources */,
 				8B4AE2341E19A7AE0057D65C /* HoleSetup.swift in Sources */,
+				8BA136CA1E1C4F3400CCDA51 /* Data.swift in Sources */,
 				8B4AE23E1E19B5250057D65C /* CoursePreviewView.swift in Sources */,
 				8B66A71C1E12394F0078FE32 /* GameViewController.swift in Sources */,
 				8BE770B01E14522E0089FCF2 /* Mat.swift in Sources */,
@@ -805,6 +824,7 @@
 				8B2FD2F91E03BF8000911A43 /* Putt.swift in Sources */,
 				8B8B89481E121C840011ECF2 /* Wall.swift in Sources */,
 				8B9470C71E0884A50085B124 /* PuttScene.swift in Sources */,
+				8BA136C91E1C4F3400CCDA51 /* Data.swift in Sources */,
 				8B8B89451E1219E50011ECF2 /* Ball.swift in Sources */,
 				8B4AE23D1E19B5250057D65C /* CoursePreviewView.swift in Sources */,
 				E83E069D1E039587005711E3 /* GameViewController.swift in Sources */,
