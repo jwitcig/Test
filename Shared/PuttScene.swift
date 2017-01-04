@@ -37,13 +37,21 @@ class PuttScene: SKScene {
     override func didMove(to view: SKView) {
         setDebugOptions(on: view)
     
+        removeGrid()
+        
         addGestureRecognizers(in: view)
         
         setupCamera()
-
-        animateTilesIntoScene()
     
         ball.updateTrailEmitter()
+        
+        animateTilesIntoScene()
+    }
+    
+    func removeGrid() {
+        enumerateChildNodes(withName: "grid") { node, stop in
+            node.removeFromParent()
+        }
     }
     
     func setDebugOptions(on view: SKView) {
@@ -73,10 +81,12 @@ class PuttScene: SKScene {
     func animateTilesIntoScene() {
         guard let view = view else { return }
         
-        let xRange = (low: Int(-view.frame.width*0.7), high: Int(view.frame.width*0.7))
-        let yRange = (low: Int(-view.frame.height*0.7), high: Int(view.frame.height*0.7))
-       
-        let generator = RandomPointGenerator(x: xRange, y: yRange, source: GKRandomSource())
+        let scaledWidth = Int(view.frame.width * 0.7)
+        let scaledHeight = Int(view.frame.height * 0.7)
+        
+        let generator = RandomPointGenerator(x: (low: -scaledWidth, high: scaledWidth),
+                                             y: (low: -scaledHeight, high: scaledHeight),
+                                        source: GKRandomSource())
         
         let randomDuration = GKRandomDistribution(lowestValue: 2, highestValue: 2)
         enumerateChildNodes(withName: "SKReferenceNode") { node, stop in
@@ -110,10 +120,9 @@ class PuttScene: SKScene {
     }
 
     func handlePan(recognizer: UIPanGestureRecognizer) {
-        
         if recognizer.state == .began {
             recognizer.setTranslation(.zero, in: recognizer.view)
-            
+
         } else if recognizer.state == .changed {
             
             var translation = recognizer.translation(in: recognizer.view)
