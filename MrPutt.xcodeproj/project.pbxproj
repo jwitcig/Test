@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1B30DC35C25F768DE6DA506C /* Pods_MrPutt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F495C1ADA843DFFC65FCFC3C /* Pods_MrPutt.framework */; };
 		8111B4F2A1B580F730B18283 /* Pods_MrPutt_iMessageExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EC3BB72C39C396407F4004 /* Pods_MrPutt_iMessageExtension.framework */; };
+		8B073B671E1C92B7008BBAE6 /* Hill.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B073B661E1C92B7008BBAE6 /* Hill.sks */; };
+		8B073B681E1C92B7008BBAE6 /* Hill.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B073B661E1C92B7008BBAE6 /* Hill.sks */; };
 		8B13B3371E1C7E2A00C0044A /* click1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3261E1C7E2A00C0044A /* click1.wav */; };
 		8B13B3381E1C7E2A00C0044A /* click2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3271E1C7E2A00C0044A /* click2.wav */; };
 		8B13B3391E1C7E2A00C0044A /* clickHard.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3281E1C7E2A00C0044A /* clickHard.wav */; };
@@ -26,6 +28,24 @@
 		8B13B3451E1C7E2A00C0044A /* snapClick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3341E1C7E2A00C0044A /* snapClick.wav */; };
 		8B13B3461E1C7E2A00C0044A /* softHit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3351E1C7E2A00C0044A /* softHit.wav */; };
 		8B13B3471E1C7E2A00C0044A /* woodHit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3361E1C7E2A00C0044A /* woodHit.wav */; };
+		8B13B34A1E1C84F800C0044A /* Snow.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3481E1C84F800C0044A /* Snow.sks */; };
+		8B13B34B1E1C84F800C0044A /* Snow.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3481E1C84F800C0044A /* Snow.sks */; };
+		8B13B34C1E1C84F800C0044A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3491E1C84F800C0044A /* Assets.xcassets */; };
+		8B13B34D1E1C84F800C0044A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3491E1C84F800C0044A /* Assets.xcassets */; };
+		8B13B3551E1C891900C0044A /* Hole3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B34E1E1C891900C0044A /* Hole3.sks */; };
+		8B13B3561E1C891900C0044A /* Hole3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B34E1E1C891900C0044A /* Hole3.sks */; };
+		8B13B3571E1C891900C0044A /* Hole4.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B34F1E1C891900C0044A /* Hole4.sks */; };
+		8B13B3581E1C891900C0044A /* Hole4.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B34F1E1C891900C0044A /* Hole4.sks */; };
+		8B13B3591E1C891900C0044A /* Hole5.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3501E1C891900C0044A /* Hole5.sks */; };
+		8B13B35A1E1C891900C0044A /* Hole5.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3501E1C891900C0044A /* Hole5.sks */; };
+		8B13B35B1E1C891900C0044A /* Hole6.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3511E1C891900C0044A /* Hole6.sks */; };
+		8B13B35C1E1C891900C0044A /* Hole6.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3511E1C891900C0044A /* Hole6.sks */; };
+		8B13B35D1E1C891900C0044A /* Hole7.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3521E1C891900C0044A /* Hole7.sks */; };
+		8B13B35E1E1C891900C0044A /* Hole7.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3521E1C891900C0044A /* Hole7.sks */; };
+		8B13B35F1E1C891900C0044A /* Hole8.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3531E1C891900C0044A /* Hole8.sks */; };
+		8B13B3601E1C891900C0044A /* Hole8.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3531E1C891900C0044A /* Hole8.sks */; };
+		8B13B3611E1C891900C0044A /* Hole9.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3541E1C891900C0044A /* Hole9.sks */; };
+		8B13B3621E1C891900C0044A /* Hole9.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3541E1C891900C0044A /* Hole9.sks */; };
 		8B9620051E1C601600678257 /* Bebas.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F211E1C601600678257 /* Bebas.ttf */; };
 		8B9620061E1C601600678257 /* Neutra2Display-Titled.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F221E1C601600678257 /* Neutra2Display-Titled.otf */; };
 		8B9620071E1C601600678257 /* Actions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F241E1C601600678257 /* Actions.plist */; };
@@ -126,6 +146,8 @@
 		8B9620891E1C615200678257 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BCF77151E03CD0200D48A61 /* Info.plist */; };
 		8B96208D1E1C623400678257 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B96208C1E1C623400678257 /* GameViewController.swift */; };
 		8B96208E1E1C625700678257 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B96208C1E1C623400678257 /* GameViewController.swift */; };
+		8BBDBD391E1C93E500878B3A /* Hill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDBD381E1C93E500878B3A /* Hill.swift */; };
+		8BBDBD3A1E1C93E500878B3A /* Hill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDBD381E1C93E500878B3A /* Hill.swift */; };
 		8BCF770C1E03CD0200D48A61 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BCF770B1E03CD0200D48A61 /* Messages.framework */; };
 		8BCF77121E03CD0200D48A61 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BCF77101E03CD0200D48A61 /* MainInterface.storyboard */; };
 		8BCF77141E03CD0200D48A61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BCF77131E03CD0200D48A61 /* Assets.xcassets */; };
@@ -161,6 +183,7 @@
 		0D2BE46640F29779EC002A25 /* Pods-testGolf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGolf.release.xcconfig"; path = "Pods/Target Support Files/Pods-testGolf/Pods-testGolf.release.xcconfig"; sourceTree = "<group>"; };
 		73EC3BB72C39C396407F4004 /* Pods_MrPutt_iMessageExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MrPutt_iMessageExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B8B9F42799F64010D73C350 /* Pods-testGolf-iMessageExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGolf-iMessageExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-testGolf-iMessageExtension/Pods-testGolf-iMessageExtension.release.xcconfig"; sourceTree = "<group>"; };
+		8B073B661E1C92B7008BBAE6 /* Hill.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hill.sks; sourceTree = "<group>"; };
 		8B13B3261E1C7E2A00C0044A /* click1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click1.wav; sourceTree = "<group>"; };
 		8B13B3271E1C7E2A00C0044A /* click2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click2.wav; sourceTree = "<group>"; };
 		8B13B3281E1C7E2A00C0044A /* clickHard.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = clickHard.wav; sourceTree = "<group>"; };
@@ -178,6 +201,15 @@
 		8B13B3341E1C7E2A00C0044A /* snapClick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = snapClick.wav; sourceTree = "<group>"; };
 		8B13B3351E1C7E2A00C0044A /* softHit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = softHit.wav; sourceTree = "<group>"; };
 		8B13B3361E1C7E2A00C0044A /* woodHit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = woodHit.wav; sourceTree = "<group>"; };
+		8B13B3481E1C84F800C0044A /* Snow.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Snow.sks; sourceTree = "<group>"; };
+		8B13B3491E1C84F800C0044A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8B13B34E1E1C891900C0044A /* Hole3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hole3.sks; sourceTree = "<group>"; };
+		8B13B34F1E1C891900C0044A /* Hole4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hole4.sks; sourceTree = "<group>"; };
+		8B13B3501E1C891900C0044A /* Hole5.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hole5.sks; sourceTree = "<group>"; };
+		8B13B3511E1C891900C0044A /* Hole6.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hole6.sks; sourceTree = "<group>"; };
+		8B13B3521E1C891900C0044A /* Hole7.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hole7.sks; sourceTree = "<group>"; };
+		8B13B3531E1C891900C0044A /* Hole8.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hole8.sks; sourceTree = "<group>"; };
+		8B13B3541E1C891900C0044A /* Hole9.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hole9.sks; sourceTree = "<group>"; };
 		8B961F211E1C601600678257 /* Bebas.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bebas.ttf; sourceTree = "<group>"; };
 		8B961F221E1C601600678257 /* Neutra2Display-Titled.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neutra2Display-Titled.otf"; sourceTree = "<group>"; };
 		8B961F241E1C601600678257 /* Actions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Actions.plist; sourceTree = "<group>"; };
@@ -231,6 +263,7 @@
 		8B96207C1E1C60CB00678257 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B96207E1E1C60CB00678257 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B96208C1E1C623400678257 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		8BBDBD381E1C93E500878B3A /* Hill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hill.swift; sourceTree = "<group>"; };
 		8BCF770A1E03CD0200D48A61 /* iMessageExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = iMessageExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BCF770B1E03CD0200D48A61 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		8BCF77111E03CD0200D48A61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -339,6 +372,7 @@
 				8B961F281E1C601600678257 /* Hole.swift */,
 				8B961F291E1C601600678257 /* Mat.swift */,
 				8B961F2A1E1C601600678257 /* Wall.swift */,
+				8BBDBD381E1C93E500878B3A /* Hill.swift */,
 			);
 			path = "Custom Nodes";
 			sourceTree = "<group>";
@@ -356,6 +390,8 @@
 			isa = PBXGroup;
 			children = (
 				8B961F331E1C601600678257 /* BallTrail.sks */,
+				8B13B3481E1C84F800C0044A /* Snow.sks */,
+				8B13B3491E1C84F800C0044A /* Assets.xcassets */,
 			);
 			path = Emitters;
 			sourceTree = "<group>";
@@ -365,6 +401,13 @@
 			children = (
 				8B961F361E1C601600678257 /* Hole1.sks */,
 				8B961F371E1C601600678257 /* Hole2.sks */,
+				8B13B34E1E1C891900C0044A /* Hole3.sks */,
+				8B13B34F1E1C891900C0044A /* Hole4.sks */,
+				8B13B3501E1C891900C0044A /* Hole5.sks */,
+				8B13B3511E1C891900C0044A /* Hole6.sks */,
+				8B13B3521E1C891900C0044A /* Hole7.sks */,
+				8B13B3531E1C891900C0044A /* Hole8.sks */,
+				8B13B3541E1C891900C0044A /* Hole9.sks */,
 			);
 			path = Holes;
 			sourceTree = "<group>";
@@ -403,6 +446,7 @@
 			isa = PBXGroup;
 			children = (
 				8B961F351E1C601600678257 /* Ball.sks */,
+				8B073B661E1C92B7008BBAE6 /* Hill.sks */,
 				8B961F381E1C601600678257 /* Holes */,
 				8B961F391E1C601600678257 /* ShotPathIndicator.sks */,
 				8B961F511E1C601600678257 /* Tiles */,
@@ -616,8 +660,12 @@
 				8BCF77141E03CD0200D48A61 /* Assets.xcassets in Resources */,
 				8B96204B1E1C608400678257 /* Bebas.ttf in Resources */,
 				8B9620731E1C60B400678257 /* UTileWalls.sks in Resources */,
+				8B13B3561E1C891900C0044A /* Hole3.sks in Resources */,
+				8B13B34B1E1C84F800C0044A /* Snow.sks in Resources */,
+				8B13B34D1E1C84F800C0044A /* Assets.xcassets in Resources */,
 				8B9620711E1C60B400678257 /* UTileRight.sks in Resources */,
 				8B9620891E1C615200678257 /* Info.plist in Resources */,
+				8B13B3601E1C891900C0044A /* Hole8.sks in Resources */,
 				8B9620741E1C60B400678257 /* WindField.sks in Resources */,
 				8B9620371E1C605F00678257 /* Assets.xcassets in Resources */,
 				8B96204C1E1C608400678257 /* Neutra2Display-Titled.otf in Resources */,
@@ -626,7 +674,10 @@
 				8B9620681E1C60B400678257 /* Mat.sks in Resources */,
 				8B96203B1E1C607B00678257 /* Assets.xcassets in Resources */,
 				8B96206C1E1C60B400678257 /* StraightWall.sks in Resources */,
+				8B13B3581E1C891900C0044A /* Hole4.sks in Resources */,
+				8B13B3621E1C891900C0044A /* Hole9.sks in Resources */,
 				8B9620621E1C60B300678257 /* CornerTopRight.sks in Resources */,
+				8B073B681E1C92B7008BBAE6 /* Hill.sks in Resources */,
 				8B9620641E1C60B300678257 /* CurvedWallShort.sks in Resources */,
 				8B9620691E1C60B400678257 /* RightWall.sks in Resources */,
 				8BCF77121E03CD0200D48A61 /* MainInterface.storyboard in Resources */,
@@ -647,12 +698,15 @@
 				8B9620721E1C60B400678257 /* UTileUp.sks in Resources */,
 				8B9620761E1C60B400678257 /* CoursePreviewView.xib in Resources */,
 				8B96206F1E1C60B400678257 /* UTileDown.sks in Resources */,
+				8B13B35C1E1C891900C0044A /* Hole6.sks in Resources */,
 				8B96205C1E1C60B300678257 /* ShotPathIndicator.sks in Resources */,
 				8B96205F1E1C60B300678257 /* CornerBottomLeft.sks in Resources */,
 				8B96206A1E1C60B400678257 /* StraightTile.sks in Resources */,
 				8B96205E1E1C60B300678257 /* BottomWall.sks in Resources */,
 				8B9620571E1C60B300678257 /* WallHit.sks in Resources */,
 				8B96206D1E1C60B400678257 /* TopWall.sks in Resources */,
+				8B13B35A1E1C891900C0044A /* Hole5.sks in Resources */,
+				8B13B35E1E1C891900C0044A /* Hole7.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,23 +722,32 @@
 				8B13B3381E1C7E2A00C0044A /* click2.wav in Resources */,
 				8B13B3431E1C7E2A00C0044A /* randomClick.wav in Resources */,
 				8B9620111E1C601600678257 /* WallHit.sks in Resources */,
+				8B13B35F1E1C891900C0044A /* Hole8.sks in Resources */,
 				8B13B33A1E1C7E2A00C0044A /* clickSoft.wav in Resources */,
 				8B13B3391E1C7E2A00C0044A /* clickHard.wav in Resources */,
+				8B13B3611E1C891900C0044A /* Hole9.sks in Resources */,
 				8B9620241E1C601600678257 /* StraightTile.sks in Resources */,
 				8B9620201E1C601600678257 /* HoleTile.sks in Resources */,
+				8B13B3591E1C891900C0044A /* Hole5.sks in Resources */,
 				8B13B3441E1C7E2A00C0044A /* scoreCard.wav in Resources */,
 				8B9620861E1C611600678257 /* Info.plist in Resources */,
 				8B9620181E1C601600678257 /* BottomWall.sks in Resources */,
+				8B13B35B1E1C891900C0044A /* Hole6.sks in Resources */,
+				8B13B35D1E1C891900C0044A /* Hole7.sks in Resources */,
 				8B9620051E1C601600678257 /* Bebas.ttf in Resources */,
 				8B9620161E1C601600678257 /* ShotPathIndicator.sks in Resources */,
 				8B9620191E1C601600678257 /* CornerBottomLeft.sks in Resources */,
+				8B13B34A1E1C84F800C0044A /* Snow.sks in Resources */,
 				8B9620871E1C613000678257 /* Main.storyboard in Resources */,
+				8B073B671E1C92B7008BBAE6 /* Hill.sks in Resources */,
 				8B96201A1E1C601600678257 /* CornerBottomRight.sks in Resources */,
 				8B9620131E1C601600678257 /* Ball.sks in Resources */,
 				8B13B3401E1C7E2A00C0044A /* menuClick.wav in Resources */,
 				8B9620221E1C601600678257 /* Mat.sks in Resources */,
 				8B9620881E1C613300678257 /* LaunchScreen.storyboard in Resources */,
 				8B9620151E1C601600678257 /* Hole2.sks in Resources */,
+				8B13B34C1E1C84F800C0044A /* Assets.xcassets in Resources */,
+				8B13B3551E1C891900C0044A /* Hole3.sks in Resources */,
 				8B9620121E1C601600678257 /* BallTrail.sks in Resources */,
 				8B96201F1E1C601600678257 /* CurvePiece.sks in Resources */,
 				8B96201D1E1C601600678257 /* CornerWalls.sks in Resources */,
@@ -713,6 +776,7 @@
 				8B9620101E1C601600678257 /* BallInHole.sks in Resources */,
 				8B9620291E1C601600678257 /* UTileDown.sks in Resources */,
 				8B96201E1E1C601600678257 /* CurvedWallShort.sks in Resources */,
+				8B13B3571E1C891900C0044A /* Hole4.sks in Resources */,
 				8B9620301E1C601600678257 /* CoursePreviewView.xib in Resources */,
 				8B96202C1E1C601600678257 /* UTileUp.sks in Resources */,
 				8B13B33F1E1C7E2A00C0044A /* littleClick.wav in Resources */,
@@ -811,6 +875,7 @@
 				8B96208D1E1C623400678257 /* GameViewController.swift in Sources */,
 				8B9620531E1C608900678257 /* HoleSetup.swift in Sources */,
 				8B9620541E1C608900678257 /* Putt.swift in Sources */,
+				8BBDBD3A1E1C93E500878B3A /* Hill.swift in Sources */,
 				8B96204E1E1C608900678257 /* Ball.swift in Sources */,
 				8B96204F1E1C608900678257 /* Hole.swift in Sources */,
 				8B9620551E1C608900678257 /* PuttScene.swift in Sources */,
@@ -829,6 +894,7 @@
 				8B96200E1E1C601600678257 /* Putt.swift in Sources */,
 				8B96200B1E1C601600678257 /* Wall.swift in Sources */,
 				8B96200A1E1C601600678257 /* Mat.swift in Sources */,
+				8BBDBD391E1C93E500878B3A /* Hill.swift in Sources */,
 				8B96200F1E1C601600678257 /* PuttScene.swift in Sources */,
 				8B9620091E1C601600678257 /* Hole.swift in Sources */,
 				8B9620841E1C610F00678257 /* AppDelegate.swift in Sources */,
