@@ -146,6 +146,10 @@
 		8BBD3B4C1E1D8BE000688836 /* iMessageExtensionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBD3B4B1E1D8BE000688836 /* iMessageExtensionUITests.swift */; };
 		8BBD3B541E1D8DBD00688836 /* CourseSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBD3B531E1D8DBD00688836 /* CourseSelectionViewController.swift */; };
 		8BBD3B551E1D8DC200688836 /* CourseSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBD3B531E1D8DBD00688836 /* CourseSelectionViewController.swift */; };
+		8BBD3B5D1E1DAFAB00688836 /* PortalEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BBD3B5C1E1DAFAB00688836 /* PortalEmitter.sks */; };
+		8BBD3B5E1E1DAFAB00688836 /* PortalEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BBD3B5C1E1DAFAB00688836 /* PortalEmitter.sks */; };
+		8BBD3B601E1DB40A00688836 /* Portal.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BBD3B5F1E1DB40A00688836 /* Portal.sks */; };
+		8BBD3B611E1DB40A00688836 /* Portal.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BBD3B5F1E1DB40A00688836 /* Portal.sks */; };
 		8BBDBD391E1C93E500878B3A /* Hill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDBD381E1C93E500878B3A /* Hill.swift */; };
 		8BBDBD3A1E1C93E500878B3A /* Hill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDBD381E1C93E500878B3A /* Hill.swift */; };
 		8BC378081E1CDB2D0014AFA2 /* blazeAmbience.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8BC378051E1CDB2D0014AFA2 /* blazeAmbience.m4a */; };
@@ -297,6 +301,8 @@
 		8BBD3B4B1E1D8BE000688836 /* iMessageExtensionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iMessageExtensionUITests.swift; sourceTree = "<group>"; };
 		8BBD3B4D1E1D8BE000688836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BBD3B531E1D8DBD00688836 /* CourseSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseSelectionViewController.swift; sourceTree = "<group>"; };
+		8BBD3B5C1E1DAFAB00688836 /* PortalEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PortalEmitter.sks; sourceTree = "<group>"; };
+		8BBD3B5F1E1DB40A00688836 /* Portal.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Portal.sks; sourceTree = "<group>"; };
 		8BBDBD381E1C93E500878B3A /* Hill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hill.swift; sourceTree = "<group>"; };
 		8BC378051E1CDB2D0014AFA2 /* blazeAmbience.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = blazeAmbience.m4a; sourceTree = "<group>"; };
 		8BC378061E1CDB2D0014AFA2 /* frostAmbience.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = frostAmbience.mp3; sourceTree = "<group>"; };
@@ -459,6 +465,7 @@
 			children = (
 				8B961F331E1C601600678257 /* BallTrail.sks */,
 				8B13B3481E1C84F800C0044A /* Snow.sks */,
+				8BBD3B5C1E1DAFAB00688836 /* PortalEmitter.sks */,
 				8B13B3491E1C84F800C0044A /* Assets.xcassets */,
 			);
 			path = Emitters;
@@ -520,6 +527,8 @@
 				E86513C21E1DAB0D005FBA85 /* Timber */,
 				E86513C31E1DAB18005FBA85 /* Blaze */,
 				8B961F381E1C601600678257 /* Frost */,
+				8BBD3B5F1E1DB40A00688836 /* Portal.sks */,
+				8B961F381E1C601600678257 /* Holes */,
 				8B961F391E1C601600678257 /* ShotPathIndicator.sks */,
 				8B961F511E1C601600678257 /* Tiles */,
 				8B961F521E1C601600678257 /* WindField.sks */,
@@ -811,6 +820,7 @@
 				8B9620731E1C60B400678257 /* UTileWalls.sks in Resources */,
 				8B13B3561E1C891900C0044A /* Frost-Hole3.sks in Resources */,
 				8B13B34B1E1C84F800C0044A /* Snow.sks in Resources */,
+				8BBD3B5E1E1DAFAB00688836 /* PortalEmitter.sks in Resources */,
 				8B13B34D1E1C84F800C0044A /* Assets.xcassets in Resources */,
 				8B9620711E1C60B400678257 /* UTileRight.sks in Resources */,
 				8B13B3601E1C891900C0044A /* Frost-Hole8.sks in Resources */,
@@ -834,6 +844,7 @@
 				8BC3780D1E1CE9670014AFA2 /* SceneStart.sks in Resources */,
 				8B9620661E1C60B400678257 /* HoleTile.sks in Resources */,
 				8B9620671E1C60B400678257 /* LeftWall.sks in Resources */,
+				8BBD3B611E1DB40A00688836 /* Portal.sks in Resources */,
 				8B96205A1E1C60B300678257 /* Frost-Hole1.sks in Resources */,
 				8B96205B1E1C60B300678257 /* Frost-Hole2.sks in Resources */,
 				8B9620701E1C60B400678257 /* UTileLeft.sks in Resources */,
@@ -882,6 +893,7 @@
 				E86513D71E1DBB1A005FBA85 /* Grid.sks in Resources */,
 				8B13B3391E1C7E2A00C0044A /* clickHard.wav in Resources */,
 				8B13B3611E1C891900C0044A /* Frost-Hole9.sks in Resources */,
+				8BBD3B5D1E1DAFAB00688836 /* PortalEmitter.sks in Resources */,
 				8B9620241E1C601600678257 /* StraightTile.sks in Resources */,
 				E865FFF91E1DC0510072E2E3 /* Timber-Hole4.sks in Resources */,
 				8B9620201E1C601600678257 /* HoleTile.sks in Resources */,
@@ -906,6 +918,7 @@
 				8B9620151E1C601600678257 /* Frost-Hole2.sks in Resources */,
 				8B13B34C1E1C84F800C0044A /* Assets.xcassets in Resources */,
 				E865FFFB1E1DC05A0072E2E3 /* Timber-Hole5.sks in Resources */,
+				8BBD3B601E1DB40A00688836 /* Portal.sks in Resources */,
 				8B13B3551E1C891900C0044A /* Frost-Hole3.sks in Resources */,
 				8B9620121E1C601600678257 /* BallTrail.sks in Resources */,
 				8B96201F1E1C601600678257 /* CurvePiece.sks in Resources */,
