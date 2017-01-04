@@ -38,6 +38,16 @@
                ReferencedContainer = "container:MrPutt.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8BBD3B481E1D8BE000688836"
+               BuildableName = "iMessageExtensionUITests.xctest"
+               BlueprintName = "iMessageExtensionUITests"
+               ReferencedContainer = "container:MrPutt.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

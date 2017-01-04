@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteout_preview_background" translatesAutoresizingMaskIntoConstraints="NO" id="9cO-Ky-ARf">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frostPreviewBackground" translatesAutoresizingMaskIntoConstraints="NO" id="9cO-Ky-ARf">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCn-iy-wMZ">
@@ -37,7 +37,10 @@
                         <constraint firstAttribute="width" secondItem="8aJ-85-SsF" secondAttribute="height" multiplier="1:1" id="QCv-Lc-XKe"/>
                         <constraint firstAttribute="width" constant="47" id="eRY-FI-UQp"/>
                     </constraints>
-                    <state key="normal" image="playButtonFinal"/>
+                    <state key="normal" image="play"/>
+                    <connections>
+                        <action selector="playPressedWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="iOv-gU-CYe"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WHITEOUT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1d-o0-AlT">
                     <rect key="frame" x="9" y="8" width="130" height="25"/>
@@ -50,6 +53,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <color key="tintColor" red="0.28858506679534912" green="0.40599018335342407" blue="0.6591041088104248" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <accessibility key="accessibilityConfiguration" identifier="coursePreview"/>
             <constraints>
                 <constraint firstItem="8aJ-85-SsF" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Dhw-bh-YF3"/>
                 <constraint firstAttribute="bottom" secondItem="cCn-iy-wMZ" secondAttribute="bottom" constant="4" id="YGt-I4-7c4"/>
@@ -74,7 +78,7 @@
         </view>
     </objects>
     <resources>
-        <image name="playButtonFinal" width="240" height="240"/>
-        <image name="whiteout_preview_background" width="240" height="106"/>
+        <image name="frostPreviewBackground" width="240" height="106"/>
+        <image name="play" width="90" height="90"/>
     </resources>
 </document>

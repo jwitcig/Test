@@ -26,9 +26,6 @@ class MessagesViewController: MSMessagesAppViewController {
         if let message = conversation.selectedMessage {
             handleStarterEvent(message: message, conversation: conversation)
         } else {
-            gameController = createGameController(fromReader: nil)
-//            present(gameController!)
-
             let controller = storyboard!.instantiateViewController(withIdentifier: "CourseSelectionViewController") as! CourseSelectionViewController
             present(controller)
         }
@@ -50,9 +47,9 @@ class MessagesViewController: MSMessagesAppViewController {
         
     }
     
-    func createGameController(fromReader reader: PuttMessageReader?) -> GameViewController {
+    func createGameController(fromReader reader: PuttMessageReader?, course: CoursePack.Type) -> GameViewController {
         let controller = storyboard!.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
-        controller.configureScene(previousSession: reader?.session)
+        controller.configureScene(previousSession: reader?.session, course: course)
         return controller
     }
 }
@@ -74,7 +71,7 @@ extension MessagesViewController: iMessageCycle {
         
         isAwaitingResponse = false
         
-        gameController = createGameController(fromReader: reader)
+        gameController = createGameController(fromReader: reader, course: reader.session.initial.course)
         present(gameController!)
     }
     

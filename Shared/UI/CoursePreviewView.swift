@@ -17,7 +17,7 @@ class CoursePreviewView: UIView {
     
     var course: CoursePack.Type!
     
-    var playPressedBlock: ()->Void = { }
+    var playPressedBlock: (CoursePack.Type)->Void = { _ in }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -35,11 +35,11 @@ class CoursePreviewView: UIView {
         preview.courseHoleCountLabel.text = course.holeCount.string!
         preview.imageView.image = course.previewImage
         
-        preview.playButton.setImage(#imageLiteral(resourceName: "PlayButton"), for: [.selected, .highlighted])
+        preview.playButton.setImage(#imageLiteral(resourceName: "play"), for: [.selected, .highlighted])
         return preview
     }
     
     @IBAction func playPressed(sender: Any) {
-        playPressedBlock()
+        playPressedBlock(course)
     }
 }
