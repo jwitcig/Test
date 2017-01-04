@@ -35,27 +35,39 @@ class PuttScene: SKScene {
     // MARK: Scene Lifecycle
     
     override func didMove(to view: SKView) {
+        setDebugOptions(on: view)
+    
+        addGestureRecognizers(in: view)
+        
+        setupCamera()
+
+        animateTilesIntoScene()
+    
+        ball.updateTrailEmitter()
+    }
+    
+    func setDebugOptions(on view: SKView) {
         view.showsFPS = true
         view.showsPhysics = true
         view.backgroundColor = .black
-        
+    }
+    
+    func setupPhysics() {
         // sends contact notifications to didBegin(contact:)
         physicsWorld.contactDelegate = self
-        
+    }
+    
+    func setupCamera() {
         let camera = SKCameraNode()
         addChild(camera)
         self.camera = camera
-        
-        startBackgroundAnimations()
-        
-        ball.updateTrailEmitter()
-        
+    }
+    
+    func addGestureRecognizers(in view: SKView) {
         let _ = UIPanGestureRecognizer(target: self, action: #selector(PuttScene.handlePan(recognizer:)))
         
         let zoom = UIPinchGestureRecognizer(target: self, action: #selector(PuttScene.handleZoom(recognizer:)))
         view.addGestureRecognizer(zoom)
-        
-        animateTilesIntoScene()
     }
     
     func animateTilesIntoScene() {
@@ -67,17 +79,18 @@ class PuttScene: SKScene {
         let generator = RandomPointGenerator(x: xRange, y: yRange, source: GKRandomSource())
         
         let randomDuration = GKRandomDistribution(lowestValue: 2, highestValue: 2)
-        enumerateChildNodes(withName: "*") { node, stop in
-            guard node is SKReferenceNode else { return }
+        enumerateChildNodes(withName: "SKReferenceNode") { node, stop in
+            guard let nodeParent = node.parent else { return }
             
             let finalPosition = node.position
             
             let newPosition = CGPoint(x: finalPosition.x, y: generator.newPoint().y)
             
-            node.position = self.convert(newPosition, to: node.parent!)
+            node.position = self.convert(newPosition, to: nodeParent)
             node.alpha = 0
             
             let duration = TimeInterval(randomDuration.nextInt())
+            
             let fadeIn = SKAction.fadeIn(withDuration: duration)
             let move = SKAction.move(to: finalPosition, duration: duration)
             
@@ -116,17 +129,6 @@ class PuttScene: SKScene {
     }
 
     // MARK: Animations
-
-    func startBackgroundAnimations() {
-        let ambientNoise = SKAudioNode(fileNamed: "ambience")
-        ambientNoise.autoplayLooped = true
-        addChild(ambientNoise)
-        
-        let moveSlow = SKAction.move(by: CGVector(dx: -20, dy: 0), duration: 2)
-        let repeatMove = SKAction.repeatForever(moveSlow)
-        childNode(withName: "clouds")?.run(repeatMove)
-        childNode(withName: "birds")?.run(repeatMove)
-    }
 
     // MARK: Touch Handling
 
