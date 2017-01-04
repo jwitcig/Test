@@ -53,13 +53,23 @@
                ReferencedContainer = "container:MrPutt.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8BBD3B481E1D8BE000688836"
+               BuildableName = "iMessageExtensionUITests.xctest"
+               BlueprintName = "iMessageExtensionUITests"
+               ReferencedContainer = "container:MrPutt.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E83E06941E039586005711E3"
-            BuildableName = "MrPutt.app"
-            BlueprintName = "MrPutt"
+            BlueprintIdentifier = "8BCF77091E03CD0200D48A61"
+            BuildableName = "iMessageExtension.appex"
+            BlueprintName = "iMessageExtension"
             ReferencedContainer = "container:MrPutt.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -77,16 +87,26 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "1"
+         BundleIdentifier = "com.apple.MobileSMS">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E83E06941E039586005711E3"
-            BuildableName = "MrPutt.app"
-            BlueprintName = "MrPutt"
+            BlueprintIdentifier = "8BCF77091E03CD0200D48A61"
+            BuildableName = "iMessageExtension.appex"
+            BlueprintName = "iMessageExtension"
             ReferencedContainer = "container:MrPutt.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "8BCF77091E03CD0200D48A61"
+            BuildableName = "iMessageExtension.appex"
+            BlueprintName = "iMessageExtension"
+            ReferencedContainer = "container:MrPutt.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

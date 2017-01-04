@@ -29,19 +29,19 @@ struct Course {
 struct Frost: CoursePack {
     static let name = "Frost"
     static let holeCount = 9
-    static let previewImage = #imageLiteral(resourceName: "whiteout_preview_background")
+    static let previewImage = #imageLiteral(resourceName: "frostPreviewBackground")
 }
 
 struct Blaze: CoursePack {
     static let name = "Blaze"
     static let holeCount = 9
-    static let previewImage = #imageLiteral(resourceName: "blaze_preview_background")
+    static let previewImage = #imageLiteral(resourceName: "blazePreviewBackground")
 }
 
 struct Timber: CoursePack {
     static let name = "Timber"
     static let holeCount = 9
-    static let previewImage = #imageLiteral(resourceName: "test")
+    static let previewImage = #imageLiteral(resourceName: "timberPreviewBackground")
 }
 
 class HoleSetup {

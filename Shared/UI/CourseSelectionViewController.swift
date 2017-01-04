@@ -28,11 +28,12 @@ class CourseSelectionViewController: UIViewController {
             $0.bottom == $1.bottom
             
             $0.width == $1.width
-            $0.height >= $1.height
         }
         
-        let playBlock = {
-            
+        let playBlock: (CoursePack.Type)->Void = { course in
+            let controller = self.storyboard!.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
+            controller.configureScene(previousSession: nil, course: course)
+            self.present(controller)
         }
         
         let frost = CoursePreviewView.create(course: Frost.self as CoursePack.Type)
@@ -65,7 +66,7 @@ class CourseSelectionViewController: UIViewController {
         
         if let last = previews.last {
             constrain(last, contentView) {
-                $0.bottom == $1.bottom
+                $0.bottom == $1.bottom + 20
             }
         }
         

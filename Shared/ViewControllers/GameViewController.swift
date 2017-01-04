@@ -25,24 +25,21 @@ class GameViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let sceneName = "Hole9"
-        scene = PuttScene(fileNamed: sceneName)!
-        configureScene(previousSession: nil)
-        sceneView.presentScene(scene)
     }
     
-    func configureScene(previousSession: PuttSession?) {
+    func configureScene(previousSession: PuttSession?, course: CoursePack.Type) {
         // setup any visuals with data specific to the previous session; if nil, start fresh
     
         let number = previousSession?.initial.holeNumber ?? 1
-        scene = SKScene(fileNamed: "Hole\(number)")! as! PuttScene
+        scene = SKScene(fileNamed: "\(course.name)-Hole\(number)")! as! PuttScene
         
         let cycle = SessionCycle(started: started, finished: finished, generateSession: generateSession)
 
         scene.game = Putt(previousSession: previousSession, initial: previousSession?.initial, padding: nil, cycle: cycle)
         
         HoleSetup.setup(scene, forHole: number, inCourse: Frost.self)
+        
+        sceneView.presentScene(scene)
     }
     
     // MARK: Game Cycle

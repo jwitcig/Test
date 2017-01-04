@@ -58,12 +58,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gplaypattern_@2X-1" translatesAutoresizingMaskIntoConstraints="NO" id="4tM-Ze-Zt2">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="courseSelectionBackground" translatesAutoresizingMaskIntoConstraints="NO" id="4tM-Ze-Zt2">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4f-mG-lVD">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4f-mG-lVD">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="locations" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUW-m3-0xk">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
@@ -91,7 +90,11 @@
                             <constraint firstItem="4tM-Ze-Zt2" firstAttribute="width" secondItem="tns-IW-MKR" secondAttribute="width" id="Sdo-J6-1O7"/>
                             <constraint firstItem="sUW-m3-0xk" firstAttribute="leading" secondItem="tns-IW-MKR" secondAttribute="leading" id="a5B-OA-djL"/>
                             <constraint firstItem="0K5-cI-TmE" firstAttribute="top" secondItem="S8o-6C-cfP" secondAttribute="bottom" id="b1P-xX-U9i"/>
+                            <constraint firstItem="E4f-mG-lVD" firstAttribute="top" secondItem="BDj-cZ-dTz" secondAttribute="bottom" id="kMc-Kd-a3v"/>
+                            <constraint firstItem="E4f-mG-lVD" firstAttribute="leading" secondItem="tns-IW-MKR" secondAttribute="leading" id="pl4-PT-cEN"/>
                             <constraint firstItem="4tM-Ze-Zt2" firstAttribute="centerX" secondItem="tns-IW-MKR" secondAttribute="centerX" id="qQH-uN-Qul"/>
+                            <constraint firstAttribute="trailing" secondItem="E4f-mG-lVD" secondAttribute="trailing" id="ymR-Wk-CMX"/>
+                            <constraint firstItem="0K5-cI-TmE" firstAttribute="top" secondItem="E4f-mG-lVD" secondAttribute="bottom" id="zKx-w9-e34"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -125,7 +128,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="fadeWhite" width="640" height="335"/>
-        <image name="gplaypattern_@2X-1" width="320" height="303"/>
+        <image name="courseSelectionBackground" width="62" height="59"/>
+        <image name="fadeWhite" width="240" height="125"/>
     </resources>
 </document>

@@ -36,7 +36,9 @@ class PuttScene: SKScene {
     
     override func didMove(to view: SKView) {
         setDebugOptions(on: view)
-    
+        
+        scaleMode = .resizeFill
+        
         removeGrid()
         
         addGestureRecognizers(in: view)
@@ -45,7 +47,50 @@ class PuttScene: SKScene {
     
         ball.updateTrailEmitter()
         
-        animateTilesIntoScene()
+        //animateTilesIntoScene()
+        
+        let light = ball.childNode(withName: "light") as! SKLightNode
+        
+        let random = GKRandomDistribution(lowestValue: 0, highestValue: 1)
+        
+        let quantity = 2
+        
+        var colorizers: [((CGFloat, CGFloat, CGFloat), String, SKAction)] = []
+        
+        for i in 0..<quantity {
+            let r = CGFloat(random.nextUniform())
+            let g = CGFloat(random.nextUniform())
+            let b = CGFloat(random.nextUniform())
+            
+            let duration: CGFloat = 0.3
+        
+            let previous = i > 0 ? colorizers[i-1].0 : (1, 1, 1)
+            let action: (SKNode, CGFloat)->Void = { node, timestep in
+                let tR = previous.0 + (r - previous.0) * (timestep/duration)
+                let tG = previous.1 + (g - previous.1) * (timestep/duration)
+                let tB = previous.2 + (b - previous.2) * (timestep/duration)
+                
+                light.lightColor = UIColor(red: tR,
+                                         green: tG,
+                                          blue: tB,
+                                         alpha: 1)
+            }
+            
+            let colorizer = SKAction.customAction(withDuration: TimeInterval(duration), actionBlock: action)
+        
+            colorizers.append(((r, g, b), "\(i)", colorizer))
+        }
+        
+//        let colorizeRed = SKAction.customAction(withDuration: 0.5) { node, timestep in
+//            light.lightColor = UIColor(red: 1.0 * (timestep/0.5), green: 0, blue: 0, alpha: 1)
+//        }
+//        
+//        let colorizeBlue = SKAction.customAction(withDuration: 0.5) { node, timestep in
+//            light.lightColor = UIColor(red: 0, green: 0, blue: 1.0 * (timestep/0.5), alpha: 1)
+//        }
+        
+        let flash = SKAction.sequence(colorizers.map{$0.2})
+        light.run(SKAction.repeatForever(flash))
     }
     
     func removeGrid() {
@@ -56,7 +101,7 @@ class PuttScene: SKScene {
     
     func setDebugOptions(on view: SKView) {
         view.showsFPS = true
-        view.showsPhysics = true
+        view.showsPhysics = false
         view.backgroundColor = .black
     }
     
@@ -66,9 +111,10 @@ class PuttScene: SKScene {
     }
     
     func setupCamera() {
-        let camera = SKCameraNode()
-        addChild(camera)
-        self.camera = camera
+        if self.camera == nil {
+            self.camera = SKCameraNode()
+            addChild(self.camera!)
+        }
     }
     
     func addGestureRecognizers(in view: SKView) {

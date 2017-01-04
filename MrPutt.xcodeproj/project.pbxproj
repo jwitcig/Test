@@ -32,20 +32,20 @@
 		8B13B34B1E1C84F800C0044A /* Snow.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3481E1C84F800C0044A /* Snow.sks */; };
 		8B13B34C1E1C84F800C0044A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3491E1C84F800C0044A /* Assets.xcassets */; };
 		8B13B34D1E1C84F800C0044A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3491E1C84F800C0044A /* Assets.xcassets */; };
-		8B13B3551E1C891900C0044A /* Hole3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B34E1E1C891900C0044A /* Hole3.sks */; };
-		8B13B3561E1C891900C0044A /* Hole3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B34E1E1C891900C0044A /* Hole3.sks */; };
-		8B13B3571E1C891900C0044A /* Hole4.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B34F1E1C891900C0044A /* Hole4.sks */; };
-		8B13B3581E1C891900C0044A /* Hole4.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B34F1E1C891900C0044A /* Hole4.sks */; };
-		8B13B3591E1C891900C0044A /* Hole5.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3501E1C891900C0044A /* Hole5.sks */; };
-		8B13B35A1E1C891900C0044A /* Hole5.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3501E1C891900C0044A /* Hole5.sks */; };
-		8B13B35B1E1C891900C0044A /* Hole6.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3511E1C891900C0044A /* Hole6.sks */; };
-		8B13B35C1E1C891900C0044A /* Hole6.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3511E1C891900C0044A /* Hole6.sks */; };
-		8B13B35D1E1C891900C0044A /* Hole7.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3521E1C891900C0044A /* Hole7.sks */; };
-		8B13B35E1E1C891900C0044A /* Hole7.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3521E1C891900C0044A /* Hole7.sks */; };
-		8B13B35F1E1C891900C0044A /* Hole8.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3531E1C891900C0044A /* Hole8.sks */; };
-		8B13B3601E1C891900C0044A /* Hole8.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3531E1C891900C0044A /* Hole8.sks */; };
-		8B13B3611E1C891900C0044A /* Hole9.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3541E1C891900C0044A /* Hole9.sks */; };
-		8B13B3621E1C891900C0044A /* Hole9.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3541E1C891900C0044A /* Hole9.sks */; };
+		8B13B3551E1C891900C0044A /* Frost-Hole3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B34E1E1C891900C0044A /* Frost-Hole3.sks */; };
+		8B13B3561E1C891900C0044A /* Frost-Hole3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B34E1E1C891900C0044A /* Frost-Hole3.sks */; };
+		8B13B3571E1C891900C0044A /* Frost-Hole4.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B34F1E1C891900C0044A /* Frost-Hole4.sks */; };
+		8B13B3581E1C891900C0044A /* Frost-Hole4.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B34F1E1C891900C0044A /* Frost-Hole4.sks */; };
+		8B13B3591E1C891900C0044A /* Frost-Hole5.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3501E1C891900C0044A /* Frost-Hole5.sks */; };
+		8B13B35A1E1C891900C0044A /* Frost-Hole5.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3501E1C891900C0044A /* Frost-Hole5.sks */; };
+		8B13B35B1E1C891900C0044A /* Frost-Hole6.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3511E1C891900C0044A /* Frost-Hole6.sks */; };
+		8B13B35C1E1C891900C0044A /* Frost-Hole6.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3511E1C891900C0044A /* Frost-Hole6.sks */; };
+		8B13B35D1E1C891900C0044A /* Frost-Hole7.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3521E1C891900C0044A /* Frost-Hole7.sks */; };
+		8B13B35E1E1C891900C0044A /* Frost-Hole7.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3521E1C891900C0044A /* Frost-Hole7.sks */; };
+		8B13B35F1E1C891900C0044A /* Frost-Hole8.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3531E1C891900C0044A /* Frost-Hole8.sks */; };
+		8B13B3601E1C891900C0044A /* Frost-Hole8.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3531E1C891900C0044A /* Frost-Hole8.sks */; };
+		8B13B3611E1C891900C0044A /* Frost-Hole9.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3541E1C891900C0044A /* Frost-Hole9.sks */; };
+		8B13B3621E1C891900C0044A /* Frost-Hole9.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3541E1C891900C0044A /* Frost-Hole9.sks */; };
 		8B9620051E1C601600678257 /* Bebas.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F211E1C601600678257 /* Bebas.ttf */; };
 		8B9620061E1C601600678257 /* Neutra2Display-Titled.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F221E1C601600678257 /* Neutra2Display-Titled.otf */; };
 		8B9620071E1C601600678257 /* Actions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F241E1C601600678257 /* Actions.plist */; };
@@ -61,8 +61,8 @@
 		8B9620111E1C601600678257 /* WallHit.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F311E1C601600678257 /* WallHit.sks */; };
 		8B9620121E1C601600678257 /* BallTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F331E1C601600678257 /* BallTrail.sks */; };
 		8B9620131E1C601600678257 /* Ball.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F351E1C601600678257 /* Ball.sks */; };
-		8B9620141E1C601600678257 /* Hole1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F361E1C601600678257 /* Hole1.sks */; };
-		8B9620151E1C601600678257 /* Hole2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F371E1C601600678257 /* Hole2.sks */; };
+		8B9620141E1C601600678257 /* Frost-Hole1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F361E1C601600678257 /* Frost-Hole1.sks */; };
+		8B9620151E1C601600678257 /* Frost-Hole2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F371E1C601600678257 /* Frost-Hole2.sks */; };
 		8B9620161E1C601600678257 /* ShotPathIndicator.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F391E1C601600678257 /* ShotPathIndicator.sks */; };
 		8B9620171E1C601600678257 /* BlankTile.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F3A1E1C601600678257 /* BlankTile.sks */; };
 		8B9620181E1C601600678257 /* BottomWall.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F3B1E1C601600678257 /* BottomWall.sks */; };
@@ -92,7 +92,6 @@
 		8B9620301E1C601600678257 /* CoursePreviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F561E1C601600678257 /* CoursePreviewView.xib */; };
 		8B9620321E1C603400678257 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B9620311E1C603400678257 /* Assets.xcassets */; };
 		8B9620371E1C605F00678257 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B9620331E1C605F00678257 /* Assets.xcassets */; };
-		8B9620381E1C605F00678257 /* CourseSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9620351E1C605F00678257 /* CourseSelectionViewController.swift */; };
 		8B9620391E1C605F00678257 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9620361E1C605F00678257 /* MessagesViewController.swift */; };
 		8B96203B1E1C607B00678257 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B9620311E1C603400678257 /* Assets.xcassets */; };
 		8B96204B1E1C608400678257 /* Bebas.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F211E1C601600678257 /* Bebas.ttf */; };
@@ -110,8 +109,8 @@
 		8B9620571E1C60B300678257 /* WallHit.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F311E1C601600678257 /* WallHit.sks */; };
 		8B9620581E1C60B300678257 /* BallTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F331E1C601600678257 /* BallTrail.sks */; };
 		8B9620591E1C60B300678257 /* Ball.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F351E1C601600678257 /* Ball.sks */; };
-		8B96205A1E1C60B300678257 /* Hole1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F361E1C601600678257 /* Hole1.sks */; };
-		8B96205B1E1C60B300678257 /* Hole2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F371E1C601600678257 /* Hole2.sks */; };
+		8B96205A1E1C60B300678257 /* Frost-Hole1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F361E1C601600678257 /* Frost-Hole1.sks */; };
+		8B96205B1E1C60B300678257 /* Frost-Hole2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F371E1C601600678257 /* Frost-Hole2.sks */; };
 		8B96205C1E1C60B300678257 /* ShotPathIndicator.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F391E1C601600678257 /* ShotPathIndicator.sks */; };
 		8B96205D1E1C60B300678257 /* BlankTile.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F3A1E1C601600678257 /* BlankTile.sks */; };
 		8B96205E1E1C60B300678257 /* BottomWall.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F3B1E1C601600678257 /* BottomWall.sks */; };
@@ -146,8 +145,16 @@
 		8B9620891E1C615200678257 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BCF77151E03CD0200D48A61 /* Info.plist */; };
 		8B96208D1E1C623400678257 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B96208C1E1C623400678257 /* GameViewController.swift */; };
 		8B96208E1E1C625700678257 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B96208C1E1C623400678257 /* GameViewController.swift */; };
+		8BBD3B4C1E1D8BE000688836 /* iMessageExtensionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBD3B4B1E1D8BE000688836 /* iMessageExtensionUITests.swift */; };
+		8BBD3B541E1D8DBD00688836 /* CourseSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBD3B531E1D8DBD00688836 /* CourseSelectionViewController.swift */; };
+		8BBD3B551E1D8DC200688836 /* CourseSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBD3B531E1D8DBD00688836 /* CourseSelectionViewController.swift */; };
 		8BBDBD391E1C93E500878B3A /* Hill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDBD381E1C93E500878B3A /* Hill.swift */; };
 		8BBDBD3A1E1C93E500878B3A /* Hill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDBD381E1C93E500878B3A /* Hill.swift */; };
+		8BC378081E1CDB2D0014AFA2 /* blazeAmbience.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8BC378051E1CDB2D0014AFA2 /* blazeAmbience.m4a */; };
+		8BC378091E1CDB2D0014AFA2 /* frostAmbience.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BC378061E1CDB2D0014AFA2 /* frostAmbience.mp3 */; };
+		8BC3780A1E1CDB2D0014AFA2 /* timberAmbience.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BC378071E1CDB2D0014AFA2 /* timberAmbience.mp3 */; };
+		8BC3780C1E1CE9670014AFA2 /* SceneStart.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BC3780B1E1CE9670014AFA2 /* SceneStart.sks */; };
+		8BC3780D1E1CE9670014AFA2 /* SceneStart.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BC3780B1E1CE9670014AFA2 /* SceneStart.sks */; };
 		8BCF770C1E03CD0200D48A61 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BCF770B1E03CD0200D48A61 /* Messages.framework */; };
 		8BCF77121E03CD0200D48A61 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BCF77101E03CD0200D48A61 /* MainInterface.storyboard */; };
 		8BCF77141E03CD0200D48A61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BCF77131E03CD0200D48A61 /* Assets.xcassets */; };
@@ -155,6 +162,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8BBD3B4E1E1D8BE000688836 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E83E068D1E039586005711E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E83E06941E039586005711E3;
+			remoteInfo = MrPutt;
+		};
 		8BCF77161E03CD0200D48A61 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E83E068D1E039586005711E3 /* Project object */;
@@ -203,13 +217,13 @@
 		8B13B3361E1C7E2A00C0044A /* woodHit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = woodHit.wav; sourceTree = "<group>"; };
 		8B13B3481E1C84F800C0044A /* Snow.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Snow.sks; sourceTree = "<group>"; };
 		8B13B3491E1C84F800C0044A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8B13B34E1E1C891900C0044A /* Hole3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hole3.sks; sourceTree = "<group>"; };
-		8B13B34F1E1C891900C0044A /* Hole4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hole4.sks; sourceTree = "<group>"; };
-		8B13B3501E1C891900C0044A /* Hole5.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hole5.sks; sourceTree = "<group>"; };
-		8B13B3511E1C891900C0044A /* Hole6.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hole6.sks; sourceTree = "<group>"; };
-		8B13B3521E1C891900C0044A /* Hole7.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hole7.sks; sourceTree = "<group>"; };
-		8B13B3531E1C891900C0044A /* Hole8.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hole8.sks; sourceTree = "<group>"; };
-		8B13B3541E1C891900C0044A /* Hole9.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hole9.sks; sourceTree = "<group>"; };
+		8B13B34E1E1C891900C0044A /* Frost-Hole3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Frost-Hole3.sks"; sourceTree = "<group>"; };
+		8B13B34F1E1C891900C0044A /* Frost-Hole4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Frost-Hole4.sks"; sourceTree = "<group>"; };
+		8B13B3501E1C891900C0044A /* Frost-Hole5.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Frost-Hole5.sks"; sourceTree = "<group>"; };
+		8B13B3511E1C891900C0044A /* Frost-Hole6.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Frost-Hole6.sks"; sourceTree = "<group>"; };
+		8B13B3521E1C891900C0044A /* Frost-Hole7.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Frost-Hole7.sks"; sourceTree = "<group>"; };
+		8B13B3531E1C891900C0044A /* Frost-Hole8.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Frost-Hole8.sks"; sourceTree = "<group>"; };
+		8B13B3541E1C891900C0044A /* Frost-Hole9.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Frost-Hole9.sks"; sourceTree = "<group>"; };
 		8B961F211E1C601600678257 /* Bebas.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bebas.ttf; sourceTree = "<group>"; };
 		8B961F221E1C601600678257 /* Neutra2Display-Titled.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neutra2Display-Titled.otf"; sourceTree = "<group>"; };
 		8B961F241E1C601600678257 /* Actions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Actions.plist; sourceTree = "<group>"; };
@@ -225,8 +239,8 @@
 		8B961F311E1C601600678257 /* WallHit.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = WallHit.sks; sourceTree = "<group>"; };
 		8B961F331E1C601600678257 /* BallTrail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BallTrail.sks; sourceTree = "<group>"; };
 		8B961F351E1C601600678257 /* Ball.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Ball.sks; sourceTree = "<group>"; };
-		8B961F361E1C601600678257 /* Hole1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hole1.sks; sourceTree = "<group>"; };
-		8B961F371E1C601600678257 /* Hole2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hole2.sks; sourceTree = "<group>"; };
+		8B961F361E1C601600678257 /* Frost-Hole1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Frost-Hole1.sks"; sourceTree = "<group>"; };
+		8B961F371E1C601600678257 /* Frost-Hole2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Frost-Hole2.sks"; sourceTree = "<group>"; };
 		8B961F391E1C601600678257 /* ShotPathIndicator.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ShotPathIndicator.sks; sourceTree = "<group>"; };
 		8B961F3A1E1C601600678257 /* BlankTile.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BlankTile.sks; sourceTree = "<group>"; };
 		8B961F3B1E1C601600678257 /* BottomWall.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BottomWall.sks; sourceTree = "<group>"; };
@@ -256,14 +270,21 @@
 		8B961F561E1C601600678257 /* CoursePreviewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoursePreviewView.xib; sourceTree = "<group>"; };
 		8B9620311E1C603400678257 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B9620331E1C605F00678257 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8B9620351E1C605F00678257 /* CourseSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseSelectionViewController.swift; sourceTree = "<group>"; };
 		8B9620361E1C605F00678257 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		8B9620781E1C60CB00678257 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B96207A1E1C60CB00678257 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B96207C1E1C60CB00678257 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B96207E1E1C60CB00678257 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B96208C1E1C623400678257 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		8BBD3B491E1D8BE000688836 /* iMessageExtensionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iMessageExtensionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BBD3B4B1E1D8BE000688836 /* iMessageExtensionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iMessageExtensionUITests.swift; sourceTree = "<group>"; };
+		8BBD3B4D1E1D8BE000688836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BBD3B531E1D8DBD00688836 /* CourseSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseSelectionViewController.swift; sourceTree = "<group>"; };
 		8BBDBD381E1C93E500878B3A /* Hill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hill.swift; sourceTree = "<group>"; };
+		8BC378051E1CDB2D0014AFA2 /* blazeAmbience.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = blazeAmbience.m4a; sourceTree = "<group>"; };
+		8BC378061E1CDB2D0014AFA2 /* frostAmbience.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = frostAmbience.mp3; sourceTree = "<group>"; };
+		8BC378071E1CDB2D0014AFA2 /* timberAmbience.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = timberAmbience.mp3; sourceTree = "<group>"; };
+		8BC3780B1E1CE9670014AFA2 /* SceneStart.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SceneStart.sks; sourceTree = "<group>"; };
 		8BCF770A1E03CD0200D48A61 /* iMessageExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = iMessageExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BCF770B1E03CD0200D48A61 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		8BCF77111E03CD0200D48A61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -281,6 +302,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8BBD3B461E1D8BE000688836 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8BCF77071E03CD0200D48A61 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -318,6 +346,9 @@
 			children = (
 				8B13B3261E1C7E2A00C0044A /* click1.wav */,
 				8B13B3271E1C7E2A00C0044A /* click2.wav */,
+				8BC378051E1CDB2D0014AFA2 /* blazeAmbience.m4a */,
+				8BC378061E1CDB2D0014AFA2 /* frostAmbience.mp3 */,
+				8BC378071E1CDB2D0014AFA2 /* timberAmbience.mp3 */,
 				8B13B3281E1C7E2A00C0044A /* clickHard.wav */,
 				8B13B3291E1C7E2A00C0044A /* clickSoft.wav */,
 				8B13B32A1E1C7E2A00C0044A /* close.wav */,
@@ -382,6 +413,7 @@
 			children = (
 				8B961F301E1C601600678257 /* BallInHole.sks */,
 				8B961F311E1C601600678257 /* WallHit.sks */,
+				8BC3780B1E1CE9670014AFA2 /* SceneStart.sks */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -399,15 +431,15 @@
 		8B961F381E1C601600678257 /* Holes */ = {
 			isa = PBXGroup;
 			children = (
-				8B961F361E1C601600678257 /* Hole1.sks */,
-				8B961F371E1C601600678257 /* Hole2.sks */,
-				8B13B34E1E1C891900C0044A /* Hole3.sks */,
-				8B13B34F1E1C891900C0044A /* Hole4.sks */,
-				8B13B3501E1C891900C0044A /* Hole5.sks */,
-				8B13B3511E1C891900C0044A /* Hole6.sks */,
-				8B13B3521E1C891900C0044A /* Hole7.sks */,
-				8B13B3531E1C891900C0044A /* Hole8.sks */,
-				8B13B3541E1C891900C0044A /* Hole9.sks */,
+				8B961F361E1C601600678257 /* Frost-Hole1.sks */,
+				8B961F371E1C601600678257 /* Frost-Hole2.sks */,
+				8B13B34E1E1C891900C0044A /* Frost-Hole3.sks */,
+				8B13B34F1E1C891900C0044A /* Frost-Hole4.sks */,
+				8B13B3501E1C891900C0044A /* Frost-Hole5.sks */,
+				8B13B3511E1C891900C0044A /* Frost-Hole6.sks */,
+				8B13B3521E1C891900C0044A /* Frost-Hole7.sks */,
+				8B13B3531E1C891900C0044A /* Frost-Hole8.sks */,
+				8B13B3541E1C891900C0044A /* Frost-Hole9.sks */,
 			);
 			path = Holes;
 			sourceTree = "<group>";
@@ -470,6 +502,7 @@
 			children = (
 				8B961F551E1C601600678257 /* CoursePreviewView.swift */,
 				8B961F561E1C601600678257 /* CoursePreviewView.xib */,
+				8BBD3B531E1D8DBD00688836 /* CourseSelectionViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -493,7 +526,6 @@
 		8B9620341E1C605F00678257 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8B9620351E1C605F00678257 /* CourseSelectionViewController.swift */,
 				8B9620361E1C605F00678257 /* MessagesViewController.swift */,
 			);
 			path = ViewControllers;
@@ -518,6 +550,15 @@
 			name = ViewControllers;
 			path = Shared/ViewControllers;
 			sourceTree = SOURCE_ROOT;
+		};
+		8BBD3B4A1E1D8BE000688836 /* iMessageExtensionUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8BBD3B4B1E1D8BE000688836 /* iMessageExtensionUITests.swift */,
+				8BBD3B4D1E1D8BE000688836 /* Info.plist */,
+			);
+			path = iMessageExtensionUITests;
+			sourceTree = "<group>";
 		};
 		8BCF770D1E03CD0200D48A61 /* iMessageExtension */ = {
 			isa = PBXGroup;
@@ -552,6 +593,7 @@
 				8B9620771E1C60CB00678257 /* MrPutt */,
 				8B961F581E1C601600678257 /* Shared */,
 				8BCF770D1E03CD0200D48A61 /* iMessageExtension */,
+				8BBD3B4A1E1D8BE000688836 /* iMessageExtensionUITests */,
 				E83E06961E039586005711E3 /* Products */,
 				B91A53434767D68885EB7AAD /* Pods */,
 				6716DDD00F3A4E0F3459183A /* Frameworks */,
@@ -563,6 +605,7 @@
 			children = (
 				E83E06951E039586005711E3 /* MrPutt.app */,
 				8BCF770A1E03CD0200D48A61 /* iMessageExtension.appex */,
+				8BBD3B491E1D8BE000688836 /* iMessageExtensionUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -570,6 +613,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8BBD3B481E1D8BE000688836 /* iMessageExtensionUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BBD3B521E1D8BE000688836 /* Build configuration list for PBXNativeTarget "iMessageExtensionUITests" */;
+			buildPhases = (
+				8BBD3B451E1D8BE000688836 /* Sources */,
+				8BBD3B461E1D8BE000688836 /* Frameworks */,
+				8BBD3B471E1D8BE000688836 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8BBD3B4F1E1D8BE000688836 /* PBXTargetDependency */,
+			);
+			name = iMessageExtensionUITests;
+			productName = iMessageExtensionUITests;
+			productReference = 8BBD3B491E1D8BE000688836 /* iMessageExtensionUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		8BCF77091E03CD0200D48A61 /* iMessageExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8BCF771B1E03CD0200D48A61 /* Build configuration list for PBXNativeTarget "iMessageExtension" */;
@@ -621,6 +682,12 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = CodeWithKenny;
 				TargetAttributes = {
+					8BBD3B481E1D8BE000688836 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 349WFX4WJR;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E83E06941E039586005711E3;
+					};
 					8BCF77091E03CD0200D48A61 = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = 349WFX4WJR;
@@ -648,11 +715,19 @@
 			targets = (
 				E83E06941E039586005711E3 /* MrPutt */,
 				8BCF77091E03CD0200D48A61 /* iMessageExtension */,
+				8BBD3B481E1D8BE000688836 /* iMessageExtensionUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8BBD3B471E1D8BE000688836 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8BCF77081E03CD0200D48A61 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -660,12 +735,12 @@
 				8BCF77141E03CD0200D48A61 /* Assets.xcassets in Resources */,
 				8B96204B1E1C608400678257 /* Bebas.ttf in Resources */,
 				8B9620731E1C60B400678257 /* UTileWalls.sks in Resources */,
-				8B13B3561E1C891900C0044A /* Hole3.sks in Resources */,
+				8B13B3561E1C891900C0044A /* Frost-Hole3.sks in Resources */,
 				8B13B34B1E1C84F800C0044A /* Snow.sks in Resources */,
 				8B13B34D1E1C84F800C0044A /* Assets.xcassets in Resources */,
 				8B9620711E1C60B400678257 /* UTileRight.sks in Resources */,
 				8B9620891E1C615200678257 /* Info.plist in Resources */,
-				8B13B3601E1C891900C0044A /* Hole8.sks in Resources */,
+				8B13B3601E1C891900C0044A /* Frost-Hole8.sks in Resources */,
 				8B9620741E1C60B400678257 /* WindField.sks in Resources */,
 				8B9620371E1C605F00678257 /* Assets.xcassets in Resources */,
 				8B96204C1E1C608400678257 /* Neutra2Display-Titled.otf in Resources */,
@@ -674,8 +749,8 @@
 				8B9620681E1C60B400678257 /* Mat.sks in Resources */,
 				8B96203B1E1C607B00678257 /* Assets.xcassets in Resources */,
 				8B96206C1E1C60B400678257 /* StraightWall.sks in Resources */,
-				8B13B3581E1C891900C0044A /* Hole4.sks in Resources */,
-				8B13B3621E1C891900C0044A /* Hole9.sks in Resources */,
+				8B13B3581E1C891900C0044A /* Frost-Hole4.sks in Resources */,
+				8B13B3621E1C891900C0044A /* Frost-Hole9.sks in Resources */,
 				8B9620621E1C60B300678257 /* CornerTopRight.sks in Resources */,
 				8B073B681E1C92B7008BBAE6 /* Hill.sks in Resources */,
 				8B9620641E1C60B300678257 /* CurvedWallShort.sks in Resources */,
@@ -683,10 +758,11 @@
 				8BCF77121E03CD0200D48A61 /* MainInterface.storyboard in Resources */,
 				8B9620631E1C60B300678257 /* CornerWalls.sks in Resources */,
 				8B96206E1E1C60B400678257 /* UTile.sks in Resources */,
+				8BC3780D1E1CE9670014AFA2 /* SceneStart.sks in Resources */,
 				8B9620661E1C60B400678257 /* HoleTile.sks in Resources */,
 				8B9620671E1C60B400678257 /* LeftWall.sks in Resources */,
-				8B96205A1E1C60B300678257 /* Hole1.sks in Resources */,
-				8B96205B1E1C60B300678257 /* Hole2.sks in Resources */,
+				8B96205A1E1C60B300678257 /* Frost-Hole1.sks in Resources */,
+				8B96205B1E1C60B300678257 /* Frost-Hole2.sks in Resources */,
 				8B9620701E1C60B400678257 /* UTileLeft.sks in Resources */,
 				8B96205D1E1C60B300678257 /* BlankTile.sks in Resources */,
 				8B96206B1E1C60B400678257 /* StraightTileUpDown.sks in Resources */,
@@ -698,15 +774,15 @@
 				8B9620721E1C60B400678257 /* UTileUp.sks in Resources */,
 				8B9620761E1C60B400678257 /* CoursePreviewView.xib in Resources */,
 				8B96206F1E1C60B400678257 /* UTileDown.sks in Resources */,
-				8B13B35C1E1C891900C0044A /* Hole6.sks in Resources */,
+				8B13B35C1E1C891900C0044A /* Frost-Hole6.sks in Resources */,
 				8B96205C1E1C60B300678257 /* ShotPathIndicator.sks in Resources */,
 				8B96205F1E1C60B300678257 /* CornerBottomLeft.sks in Resources */,
 				8B96206A1E1C60B400678257 /* StraightTile.sks in Resources */,
 				8B96205E1E1C60B300678257 /* BottomWall.sks in Resources */,
 				8B9620571E1C60B300678257 /* WallHit.sks in Resources */,
 				8B96206D1E1C60B400678257 /* TopWall.sks in Resources */,
-				8B13B35A1E1C891900C0044A /* Hole5.sks in Resources */,
-				8B13B35E1E1C891900C0044A /* Hole7.sks in Resources */,
+				8B13B35A1E1C891900C0044A /* Frost-Hole5.sks in Resources */,
+				8B13B35E1E1C891900C0044A /* Frost-Hole7.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,22 +794,23 @@
 				8B13B33C1E1C7E2A00C0044A /* clubHit.wav in Resources */,
 				8B9620061E1C601600678257 /* Neutra2Display-Titled.otf in Resources */,
 				8B9620251E1C601600678257 /* StraightTileUpDown.sks in Resources */,
-				8B9620141E1C601600678257 /* Hole1.sks in Resources */,
+				8B9620141E1C601600678257 /* Frost-Hole1.sks in Resources */,
+				8BC3780C1E1CE9670014AFA2 /* SceneStart.sks in Resources */,
 				8B13B3381E1C7E2A00C0044A /* click2.wav in Resources */,
 				8B13B3431E1C7E2A00C0044A /* randomClick.wav in Resources */,
 				8B9620111E1C601600678257 /* WallHit.sks in Resources */,
-				8B13B35F1E1C891900C0044A /* Hole8.sks in Resources */,
+				8B13B35F1E1C891900C0044A /* Frost-Hole8.sks in Resources */,
 				8B13B33A1E1C7E2A00C0044A /* clickSoft.wav in Resources */,
 				8B13B3391E1C7E2A00C0044A /* clickHard.wav in Resources */,
-				8B13B3611E1C891900C0044A /* Hole9.sks in Resources */,
+				8B13B3611E1C891900C0044A /* Frost-Hole9.sks in Resources */,
 				8B9620241E1C601600678257 /* StraightTile.sks in Resources */,
 				8B9620201E1C601600678257 /* HoleTile.sks in Resources */,
-				8B13B3591E1C891900C0044A /* Hole5.sks in Resources */,
+				8B13B3591E1C891900C0044A /* Frost-Hole5.sks in Resources */,
 				8B13B3441E1C7E2A00C0044A /* scoreCard.wav in Resources */,
 				8B9620861E1C611600678257 /* Info.plist in Resources */,
 				8B9620181E1C601600678257 /* BottomWall.sks in Resources */,
-				8B13B35B1E1C891900C0044A /* Hole6.sks in Resources */,
-				8B13B35D1E1C891900C0044A /* Hole7.sks in Resources */,
+				8B13B35B1E1C891900C0044A /* Frost-Hole6.sks in Resources */,
+				8B13B35D1E1C891900C0044A /* Frost-Hole7.sks in Resources */,
 				8B9620051E1C601600678257 /* Bebas.ttf in Resources */,
 				8B9620161E1C601600678257 /* ShotPathIndicator.sks in Resources */,
 				8B9620191E1C601600678257 /* CornerBottomLeft.sks in Resources */,
@@ -745,9 +822,9 @@
 				8B13B3401E1C7E2A00C0044A /* menuClick.wav in Resources */,
 				8B9620221E1C601600678257 /* Mat.sks in Resources */,
 				8B9620881E1C613300678257 /* LaunchScreen.storyboard in Resources */,
-				8B9620151E1C601600678257 /* Hole2.sks in Resources */,
+				8B9620151E1C601600678257 /* Frost-Hole2.sks in Resources */,
 				8B13B34C1E1C84F800C0044A /* Assets.xcassets in Resources */,
-				8B13B3551E1C891900C0044A /* Hole3.sks in Resources */,
+				8B13B3551E1C891900C0044A /* Frost-Hole3.sks in Resources */,
 				8B9620121E1C601600678257 /* BallTrail.sks in Resources */,
 				8B96201F1E1C601600678257 /* CurvePiece.sks in Resources */,
 				8B96201D1E1C601600678257 /* CornerWalls.sks in Resources */,
@@ -755,6 +832,7 @@
 				8B9620211E1C601600678257 /* LeftWall.sks in Resources */,
 				8B9620071E1C601600678257 /* Actions.plist in Resources */,
 				8B9620261E1C601600678257 /* StraightWall.sks in Resources */,
+				8BC378081E1CDB2D0014AFA2 /* blazeAmbience.m4a in Resources */,
 				8B9620171E1C601600678257 /* BlankTile.sks in Resources */,
 				8B9620231E1C601600678257 /* RightWall.sks in Resources */,
 				8B96202E1E1C601600678257 /* WindField.sks in Resources */,
@@ -766,17 +844,19 @@
 				8B13B3461E1C7E2A00C0044A /* softHit.wav in Resources */,
 				8B13B33D1E1C7E2A00C0044A /* holeMade.wav in Resources */,
 				8B13B3411E1C7E2A00C0044A /* metalHitWall.wav in Resources */,
+				8BC378091E1CDB2D0014AFA2 /* frostAmbience.mp3 in Resources */,
 				8B9620321E1C603400678257 /* Assets.xcassets in Resources */,
 				8B13B33B1E1C7E2A00C0044A /* close.wav in Resources */,
 				8B13B3471E1C7E2A00C0044A /* woodHit.wav in Resources */,
 				8B96201C1E1C601600678257 /* CornerTopRight.sks in Resources */,
 				8B13B3451E1C7E2A00C0044A /* snapClick.wav in Resources */,
+				8BC3780A1E1CDB2D0014AFA2 /* timberAmbience.mp3 in Resources */,
 				8B96202B1E1C601600678257 /* UTileRight.sks in Resources */,
 				8B96202D1E1C601600678257 /* UTileWalls.sks in Resources */,
 				8B9620101E1C601600678257 /* BallInHole.sks in Resources */,
 				8B9620291E1C601600678257 /* UTileDown.sks in Resources */,
 				8B96201E1E1C601600678257 /* CurvedWallShort.sks in Resources */,
-				8B13B3571E1C891900C0044A /* Hole4.sks in Resources */,
+				8B13B3571E1C891900C0044A /* Frost-Hole4.sks in Resources */,
 				8B9620301E1C601600678257 /* CoursePreviewView.xib in Resources */,
 				8B96202C1E1C601600678257 /* UTileUp.sks in Resources */,
 				8B13B33F1E1C7E2A00C0044A /* littleClick.wav in Resources */,
@@ -864,10 +944,19 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8BBD3B451E1D8BE000688836 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BBD3B4C1E1D8BE000688836 /* iMessageExtensionUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8BCF77061E03CD0200D48A61 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BBD3B551E1D8DC200688836 /* CourseSelectionViewController.swift in Sources */,
 				8B9620751E1C60B400678257 /* CoursePreviewView.swift in Sources */,
 				8B9620521E1C608900678257 /* Data.swift in Sources */,
 				8B9620501E1C608900678257 /* Mat.swift in Sources */,
@@ -880,7 +969,6 @@
 				8B96204F1E1C608900678257 /* Hole.swift in Sources */,
 				8B9620551E1C608900678257 /* PuttScene.swift in Sources */,
 				8B9620391E1C605F00678257 /* MessagesViewController.swift in Sources */,
-				8B9620381E1C605F00678257 /* CourseSelectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -895,6 +983,7 @@
 				8B96200B1E1C601600678257 /* Wall.swift in Sources */,
 				8B96200A1E1C601600678257 /* Mat.swift in Sources */,
 				8BBDBD391E1C93E500878B3A /* Hill.swift in Sources */,
+				8BBD3B541E1D8DBD00688836 /* CourseSelectionViewController.swift in Sources */,
 				8B96200F1E1C601600678257 /* PuttScene.swift in Sources */,
 				8B9620091E1C601600678257 /* Hole.swift in Sources */,
 				8B9620841E1C610F00678257 /* AppDelegate.swift in Sources */,
@@ -906,6 +995,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8BBD3B4F1E1D8BE000688836 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E83E06941E039586005711E3 /* MrPutt */;
+			targetProxy = 8BBD3B4E1E1D8BE000688836 /* PBXContainerItemProxy */;
+		};
 		8BCF77171E03CD0200D48A61 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8BCF77091E03CD0200D48A61 /* iMessageExtension */;
@@ -941,6 +1035,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8BBD3B501E1D8BE000688836 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 349WFX4WJR;
+				INFOPLIST_FILE = iMessageExtensionUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jwitapps.iMessageExtensionUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MrPutt;
+			};
+			name = Debug;
+		};
+		8BBD3B511E1D8BE000688836 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 349WFX4WJR;
+				INFOPLIST_FILE = iMessageExtensionUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jwitapps.iMessageExtensionUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MrPutt;
+			};
+			name = Release;
+		};
 		8BCF77191E03CD0200D48A61 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E85386D3824CE7263E891102 /* Pods-MrPutt-iMessageExtension.debug.xcconfig */;
@@ -1101,6 +1223,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8BBD3B521E1D8BE000688836 /* Build configuration list for PBXNativeTarget "iMessageExtensionUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BBD3B501E1D8BE000688836 /* Debug */,
+				8BBD3B511E1D8BE000688836 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		8BCF771B1E03CD0200D48A61 /* Build configuration list for PBXNativeTarget "iMessageExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
