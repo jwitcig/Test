@@ -31,7 +31,9 @@ class PuttScene: SKScene {
     
     var shotPath: SKShapeNode? = nil
     var shotIntersectionNode: SKShapeNode? = nil
-        
+    
+    var teleporting = false
+    
     // MARK: Scene Lifecycle
     
     override func didMove(to view: SKView) {
@@ -43,11 +45,13 @@ class PuttScene: SKScene {
         
         addGestureRecognizers(in: view)
         
+        setupPhysics()
+        
         setupCamera()
     
         ball.updateTrailEmitter()
         
-        //animateTilesIntoScene()
+//        animateTilesIntoScene()
         
         let light = ball.childNode(withName: "light") as! SKLightNode
         
@@ -372,6 +376,23 @@ extension PuttScene: SKPhysicsContactDelegate {
                 ball.run(group)
             }
             holeComplete = true
+        }
+        
+        if let ball = node(withName: Ball.name), let portal = node(withName: Portal.name) {
+            guard !teleporting else { teleporting = false; return }
+            
+            if let destination = portal.parent?.parent?.parent?.userData?["destination"] as? String {
+                
+                enumerateChildNodes(withName: "//portal") { node, stop in
+
+                    if node.parent?.parent?.parent?.userData?["name"] as? String == destination {
+                        let move = SKAction.move(to: node.parent!.convert(node.position, to: ball.parent!), duration: 0)
+                        ball.run(move)
+                        self.teleporting = true
+                    }
+                }
+            }
+        
         }
     }
     
