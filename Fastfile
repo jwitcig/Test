@@ -45,12 +45,7 @@ lane :after_integration do
   push_to_git_remote
 
   push_git_tags
-end
-
-lane :after_integration do
-  plistFile = './Info.plist'
-
-  # ...
+ 
 
   ipa_folder = "#{ENV['XCS_DERIVED_DATA_DIR']}/deploy/#{version_number}.#{build_number}/"
   ipa_path = "#{ipa_folder}/#{target}.ipa"
@@ -64,12 +59,4 @@ lane :after_integration do
     force: true,
     ipa: ipa_path
   )
-
-  # Keep committing and tagging actions after export & upload to prevent confirm the changes to the repo if something went wrong
-  add_git_tag(
-    tag: "beta/v#{version_number}_#{build_number}"
-  )
-
-  # ...
-
 end
