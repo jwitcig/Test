@@ -20,11 +20,6 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Bebas.ttf</string>
-		<string>Neutra2Display-Titling.otf</string>
-	</array>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionMainStoryboard</key>
@@ -32,5 +27,10 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.message-payload-provider</string>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Bebas.ttf</string>
+		<string>Neutra2Display-Titling.otf</string>
+	</array>
 </dict>
 </plist>
