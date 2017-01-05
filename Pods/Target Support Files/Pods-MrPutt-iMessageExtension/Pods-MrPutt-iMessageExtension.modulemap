@@ -1,0 +1,6 @@
+framework module Pods_MrPutt_iMessageExtension {
+  umbrella header "Pods-MrPutt-iMessageExtension-umbrella.h"
+
+  export *
+  module * { export * }
+}

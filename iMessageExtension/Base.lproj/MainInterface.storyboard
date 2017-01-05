@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -8,6 +8,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Bebas.ttf">
+            <string>Bebas</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Messages View Controller-->
         <scene sceneID="7MM-of-jgj">
@@ -39,6 +44,69 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="141" y="123"/>
+        </scene>
+        <!--Course Selection View Controller-->
+        <scene sceneID="NKJ-24-ga2">
+            <objects>
+                <viewController storyboardIdentifier="CourseSelectionViewController" id="O4D-eS-uHU" customClass="CourseSelectionViewController" customModule="iMessageExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BDj-cZ-dTz"/>
+                        <viewControllerLayoutGuide type="bottom" id="0K5-cI-TmE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tns-IW-MKR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="courseSelectionBackground" translatesAutoresizingMaskIntoConstraints="NO" id="4tM-Ze-Zt2">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4f-mG-lVD">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="locations" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUW-m3-0xk">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="z0S-bB-ZQ4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Bebas" family="Bebas" pointSize="34"/>
+                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fadeWhite" translatesAutoresizingMaskIntoConstraints="NO" id="S8o-6C-cfP">
+                                <rect key="frame" x="0.0" y="55" width="320" height="145"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="S8o-6C-cfP" secondAttribute="trailing" id="28u-p5-TuP"/>
+                            <constraint firstItem="S8o-6C-cfP" firstAttribute="top" secondItem="sUW-m3-0xk" secondAttribute="bottom" id="9bG-GG-WiW"/>
+                            <constraint firstAttribute="trailing" secondItem="sUW-m3-0xk" secondAttribute="trailing" id="AHa-WW-p3I"/>
+                            <constraint firstItem="sUW-m3-0xk" firstAttribute="top" secondItem="BDj-cZ-dTz" secondAttribute="bottom" id="HYT-FK-HGO"/>
+                            <constraint firstItem="4tM-Ze-Zt2" firstAttribute="height" secondItem="tns-IW-MKR" secondAttribute="height" id="LUH-w5-DJZ"/>
+                            <constraint firstItem="S8o-6C-cfP" firstAttribute="leading" secondItem="tns-IW-MKR" secondAttribute="leading" id="QLy-IH-9by"/>
+                            <constraint firstItem="4tM-Ze-Zt2" firstAttribute="centerY" secondItem="tns-IW-MKR" secondAttribute="centerY" id="R4t-jw-0Ff"/>
+                            <constraint firstItem="4tM-Ze-Zt2" firstAttribute="width" secondItem="tns-IW-MKR" secondAttribute="width" id="Sdo-J6-1O7"/>
+                            <constraint firstItem="sUW-m3-0xk" firstAttribute="leading" secondItem="tns-IW-MKR" secondAttribute="leading" id="a5B-OA-djL"/>
+                            <constraint firstItem="0K5-cI-TmE" firstAttribute="top" secondItem="S8o-6C-cfP" secondAttribute="bottom" id="b1P-xX-U9i"/>
+                            <constraint firstItem="E4f-mG-lVD" firstAttribute="top" secondItem="BDj-cZ-dTz" secondAttribute="bottom" id="kMc-Kd-a3v"/>
+                            <constraint firstItem="E4f-mG-lVD" firstAttribute="leading" secondItem="tns-IW-MKR" secondAttribute="leading" id="pl4-PT-cEN"/>
+                            <constraint firstItem="4tM-Ze-Zt2" firstAttribute="centerX" secondItem="tns-IW-MKR" secondAttribute="centerX" id="qQH-uN-Qul"/>
+                            <constraint firstAttribute="trailing" secondItem="E4f-mG-lVD" secondAttribute="trailing" id="ymR-Wk-CMX"/>
+                            <constraint firstItem="0K5-cI-TmE" firstAttribute="top" secondItem="E4f-mG-lVD" secondAttribute="bottom" id="zKx-w9-e34"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="200"/>
+                    <connections>
+                        <outlet property="scrollView" destination="E4f-mG-lVD" id="Ytf-p0-Gyc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R4D-Qt-uQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="689.60000000000002" y="121.4392803598201"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="kyg-yI-4Cw">
@@ -48,7 +116,7 @@
                         <viewControllerLayoutGuide type="top" id="X6R-ns-XRe"/>
                         <viewControllerLayoutGuide type="bottom" id="bap-np-1i0"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="n7X-At-Lev" customClass="SCNView">
+                    <view key="view" contentMode="scaleToFill" id="n7X-At-Lev" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -56,7 +124,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T0h-BU-xcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="841" y="124"/>
+            <point key="canvasLocation" x="1434" y="123"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="courseSelectionBackground" width="62" height="59"/>
+        <image name="fadeWhite" width="240" height="125"/>
+    </resources>
 </document>
