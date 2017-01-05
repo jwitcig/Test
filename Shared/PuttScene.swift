@@ -115,6 +115,8 @@ class PuttScene: SKScene {
     func setupPhysics() {
         // sends contact notifications to didBegin(contact:)
         physicsWorld.contactDelegate = self
+        
+        listener = ball
     }
     
     func setupCamera() {
@@ -388,6 +390,10 @@ extension PuttScene: SKPhysicsContactDelegate {
                     if node.parent?.parent?.parent?.userData?["name"] as? String == destination {
                         let move = SKAction.move(to: node.parent!.convert(node.position, to: ball.parent!), duration: 0)
                         ball.run(move)
+                        
+                        let sound = SKAction.playSoundFileNamed("portalTransfer.mp3", waitForCompletion: false)
+                        self.run(sound)
+                        
                         self.teleporting = true
                     }
                 }

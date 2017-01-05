@@ -46,6 +46,8 @@
 		8B13B3601E1C891900C0044A /* Frost-Hole8.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3531E1C891900C0044A /* Frost-Hole8.sks */; };
 		8B13B3611E1C891900C0044A /* Frost-Hole9.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3541E1C891900C0044A /* Frost-Hole9.sks */; };
 		8B13B3621E1C891900C0044A /* Frost-Hole9.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3541E1C891900C0044A /* Frost-Hole9.sks */; };
+		8B93AFF31E1E1F4000BA03C1 /* portalAmbience.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B93AFF11E1E1F4000BA03C1 /* portalAmbience.mp3 */; };
+		8B93AFF41E1E1F4000BA03C1 /* portalTransfer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B93AFF21E1E1F4000BA03C1 /* portalTransfer.mp3 */; };
 		8B9620051E1C601600678257 /* Bebas.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F211E1C601600678257 /* Bebas.ttf */; };
 		8B9620061E1C601600678257 /* Neutra2Display-Titled.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F221E1C601600678257 /* Neutra2Display-Titled.otf */; };
 		8B9620071E1C601600678257 /* Actions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F241E1C601600678257 /* Actions.plist */; };
@@ -245,6 +247,8 @@
 		8B13B3521E1C891900C0044A /* Frost-Hole7.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Frost-Hole7.sks"; sourceTree = "<group>"; };
 		8B13B3531E1C891900C0044A /* Frost-Hole8.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Frost-Hole8.sks"; sourceTree = "<group>"; };
 		8B13B3541E1C891900C0044A /* Frost-Hole9.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Frost-Hole9.sks"; sourceTree = "<group>"; };
+		8B93AFF11E1E1F4000BA03C1 /* portalAmbience.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = portalAmbience.mp3; sourceTree = "<group>"; };
+		8B93AFF21E1E1F4000BA03C1 /* portalTransfer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = portalTransfer.mp3; sourceTree = "<group>"; };
 		8B961F211E1C601600678257 /* Bebas.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bebas.ttf; sourceTree = "<group>"; };
 		8B961F221E1C601600678257 /* Neutra2Display-Titled.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neutra2Display-Titled.otf"; sourceTree = "<group>"; };
 		8B961F241E1C601600678257 /* Actions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Actions.plist; sourceTree = "<group>"; };
@@ -406,6 +410,8 @@
 				8B13B3341E1C7E2A00C0044A /* snapClick.wav */,
 				8B13B3351E1C7E2A00C0044A /* softHit.wav */,
 				8B13B3361E1C7E2A00C0044A /* woodHit.wav */,
+				8B93AFF11E1E1F4000BA03C1 /* portalAmbience.mp3 */,
+				8B93AFF21E1E1F4000BA03C1 /* portalTransfer.mp3 */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -906,6 +912,7 @@
 				E86513CF1E1DBA2E005FBA85 /* Blaze-Hole6.sks in Resources */,
 				8B9620161E1C601600678257 /* ShotPathIndicator.sks in Resources */,
 				E86513C91E1DBA16005FBA85 /* Blaze-Hole3.sks in Resources */,
+				8B93AFF31E1E1F4000BA03C1 /* portalAmbience.mp3 in Resources */,
 				8B9620191E1C601600678257 /* CornerBottomLeft.sks in Resources */,
 				8B13B34A1E1C84F800C0044A /* Snow.sks in Resources */,
 				8B9620871E1C613000678257 /* Main.storyboard in Resources */,
@@ -943,6 +950,7 @@
 				8B13B33D1E1C7E2A00C0044A /* holeMade.wav in Resources */,
 				8B13B3411E1C7E2A00C0044A /* metalHitWall.wav in Resources */,
 				E865FFFD1E1DC0610072E2E3 /* Timber-Hole6.sks in Resources */,
+				8B93AFF41E1E1F4000BA03C1 /* portalTransfer.mp3 in Resources */,
 				8BC378091E1CDB2D0014AFA2 /* frostAmbience.mp3 in Resources */,
 				8B9620321E1C603400678257 /* Assets.xcassets in Resources */,
 				8B13B33B1E1C7E2A00C0044A /* close.wav in Resources */,
