@@ -9,8 +9,8 @@
 import SpriteKit
 import UIKit
 
-class Hill: SKFieldNode {
-    static let name = "hill"
+class Portal: SKSpriteNode {
+    static let name = "portal"
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -19,11 +19,8 @@ class Hill: SKFieldNode {
     }
     
     func adjustedPhysicsBody() -> SKPhysicsBody? {
-        physicsBody?.isDynamic = false
-        physicsBody?.restitution = 1
-        physicsBody?.friction = 0
-        physicsBody?.categoryBitMask = Category.wall.rawValue
-        physicsBody?.collisionBitMask = Category.ball.rawValue
+        physicsBody?.categoryBitMask = Category.portal.rawValue
+        physicsBody?.collisionBitMask = Category.none.rawValue
         physicsBody?.contactTestBitMask = Category.ball.rawValue
         return physicsBody
     }

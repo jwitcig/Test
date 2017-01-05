@@ -150,8 +150,8 @@
 		8BBD3B5E1E1DAFAB00688836 /* PortalEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BBD3B5C1E1DAFAB00688836 /* PortalEmitter.sks */; };
 		8BBD3B601E1DB40A00688836 /* Portal.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BBD3B5F1E1DB40A00688836 /* Portal.sks */; };
 		8BBD3B611E1DB40A00688836 /* Portal.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BBD3B5F1E1DB40A00688836 /* Portal.sks */; };
-		8BBDBD391E1C93E500878B3A /* Hill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDBD381E1C93E500878B3A /* Hill.swift */; };
-		8BBDBD3A1E1C93E500878B3A /* Hill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDBD381E1C93E500878B3A /* Hill.swift */; };
+		8BBDBD391E1C93E500878B3A /* Portal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDBD381E1C93E500878B3A /* Portal.swift */; };
+		8BBDBD3A1E1C93E500878B3A /* Portal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBDBD381E1C93E500878B3A /* Portal.swift */; };
 		8BC378081E1CDB2D0014AFA2 /* blazeAmbience.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8BC378051E1CDB2D0014AFA2 /* blazeAmbience.m4a */; };
 		8BC378091E1CDB2D0014AFA2 /* frostAmbience.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BC378061E1CDB2D0014AFA2 /* frostAmbience.mp3 */; };
 		8BC3780A1E1CDB2D0014AFA2 /* timberAmbience.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BC378071E1CDB2D0014AFA2 /* timberAmbience.mp3 */; };
@@ -303,7 +303,7 @@
 		8BBD3B531E1D8DBD00688836 /* CourseSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseSelectionViewController.swift; sourceTree = "<group>"; };
 		8BBD3B5C1E1DAFAB00688836 /* PortalEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PortalEmitter.sks; sourceTree = "<group>"; };
 		8BBD3B5F1E1DB40A00688836 /* Portal.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Portal.sks; sourceTree = "<group>"; };
-		8BBDBD381E1C93E500878B3A /* Hill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hill.swift; sourceTree = "<group>"; };
+		8BBDBD381E1C93E500878B3A /* Portal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Portal.swift; sourceTree = "<group>"; };
 		8BC378051E1CDB2D0014AFA2 /* blazeAmbience.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = blazeAmbience.m4a; sourceTree = "<group>"; };
 		8BC378061E1CDB2D0014AFA2 /* frostAmbience.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = frostAmbience.mp3; sourceTree = "<group>"; };
 		8BC378071E1CDB2D0014AFA2 /* timberAmbience.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = timberAmbience.mp3; sourceTree = "<group>"; };
@@ -445,7 +445,7 @@
 				8B961F281E1C601600678257 /* Hole.swift */,
 				8B961F291E1C601600678257 /* Mat.swift */,
 				8B961F2A1E1C601600678257 /* Wall.swift */,
-				8BBDBD381E1C93E500878B3A /* Hill.swift */,
+				8BBDBD381E1C93E500878B3A /* Portal.swift */,
 			);
 			path = "Custom Nodes";
 			sourceTree = "<group>";
@@ -1068,7 +1068,7 @@
 				8B96208D1E1C623400678257 /* GameViewController.swift in Sources */,
 				8B9620531E1C608900678257 /* HoleSetup.swift in Sources */,
 				8B9620541E1C608900678257 /* Putt.swift in Sources */,
-				8BBDBD3A1E1C93E500878B3A /* Hill.swift in Sources */,
+				8BBDBD3A1E1C93E500878B3A /* Portal.swift in Sources */,
 				8B96204E1E1C608900678257 /* Ball.swift in Sources */,
 				8B96204F1E1C608900678257 /* Hole.swift in Sources */,
 				8B9620551E1C608900678257 /* PuttScene.swift in Sources */,
@@ -1086,7 +1086,7 @@
 				8B96200E1E1C601600678257 /* Putt.swift in Sources */,
 				8B96200B1E1C601600678257 /* Wall.swift in Sources */,
 				8B96200A1E1C601600678257 /* Mat.swift in Sources */,
-				8BBDBD391E1C93E500878B3A /* Hill.swift in Sources */,
+				8BBDBD391E1C93E500878B3A /* Portal.swift in Sources */,
 				8BBD3B541E1D8DBD00688836 /* CourseSelectionViewController.swift in Sources */,
 				8B96200F1E1C601600678257 /* PuttScene.swift in Sources */,
 				8B9620091E1C601600678257 /* Hole.swift in Sources */,

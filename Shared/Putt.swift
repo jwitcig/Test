@@ -39,6 +39,7 @@ enum Category: UInt32 {
     case ball = 1
     case wall = 2
     case hole = 4
+    case portal = 8
 }
 
 struct Shot {
