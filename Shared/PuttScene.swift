@@ -55,6 +55,10 @@ class PuttScene: SKScene {
         
         let quantity = 2
         
+        if let snow = childNode(withName: "//snow") as? SKEmitterNode {
+            snow.targetNode = self
+        }
+        
         var colorizers: [((CGFloat, CGFloat, CGFloat), String, SKAction)] = []
         
         for i in 0..<quantity {
@@ -156,12 +160,14 @@ class PuttScene: SKScene {
     }
     
     func handleZoom(recognizer: UIPinchGestureRecognizer) {
-        if recognizer.state == .began, let camera = camera {
+        guard let camera = camera else { return }
+        
+        if recognizer.state == .began {
             recognizer.scale = 1 / camera.xScale
         }
         
         if recognizer.scale > 0.5 && recognizer.scale < 2 {
-            camera?.setScale(1 / recognizer.scale)
+            camera.setScale(1 / recognizer.scale)
         }
     }
 
