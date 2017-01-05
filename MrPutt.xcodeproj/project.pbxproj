@@ -532,9 +532,8 @@
 				8B073B661E1C92B7008BBAE6 /* Hill.sks */,
 				E86513C21E1DAB0D005FBA85 /* Timber */,
 				E86513C31E1DAB18005FBA85 /* Blaze */,
-				8B961F381E1C601600678257 /* Frost */,
 				8BBD3B5F1E1DB40A00688836 /* Portal.sks */,
-				8B961F381E1C601600678257 /* Holes */,
+				8B961F381E1C601600678257 /* Frost */,
 				8B961F391E1C601600678257 /* ShotPathIndicator.sks */,
 				8B961F511E1C601600678257 /* Tiles */,
 				8B961F521E1C601600678257 /* WindField.sks */,
@@ -1311,7 +1310,7 @@
 				DEVELOPMENT_TEAM = 349WFX4WJR;
 				INFOPLIST_FILE = "$(SRCROOT)/MrPutt/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Kenny.testGolf;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jwitapps.MrPutt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1326,7 +1325,7 @@
 				DEVELOPMENT_TEAM = 349WFX4WJR;
 				INFOPLIST_FILE = "$(SRCROOT)/MrPutt/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Kenny.testGolf;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jwitapps.MrPutt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

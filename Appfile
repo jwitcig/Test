@@ -1,0 +1,13 @@
+app_identifier "com.Kenny.testGolf" # The bundle identifier of your app
+
+apple_dev_portal_id "jwitapps@gmail.com"  # Your Apple email address
+itunes_connect_id "jwitapps@gmail.com"
+
+# You can uncomment the lines below and add your own
+# team selection in case you are on multiple teams
+# team_name "<TEAM_NAME>"
+# team_id "<TEAM_ID>"
+
+# To select a team for iTunes Connect use
+# itc_team_name "<ITC_TEAM_NAME>"
+# itc_team_id "<ITC_TEAM_ID>"
