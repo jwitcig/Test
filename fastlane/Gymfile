@@ -1,0 +1,8 @@
+scheme "Example"
+
+sdk "iphoneos10.2"
+
+clean true
+
+output_directory "./build"    # store the ipa in this folder
+output_name "MrPutt"           # the name of the ipa file
