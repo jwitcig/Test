@@ -93,7 +93,7 @@ class PuttScene: SKScene {
 //            light.lightColor = UIColor(red: 0, green: 0, blue: 1.0 * (timestep/0.5), alpha: 1)
 //        }
         
-        let flash = SKAction.sequence(colorizers.map{$0.2})
+//        let flash = SKAction.sequence(colorizers.map{$0.2})
 //        light.run(SKAction.repeatForever(flash))
         light.removeFromParent()
     }
@@ -412,14 +412,7 @@ extension PuttScene: SKPhysicsContactDelegate {
     }
     
     func reflect(vector entrance: CGVector, forNormal normal: CGVector, at point: CGPoint, offOf body: SKPhysicsBody) -> CGVector {
-        
-        let xRayTest = CGPoint(x: point.x-normal.dx*20, y: point.y+normal.dy*20)
-        let yRayTest = CGPoint(x: point.x+normal.dx*20, y: point.y-normal.dy*20)
-        
-        let xRayStart = CGPoint(x: xRayTest.x-entrance.dx, y: xRayTest.y-entrance.dy)
-        let yRayStart = CGPoint(x: yRayTest.x-entrance.dx, y: yRayTest.y-entrance.dy)
-        
-        
+  
 //        let r =d−2(d⋅n)n
 //        let reflected = entrance − 2(entrance ⋅ normal)normal
         
@@ -434,15 +427,5 @@ extension PuttScene: SKPhysicsContactDelegate {
         let r = CGVector(dx: entrance.dx-scaled.dx, dy: entrance.dy-scaled.dy)
         
         return r
-        
-        
-        
-        if physicsWorld.body(alongRayStart: xRayStart, end: xRayTest) != body {
-            return CGVector(dx: -entrance.dx, dy: entrance.dy)
-        }
-        if physicsWorld.body(alongRayStart: yRayStart, end: yRayTest) != body {
-            return CGVector(dx: entrance.dx, dy: -entrance.dy)
-        }
-        return entrance
     }
 }
