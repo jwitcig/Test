@@ -139,10 +139,8 @@
 		8B9620751E1C60B400678257 /* CoursePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B961F551E1C601600678257 /* CoursePreviewView.swift */; };
 		8B9620761E1C60B400678257 /* CoursePreviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F561E1C601600678257 /* CoursePreviewView.xib */; };
 		8B9620841E1C610F00678257 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9620781E1C60CB00678257 /* AppDelegate.swift */; };
-		8B9620861E1C611600678257 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B96207E1E1C60CB00678257 /* Info.plist */; };
 		8B9620871E1C613000678257 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B96207B1E1C60CB00678257 /* Main.storyboard */; };
 		8B9620881E1C613300678257 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B9620791E1C60CB00678257 /* LaunchScreen.storyboard */; };
-		8B9620891E1C615200678257 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BCF77151E03CD0200D48A61 /* Info.plist */; };
 		8B96208D1E1C623400678257 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B96208C1E1C623400678257 /* GameViewController.swift */; };
 		8B96208E1E1C625700678257 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B96208C1E1C623400678257 /* GameViewController.swift */; };
 		8BBD3B4C1E1D8BE000688836 /* iMessageExtensionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBD3B4B1E1D8BE000688836 /* iMessageExtensionUITests.swift */; };
@@ -815,7 +813,6 @@
 				8B13B34B1E1C84F800C0044A /* Snow.sks in Resources */,
 				8B13B34D1E1C84F800C0044A /* Assets.xcassets in Resources */,
 				8B9620711E1C60B400678257 /* UTileRight.sks in Resources */,
-				8B9620891E1C615200678257 /* Info.plist in Resources */,
 				8B13B3601E1C891900C0044A /* Frost-Hole8.sks in Resources */,
 				8B9620741E1C60B400678257 /* WindField.sks in Resources */,
 				8B9620371E1C605F00678257 /* Assets.xcassets in Resources */,
@@ -890,7 +887,6 @@
 				8B9620201E1C601600678257 /* HoleTile.sks in Resources */,
 				8B13B3591E1C891900C0044A /* Frost-Hole5.sks in Resources */,
 				8B13B3441E1C7E2A00C0044A /* scoreCard.wav in Resources */,
-				8B9620861E1C611600678257 /* Info.plist in Resources */,
 				8B9620181E1C601600678257 /* BottomWall.sks in Resources */,
 				8B13B35B1E1C891900C0044A /* Frost-Hole6.sks in Resources */,
 				8B13B35D1E1C891900C0044A /* Frost-Hole7.sks in Resources */,
