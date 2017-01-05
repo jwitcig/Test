@@ -295,10 +295,20 @@ class PuttScene: SKScene {
         let stroke = CGVector(dx: cos(angle) * power,
                               dy: sin(angle) * power)
         
-        let sound = SKAction.playSoundFileNamed("clubHit.wav", waitForCompletion: false)
+        let sound = SKAudioNode(fileNamed: "clubHit.wav")
+        sound.autoplayLooped = false
+        sound.position = convert(ball.position, from: ball.parent!)
+        let setVolume = SKAction.changeVolume(to: Float(power / 100.0), duration: 0)
+
+        let removal = SKAction.sequence([
+            SKAction.wait(forDuration: 1),
+            SKAction.removeFromParent()
+        ])
         
+        addChild(sound)
+        
+        sound.run(SKAction.group([setVolume, SKAction.play(), removal]))
         ball.physicsBody?.applyImpulse(stroke)
-        run(sound)
     }
     
     // MARK: Game Loop
