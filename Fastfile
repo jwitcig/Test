@@ -6,7 +6,7 @@ platform :ios do
     # Set number of commits as the build number in the project's plist file before the bot actually start building the project.
     # This way, the generated archive will have an auto-incremented build number.
     set_info_plist_value(
-      path: './Info.plist',
+      path: './MrPutt/Info.plist',
       key: 'CFBundleVersion',
       value: "#{build_number}"
     )
@@ -19,7 +19,7 @@ platform :ios do
   end
 
   lane :after_integration do
-    plistFile = './Info.plist'
+    plistFile = './MrPutt/Info.plist'
 
     # ...
 
