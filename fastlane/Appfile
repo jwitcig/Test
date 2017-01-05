@@ -1,4 +1,4 @@
-app_identifier "com.Kenny.testGolf" # The bundle identifier of your app
+app_identifier "com.jwitapps.MrPutt" # The bundle identifier of your app
 
 apple_dev_portal_id "jwitapps@gmail.com"  # Your Apple email address
 itunes_connect_id "jwitapps@gmail.com"
