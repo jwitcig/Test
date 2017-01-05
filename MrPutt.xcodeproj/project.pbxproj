@@ -184,6 +184,7 @@
 		E847D63B1E1E55B9002F7D5C /* blazeOuterCurvePiece.sks in Resources */ = {isa = PBXBuildFile; fileRef = E847D63A1E1E55B9002F7D5C /* blazeOuterCurvePiece.sks */; };
 		E847D63D1E1E55ED002F7D5C /* blazeInsideCornerPiece.sks in Resources */ = {isa = PBXBuildFile; fileRef = E847D63C1E1E55ED002F7D5C /* blazeInsideCornerPiece.sks */; };
 		E847D63F1E1E560D002F7D5C /* blazeHole.sks in Resources */ = {isa = PBXBuildFile; fileRef = E847D63E1E1E560D002F7D5C /* blazeHole.sks */; };
+		E847D6411E1E58E5002F7D5C /* blazeCornerConnecter.sks in Resources */ = {isa = PBXBuildFile; fileRef = E847D6401E1E58E5002F7D5C /* blazeCornerConnecter.sks */; };
 		E86500011E1DC0700072E2E3 /* Timber-Hole8.sks in Resources */ = {isa = PBXBuildFile; fileRef = E86500001E1DC0700072E2E3 /* Timber-Hole8.sks */; };
 		E86500031E1DC0760072E2E3 /* Timber-Hole9.sks in Resources */ = {isa = PBXBuildFile; fileRef = E86500021E1DC0760072E2E3 /* Timber-Hole9.sks */; };
 		E86513C51E1DAB3A005FBA85 /* Blaze-Hole1.sks in Resources */ = {isa = PBXBuildFile; fileRef = E86513C41E1DAB3A005FBA85 /* Blaze-Hole1.sks */; };
@@ -367,6 +368,7 @@
 		E847D63A1E1E55B9002F7D5C /* blazeOuterCurvePiece.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = blazeOuterCurvePiece.sks; sourceTree = "<group>"; };
 		E847D63C1E1E55ED002F7D5C /* blazeInsideCornerPiece.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = blazeInsideCornerPiece.sks; sourceTree = "<group>"; };
 		E847D63E1E1E560D002F7D5C /* blazeHole.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = blazeHole.sks; sourceTree = "<group>"; };
+		E847D6401E1E58E5002F7D5C /* blazeCornerConnecter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = blazeCornerConnecter.sks; sourceTree = "<group>"; };
 		E85386D3824CE7263E891102 /* Pods-MrPutt-iMessageExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MrPutt-iMessageExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MrPutt-iMessageExtension/Pods-MrPutt-iMessageExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		E86500001E1DC0700072E2E3 /* Timber-Hole8.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Timber-Hole8.sks"; sourceTree = "<group>"; };
 		E86500021E1DC0760072E2E3 /* Timber-Hole9.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Timber-Hole9.sks"; sourceTree = "<group>"; };
@@ -726,6 +728,7 @@
 				E847D62C1E1E5423002F7D5C /* blazeUWalls.sks */,
 				E847D62E1E1E5474002F7D5C /* blazeUWallRight.sks */,
 				E847D6301E1E54B1002F7D5C /* blazeUWallLeft.sks */,
+				E847D6401E1E58E5002F7D5C /* blazeCornerConnecter.sks */,
 				E847D6321E1E54DE002F7D5C /* blazeUWallDown.sks */,
 				E847D6341E1E54FE002F7D5C /* blazeUWallUp.sks */,
 				E847D61C1E1E5174002F7D5C /* blazeStraightWall.sks */,
@@ -974,6 +977,7 @@
 				E847D6331E1E54DE002F7D5C /* blazeUWallDown.sks in Resources */,
 				E86500011E1DC0700072E2E3 /* Timber-Hole8.sks in Resources */,
 				E86513D71E1DBB1A005FBA85 /* Grid.sks in Resources */,
+				E847D6411E1E58E5002F7D5C /* blazeCornerConnecter.sks in Resources */,
 				8B13B3391E1C7E2A00C0044A /* clickHard.wav in Resources */,
 				8B13B3611E1C891900C0044A /* Frost-Hole9.sks in Resources */,
 				8BBD3B5D1E1DAFAB00688836 /* PortalEmitter.sks in Resources */,
