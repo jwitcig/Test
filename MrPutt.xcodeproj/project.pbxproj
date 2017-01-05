@@ -159,6 +159,25 @@
 		8BCF77121E03CD0200D48A61 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BCF77101E03CD0200D48A61 /* MainInterface.storyboard */; };
 		8BCF77141E03CD0200D48A61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BCF77131E03CD0200D48A61 /* Assets.xcassets */; };
 		8BCF77181E03CD0200D48A61 /* iMessageExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8BCF770A1E03CD0200D48A61 /* iMessageExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E86500011E1DC0700072E2E3 /* Timber-Hole8.sks in Resources */ = {isa = PBXBuildFile; fileRef = E86500001E1DC0700072E2E3 /* Timber-Hole8.sks */; };
+		E86500031E1DC0760072E2E3 /* Timber-Hole9.sks in Resources */ = {isa = PBXBuildFile; fileRef = E86500021E1DC0760072E2E3 /* Timber-Hole9.sks */; };
+		E86513C51E1DAB3A005FBA85 /* Blaze-Hole1.sks in Resources */ = {isa = PBXBuildFile; fileRef = E86513C41E1DAB3A005FBA85 /* Blaze-Hole1.sks */; };
+		E86513C71E1DACB0005FBA85 /* Blaze-Hole2.sks in Resources */ = {isa = PBXBuildFile; fileRef = E86513C61E1DACB0005FBA85 /* Blaze-Hole2.sks */; };
+		E86513C91E1DBA16005FBA85 /* Blaze-Hole3.sks in Resources */ = {isa = PBXBuildFile; fileRef = E86513C81E1DBA16005FBA85 /* Blaze-Hole3.sks */; };
+		E86513CB1E1DBA1E005FBA85 /* Blaze-Hole4.sks in Resources */ = {isa = PBXBuildFile; fileRef = E86513CA1E1DBA1E005FBA85 /* Blaze-Hole4.sks */; };
+		E86513CD1E1DBA26005FBA85 /* Blaze-Hole5.sks in Resources */ = {isa = PBXBuildFile; fileRef = E86513CC1E1DBA26005FBA85 /* Blaze-Hole5.sks */; };
+		E86513CF1E1DBA2E005FBA85 /* Blaze-Hole6.sks in Resources */ = {isa = PBXBuildFile; fileRef = E86513CE1E1DBA2E005FBA85 /* Blaze-Hole6.sks */; };
+		E86513D11E1DBA37005FBA85 /* Blaze-Hole7.sks in Resources */ = {isa = PBXBuildFile; fileRef = E86513D01E1DBA37005FBA85 /* Blaze-Hole7.sks */; };
+		E86513D31E1DBA3F005FBA85 /* Blaze-Hole8.sks in Resources */ = {isa = PBXBuildFile; fileRef = E86513D21E1DBA3F005FBA85 /* Blaze-Hole8.sks */; };
+		E86513D51E1DBA4B005FBA85 /* Blaze-Hole9.sks in Resources */ = {isa = PBXBuildFile; fileRef = E86513D41E1DBA4B005FBA85 /* Blaze-Hole9.sks */; };
+		E86513D71E1DBB1A005FBA85 /* Grid.sks in Resources */ = {isa = PBXBuildFile; fileRef = E86513D61E1DBB1A005FBA85 /* Grid.sks */; };
+		E865FFF31E1DC03C0072E2E3 /* Timber-Hole1.sks in Resources */ = {isa = PBXBuildFile; fileRef = E865FFF21E1DC03C0072E2E3 /* Timber-Hole1.sks */; };
+		E865FFF51E1DC0440072E2E3 /* Timber-Hole2.sks in Resources */ = {isa = PBXBuildFile; fileRef = E865FFF41E1DC0440072E2E3 /* Timber-Hole2.sks */; };
+		E865FFF71E1DC04B0072E2E3 /* Timber-Hole3.sks in Resources */ = {isa = PBXBuildFile; fileRef = E865FFF61E1DC04B0072E2E3 /* Timber-Hole3.sks */; };
+		E865FFF91E1DC0510072E2E3 /* Timber-Hole4.sks in Resources */ = {isa = PBXBuildFile; fileRef = E865FFF81E1DC0510072E2E3 /* Timber-Hole4.sks */; };
+		E865FFFB1E1DC05A0072E2E3 /* Timber-Hole5.sks in Resources */ = {isa = PBXBuildFile; fileRef = E865FFFA1E1DC05A0072E2E3 /* Timber-Hole5.sks */; };
+		E865FFFD1E1DC0610072E2E3 /* Timber-Hole6.sks in Resources */ = {isa = PBXBuildFile; fileRef = E865FFFC1E1DC0610072E2E3 /* Timber-Hole6.sks */; };
+		E865FFFF1E1DC0690072E2E3 /* Timber-Hole7.sks in Resources */ = {isa = PBXBuildFile; fileRef = E865FFFE1E1DC0690072E2E3 /* Timber-Hole7.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -298,6 +317,25 @@
 		C2EF7A8331CE3D7270482DE0 /* Pods_testGolf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testGolf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E83E06951E039586005711E3 /* MrPutt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MrPutt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E85386D3824CE7263E891102 /* Pods-MrPutt-iMessageExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MrPutt-iMessageExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MrPutt-iMessageExtension/Pods-MrPutt-iMessageExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		E86500001E1DC0700072E2E3 /* Timber-Hole8.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Timber-Hole8.sks"; sourceTree = "<group>"; };
+		E86500021E1DC0760072E2E3 /* Timber-Hole9.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Timber-Hole9.sks"; sourceTree = "<group>"; };
+		E86513C41E1DAB3A005FBA85 /* Blaze-Hole1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Blaze-Hole1.sks"; sourceTree = "<group>"; };
+		E86513C61E1DACB0005FBA85 /* Blaze-Hole2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Blaze-Hole2.sks"; sourceTree = "<group>"; };
+		E86513C81E1DBA16005FBA85 /* Blaze-Hole3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Blaze-Hole3.sks"; sourceTree = "<group>"; };
+		E86513CA1E1DBA1E005FBA85 /* Blaze-Hole4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Blaze-Hole4.sks"; sourceTree = "<group>"; };
+		E86513CC1E1DBA26005FBA85 /* Blaze-Hole5.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Blaze-Hole5.sks"; sourceTree = "<group>"; };
+		E86513CE1E1DBA2E005FBA85 /* Blaze-Hole6.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Blaze-Hole6.sks"; sourceTree = "<group>"; };
+		E86513D01E1DBA37005FBA85 /* Blaze-Hole7.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Blaze-Hole7.sks"; sourceTree = "<group>"; };
+		E86513D21E1DBA3F005FBA85 /* Blaze-Hole8.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Blaze-Hole8.sks"; sourceTree = "<group>"; };
+		E86513D41E1DBA4B005FBA85 /* Blaze-Hole9.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Blaze-Hole9.sks"; sourceTree = "<group>"; };
+		E86513D61E1DBB1A005FBA85 /* Grid.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Grid.sks; path = ../Holes/Grid.sks; sourceTree = "<group>"; };
+		E865FFF21E1DC03C0072E2E3 /* Timber-Hole1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Timber-Hole1.sks"; sourceTree = "<group>"; };
+		E865FFF41E1DC0440072E2E3 /* Timber-Hole2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Timber-Hole2.sks"; sourceTree = "<group>"; };
+		E865FFF61E1DC04B0072E2E3 /* Timber-Hole3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Timber-Hole3.sks"; sourceTree = "<group>"; };
+		E865FFF81E1DC0510072E2E3 /* Timber-Hole4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Timber-Hole4.sks"; sourceTree = "<group>"; };
+		E865FFFA1E1DC05A0072E2E3 /* Timber-Hole5.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Timber-Hole5.sks"; sourceTree = "<group>"; };
+		E865FFFC1E1DC0610072E2E3 /* Timber-Hole6.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Timber-Hole6.sks"; sourceTree = "<group>"; };
+		E865FFFE1E1DC0690072E2E3 /* Timber-Hole7.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Timber-Hole7.sks"; sourceTree = "<group>"; };
 		F495C1ADA843DFFC65FCFC3C /* Pods_MrPutt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MrPutt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -428,7 +466,7 @@
 			path = Emitters;
 			sourceTree = "<group>";
 		};
-		8B961F381E1C601600678257 /* Holes */ = {
+		8B961F381E1C601600678257 /* Frost */ = {
 			isa = PBXGroup;
 			children = (
 				8B961F361E1C601600678257 /* Frost-Hole1.sks */,
@@ -441,12 +479,14 @@
 				8B13B3531E1C891900C0044A /* Frost-Hole8.sks */,
 				8B13B3541E1C891900C0044A /* Frost-Hole9.sks */,
 			);
+			name = Frost;
 			path = Holes;
 			sourceTree = "<group>";
 		};
 		8B961F511E1C601600678257 /* Tiles */ = {
 			isa = PBXGroup;
 			children = (
+				E86513D61E1DBB1A005FBA85 /* Grid.sks */,
 				8B961F3A1E1C601600678257 /* BlankTile.sks */,
 				8B961F3B1E1C601600678257 /* BottomWall.sks */,
 				8B961F3C1E1C601600678257 /* CornerBottomLeft.sks */,
@@ -479,7 +519,9 @@
 			children = (
 				8B961F351E1C601600678257 /* Ball.sks */,
 				8B073B661E1C92B7008BBAE6 /* Hill.sks */,
-				8B961F381E1C601600678257 /* Holes */,
+				E86513C21E1DAB0D005FBA85 /* Timber */,
+				E86513C31E1DAB18005FBA85 /* Blaze */,
+				8B961F381E1C601600678257 /* Frost */,
 				8B961F391E1C601600678257 /* ShotPathIndicator.sks */,
 				8B961F511E1C601600678257 /* Tiles */,
 				8B961F521E1C601600678257 /* WindField.sks */,
@@ -608,6 +650,40 @@
 				8BBD3B491E1D8BE000688836 /* iMessageExtensionUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E86513C21E1DAB0D005FBA85 /* Timber */ = {
+			isa = PBXGroup;
+			children = (
+				E865FFF21E1DC03C0072E2E3 /* Timber-Hole1.sks */,
+				E865FFF41E1DC0440072E2E3 /* Timber-Hole2.sks */,
+				E865FFF61E1DC04B0072E2E3 /* Timber-Hole3.sks */,
+				E865FFF81E1DC0510072E2E3 /* Timber-Hole4.sks */,
+				E865FFFA1E1DC05A0072E2E3 /* Timber-Hole5.sks */,
+				E865FFFC1E1DC0610072E2E3 /* Timber-Hole6.sks */,
+				E865FFFE1E1DC0690072E2E3 /* Timber-Hole7.sks */,
+				E86500001E1DC0700072E2E3 /* Timber-Hole8.sks */,
+				E86500021E1DC0760072E2E3 /* Timber-Hole9.sks */,
+			);
+			name = Timber;
+			path = Holes;
+			sourceTree = "<group>";
+		};
+		E86513C31E1DAB18005FBA85 /* Blaze */ = {
+			isa = PBXGroup;
+			children = (
+				E86513C41E1DAB3A005FBA85 /* Blaze-Hole1.sks */,
+				E86513C61E1DACB0005FBA85 /* Blaze-Hole2.sks */,
+				E86513C81E1DBA16005FBA85 /* Blaze-Hole3.sks */,
+				E86513CA1E1DBA1E005FBA85 /* Blaze-Hole4.sks */,
+				E86513CC1E1DBA26005FBA85 /* Blaze-Hole5.sks */,
+				E86513CE1E1DBA2E005FBA85 /* Blaze-Hole6.sks */,
+				E86513D01E1DBA37005FBA85 /* Blaze-Hole7.sks */,
+				E86513D21E1DBA3F005FBA85 /* Blaze-Hole8.sks */,
+				E86513D41E1DBA4B005FBA85 /* Blaze-Hole9.sks */,
+			);
+			name = Blaze;
+			path = Holes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -790,20 +866,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E86513D11E1DBA37005FBA85 /* Blaze-Hole7.sks in Resources */,
+				E865FFF31E1DC03C0072E2E3 /* Timber-Hole1.sks in Resources */,
 				8B9620281E1C601600678257 /* UTile.sks in Resources */,
 				8B13B33C1E1C7E2A00C0044A /* clubHit.wav in Resources */,
 				8B9620061E1C601600678257 /* Neutra2Display-Titled.otf in Resources */,
 				8B9620251E1C601600678257 /* StraightTileUpDown.sks in Resources */,
+				E86513C51E1DAB3A005FBA85 /* Blaze-Hole1.sks in Resources */,
 				8B9620141E1C601600678257 /* Frost-Hole1.sks in Resources */,
 				8BC3780C1E1CE9670014AFA2 /* SceneStart.sks in Resources */,
 				8B13B3381E1C7E2A00C0044A /* click2.wav in Resources */,
 				8B13B3431E1C7E2A00C0044A /* randomClick.wav in Resources */,
+				E865FFF51E1DC0440072E2E3 /* Timber-Hole2.sks in Resources */,
 				8B9620111E1C601600678257 /* WallHit.sks in Resources */,
 				8B13B35F1E1C891900C0044A /* Frost-Hole8.sks in Resources */,
 				8B13B33A1E1C7E2A00C0044A /* clickSoft.wav in Resources */,
+				E86500011E1DC0700072E2E3 /* Timber-Hole8.sks in Resources */,
+				E86513D71E1DBB1A005FBA85 /* Grid.sks in Resources */,
 				8B13B3391E1C7E2A00C0044A /* clickHard.wav in Resources */,
 				8B13B3611E1C891900C0044A /* Frost-Hole9.sks in Resources */,
 				8B9620241E1C601600678257 /* StraightTile.sks in Resources */,
+				E865FFF91E1DC0510072E2E3 /* Timber-Hole4.sks in Resources */,
 				8B9620201E1C601600678257 /* HoleTile.sks in Resources */,
 				8B13B3591E1C891900C0044A /* Frost-Hole5.sks in Resources */,
 				8B13B3441E1C7E2A00C0044A /* scoreCard.wav in Resources */,
@@ -812,7 +895,9 @@
 				8B13B35B1E1C891900C0044A /* Frost-Hole6.sks in Resources */,
 				8B13B35D1E1C891900C0044A /* Frost-Hole7.sks in Resources */,
 				8B9620051E1C601600678257 /* Bebas.ttf in Resources */,
+				E86513CF1E1DBA2E005FBA85 /* Blaze-Hole6.sks in Resources */,
 				8B9620161E1C601600678257 /* ShotPathIndicator.sks in Resources */,
+				E86513C91E1DBA16005FBA85 /* Blaze-Hole3.sks in Resources */,
 				8B9620191E1C601600678257 /* CornerBottomLeft.sks in Resources */,
 				8B13B34A1E1C84F800C0044A /* Snow.sks in Resources */,
 				8B9620871E1C613000678257 /* Main.storyboard in Resources */,
@@ -824,11 +909,14 @@
 				8B9620881E1C613300678257 /* LaunchScreen.storyboard in Resources */,
 				8B9620151E1C601600678257 /* Frost-Hole2.sks in Resources */,
 				8B13B34C1E1C84F800C0044A /* Assets.xcassets in Resources */,
+				E865FFFB1E1DC05A0072E2E3 /* Timber-Hole5.sks in Resources */,
 				8B13B3551E1C891900C0044A /* Frost-Hole3.sks in Resources */,
 				8B9620121E1C601600678257 /* BallTrail.sks in Resources */,
 				8B96201F1E1C601600678257 /* CurvePiece.sks in Resources */,
+				E86513D31E1DBA3F005FBA85 /* Blaze-Hole8.sks in Resources */,
 				8B96201D1E1C601600678257 /* CornerWalls.sks in Resources */,
 				8B96202A1E1C601600678257 /* UTileLeft.sks in Resources */,
+				E865FFF71E1DC04B0072E2E3 /* Timber-Hole3.sks in Resources */,
 				8B9620211E1C601600678257 /* LeftWall.sks in Resources */,
 				8B9620071E1C601600678257 /* Actions.plist in Resources */,
 				8B9620261E1C601600678257 /* StraightWall.sks in Resources */,
@@ -840,15 +928,19 @@
 				8B13B3371E1C7E2A00C0044A /* click1.wav in Resources */,
 				8B13B33E1E1C7E2A00C0044A /* hollow.wav in Resources */,
 				8B13B3421E1C7E2A00C0044A /* notch.mp3 in Resources */,
+				E865FFFF1E1DC0690072E2E3 /* Timber-Hole7.sks in Resources */,
 				8B9620271E1C601600678257 /* TopWall.sks in Resources */,
 				8B13B3461E1C7E2A00C0044A /* softHit.wav in Resources */,
 				8B13B33D1E1C7E2A00C0044A /* holeMade.wav in Resources */,
 				8B13B3411E1C7E2A00C0044A /* metalHitWall.wav in Resources */,
+				E865FFFD1E1DC0610072E2E3 /* Timber-Hole6.sks in Resources */,
 				8BC378091E1CDB2D0014AFA2 /* frostAmbience.mp3 in Resources */,
 				8B9620321E1C603400678257 /* Assets.xcassets in Resources */,
 				8B13B33B1E1C7E2A00C0044A /* close.wav in Resources */,
 				8B13B3471E1C7E2A00C0044A /* woodHit.wav in Resources */,
+				E86513C71E1DACB0005FBA85 /* Blaze-Hole2.sks in Resources */,
 				8B96201C1E1C601600678257 /* CornerTopRight.sks in Resources */,
+				E86513CD1E1DBA26005FBA85 /* Blaze-Hole5.sks in Resources */,
 				8B13B3451E1C7E2A00C0044A /* snapClick.wav in Resources */,
 				8BC3780A1E1CDB2D0014AFA2 /* timberAmbience.mp3 in Resources */,
 				8B96202B1E1C601600678257 /* UTileRight.sks in Resources */,
@@ -856,9 +948,12 @@
 				8B9620101E1C601600678257 /* BallInHole.sks in Resources */,
 				8B9620291E1C601600678257 /* UTileDown.sks in Resources */,
 				8B96201E1E1C601600678257 /* CurvedWallShort.sks in Resources */,
+				E86513CB1E1DBA1E005FBA85 /* Blaze-Hole4.sks in Resources */,
 				8B13B3571E1C891900C0044A /* Frost-Hole4.sks in Resources */,
 				8B9620301E1C601600678257 /* CoursePreviewView.xib in Resources */,
+				E86513D51E1DBA4B005FBA85 /* Blaze-Hole9.sks in Resources */,
 				8B96202C1E1C601600678257 /* UTileUp.sks in Resources */,
+				E86500031E1DC0760072E2E3 /* Timber-Hole9.sks in Resources */,
 				8B13B33F1E1C7E2A00C0044A /* littleClick.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1230,6 +1325,7 @@
 				8BBD3B511E1D8BE000688836 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8BCF771B1E03CD0200D48A61 /* Build configuration list for PBXNativeTarget "iMessageExtension" */ = {
 			isa = XCConfigurationList;
