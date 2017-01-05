@@ -12,6 +12,10 @@ import UIKit
 class Ball: SKSpriteNode {
     static let fileName = "Ball"
     static let name = "ball"
+    
+    lazy var ballTrail: SKEmitterNode = {
+        return self.childNode(withName: "//ballTrail")! as! SKEmitterNode
+    }()
  
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -27,20 +31,18 @@ class Ball: SKSpriteNode {
         return physicsBody
     }
     
-    func fetchBallTrail() -> SKEmitterNode? {
-        return childNode(withName: "//ballTrail") as? SKEmitterNode
-    }
-    
     /* Should be called once ball is added to scene */
     func updateTrailEmitter() {
-        guard let ballTrail = fetchBallTrail() else { return }
         ballTrail.targetNode = scene
         ballTrail.particleScale *= 0.15
         ballTrail.particleScaleSpeed *= 0.15
     }
     
+    func enableTrail() {
+        addChild(ballTrail)
+    }
+    
     func disableTrail() {
-        guard let ballTrail = fetchBallTrail() else { return }
-        ballTrail.particleBirthRate = 0
+        ballTrail.removeFromParent()
     }
 }

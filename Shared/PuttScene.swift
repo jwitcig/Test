@@ -94,13 +94,12 @@ class PuttScene: SKScene {
 //        }
         
         let flash = SKAction.sequence(colorizers.map{$0.2})
-        light.run(SKAction.repeatForever(flash))
+//        light.run(SKAction.repeatForever(flash))
+        light.removeFromParent()
     }
     
     func removeGrid() {
-        enumerateChildNodes(withName: "grid") { node, stop in
-            node.removeFromParent()
-        }
+        childNode(withName: "grid")?.removeFromParent()
     }
     
     func setDebugOptions(on view: SKView) {
@@ -199,6 +198,15 @@ class PuttScene: SKScene {
             
             if let ballBody = ball.physicsBody {
                 if ballBody.velocity.magnitude < CGFloat(5) {
+                
+                    let dim = SKAction.fadeAlpha(by: -0.3, duration: 0.5)
+                    dim.timingMode = .easeOut
+
+                    ball.disableTrail()
+                    let enableTrail = SKAction.run(ball.enableTrail)
+                    let flash = SKAction.sequence([dim, dim.reversed(), enableTrail])
+                    ball.run(flash)
+                    
                     ballBody.velocity = .zero
                     
                     adjustingShot = true
