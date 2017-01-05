@@ -1,7 +1,7 @@
 platform :ios do
   lane :before_integration do
     # fetch the number of commits in the current branch
-    build_number = number_of_commits
+    build_number = 1
 
     # Set number of commits as the build number in the project's plist file before the bot actually start building the project.
     # This way, the generated archive will have an auto-incremented build number.
