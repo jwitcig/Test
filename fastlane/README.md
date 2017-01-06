@@ -11,6 +11,11 @@ sudo gem install fastlane
 fastlane ios before_integration
 ```
 
+### ios fly
+```
+fastlane ios fly
+```
+
 ### ios after_integration
 ```
 fastlane ios after_integration

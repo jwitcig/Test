@@ -1,4 +1,4 @@
-scheme "Example"
+scheme "MrPutt"
 
 sdk "iphoneos10.2"
 
