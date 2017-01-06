@@ -6,6 +6,11 @@ sudo gem install fastlane
 ```
 # Available Actions
 ## iOS
+### ios certificates
+```
+fastlane ios certificates
+```
+
 ### ios before_integration
 ```
 fastlane ios before_integration
