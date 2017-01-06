@@ -856,12 +856,12 @@
 					};
 					8BCF77091E03CD0200D48A61 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = M4TN2QX7K6;
+						DevelopmentTeam = 349WFX4WJR;
 						ProvisioningStyle = Automatic;
 					};
 					E83E06941E039586005711E3 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = M4TN2QX7K6;
+						DevelopmentTeam = 349WFX4WJR;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -1280,7 +1280,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				DEVELOPMENT_TEAM = M4TN2QX7K6;
+				DEVELOPMENT_TEAM = 349WFX4WJR;
 				INFOPLIST_FILE = iMessageExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -1297,7 +1297,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				DEVELOPMENT_TEAM = M4TN2QX7K6;
+				DEVELOPMENT_TEAM = 349WFX4WJR;
 				INFOPLIST_FILE = iMessageExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -1407,7 +1407,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = M4TN2QX7K6;
+				DEVELOPMENT_TEAM = 349WFX4WJR;
 				INFOPLIST_FILE = "$(SRCROOT)/MrPutt/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jwitapps.MrPutt;
@@ -1422,7 +1422,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = M4TN2QX7K6;
+				DEVELOPMENT_TEAM = 349WFX4WJR;
 				INFOPLIST_FILE = "$(SRCROOT)/MrPutt/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jwitapps.MrPutt;
