@@ -11,11 +11,6 @@ sudo gem install fastlane
 fastlane ios certificates
 ```
 
-### ios before_integration
-```
-fastlane ios before_integration
-```
-
 ### ios fly
 ```
 fastlane ios fly
