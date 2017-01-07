@@ -42,7 +42,7 @@ platform :ios do
 
      # Commit changes done in the plist file
      git_commit(
-       path: ["#{plistFile}"],
+       path: ["#{plistFile}", "./iMessageExtension/Info.plist"],
        message: "Version bump to #{version_number} (#{build_number}) by CI Builder"
      )
 
