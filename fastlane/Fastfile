@@ -30,8 +30,7 @@ platform :ios do
     version_number = get_version_number
     build_number = get_build_number
 
-    ipa_folder = "#{ENV['XCS_DERIVED_DATA_DIR']}/deploy/#{version_number}.#{build_number}/"
-    ipa_path = "#{ipa_folder}/#{target}.ipa"
+    ipa_path = ENV["XCS_PRODUCT"]
 
     plistFile = './iMessageExtension/Info.plist'
 
