@@ -91,10 +91,9 @@
 		8B96202E1E1C601600678257 /* WindField.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F521E1C601600678257 /* WindField.sks */; };
 		8B96202F1E1C601600678257 /* CoursePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B961F551E1C601600678257 /* CoursePreviewView.swift */; };
 		8B9620301E1C601600678257 /* CoursePreviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F561E1C601600678257 /* CoursePreviewView.xib */; };
-		8B9620321E1C603400678257 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B9620311E1C603400678257 /* Assets.xcassets */; };
-		8B9620371E1C605F00678257 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B9620331E1C605F00678257 /* Assets.xcassets */; };
+		8B9620321E1C603400678257 /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B9620311E1C603400678257 /* SharedAssets.xcassets */; };
 		8B9620391E1C605F00678257 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9620361E1C605F00678257 /* MessagesViewController.swift */; };
-		8B96203B1E1C607B00678257 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B9620311E1C603400678257 /* Assets.xcassets */; };
+		8B96203B1E1C607B00678257 /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B9620311E1C603400678257 /* SharedAssets.xcassets */; };
 		8B96204B1E1C608400678257 /* Bebas.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F211E1C601600678257 /* Bebas.ttf */; };
 		8B96204C1E1C608400678257 /* Neutra2Display-Titled.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F221E1C601600678257 /* Neutra2Display-Titled.otf */; };
 		8B96204D1E1C608400678257 /* Actions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F241E1C601600678257 /* Actions.plist */; };
@@ -159,8 +158,11 @@
 		8BC3780D1E1CE9670014AFA2 /* SceneStart.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BC3780B1E1CE9670014AFA2 /* SceneStart.sks */; };
 		8BCF770C1E03CD0200D48A61 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BCF770B1E03CD0200D48A61 /* Messages.framework */; };
 		8BCF77121E03CD0200D48A61 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BCF77101E03CD0200D48A61 /* MainInterface.storyboard */; };
-		8BCF77141E03CD0200D48A61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BCF77131E03CD0200D48A61 /* Assets.xcassets */; };
+		8BCF77141E03CD0200D48A61 /* iMessageAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BCF77131E03CD0200D48A61 /* iMessageAssets.xcassets */; };
 		8BCF77181E03CD0200D48A61 /* iMessageExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8BCF770A1E03CD0200D48A61 /* iMessageExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D22F14111E1F7AAD00CA90CA /* PlaceholderiMessageAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D22F14101E1F7AAD00CA90CA /* PlaceholderiMessageAssets.xcassets */; };
+		D289FE7D1E1F73530006F0A7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B96207E1E1C60CB00678257 /* Info.plist */; };
+		D29256841E1F7A60000FB092 /* PlaceholderAppAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D29256831E1F7A60000FB092 /* PlaceholderAppAssets.xcassets */; };
 		E847D6121E1E459E002F7D5C /* OuterCurvePiece.sks in Resources */ = {isa = PBXBuildFile; fileRef = E847D6111E1E459E002F7D5C /* OuterCurvePiece.sks */; };
 		E847D6141E1E4769002F7D5C /* CornerConnectorBlue.sks in Resources */ = {isa = PBXBuildFile; fileRef = E847D6131E1E4769002F7D5C /* CornerConnectorBlue.sks */; };
 		E847D6171E1E5084002F7D5C /* blazeBlankTile.sks in Resources */ = {isa = PBXBuildFile; fileRef = E847D6161E1E5084002F7D5C /* blazeBlankTile.sks */; };
@@ -314,8 +316,7 @@
 		8B961F521E1C601600678257 /* WindField.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = WindField.sks; sourceTree = "<group>"; };
 		8B961F551E1C601600678257 /* CoursePreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursePreviewView.swift; sourceTree = "<group>"; };
 		8B961F561E1C601600678257 /* CoursePreviewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoursePreviewView.xib; sourceTree = "<group>"; };
-		8B9620311E1C603400678257 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8B9620331E1C605F00678257 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8B9620311E1C603400678257 /* SharedAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SharedAssets.xcassets; sourceTree = "<group>"; };
 		8B9620361E1C605F00678257 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		8B9620781E1C60CB00678257 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B96207A1E1C60CB00678257 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -336,7 +337,7 @@
 		8BCF770A1E03CD0200D48A61 /* iMessageExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = iMessageExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BCF770B1E03CD0200D48A61 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		8BCF77111E03CD0200D48A61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		8BCF77131E03CD0200D48A61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8BCF77131E03CD0200D48A61 /* iMessageAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = iMessageAssets.xcassets; sourceTree = "<group>"; };
 		8BCF77151E03CD0200D48A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F233FA75BF56CABCE8E437B /* Pods-testGolf-iMessageExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGolf-iMessageExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testGolf-iMessageExtension/Pods-testGolf-iMessageExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		8F24A3D33C0A0B644C3537BB /* Pods-MrPutt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MrPutt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MrPutt/Pods-MrPutt.debug.xcconfig"; sourceTree = "<group>"; };
@@ -344,6 +345,8 @@
 		9AE52D809E1573D35DD5E166 /* Pods-MrPutt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MrPutt.release.xcconfig"; path = "Pods/Target Support Files/Pods-MrPutt/Pods-MrPutt.release.xcconfig"; sourceTree = "<group>"; };
 		AEB52F2E29C1E166CE4CAA27 /* Pods_testGolf_iMessageExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testGolf_iMessageExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2EF7A8331CE3D7270482DE0 /* Pods_testGolf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testGolf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D22F14101E1F7AAD00CA90CA /* PlaceholderiMessageAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PlaceholderiMessageAssets.xcassets; sourceTree = "<group>"; };
+		D29256831E1F7A60000FB092 /* PlaceholderAppAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PlaceholderAppAssets.xcassets; sourceTree = "<group>"; };
 		E83E06951E039586005711E3 /* MrPutt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MrPutt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E847D6111E1E459E002F7D5C /* OuterCurvePiece.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = OuterCurvePiece.sks; sourceTree = "<group>"; };
 		E847D6131E1E4769002F7D5C /* CornerConnectorBlue.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CornerConnectorBlue.sks; sourceTree = "<group>"; };
@@ -481,7 +484,7 @@
 		8B961F261E1C601600678257 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				8B9620311E1C603400678257 /* Assets.xcassets */,
+				8B9620311E1C603400678257 /* SharedAssets.xcassets */,
 				8B961F201E1C601600678257 /* Audio */,
 				8B961F231E1C601600678257 /* Fonts */,
 				8B961F251E1C601600678257 /* Plists */,
@@ -636,6 +639,7 @@
 		8B9620771E1C60CB00678257 /* MrPutt */ = {
 			isa = PBXGroup;
 			children = (
+				D29256831E1F7A60000FB092 /* PlaceholderAppAssets.xcassets */,
 				8B9620781E1C60CB00678257 /* AppDelegate.swift */,
 				8B9620791E1C60CB00678257 /* LaunchScreen.storyboard */,
 				8B96207B1E1C60CB00678257 /* Main.storyboard */,
@@ -665,10 +669,10 @@
 		8BCF770D1E03CD0200D48A61 /* iMessageExtension */ = {
 			isa = PBXGroup;
 			children = (
-				8B9620331E1C605F00678257 /* Assets.xcassets */,
 				8B9620341E1C605F00678257 /* ViewControllers */,
 				8BCF77101E03CD0200D48A61 /* MainInterface.storyboard */,
-				8BCF77131E03CD0200D48A61 /* Assets.xcassets */,
+				8BCF77131E03CD0200D48A61 /* iMessageAssets.xcassets */,
+				D22F14101E1F7AAD00CA90CA /* PlaceholderiMessageAssets.xcassets */,
 				8BCF77151E03CD0200D48A61 /* Info.plist */,
 			);
 			path = iMessageExtension;
@@ -850,19 +854,19 @@
 				TargetAttributes = {
 					8BBD3B481E1D8BE000688836 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = M4TN2QX7K6;
+						DevelopmentTeam = 349WFX4WJR;
 						ProvisioningStyle = Automatic;
 						TestTargetID = E83E06941E039586005711E3;
 					};
 					8BCF77091E03CD0200D48A61 = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = 349WFX4WJR;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					E83E06941E039586005711E3 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 349WFX4WJR;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -898,7 +902,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BCF77141E03CD0200D48A61 /* Assets.xcassets in Resources */,
+				8BCF77141E03CD0200D48A61 /* iMessageAssets.xcassets in Resources */,
 				8B96204B1E1C608400678257 /* Bebas.ttf in Resources */,
 				8B9620731E1C60B400678257 /* UTileWalls.sks in Resources */,
 				8B13B3561E1C891900C0044A /* Frost-Hole3.sks in Resources */,
@@ -908,12 +912,11 @@
 				8B9620711E1C60B400678257 /* UTileRight.sks in Resources */,
 				8B13B3601E1C891900C0044A /* Frost-Hole8.sks in Resources */,
 				8B9620741E1C60B400678257 /* WindField.sks in Resources */,
-				8B9620371E1C605F00678257 /* Assets.xcassets in Resources */,
 				8B96204C1E1C608400678257 /* Neutra2Display-Titled.otf in Resources */,
 				8B9620651E1C60B300678257 /* InnerCurvePiece.sks in Resources */,
 				8B9620591E1C60B300678257 /* Ball.sks in Resources */,
 				8B9620681E1C60B400678257 /* Mat.sks in Resources */,
-				8B96203B1E1C607B00678257 /* Assets.xcassets in Resources */,
+				8B96203B1E1C607B00678257 /* SharedAssets.xcassets in Resources */,
 				8B96206C1E1C60B400678257 /* StraightWall.sks in Resources */,
 				8B13B3581E1C891900C0044A /* Frost-Hole4.sks in Resources */,
 				8B13B3621E1C891900C0044A /* Frost-Hole9.sks in Resources */,
@@ -926,6 +929,7 @@
 				8BC3780D1E1CE9670014AFA2 /* SceneStart.sks in Resources */,
 				8B9620661E1C60B400678257 /* HoleTile.sks in Resources */,
 				8B9620671E1C60B400678257 /* LeftWall.sks in Resources */,
+				D22F14111E1F7AAD00CA90CA /* PlaceholderiMessageAssets.xcassets in Resources */,
 				8BBD3B611E1DB40A00688836 /* Portal.sks in Resources */,
 				8B96205A1E1C60B300678257 /* Frost-Hole1.sks in Resources */,
 				8B96205B1E1C60B300678257 /* Frost-Hole2.sks in Resources */,
@@ -972,6 +976,7 @@
 				E847D6391E1E5584002F7D5C /* blazeUpDown.sks in Resources */,
 				E865FFF51E1DC0440072E2E3 /* Timber-Hole2.sks in Resources */,
 				8B9620111E1C601600678257 /* WallHit.sks in Resources */,
+				D289FE7D1E1F73530006F0A7 /* Info.plist in Resources */,
 				8B13B35F1E1C891900C0044A /* Frost-Hole8.sks in Resources */,
 				8B13B33A1E1C7E2A00C0044A /* clickSoft.wav in Resources */,
 				E847D6331E1E54DE002F7D5C /* blazeUWallDown.sks in Resources */,
@@ -1030,6 +1035,7 @@
 				8B9620171E1C601600678257 /* BlankTile.sks in Resources */,
 				8B9620231E1C601600678257 /* RightWall.sks in Resources */,
 				8B96202E1E1C601600678257 /* WindField.sks in Resources */,
+				D29256841E1F7A60000FB092 /* PlaceholderAppAssets.xcassets in Resources */,
 				E847D6141E1E4769002F7D5C /* CornerConnectorBlue.sks in Resources */,
 				8B96201B1E1C601600678257 /* CornerTopLeft.sks in Resources */,
 				8B13B3371E1C7E2A00C0044A /* click1.wav in Resources */,
@@ -1043,7 +1049,7 @@
 				E865FFFD1E1DC0610072E2E3 /* Timber-Hole6.sks in Resources */,
 				8B93AFF41E1E1F4000BA03C1 /* portalTransfer.mp3 in Resources */,
 				8BC378091E1CDB2D0014AFA2 /* frostAmbience.mp3 in Resources */,
-				8B9620321E1C603400678257 /* Assets.xcassets in Resources */,
+				8B9620321E1C603400678257 /* SharedAssets.xcassets in Resources */,
 				8B13B33B1E1C7E2A00C0044A /* close.wav in Resources */,
 				E847D63F1E1E560D002F7D5C /* blazeHole.sks in Resources */,
 				8B13B3471E1C7E2A00C0044A /* woodHit.wav in Resources */,
@@ -1249,12 +1255,15 @@
 		8BBD3B501E1D8BE000688836 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = M4TN2QX7K6;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iMessageExtensionUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jwitapps.iMessageExtensionUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = MrPutt;
 			};
@@ -1263,12 +1272,15 @@
 		8BBD3B511E1D8BE000688836 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = M4TN2QX7K6;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iMessageExtensionUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jwitapps.iMessageExtensionUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = MrPutt;
 			};
@@ -1281,11 +1293,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				DEVELOPMENT_TEAM = 349WFX4WJR;
+				ENABLE_ONLY_ACTIVE_RESOURCES = NO;
 				INFOPLIST_FILE = iMessageExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jwitapps.MrPutt.iMessageExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d5253179-cc60-4483-bb42-9b26ff2462bd";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.jwitapps.MrPutt.iMessageExtension";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -1297,12 +1312,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 349WFX4WJR;
+				ENABLE_ONLY_ACTIVE_RESOURCES = NO;
 				INFOPLIST_FILE = iMessageExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jwitapps.MrPutt.iMessageExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6ca39357-e1e4-4bcf-8ca8-ae0f4db0ae7f";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.jwitapps.MrPutt.iMessageExtension";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -1413,6 +1432,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jwitapps.MrPutt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7285ef45-9613-4437-a541-2367ba9e8030";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.jwitapps.MrPutt";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -1429,6 +1450,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jwitapps.MrPutt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7d1fc711-3a15-4460-a829-1e0ec3632473";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.jwitapps.MrPutt";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
