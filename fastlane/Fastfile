@@ -25,15 +25,20 @@ platform :ios do
 
     match(type: "adhoc", app_identifier: ["com.jwitapps.MrPutt", "com.jwitapps.MrPutt.iMessageExtension"], readonly: true)
 
+    target = ENV['XL_TARGET']
+
+    version_number = get_version_number
+    build_number = get_build_number
+
     ipa_folder = "#{ENV['XCS_DERIVED_DATA_DIR']}/deploy/#{version_number}.#{build_number}/"
     ipa_path = "#{ipa_folder}/#{target}.ipa"
 
-    plistFile = './iMessageExtension/Info.plist'  
+    plistFile = './iMessageExtension/Info.plist'
 
      # Commit changes done in the plist file
      git_commit(
        path: ["#{plistFile}"],
-       message: "Version bump to #{get_version_number} (#{get_build_number}) by CI Builder"
+       message: "Version bump to #{version_number} (#{build_number}) by CI Builder"
      )
 
      push_to_git_remote
