@@ -1,14 +1,5 @@
 platform :ios do
   before_all do |lane|
-    cocoapods
-  end
-
-  lane :certificates do
-    match(app_identifier: "com.jwitapps.iMessageExtensionUITests")
-    match(app_identifier: ["com.jwitapps.MrPutt", "com.jwitapps.MrPutt.iMessageExtension"], readonly: true)
-  end
-
-  lane :before_integration do
     # fetch the number of commits in the current branch
     build_number = number_of_commits
 
@@ -16,16 +7,17 @@ platform :ios do
     # This way, the generated archive will have an auto-incremented build number.
 
     set_info_plist_value(
-      path: './MrPutt/Info.plist',
+      path: './iMessageExtension/Info.plist',
       key: 'CFBundleVersion',
       value: "#{build_number}"
     )
 
-    # Run `pod install`
     cocoapods
+  end
 
-    # Download provisioning profiles for the app and copy them to the correct folder.
-    sigh(output_path: '/Library/Developer/XcodeServer/ProvisioningProfiles', skip_install: true)
+  lane :certificates do
+    match(app_identifier: "com.jwitapps.iMessageExtensionUITests")
+    match(app_identifier: ["com.jwitapps.MrPutt", "com.jwitapps.MrPutt.iMessageExtension"], readonly: true)
   end
 
   lane :fly do
@@ -35,6 +27,18 @@ platform :ios do
 
     ipa_folder = "#{ENV['XCS_DERIVED_DATA_DIR']}/deploy/#{version_number}.#{build_number}/"
     ipa_path = "#{ipa_folder}/#{target}.ipa"
+
+    plistFile = './iMessageExtension/Info.plist'  
+
+     # Commit changes done in the plist file
+     git_commit(
+       path: ["#{plistFile}"],
+       message: "Version bump to #{get_version_number} (#{get_build_number}) by CI Builder"
+     )
+
+     push_to_git_remote
+
+     push_git_tags
 
     pilot(
       username: ENV["ITUNES_CONNECT_USER"],
