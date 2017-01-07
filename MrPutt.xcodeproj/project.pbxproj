@@ -142,7 +142,6 @@
 		8B9620881E1C613300678257 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B9620791E1C60CB00678257 /* LaunchScreen.storyboard */; };
 		8B96208D1E1C623400678257 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B96208C1E1C623400678257 /* GameViewController.swift */; };
 		8B96208E1E1C625700678257 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B96208C1E1C623400678257 /* GameViewController.swift */; };
-		8BBD3B4C1E1D8BE000688836 /* iMessageExtensionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBD3B4B1E1D8BE000688836 /* iMessageExtensionUITests.swift */; };
 		8BBD3B541E1D8DBD00688836 /* CourseSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBD3B531E1D8DBD00688836 /* CourseSelectionViewController.swift */; };
 		8BBD3B551E1D8DC200688836 /* CourseSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBD3B531E1D8DBD00688836 /* CourseSelectionViewController.swift */; };
 		8BBD3B5D1E1DAFAB00688836 /* PortalEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BBD3B5C1E1DAFAB00688836 /* PortalEmitter.sks */; };
@@ -209,13 +208,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8BBD3B4E1E1D8BE000688836 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E83E068D1E039586005711E3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E83E06941E039586005711E3;
-			remoteInfo = MrPutt;
-		};
 		8BCF77161E03CD0200D48A61 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E83E068D1E039586005711E3 /* Project object */;
@@ -323,7 +315,6 @@
 		8B96207C1E1C60CB00678257 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B96207E1E1C60CB00678257 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B96208C1E1C623400678257 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		8BBD3B491E1D8BE000688836 /* iMessageExtensionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iMessageExtensionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BBD3B4B1E1D8BE000688836 /* iMessageExtensionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iMessageExtensionUITests.swift; sourceTree = "<group>"; };
 		8BBD3B4D1E1D8BE000688836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BBD3B531E1D8DBD00688836 /* CourseSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseSelectionViewController.swift; sourceTree = "<group>"; };
@@ -396,13 +387,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8BBD3B461E1D8BE000688836 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8BCF77071E03CD0200D48A61 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -711,7 +695,6 @@
 			children = (
 				E83E06951E039586005711E3 /* MrPutt.app */,
 				8BCF770A1E03CD0200D48A61 /* iMessageExtension.appex */,
-				8BBD3B491E1D8BE000688836 /* iMessageExtensionUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -783,24 +766,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8BBD3B481E1D8BE000688836 /* iMessageExtensionUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8BBD3B521E1D8BE000688836 /* Build configuration list for PBXNativeTarget "iMessageExtensionUITests" */;
-			buildPhases = (
-				8BBD3B451E1D8BE000688836 /* Sources */,
-				8BBD3B461E1D8BE000688836 /* Frameworks */,
-				8BBD3B471E1D8BE000688836 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8BBD3B4F1E1D8BE000688836 /* PBXTargetDependency */,
-			);
-			name = iMessageExtensionUITests;
-			productName = iMessageExtensionUITests;
-			productReference = 8BBD3B491E1D8BE000688836 /* iMessageExtensionUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		8BCF77091E03CD0200D48A61 /* iMessageExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8BCF771B1E03CD0200D48A61 /* Build configuration list for PBXNativeTarget "iMessageExtension" */;
@@ -852,12 +817,6 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = CodeWithKenny;
 				TargetAttributes = {
-					8BBD3B481E1D8BE000688836 = {
-						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 349WFX4WJR;
-						ProvisioningStyle = Automatic;
-						TestTargetID = E83E06941E039586005711E3;
-					};
 					8BCF77091E03CD0200D48A61 = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = 349WFX4WJR;
@@ -885,19 +844,11 @@
 			targets = (
 				E83E06941E039586005711E3 /* MrPutt */,
 				8BCF77091E03CD0200D48A61 /* iMessageExtension */,
-				8BBD3B481E1D8BE000688836 /* iMessageExtensionUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8BBD3B471E1D8BE000688836 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8BCF77081E03CD0200D48A61 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1161,14 +1112,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8BBD3B451E1D8BE000688836 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8BBD3B4C1E1D8BE000688836 /* iMessageExtensionUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8BCF77061E03CD0200D48A61 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1212,11 +1155,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8BBD3B4F1E1D8BE000688836 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E83E06941E039586005711E3 /* MrPutt */;
-			targetProxy = 8BBD3B4E1E1D8BE000688836 /* PBXContainerItemProxy */;
-		};
 		8BCF77171E03CD0200D48A61 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8BCF77091E03CD0200D48A61 /* iMessageExtension */;
@@ -1252,40 +1190,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		8BBD3B501E1D8BE000688836 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = iMessageExtensionUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jwitapps.iMessageExtensionUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = MrPutt;
-			};
-			name = Debug;
-		};
-		8BBD3B511E1D8BE000688836 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = iMessageExtensionUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jwitapps.iMessageExtensionUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = MrPutt;
-			};
-			name = Release;
-		};
 		8BCF77191E03CD0200D48A61 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E85386D3824CE7263E891102 /* Pods-MrPutt-iMessageExtension.debug.xcconfig */;
@@ -1459,15 +1363,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8BBD3B521E1D8BE000688836 /* Build configuration list for PBXNativeTarget "iMessageExtensionUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8BBD3B501E1D8BE000688836 /* Debug */,
-				8BBD3B511E1D8BE000688836 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		8BCF771B1E03CD0200D48A61 /* Build configuration list for PBXNativeTarget "iMessageExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
