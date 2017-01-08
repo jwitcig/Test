@@ -120,6 +120,8 @@
 		D22F14111E1F7AAD00CA90CA /* PlaceholderiMessageAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D22F14101E1F7AAD00CA90CA /* PlaceholderiMessageAssets.xcassets */; };
 		D289FE7D1E1F73530006F0A7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B96207E1E1C60CB00678257 /* Info.plist */; };
 		D29256841E1F7A60000FB092 /* PlaceholderAppAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D29256831E1F7A60000FB092 /* PlaceholderAppAssets.xcassets */; };
+		E806B5A11E22020700BC7C10 /* blazeMultiCorner.sks in Resources */ = {isa = PBXBuildFile; fileRef = E806B5A01E22020700BC7C10 /* blazeMultiCorner.sks */; };
+		E806B5A21E22020700BC7C10 /* blazeMultiCorner.sks in Resources */ = {isa = PBXBuildFile; fileRef = E806B5A01E22020700BC7C10 /* blazeMultiCorner.sks */; };
 		E81D456A1E21F83F008E0E01 /* blazeThumbnails.sks in Resources */ = {isa = PBXBuildFile; fileRef = E81D45691E21F83F008E0E01 /* blazeThumbnails.sks */; };
 		E81D456B1E21F83F008E0E01 /* blazeThumbnails.sks in Resources */ = {isa = PBXBuildFile; fileRef = E81D45691E21F83F008E0E01 /* blazeThumbnails.sks */; };
 		E86500011E1DC0700072E2E3 /* Timber-Hole8.sks in Resources */ = {isa = PBXBuildFile; fileRef = E86500001E1DC0700072E2E3 /* Timber-Hole8.sks */; };
@@ -389,6 +391,7 @@
 		C2EF7A8331CE3D7270482DE0 /* Pods_testGolf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testGolf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D22F14101E1F7AAD00CA90CA /* PlaceholderiMessageAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PlaceholderiMessageAssets.xcassets; sourceTree = "<group>"; };
 		D29256831E1F7A60000FB092 /* PlaceholderAppAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PlaceholderAppAssets.xcassets; sourceTree = "<group>"; };
+		E806B5A01E22020700BC7C10 /* blazeMultiCorner.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = blazeMultiCorner.sks; path = Shared/SpriteKit/Nodes/Tiles/blazeMultiCorner.sks; sourceTree = "<group>"; };
 		E81D45691E21F83F008E0E01 /* blazeThumbnails.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = blazeThumbnails.sks; sourceTree = "<group>"; };
 		E83E06951E039586005711E3 /* MrPutt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MrPutt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E85386D3824CE7263E891102 /* Pods-MrPutt-iMessageExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MrPutt-iMessageExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MrPutt-iMessageExtension/Pods-MrPutt-iMessageExtension.debug.xcconfig"; sourceTree = "<group>"; };
@@ -803,6 +806,7 @@
 				E8C550251E218AE1000EC3E0 /* blazeCornerBottomLeft.sks */,
 				E8C550261E218AE1000EC3E0 /* blazeCornerBottomRight.sks */,
 				E8C550271E218AE1000EC3E0 /* blazeCornerConnecter.sks */,
+				E806B5A01E22020700BC7C10 /* blazeMultiCorner.sks */,
 				E8C550281E218AE1000EC3E0 /* blazeCornerTopLeft.sks */,
 				E8C550291E218AE1000EC3E0 /* blazeCornerTopRight.sks */,
 				E8C5502A1E218AE1000EC3E0 /* blazeCornerWalls.sks */,
@@ -1037,6 +1041,7 @@
 				8B13B3581E1C891900C0044A /* Frost-Hole4.sks in Resources */,
 				E870303A1E21A41B008A7DDD /* UTileWalls.sks in Resources */,
 				E87030481E21A423008A7DDD /* blazeRightWall.sks in Resources */,
+				E806B5A21E22020700BC7C10 /* blazeMultiCorner.sks in Resources */,
 				8B13B3621E1C891900C0044A /* Frost-Hole9.sks in Resources */,
 				E870305E1E21A429008A7DDD /* timberOutsideCorner.sks in Resources */,
 				E87030601E21A429008A7DDD /* timberRightWall.sks in Resources */,
@@ -1197,6 +1202,7 @@
 				E865FFF71E1DC04B0072E2E3 /* Timber-Hole3.sks in Resources */,
 				E8C5503F1E218AE1000EC3E0 /* blazeCornerTopLeft.sks in Resources */,
 				E8C54FEE1E218904000EC3E0 /* timberCornerWalls.sks in Resources */,
+				E806B5A11E22020700BC7C10 /* blazeMultiCorner.sks in Resources */,
 				8B9620071E1C601600678257 /* Actions.plist in Resources */,
 				8BC378081E1CDB2D0014AFA2 /* blazeAmbience.m4a in Resources */,
 				8B96202E1E1C601600678257 /* WindField.sks in Resources */,
