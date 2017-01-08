@@ -36,6 +36,11 @@ class PuttScene: SKScene {
     
     var teleporting = false
     
+    var shots: [Shot] = []
+    
+    var course: CoursePack.Type!
+    var hole: Int!
+    
     // MARK: Scene Lifecycle
 
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -331,6 +336,8 @@ class PuttScene: SKScene {
         
         sound.run(SKAction.group([setVolume, SKAction.play(), removal]))
         ball.physicsBody?.applyImpulse(stroke)
+        
+        shots.append(Shot(power: power, angle: angle, position: convert(ball.position, from: ball.parent!)))
     }
     
     // MARK: Game Loop
@@ -392,6 +399,8 @@ extension PuttScene: SKPhysicsContactDelegate {
                 ball.physicsBody?.velocity = .zero
                 
                 ball.run(group)
+                
+                game.finish()
             }
             holeComplete = true
         }

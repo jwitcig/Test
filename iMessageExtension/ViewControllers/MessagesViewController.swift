@@ -12,7 +12,7 @@ import UIKit
 import iMessageTools
 
 class MessagesViewController: MSMessagesAppViewController {
-    fileprivate var gameController: UIViewController?
+    fileprivate var gameController: GameViewController?
     
     var isAwaitingResponse = false
     
@@ -27,6 +27,7 @@ class MessagesViewController: MSMessagesAppViewController {
             handleStarterEvent(message: message, conversation: conversation)
         } else {
             let controller = storyboard!.instantiateViewController(withIdentifier: "CourseSelectionViewController") as! CourseSelectionViewController
+            controller.orientationManager = self
             present(controller)
         }
     }
@@ -47,9 +48,11 @@ class MessagesViewController: MSMessagesAppViewController {
         
     }
     
-    func createGameController(fromReader reader: PuttMessageReader?, course: CoursePack.Type) -> GameViewController {
+    func createGameController(fromReader reader: PuttMessageReader, course: CoursePack.Type) -> GameViewController {
         let controller = storyboard!.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
-        controller.configureScene(previousSession: reader?.session, course: course)
+        gameController?.messageSender = self
+        gameController?.orientationManager = self
+        controller.configureScene(previousSession: reader.session, course: course)
         return controller
     }
 }
@@ -72,6 +75,7 @@ extension MessagesViewController: iMessageCycle {
         isAwaitingResponse = false
         
         gameController = createGameController(fromReader: reader, course: reader.session.initial.course)
+    
         present(gameController!)
     }
     
