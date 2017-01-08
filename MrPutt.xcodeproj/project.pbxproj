@@ -828,7 +828,6 @@
 			isa = PBXGroup;
 			children = (
 				E865FFF21E1DC03C0072E2E3 /* Timber-Hole1.sks */,
-				E870306D1E21CFB2008A7DDD /* TimberBackground.sks */,
 				E865FFF41E1DC0440072E2E3 /* Timber-Hole2.sks */,
 				E865FFF61E1DC04B0072E2E3 /* Timber-Hole3.sks */,
 				E865FFF81E1DC0510072E2E3 /* Timber-Hole4.sks */,
@@ -837,6 +836,7 @@
 				E865FFFE1E1DC0690072E2E3 /* Timber-Hole7.sks */,
 				E86500001E1DC0700072E2E3 /* Timber-Hole8.sks */,
 				E86500021E1DC0760072E2E3 /* Timber-Hole9.sks */,
+				E870306D1E21CFB2008A7DDD /* TimberBackground.sks */,
 			);
 			name = Timber;
 			path = Holes;
