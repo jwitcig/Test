@@ -74,41 +74,41 @@ class PuttScene: SKScene {
         
         UserDefaults.standard.addObserver(self, forKeyPath: "Music", options: .new, context: &settingsContext)
         
-        let light = ball.childNode(withName: "light") as! SKLightNode
-        
-        let random = GKRandomDistribution(lowestValue: 0, highestValue: 1)
-        
-        let quantity = 2
-        
-        if let snow = childNode(withName: "//snow") as? SKEmitterNode {
-            snow.targetNode = self
-        }
-        
-        var colorizers: [((CGFloat, CGFloat, CGFloat), String, SKAction)] = []
-        
-        for i in 0..<quantity {
-            let r = CGFloat(random.nextUniform())
-            let g = CGFloat(random.nextUniform())
-            let b = CGFloat(random.nextUniform())
-            
-            let duration: CGFloat = 0.3
-        
-            let previous = i > 0 ? colorizers[i-1].0 : (1, 1, 1)
-            let action: (SKNode, CGFloat)->Void = { node, timestep in
-                let tR = previous.0 + (r - previous.0) * (timestep/duration)
-                let tG = previous.1 + (g - previous.1) * (timestep/duration)
-                let tB = previous.2 + (b - previous.2) * (timestep/duration)
-                
-                light.lightColor = UIColor(red: tR,
-                                         green: tG,
-                                          blue: tB,
-                                         alpha: 1)
-            }
-            
-            let colorizer = SKAction.customAction(withDuration: TimeInterval(duration), actionBlock: action)
-        
-            colorizers.append(((r, g, b), "\(i)", colorizer))
-        }
+//        let light = ball.childNode(withName: "light") as! SKLightNode
+//        
+//        let random = GKRandomDistribution(lowestValue: 0, highestValue: 1)
+//        
+//        let quantity = 2
+//        
+//        if let snow = childNode(withName: "//snow") as? SKEmitterNode {
+//            snow.targetNode = self
+//        }
+//        
+//        var colorizers: [((CGFloat, CGFloat, CGFloat), String, SKAction)] = []
+//        
+//        for i in 0..<quantity {
+//            let r = CGFloat(random.nextUniform())
+//            let g = CGFloat(random.nextUniform())
+//            let b = CGFloat(random.nextUniform())
+//            
+//            let duration: CGFloat = 0.3
+//        
+//            let previous = i > 0 ? colorizers[i-1].0 : (1, 1, 1)
+//            let action: (SKNode, CGFloat)->Void = { node, timestep in
+//                let tR = previous.0 + (r - previous.0) * (timestep/duration)
+//                let tG = previous.1 + (g - previous.1) * (timestep/duration)
+//                let tB = previous.2 + (b - previous.2) * (timestep/duration)
+//                
+//                light.lightColor = UIColor(red: tR,
+//                                         green: tG,
+//                                          blue: tB,
+//                                         alpha: 1)
+//            }
+//            
+//            let colorizer = SKAction.customAction(withDuration: TimeInterval(duration), actionBlock: action)
+//        
+//            colorizers.append(((r, g, b), "\(i)", colorizer))
+//        }
         
 //        let colorizeRed = SKAction.customAction(withDuration: 0.5) { node, timestep in
 //            light.lightColor = UIColor(red: 1.0 * (timestep/0.5), green: 0, blue: 0, alpha: 1)
@@ -120,7 +120,7 @@ class PuttScene: SKScene {
         
 //        let flash = SKAction.sequence(colorizers.map{$0.2})
 //        light.run(SKAction.repeatForever(flash))
-        light.removeFromParent()
+//        light.removeFromParent()
     }
     
     func removeGrid() {
@@ -223,22 +223,22 @@ class PuttScene: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for _ in touches {
             
-//            if let ballBody = ball.physicsBody {
-//                if ballBody.velocity.magnitude < CGFloat(5) {
-//                
-//                    let dim = SKAction.fadeAlpha(by: -0.3, duration: 0.5)
-//                    dim.timingMode = .easeOut
-//
-//                    ball.disableTrail()
-//                    let enableTrail = SKAction.run(ball.enableTrail)
-//                    let flash = SKAction.sequence([dim, dim.reversed(), enableTrail])
-//                    ball.run(flash)
-//                    
-//                    ballBody.velocity = .zero
-//                    
-//                    adjustingShot = true
-//                }
-//            }
+            if let ballBody = ball.physicsBody {
+                if ballBody.velocity.magnitude < CGFloat(5) {
+                
+                    let dim = SKAction.fadeAlpha(by: -0.3, duration: 0.5)
+                    dim.timingMode = .easeOut
+
+                    ball.disableTrail()
+                    let enableTrail = SKAction.run(ball.enableTrail)
+                    let flash = SKAction.sequence([dim, dim.reversed(), enableTrail])
+                    ball.run(flash)
+                    
+                    ballBody.velocity = .zero
+                    
+                    adjustingShot = true
+                }
+            }
         }
     }
 
@@ -332,7 +332,7 @@ class PuttScene: SKScene {
             SKAction.removeFromParent()
         ])
         
-        addChild(sound)
+//        addChild(sound)
         
         sound.run(SKAction.group([setVolume, SKAction.play(), removal]))
         ball.physicsBody?.applyImpulse(stroke)
