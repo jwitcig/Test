@@ -17,6 +17,7 @@ class CourseSelectionViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     let contentView = UIView()
     
+    var messageSender: MessageSender?
     var orientationManager: OrientationManager?
     
     override func viewDidLoad() {
@@ -36,6 +37,8 @@ class CourseSelectionViewController: UIViewController {
         
         let playBlock: (CoursePack.Type)->Void = { course in
             let controller = self.storyboard!.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
+            
+            controller.messageSender = self.messageSender
             controller.orientationManager = self.orientationManager
             controller.configureScene(previousSession: nil, course: course)
             self.present(controller)

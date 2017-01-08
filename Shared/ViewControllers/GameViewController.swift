@@ -54,18 +54,28 @@ class GameViewController: UIViewController {
     
     func configureScene(previousSession: PuttSession?, course: CoursePack.Type) {
         // setup any visuals with data specific to the previous session; if nil, start fresh
-    
-        let number = previousSession?.initial.holeNumber ?? 1
-        scene = SKScene(fileNamed: "\(course.name)-Hole\(number)")! as! PuttScene
+        opponentSession = previousSession
+        
+        var hole = previousSession?.initial.holeNumber ?? 1
+        
+        let yourCompletedCourses = previousSession?.instance.opponentShots.count ?? 0
+        let theirCompletedCourses = previousSession?.instance.shots.count ?? 0
+        
+        if yourCompletedCourses == theirCompletedCourses, yourCompletedCourses > 0, yourCompletedCourses < 9 {
+        
+            hole += 1
+        }
+        
+        scene = SKScene(fileNamed: "\(course.name)-Hole\(hole)")! as! PuttScene
         
         scene.course = course
-        scene.hole = number
+        scene.hole = hole
         
         let cycle = SessionCycle(started: started, finished: finished, generateSession: generateSession)
 
         scene.game = Putt(previousSession: previousSession, initial: previousSession?.initial, padding: nil, cycle: cycle)
         
-        HoleSetup.setup(scene, forHole: number, inCourse: Frost.self)
+        HoleSetup.setup(scene, forHole: hole, inCourse: Frost.self)
     
         orientationManager?.requestPresentationStyle(.expanded)
         sceneView.presentScene(scene)
@@ -160,6 +170,7 @@ class GameViewController: UIViewController {
             
         })
         
+        orientationManager?.requestPresentationStyle(.compact)
     }
     
     func generateSession() -> PuttSession {
