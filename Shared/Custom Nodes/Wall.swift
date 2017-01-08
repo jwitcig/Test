@@ -10,10 +10,12 @@ import SpriteKit
 import UIKit
 
 class Wall: SKSpriteNode {
-    static let name = "wall"
+    static let nodeName = "wall"
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
+        self.name = Wall.nodeName
         
         physicsBody = adjustedPhysicsBody()
     }

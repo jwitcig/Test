@@ -270,15 +270,13 @@ class PuttScene: SKScene {
             }
             
             let end = CGPoint(x: ballPosition.x+300*cos(angle), y: ballPosition.y+300*sin(angle))
-            
-            
 
             if let shotIntersectionNode = shotIntersectionNode {
                 shotIntersectionNode.path = path
             } else {
                 shotIntersectionNode = shotPath ?? SKShapeNode(path: path)
                 shotIntersectionNode?.lineWidth = 2
-                shotIntersectionNode?.strokeColor = .black
+                shotIntersectionNode?.strokeColor = .white
             }
             
             if shotIntersectionNode?.parent == nil {
@@ -286,7 +284,7 @@ class PuttScene: SKScene {
             }
             physicsWorld.enumerateBodies(alongRayStart: ballPosition, end: end) { body, point, normal, stop in
 
-                if let node = body.node, node.name == Wall.name {
+                if let node = body.node, node.name == Wall.nodeName {
                     let reflectedPath = CGMutablePath()
                     reflectedPath.move(to: point)
                     
@@ -369,7 +367,7 @@ extension PuttScene: SKPhysicsContactDelegate {
             return bodies.filter{$0.node?.name==name}.first?.node
         }
         
-        if let _ = node(withName: Ball.name), let wall = node(withName: Wall.name) {
+        if let _ = node(withName: Ball.name), let wall = node(withName: Wall.nodeName) {
             wall.run(Action.with(name: .wallHit))
             
             reflectionVelocity = reflect(velocity: ballPrePhysicsVelocity,
@@ -423,7 +421,6 @@ extension PuttScene: SKPhysicsContactDelegate {
                     }
                 }
             }
-        
         }
     }
     
@@ -434,7 +431,7 @@ extension PuttScene: SKPhysicsContactDelegate {
             return bodies.filter{$0.node?.name==name}.first?.node
         }
         
-        if let _ = node(withName: Ball.name), let _ = node(withName: Wall.name) {
+        if let _ = node(withName: Ball.name), let _ = node(withName: Wall.nodeName) {
             
         }
     }
