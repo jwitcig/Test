@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Welcome to Dr. Putt
 
 You can use the [editor on GitHub](https://github.com/jwitcig/Operation-Mr-Putt-Putt/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
