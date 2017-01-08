@@ -13,6 +13,8 @@ import SpriteKit
 import Game
 import JWSwiftTools
 
+private var settingsContext = 0
+
 class PuttScene: SKScene {
     
     lazy var ball: Ball = {
@@ -35,10 +37,22 @@ class PuttScene: SKScene {
     var teleporting = false
     
     // MARK: Scene Lifecycle
-    
+
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if context == &settingsContext {
+            if let newValue = change?[.newKey] {
+                if keyPath == Options.gameMusic.rawValue {
+                     audioEngine.mainMixerNode.outputVolume = (newValue as? NSNumber)?.floatValue ?? 1.0
+                }
+            }
+        } else {
+            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
+        }
+    }
+
     override func didMove(to view: SKView) {
         setDebugOptions(on: view)
-        
+    
         scaleMode = .resizeFill
         
         removeGrid()
@@ -52,6 +66,8 @@ class PuttScene: SKScene {
         ball.updateTrailEmitter()
         
 //        animateTilesIntoScene()
+        
+        UserDefaults.standard.addObserver(self, forKeyPath: "Music", options: .new, context: &settingsContext)
         
         let light = ball.childNode(withName: "light") as! SKLightNode
         
@@ -202,22 +218,22 @@ class PuttScene: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for _ in touches {
             
-            if let ballBody = ball.physicsBody {
-                if ballBody.velocity.magnitude < CGFloat(5) {
-                
-                    let dim = SKAction.fadeAlpha(by: -0.3, duration: 0.5)
-                    dim.timingMode = .easeOut
-
-                    ball.disableTrail()
-                    let enableTrail = SKAction.run(ball.enableTrail)
-                    let flash = SKAction.sequence([dim, dim.reversed(), enableTrail])
-                    ball.run(flash)
-                    
-                    ballBody.velocity = .zero
-                    
-                    adjustingShot = true
-                }
-            }
+//            if let ballBody = ball.physicsBody {
+//                if ballBody.velocity.magnitude < CGFloat(5) {
+//                
+//                    let dim = SKAction.fadeAlpha(by: -0.3, duration: 0.5)
+//                    dim.timingMode = .easeOut
+//
+//                    ball.disableTrail()
+//                    let enableTrail = SKAction.run(ball.enableTrail)
+//                    let flash = SKAction.sequence([dim, dim.reversed(), enableTrail])
+//                    ball.run(flash)
+//                    
+//                    ballBody.velocity = .zero
+//                    
+//                    adjustingShot = true
+//                }
+//            }
         }
     }
 
