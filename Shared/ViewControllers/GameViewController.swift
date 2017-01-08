@@ -11,7 +11,14 @@ import QuartzCore
 import SpriteKit
 import UIKit
 
+import Cartography
 import JWSwiftTools
+
+import CoreImage
+
+enum Options: String {
+    case gameMusic = "Music"
+}
 
 class GameViewController: UIViewController {
 
@@ -22,9 +29,22 @@ class GameViewController: UIViewController {
     var opponentSession: PuttSession?
     
     var scene: PuttScene!
-        
+    
+    var world = SKNode()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let settings = Bundle(for: GameViewController.self).loadNibNamed("SettingsButton", owner: nil, options: nil)![0] as! UIButton
+        
+        settings.addTarget(self, action: #selector(GameViewController.menuLaunch(sender:)), for: .touchUpInside)
+        
+        sceneView.addSubview(settings)
+        
+        constrain(settings, sceneView) {
+            $0.bottom == $1.bottom
+            $0.right == $1.right
+        }
     }
     
     func configureScene(previousSession: PuttSession?, course: CoursePack.Type) {
@@ -38,9 +58,81 @@ class GameViewController: UIViewController {
         scene.game = Putt(previousSession: previousSession, initial: previousSession?.initial, padding: nil, cycle: cycle)
         
         HoleSetup.setup(scene, forHole: number, inCourse: Frost.self)
-        
+    
         sceneView.presentScene(scene)
     }
+    
+    func menuLaunch(sender: Any) {
+        let blurFilter = CIFilter(name: "CIGaussianBlur")!
+        let blurRadius: CGFloat = 10.0
+        let blurDuration: CGFloat = 1.0
+        blurFilter.setValue(0, forKey: kCIInputRadiusKey)
+        
+        let blurEffect = SKEffectNode()
+        blurEffect.shouldEnableEffects = true
+        blurEffect.filter = blurFilter
+        
+        let animateBlur = SKAction.customAction(withDuration: TimeInterval(blurDuration)) { node, elapsed in
+            blurFilter.setValue(blurRadius * elapsed/blurDuration, forKey: kCIInputRadiusKey)
+        }
+        blurEffect.run(animateBlur)
+        
+        let blurredNode = SKSpriteNode(texture: sceneView.texture(from: scene))
+        blurredNode.position = scene.camera!.position
+        
+        blurEffect.addChild(blurredNode)
+        scene.addChild(blurEffect)
+    
+        let world = scene.childNode(withName: "world")!
+        world.isPaused = true
+        scene.physicsWorld.speed = 0
+        
+        let menu = Bundle(for: GameViewController.self).loadNibNamed("InGameMenuView", owner: nil, options: nil)![0] as! InGameMenuView
+        menu.dismissBlock = {
+            
+            let action = SKAction.customAction(withDuration: TimeInterval(blurDuration)) { node, elapsed in
+                blurFilter.setValue(blurRadius - blurRadius * elapsed/blurDuration, forKey: kCIInputRadiusKey)
+            }
+            
+            let finished = SKAction.run {
+                blurEffect.removeFromParent()
+            }
+            
+            self.scene.run(SKAction.sequence([action, finished]))
+        }
+        
+        sceneView.addSubview(menu)
+        
+        constrain(menu, sceneView) {
+            $0.width == $1.width * 0.8
+            $0.height >= $1.height * 0.5
+            
+            $0.centerX == $1.centerX
+        }
+        
+        menu.show()
+        
+        let settings = UserDefaults.standard
+        
+        let music = createInGameOptionView()
+        music.optionName = Options.gameMusic.rawValue
+        music.enabled = settings.value(forKey: music.optionName) as? Bool ?? true
+        
+        let effects = createInGameOptionView()
+        effects.optionName = "Effects"
+        effects.enabled = settings.value(forKey: effects.optionName) as? Bool ?? true
+        
+        let hud = createInGameOptionView()
+        hud.optionName = "HUD"
+        hud.enabled = settings.value(forKey: hud.optionName) as? Bool ?? true
+
+        menu.options = [music, effects, hud]
+    }
+    
+    func createInGameOptionView() -> InGameOptionView {
+        return Bundle(for: InGameMenuView.self).loadNibNamed("InGameOptionView", owner: nil, options: nil)![0] as! InGameOptionView
+    }
+
     
     // MARK: Game Cycle
     

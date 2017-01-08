@@ -68,6 +68,20 @@
 		8B232E351E20FA92000FCF07 /* blazeUWallRight.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B232E1F1E20FA92000FCF07 /* blazeUWallRight.sks */; };
 		8B232E361E20FA92000FCF07 /* blazeUWalls.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B232E201E20FA92000FCF07 /* blazeUWalls.sks */; };
 		8B232E371E20FA92000FCF07 /* blazeUWallUp.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B232E211E20FA92000FCF07 /* blazeUWallUp.sks */; };
+		8B35A2251E21895B0063520C /* InGameMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B35A2241E21895B0063520C /* InGameMenuView.swift */; };
+		8B35A2261E21895B0063520C /* InGameMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B35A2241E21895B0063520C /* InGameMenuView.swift */; };
+		8B35A2281E2189710063520C /* InGameMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B35A2271E2189710063520C /* InGameMenuView.xib */; };
+		8B35A2291E2189710063520C /* InGameMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B35A2271E2189710063520C /* InGameMenuView.xib */; };
+		8B35A22B1E218A980063520C /* InGameOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B35A22A1E218A980063520C /* InGameOptionView.swift */; };
+		8B35A22C1E218A980063520C /* InGameOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B35A22A1E218A980063520C /* InGameOptionView.swift */; };
+		8B35A22E1E218AA40063520C /* InGameOptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B35A22D1E218AA40063520C /* InGameOptionView.xib */; };
+		8B35A22F1E218AA40063520C /* InGameOptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B35A22D1E218AA40063520C /* InGameOptionView.xib */; };
+		8B35A2321E218CF90063520C /* CourseSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B35A2301E218CF90063520C /* CourseSelectionViewController.swift */; };
+		8B35A2331E218CF90063520C /* CourseSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B35A2301E218CF90063520C /* CourseSelectionViewController.swift */; };
+		8B35A2341E218CF90063520C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B35A2311E218CF90063520C /* GameViewController.swift */; };
+		8B35A2351E218CF90063520C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B35A2311E218CF90063520C /* GameViewController.swift */; };
+		8B6387081E21ECEE0059CFD2 /* SettingsButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B6387071E21ECEE0059CFD2 /* SettingsButton.xib */; };
+		8B6387091E21ECEE0059CFD2 /* SettingsButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B6387071E21ECEE0059CFD2 /* SettingsButton.xib */; };
 		8B93AFF31E1E1F4000BA03C1 /* portalAmbience.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B93AFF11E1E1F4000BA03C1 /* portalAmbience.mp3 */; };
 		8B93AFF41E1E1F4000BA03C1 /* portalTransfer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B93AFF21E1E1F4000BA03C1 /* portalTransfer.mp3 */; };
 		8B9620051E1C601600678257 /* Bebas.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F211E1C601600678257 /* Bebas.ttf */; };
@@ -162,10 +176,6 @@
 		8B9620841E1C610F00678257 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9620781E1C60CB00678257 /* AppDelegate.swift */; };
 		8B9620871E1C613000678257 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B96207B1E1C60CB00678257 /* Main.storyboard */; };
 		8B9620881E1C613300678257 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B9620791E1C60CB00678257 /* LaunchScreen.storyboard */; };
-		8B96208D1E1C623400678257 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B96208C1E1C623400678257 /* GameViewController.swift */; };
-		8B96208E1E1C625700678257 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B96208C1E1C623400678257 /* GameViewController.swift */; };
-		8BBD3B541E1D8DBD00688836 /* CourseSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBD3B531E1D8DBD00688836 /* CourseSelectionViewController.swift */; };
-		8BBD3B551E1D8DC200688836 /* CourseSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBD3B531E1D8DBD00688836 /* CourseSelectionViewController.swift */; };
 		8BBD3B5D1E1DAFAB00688836 /* PortalEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BBD3B5C1E1DAFAB00688836 /* PortalEmitter.sks */; };
 		8BBD3B5E1E1DAFAB00688836 /* PortalEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BBD3B5C1E1DAFAB00688836 /* PortalEmitter.sks */; };
 		8BBD3B601E1DB40A00688836 /* Portal.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BBD3B5F1E1DB40A00688836 /* Portal.sks */; };
@@ -285,6 +295,13 @@
 		8B232E1F1E20FA92000FCF07 /* blazeUWallRight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = blazeUWallRight.sks; path = Shared/SpriteKit/Nodes/Tiles/blazeUWallRight.sks; sourceTree = "<group>"; };
 		8B232E201E20FA92000FCF07 /* blazeUWalls.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = blazeUWalls.sks; path = Shared/SpriteKit/Nodes/Tiles/blazeUWalls.sks; sourceTree = "<group>"; };
 		8B232E211E20FA92000FCF07 /* blazeUWallUp.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = blazeUWallUp.sks; path = Shared/SpriteKit/Nodes/Tiles/blazeUWallUp.sks; sourceTree = "<group>"; };
+		8B35A2241E21895B0063520C /* InGameMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InGameMenuView.swift; sourceTree = "<group>"; };
+		8B35A2271E2189710063520C /* InGameMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InGameMenuView.xib; sourceTree = "<group>"; };
+		8B35A22A1E218A980063520C /* InGameOptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InGameOptionView.swift; sourceTree = "<group>"; };
+		8B35A22D1E218AA40063520C /* InGameOptionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InGameOptionView.xib; sourceTree = "<group>"; };
+		8B35A2301E218CF90063520C /* CourseSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseSelectionViewController.swift; sourceTree = "<group>"; };
+		8B35A2311E218CF90063520C /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		8B6387071E21ECEE0059CFD2 /* SettingsButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsButton.xib; sourceTree = "<group>"; };
 		8B93AFF11E1E1F4000BA03C1 /* portalAmbience.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = portalAmbience.mp3; sourceTree = "<group>"; };
 		8B93AFF21E1E1F4000BA03C1 /* portalTransfer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = portalTransfer.mp3; sourceTree = "<group>"; };
 		8B961F211E1C601600678257 /* Bebas.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bebas.ttf; sourceTree = "<group>"; };
@@ -336,10 +353,8 @@
 		8B96207A1E1C60CB00678257 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B96207C1E1C60CB00678257 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B96207E1E1C60CB00678257 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8B96208C1E1C623400678257 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		8BBD3B4B1E1D8BE000688836 /* iMessageExtensionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iMessageExtensionUITests.swift; sourceTree = "<group>"; };
 		8BBD3B4D1E1D8BE000688836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8BBD3B531E1D8DBD00688836 /* CourseSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseSelectionViewController.swift; sourceTree = "<group>"; };
 		8BBD3B5C1E1DAFAB00688836 /* PortalEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PortalEmitter.sks; sourceTree = "<group>"; };
 		8BBD3B5F1E1DB40A00688836 /* Portal.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Portal.sks; sourceTree = "<group>"; };
 		8BBDBD381E1C93E500878B3A /* Portal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Portal.swift; sourceTree = "<group>"; };
@@ -417,6 +432,18 @@
 				73EC3BB72C39C396407F4004 /* Pods_MrPutt_iMessageExtension.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8B35A2231E21895B0063520C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8B35A2241E21895B0063520C /* InGameMenuView.swift */,
+				8B35A2271E2189710063520C /* InGameMenuView.xib */,
+				8B35A22A1E218A980063520C /* InGameOptionView.swift */,
+				8B35A22D1E218AA40063520C /* InGameOptionView.xib */,
+				8B6387071E21ECEE0059CFD2 /* SettingsButton.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		8B961F201E1C601600678257 /* Audio */ = {
@@ -591,7 +618,6 @@
 			children = (
 				8B961F551E1C601600678257 /* CoursePreviewView.swift */,
 				8B961F561E1C601600678257 /* CoursePreviewView.xib */,
-				8BBD3B531E1D8DBD00688836 /* CourseSelectionViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -599,6 +625,7 @@
 		8B961F581E1C601600678257 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				8B35A2231E21895B0063520C /* Views */,
 				8B96208B1E1C623400678257 /* ViewControllers */,
 				8B961F261E1C601600678257 /* Assets */,
 				8B961F2B1E1C601600678257 /* Custom Nodes */,
@@ -635,7 +662,8 @@
 		8B96208B1E1C623400678257 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8B96208C1E1C623400678257 /* GameViewController.swift */,
+				8B35A2301E218CF90063520C /* CourseSelectionViewController.swift */,
+				8B35A2311E218CF90063520C /* GameViewController.swift */,
 			);
 			name = ViewControllers;
 			path = Shared/ViewControllers;
@@ -856,6 +884,7 @@
 				8BCF77141E03CD0200D48A61 /* iMessageAssets.xcassets in Resources */,
 				8B96204B1E1C608400678257 /* Bebas.ttf in Resources */,
 				8B9620731E1C60B400678257 /* UTileWalls.sks in Resources */,
+				8B35A22F1E218AA40063520C /* InGameOptionView.xib in Resources */,
 				8B13B3561E1C891900C0044A /* Frost-Hole3.sks in Resources */,
 				8B13B34B1E1C84F800C0044A /* Snow.sks in Resources */,
 				8BBD3B5E1E1DAFAB00688836 /* PortalEmitter.sks in Resources */,
@@ -901,8 +930,10 @@
 				8B96206A1E1C60B400678257 /* StraightTile.sks in Resources */,
 				8B96205E1E1C60B300678257 /* BottomWall.sks in Resources */,
 				8B9620571E1C60B300678257 /* WallHit.sks in Resources */,
+				8B35A2291E2189710063520C /* InGameMenuView.xib in Resources */,
 				8B96206D1E1C60B400678257 /* TopWall.sks in Resources */,
 				8B13B35A1E1C891900C0044A /* Frost-Hole5.sks in Resources */,
+				8B6387091E21ECEE0059CFD2 /* SettingsButton.xib in Resources */,
 				8B13B35E1E1C891900C0044A /* Frost-Hole7.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -915,6 +946,7 @@
 				E86513D11E1DBA37005FBA85 /* Blaze-Hole7.sks in Resources */,
 				8B232E231E20FA92000FCF07 /* blazeBottomWall.sks in Resources */,
 				E865FFF31E1DC03C0072E2E3 /* Timber-Hole1.sks in Resources */,
+				8B35A2281E2189710063520C /* InGameMenuView.xib in Resources */,
 				8B13B33C1E1C7E2A00C0044A /* clubHit.wav in Resources */,
 				8B9620061E1C601600678257 /* Neutra2Display-Titled.otf in Resources */,
 				8B9620251E1C601600678257 /* StraightTileUpDown.sks in Resources */,
@@ -995,6 +1027,7 @@
 				E865FFFF1E1DC0690072E2E3 /* Timber-Hole7.sks in Resources */,
 				8B9620271E1C601600678257 /* TopWall.sks in Resources */,
 				8B13B3461E1C7E2A00C0044A /* softHit.wav in Resources */,
+				8B35A22E1E218AA40063520C /* InGameOptionView.xib in Resources */,
 				8B13B33D1E1C7E2A00C0044A /* holeMade.wav in Resources */,
 				8B232E361E20FA92000FCF07 /* blazeUWalls.sks in Resources */,
 				8B13B3411E1C7E2A00C0044A /* metalHitWall.wav in Resources */,
@@ -1021,6 +1054,7 @@
 				8B232E251E20FA92000FCF07 /* blazeCornerBottomRight.sks in Resources */,
 				8B9620291E1C601600678257 /* UTileDown.sks in Resources */,
 				8B96201E1E1C601600678257 /* CurvedWallShort.sks in Resources */,
+				8B6387081E21ECEE0059CFD2 /* SettingsButton.xib in Resources */,
 				E86513CB1E1DBA1E005FBA85 /* Blaze-Hole4.sks in Resources */,
 				8B13B3571E1C891900C0044A /* Frost-Hole4.sks in Resources */,
 				8B9620301E1C601600678257 /* CoursePreviewView.xib in Resources */,
@@ -1116,16 +1150,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BBD3B551E1D8DC200688836 /* CourseSelectionViewController.swift in Sources */,
+				8B35A2331E218CF90063520C /* CourseSelectionViewController.swift in Sources */,
 				8B9620751E1C60B400678257 /* CoursePreviewView.swift in Sources */,
 				8B9620521E1C608900678257 /* Data.swift in Sources */,
 				8B9620501E1C608900678257 /* Mat.swift in Sources */,
+				8B35A22C1E218A980063520C /* InGameOptionView.swift in Sources */,
 				8B9620511E1C608900678257 /* Wall.swift in Sources */,
-				8B96208D1E1C623400678257 /* GameViewController.swift in Sources */,
 				8B9620531E1C608900678257 /* HoleSetup.swift in Sources */,
+				8B35A2261E21895B0063520C /* InGameMenuView.swift in Sources */,
 				8B9620541E1C608900678257 /* Putt.swift in Sources */,
 				8BBDBD3A1E1C93E500878B3A /* Portal.swift in Sources */,
 				8B96204E1E1C608900678257 /* Ball.swift in Sources */,
+				8B35A2351E218CF90063520C /* GameViewController.swift in Sources */,
 				8B96204F1E1C608900678257 /* Hole.swift in Sources */,
 				8B9620551E1C608900678257 /* PuttScene.swift in Sources */,
 				8B9620391E1C605F00678257 /* MessagesViewController.swift in Sources */,
@@ -1136,18 +1172,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B35A2321E218CF90063520C /* CourseSelectionViewController.swift in Sources */,
 				8B96202F1E1C601600678257 /* CoursePreviewView.swift in Sources */,
 				8B9620081E1C601600678257 /* Ball.swift in Sources */,
 				8B96200C1E1C601600678257 /* Data.swift in Sources */,
 				8B96200E1E1C601600678257 /* Putt.swift in Sources */,
+				8B35A22B1E218A980063520C /* InGameOptionView.swift in Sources */,
 				8B96200B1E1C601600678257 /* Wall.swift in Sources */,
 				8B96200A1E1C601600678257 /* Mat.swift in Sources */,
+				8B35A2251E21895B0063520C /* InGameMenuView.swift in Sources */,
 				8BBDBD391E1C93E500878B3A /* Portal.swift in Sources */,
-				8BBD3B541E1D8DBD00688836 /* CourseSelectionViewController.swift in Sources */,
 				8B96200F1E1C601600678257 /* PuttScene.swift in Sources */,
+				8B35A2341E218CF90063520C /* GameViewController.swift in Sources */,
 				8B9620091E1C601600678257 /* Hole.swift in Sources */,
 				8B9620841E1C610F00678257 /* AppDelegate.swift in Sources */,
-				8B96208E1E1C625700678257 /* GameViewController.swift in Sources */,
 				8B96200D1E1C601600678257 /* HoleSetup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

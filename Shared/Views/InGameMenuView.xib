@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view alpha="0.80000000000000004" contentMode="scaleToFill" id="iN0-l3-epB" customClass="InGameMenuView" customModule="MrPutt" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="377" height="453"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NWT-iZ-pFg">
+                    <rect key="frame" x="0.0" y="15" width="377" height="438"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settingsGear" translatesAutoresizingMaskIntoConstraints="NO" id="52u-sl-uFT">
+                            <rect key="frame" x="0.0" y="0.0" width="377" height="368"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AoB-eH-iBS">
+                            <rect key="frame" x="0.0" y="378" width="377" height="60"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="G5K-kZ-RqU">
+                                    <rect key="frame" x="0.0" y="0.0" width="377" height="60"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fLf-ET-KDe">
+                                            <rect key="frame" x="0.0" y="0.0" width="188.5" height="60"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4KI-Dr-rSz">
+                                                    <rect key="frame" x="0.0" y="-0.5" width="188.5" height="60"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <state key="normal" image="whiteX"/>
+                                                    <connections>
+                                                        <action selector="cancelPressedWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="Y8e-uD-Qe7"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.95184808969497681" green="0.11026861518621445" blue="0.096311502158641815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="4KI-Dr-rSz" secondAttribute="trailing" id="47I-0g-Kfb"/>
+                                                <constraint firstAttribute="bottom" secondItem="4KI-Dr-rSz" secondAttribute="bottom" id="GGS-Wr-K1A"/>
+                                                <constraint firstItem="4KI-Dr-rSz" firstAttribute="leading" secondItem="fLf-ET-KDe" secondAttribute="leading" id="fTD-CN-Frp"/>
+                                                <constraint firstItem="4KI-Dr-rSz" firstAttribute="top" secondItem="fLf-ET-KDe" secondAttribute="top" id="gVN-Sx-kAr"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgi-Is-CDr">
+                                            <rect key="frame" x="188.5" y="0.0" width="188.5" height="60"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Qt-m1-uOa">
+                                                    <rect key="frame" x="-0.5" y="-0.5" width="189" height="60"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <state key="normal" image="whiteCheckmark"/>
+                                                    <connections>
+                                                        <action selector="savePressedWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="bKV-mZ-Y9N"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.25882352941176467" green="0.84705882352941175" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="8Qt-m1-uOa" firstAttribute="top" secondItem="bgi-Is-CDr" secondAttribute="top" id="3vZ-2K-951"/>
+                                                <constraint firstItem="8Qt-m1-uOa" firstAttribute="leading" secondItem="bgi-Is-CDr" secondAttribute="leading" id="KxU-nG-oJR"/>
+                                                <constraint firstAttribute="trailing" secondItem="8Qt-m1-uOa" secondAttribute="trailing" id="PFi-ye-UjW"/>
+                                                <constraint firstAttribute="bottom" secondItem="8Qt-m1-uOa" secondAttribute="bottom" id="suo-nN-MzU"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="ODH-5u-9kK"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="G5K-kZ-RqU" secondAttribute="bottom" id="KGQ-wh-urM"/>
+                                <constraint firstItem="G5K-kZ-RqU" firstAttribute="top" secondItem="AoB-eH-iBS" secondAttribute="top" id="lQC-dv-QBf"/>
+                                <constraint firstItem="G5K-kZ-RqU" firstAttribute="leading" secondItem="AoB-eH-iBS" secondAttribute="leading" id="rqg-Fs-RF6"/>
+                                <constraint firstAttribute="trailing" secondItem="G5K-kZ-RqU" secondAttribute="trailing" id="yrR-yn-HVI"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="NWT-iZ-pFg" secondAttribute="bottom" id="2WD-eV-9fN"/>
+                <constraint firstItem="NWT-iZ-pFg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="3ca-y3-aQR"/>
+                <constraint firstItem="NWT-iZ-pFg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="LEb-BN-g06"/>
+                <constraint firstAttribute="trailing" secondItem="NWT-iZ-pFg" secondAttribute="trailing" id="gFv-g1-UXl"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="14"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                    <integer key="value" value="0"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="mainStackView" destination="NWT-iZ-pFg" id="6Ow-8y-ocX"/>
+            </connections>
+            <point key="canvasLocation" x="35.5" y="-52.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="settingsGear" width="100" height="100"/>
+        <image name="whiteCheckmark" width="42" height="42"/>
+        <image name="whiteX" width="42" height="42"/>
+    </resources>
+</document>
