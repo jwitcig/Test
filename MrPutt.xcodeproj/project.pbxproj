@@ -59,6 +59,8 @@
 		8B35A2331E218CF90063520C /* CourseSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B35A2301E218CF90063520C /* CourseSelectionViewController.swift */; };
 		8B35A2341E218CF90063520C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B35A2311E218CF90063520C /* GameViewController.swift */; };
 		8B35A2351E218CF90063520C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B35A2311E218CF90063520C /* GameViewController.swift */; };
+		8B5F8B411E22F925009C262F /* HoleTile.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B5F8B401E22F925009C262F /* HoleTile.sks */; };
+		8B5F8B421E22F925009C262F /* HoleTile.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B5F8B401E22F925009C262F /* HoleTile.sks */; };
 		8B6387081E21ECEE0059CFD2 /* SettingsButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B6387071E21ECEE0059CFD2 /* SettingsButton.xib */; };
 		8B6387091E21ECEE0059CFD2 /* SettingsButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B6387071E21ECEE0059CFD2 /* SettingsButton.xib */; };
 		8B93AFF31E1E1F4000BA03C1 /* portalAmbience.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B93AFF11E1E1F4000BA03C1 /* portalAmbience.mp3 */; };
@@ -407,6 +409,7 @@
 		8B35A22D1E218AA40063520C /* InGameOptionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InGameOptionView.xib; sourceTree = "<group>"; };
 		8B35A2301E218CF90063520C /* CourseSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseSelectionViewController.swift; sourceTree = "<group>"; };
 		8B35A2311E218CF90063520C /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		8B5F8B401E22F925009C262F /* HoleTile.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HoleTile.sks; sourceTree = "<group>"; };
 		8B6387071E21ECEE0059CFD2 /* SettingsButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsButton.xib; sourceTree = "<group>"; };
 		8B93AFF11E1E1F4000BA03C1 /* portalAmbience.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = portalAmbience.mp3; sourceTree = "<group>"; };
 		8B93AFF21E1E1F4000BA03C1 /* portalTransfer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = portalTransfer.mp3; sourceTree = "<group>"; };
@@ -771,6 +774,7 @@
 				8BBD3B5F1E1DB40A00688836 /* Portal.sks */,
 				8B073B661E1C92B7008BBAE6 /* Hill.sks */,
 				8B961F451E1C601600678257 /* Mat.sks */,
+				8B5F8B401E22F925009C262F /* HoleTile.sks */,
 				E87030251E219CD8008A7DDD /* Nebula */,
 				E86513C21E1DAB0D005FBA85 /* Timber */,
 				E86513C31E1DAB18005FBA85 /* Blaze */,
@@ -1197,6 +1201,7 @@
 				E87030321E21A41B008A7DDD /* StraightTile.sks in Resources */,
 				8BCF77121E03CD0200D48A61 /* MainInterface.storyboard in Resources */,
 				8BC3780D1E1CE9670014AFA2 /* SceneStart.sks in Resources */,
+				8B5F8B421E22F925009C262F /* HoleTile.sks in Resources */,
 				E87030491E21A423008A7DDD /* blazeStraightWall.sks in Resources */,
 				E870304F1E21A423008A7DDD /* blazeUWallUp.sks in Resources */,
 				E870304A1E21A423008A7DDD /* blazeTopWall.sks in Resources */,
@@ -1383,6 +1388,7 @@
 				E8C5503F1E218AE1000EC3E0 /* blazeCornerTopLeft.sks in Resources */,
 				E8C54FEE1E218904000EC3E0 /* timberCornerWalls.sks in Resources */,
 				E806B5A11E22020700BC7C10 /* blazeMultiCorner.sks in Resources */,
+				8B5F8B411E22F925009C262F /* HoleTile.sks in Resources */,
 				8B9620071E1C601600678257 /* Actions.plist in Resources */,
 				E89F98311E22266E00178B4F /* nebulaStraightWall.sks in Resources */,
 				8BC378081E1CDB2D0014AFA2 /* blazeAmbience.m4a in Resources */,

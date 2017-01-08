@@ -41,6 +41,10 @@ class PuttScene: SKScene {
     var course: CoursePack.Type!
     var hole: Int!
     
+    lazy var cameraBounds: CGRect = {
+        return self.childNode(withName: "cameraBounds")!.frame
+    }()
+    
     // MARK: Scene Lifecycle
 
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -71,6 +75,8 @@ class PuttScene: SKScene {
         ball.updateTrailEmitter()
         
 //        animateTilesIntoScene()
+        
+        
         
         UserDefaults.standard.addObserver(self, forKeyPath: "Music", options: .new, context: &settingsContext)
         
@@ -349,6 +355,25 @@ class PuttScene: SKScene {
             ball.physicsBody?.velocity = reflection
             reflectionVelocity = nil
         }
+        
+        let cameraSize = CGSize(width: size.width * camera!.xScale, height: size.height * camera!.yScale)
+        
+        let xRange = SKRange(lowerLimit: cameraBounds.minX + cameraSize.width/2,
+                             upperLimit: cameraBounds.maxX - cameraSize.width/2)
+        let yRange = SKRange(lowerLimit: cameraBounds.minY + cameraSize.height/2,
+                             upperLimit: cameraBounds.maxY - cameraSize.height/2)
+        
+        let cameraZone = SKConstraint.positionX(xRange, y: yRange)
+        
+        let ballTracking = SKConstraint.distance(SKRange(value: 0, variance: size.width * camera!.xScale * 0.4), to: ball)
+        
+        let holeXRange = SKRange(upperLimit: cameraBounds.width/2-30)
+        let holeYRange = SKRange(upperLimit: cameraBounds.height/2-30)
+        
+        let holeInSight = SKConstraint.positionX(holeXRange, y: holeYRange)
+        
+        camera?.constraints = [holeInSight, ballTracking, holeInSight, cameraZone]
+
     }
 }
 

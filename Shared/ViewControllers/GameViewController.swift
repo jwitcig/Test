@@ -56,7 +56,7 @@ class GameViewController: UIViewController {
         // setup any visuals with data specific to the previous session; if nil, start fresh
         opponentSession = previousSession
         
-        var hole = previousSession?.initial.holeNumber ?? 1
+        var hole = previousSession?.initial.holeNumber ?? 3
         
         let yourCompletedCourses = previousSession?.instance.opponentShots.count ?? 0
         let theirCompletedCourses = previousSession?.instance.shots.count ?? 0
