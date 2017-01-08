@@ -12,6 +12,8 @@ import SpriteKit
 import UIKit
 
 import Cartography
+import Game
+import iMessageTools
 import JWSwiftTools
 
 import CoreImage
@@ -31,6 +33,9 @@ class GameViewController: UIViewController {
     var scene: PuttScene!
     
     var world = SKNode()
+    
+    var messageSender: MessageSender?
+    var orientationManager: OrientationManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,12 +58,16 @@ class GameViewController: UIViewController {
         let number = previousSession?.initial.holeNumber ?? 1
         scene = SKScene(fileNamed: "\(course.name)-Hole\(number)")! as! PuttScene
         
+        scene.course = course
+        scene.hole = number
+        
         let cycle = SessionCycle(started: started, finished: finished, generateSession: generateSession)
 
         scene.game = Putt(previousSession: previousSession, initial: previousSession?.initial, padding: nil, cycle: cycle)
         
         HoleSetup.setup(scene, forHole: number, inCourse: Frost.self)
     
+        orientationManager?.requestPresentationStyle(.expanded)
         sceneView.presentScene(scene)
     }
     
@@ -141,12 +150,35 @@ class GameViewController: UIViewController {
     }
     
     func finished(session: PuttSession) {
+        guard let message = PuttMessageWriter(data: session.dictionary,
+                                           session: session.messageSession)?.message else { return }
+        
+        let layout = PuttMessageLayoutBuilder(session: session).generateLayout()
+        
+        
+        messageSender?.send(message: message, layout: layout, completionHandler: { error in
+            
+        })
         
     }
     
     func generateSession() -> PuttSession {
-        let instance = PuttInstanceData(shots: [], opponentShots: nil, winner: nil)
-        let initial = PuttInitialData(course: Frost.self as CoursePack.Type, holeNumber: 1, holeSet: [])
+        var shots = [scene.shots.count]
+        var winner: Team.OneOnOne? = nil
+
+        if let opponentSession = opponentSession {
+            // your opponent's opponent is you
+            shots = opponentSession.gameData.opponentShots + shots
+            
+            let yourScore = shots.reduce(0, +)
+            let theirScore = opponentSession.gameData.shots.reduce(0, +)
+            
+            winner = yourScore < theirScore  ? .you : .them
+            winner = yourScore == theirScore ? .tie : winner
+        }
+        
+        let instance = PuttInstanceData(shots: shots, opponentShots: opponentSession?.gameData.shots, winner: winner)
+        let initial = PuttInitialData(course: scene.course, holeNumber: scene.hole, holeSet: [1, 2, 3])
         return PuttSession(instance: instance, initial: initial, ended: false, messageSession: opponentSession?.messageSession)
     }
 

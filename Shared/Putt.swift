@@ -43,9 +43,9 @@ enum Category: UInt32 {
 }
 
 struct Shot {
-    let power: Float
-    let angle: Float
-    let position: CGVector
+    let power: CGFloat
+    let angle: CGFloat
+    let position: CGPoint
 }
 
 class ClockTimer {
