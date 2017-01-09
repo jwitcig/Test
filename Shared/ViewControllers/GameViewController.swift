@@ -28,6 +28,8 @@ class GameViewController: UIViewController {
         return view as! SKView
     }
     
+    var toolsView = UIView()
+    
     var opponentSession: PuttSession?
     
     var scene: PuttScene!
@@ -37,18 +39,31 @@ class GameViewController: UIViewController {
     var messageSender: MessageSender?
     var orientationManager: OrientationManager?
     
+    lazy var settingsPane: InGameMenuView  = {
+        return Bundle(for: GameViewController.self).loadNibNamed("InGameMenuView", owner: nil, options: nil)![0] as! InGameMenuView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let settings = Bundle(for: GameViewController.self).loadNibNamed("SettingsButton", owner: nil, options: nil)![0] as! UIButton
         
         settings.addTarget(self, action: #selector(GameViewController.menuLaunch(sender:)), for: .touchUpInside)
+
+        toolsView.addSubview(settings)
         
-        sceneView.addSubview(settings)
-        
-        constrain(settings, sceneView) {
+        constrain(settings, toolsView) {
             $0.bottom == $1.bottom
-            $0.right == $1.right
+            $0.trailing == $1.trailing
+        }
+        
+        view.addSubview(toolsView)
+        
+        constrain(toolsView, view) {
+            $0.leading == $1.leading
+            $0.trailing == $1.trailing
+            $0.top == $1.top
+            $0.bottom == $1.bottom
         }
     }
     
@@ -84,7 +99,8 @@ class GameViewController: UIViewController {
     }
     
     func hideGameViewControllerViews() {
-        view.subviews.forEach { $0.isHidden = true }
+        view.subviews.filter { $0 != toolsView }
+                     .forEach { $0.isHidden = true }
     }
     
     func showGameViewControllerViews() {
@@ -92,70 +108,71 @@ class GameViewController: UIViewController {
     }
     
     func menuLaunch(sender: Any) {
-        let blurFilter = CIFilter(name: "CIGaussianBlur")!
-        let blurRadius: CGFloat = 10.0
-        let blurDuration: CGFloat = 1.0
-        blurFilter.setValue(0, forKey: kCIInputRadiusKey)
-        
-        let blurEffect = SKEffectNode()
-        blurEffect.shouldEnableEffects = true
-        blurEffect.filter = blurFilter
-        
-        let animateBlur = SKAction.customAction(withDuration: TimeInterval(blurDuration)) { node, elapsed in
-            blurFilter.setValue(blurRadius * elapsed/blurDuration, forKey: kCIInputRadiusKey)
+        if settingsPane.superview == nil {
+            let blurFilter = CIFilter(name: "CIGaussianBlur")!
+            let blurRadius: CGFloat = 10.0
+            let blurDuration: CGFloat = 1.0
+            blurFilter.setValue(0, forKey: kCIInputRadiusKey)
+            
+            let blurEffect = SKEffectNode()
+            blurEffect.shouldEnableEffects = true
+            blurEffect.filter = blurFilter
+            
+            let animateBlur = SKAction.customAction(withDuration: TimeInterval(blurDuration)) { node, elapsed in
+                blurFilter.setValue(blurRadius * elapsed/blurDuration, forKey: kCIInputRadiusKey)
+            }
+            blurEffect.run(animateBlur)
+            
+            let blurredNode = SKSpriteNode(texture: sceneView.texture(from: scene))
+            blurredNode.position = scene.camera!.position
+            
+            blurEffect.addChild(blurredNode)
+            scene.addChild(blurEffect)
+            
+            settingsPane.dismissBlock = {
+                
+                let action = SKAction.customAction(withDuration: TimeInterval(blurDuration)) { node, elapsed in
+                    blurFilter.setValue(blurRadius - blurRadius * elapsed/blurDuration, forKey: kCIInputRadiusKey)
+                }
+                
+                let finished = SKAction.run {
+                    blurEffect.removeFromParent()
+                }
+                
+                self.scene.run(SKAction.sequence([action, finished]))
+            }
+            
+            toolsView.addSubview(settingsPane)
+            
+            constrain(settingsPane, toolsView) {
+                $0.width == $1.width * 0.8
+                $0.height >= $1.height * 0.5
+                
+                $0.centerX == $1.centerX
+            }
+            
+            let settings = UserDefaults.standard
+            
+            let music = createInGameOptionView()
+            music.optionName = Options.gameMusic.rawValue
+            music.enabled = settings.value(forKey: music.optionName) as? Bool ?? true
+            
+            let effects = createInGameOptionView()
+            effects.optionName = "Effects"
+            effects.enabled = settings.value(forKey: effects.optionName) as? Bool ?? true
+            
+            let hud = createInGameOptionView()
+            hud.optionName = "HUD"
+            hud.enabled = settings.value(forKey: hud.optionName) as? Bool ?? true
+            
+            settingsPane.options = [music, effects, hud]
         }
-        blurEffect.run(animateBlur)
-        
-        let blurredNode = SKSpriteNode(texture: sceneView.texture(from: scene))
-        blurredNode.position = scene.camera!.position
-        
-        blurEffect.addChild(blurredNode)
-        scene.addChild(blurEffect)
     
-        let world = scene.childNode(withName: "world")!
-        world.isPaused = true
-        scene.physicsWorld.speed = 0
-        
-        let menu = Bundle(for: GameViewController.self).loadNibNamed("InGameMenuView", owner: nil, options: nil)![0] as! InGameMenuView
-        menu.dismissBlock = {
-            
-            let action = SKAction.customAction(withDuration: TimeInterval(blurDuration)) { node, elapsed in
-                blurFilter.setValue(blurRadius - blurRadius * elapsed/blurDuration, forKey: kCIInputRadiusKey)
-            }
-            
-            let finished = SKAction.run {
-                blurEffect.removeFromParent()
-            }
-            
-            self.scene.run(SKAction.sequence([action, finished]))
+        if settingsPane.isVisible {
+            settingsPane.dismiss()
+        } else {
+            settingsPane.show()
         }
-        
-        sceneView.addSubview(menu)
-        
-        constrain(menu, sceneView) {
-            $0.width == $1.width * 0.8
-            $0.height >= $1.height * 0.5
-            
-            $0.centerX == $1.centerX
-        }
-        
-        menu.show()
-        
-        let settings = UserDefaults.standard
-        
-        let music = createInGameOptionView()
-        music.optionName = Options.gameMusic.rawValue
-        music.enabled = settings.value(forKey: music.optionName) as? Bool ?? true
-        
-        let effects = createInGameOptionView()
-        effects.optionName = "Effects"
-        effects.enabled = settings.value(forKey: effects.optionName) as? Bool ?? true
-        
-        let hud = createInGameOptionView()
-        hud.optionName = "HUD"
-        hud.enabled = settings.value(forKey: hud.optionName) as? Bool ?? true
-
-        menu.options = [music, effects, hud]
     }
     
     func createInGameOptionView() -> InGameOptionView {
