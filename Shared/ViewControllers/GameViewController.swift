@@ -65,6 +65,57 @@ class GameViewController: UIViewController {
             $0.top == $1.top
             $0.bottom == $1.bottom
         }
+        
+         235/356
+        
+        let scorecard = ScoreCard()
+        scorecard.backgroundColor = .clear
+        
+        
+        let image = UIImageView(image: ScoreCardStyleKit.imageOfCard(                                                                                     holeNumber: "9", name1: "You", name2: "Them",
+                                                                                               player1Hole1: "1",                                                                                               player1Hole2: "1",
+                                                            player1Hole3: "1",
+                                                                                               player1Hole4: "1",
+                                                                                               player1Hole5: "1",
+                                                                                               player1Hole6: "1",
+                                                                                               player1Hole8: "1",
+                                                                                               player1Hole9: "1",
+                                                                                               player2Hole1: "1",
+                                                                                               player2Hole2: "1",
+                                                                                               player2Hole3: "1",
+                                                                                               player2Hole4: "1",
+                                                                                               player2Hole5: "1",
+                                                                                               player2Hole6: "1",
+                                                                                               player2Hole7: "1",
+                                                                                               player2Hole8: "1",
+                                                                                               player2Hole9: "1",
+                                                                                               parHole1: "1",
+                                                                                               parHole2: "1",
+                                                                                               parHole3: "1",
+                                                                                               parHole4: "1",
+                                                                                               parHole5: "1",
+                                                                                               parHole6: "1",
+                                                                                               parHole7: "1",
+                                                                                               parHole8: "1",
+                                                                                               parHole9: "1",
+                                                                                               parTotal: "9",
+                                                                                               player1Total: "9",
+                                                                                               player2Total: "9"))
+        image.contentMode = .scaleAspectFit
+        
+        toolsView.addSubview(image)
+        constrain(image, toolsView) {
+            $0.width == $0.height * (235.0/356.0)
+            
+            $0.width == $1.width * 0.8 ~ 900
+            $0.height == $1.height * 0.8 ~ 900
+            
+            $0.width <= $1.width * 0.8
+            $0.height <= $1.height * 0.8
+
+
+            $0.center == $1.center
+        }
     }
     
     func configureScene(previousSession: PuttSession?, course: CoursePack.Type) {
