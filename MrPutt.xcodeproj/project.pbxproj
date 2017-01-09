@@ -161,6 +161,8 @@
 		E806B5A51E220F6000BC7C10 /* timberMultiCorner.sks in Resources */ = {isa = PBXBuildFile; fileRef = E806B5A31E220F6000BC7C10 /* timberMultiCorner.sks */; };
 		E81D456A1E21F83F008E0E01 /* blazeThumbnails.sks in Resources */ = {isa = PBXBuildFile; fileRef = E81D45691E21F83F008E0E01 /* blazeThumbnails.sks */; };
 		E81D456B1E21F83F008E0E01 /* blazeThumbnails.sks in Resources */ = {isa = PBXBuildFile; fileRef = E81D45691E21F83F008E0E01 /* blazeThumbnails.sks */; };
+		E82B03B11E23235A0004F37E /* timberInsideCorner.sks in Resources */ = {isa = PBXBuildFile; fileRef = E82B03B01E23235A0004F37E /* timberInsideCorner.sks */; };
+		E82B03B21E23235A0004F37E /* timberInsideCorner.sks in Resources */ = {isa = PBXBuildFile; fileRef = E82B03B01E23235A0004F37E /* timberInsideCorner.sks */; };
 		E86500011E1DC0700072E2E3 /* Timber-Hole8.sks in Resources */ = {isa = PBXBuildFile; fileRef = E86500001E1DC0700072E2E3 /* Timber-Hole8.sks */; };
 		E86500031E1DC0760072E2E3 /* Timber-Hole9.sks in Resources */ = {isa = PBXBuildFile; fileRef = E86500021E1DC0760072E2E3 /* Timber-Hole9.sks */; };
 		E86513C51E1DAB3A005FBA85 /* Blaze-Hole1.sks in Resources */ = {isa = PBXBuildFile; fileRef = E86513C41E1DAB3A005FBA85 /* Blaze-Hole1.sks */; };
@@ -233,7 +235,6 @@
 		E87030591E21A429008A7DDD /* timberCornerWalls.sks in Resources */ = {isa = PBXBuildFile; fileRef = E8C54FD71E218904000EC3E0 /* timberCornerWalls.sks */; };
 		E870305A1E21A429008A7DDD /* timberDoubleCorners.sks in Resources */ = {isa = PBXBuildFile; fileRef = E8C54FD81E218904000EC3E0 /* timberDoubleCorners.sks */; };
 		E870305B1E21A429008A7DDD /* timberHole.sks in Resources */ = {isa = PBXBuildFile; fileRef = E8C54FD91E218904000EC3E0 /* timberHole.sks */; };
-		E870305C1E21A429008A7DDD /* timberInsideCorner.sks in Resources */ = {isa = PBXBuildFile; fileRef = E8C54FDA1E218904000EC3E0 /* timberInsideCorner.sks */; };
 		E870305D1E21A429008A7DDD /* timberLeftWall.sks in Resources */ = {isa = PBXBuildFile; fileRef = E8C54FDB1E218904000EC3E0 /* timberLeftWall.sks */; };
 		E870305E1E21A429008A7DDD /* timberOutsideCorner.sks in Resources */ = {isa = PBXBuildFile; fileRef = E8C54FDC1E218904000EC3E0 /* timberOutsideCorner.sks */; };
 		E870305F1E21A429008A7DDD /* timberRightLeft.sks in Resources */ = {isa = PBXBuildFile; fileRef = E8C54FDD1E218904000EC3E0 /* timberRightLeft.sks */; };
@@ -256,6 +257,8 @@
 		E87030751E21D07A008A7DDD /* FrostBackground.sks in Resources */ = {isa = PBXBuildFile; fileRef = E87030731E21D07A008A7DDD /* FrostBackground.sks */; };
 		E87A83E81E2237020014A49E /* frostHole.sks in Resources */ = {isa = PBXBuildFile; fileRef = E87A83E71E2237020014A49E /* frostHole.sks */; };
 		E87A83E91E2237020014A49E /* frostHole.sks in Resources */ = {isa = PBXBuildFile; fileRef = E87A83E71E2237020014A49E /* frostHole.sks */; };
+		E87A83ED1E231FE20014A49E /* timberSlabCircle.sks in Resources */ = {isa = PBXBuildFile; fileRef = E87A83EC1E231FE20014A49E /* timberSlabCircle.sks */; };
+		E87A83EE1E231FE20014A49E /* timberSlabCircle.sks in Resources */ = {isa = PBXBuildFile; fileRef = E87A83EC1E231FE20014A49E /* timberSlabCircle.sks */; };
 		E89F98281E2219EF00178B4F /* nebulaBlank.sks in Resources */ = {isa = PBXBuildFile; fileRef = E89F98271E2219EF00178B4F /* nebulaBlank.sks */; };
 		E89F98291E2219EF00178B4F /* nebulaBlank.sks in Resources */ = {isa = PBXBuildFile; fileRef = E89F98271E2219EF00178B4F /* nebulaBlank.sks */; };
 		E89F982E1E22257100178B4F /* nebulaUWalls.sks in Resources */ = {isa = PBXBuildFile; fileRef = E89F982D1E22257100178B4F /* nebulaUWalls.sks */; };
@@ -314,7 +317,6 @@
 		E8C54FEE1E218904000EC3E0 /* timberCornerWalls.sks in Resources */ = {isa = PBXBuildFile; fileRef = E8C54FD71E218904000EC3E0 /* timberCornerWalls.sks */; };
 		E8C54FEF1E218904000EC3E0 /* timberDoubleCorners.sks in Resources */ = {isa = PBXBuildFile; fileRef = E8C54FD81E218904000EC3E0 /* timberDoubleCorners.sks */; };
 		E8C54FF01E218904000EC3E0 /* timberHole.sks in Resources */ = {isa = PBXBuildFile; fileRef = E8C54FD91E218904000EC3E0 /* timberHole.sks */; };
-		E8C54FF11E218904000EC3E0 /* timberInsideCorner.sks in Resources */ = {isa = PBXBuildFile; fileRef = E8C54FDA1E218904000EC3E0 /* timberInsideCorner.sks */; };
 		E8C54FF21E218904000EC3E0 /* timberLeftWall.sks in Resources */ = {isa = PBXBuildFile; fileRef = E8C54FDB1E218904000EC3E0 /* timberLeftWall.sks */; };
 		E8C54FF31E218904000EC3E0 /* timberOutsideCorner.sks in Resources */ = {isa = PBXBuildFile; fileRef = E8C54FDC1E218904000EC3E0 /* timberOutsideCorner.sks */; };
 		E8C54FF41E218904000EC3E0 /* timberRightLeft.sks in Resources */ = {isa = PBXBuildFile; fileRef = E8C54FDD1E218904000EC3E0 /* timberRightLeft.sks */; };
@@ -488,6 +490,7 @@
 		E806B5A01E22020700BC7C10 /* blazeMultiCorner.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = blazeMultiCorner.sks; path = Shared/SpriteKit/Nodes/Tiles/blazeMultiCorner.sks; sourceTree = "<group>"; };
 		E806B5A31E220F6000BC7C10 /* timberMultiCorner.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = timberMultiCorner.sks; path = Tiles/timberMultiCorner.sks; sourceTree = "<group>"; };
 		E81D45691E21F83F008E0E01 /* blazeThumbnails.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = blazeThumbnails.sks; sourceTree = "<group>"; };
+		E82B03B01E23235A0004F37E /* timberInsideCorner.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = timberInsideCorner.sks; path = Tiles/timberInsideCorner.sks; sourceTree = "<group>"; };
 		E83E06951E039586005711E3 /* MrPutt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MrPutt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E85386D3824CE7263E891102 /* Pods-MrPutt-iMessageExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MrPutt-iMessageExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MrPutt-iMessageExtension/Pods-MrPutt-iMessageExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		E86500001E1DC0700072E2E3 /* Timber-Hole8.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Timber-Hole8.sks"; sourceTree = "<group>"; };
@@ -517,6 +520,7 @@
 		E87030701E21D045008A7DDD /* BlazeBackground.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BlazeBackground.sks; sourceTree = "<group>"; };
 		E87030731E21D07A008A7DDD /* FrostBackground.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FrostBackground.sks; sourceTree = "<group>"; };
 		E87A83E71E2237020014A49E /* frostHole.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = frostHole.sks; sourceTree = "<group>"; };
+		E87A83EC1E231FE20014A49E /* timberSlabCircle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = timberSlabCircle.sks; path = Tiles/timberSlabCircle.sks; sourceTree = "<group>"; };
 		E89F98271E2219EF00178B4F /* nebulaBlank.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = nebulaBlank.sks; path = Tiles/nebulaBlank.sks; sourceTree = "<group>"; };
 		E89F982D1E22257100178B4F /* nebulaUWalls.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = nebulaUWalls.sks; path = Tiles/nebulaUWalls.sks; sourceTree = "<group>"; };
 		E89F98301E22266E00178B4F /* nebulaStraightWall.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = nebulaStraightWall.sks; path = Tiles/nebulaStraightWall.sks; sourceTree = "<group>"; };
@@ -551,7 +555,6 @@
 		E8C54FD71E218904000EC3E0 /* timberCornerWalls.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = timberCornerWalls.sks; path = Tiles/timberCornerWalls.sks; sourceTree = "<group>"; };
 		E8C54FD81E218904000EC3E0 /* timberDoubleCorners.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = timberDoubleCorners.sks; path = Tiles/timberDoubleCorners.sks; sourceTree = "<group>"; };
 		E8C54FD91E218904000EC3E0 /* timberHole.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = timberHole.sks; path = Tiles/timberHole.sks; sourceTree = "<group>"; };
-		E8C54FDA1E218904000EC3E0 /* timberInsideCorner.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = timberInsideCorner.sks; path = Tiles/timberInsideCorner.sks; sourceTree = "<group>"; };
 		E8C54FDB1E218904000EC3E0 /* timberLeftWall.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = timberLeftWall.sks; path = Tiles/timberLeftWall.sks; sourceTree = "<group>"; };
 		E8C54FDC1E218904000EC3E0 /* timberOutsideCorner.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = timberOutsideCorner.sks; path = Tiles/timberOutsideCorner.sks; sourceTree = "<group>"; };
 		E8C54FDD1E218904000EC3E0 /* timberRightLeft.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = timberRightLeft.sks; path = Tiles/timberRightLeft.sks; sourceTree = "<group>"; };
@@ -1054,7 +1057,6 @@
 				E8C54FD71E218904000EC3E0 /* timberCornerWalls.sks */,
 				E8C54FD81E218904000EC3E0 /* timberDoubleCorners.sks */,
 				E8C54FD91E218904000EC3E0 /* timberHole.sks */,
-				E8C54FDA1E218904000EC3E0 /* timberInsideCorner.sks */,
 				E8C54FDB1E218904000EC3E0 /* timberLeftWall.sks */,
 				E8C54FDC1E218904000EC3E0 /* timberOutsideCorner.sks */,
 				E8C54FDD1E218904000EC3E0 /* timberRightLeft.sks */,
@@ -1069,6 +1071,8 @@
 				E8C54FE61E218904000EC3E0 /* timberUWallUp.sks */,
 				E870306B1E21A5D4008A7DDD /* timberSlabShort.sks */,
 				E806B5A31E220F6000BC7C10 /* timberMultiCorner.sks */,
+				E87A83EC1E231FE20014A49E /* timberSlabCircle.sks */,
+				E82B03B01E23235A0004F37E /* timberInsideCorner.sks */,
 			);
 			name = TimberTiles;
 			sourceTree = "<group>";
@@ -1165,7 +1169,6 @@
 			files = (
 				E87030581E21A429008A7DDD /* timberCornerTopRight.sks in Resources */,
 				E87030651E21A429008A7DDD /* timberUWallLeft.sks in Resources */,
-				E870305C1E21A429008A7DDD /* timberInsideCorner.sks in Resources */,
 				E87030311E21A41B008A7DDD /* CurvedWallShort.sks in Resources */,
 				8BCF77141E03CD0200D48A61 /* iMessageAssets.xcassets in Resources */,
 				E89F98411E2227DC00178B4F /* nebulaMultiCorner.sks in Resources */,
@@ -1233,6 +1236,7 @@
 				8B5F8B421E22F925009C262F /* HoleTile.sks in Resources */,
 				E87030491E21A423008A7DDD /* blazeStraightWall.sks in Resources */,
 				E870304F1E21A423008A7DDD /* blazeUWallUp.sks in Resources */,
+				E87A83EE1E231FE20014A49E /* timberSlabCircle.sks in Resources */,
 				E870304A1E21A423008A7DDD /* blazeTopWall.sks in Resources */,
 				E870303E1E21A423008A7DDD /* blazeCornerBottomRight.sks in Resources */,
 				E870303D1E21A423008A7DDD /* blazeCornerBottomLeft.sks in Resources */,
@@ -1253,6 +1257,7 @@
 				8B5F8B4B1E23120D009C262F /* clubHit.wav in Resources */,
 				8B5F8B4D1E23120D009C262F /* hollow.wav in Resources */,
 				E870302A1E21A41B008A7DDD /* BottomWall.sks in Resources */,
+				E82B03B21E23235A0004F37E /* timberInsideCorner.sks in Resources */,
 				E87030331E21A41B008A7DDD /* StraightTileUpDown.sks in Resources */,
 				8B5F8B531E23120D009C262F /* scoreCard.wav in Resources */,
 				8BBD3B611E1DB40A00688836 /* Portal.sks in Resources */,
@@ -1335,6 +1340,7 @@
 				E8C550141E218A16000EC3E0 /* CornerConnectorBlue.sks in Resources */,
 				E87030241E219675008A7DDD /* blazeBlank.sks in Resources */,
 				E89F98461E22289500178B4F /* nebulaSlabShort.sks in Resources */,
+				E87A83ED1E231FE20014A49E /* timberSlabCircle.sks in Resources */,
 				8B9620141E1C601600678257 /* Frost-Hole1.sks in Resources */,
 				E8C54FF91E218904000EC3E0 /* timberUWallDown.sks in Resources */,
 				E89F982E1E22257100178B4F /* nebulaUWalls.sks in Resources */,
@@ -1431,6 +1437,7 @@
 				E865FFF71E1DC04B0072E2E3 /* Timber-Hole3.sks in Resources */,
 				E8C5503F1E218AE1000EC3E0 /* blazeCornerTopLeft.sks in Resources */,
 				E8C54FEE1E218904000EC3E0 /* timberCornerWalls.sks in Resources */,
+				E82B03B11E23235A0004F37E /* timberInsideCorner.sks in Resources */,
 				E806B5A11E22020700BC7C10 /* blazeMultiCorner.sks in Resources */,
 				8B5F8B411E22F925009C262F /* HoleTile.sks in Resources */,
 				8B9620071E1C601600678257 /* Actions.plist in Resources */,
@@ -1449,7 +1456,6 @@
 				E8A12A411E222D8900768580 /* nebulaUpDown.sks in Resources */,
 				E8A12A291E222BCD00768580 /* nebulaTopWall.sks in Resources */,
 				8B13B33D1E1C7E2A00C0044A /* holeMade.wav in Resources */,
-				E8C54FF11E218904000EC3E0 /* timberInsideCorner.sks in Resources */,
 				8B13B3411E1C7E2A00C0044A /* metalHitWall.wav in Resources */,
 				E865FFFD1E1DC0610072E2E3 /* Timber-Hole6.sks in Resources */,
 				E8C54FF61E218904000EC3E0 /* timberStraightWall.sks in Resources */,
