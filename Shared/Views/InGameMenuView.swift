@@ -16,6 +16,8 @@ class InGameMenuView: UIView {
     
     var dismissBlock: ()->() = {}
     
+    var isVisible = false
+    
     lazy var hiddenConstraints: ConstraintGroup = {
         return constrain(self, self.superview!) {
             $0.bottom == $1.top - 40
@@ -27,10 +29,11 @@ class InGameMenuView: UIView {
         }
     }()
     
-    var animationDuration: CGFloat = 0.6
+    var animationDuration: CGFloat = 0.5
     
     var options: [InGameOptionView] = [] {
         didSet {
+            oldValue.forEach { $0.removeFromSuperview() }
             options.forEach {
                 mainStackView.insertArrangedSubview($0, at: mainStackView.arrangedSubviews.count-1)
             }
@@ -65,6 +68,7 @@ class InGameMenuView: UIView {
         visibleConstraints.active = true
         
         UIView.animate(withDuration: TimeInterval(animationDuration), animations: superview!.layoutIfNeeded)
+        isVisible = true
     }
     
     func dismiss() {
@@ -76,6 +80,7 @@ class InGameMenuView: UIView {
         }
         
         dismissBlock()
+        isVisible = false
     }
     
 }
