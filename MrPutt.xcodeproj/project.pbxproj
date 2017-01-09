@@ -22,7 +22,7 @@
 		8B13B33F1E1C7E2A00C0044A /* littleClick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B32E1E1C7E2A00C0044A /* littleClick.wav */; };
 		8B13B3401E1C7E2A00C0044A /* menuClick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B32F1E1C7E2A00C0044A /* menuClick.wav */; };
 		8B13B3411E1C7E2A00C0044A /* metalHitWall.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3301E1C7E2A00C0044A /* metalHitWall.wav */; };
-		8B13B3421E1C7E2A00C0044A /* notch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3311E1C7E2A00C0044A /* notch.mp3 */; };
+		8B13B3421E1C7E2A00C0044A /* notch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3311E1C7E2A00C0044A /* notch.wav */; };
 		8B13B3431E1C7E2A00C0044A /* randomClick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3321E1C7E2A00C0044A /* randomClick.wav */; };
 		8B13B3441E1C7E2A00C0044A /* scoreCard.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3331E1C7E2A00C0044A /* scoreCard.wav */; };
 		8B13B3451E1C7E2A00C0044A /* snapClick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3341E1C7E2A00C0044A /* snapClick.wav */; };
@@ -61,6 +61,28 @@
 		8B35A2351E218CF90063520C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B35A2311E218CF90063520C /* GameViewController.swift */; };
 		8B5F8B411E22F925009C262F /* HoleTile.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B5F8B401E22F925009C262F /* HoleTile.sks */; };
 		8B5F8B421E22F925009C262F /* HoleTile.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B5F8B401E22F925009C262F /* HoleTile.sks */; };
+		8B5F8B431E23120D009C262F /* click1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3261E1C7E2A00C0044A /* click1.wav */; };
+		8B5F8B441E23120D009C262F /* click2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3271E1C7E2A00C0044A /* click2.wav */; };
+		8B5F8B451E23120D009C262F /* blazeAmbience.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8BC378051E1CDB2D0014AFA2 /* blazeAmbience.m4a */; };
+		8B5F8B461E23120D009C262F /* frostAmbience.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BC378061E1CDB2D0014AFA2 /* frostAmbience.mp3 */; };
+		8B5F8B471E23120D009C262F /* timberAmbience.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BC378071E1CDB2D0014AFA2 /* timberAmbience.mp3 */; };
+		8B5F8B481E23120D009C262F /* clickHard.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3281E1C7E2A00C0044A /* clickHard.wav */; };
+		8B5F8B491E23120D009C262F /* clickSoft.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3291E1C7E2A00C0044A /* clickSoft.wav */; };
+		8B5F8B4A1E23120D009C262F /* close.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B32A1E1C7E2A00C0044A /* close.wav */; };
+		8B5F8B4B1E23120D009C262F /* clubHit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B32B1E1C7E2A00C0044A /* clubHit.wav */; };
+		8B5F8B4C1E23120D009C262F /* holeMade.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B32C1E1C7E2A00C0044A /* holeMade.wav */; };
+		8B5F8B4D1E23120D009C262F /* hollow.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B32D1E1C7E2A00C0044A /* hollow.wav */; };
+		8B5F8B4E1E23120D009C262F /* littleClick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B32E1E1C7E2A00C0044A /* littleClick.wav */; };
+		8B5F8B4F1E23120D009C262F /* menuClick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B32F1E1C7E2A00C0044A /* menuClick.wav */; };
+		8B5F8B501E23120D009C262F /* metalHitWall.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3301E1C7E2A00C0044A /* metalHitWall.wav */; };
+		8B5F8B511E23120D009C262F /* notch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3311E1C7E2A00C0044A /* notch.wav */; };
+		8B5F8B521E23120D009C262F /* randomClick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3321E1C7E2A00C0044A /* randomClick.wav */; };
+		8B5F8B531E23120D009C262F /* scoreCard.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3331E1C7E2A00C0044A /* scoreCard.wav */; };
+		8B5F8B541E23120D009C262F /* snapClick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3341E1C7E2A00C0044A /* snapClick.wav */; };
+		8B5F8B551E23120D009C262F /* softHit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3351E1C7E2A00C0044A /* softHit.wav */; };
+		8B5F8B561E23120D009C262F /* woodHit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3361E1C7E2A00C0044A /* woodHit.wav */; };
+		8B5F8B571E23120D009C262F /* portalAmbience.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B93AFF11E1E1F4000BA03C1 /* portalAmbience.mp3 */; };
+		8B5F8B581E23120D009C262F /* portalTransfer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B93AFF21E1E1F4000BA03C1 /* portalTransfer.mp3 */; };
 		8B6387081E21ECEE0059CFD2 /* SettingsButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B6387071E21ECEE0059CFD2 /* SettingsButton.xib */; };
 		8B6387091E21ECEE0059CFD2 /* SettingsButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B6387071E21ECEE0059CFD2 /* SettingsButton.xib */; };
 		8B93AFF31E1E1F4000BA03C1 /* portalAmbience.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B93AFF11E1E1F4000BA03C1 /* portalAmbience.mp3 */; };
@@ -387,7 +409,7 @@
 		8B13B32E1E1C7E2A00C0044A /* littleClick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = littleClick.wav; sourceTree = "<group>"; };
 		8B13B32F1E1C7E2A00C0044A /* menuClick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = menuClick.wav; sourceTree = "<group>"; };
 		8B13B3301E1C7E2A00C0044A /* metalHitWall.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = metalHitWall.wav; sourceTree = "<group>"; };
-		8B13B3311E1C7E2A00C0044A /* notch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = notch.mp3; sourceTree = "<group>"; };
+		8B13B3311E1C7E2A00C0044A /* notch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = notch.wav; sourceTree = "<group>"; };
 		8B13B3321E1C7E2A00C0044A /* randomClick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = randomClick.wav; sourceTree = "<group>"; };
 		8B13B3331E1C7E2A00C0044A /* scoreCard.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = scoreCard.wav; sourceTree = "<group>"; };
 		8B13B3341E1C7E2A00C0044A /* snapClick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = snapClick.wav; sourceTree = "<group>"; };
@@ -646,7 +668,7 @@
 				8B13B32E1E1C7E2A00C0044A /* littleClick.wav */,
 				8B13B32F1E1C7E2A00C0044A /* menuClick.wav */,
 				8B13B3301E1C7E2A00C0044A /* metalHitWall.wav */,
-				8B13B3311E1C7E2A00C0044A /* notch.mp3 */,
+				8B13B3311E1C7E2A00C0044A /* notch.wav */,
 				8B13B3321E1C7E2A00C0044A /* randomClick.wav */,
 				8B13B3331E1C7E2A00C0044A /* scoreCard.wav */,
 				8B13B3341E1C7E2A00C0044A /* snapClick.wav */,
@@ -1151,8 +1173,11 @@
 				E8A12A2D1E222C0A00768580 /* nebulaBottomWall.sks in Resources */,
 				E87030391E21A41B008A7DDD /* UTileUp.sks in Resources */,
 				E87030621E21A429008A7DDD /* timberTopWall.sks in Resources */,
+				8B5F8B581E23120D009C262F /* portalTransfer.mp3 in Resources */,
 				8B96204B1E1C608400678257 /* Bebas.ttf in Resources */,
 				8B35A22F1E218AA40063520C /* InGameOptionView.xib in Resources */,
+				8B5F8B571E23120D009C262F /* portalAmbience.mp3 in Resources */,
+				8B5F8B541E23120D009C262F /* snapClick.wav in Resources */,
 				8B13B3561E1C891900C0044A /* Frost-Hole3.sks in Resources */,
 				E870302E1E21A41B008A7DDD /* CornerTopLeft.sks in Resources */,
 				E89F98321E22266E00178B4F /* nebulaStraightWall.sks in Resources */,
@@ -1179,9 +1204,11 @@
 				E89F98291E2219EF00178B4F /* nebulaBlank.sks in Resources */,
 				8B9620741E1C60B400678257 /* WindField.sks in Resources */,
 				8B96204C1E1C608400678257 /* Neutra2Display-Titled.otf in Resources */,
+				8B5F8B441E23120D009C262F /* click2.wav in Resources */,
 				E870302F1E21A41B008A7DDD /* CornerTopRight.sks in Resources */,
 				E89F98441E22280600178B4F /* nebulaConnectingCorner.sks in Resources */,
 				E8A12A361E222CBD00768580 /* nebulaUWallUp.sks in Resources */,
+				8B5F8B481E23120D009C262F /* clickHard.wav in Resources */,
 				E87030451E21A423008A7DDD /* blazeLeftWall.sks in Resources */,
 				8B9620591E1C60B300678257 /* Ball.sks in Resources */,
 				E87030561E21A429008A7DDD /* timberCornerConnector.sks in Resources */,
@@ -1193,11 +1220,13 @@
 				8B13B3581E1C891900C0044A /* Frost-Hole4.sks in Resources */,
 				E870303A1E21A41B008A7DDD /* UTileWalls.sks in Resources */,
 				E87030481E21A423008A7DDD /* blazeRightWall.sks in Resources */,
+				8B5F8B471E23120D009C262F /* timberAmbience.mp3 in Resources */,
 				E806B5A21E22020700BC7C10 /* blazeMultiCorner.sks in Resources */,
 				8B13B3621E1C891900C0044A /* Frost-Hole9.sks in Resources */,
 				E870305E1E21A429008A7DDD /* timberOutsideCorner.sks in Resources */,
 				E87030601E21A429008A7DDD /* timberRightWall.sks in Resources */,
 				8B073B681E1C92B7008BBAE6 /* Hill.sks in Resources */,
+				8B5F8B4A1E23120D009C262F /* close.wav in Resources */,
 				E87030321E21A41B008A7DDD /* StraightTile.sks in Resources */,
 				8BCF77121E03CD0200D48A61 /* MainInterface.storyboard in Resources */,
 				8BC3780D1E1CE9670014AFA2 /* SceneStart.sks in Resources */,
@@ -1208,8 +1237,10 @@
 				E870303E1E21A423008A7DDD /* blazeCornerBottomRight.sks in Resources */,
 				E870303D1E21A423008A7DDD /* blazeCornerBottomLeft.sks in Resources */,
 				D22F14111E1F7AAD00CA90CA /* PlaceholderiMessageAssets.xcassets in Resources */,
+				8B5F8B4E1E23120D009C262F /* littleClick.wav in Resources */,
 				E87A83E91E2237020014A49E /* frostHole.sks in Resources */,
 				E87030501E21A423008A7DDD /* blazeUWalls.sks in Resources */,
+				8B5F8B561E23120D009C262F /* woodHit.wav in Resources */,
 				E870306F1E21CFB2008A7DDD /* TimberBackground.sks in Resources */,
 				E87030431E21A423008A7DDD /* blazeHole.sks in Resources */,
 				E87030371E21A41B008A7DDD /* UTileLeft.sks in Resources */,
@@ -1219,24 +1250,30 @@
 				E87030441E21A423008A7DDD /* blazeInsideCornerPiece.sks in Resources */,
 				E89F983B1E2226D700178B4F /* nebulaOutsideCorner.sks in Resources */,
 				E87030571E21A429008A7DDD /* timberCornerTopLeft.sks in Resources */,
+				8B5F8B4B1E23120D009C262F /* clubHit.wav in Resources */,
+				8B5F8B4D1E23120D009C262F /* hollow.wav in Resources */,
 				E870302A1E21A41B008A7DDD /* BottomWall.sks in Resources */,
 				E87030331E21A41B008A7DDD /* StraightTileUpDown.sks in Resources */,
+				8B5F8B531E23120D009C262F /* scoreCard.wav in Resources */,
 				8BBD3B611E1DB40A00688836 /* Portal.sks in Resources */,
 				E8A12A3C1E222D2A00768580 /* nebulaUWallLeft.sks in Resources */,
 				E8A12A421E222D8900768580 /* nebulaUpDown.sks in Resources */,
 				8B96205A1E1C60B300678257 /* Frost-Hole1.sks in Resources */,
 				E87030301E21A41B008A7DDD /* CornerWalls.sks in Resources */,
+				8B5F8B501E23120D009C262F /* metalHitWall.wav in Resources */,
 				8B96205B1E1C60B300678257 /* Frost-Hole2.sks in Resources */,
 				8B96204D1E1C608400678257 /* Actions.plist in Resources */,
 				E89F98471E22289500178B4F /* nebulaSlabShort.sks in Resources */,
 				8B9620561E1C60B300678257 /* BallInHole.sks in Resources */,
 				E87030631E21A429008A7DDD /* timberUpDown.sks in Resources */,
 				E87030511E21A423008A7DDD /* blazeBlank.sks in Resources */,
+				8B5F8B511E23120D009C262F /* notch.wav in Resources */,
 				E8A12A271E222B8F00768580 /* nebulaCornerTopLeft.sks in Resources */,
 				8B9620581E1C60B300678257 /* BallTrail.sks in Resources */,
 				8B9620761E1C60B400678257 /* CoursePreviewView.xib in Resources */,
 				E870303F1E21A423008A7DDD /* blazeCornerConnecter.sks in Resources */,
 				E87030411E21A423008A7DDD /* blazeCornerTopRight.sks in Resources */,
+				8B5F8B491E23120D009C262F /* clickSoft.wav in Resources */,
 				E87030291E21A41B008A7DDD /* BlankTile.sks in Resources */,
 				8B13B35C1E1C891900C0044A /* Frost-Hole6.sks in Resources */,
 				E870305A1E21A429008A7DDD /* timberDoubleCorners.sks in Resources */,
@@ -1245,20 +1282,26 @@
 				E806B5A51E220F6000BC7C10 /* timberMultiCorner.sks in Resources */,
 				E87030341E21A41B008A7DDD /* StraightWall.sks in Resources */,
 				E87030531E21A429008A7DDD /* timberBottomWall.sks in Resources */,
+				8B5F8B521E23120D009C262F /* randomClick.wav in Resources */,
 				8B96205C1E1C60B300678257 /* ShotPathIndicator.sks in Resources */,
 				E8A12A241E222B4B00768580 /* nebulaCornerTopRight.sks in Resources */,
+				8B5F8B451E23120D009C262F /* blazeAmbience.m4a in Resources */,
 				E870302C1E21A41B008A7DDD /* CornerBottomRight.sks in Resources */,
 				E870304D1E21A423008A7DDD /* blazeUWallLeft.sks in Resources */,
+				8B5F8B4C1E23120D009C262F /* holeMade.wav in Resources */,
 				E89F983E1E22278700178B4F /* nebulaHole.sks in Resources */,
 				E87030611E21A429008A7DDD /* timberStraightWall.sks in Resources */,
+				8B5F8B4F1E23120D009C262F /* menuClick.wav in Resources */,
 				E870304E1E21A423008A7DDD /* blazeUWallRight.sks in Resources */,
 				E870304C1E21A423008A7DDD /* blazeUWallDown.sks in Resources */,
+				8B5F8B551E23120D009C262F /* softHit.wav in Resources */,
 				E870302D1E21A41B008A7DDD /* CornerConnectorBlue.sks in Resources */,
 				E87030521E21A429008A7DDD /* timberBlank.sks in Resources */,
 				E8A12A1E1E222A5600768580 /* nebulaCornerBottomRight.sks in Resources */,
 				E87030681E21A429008A7DDD /* timberUWallUp.sks in Resources */,
 				8B9620571E1C60B300678257 /* WallHit.sks in Resources */,
 				8B35A2291E2189710063520C /* InGameMenuView.xib in Resources */,
+				8B5F8B461E23120D009C262F /* frostAmbience.mp3 in Resources */,
 				E87030661E21A429008A7DDD /* timberUWallRight.sks in Resources */,
 				E8A12A211E222A9B00768580 /* nebulaCornerBottomLeft.sks in Resources */,
 				E87030751E21D07A008A7DDD /* FrostBackground.sks in Resources */,
@@ -1270,6 +1313,7 @@
 				8B13B35A1E1C891900C0044A /* Frost-Hole5.sks in Resources */,
 				8B6387091E21ECEE0059CFD2 /* SettingsButton.xib in Resources */,
 				8B13B35E1E1C891900C0044A /* Frost-Hole7.sks in Resources */,
+				8B5F8B431E23120D009C262F /* click1.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1397,7 +1441,7 @@
 				E8C54FE81E218904000EC3E0 /* timberBottomWall.sks in Resources */,
 				8B13B3371E1C7E2A00C0044A /* click1.wav in Resources */,
 				8B13B33E1E1C7E2A00C0044A /* hollow.wav in Resources */,
-				8B13B3421E1C7E2A00C0044A /* notch.mp3 in Resources */,
+				8B13B3421E1C7E2A00C0044A /* notch.wav in Resources */,
 				E865FFFF1E1DC0690072E2E3 /* Timber-Hole7.sks in Resources */,
 				E8C54FFD1E218904000EC3E0 /* timberUWallUp.sks in Resources */,
 				8B13B3461E1C7E2A00C0044A /* softHit.wav in Resources */,
