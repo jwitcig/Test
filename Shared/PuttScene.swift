@@ -41,9 +41,23 @@ class PuttScene: SKScene {
     var course: CoursePack.Type!
     var hole: Int!
     
-    lazy var cameraBounds: CGRect = {
+    var cameraBounds: CGRect {
         return self.childNode(withName: "cameraBounds")!.frame
-    }()
+    }
+    
+    var ballFreedomRadius: CGFloat {
+        return size.width * camera!.xScale * 0.4
+    }
+    
+    var isBallTrackingEnabled = false
+    var isCameraBounded: Bool {
+        return isCameraXBounded && isCameraYBounded
+    }
+    
+    var isCameraXBounded = false
+    var isCameraYBounded = false
+    
+    var ballTracking: SKConstraint?
     
     // MARK: Scene Lifecycle
 
@@ -75,9 +89,7 @@ class PuttScene: SKScene {
         ball.updateTrailEmitter()
         
 //        animateTilesIntoScene()
-        
-        
-        
+    
         UserDefaults.standard.addObserver(self, forKeyPath: "Music", options: .new, context: &settingsContext)
         
 //        let light = ball.childNode(withName: "light") as! SKLightNode
@@ -200,6 +212,26 @@ class PuttScene: SKScene {
         
         if recognizer.scale > 0.5 && recognizer.scale < 2 {
             camera.setScale(1 / recognizer.scale)
+            
+            if isCameraBounded {
+                camera.constraints?.removeLast()
+                camera.constraints?.removeLast()
+                
+                isCameraXBounded = false
+                isCameraYBounded = false
+                
+                passivelyEnableCameraBounds()
+            } else if isCameraXBounded || isCameraYBounded {
+                camera.constraints?.removeLast()
+                
+                isCameraXBounded = false
+                isCameraYBounded = false
+                
+                passivelyEnableCameraBounds()
+            }
+            
+            let ballTracking = SKConstraint.distance(SKRange(value: 0, variance: ballFreedomRadius), to: ball)
+            camera.constraints?.insert(ballTracking, at: 1)
         }
     }
 
@@ -336,12 +368,20 @@ class PuttScene: SKScene {
             SKAction.removeFromParent()
         ])
         
-//        addChild(sound)
+        addChild(sound)
         
         sound.run(SKAction.group([setVolume, SKAction.play(), removal]))
         ball.physicsBody?.applyImpulse(stroke)
         
         shots.append(Shot(power: power, angle: angle, position: convert(ball.position, from: ball.parent!)))
+        
+        if !isBallTrackingEnabled {
+            let ballPosition = convert(ball.position, from: ball.parent!)
+            
+            let pan = SKAction.move(to: ballPosition, duration: 1)
+            pan.timingMode = .easeIn
+            camera?.run(pan, withKey: "trackingEnabler")
+        }
     }
     
     // MARK: Game Loop
@@ -356,24 +396,62 @@ class PuttScene: SKScene {
             reflectionVelocity = nil
         }
         
-        let cameraSize = CGSize(width: size.width * camera!.xScale, height: size.height * camera!.yScale)
+        if !isBallTrackingEnabled {
+            let ballPosition = convert(ball.position, from: ball.parent!)
+            
+            if camera!.position.distance(toPoint: ballPosition) < ballFreedomRadius, camera?.action(forKey: "trackingEnabler") != nil {
+                
+                ballTracking = SKConstraint.distance(SKRange(value: 0, variance: ballFreedomRadius), to: ball)
+                
+                let holeXRange = SKRange(upperLimit: self.cameraBounds.width/2-30)
+                let holeYRange = SKRange(upperLimit: self.cameraBounds.height/2-30)
+                
+                let holeInSight = SKConstraint.positionX(holeXRange, y: holeYRange)
+                
+                self.camera?.constraints = [holeInSight, ballTracking!]
+                camera?.removeAction(forKey: "trackingEnabler")
+                
+                isBallTrackingEnabled = true
+            }
+            
+        } else if isBallTrackingEnabled && !isCameraBounded {
+            passivelyEnableCameraBounds()
+        }
+    }
+    
+    func passivelyEnableCameraBounds() {
+        let cameraSize = CGSize(width: self.size.width * self.camera!.xScale, height: self.size.height * self.camera!.yScale)
         
-        let xRange = SKRange(lowerLimit: cameraBounds.minX + cameraSize.width/2,
-                             upperLimit: cameraBounds.maxX - cameraSize.width/2)
-        let yRange = SKRange(lowerLimit: cameraBounds.minY + cameraSize.height/2,
-                             upperLimit: cameraBounds.maxY - cameraSize.height/2)
+        var xRange: SKRange!
+        var yRange: SKRange!
         
-        let cameraZone = SKConstraint.positionX(xRange, y: yRange)
+        if self.cameraBounds.width < cameraSize.width {
+            xRange = SKRange(lowerLimit: self.cameraBounds.midX,
+                             upperLimit: self.cameraBounds.midX)
+        } else {
+            xRange = SKRange(lowerLimit: self.cameraBounds.minX + cameraSize.width/2,
+                             upperLimit: self.cameraBounds.maxX - cameraSize.width/2)
+        }
         
-        let ballTracking = SKConstraint.distance(SKRange(value: 0, variance: size.width * camera!.xScale * 0.4), to: ball)
+        if self.cameraBounds.height < cameraSize.height {
+            yRange = SKRange(lowerLimit: self.cameraBounds.midY,
+                             upperLimit: self.cameraBounds.midY)
+        } else {
+            yRange = SKRange(lowerLimit: self.cameraBounds.minY + cameraSize.height/2,
+                             upperLimit: self.cameraBounds.maxY - cameraSize.height/2)
+        }
         
-        let holeXRange = SKRange(upperLimit: cameraBounds.width/2-30)
-        let holeYRange = SKRange(upperLimit: cameraBounds.height/2-30)
+        if camera!.position.x >= xRange.lowerLimit && camera!.position.x >= xRange.upperLimit, !isCameraXBounded {
+            
+            camera?.constraints?.insert(SKConstraint.positionX(xRange), at: camera!.constraints!.count)
+            isCameraXBounded = true
+        }
         
-        let holeInSight = SKConstraint.positionX(holeXRange, y: holeYRange)
-        
-        camera?.constraints = [holeInSight, ballTracking, holeInSight, cameraZone]
-
+        if camera!.position.y >= yRange.lowerLimit && camera!.position.y >= yRange.upperLimit, !isCameraYBounded {
+            
+            camera?.constraints?.insert(SKConstraint.positionY(yRange), at: camera!.constraints!.count)
+            isCameraYBounded = true
+        }
     }
 }
 

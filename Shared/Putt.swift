@@ -171,7 +171,6 @@ class Putt: Game, TypeConstraint {
         lifeCycle.finish()
     }
     
-
     func shotTaken(shot: Shot) {
         shots.append(shot)
     }
