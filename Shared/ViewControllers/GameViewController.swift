@@ -79,6 +79,16 @@ class GameViewController: UIViewController {
     
         orientationManager?.requestPresentationStyle(.expanded)
         sceneView.presentScene(scene)
+     
+        hideGameViewControllerViews()
+    }
+    
+    func hideGameViewControllerViews() {
+        view.subviews.forEach { $0.isHidden = true }
+    }
+    
+    func showGameViewControllerViews() {
+        view.subviews.forEach { $0.isHidden = false }
     }
     
     func menuLaunch(sender: Any) {
@@ -167,10 +177,17 @@ class GameViewController: UIViewController {
         
         
         messageSender?.send(message: message, layout: layout, completionHandler: { error in
-            
         })
         
         orientationManager?.requestPresentationStyle(.compact)
+        
+        showGameViewControllerViews()
+        
+        let fadeOut = SKAction.fadeOut(withDuration: 0.5)
+        let remove = SKAction.run {
+            self.sceneView.presentScene(nil)
+        }
+        scene.run(SKAction.sequence([fadeOut, remove]))
     }
     
     func generateSession() -> PuttSession {
