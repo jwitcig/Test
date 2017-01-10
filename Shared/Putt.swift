@@ -28,10 +28,33 @@ public extension CGPoint {
     }
 }
 
+
 public extension CGVector {
     public var magnitude: CGFloat {
         return sqrt( dx*dx + dy*dy )
     }
+    
+    public var normalized: CGVector {
+        return CGVector(dx: dx/magnitude, dy: dy/magnitude)
+    }
+}
+
+public func +(vector: CGVector, vector2: CGVector) -> CGVector {
+    return CGVector(dx: vector.dx+vector2.dx, dy: vector.dy+vector2.dy)
+}
+
+public func -(vector: CGVector, vector2: CGVector) -> CGVector {
+    return CGVector(dx: vector.dx-vector2.dx, dy: vector.dy-vector2.dy)
+}
+
+infix operator •
+
+public func •(vector: CGVector, vector2: CGVector) -> CGFloat {
+    return vector.dx*vector2.dx + vector.dy*vector2.dy
+}
+
+public func *(vector: CGVector, scalar: CGFloat) -> CGVector {
+    return CGVector(dx: vector.dx*scalar, dy: vector.dy*scalar)
 }
 
 enum Category: UInt32 {

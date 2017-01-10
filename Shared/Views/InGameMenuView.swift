@@ -16,7 +16,9 @@ class InGameMenuView: UIView {
     
     var dismissBlock: ()->() = {}
     
-    var isVisible = false
+    var isShown: Bool {
+        return visibleConstraints.active
+    }
     
     lazy var hiddenConstraints: ConstraintGroup = {
         return constrain(self, self.superview!) {
@@ -38,6 +40,10 @@ class InGameMenuView: UIView {
                 mainStackView.insertArrangedSubview($0, at: mainStackView.arrangedSubviews.count-1)
             }
         }
+    }
+    
+    static func create() -> InGameMenuView {
+        return Bundle(for: GameViewController.self).loadNibNamed("InGameMenuView", owner: nil, options: nil)![0] as! InGameMenuView
     }
     
     override func awakeFromNib() {
@@ -68,7 +74,6 @@ class InGameMenuView: UIView {
         visibleConstraints.active = true
         
         UIView.animate(withDuration: TimeInterval(animationDuration), animations: superview!.layoutIfNeeded)
-        isVisible = true
     }
     
     func dismiss() {
@@ -78,9 +83,7 @@ class InGameMenuView: UIView {
         UIView.animate(withDuration: TimeInterval(animationDuration), animations: superview!.layoutIfNeeded) { _ in
             self.removeFromSuperview()
         }
-        
         dismissBlock()
-        isVisible = false
     }
     
 }
