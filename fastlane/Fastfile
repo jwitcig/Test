@@ -29,7 +29,7 @@ platform :ios do
   lane :fly do
     before_all
 
-    match(type: "appstore", app_identifier: ["com.jwitapps.MrPutt", "com.jwitapps.MrPutt.iMessageExtension"], readonly: true)
+    certificates
 
     target = ENV['XL_TARGET']
 
