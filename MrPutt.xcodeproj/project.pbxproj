@@ -1718,8 +1718,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jwitapps.MrPutt.iMessageExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6ca39357-e1e4-4bcf-8ca8-ae0f4db0ae7f";
-				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.jwitapps.MrPutt.iMessageExtension";
+				PROVISIONING_PROFILE = "64238968-18b8-437f-8439-6c726d849e6b";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.jwitapps.MrPutt.iMessageExtension";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1854,8 +1854,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jwitapps.MrPutt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7d1fc711-3a15-4460-a829-1e0ec3632473";
-				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.jwitapps.MrPutt";
+				PROVISIONING_PROFILE = "fe55cbea-9f3e-46db-8485-06d191e8e7d3";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.jwitapps.MrPutt";
 				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
