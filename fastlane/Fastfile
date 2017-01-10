@@ -22,7 +22,8 @@ platform :ios do
   end
 
   lane :certificates do
-    match(app_identifier: ["com.jwitapps.MrPutt", "com.jwitapps.MrPutt.iMessageExtension"], readonly: true)
+    match(type: "development", app_identifier: ["com.jwitapps.MrPutt", "com.jwitapps.MrPutt.iMessageExtension"], readonly: true)
+    match(type: "appstore", app_identifier: ["com.jwitapps.MrPutt", "com.jwitapps.MrPutt.iMessageExtension"], readonly: true)
   end
 
   lane :fly do
