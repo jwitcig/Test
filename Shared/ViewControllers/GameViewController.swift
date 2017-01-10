@@ -28,20 +28,15 @@ class GameViewController: UIViewController {
         return view as! SKView
     }
     
-    var toolsView = UIView()
-    
-    var opponentSession: PuttSession?
+    var toolsContainer = UIView()
     
     var scene: PuttScene!
-    
-    var world = SKNode()
+    var opponentSession: PuttSession?
     
     var messageSender: MessageSender?
     var orientationManager: OrientationManager?
     
-    lazy var settingsPane: InGameMenuView  = {
-        return Bundle(for: GameViewController.self).loadNibNamed("InGameMenuView", owner: nil, options: nil)![0] as! InGameMenuView
-    }()
+    var settingsPane: InGameMenuView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,72 +45,34 @@ class GameViewController: UIViewController {
         
         settings.addTarget(self, action: #selector(GameViewController.menuLaunch(sender:)), for: .touchUpInside)
 
-        toolsView.addSubview(settings)
+        toolsContainer.addSubview(settings)
         
-        constrain(settings, toolsView) {
+        constrain(settings, toolsContainer) {
             $0.bottom == $1.bottom
             $0.trailing == $1.trailing
         }
         
-        view.addSubview(toolsView)
+        view.addSubview(toolsContainer)
         
-        constrain(toolsView, view) {
+        constrain(toolsContainer, view) {
             $0.leading == $1.leading
             $0.trailing == $1.trailing
             $0.top == $1.top
             $0.bottom == $1.bottom
         }
-        
-         235/356
-        
-        let scorecard = ScoreCard()
-        scorecard.backgroundColor = .clear
-        
-        
-        let image = UIImageView(image: ScoreCardStyleKit.imageOfCard(                                                                                     holeNumber: "9", name1: "You", name2: "Them",
-                                                                                               player1Hole1: "1",                                                                                               player1Hole2: "1",
-                                                            player1Hole3: "1",
-                                                                                               player1Hole4: "1",
-                                                                                               player1Hole5: "1",
-                                                                                               player1Hole6: "1",
-                                                                                               player1Hole8: "1",
-                                                                                               player1Hole9: "1",
-                                                                                               player2Hole1: "1",
-                                                                                               player2Hole2: "1",
-                                                                                               player2Hole3: "1",
-                                                                                               player2Hole4: "1",
-                                                                                               player2Hole5: "1",
-                                                                                               player2Hole6: "1",
-                                                                                               player2Hole7: "1",
-                                                                                               player2Hole8: "1",
-                                                                                               player2Hole9: "1",
-                                                                                               parHole1: "1",
-                                                                                               parHole2: "1",
-                                                                                               parHole3: "1",
-                                                                                               parHole4: "1",
-                                                                                               parHole5: "1",
-                                                                                               parHole6: "1",
-                                                                                               parHole7: "1",
-                                                                                               parHole8: "1",
-                                                                                               parHole9: "1",
-                                                                                               parTotal: "9",
-                                                                                               player1Total: "9",
-                                                                                               player2Total: "9"))
-        image.contentMode = .scaleAspectFit
-        
-        toolsView.addSubview(image)
-        constrain(image, toolsView) {
-            $0.width == $0.height * (235.0/356.0)
-            
-            $0.width == $1.width * 0.8 ~ 900
-            $0.height == $1.height * 0.8 ~ 900
-            
-            $0.width <= $1.width * 0.8
-            $0.height <= $1.height * 0.8
-
-
-            $0.center == $1.center
-        }
+    
+//        constrain(image, toolsContainer) {
+//            $0.width == $0.height * (235.0/356.0)
+//
+//            $0.width == $1.width * 0.8 ~ 900
+//            $0.height == $1.height * 0.8 ~ 900
+//
+//            $0.width <= $1.width * 0.8
+//            $0.height <= $1.height * 0.8
+//
+//
+//            $0.center == $1.center
+//        }
     }
     
     func configureScene(previousSession: PuttSession?, course: CoursePack.Type) {
@@ -150,7 +107,7 @@ class GameViewController: UIViewController {
     }
     
     func hideGameViewControllerViews() {
-        view.subviews.filter { $0 != toolsView }
+        view.subviews.filter { $0 != toolsContainer }
                      .forEach { $0.isHidden = true }
     }
     
@@ -158,78 +115,86 @@ class GameViewController: UIViewController {
         view.subviews.forEach { $0.isHidden = false }
     }
     
+    func createSettingsPane() -> InGameMenuView {
+        let settingsPane = InGameMenuView.create()
+        
+        let settings = UserDefaults.standard
+        
+        let music = InGameOptionView.create()
+        music.optionName = Options.gameMusic.rawValue
+        music.enabled = settings.value(forKey: music.optionName) as? Bool ?? true
+        
+        let effects = InGameOptionView.create()
+        effects.optionName = "Effects"
+        effects.enabled = settings.value(forKey: effects.optionName) as? Bool ?? true
+        
+        let hud = InGameOptionView.create()
+        hud.optionName = "HUD"
+        hud.enabled = settings.value(forKey: hud.optionName) as? Bool ?? true
+        
+        settingsPane.options = [music, effects, hud]
+        return settingsPane
+    }
+    
+    func blur(node: SKNode, in view: SKView, withDuration duration: TimeInterval) -> SKEffectNode {
+        let blur = CIFilter(name: "CIGaussianBlur")!
+        let radius: CGFloat = 10.0
+        blur.setValue(0, forKey: kCIInputRadiusKey)
+        
+        let effect = SKEffectNode()
+        effect.shouldEnableEffects = true
+        effect.filter = blur
+        
+        let animateBlur = SKAction.customAction(withDuration: duration) { node, elapsed in
+            blur.setValue(radius * elapsed/CGFloat(duration), forKey: kCIInputRadiusKey)
+        }
+        effect.run(animateBlur)
+        
+        let blurred = SKSpriteNode(texture: view.texture(from: node))
+        blurred.position = scene.camera!.position
+        
+        effect.addChild(blurred)
+        node.addChild(effect)
+        
+        return effect
+    }
+    
+    func unblur(node: SKEffectNode, withDuration duration: TimeInterval, completion: @escaping ()->Void) {
+        let radius = node.filter?.value(forKey: kCIInputRadiusKey) as? CGFloat ?? 0
+        
+        let unblur = SKAction.customAction(withDuration: duration) { node, elapsed in
+            (node as? SKEffectNode)?.filter?.setValue(radius - radius * elapsed/CGFloat(duration), forKey: kCIInputRadiusKey)
+        }
+        
+        let completed = SKAction.run(completion)
+        let sequence = SKAction.sequence([unblur, completed])
+        node.run(sequence)
+    }
+    
     func menuLaunch(sender: Any) {
-        if settingsPane.superview == nil {
-            let blurFilter = CIFilter(name: "CIGaussianBlur")!
-            let blurRadius: CGFloat = 10.0
-            let blurDuration: CGFloat = 1.0
-            blurFilter.setValue(0, forKey: kCIInputRadiusKey)
+        let settingsPane = self.settingsPane ?? createSettingsPane()
+        
+        toolsContainer.addSubview(settingsPane)
+        
+        let blurred = blur(node: scene, in: sceneView, withDuration: 2)
+
+        settingsPane.dismissBlock = {
+            self.unblur(node: blurred, withDuration: 2, completion: blurred.removeFromParent)
+        }
+        
+        constrain(settingsPane, toolsContainer) {
+            $0.width == $1.width * 0.8
+            $0.height >= $1.height * 0.5
             
-            let blurEffect = SKEffectNode()
-            blurEffect.shouldEnableEffects = true
-            blurEffect.filter = blurFilter
-            
-            let animateBlur = SKAction.customAction(withDuration: TimeInterval(blurDuration)) { node, elapsed in
-                blurFilter.setValue(blurRadius * elapsed/blurDuration, forKey: kCIInputRadiusKey)
-            }
-            blurEffect.run(animateBlur)
-            
-            let blurredNode = SKSpriteNode(texture: sceneView.texture(from: scene))
-            blurredNode.position = scene.camera!.position
-            
-            blurEffect.addChild(blurredNode)
-            scene.addChild(blurEffect)
-            
-            settingsPane.dismissBlock = {
-                
-                let action = SKAction.customAction(withDuration: TimeInterval(blurDuration)) { node, elapsed in
-                    blurFilter.setValue(blurRadius - blurRadius * elapsed/blurDuration, forKey: kCIInputRadiusKey)
-                }
-                
-                let finished = SKAction.run {
-                    blurEffect.removeFromParent()
-                }
-                
-                self.scene.run(SKAction.sequence([action, finished]))
-            }
-            
-            toolsView.addSubview(settingsPane)
-            
-            constrain(settingsPane, toolsView) {
-                $0.width == $1.width * 0.8
-                $0.height >= $1.height * 0.5
-                
-                $0.centerX == $1.centerX
-            }
-            
-            let settings = UserDefaults.standard
-            
-            let music = createInGameOptionView()
-            music.optionName = Options.gameMusic.rawValue
-            music.enabled = settings.value(forKey: music.optionName) as? Bool ?? true
-            
-            let effects = createInGameOptionView()
-            effects.optionName = "Effects"
-            effects.enabled = settings.value(forKey: effects.optionName) as? Bool ?? true
-            
-            let hud = createInGameOptionView()
-            hud.optionName = "HUD"
-            hud.enabled = settings.value(forKey: hud.optionName) as? Bool ?? true
-            
-            settingsPane.options = [music, effects, hud]
+            $0.centerX == $1.centerX
         }
     
-        if settingsPane.isVisible {
+        if settingsPane.isShown {
             settingsPane.dismiss()
         } else {
             settingsPane.show()
         }
     }
-    
-    func createInGameOptionView() -> InGameOptionView {
-        return Bundle(for: InGameMenuView.self).loadNibNamed("InGameOptionView", owner: nil, options: nil)![0] as! InGameOptionView
-    }
-
     
     // MARK: Game Cycle
     

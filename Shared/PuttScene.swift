@@ -15,6 +15,16 @@ import JWSwiftTools
 
 private var settingsContext = 0
 
+public extension SKRange {
+    public var openInterval: Range<CGFloat> {
+        return lowerLimit..<upperLimit
+    }
+    
+    public var closedInterval: ClosedRange<CGFloat> {
+        return lowerLimit...upperLimit
+    }
+}
+
 class PuttScene: SKScene {
     
     lazy var ball: Ball = {
@@ -33,6 +43,7 @@ class PuttScene: SKScene {
     
     var shotPath: SKShapeNode? = nil
     var shotIntersectionNode: SKShapeNode? = nil
+    var shaper: SKShapeNode? = nil
     
     var teleporting = false
     
@@ -41,8 +52,8 @@ class PuttScene: SKScene {
     var course: CoursePack.Type!
     var hole: Int!
     
-    var cameraBounds: CGRect {
-        return self.childNode(withName: "cameraBounds")!.frame
+    var cameraLimiter: CGRect {
+        return childNode(withName: "cameraBounds")!.frame
     }
     
     var ballFreedomRadius: CGFloat {
@@ -61,13 +72,13 @@ class PuttScene: SKScene {
         return ballTracking != nil
     }
     
-    lazy var pan: UIPanGestureRecognizer? = {
+    lazy var pan: UIPanGestureRecognizer = {
         let pan = UIPanGestureRecognizer(target: self, action: #selector(PuttScene.handlePan(recognizer:)))
         pan.minimumNumberOfTouches = 2
         pan.delegate = self
         return pan
     }()
-    lazy var zoom: UIPinchGestureRecognizer? = {
+    lazy var zoom: UIPinchGestureRecognizer = {
         let zoom = UIPinchGestureRecognizer(target: self, action: #selector(PuttScene.handleZoom(recognizer:)))
         zoom.delegate = self
         return zoom
@@ -102,9 +113,7 @@ class PuttScene: SKScene {
     
         ball.updateTrailEmitter()
         
-//        animateTilesIntoScene()
-    
-        UserDefaults.standard.addObserver(self, forKeyPath: "Music", options: .new, context: &settingsContext)
+        addSettingsListener(forKey: "Music")
         
 //        let light = ball.childNode(withName: "light") as! SKLightNode
 //        
@@ -155,13 +164,17 @@ class PuttScene: SKScene {
 //        light.removeFromParent()
     }
     
+    func addSettingsListener(forKey key: String) {
+        UserDefaults.standard.addObserver(self, forKeyPath: key, options: .new, context: &settingsContext)
+    }
+    
     func removeGrid() {
         childNode(withName: "grid")?.removeFromParent()
     }
     
     func setDebugOptions(on view: SKView) {
         view.showsFPS = true
-        view.showsPhysics = false
+        view.showsPhysics = true
         view.backgroundColor = .black
     }
     
@@ -169,83 +182,53 @@ class PuttScene: SKScene {
         // sends contact notifications to didBegin(contact:)
         physicsWorld.contactDelegate = self
         
+        // positional audio target
         listener = ball
     }
     
     func setupCamera() {
-        if self.camera == nil {
-            self.camera = SKCameraNode()
-            addChild(self.camera!)
+        if camera == nil {
+            camera = SKCameraNode()
+            addChild(camera!)
         }
     }
     
     func addGestureRecognizers(in view: SKView) {
-        let recognizers: [UIGestureRecognizer?] = [pan, zoom]
-            
-        recognizers.forEach {
-            if let recognizer = $0 {
-                view.addGestureRecognizer(recognizer)
-            }
-        }
+        [pan, zoom].forEach(view.addGestureRecognizer)
     }
-    
-    func animateTilesIntoScene() {
-        guard let view = view else { return }
-        
-        let scaledWidth = Int(view.frame.width * 0.7)
-        let scaledHeight = Int(view.frame.height * 0.7)
-        
-        let generator = RandomPointGenerator(x: (low: -scaledWidth, high: scaledWidth),
-                                             y: (low: -scaledHeight, high: scaledHeight),
-                                        source: GKRandomSource())
-        
-        let randomDuration = GKRandomDistribution(lowestValue: 2, highestValue: 2)
-        enumerateChildNodes(withName: "SKReferenceNode") { node, stop in
-            guard let nodeParent = node.parent else { return }
-            
-            let finalPosition = node.position
-            
-            let newPosition = CGPoint(x: finalPosition.x, y: generator.newPoint().y)
-            
-            node.position = self.convert(newPosition, to: nodeParent)
-            node.alpha = 0
-            
-            let duration = TimeInterval(randomDuration.nextInt())
-            
-            let fadeIn = SKAction.fadeIn(withDuration: duration)
-            let move = SKAction.move(to: finalPosition, duration: duration)
-            
-            let actions = SKAction.group([fadeIn, move])
-            node.run(actions)
-        }
-    }
-    
+
     func handleZoom(recognizer: UIPinchGestureRecognizer) {
         guard let camera = camera else { return }
         
         if recognizer.state == .began {
+            // align recognizer scale with existing camera scale
             recognizer.scale = 1 / camera.xScale
         }
         
-        if recognizer.scale > 0.5 && recognizer.scale < 2 {
+        if (0.5...2).contains(recognizer.scale) {
+            
+            // if within allowable range, set camera scale
             camera.setScale(1 / recognizer.scale)
             
+            // remove existing camera bounds
             [cameraXBound, cameraYBound].forEach {
                 if let bound = $0, let index = camera.constraints?.index(of: bound) {
                     camera.constraints?.remove(at: index)
                 }
             }
         
+            // check what camera bounds can be set, set them
             passivelyEnableCameraBounds()
 
+            // reapplies ball tracking constraint, needs to scale with scene
             if isBallTrackingEnabled {
                 if let constraint = ballTracking, let index = camera.constraints?.index(of: constraint) {
                     camera.constraints?.remove(at: index)
                 }
                 
-                ballTracking = SKConstraint.distance(SKRange(value: 0, variance: ballFreedomRadius), to: ball)
+                let range = SKRange(value: 0, variance: ballFreedomRadius)
+                ballTracking = SKConstraint.distance(range, to: ball)
                 camera.constraints?.insert(ballTracking!, at: 0)
-
             }
         }
     }
@@ -253,17 +236,14 @@ class PuttScene: SKScene {
     func handlePan(recognizer: UIPanGestureRecognizer) {
         if recognizer.state == .began {
             recognizer.setTranslation(.zero, in: recognizer.view)
-
         } else if recognizer.state == .changed {
-            
             let translation = recognizer.translation(in: recognizer.view)
 
             let pan = SKAction.moveBy(x: -translation.x, y: translation.y, duration: 0)
             camera?.run(pan)
 
+            // reset recognizer to current camera state
             recognizer.setTranslation(.zero, in: recognizer.view)
-        } else if (recognizer.state == .ended) {
-        
         }
     }
 
@@ -276,22 +256,27 @@ class PuttScene: SKScene {
         for _ in touches {
             
             if let ballBody = ball.physicsBody {
-                if ballBody.velocity.magnitude < CGFloat(5) {
-                
-                    let dim = SKAction.fadeAlpha(by: -0.3, duration: 0.5)
-                    dim.timingMode = .easeOut
-
-                    ball.disableTrail()
-                    let enableTrail = SKAction.run(ball.enableTrail)
-                    let flash = SKAction.sequence([dim, dim.reversed(), enableTrail])
-                    ball.run(flash)
-                    
-                    ballBody.velocity = .zero
-                    
-                    adjustingShot = true
+                if ballBody.velocity.magnitude < 5.0 {
+                    beginShot()
                 }
             }
         }
+    }
+    
+    func beginShot() {
+        ball.disableTrail()
+
+        let dim = SKAction.fadeAlpha(by: -0.3, duration: 0.5)
+        dim.timingMode = .easeOut
+        
+        let enableTrail = SKAction.run(ball.enableTrail)
+        let flash = SKAction.sequence([dim, dim.reversed(), enableTrail])
+        ball.run(flash)
+        
+        // force ball to a halt
+        ball.physicsBody?.velocity = .zero
+        
+        adjustingShot = true
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -302,26 +287,35 @@ class PuttScene: SKScene {
             
             let ballPosition = ball.parent!.convert(ball.position, to: self)
             
-            
             let angle = ballPosition.angle(toPoint: touchLocation)
+            let shotStart = ballPosition
+            let shotEnd = CGPoint(x: shotStart.x+300*cos(angle),
+                                  y: shotStart.y+300*sin(angle))
+            
+            let shot = CGVector(dx: shotStart.x-shotEnd.x, dy: shotStart.y-shotEnd.y)
             let path = CGMutablePath()
-            path.move(to: ballPosition)
-            path.addLine(to: CGPoint(x: ballPosition.x+300*cos(angle), y: ballPosition.y+300*sin(angle)))
+            path.move(to: shotStart)
+            path.addLine(to: shotEnd)
+            
+            
+            
+//            let path = CGMutablePath()
+//            path.move(to: ballPosition)
+//            path.addLine(to: CGPoint(x: ballPosition.x+300*cos(angle), y: ballPosition.y+300*sin(angle)))
 //            let rayEnd = CGPoint(x: ballPosition.x+300*cos(angle), y: ballPosition.y+300*sin(angle))
             
-            if let shotPath = shotPath {
-                shotPath.path = path
-            } else {
-                shotPath = shotPath ?? SKShapeNode(path: path)
-                shotPath?.lineWidth = 2
-                shotPath?.strokeColor = .black
-            }
-
-            if shotPath?.parent == nil {
-                addChild(shotPath!)
-            }
+//            if let shotPath = shotPath {
+//                shotPath.path = path
+//            } else {
+//                shotPath = shotPath ?? SKShapeNode(path: path)
+//                shotPath?.lineWidth = 2
+//                shotPath?.strokeColor = .black
+//            }
+//
+//            if shotPath?.parent == nil {
+//                addChild(shotPath!)
+//            }
             
-            let end = CGPoint(x: ballPosition.x+300*cos(angle), y: ballPosition.y+300*sin(angle))
 
             if let shotIntersectionNode = shotIntersectionNode {
                 shotIntersectionNode.path = path
@@ -334,9 +328,14 @@ class PuttScene: SKScene {
             if shotIntersectionNode?.parent == nil {
                 addChild(shotIntersectionNode!)
             }
-            physicsWorld.enumerateBodies(alongRayStart: ballPosition, end: end) { body, point, normal, stop in
+            
+            let end = CGPoint(x: ballPosition.x+300*cos(angle), y: ballPosition.y+300*sin(angle))
+
+            physicsWorld.enumerateBodies(alongRayStart: ballPosition, end: shotEnd) { body, point, normal, stop in
 
                 if let node = body.node, node.name == Wall.nodeName {
+                    
+                    
                     let reflectedPath = CGMutablePath()
                     reflectedPath.move(to: point)
                     
@@ -346,7 +345,30 @@ class PuttScene: SKScene {
                     
                     self.shotIntersectionNode?.path = reflectedPath
                     
+                    
+//                    self.shaper = self.shaper ?? SKShapeNode(circleOfRadius: self.ball.size.width/2)
+//                    self.shaper?.fillColor = .white
+//                    self.shaper?.position = linerEnd
+//                    if self.shaper?.parent == nil {
+//                        self.addChild(self.shaper!)
+//                    }
+                    
+                   
+                    
                     stop.pointee = true
+
+                    
+//                    
+//                    let reflectedPath = path
+//                    reflectedPath.addLine(to: newPoint)
+//                    
+//                    let reflected = self.reflect(vector: CGVector(dx: end.x-ballPosition.x, dy: end.y-ballPosition.y), forNormal: normal, at: point, offOf: body)
+//                    
+//                    reflectedPath.addLine(to: CGPoint(x: point.x+reflected.dx/5.0, y: point.y+reflected.dy/5.0))
+//                    
+//                    self.shotIntersectionNode?.path = reflectedPath
+//                    
+//                    stop.pointee = true
                 }
             }
         }
@@ -374,21 +396,29 @@ class PuttScene: SKScene {
         
         let sound = SKAudioNode(fileNamed: "clubHit.wav")
         sound.autoplayLooped = false
+        sound.isPositional = true
         sound.position = convert(ball.position, from: ball.parent!)
+        
+        // scale volume with shot power
         let setVolume = SKAction.changeVolume(to: Float(power / 100.0), duration: 0)
 
-        let removal = SKAction.sequence([
+        let remove = SKAction.sequence([
             SKAction.wait(forDuration: 1),
-            SKAction.removeFromParent()
+            SKAction.removeFromParent(),
         ])
-        
+        sound.run(SKAction.group([setVolume, SKAction.play(), remove]))
+
         addChild(sound)
         
-        sound.run(SKAction.group([setVolume, SKAction.play(), removal]))
         ball.physicsBody?.applyImpulse(stroke)
         
-        shots.append(Shot(power: power, angle: angle, position: convert(ball.position, from: ball.parent!)))
+        let shot = Shot(power: power,
+                        angle: angle,
+                     position: convert(ball.position, from: ball.parent!))
+        // shot data tracked for sending
+        shots.append(shot)
         
+        // if no ball tracking, move camera toward ball
         if !isBallTrackingEnabled {
             let ballPosition = convert(ball.position, from: ball.parent!)
             
@@ -401,67 +431,67 @@ class PuttScene: SKScene {
     // MARK: Game Loop
     
     override func update(_ currentTime: TimeInterval) {
+        // grabs ball velocity before physics calculations,
+        // used in wall reflection
         ballPrePhysicsVelocity = ball.physicsBody?.velocity ?? .zero
     }
     
     override func didFinishUpdate() {
+        // if there is a wall reflection pending, apply it
         if let reflection = reflectionVelocity {
             ball.physicsBody?.velocity = reflection
             reflectionVelocity = nil
         }
         
         if !isBallTrackingEnabled {
-            let ballPosition = convert(ball.position, from: ball.parent!)
-            
-            if camera!.position.distance(toPoint: ballPosition) < ballFreedomRadius, camera?.action(forKey: "trackingEnabler") != nil {
-                
-                if let constraint = ballTracking, let index = camera?.constraints?.index(of: constraint) {
-                    camera?.constraints?.remove(at: index)
-                }
-                
-                ballTracking = SKConstraint.distance(SKRange(value: 0, variance: ballFreedomRadius), to: ball)
-                
-                let holeXRange = SKRange(upperLimit: self.cameraBounds.width/2-30)
-                let holeYRange = SKRange(upperLimit: self.cameraBounds.height/2-30)
-                
-                let holeInSight = SKConstraint.positionX(holeXRange, y: holeYRange)
-                
-                self.camera?.constraints = [ballTracking!]
-                camera?.removeAction(forKey: "trackingEnabler")
-            }
-            
+            passivelyEnableBallTracking()
         } else if isBallTrackingEnabled && !isCameraBounded {
             passivelyEnableCameraBounds()
         }
     }
     
+    func passivelyEnableBallTracking() {
+        let ballPosition = convert(ball.position, from: ball.parent!)
+        
+        // if ball is withing tracking range, start tracking
+        guard let _ = camera?.action(forKey: "trackingEnabler"),
+            camera!.position.distance(toPoint: ballPosition) < ballFreedomRadius else {
+            return
+        }
+        let tracking = SKConstraint.distance(SKRange(value: 0, variance: ballFreedomRadius), to: ball)
+        camera?.constraints?.insert(tracking, at: 0)
+        camera?.removeAction(forKey: "trackingEnabler")
+        
+        ballTracking = tracking
+    }
+    
     func passivelyEnableCameraBounds() {
-        let cameraSize = CGSize(width: self.size.width * self.camera!.xScale, height: self.size.height * self.camera!.yScale)
+        let cameraSize = CGSize(width: size.width * camera!.xScale, height: size.height * camera!.yScale)
         
         var xRange: SKRange!
         var yRange: SKRange!
         
-        if self.cameraBounds.width < cameraSize.width {
+        if cameraLimiter.width < cameraSize.width {
 
         } else {
-            xRange = SKRange(lowerLimit: self.cameraBounds.minX + cameraSize.width/2,
-                             upperLimit: self.cameraBounds.maxX - cameraSize.width/2)
+            xRange = SKRange(lowerLimit: cameraLimiter.minX + cameraSize.width/2,
+                             upperLimit: cameraLimiter.maxX - cameraSize.width/2)
         }
         
-        if self.cameraBounds.height < cameraSize.height {
+        if cameraLimiter.height < cameraSize.height {
 
         } else {
-            yRange = SKRange(lowerLimit: self.cameraBounds.minY + cameraSize.height/2,
-                             upperLimit: self.cameraBounds.maxY - cameraSize.height/2)
+            yRange = SKRange(lowerLimit: cameraLimiter.minY + cameraSize.height/2,
+                             upperLimit: cameraLimiter.maxY - cameraSize.height/2)
         }
         
-        if let range = xRange, camera!.position.x >= range.lowerLimit && camera!.position.x <= range.upperLimit, cameraXBound == nil {
+        if let range = xRange, range.closedInterval.contains(camera!.position.x), cameraXBound == nil {
             
             cameraXBound = SKConstraint.positionX(range)
             camera?.constraints?.insert(cameraXBound!, at: camera!.constraints!.count)
         }
         
-        if let range = yRange, camera!.position.y >= range.lowerLimit && camera!.position.y <= range.upperLimit, cameraYBound == nil {
+        if let range = yRange, range.closedInterval.contains(camera!.position.y), cameraYBound == nil {
             
             cameraYBound = SKConstraint.positionY(range)
             camera?.constraints?.insert(cameraYBound!, at: camera!.constraints!.count)
@@ -484,60 +514,18 @@ extension PuttScene: SKPhysicsContactDelegate {
             return bodies.filter{$0.node?.name==name}.first?.node
         }
         
-        if let _ = node(withName: Ball.name), let wall = node(withName: Wall.nodeName) {
-            wall.run(Action.with(name: .wallHit))
+        if let _ = node(withName: Ball.name) as? Ball,
+            let wall = node(withName: Wall.nodeName) as? Wall {
             
-            reflectionVelocity = reflect(velocity: ballPrePhysicsVelocity,
-                                              for: contact,
-                                             with: wall.physicsBody!)
-        } else {
-            reflectionVelocity = nil
+            ballHitWall(wall, contact: contact)
         }
         
-        if let ball = node(withName: Ball.name), let hole = node(withName: Hole.name) {
-            // if one node was the ball and another was the hole
-            
-            guard !holeComplete else { return }
-            // if hole isn't already completed
-
-            if let drop = SKAction(named: "Drop") {
-                let holePosition = hole.parent!.convert(hole.position, to: ball.parent!)
-                
-                let insideHole = SKAction.move(to: holePosition, duration: drop.duration/3)
-                insideHole.timingMode = .easeOut
-                let stopTrail = SKAction.run {
-                    self.ball.disableTrail()
-                }
-                let group = SKAction.group([drop, insideHole, stopTrail])
-                
-                // stop ball's existing motion
-                ball.physicsBody?.velocity = .zero
-                
-                ball.run(group)
-                
-                game.finish()
-            }
-            holeComplete = true
+        if let _ = node(withName: Ball.name) as? Ball, let hole = node(withName: Hole.name) as? Hole {
+           ballHitHole(hole, contact: contact)
         }
         
-        if let ball = node(withName: Ball.name), let portal = node(withName: Portal.name) {
-            guard !teleporting else { teleporting = false; return }
-            
-            if let destination = portal.parent?.parent?.parent?.userData?["destination"] as? String {
-                
-                enumerateChildNodes(withName: "//portal") { node, stop in
-
-                    if node.parent?.parent?.parent?.userData?["name"] as? String == destination {
-                        let move = SKAction.move(to: node.parent!.convert(node.position, to: ball.parent!), duration: 0)
-                        ball.run(move)
-                        
-                        let sound = SKAction.playSoundFileNamed("portalTransfer.mp3", waitForCompletion: false)
-                        self.run(sound)
-                        
-                        self.teleporting = true
-                    }
-                }
-            }
+        if let _ = node(withName: Ball.name), let portal = node(withName: Portal.name) as? Portal {
+            ballHitPortal(portal, contact: contact)
         }
     }
     
@@ -603,6 +591,60 @@ extension PuttScene: SKPhysicsContactDelegate {
         let r = CGVector(dx: entrance.dx-scaled.dx, dy: entrance.dy-scaled.dy)
         
         return r
+    }
+    
+    func ballHitWall(_ wall: Wall, contact: SKPhysicsContact) {
+        wall.run(Action.with(name: .wallHit))
+        
+        reflectionVelocity = reflect(velocity: ballPrePhysicsVelocity,
+                                          for: contact,
+                                         with: wall.physicsBody!)
+    }
+    
+    func ballHitHole(_ hole: Hole, contact: SKPhysicsContact) {
+        // if one node was the ball and another was the hole
+        
+        guard !holeComplete else { return }
+        // if hole isn't already completed
+        
+        if let drop = SKAction(named: "Drop") {
+            let holePosition = hole.parent!.convert(hole.position, to: ball.parent!)
+            
+            let insideHole = SKAction.move(to: holePosition, duration: drop.duration/3)
+            insideHole.timingMode = .easeOut
+            let stopTrail = SKAction.run {
+                self.ball.disableTrail()
+            }
+            let group = SKAction.group([drop, insideHole, stopTrail])
+            
+            // stop ball's existing motion
+            ball.physicsBody?.velocity = .zero
+            
+            ball.run(group)
+            
+            game.finish()
+        }
+        holeComplete = true
+    }
+    
+    func ballHitPortal(_ portal: Portal, contact: SKPhysicsContact) {
+        guard !teleporting else { teleporting = false; return }
+        
+        if let destination = portal.parent?.parent?.parent?.userData?["destination"] as? String {
+            
+            enumerateChildNodes(withName: "//portal") { node, stop in
+                
+                if node.parent?.parent?.parent?.userData?["name"] as? String == destination {
+                    let move = SKAction.move(to: node.parent!.convert(node.position, to: self.ball.parent!), duration: 0)
+                    self.ball.run(move)
+                    
+                    let sound = SKAction.playSoundFileNamed("portalTransfer.mp3", waitForCompletion: false)
+                    self.run(sound)
+                    
+                    self.teleporting = true
+                }
+            }
+        }
     }
 }
 

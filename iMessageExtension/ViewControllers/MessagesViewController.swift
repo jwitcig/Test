@@ -26,9 +26,7 @@ class MessagesViewController: MSMessagesAppViewController {
         if let message = conversation.selectedMessage {
             handleStarterEvent(message: message, conversation: conversation)
         } else {
-            let controller = storyboard!.instantiateViewController(withIdentifier: "CourseSelectionViewController") as! CourseSelectionViewController
-            controller.messageSender = self
-            controller.orientationManager = self
+            let controller = createCourseSelectionController()
             present(controller)
         }
     }
@@ -54,6 +52,13 @@ class MessagesViewController: MSMessagesAppViewController {
         controller.messageSender = self
         controller.orientationManager = self
         controller.configureScene(previousSession: reader.session, course: course)
+        return controller
+    }
+    
+    func createCourseSelectionController() -> CourseSelectionViewController {
+        let controller = storyboard!.instantiateViewController(withIdentifier: "CourseSelectionViewController") as! CourseSelectionViewController
+        controller.messageSender = self
+        controller.orientationManager = self
         return controller
     }
 }

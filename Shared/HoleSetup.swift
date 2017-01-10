@@ -48,9 +48,6 @@ class HoleSetup {
     
     static func setup(_ scene: SKScene, forHole hole: Int, inCourse course: CoursePack.Type) {
         
-        let background = scene.childNode(withName: "background") as? SKSpriteNode
-        background?.texture = SKTexture(imageNamed: "wall canvas")
-        
         switch course {
             
         case is Frost.Type:

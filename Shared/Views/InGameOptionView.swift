@@ -27,6 +27,10 @@ class InGameOptionView: UIView {
     
     var onChanged: (Void)->Void = { }
     
+    static func create() -> InGameOptionView {
+        return Bundle(for: InGameOptionView.self).loadNibNamed("InGameOptionView", owner: nil, options: nil)![0] as! InGameOptionView
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
