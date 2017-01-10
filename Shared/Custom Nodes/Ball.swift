@@ -39,10 +39,14 @@ class Ball: SKSpriteNode {
     }
     
     func enableTrail() {
-        addChild(ballTrail)
+        if ballTrail.parent == nil {
+            addChild(ballTrail)
+        }
     }
     
     func disableTrail() {
-        ballTrail.removeFromParent()
+        if ballTrail.parent != nil {
+            ballTrail.removeFromParent()
+        }
     }
 }
