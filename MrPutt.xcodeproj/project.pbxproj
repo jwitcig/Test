@@ -152,8 +152,8 @@
 		8BCF77121E03CD0200D48A61 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BCF77101E03CD0200D48A61 /* MainInterface.storyboard */; };
 		8BCF77141E03CD0200D48A61 /* iMessageAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BCF77131E03CD0200D48A61 /* iMessageAssets.xcassets */; };
 		8BCF77181E03CD0200D48A61 /* iMessageExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8BCF770A1E03CD0200D48A61 /* iMessageExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		8BD5ACCE1E2394F900FAF51F /* ScoreCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD5ACCD1E2394F900FAF51F /* ScoreCard.swift */; };
-		8BD5ACCF1E2394F900FAF51F /* ScoreCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD5ACCD1E2394F900FAF51F /* ScoreCard.swift */; };
+		8BD5ACCE1E2394F900FAF51F /* Scorecard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD5ACCD1E2394F900FAF51F /* Scorecard.swift */; };
+		8BD5ACCF1E2394F900FAF51F /* Scorecard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD5ACCD1E2394F900FAF51F /* Scorecard.swift */; };
 		8BD5ACDD1E23A3C100FAF51F /* ScoreCardStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD5ACDC1E23A3C100FAF51F /* ScoreCardStyleKit.swift */; };
 		8BD5ACDE1E23A3C100FAF51F /* ScoreCardStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD5ACDC1E23A3C100FAF51F /* ScoreCardStyleKit.swift */; };
 		D22F14111E1F7AAD00CA90CA /* PlaceholderiMessageAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D22F14101E1F7AAD00CA90CA /* PlaceholderiMessageAssets.xcassets */; };
@@ -518,7 +518,7 @@
 		8BCF77111E03CD0200D48A61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		8BCF77131E03CD0200D48A61 /* iMessageAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = iMessageAssets.xcassets; sourceTree = "<group>"; };
 		8BCF77151E03CD0200D48A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8BD5ACCD1E2394F900FAF51F /* ScoreCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreCard.swift; sourceTree = "<group>"; };
+		8BD5ACCD1E2394F900FAF51F /* Scorecard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scorecard.swift; sourceTree = "<group>"; };
 		8BD5ACDC1E23A3C100FAF51F /* ScoreCardStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreCardStyleKit.swift; sourceTree = "<group>"; };
 		8F233FA75BF56CABCE8E437B /* Pods-testGolf-iMessageExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGolf-iMessageExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testGolf-iMessageExtension/Pods-testGolf-iMessageExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		8F24A3D33C0A0B644C3537BB /* Pods-MrPutt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MrPutt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MrPutt/Pods-MrPutt.debug.xcconfig"; sourceTree = "<group>"; };
@@ -709,7 +709,7 @@
 				8B35A22A1E218A980063520C /* InGameOptionView.swift */,
 				8B35A22D1E218AA40063520C /* InGameOptionView.xib */,
 				8B6387071E21ECEE0059CFD2 /* SettingsButton.xib */,
-				8BD5ACCD1E2394F900FAF51F /* ScoreCard.swift */,
+				8BD5ACCD1E2394F900FAF51F /* Scorecard.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1712,7 +1712,7 @@
 				8B9620531E1C608900678257 /* HoleSetup.swift in Sources */,
 				8B35A2261E21895B0063520C /* InGameMenuView.swift in Sources */,
 				8B9620541E1C608900678257 /* Putt.swift in Sources */,
-				8BD5ACCF1E2394F900FAF51F /* ScoreCard.swift in Sources */,
+				8BD5ACCF1E2394F900FAF51F /* Scorecard.swift in Sources */,
 				8BBDBD3A1E1C93E500878B3A /* Portal.swift in Sources */,
 				8B96204E1E1C608900678257 /* Ball.swift in Sources */,
 				8BD5ACDE1E23A3C100FAF51F /* ScoreCardStyleKit.swift in Sources */,
@@ -1736,7 +1736,7 @@
 				8B96200B1E1C601600678257 /* Wall.swift in Sources */,
 				8B96200A1E1C601600678257 /* Mat.swift in Sources */,
 				8B35A2251E21895B0063520C /* InGameMenuView.swift in Sources */,
-				8BD5ACCE1E2394F900FAF51F /* ScoreCard.swift in Sources */,
+				8BD5ACCE1E2394F900FAF51F /* Scorecard.swift in Sources */,
 				8BBDBD391E1C93E500878B3A /* Portal.swift in Sources */,
 				8B96200F1E1C601600678257 /* PuttScene.swift in Sources */,
 				8BD5ACDD1E23A3C100FAF51F /* ScoreCardStyleKit.swift in Sources */,
