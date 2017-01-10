@@ -295,8 +295,6 @@ class PuttScene: SKScene {
             let shot = CGVector(dx: shotStart.x-shotEnd.x, dy: shotStart.y-shotEnd.y)
             let path = CGMutablePath()
             path.move(to: shotStart)
-            path.addLine(to: shotEnd)
-            
             
             
 //            let path = CGMutablePath()
@@ -315,14 +313,15 @@ class PuttScene: SKScene {
 //            if shotPath?.parent == nil {
 //                addChild(shotPath!)
 //            }
-            
 
             if let shotIntersectionNode = shotIntersectionNode {
                 shotIntersectionNode.path = path
             } else {
                 shotIntersectionNode = shotPath ?? SKShapeNode(path: path)
-                shotIntersectionNode?.lineWidth = 2
-                shotIntersectionNode?.strokeColor = .white
+                shotIntersectionNode?.lineWidth = 1
+                
+                shotIntersectionNode?.strokeColor = .black
+                shotIntersectionNode?.fillColor = .white
             }
             
             if shotIntersectionNode?.parent == nil {
@@ -334,24 +333,45 @@ class PuttScene: SKScene {
             physicsWorld.enumerateBodies(alongRayStart: ballPosition, end: shotEnd) { body, point, normal, stop in
 
                 if let node = body.node, node.name == Wall.nodeName {
+                    var newPoint: CGPoint = .zero
+
+                    
+                    let linerEnd = CGPoint(x: point.x+normal.normalized.dx*self.ball.frame.width/2,
+                                           y: point.y+normal.normalized.dy*self.ball.frame.width/2)
+                    
+                    let linerStart = CGPoint(x: linerEnd.x-normal.normalized.dy*0.001, y: linerEnd.y-normal.normalized.dx*0.001)
                     
                     
-                    let reflectedPath = CGMutablePath()
-                    reflectedPath.move(to: point)
+                    let liner = CGVector(dx: linerEnd.x - linerStart.x,
+                                         dy: linerEnd.y - linerStart.y)
                     
-                    let reflected = self.reflect(vector: CGVector(dx: end.x-ballPosition.x, dy: end.y-ballPosition.y), forNormal: normal, at: point, offOf: body)
                     
-                    reflectedPath.addLine(to: CGPoint(x: point.x+reflected.dx/5.0, y: point.y+reflected.dy/5.0))
+                    let cross = CGVector(dx: shotStart.x-linerStart.x, dy: shotStart.y-linerStart.x)
+                    
+                    let a = (shot.dx * liner.dx) + (cross.dx * shotStart.x)
+                    let b = (shotStart.y * liner.dx) + (shot.dx * linerStart.x)
+                    
+                    let t = a / b
+                    
+                    newPoint = CGPoint(x: linerStart.x + (liner * t).dx, y: linerStart.y + (liner * t).dy)
+
+                    
+                    let reflectedPath = path
+                    reflectedPath.addLine(to: newPoint)
+                    
+                    let reflected = self.reflect(vector: CGVector(dx: end.x-ballPosition.x, dy: end.y-ballPosition.y), forNormal: normal, at: newPoint, offOf: body)
+                    
+                    reflectedPath.addLine(to: CGPoint(x: newPoint.x+reflected.dx/5.0, y: newPoint.y+reflected.dy/5.0))
                     
                     self.shotIntersectionNode?.path = reflectedPath
                     
                     
-//                    self.shaper = self.shaper ?? SKShapeNode(circleOfRadius: self.ball.size.width/2)
-//                    self.shaper?.fillColor = .white
-//                    self.shaper?.position = linerEnd
-//                    if self.shaper?.parent == nil {
-//                        self.addChild(self.shaper!)
-//                    }
+                    self.shaper = self.shaper ?? SKShapeNode(circleOfRadius: self.ball.size.width/2)
+                    self.shaper?.fillColor = .white
+                    self.shaper?.position = newPoint
+                    if self.shaper?.parent == nil {
+                        self.addChild(self.shaper!)
+                    }
                     
                    
                     
