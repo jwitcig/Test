@@ -65,18 +65,26 @@ class GameViewController: UIViewController {
             $0.bottom == $1.bottom
         }
     
-//        constrain(image, toolsContainer) {
-//            $0.width == $0.height * (235.0/356.0)
-//
-//            $0.width == $1.width * 0.8 ~ 900
-//            $0.height == $1.height * 0.8 ~ 900
-//
-//            $0.width <= $1.width * 0.8
-//            $0.height <= $1.height * 0.8
-//
-//
-//            $0.center == $1.center
-//        }
+        
+        let p1 = [Int](repeatElement(9, count: 9))
+        let p2 = [Int](repeatElement(7, count: 9))
+        
+        let pars = [Int](repeatElement(3, count: 9))
+        
+        let scorecard = Scorecard(hole: 1, names: ("Jimmy", "John"), player1Strokes: p1, player2Strokes: p2, pars: pars)
+        toolsContainer.addSubview(scorecard)
+        
+        constrain(scorecard, toolsContainer) {
+            $0.width == $0.height * (235.0/356.0)
+
+            $0.width == $1.width * 0.8 ~ 900
+            $0.height == $1.height * 0.8 ~ 900
+
+            $0.width <= $1.width * 0.8
+            $0.height <= $1.height * 0.8
+
+            $0.center == $1.center
+        }
     }
     
     func configureScene(previousSession: PuttSession?, course: CoursePack.Type) {
