@@ -16,11 +16,6 @@ fastlane ios before_all
 fastlane ios certificates
 ```
 
-### ios build
-```
-fastlane ios build
-```
-
 ### ios fly
 ```
 fastlane ios fly
