@@ -49,15 +49,29 @@ class PuttScene: SKScene {
         return size.width * camera!.xScale * 0.4
     }
     
-    var isBallTrackingEnabled = false
+    var cameraXBound: SKConstraint?
+    var cameraYBound: SKConstraint?
+    
     var isCameraBounded: Bool {
-        return isCameraXBounded && isCameraYBounded
+        return cameraXBound != nil && cameraYBound != nil
     }
     
-    var isCameraXBounded = false
-    var isCameraYBounded = false
-    
     var ballTracking: SKConstraint?
+    var isBallTrackingEnabled: Bool {
+        return ballTracking != nil
+    }
+    
+    lazy var pan: UIPanGestureRecognizer? = {
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(PuttScene.handlePan(recognizer:)))
+        pan.minimumNumberOfTouches = 2
+        pan.delegate = self
+        return pan
+    }()
+    lazy var zoom: UIPinchGestureRecognizer? = {
+        let zoom = UIPinchGestureRecognizer(target: self, action: #selector(PuttScene.handleZoom(recognizer:)))
+        zoom.delegate = self
+        return zoom
+    }()
     
     // MARK: Scene Lifecycle
 
@@ -166,10 +180,13 @@ class PuttScene: SKScene {
     }
     
     func addGestureRecognizers(in view: SKView) {
-        let _ = UIPanGestureRecognizer(target: self, action: #selector(PuttScene.handlePan(recognizer:)))
-        
-        let zoom = UIPinchGestureRecognizer(target: self, action: #selector(PuttScene.handleZoom(recognizer:)))
-        view.addGestureRecognizer(zoom)
+        let recognizers: [UIGestureRecognizer?] = [pan, zoom]
+            
+        recognizers.forEach {
+            if let recognizer = $0 {
+                view.addGestureRecognizer(recognizer)
+            }
+        }
     }
     
     func animateTilesIntoScene() {
@@ -213,25 +230,23 @@ class PuttScene: SKScene {
         if recognizer.scale > 0.5 && recognizer.scale < 2 {
             camera.setScale(1 / recognizer.scale)
             
-            if isCameraBounded {
-                camera.constraints?.removeLast()
-                camera.constraints?.removeLast()
-                
-                isCameraXBounded = false
-                isCameraYBounded = false
-                
-                passivelyEnableCameraBounds()
-            } else if isCameraXBounded || isCameraYBounded {
-                camera.constraints?.removeLast()
-                
-                isCameraXBounded = false
-                isCameraYBounded = false
-                
-                passivelyEnableCameraBounds()
+            [cameraXBound, cameraYBound].forEach {
+                if let bound = $0, let index = camera.constraints?.index(of: bound) {
+                    camera.constraints?.remove(at: index)
+                }
             }
-            
-            let ballTracking = SKConstraint.distance(SKRange(value: 0, variance: ballFreedomRadius), to: ball)
-            camera.constraints?.insert(ballTracking, at: 1)
+        
+            passivelyEnableCameraBounds()
+
+            if isBallTrackingEnabled {
+                if let constraint = ballTracking, let index = camera.constraints?.index(of: constraint) {
+                    camera.constraints?.remove(at: index)
+                }
+                
+                ballTracking = SKConstraint.distance(SKRange(value: 0, variance: ballFreedomRadius), to: ball)
+                camera.constraints?.insert(ballTracking!, at: 0)
+
+            }
         }
     }
 
@@ -241,13 +256,12 @@ class PuttScene: SKScene {
 
         } else if recognizer.state == .changed {
             
-            var translation = recognizer.translation(in: recognizer.view)
-            translation = CGPoint(x: -translation.x, y: translation.y)
-            
-            scene?.position = CGPoint(x: scene!.position.x-translation.x, y: scene!.position.y-translation.y)
+            let translation = recognizer.translation(in: recognizer.view)
+
+            let pan = SKAction.moveBy(x: -translation.x, y: translation.y, duration: 0)
+            camera?.run(pan)
 
             recognizer.setTranslation(.zero, in: recognizer.view)
-            
         } else if (recognizer.state == .ended) {
         
         }
@@ -401,6 +415,10 @@ class PuttScene: SKScene {
             
             if camera!.position.distance(toPoint: ballPosition) < ballFreedomRadius, camera?.action(forKey: "trackingEnabler") != nil {
                 
+                if let constraint = ballTracking, let index = camera?.constraints?.index(of: constraint) {
+                    camera?.constraints?.remove(at: index)
+                }
+                
                 ballTracking = SKConstraint.distance(SKRange(value: 0, variance: ballFreedomRadius), to: ball)
                 
                 let holeXRange = SKRange(upperLimit: self.cameraBounds.width/2-30)
@@ -408,10 +426,8 @@ class PuttScene: SKScene {
                 
                 let holeInSight = SKConstraint.positionX(holeXRange, y: holeYRange)
                 
-                self.camera?.constraints = [holeInSight, ballTracking!]
+                self.camera?.constraints = [ballTracking!]
                 camera?.removeAction(forKey: "trackingEnabler")
-                
-                isBallTrackingEnabled = true
             }
             
         } else if isBallTrackingEnabled && !isCameraBounded {
@@ -426,31 +442,29 @@ class PuttScene: SKScene {
         var yRange: SKRange!
         
         if self.cameraBounds.width < cameraSize.width {
-            xRange = SKRange(lowerLimit: self.cameraBounds.midX,
-                             upperLimit: self.cameraBounds.midX)
+
         } else {
             xRange = SKRange(lowerLimit: self.cameraBounds.minX + cameraSize.width/2,
                              upperLimit: self.cameraBounds.maxX - cameraSize.width/2)
         }
         
         if self.cameraBounds.height < cameraSize.height {
-            yRange = SKRange(lowerLimit: self.cameraBounds.midY,
-                             upperLimit: self.cameraBounds.midY)
+
         } else {
             yRange = SKRange(lowerLimit: self.cameraBounds.minY + cameraSize.height/2,
                              upperLimit: self.cameraBounds.maxY - cameraSize.height/2)
         }
         
-        if camera!.position.x >= xRange.lowerLimit && camera!.position.x >= xRange.upperLimit, !isCameraXBounded {
+        if let range = xRange, camera!.position.x >= range.lowerLimit && camera!.position.x <= range.upperLimit, cameraXBound == nil {
             
-            camera?.constraints?.insert(SKConstraint.positionX(xRange), at: camera!.constraints!.count)
-            isCameraXBounded = true
+            cameraXBound = SKConstraint.positionX(range)
+            camera?.constraints?.insert(cameraXBound!, at: camera!.constraints!.count)
         }
         
-        if camera!.position.y >= yRange.lowerLimit && camera!.position.y >= yRange.upperLimit, !isCameraYBounded {
+        if let range = yRange, camera!.position.y >= range.lowerLimit && camera!.position.y <= range.upperLimit, cameraYBound == nil {
             
-            camera?.constraints?.insert(SKConstraint.positionY(yRange), at: camera!.constraints!.count)
-            isCameraYBounded = true
+            cameraYBound = SKConstraint.positionY(range)
+            camera?.constraints?.insert(cameraYBound!, at: camera!.constraints!.count)
         }
     }
 }
@@ -589,5 +603,18 @@ extension PuttScene: SKPhysicsContactDelegate {
         let r = CGVector(dx: entrance.dx-scaled.dx, dy: entrance.dy-scaled.dy)
         
         return r
+    }
+}
+
+extension PuttScene: UIGestureRecognizerDelegate {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    
+        if gestureRecognizer == pan && otherGestureRecognizer == zoom {
+            return true
+        }
+        if gestureRecognizer == zoom && otherGestureRecognizer == pan {
+            return true
+        }
+        return false
     }
 }
