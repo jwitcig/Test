@@ -84,6 +84,8 @@ class PuttScene: SKScene {
         return zoom
     }()
     
+    var scorecard: Scorecard?
+    
     // MARK: Scene Lifecycle
 
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -174,7 +176,7 @@ class PuttScene: SKScene {
     
     func setDebugOptions(on view: SKView) {
         view.showsFPS = true
-        view.showsPhysics = true
+        view.showsPhysics = false
         view.backgroundColor = .black
     }
     
@@ -689,7 +691,7 @@ extension PuttScene: SKPhysicsContactDelegate {
                 self.ball.disableTrail()
             }
             let group = SKAction.group([drop, insideHole, stopTrail])
-            
+
             // stop ball's existing motion
             ball.physicsBody?.velocity = .zero
             
@@ -717,6 +719,31 @@ extension PuttScene: SKPhysicsContactDelegate {
                     self.teleporting = true
                 }
             }
+        }
+    }
+    
+    func showScorecard(hole: Int, names: (String, String), player1Strokes: [Int], player2Strokes: [Int], pars: [Int], donePressed: @escaping ()->Void) {
+        
+        let scorecard = SKScene(fileNamed: "Scorecard")! as! Scorecard
+        self.scorecard = scorecard
+        scorecard.update(hole: hole, names: names, player1Strokes: player1Strokes, player2Strokes: player2Strokes, pars: pars)
+        scorecard.donePressed = donePressed
+        scorecard.zPosition = 100
+        addChild(scorecard)
+        
+        let touch = UITapGestureRecognizer(target: self, action: #selector(PuttScene.sceneClosePressed(recognizer:)))
+        view?.addGestureRecognizer(touch)
+    }
+    
+    func sceneClosePressed(recognizer: UITapGestureRecognizer) {
+        guard let scorecard = scorecard else { return  }
+        let viewLocation = recognizer.location(in: view!)
+        let sceneLocation = convertPoint(fromView: viewLocation)
+        
+        let location = convert(sceneLocation, to: scorecard)
+        
+        if scorecard.button.contains(location) {
+            scorecard.donePressed()
         }
     }
 }

@@ -64,27 +64,6 @@ class GameViewController: UIViewController {
             $0.top == $1.top
             $0.bottom == $1.bottom
         }
-    
-        
-        let p1 = [Int](repeatElement(9, count: 9))
-        let p2 = [Int](repeatElement(7, count: 9))
-        
-        let pars = [Int](repeatElement(3, count: 9))
-        
-        let scorecard = Scorecard(hole: 1, names: ("Jimmy", "John"), player1Strokes: p1, player2Strokes: p2, pars: pars)
-        toolsContainer.addSubview(scorecard)
-        
-        constrain(scorecard, toolsContainer) {
-            $0.width == $0.height * (235.0/356.0)
-
-            $0.width == $1.width * 0.8 ~ 900
-            $0.height == $1.height * 0.8 ~ 900
-
-            $0.width <= $1.width * 0.8
-            $0.height <= $1.height * 0.8
-
-            $0.center == $1.center
-        }
     }
     
     func configureScene(previousSession: PuttSession?, course: CoursePack.Type) {
@@ -234,24 +213,37 @@ class GameViewController: UIViewController {
     }
     
     func finished(session: PuttSession) {
-        guard let message = PuttMessageWriter(data: session.dictionary,
-                                           session: session.messageSession)?.message else { return }
-        
-        let layout = PuttMessageLayoutBuilder(session: session).generateLayout()
         
         
-        messageSender?.send(message: message, layout: layout, completionHandler: { error in
-        })
+        let hole = session.initial.holeNumber
         
-        orientationManager?.requestPresentationStyle(.compact)
+        let names = ("John", "Chris")
         
-        showGameViewControllerViews()
+        let player1Strokes = session.gameData.shots
+        let player2Strokes = session.gameData.opponentShots
+
+        let pars = [Int](repeatElement(3, count: 9))
         
-        let fadeOut = SKAction.fadeOut(withDuration: 0.5)
-        let remove = SKAction.run {
-            self.sceneView.presentScene(nil)
+        scene.showScorecard(hole: hole, names: names, player1Strokes: player1Strokes, player2Strokes: player2Strokes, pars: pars) {
+            
+            guard let message = PuttMessageWriter(data: session.dictionary,
+                                                  session: session.messageSession)?.message else { return }
+            
+            let layout = PuttMessageLayoutBuilder(session: session).generateLayout()
+            
+            self.messageSender?.send(message: message, layout: layout, completionHandler: { error in
+            })
+            
+            self.orientationManager?.requestPresentationStyle(.compact)
+            
+            self.showGameViewControllerViews()
+            
+            let fadeOut = SKAction.fadeOut(withDuration: 0.5)
+            let remove = SKAction.run {
+                self.sceneView.presentScene(nil)
+            }
+            self.scene.run(SKAction.sequence([fadeOut, remove]))
         }
-        scene.run(SKAction.sequence([fadeOut, remove]))
     }
     
     func generateSession() -> PuttSession {

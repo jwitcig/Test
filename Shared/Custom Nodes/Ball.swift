@@ -16,6 +16,8 @@ class Ball: SKSpriteNode {
     lazy var ballTrail: SKEmitterNode = {
         return self.childNode(withName: "//ballTrail")! as! SKEmitterNode
     }()
+    
+    var trailBirthrate: CGFloat = 100
  
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -39,14 +41,11 @@ class Ball: SKSpriteNode {
     }
     
     func enableTrail() {
-        if ballTrail.parent == nil {
-            addChild(ballTrail)
-        }
+        ballTrail.particleBirthRate = trailBirthrate
     }
     
     func disableTrail() {
-        if ballTrail.parent != nil {
-            ballTrail.removeFromParent()
-        }
+        trailBirthrate = ballTrail.particleBirthRate
+        ballTrail.particleBirthRate = 0
     }
 }
