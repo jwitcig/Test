@@ -321,7 +321,6 @@ class PuttScene: SKScene {
                 shotIntersectionNode?.lineWidth = 1
                 
                 shotIntersectionNode?.strokeColor = .black
-                shotIntersectionNode?.fillColor = .white
             }
             
             if shotIntersectionNode?.parent == nil {
