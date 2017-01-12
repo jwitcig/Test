@@ -49,35 +49,38 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="courseSelectionBackground" translatesAutoresizingMaskIntoConstraints="NO" id="4tM-Ze-Zt2">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4f-mG-lVD">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4f-mG-lVD">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oCs-2H-YTD">
+                                        <rect key="frame" x="40" y="8" width="240" height="128"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cmQ-jY-uhT">
+                                                <rect key="frame" x="-120" y="-11" width="480" height="128"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="AOn-uX-oGA">
+                                                        <rect key="frame" x="0.0" y="0.0" width="480" height="128"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="cmQ-jY-uhT" secondAttribute="bottom" id="MGn-82-gHZ"/>
+                                            <constraint firstItem="cmQ-jY-uhT" firstAttribute="leading" secondItem="oCs-2H-YTD" secondAttribute="leading" id="NuP-x4-hL1"/>
+                                            <constraint firstAttribute="height" constant="128" id="O3B-kQ-f3F"/>
+                                            <constraint firstAttribute="trailing" secondItem="cmQ-jY-uhT" secondAttribute="trailing" id="avf-MB-vmS"/>
+                                            <constraint firstItem="cmQ-jY-uhT" firstAttribute="top" secondItem="oCs-2H-YTD" secondAttribute="top" id="qbC-nI-b3Q"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                             </scrollView>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="locations" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUW-m3-0xk">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="z0S-bB-ZQ4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Bebas" family="Bebas" pointSize="34"/>
-                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fadeWhite" translatesAutoresizingMaskIntoConstraints="NO" id="S8o-6C-cfP">
-                                <rect key="frame" x="0.0" y="55" width="320" height="145"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="S8o-6C-cfP" secondAttribute="trailing" id="28u-p5-TuP"/>
-                            <constraint firstItem="S8o-6C-cfP" firstAttribute="top" secondItem="sUW-m3-0xk" secondAttribute="bottom" id="9bG-GG-WiW"/>
-                            <constraint firstAttribute="trailing" secondItem="sUW-m3-0xk" secondAttribute="trailing" id="AHa-WW-p3I"/>
-                            <constraint firstItem="sUW-m3-0xk" firstAttribute="top" secondItem="BDj-cZ-dTz" secondAttribute="bottom" id="HYT-FK-HGO"/>
                             <constraint firstItem="4tM-Ze-Zt2" firstAttribute="height" secondItem="tns-IW-MKR" secondAttribute="height" id="LUH-w5-DJZ"/>
-                            <constraint firstItem="S8o-6C-cfP" firstAttribute="leading" secondItem="tns-IW-MKR" secondAttribute="leading" id="QLy-IH-9by"/>
                             <constraint firstItem="4tM-Ze-Zt2" firstAttribute="centerY" secondItem="tns-IW-MKR" secondAttribute="centerY" id="R4t-jw-0Ff"/>
                             <constraint firstItem="4tM-Ze-Zt2" firstAttribute="width" secondItem="tns-IW-MKR" secondAttribute="width" id="Sdo-J6-1O7"/>
-                            <constraint firstItem="sUW-m3-0xk" firstAttribute="leading" secondItem="tns-IW-MKR" secondAttribute="leading" id="a5B-OA-djL"/>
-                            <constraint firstItem="0K5-cI-TmE" firstAttribute="top" secondItem="S8o-6C-cfP" secondAttribute="bottom" id="b1P-xX-U9i"/>
                             <constraint firstItem="E4f-mG-lVD" firstAttribute="top" secondItem="BDj-cZ-dTz" secondAttribute="bottom" id="kMc-Kd-a3v"/>
                             <constraint firstItem="E4f-mG-lVD" firstAttribute="leading" secondItem="tns-IW-MKR" secondAttribute="leading" id="pl4-PT-cEN"/>
                             <constraint firstItem="4tM-Ze-Zt2" firstAttribute="centerX" secondItem="tns-IW-MKR" secondAttribute="centerX" id="qQH-uN-Qul"/>
@@ -89,6 +92,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="200"/>
                     <connections>
+                        <outlet property="headerView" destination="oCs-2H-YTD" id="HZh-uu-Bn4"/>
                         <outlet property="scrollView" destination="E4f-mG-lVD" id="Ytf-p0-Gyc"/>
                     </connections>
                 </viewController>
@@ -145,7 +149,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="courseSelectionBackground" width="62" height="59"/>
-        <image name="fadeWhite" width="240" height="125"/>
+        <image name="courseSelectionBackground" width="80" height="80"/>
+        <image name="header" width="480" height="403"/>
     </resources>
 </document>

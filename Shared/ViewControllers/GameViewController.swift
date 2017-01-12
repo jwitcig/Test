@@ -89,7 +89,7 @@ class GameViewController: UIViewController {
 
         scene.game = Putt(previousSession: previousSession, initial: previousSession?.initial, padding: nil, cycle: cycle)
         
-        HoleSetup.setup(scene, forHole: hole, inCourse: Frost.self)
+        HoleSetup.setup(scene, forHole: hole, inCourse: course)
     
         orientationManager?.requestPresentationStyle(.expanded)
         sceneView.presentScene(scene)
