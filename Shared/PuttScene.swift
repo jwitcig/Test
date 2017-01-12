@@ -377,9 +377,9 @@ class PuttScene: SKScene {
                     let reflectedPath = path
                     reflectedPath.addLine(to: newPoint)
                     
-                    let reflected = self.reflect(vector: CGVector(dx: end.x-ballPosition.x, dy: end.y-ballPosition.y), forNormal: normal, at: newPoint, offOf: body).normalized
+                    let reflected = self.reflect(vector: CGVector(dx: end.x-ballPosition.x, dy: end.y-ballPosition.y), across: normal, at: newPoint, offOf: body).normalized
                     
-                    let reflectionLength: CGFloat = 30
+                    let reflectionLength: CGFloat = 50
                     reflectedPath.addLine(to: CGPoint(x: newPoint.x+reflected.dx*reflectionLength, y: newPoint.y+reflected.dy*reflectionLength))
                     
                     self.shotIntersectionNode?.path = reflectedPath
@@ -633,11 +633,9 @@ extension PuttScene: SKPhysicsContactDelegate {
 //        let reflected = entrance − 2(entrance ⋅ normal)normal
 //        r = d−(2d⋅n)‖n‖n
         
-        let normalized = CGVector(dx: normal.dx/normal.magnitude, dy: normal.dy/normal.magnitude)
+        let normalized = normal.normalized
         
-        normalized.normalized
-        
-        let dot = entrance.dx*normalized.dx + entrance.dy*normalized.dy
+        let dot = entrance • normalized
         let directed = CGVector(dx: dot*normalized.dx, dy: dot*normalized.dy)
         let scaled = CGVector(dx: 2*directed.dx, dy: 2*directed.dy)
         
