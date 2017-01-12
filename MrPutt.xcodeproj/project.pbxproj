@@ -47,6 +47,10 @@
 		8B13B3611E1C891900C0044A /* Frost-Hole9.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3541E1C891900C0044A /* Frost-Hole9.sks */; };
 		8B13B3621E1C891900C0044A /* Frost-Hole9.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3541E1C891900C0044A /* Frost-Hole9.sks */; };
 		8B232E251E20FA92000FCF07 /* blazeCornerBottomRight.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B232E0F1E20FA92000FCF07 /* blazeCornerBottomRight.sks */; };
+		8B279D2E1E2724C30094DC62 /* Scorecard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B279D2D1E2724C30094DC62 /* Scorecard.swift */; };
+		8B279D2F1E2724C30094DC62 /* Scorecard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B279D2D1E2724C30094DC62 /* Scorecard.swift */; };
+		8B279D311E2725CF0094DC62 /* Scorecard.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B279D301E2725CF0094DC62 /* Scorecard.sks */; };
+		8B279D321E2725CF0094DC62 /* Scorecard.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B279D301E2725CF0094DC62 /* Scorecard.sks */; };
 		8B35A2251E21895B0063520C /* InGameMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B35A2241E21895B0063520C /* InGameMenuView.swift */; };
 		8B35A2261E21895B0063520C /* InGameMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B35A2241E21895B0063520C /* InGameMenuView.swift */; };
 		8B35A2281E2189710063520C /* InGameMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B35A2271E2189710063520C /* InGameMenuView.xib */; };
@@ -152,10 +156,8 @@
 		8BCF77121E03CD0200D48A61 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BCF77101E03CD0200D48A61 /* MainInterface.storyboard */; };
 		8BCF77141E03CD0200D48A61 /* iMessageAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BCF77131E03CD0200D48A61 /* iMessageAssets.xcassets */; };
 		8BCF77181E03CD0200D48A61 /* iMessageExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8BCF770A1E03CD0200D48A61 /* iMessageExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		8BD5ACCE1E2394F900FAF51F /* Scorecard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD5ACCD1E2394F900FAF51F /* Scorecard.swift */; };
-		8BD5ACCF1E2394F900FAF51F /* Scorecard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD5ACCD1E2394F900FAF51F /* Scorecard.swift */; };
-		8BD5ACDD1E23A3C100FAF51F /* ScoreCardStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD5ACDC1E23A3C100FAF51F /* ScoreCardStyleKit.swift */; };
-		8BD5ACDE1E23A3C100FAF51F /* ScoreCardStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD5ACDC1E23A3C100FAF51F /* ScoreCardStyleKit.swift */; };
+		8BD5ACDD1E23A3C100FAF51F /* ScorecardStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD5ACDC1E23A3C100FAF51F /* ScorecardStyleKit.swift */; };
+		8BD5ACDE1E23A3C100FAF51F /* ScorecardStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD5ACDC1E23A3C100FAF51F /* ScorecardStyleKit.swift */; };
 		D22F14111E1F7AAD00CA90CA /* PlaceholderiMessageAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D22F14101E1F7AAD00CA90CA /* PlaceholderiMessageAssets.xcassets */; };
 		D289FE7D1E1F73530006F0A7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B96207E1E1C60CB00678257 /* Info.plist */; };
 		D29256841E1F7A60000FB092 /* PlaceholderAppAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D29256831E1F7A60000FB092 /* PlaceholderAppAssets.xcassets */; };
@@ -466,6 +468,8 @@
 		8B13B3531E1C891900C0044A /* Frost-Hole8.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Frost-Hole8.sks"; sourceTree = "<group>"; };
 		8B13B3541E1C891900C0044A /* Frost-Hole9.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Frost-Hole9.sks"; sourceTree = "<group>"; };
 		8B232E0F1E20FA92000FCF07 /* blazeCornerBottomRight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = blazeCornerBottomRight.sks; path = Shared/SpriteKit/Nodes/Tiles/blazeCornerBottomRight.sks; sourceTree = "<group>"; };
+		8B279D2D1E2724C30094DC62 /* Scorecard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scorecard.swift; sourceTree = "<group>"; };
+		8B279D301E2725CF0094DC62 /* Scorecard.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scorecard.sks; sourceTree = "<group>"; };
 		8B35A2241E21895B0063520C /* InGameMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InGameMenuView.swift; sourceTree = "<group>"; };
 		8B35A2271E2189710063520C /* InGameMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InGameMenuView.xib; sourceTree = "<group>"; };
 		8B35A22A1E218A980063520C /* InGameOptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InGameOptionView.swift; sourceTree = "<group>"; };
@@ -518,8 +522,7 @@
 		8BCF77111E03CD0200D48A61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		8BCF77131E03CD0200D48A61 /* iMessageAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = iMessageAssets.xcassets; sourceTree = "<group>"; };
 		8BCF77151E03CD0200D48A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8BD5ACCD1E2394F900FAF51F /* Scorecard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scorecard.swift; sourceTree = "<group>"; };
-		8BD5ACDC1E23A3C100FAF51F /* ScoreCardStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreCardStyleKit.swift; sourceTree = "<group>"; };
+		8BD5ACDC1E23A3C100FAF51F /* ScorecardStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScorecardStyleKit.swift; sourceTree = "<group>"; };
 		8F233FA75BF56CABCE8E437B /* Pods-testGolf-iMessageExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGolf-iMessageExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testGolf-iMessageExtension/Pods-testGolf-iMessageExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		8F24A3D33C0A0B644C3537BB /* Pods-MrPutt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MrPutt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MrPutt/Pods-MrPutt.debug.xcconfig"; sourceTree = "<group>"; };
 		90256A5B1AAB50A8F1542411 /* Pods-testGolf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGolf.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testGolf/Pods-testGolf.debug.xcconfig"; sourceTree = "<group>"; };
@@ -709,7 +712,6 @@
 				8B35A22A1E218A980063520C /* InGameOptionView.swift */,
 				8B35A22D1E218AA40063520C /* InGameOptionView.xib */,
 				8B6387071E21ECEE0059CFD2 /* SettingsButton.xib */,
-				8BD5ACCD1E2394F900FAF51F /* Scorecard.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -763,7 +765,7 @@
 		8B961F261E1C601600678257 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				8BD5ACDC1E23A3C100FAF51F /* ScoreCardStyleKit.swift */,
+				8BD5ACDC1E23A3C100FAF51F /* ScorecardStyleKit.swift */,
 				8B9620311E1C603400678257 /* SharedAssets.xcassets */,
 				8B961F201E1C601600678257 /* Audio */,
 				8B961F231E1C601600678257 /* Fonts */,
@@ -780,6 +782,7 @@
 				8B961F291E1C601600678257 /* Mat.swift */,
 				8B961F2A1E1C601600678257 /* Wall.swift */,
 				8BBDBD381E1C93E500878B3A /* Portal.swift */,
+				8B279D2D1E2724C30094DC62 /* Scorecard.swift */,
 			);
 			path = "Custom Nodes";
 			sourceTree = "<group>";
@@ -867,6 +870,7 @@
 				8B073B661E1C92B7008BBAE6 /* Hill.sks */,
 				8B961F451E1C601600678257 /* Mat.sks */,
 				8B5F8B401E22F925009C262F /* HoleTile.sks */,
+				8B279D301E2725CF0094DC62 /* Scorecard.sks */,
 				E87030251E219CD8008A7DDD /* Nebula */,
 				E86513C21E1DAB0D005FBA85 /* Timber */,
 				E86513C31E1DAB18005FBA85 /* Blaze */,
@@ -1246,6 +1250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B279D321E2725CF0094DC62 /* Scorecard.sks in Resources */,
 				E87030581E21A429008A7DDD /* timberCornerTopRight.sks in Resources */,
 				E87030651E21A429008A7DDD /* timberUWallLeft.sks in Resources */,
 				E87030311E21A41B008A7DDD /* frostCurvedWallShort.sks in Resources */,
@@ -1467,6 +1472,7 @@
 				E89473EA1E2461CF0013E9F4 /* frostSlabCircle.sks in Resources */,
 				8BBD3B5D1E1DAFAB00688836 /* PortalEmitter.sks in Resources */,
 				E8A12A2C1E222C0A00768580 /* nebulaBottomWall.sks in Resources */,
+				8B279D311E2725CF0094DC62 /* Scorecard.sks in Resources */,
 				E89F98401E2227DC00178B4F /* nebulaMultiCorner.sks in Resources */,
 				E8CC43DE1E243FD10075AD34 /* frostLeftWall.sks in Resources */,
 				E865FFF91E1DC0510072E2E3 /* Timber-Hole4.sks in Resources */,
@@ -1703,6 +1709,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B279D2F1E2724C30094DC62 /* Scorecard.swift in Sources */,
 				8B35A2331E218CF90063520C /* CourseSelectionViewController.swift in Sources */,
 				8B9620751E1C60B400678257 /* CoursePreviewView.swift in Sources */,
 				8B9620521E1C608900678257 /* Data.swift in Sources */,
@@ -1712,10 +1719,9 @@
 				8B9620531E1C608900678257 /* HoleSetup.swift in Sources */,
 				8B35A2261E21895B0063520C /* InGameMenuView.swift in Sources */,
 				8B9620541E1C608900678257 /* Putt.swift in Sources */,
-				8BD5ACCF1E2394F900FAF51F /* Scorecard.swift in Sources */,
 				8BBDBD3A1E1C93E500878B3A /* Portal.swift in Sources */,
 				8B96204E1E1C608900678257 /* Ball.swift in Sources */,
-				8BD5ACDE1E23A3C100FAF51F /* ScoreCardStyleKit.swift in Sources */,
+				8BD5ACDE1E23A3C100FAF51F /* ScorecardStyleKit.swift in Sources */,
 				8B35A2351E218CF90063520C /* GameViewController.swift in Sources */,
 				8B96204F1E1C608900678257 /* Hole.swift in Sources */,
 				8B9620551E1C608900678257 /* PuttScene.swift in Sources */,
@@ -1727,6 +1733,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B279D2E1E2724C30094DC62 /* Scorecard.swift in Sources */,
 				8B35A2321E218CF90063520C /* CourseSelectionViewController.swift in Sources */,
 				8B96202F1E1C601600678257 /* CoursePreviewView.swift in Sources */,
 				8B9620081E1C601600678257 /* Ball.swift in Sources */,
@@ -1736,10 +1743,9 @@
 				8B96200B1E1C601600678257 /* Wall.swift in Sources */,
 				8B96200A1E1C601600678257 /* Mat.swift in Sources */,
 				8B35A2251E21895B0063520C /* InGameMenuView.swift in Sources */,
-				8BD5ACCE1E2394F900FAF51F /* Scorecard.swift in Sources */,
 				8BBDBD391E1C93E500878B3A /* Portal.swift in Sources */,
 				8B96200F1E1C601600678257 /* PuttScene.swift in Sources */,
-				8BD5ACDD1E23A3C100FAF51F /* ScoreCardStyleKit.swift in Sources */,
+				8BD5ACDD1E23A3C100FAF51F /* ScorecardStyleKit.swift in Sources */,
 				8B35A2341E218CF90063520C /* GameViewController.swift in Sources */,
 				8B9620091E1C601600678257 /* Hole.swift in Sources */,
 				8B9620841E1C610F00678257 /* AppDelegate.swift in Sources */,
