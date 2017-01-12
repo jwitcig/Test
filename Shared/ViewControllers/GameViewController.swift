@@ -213,8 +213,6 @@ class GameViewController: UIViewController {
     }
     
     func finished(session: PuttSession) {
-        
-        
         let hole = session.initial.holeNumber
         
         let names = ("John", "Chris")
@@ -262,7 +260,7 @@ class GameViewController: UIViewController {
         }
         
         let instance = PuttInstanceData(shots: shots, opponentShots: opponentSession?.gameData.shots, winner: winner)
-        let initial = PuttInitialData(course: scene.course, holeNumber: scene.hole, holeSet: [1, 2, 3])
+        let initial = PuttInitialData(course: scene.course, holeNumber: scene.hole, holeSet: Array(1...9))
         return PuttSession(instance: instance, initial: initial, ended: false, messageSession: opponentSession?.messageSession)
     }
 
