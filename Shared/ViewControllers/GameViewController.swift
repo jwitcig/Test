@@ -38,10 +38,14 @@ class GameViewController: UIViewController {
     
     var settingsPane: InGameMenuView?
     
+    var blurredScene: SKEffectNode?
+    
+    var settings: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let settings = Bundle(for: GameViewController.self).loadNibNamed("SettingsButton", owner: nil, options: nil)![0] as! UIButton
+        settings = Bundle(for: GameViewController.self).loadNibNamed("SettingsButton", owner: nil, options: nil)![0] as! UIButton
         
         settings.addTarget(self, action: #selector(GameViewController.menuLaunch(sender:)), for: .touchUpInside)
 
@@ -173,25 +177,44 @@ class GameViewController: UIViewController {
     
     func menuLaunch(sender: Any) {
         let settingsPane = self.settingsPane ?? createSettingsPane()
+        self.settingsPane = settingsPane
         
-        toolsContainer.addSubview(settingsPane)
-        
-        let blurred = blur(node: scene, in: sceneView, withDuration: 2)
-
-        settingsPane.dismissBlock = {
-            self.unblur(node: blurred, withDuration: 2, completion: blurred.removeFromParent)
-        }
-        
-        constrain(settingsPane, toolsContainer) {
-            $0.width == $1.width * 0.8
-            $0.height >= $1.height * 0.5
+        if settingsPane.superview == nil {
+            toolsContainer.addSubview(settingsPane)
+            settingsPane.visibleConstraints.active = false
+            settingsPane.hiddenConstraints.active = true
             
-            $0.centerX == $1.centerX
+            constrain(settingsPane, toolsContainer) {
+                $0.width == $1.width * 0.8
+                $0.height >= $1.height * 0.5
+                
+                $0.centerX == $1.centerX
+            }
+            
+            settingsPane.willBeginMotion = {
+                self.settings.isEnabled = false
+            }
+            
+            settingsPane.didFinishMotion = {
+                self.settings.isEnabled = true
+            }
+            
+            self.blurredScene = blur(node: scene, in: sceneView, withDuration: 1)
+            settingsPane.dismissBlock = {
+                if let blurred = self.blurredScene {
+                    self.unblur(node: blurred, withDuration: 1, completion: blurred.removeFromParent)
+                }
+                self.settingsPane = nil
+                self.scene.isUserInteractionEnabled = true
+            }
         }
+        
+        toolsContainer.setNeedsLayout()
     
         if settingsPane.isShown {
             settingsPane.dismiss()
         } else {
+            scene.isUserInteractionEnabled = false
             settingsPane.show()
         }
     }

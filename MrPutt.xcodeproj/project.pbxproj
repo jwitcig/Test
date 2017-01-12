@@ -1792,15 +1792,16 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 349WFX4WJR;
 				ENABLE_ONLY_ACTIVE_RESOURCES = NO;
 				INFOPLIST_FILE = iMessageExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jwitapps.MrPutt.iMessageExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d5253179-cc60-4483-bb42-9b26ff2462bd";
+				PROVISIONING_PROFILE = "dc18c1a8-82c9-40ed-b821-a09b2f14cfa8";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.jwitapps.MrPutt.iMessageExtension";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -1820,7 +1821,7 @@
 				DEVELOPMENT_TEAM = 349WFX4WJR;
 				ENABLE_ONLY_ACTIVE_RESOURCES = NO;
 				INFOPLIST_FILE = iMessageExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jwitapps.MrPutt.iMessageExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1939,7 +1940,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jwitapps.MrPutt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7285ef45-9613-4437-a541-2367ba9e8030";
+				PROVISIONING_PROFILE = "51ba0a67-d0ed-4ea3-b7f3-13cfa1bd2817";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.jwitapps.MrPutt";
 				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
