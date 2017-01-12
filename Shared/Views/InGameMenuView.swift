@@ -14,11 +14,16 @@ class InGameMenuView: UIView {
 
     @IBOutlet weak var mainStackView: UIStackView!
     
+    var willBeginMotion: ()->Void = {}
+    var didFinishMotion: ()->Void = {}
+    
     var dismissBlock: ()->() = {}
     
     var isShown: Bool {
         return visibleConstraints.active
     }
+    
+    var inMotion = false
     
     lazy var hiddenConstraints: ConstraintGroup = {
         return constrain(self, self.superview!) {
@@ -65,6 +70,8 @@ class InGameMenuView: UIView {
     }
     
     func show() {
+        willBeginMotion()
+        
         visibleConstraints.active = false
         hiddenConstraints.active = true
         
@@ -73,15 +80,19 @@ class InGameMenuView: UIView {
         hiddenConstraints.active = false
         visibleConstraints.active = true
         
-        UIView.animate(withDuration: TimeInterval(animationDuration), animations: superview!.layoutIfNeeded)
+        UIView.animate(withDuration: TimeInterval(animationDuration), animations: superview!.layoutIfNeeded) { _ in
+            self.didFinishMotion()
+        }
     }
     
     func dismiss() {
+        willBeginMotion()
+
         visibleConstraints.active = false
         hiddenConstraints.active = true
-
+        
         UIView.animate(withDuration: TimeInterval(animationDuration), animations: superview!.layoutIfNeeded) { _ in
-            self.removeFromSuperview()
+            self.didFinishMotion()
         }
         dismissBlock()
     }
