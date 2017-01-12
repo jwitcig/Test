@@ -93,11 +93,18 @@ class Scorecard: SKScene {
         let crop = SKCropNode()
         crop.maskNode = mask
         crop.position = childNode(withName: "infoCropper")!.position
-        infoPanel.position = .zero
+        infoPanel.position = CGPoint(x: 50, y: 0)
         infoPanel.removeFromParent()
         crop.addChild(infoPanel)
         
         addChild(crop)
+    }
+    
+    func showHoleInfo() {
+        let slide = SKAction.moveBy(x: -50, y: 0, duration: 0.8)
+        slide.timingMode = .easeOut
+        
+        infoPanel.run(slide)
     }
     
 }
