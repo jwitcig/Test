@@ -314,11 +314,14 @@ class PuttScene: SKScene {
 //                addChild(shotPath!)
 //            }
 
+            
+            
             if let shotIntersectionNode = shotIntersectionNode {
                 shotIntersectionNode.path = path
             } else {
                 shotIntersectionNode = shotPath ?? SKShapeNode(path: path)
-                shotIntersectionNode?.lineWidth = 1
+                shotIntersectionNode?.alpha = 0
+                shotIntersectionNode?.lineWidth = 4
                 
                 shotIntersectionNode?.strokeColor = .black
             }
@@ -327,10 +330,24 @@ class PuttScene: SKScene {
                 addChild(shotIntersectionNode!)
             }
             
+            let fadeIn = SKAction.fadeAlpha(to: 0.2, duration: 0.4)
+            shotIntersectionNode!.run(fadeIn)
+            
             let end = CGPoint(x: ballPosition.x+300*cos(angle), y: ballPosition.y+300*sin(angle))
 
             physicsWorld.enumerateBodies(alongRayStart: ballPosition, end: shotEnd) { body, point, normal, stop in
 
+                if let hole = body.node, hole.name == Hole.name {
+                    path.addLine(to: point)
+                    self.shotIntersectionNode?.path = path
+                    stop.pointee = true
+                    
+                    if self.shaper?.parent != nil {
+                        self.shaper?.removeFromParent()
+                    }
+                    return
+                }
+                
                 if let node = body.node, node.name == Wall.nodeName {
                     var newPoint: CGPoint = .zero
 
@@ -358,21 +375,26 @@ class PuttScene: SKScene {
                     let reflectedPath = path
                     reflectedPath.addLine(to: newPoint)
                     
-                    let reflected = self.reflect(vector: CGVector(dx: end.x-ballPosition.x, dy: end.y-ballPosition.y), forNormal: normal, at: newPoint, offOf: body)
+                    let reflected = self.reflect(vector: CGVector(dx: end.x-ballPosition.x, dy: end.y-ballPosition.y), forNormal: normal, at: newPoint, offOf: body).normalized
                     
-                    reflectedPath.addLine(to: CGPoint(x: newPoint.x+reflected.dx/5.0, y: newPoint.y+reflected.dy/5.0))
+                    let reflectionLength: CGFloat = 30
+                    reflectedPath.addLine(to: CGPoint(x: newPoint.x+reflected.dx*reflectionLength, y: newPoint.y+reflected.dy*reflectionLength))
                     
                     self.shotIntersectionNode?.path = reflectedPath
-                    
-                    
+     
                     self.shaper = self.shaper ?? SKShapeNode(circleOfRadius: self.ball.size.width/2)
-                    self.shaper?.fillColor = .white
+                    self.shaper?.alpha = 1
+                    self.shaper?.fillColor = .black
+                    self.shaper?.fillColor = .clear
+                    self.shaper?.strokeColor = .black
                     self.shaper?.position = newPoint
                     if self.shaper?.parent == nil {
                         self.addChild(self.shaper!)
                     }
                     
-                   
+                    let fadeIn = SKAction.fadeAlpha(to: 0.4, duration: 0.4)
+                    self.shaper!.run(fadeIn)
+
                     
                     stop.pointee = true
 
@@ -406,7 +428,39 @@ class PuttScene: SKScene {
             
             adjustingShot = false
             takeShot(at: angle, with: power)
+            
+            fadeOutShotIndicator()
         }
+    }
+   
+    func fadeInShotIndicator() {
+        guard let shotIndicator = shotIntersectionNode, let angleIndicator = shaper else { return }
+        
+        let fadeOut = SKAction.fadeOut(withDuration: 0.4)
+        let remove = SKAction.removeFromParent()
+        let reset = SKAction.run {
+            self.shotIntersectionNode = nil
+            self.shaper = nil
+        }
+        
+        let disappear = SKAction.sequence([fadeOut, remove, reset])
+        shotIndicator.run(disappear)
+        angleIndicator.run(disappear)
+    }
+    
+    func fadeOutShotIndicator() {
+        guard let shotIndicator = shotIntersectionNode, let angleIndicator = shaper else { return }
+        
+        let fadeOut = SKAction.fadeOut(withDuration: 0.4)
+        let remove = SKAction.removeFromParent()
+        let reset = SKAction.run {
+            self.shotIntersectionNode = nil
+            self.shaper = nil
+        }
+        
+        let disappear = SKAction.sequence([fadeOut, remove, reset])
+        shotIndicator.run(disappear)
+        angleIndicator.run(disappear)
     }
  
     func takeShot(at angle: CGFloat, with power: CGFloat) {
