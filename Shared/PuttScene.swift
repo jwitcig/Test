@@ -176,7 +176,7 @@ class PuttScene: SKScene {
     
     func setDebugOptions(on view: SKView) {
         view.showsFPS = true
-        view.showsPhysics = false
+        view.showsPhysics = true
         view.backgroundColor = .black
     }
     
@@ -511,6 +511,11 @@ class PuttScene: SKScene {
         ballPrePhysicsVelocity = ball.physicsBody?.velocity ?? .zero
     }
     
+    override func didSimulatePhysics() {
+        
+        
+    }
+    
     override func didFinishUpdate() {
         // if there is a wall reflection pending, apply it
         if let reflection = reflectionVelocity {
@@ -580,6 +585,8 @@ var ballPrePhysicsVelocity: CGVector = .zero
 
 var reflectionVelocity: CGVector? = nil
 
+var lastFrameContact: SKPhysicsBody?
+
 extension PuttScene: SKPhysicsContactDelegate {
    
     func didBegin(_ contact: SKPhysicsContact) {
@@ -617,47 +624,18 @@ extension PuttScene: SKPhysicsContactDelegate {
     }
     
     func reflect(velocity entrance: CGVector, for contact: SKPhysicsContact, with body: SKPhysicsBody) -> CGVector {
-        
-        let ballPosition = convert(ball.position, from: ball.parent!)
-        let xRayTest = CGPoint(x: ballPosition.x-contact.contactNormal.dx*5000,
-                               y: ballPosition.y+contact.contactNormal.dy*5000)
-        let yRayTest = CGPoint(x: ballPosition.x+contact.contactNormal.dx*5000,
-                               y: ballPosition.y-contact.contactNormal.dy*5000)
-        
-        var exit = entrance
-        physicsWorld.enumerateBodies(alongRayStart: ballPosition, end: xRayTest) { testBody, _, _, stop in
-            
-            if testBody == body {
-                exit = CGVector(dx: -entrance.dx, dy: entrance.dy)
-                stop.pointee = true
-            }
-        }
-        
-        physicsWorld.enumerateBodies(alongRayStart: ballPosition, end: yRayTest) { testBody, _, _, stop in
-        
-            if testBody == body {
-                exit = CGVector(dx: entrance.dx, dy: -entrance.dy)
-                stop.pointee = true
-            }
-        }
-        
-//        if physicsWorld.body(alongRayStart: contact.contactPoint, end: xRayTest) == body {
-//            return CGVector(dx: -entrance.dx, dy: entrance.dy)
-//        }
-//        if physicsWorld.body(alongRayStart: contact.contactPoint, end: yRayTest) == body {
-//            return CGVector(dx: entrance.dx, dy: -entrance.dy)
-//        }
-        return exit
+        return reflect(vector: entrance, across: contact.contactNormal, at: contact.contactPoint, offOf: body)
     }
     
-    func reflect(vector entrance: CGVector, forNormal normal: CGVector, at point: CGPoint, offOf body: SKPhysicsBody) -> CGVector {
+    func reflect(vector entrance: CGVector, across normal: CGVector, at point: CGPoint, offOf body: SKPhysicsBody) -> CGVector {
   
 //        let r =d−2(d⋅n)n
 //        let reflected = entrance − 2(entrance ⋅ normal)normal
-        
-//        r=d−(2d⋅n)‖n‖n
+//        r = d−(2d⋅n)‖n‖n
         
         let normalized = CGVector(dx: normal.dx/normal.magnitude, dy: normal.dy/normal.magnitude)
+        
+        normalized.normalized
         
         let dot = entrance.dx*normalized.dx + entrance.dy*normalized.dy
         let directed = CGVector(dx: dot*normalized.dx, dy: dot*normalized.dy)
