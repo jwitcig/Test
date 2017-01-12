@@ -77,7 +77,7 @@
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       selectedDebuggerIdentifier = ""
       selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
       launchStyle = "0"
@@ -87,17 +87,10 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
-      <RemoteRunnable
-         runnableDebuggingMode = "1"
-         BundleIdentifier = "com.apple.MobileSMS">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8BCF77091E03CD0200D48A61"
-            BuildableName = "iMessageExtension.appex"
-            BlueprintName = "iMessageExtension"
-            ReferencedContainer = "container:MrPutt.xcodeproj">
-         </BuildableReference>
-      </RemoteRunnable>
+      <PathRunnable
+         runnableDebuggingMode = "0"
+         FilePath = "/&lt;placeholder&gt;">
+      </PathRunnable>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
