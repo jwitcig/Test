@@ -729,6 +729,26 @@ extension PuttScene: SKPhysicsContactDelegate {
         scorecard.update(hole: hole, names: names, player1Strokes: player1Strokes, player2Strokes: player2Strokes, pars: pars)
         scorecard.donePressed = donePressed
         scorecard.zPosition = 100
+    
+        let duration: TimeInterval = 2
+        scorecard.children.forEach {
+            let destination: CGPoint = camera!.convert($0.position, to: scorecard)
+
+            $0.position = CGPoint(x: $0.position.x-size.width*(0.75), y: $0.position.y)
+            
+            
+            let slide = SKAction.move(to: destination, duration: duration)
+            slide.timingMode = .easeOut
+            
+            $0.run(slide)
+        }
+        
+        let delay = SKAction.wait(forDuration: duration)
+        let show = SKAction.run(scorecard.showHoleInfo)
+        
+        let sequence = SKAction.sequence([delay, show])
+        scorecard.infoPanel.run(sequence)
+        
         addChild(scorecard)
         
         let touch = UITapGestureRecognizer(target: self, action: #selector(PuttScene.sceneClosePressed(recognizer:)))

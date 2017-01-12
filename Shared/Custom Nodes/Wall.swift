@@ -24,6 +24,7 @@ class Wall: SKSpriteNode {
         physicsBody?.isDynamic = false
         physicsBody?.restitution = 1
         physicsBody?.friction = 0
+        physicsBody?.affectedByGravity = false
         physicsBody?.categoryBitMask = Category.wall.rawValue
         physicsBody?.collisionBitMask = Category.ball.rawValue
         physicsBody?.contactTestBitMask = Category.ball.rawValue
