@@ -52,8 +52,8 @@ class GameViewController: UIViewController {
         toolsContainer.addSubview(settings)
         
         constrain(settings, toolsContainer) {
-            $0.bottom == $1.bottom
-            $0.trailing == $1.trailing
+            $0.top == $1.top
+            $0.leading == $1.leading
         }
         
         view.addSubview(toolsContainer)
