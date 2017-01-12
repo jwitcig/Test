@@ -32,7 +32,7 @@ class CoursePreviewView: UIView {
         preview.course = course
         
         preview.courseNameLabel.text = course.name
-        preview.courseHoleCountLabel.text = course.holeCount.string!
+        preview.courseHoleCountLabel.text = course.holeCount.string! + " Holes"
         preview.imageView.image = course.previewImage
         
         preview.playButton.setImage(#imageLiteral(resourceName: "play"), for: [.selected, .highlighted])

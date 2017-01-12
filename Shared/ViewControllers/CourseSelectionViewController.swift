@@ -17,6 +17,8 @@ class CourseSelectionViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     let contentView = UIView()
     
+    @IBOutlet weak var headerView: UIView!
+    
     var messageSender: MessageSender?
     var orientationManager: OrientationManager?
     
@@ -35,6 +37,17 @@ class CourseSelectionViewController: UIViewController {
             $0.width == $1.width
         }
         
+        headerView.removeFromSuperview()
+        contentView.addSubview(headerView)
+        
+        constrain(headerView, contentView) {
+            $0.top == $1.top
+            $0.centerX == $1.centerX
+            $0.width == $1.width
+        
+
+        }
+        
         let playBlock: (CoursePack.Type)->Void = { course in
             let controller = self.storyboard!.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
             
@@ -44,37 +57,34 @@ class CourseSelectionViewController: UIViewController {
             self.present(controller)
         }
         
-        let frost = CoursePreviewView.create(course: Frost.self as CoursePack.Type)
-        frost.playPressedBlock = playBlock
-        
-        let blaze = CoursePreviewView.create(course: Blaze.self)
-        blaze.playPressedBlock = playBlock
-        
-        let timber = CoursePreviewView.create(course: Timber.self)
-        timber.playPressedBlock = playBlock
-        
-        let previews = [
-            frost,
-            blaze,
-            timber,
+        let courses: [CoursePack.Type] = [
+            Frost.self,
+            Blaze.self,
+            Timber.self,
+            Nebula.self,
         ]
+        let previews: [CoursePreviewView] = courses.map {
+            let preview = CoursePreviewView.create(course: $0)
+            preview.playPressedBlock = playBlock
+            return preview
+        }
         
         previews.forEach(contentView.addSubview)
         
         if let first = previews.first {
-            constrain(first, contentView) {
+            constrain(first, contentView, headerView) {
                 $0.width == $1.width * 0.9
                 $0.height == 100
-
-                $0.top == $1.top + 65
                 
                 $0.centerX == $1.centerX
+                
+                $0.top == $2.bottom + 20
             }
         }
         
         if let last = previews.last {
             constrain(last, contentView) {
-                $0.bottom == $1.bottom + 20
+                $0.bottom == $1.bottom - 20
             }
         }
         
@@ -86,7 +96,7 @@ class CourseSelectionViewController: UIViewController {
                     $0.width == $1.width
                     $0.height == $1.height
                     
-                    $0.top == $1.bottom + 20
+                    $0.top == $1.bottom + 10
                     $0.centerX == $1.centerX
                 }
             }

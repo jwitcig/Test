@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -20,19 +21,11 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frostPreviewBackground" translatesAutoresizingMaskIntoConstraints="NO" id="9cO-Ky-ARf">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frostPreview" translatesAutoresizingMaskIntoConstraints="NO" id="9cO-Ky-ARf">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCn-iy-wMZ">
-                    <rect key="frame" x="346" y="62" width="21" height="34"/>
-                    <fontDescription key="fontDescription" name="Neutraface2Display-Titling" family="Neutraface 2 Display" pointSize="34"/>
-                    <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    <nil key="highlightedColor"/>
-                    <color key="shadowColor" red="0.52156862745098043" green="0.53725490196078429" blue="0.72549019607843135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <size key="shadowOffset" width="0.0" height="0.0"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8aJ-85-SsF">
-                    <rect key="frame" x="164" y="27" width="47" height="47"/>
+                    <rect key="frame" x="298" y="27" width="47" height="47"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="8aJ-85-SsF" secondAttribute="height" multiplier="1:1" id="QCv-Lc-XKe"/>
                         <constraint firstAttribute="width" constant="47" id="eRY-FI-UQp"/>
@@ -42,27 +35,39 @@
                         <action selector="playPressedWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="iOv-gU-CYe"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WHITEOUT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1d-o0-AlT">
-                    <rect key="frame" x="9" y="8" width="130" height="25"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="Neutraface2Display-Titling" family="Neutraface 2 Display" pointSize="25"/>
-                    <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    <nil key="highlightedColor"/>
-                    <size key="shadowOffset" width="0.0" height="0.0"/>
-                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Rp4-X4-4rL">
+                    <rect key="frame" x="18" y="18" width="118" height="58"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1d-o0-AlT">
+                            <rect key="frame" x="0.0" y="0.0" width="118" height="38"/>
+                            <fontDescription key="fontDescription" name="Neutraface2Display-Titling" family="Neutraface 2 Display" pointSize="38"/>
+                            <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            <nil key="highlightedColor"/>
+                            <size key="shadowOffset" width="0.0" height="0.0"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9 holes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCn-iy-wMZ">
+                            <rect key="frame" x="0.0" y="38" width="81.5" height="20"/>
+                            <fontDescription key="fontDescription" name="Neutraface2Display-Titling" family="Neutraface 2 Display" pointSize="20"/>
+                            <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            <nil key="highlightedColor"/>
+                            <color key="shadowColor" red="0.52156862745098043" green="0.53725490196078429" blue="0.72549019607843135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <size key="shadowOffset" width="0.0" height="0.0"/>
+                        </label>
+                    </subviews>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <color key="tintColor" red="0.28858506679534912" green="0.40599018335342407" blue="0.6591041088104248" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <accessibility key="accessibilityConfiguration" identifier="coursePreview"/>
             <constraints>
                 <constraint firstItem="8aJ-85-SsF" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Dhw-bh-YF3"/>
-                <constraint firstAttribute="bottom" secondItem="cCn-iy-wMZ" secondAttribute="bottom" constant="4" id="YGt-I4-7c4"/>
+                <constraint firstItem="Rp4-X4-4rL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" constant="10" id="HJB-wt-9zF"/>
                 <constraint firstAttribute="trailing" secondItem="9cO-Ky-ARf" secondAttribute="trailing" id="bcM-ic-A7x"/>
                 <constraint firstItem="9cO-Ky-ARf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="dPm-pG-44G"/>
+                <constraint firstItem="Rp4-X4-4rL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" constant="10" id="gy2-lE-pxc"/>
+                <constraint firstAttribute="trailing" secondItem="8aJ-85-SsF" secondAttribute="trailing" constant="30" id="otl-0Y-dGg"/>
                 <constraint firstAttribute="bottom" secondItem="9cO-Ky-ARf" secondAttribute="bottom" id="skG-rW-qYA"/>
                 <constraint firstItem="9cO-Ky-ARf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="t1C-EW-NU1"/>
-                <constraint firstAttribute="trailing" secondItem="cCn-iy-wMZ" secondAttribute="trailing" constant="8" id="wQv-sZ-fT3"/>
-                <constraint firstItem="8aJ-85-SsF" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ymP-ug-2ic"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
@@ -74,11 +79,11 @@
                 <outlet property="imageView" destination="9cO-Ky-ARf" id="9g3-hL-Dnx"/>
                 <outlet property="playButton" destination="8aJ-85-SsF" id="sNb-ab-UBc"/>
             </connections>
-            <point key="canvasLocation" x="23" y="46"/>
+            <point key="canvasLocation" x="22.5" y="46"/>
         </view>
     </objects>
     <resources>
-        <image name="frostPreviewBackground" width="240" height="106"/>
+        <image name="frostPreview" width="266" height="66"/>
         <image name="play" width="90" height="90"/>
     </resources>
 </document>

@@ -336,6 +336,10 @@ class PuttScene: SKScene {
             shotIntersectionNode!.run(fadeIn)
             
             let end = CGPoint(x: ballPosition.x+300*cos(angle), y: ballPosition.y+300*sin(angle))
+            
+            if self.shaper?.parent != nil {
+                self.shaper?.removeFromParent()
+            }
 
             physicsWorld.enumerateBodies(alongRayStart: ballPosition, end: shotEnd) { body, point, normal, stop in
 
@@ -343,10 +347,6 @@ class PuttScene: SKScene {
                     path.addLine(to: point)
                     self.shotIntersectionNode?.path = path
                     stop.pointee = true
-                    
-                    if self.shaper?.parent != nil {
-                        self.shaper?.removeFromParent()
-                    }
                     return
                 }
                 
@@ -729,12 +729,19 @@ extension PuttScene: SKPhysicsContactDelegate {
         scorecard.update(hole: hole, names: names, player1Strokes: player1Strokes, player2Strokes: player2Strokes, pars: pars)
         scorecard.donePressed = donePressed
         scorecard.zPosition = 100
+        
+        
     
-        let duration: TimeInterval = 2
+        let duration: TimeInterval = 0.8
         scorecard.children.forEach {
-            let destination: CGPoint = camera!.convert($0.position, to: scorecard)
+            let scale = camera!.xScale
+            $0.setScale(scale)
+            
+            let x = ($0.position.x * scale) + camera!.position.x
+            let y = ($0.position.y * scale) + camera!.position.y
+            let destination: CGPoint = self.convert(CGPoint(x: x, y: y), to: scorecard)
 
-            $0.position = CGPoint(x: $0.position.x-size.width*(0.75), y: $0.position.y)
+            $0.position = CGPoint(x: $0.position.x-size.width*(0.75)*scale, y: $0.position.y*scale)
             
             
             let slide = SKAction.move(to: destination, duration: duration)

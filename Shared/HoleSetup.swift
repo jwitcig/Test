@@ -21,6 +21,7 @@ struct Course {
             Frost.self,
             Blaze.self,
             Timber.self,
+            Nebula.self,
         ]
         return packs.filter { $0.name == name }.first
     }
@@ -29,19 +30,25 @@ struct Course {
 struct Frost: CoursePack {
     static let name = "Frost"
     static let holeCount = 9
-    static let previewImage = #imageLiteral(resourceName: "frostPreviewBackground")
+    static let previewImage = #imageLiteral(resourceName: "frostPreview")
 }
 
 struct Blaze: CoursePack {
     static let name = "Blaze"
     static let holeCount = 9
-    static let previewImage = #imageLiteral(resourceName: "blazePreviewBackground")
+    static let previewImage = #imageLiteral(resourceName: "blazePreview")
 }
 
 struct Timber: CoursePack {
     static let name = "Timber"
     static let holeCount = 9
-    static let previewImage = #imageLiteral(resourceName: "timberPreviewBackground")
+    static let previewImage = #imageLiteral(resourceName: "timberPreview")
+}
+
+struct Nebula: CoursePack {
+    static let name = "Nebula"
+    static let holeCount = 9
+    static let previewImage = #imageLiteral(resourceName: "nebulaPreview")
 }
 
 class HoleSetup {
@@ -65,6 +72,13 @@ class HoleSetup {
             }
             
         case is Timber.Type:
+            
+            switch hole {
+            default:
+                break
+            }
+            
+        case is Nebula.Type:
             
             switch hole {
             default:
