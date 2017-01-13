@@ -368,31 +368,50 @@ struct PuttMessageWriter: MessageWriter {
 
 struct PuttMessageLayoutBuilder: MessageLayoutBuilder {
     let session: PuttSession
-    init(session: PuttSession) {
+    let conversation: MSConversation?
+    init(session: PuttSession, conversation: MSConversation?) {
         self.session = session
+        self.conversation = conversation
     }
     
     func generateLayout() -> MSMessageTemplateLayout {
         let layout = MSMessageTemplateLayout()
         layout.image = UIImage(named: "MessageImage")
-        layout.caption = "Your turn."
         
-        let winners = ["😀", "😘", "😏", "😎", "🤑", "😛", "😝", "😋"]
-        let losers  = ["😬", "🙃", "😑", "😐", "😶", "😒", "🙄", "😳", "😞", "😠", "☹️"]
+        let player1HolesPlayed = session.instance.shots.count
+        let player2HolesPlayed = session.instance.opponentShots.count
         
-        if let winner = session.instance.winner {
-            
-            switch winner {
-            case .you:
-                let randomIndex = GKRandomDistribution(lowestValue: 0, highestValue: winners.count-1).nextInt()
-                layout.caption = "I won! " + winners[randomIndex]
-            case .them:
-                let randomIndex = GKRandomDistribution(lowestValue: 0, highestValue: losers.count-1).nextInt()
-                layout.caption = "You won. " + losers[randomIndex]
-            case .tie:
-                layout.caption = "We tied."
-            }
+        let hole = player1HolesPlayed == player2HolesPlayed ? player1HolesPlayed + 1 : player1HolesPlayed
+        
+        layout.imageTitle = session.initial.course.name
+        layout.imageSubtitle = "Hole \(hole)"
+        
+        if let localPlayer = conversation?.localParticipantIdentifier {
+            layout.caption = "$\(localPlayer)"
+            layout.subcaption = session.instance.shots.reduce(0, +).string
         }
+    
+        if let remotePlayer = conversation?.remoteParticipantIdentifiers.first {
+            layout.trailingCaption = "$\(remotePlayer)"
+            layout.trailingSubcaption = session.instance.opponentShots.reduce(0, +).string
+        }
+        
+//        let winners = ["😀", "😘", "😏", "😎", "🤑", "😛", "😝", "😋"]
+//        let losers  = ["😬", "🙃", "😑", "😐", "😶", "😒", "🙄", "😳", "😞", "😠", "☹️"]
+//        
+//        if let winner = session.instance.winner {
+//            
+//            switch winner {
+//            case .you:
+//                let randomIndex = GKRandomDistribution(lowestValue: 0, highestValue: winners.count-1).nextInt()
+//                layout.caption = "I won! " + winners[randomIndex]
+//            case .them:
+//                let randomIndex = GKRandomDistribution(lowestValue: 0, highestValue: losers.count-1).nextInt()
+//                layout.caption = "You won. " + losers[randomIndex]
+//            case .tie:
+//                layout.caption = "We tied."
+//            }
+//        }
         return layout
     }
 }
