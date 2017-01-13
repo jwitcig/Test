@@ -255,11 +255,16 @@ class PuttScene: SKScene {
 
     var adjustingShot = false
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for _ in touches {
+        for touch in touches {
+            
+            let location = touch.location(in: ball.parent!)
             
             if let ballBody = ball.physicsBody {
-                if ballBody.velocity.magnitude < 5.0 {
-                    beginShot()
+                
+                if location.distance(toPoint: ball.position) <= 100 {
+                    if ballBody.velocity.magnitude < 5.0 {
+                        beginShot()
+                    }
                 }
             }
         }
@@ -291,8 +296,8 @@ class PuttScene: SKScene {
             
             let angle = ballPosition.angle(toPoint: touchLocation)
             let shotStart = ballPosition
-            let shotEnd = CGPoint(x: shotStart.x+300*cos(angle),
-                                  y: shotStart.y+300*sin(angle))
+            let shotEnd = CGPoint(x: shotStart.x+30000*cos(angle),
+                                  y: shotStart.y+30000*sin(angle))
             
             let shot = CGVector(dx: shotStart.x-shotEnd.x, dy: shotStart.y-shotEnd.y)
             let path = CGMutablePath()
@@ -332,10 +337,10 @@ class PuttScene: SKScene {
                 addChild(shotIntersectionNode!)
             }
             
-            let fadeIn = SKAction.fadeAlpha(to: 0.2, duration: 0.4)
+            let fadeIn = SKAction.fadeAlpha(to: 0.4, duration: 0.4)
             shotIntersectionNode!.run(fadeIn)
             
-            let end = CGPoint(x: ballPosition.x+300*cos(angle), y: ballPosition.y+300*sin(angle))
+            let end = CGPoint(x: ballPosition.x+30000*cos(angle), y: ballPosition.y+30000*sin(angle))
             
             if self.shaper?.parent != nil {
                 self.shaper?.removeFromParent()
