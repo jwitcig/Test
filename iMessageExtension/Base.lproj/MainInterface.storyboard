@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -49,31 +51,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="courseSelectionBackground" translatesAutoresizingMaskIntoConstraints="NO" id="4tM-Ze-Zt2">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4f-mG-lVD">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4f-mG-lVD">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oCs-2H-YTD">
-                                        <rect key="frame" x="40" y="8" width="240" height="128"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cmQ-jY-uhT">
-                                                <rect key="frame" x="-120" y="-11" width="480" height="128"/>
-                                                <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="AOn-uX-oGA">
-                                                        <rect key="frame" x="0.0" y="0.0" width="480" height="128"/>
-                                                    </imageView>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="cmQ-jY-uhT" secondAttribute="bottom" id="MGn-82-gHZ"/>
-                                            <constraint firstItem="cmQ-jY-uhT" firstAttribute="leading" secondItem="oCs-2H-YTD" secondAttribute="leading" id="NuP-x4-hL1"/>
-                                            <constraint firstAttribute="height" constant="128" id="O3B-kQ-f3F"/>
-                                            <constraint firstAttribute="trailing" secondItem="cmQ-jY-uhT" secondAttribute="trailing" id="avf-MB-vmS"/>
-                                            <constraint firstItem="cmQ-jY-uhT" firstAttribute="top" secondItem="oCs-2H-YTD" secondAttribute="top" id="qbC-nI-b3Q"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -92,11 +71,43 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="200"/>
                     <connections>
-                        <outlet property="headerView" destination="oCs-2H-YTD" id="HZh-uu-Bn4"/>
+                        <outlet property="headerView" destination="vL2-kg-raA" id="pQi-WN-ozb"/>
                         <outlet property="scrollView" destination="E4f-mG-lVD" id="Ytf-p0-Gyc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R4D-Qt-uQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="vL2-kg-raA">
+                    <rect key="frame" x="0.0" y="0.0" width="373" height="52"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MNc-G6-C9r">
+                            <rect key="frame" x="83.5" y="0.0" width="208" height="52"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconSmall" translatesAutoresizingMaskIntoConstraints="NO" id="AOn-uX-oGA">
+                                    <rect key="frame" x="0.5" y="10.5" width="41" height="41.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="AOn-uX-oGA" secondAttribute="height" multiplier="1:1" id="Ovm-5e-GcJ"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Locations" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ur-hU-R9a">
+                                    <rect key="frame" x="49.5" y="0.0" width="159" height="52"/>
+                                    <fontDescription key="fontDescription" name="Bebas" family="Bebas" pointSize="36"/>
+                                    <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="AOn-uX-oGA" firstAttribute="height" secondItem="6Ur-hU-R9a" secondAttribute="height" multiplier="0.8" id="eDY-9j-GCu"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="MNc-G6-C9r" firstAttribute="centerX" secondItem="vL2-kg-raA" secondAttribute="centerX" id="Gzq-ih-q5e"/>
+                        <constraint firstAttribute="bottom" secondItem="MNc-G6-C9r" secondAttribute="bottom" id="N4j-6i-C5e"/>
+                        <constraint firstItem="MNc-G6-C9r" firstAttribute="top" secondItem="vL2-kg-raA" secondAttribute="top" id="fCe-7X-rIa"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="689.60000000000002" y="121.4392803598201"/>
         </scene>
@@ -149,7 +160,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="IconSmall" width="300" height="300"/>
         <image name="courseSelectionBackground" width="80" height="80"/>
-        <image name="header" width="480" height="403"/>
     </resources>
 </document>
