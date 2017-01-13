@@ -23,6 +23,8 @@ enum Options: String {
     case gameMusic = "Music"
 }
 
+let menuAnimationTime: TimeInterval = 1.0
+
 class GameViewController: UIViewController {
 
     var sceneView: SKView {
@@ -38,23 +40,37 @@ class GameViewController: UIViewController {
     var orientationManager: OrientationManager?
     
     var settingsPane: InGameMenuView?
+    var controlsPane: UserControlsView?
     
     var blurredScene: SKEffectNode?
     
     var settings: UIButton!
+    var controls: UIButton!
+    
+    var menuButtons: [UIButton] {
+        return [settings, controls]
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         settings = Bundle(for: GameViewController.self).loadNibNamed("SettingsButton", owner: nil, options: nil)![0] as! UIButton
         
+        controls = Bundle(for: GameViewController.self).loadNibNamed("ControlsButton", owner: nil, options: nil)![0] as! UIButton
+
         settings.addTarget(self, action: #selector(GameViewController.menuLaunch(sender:)), for: .touchUpInside)
+        
+        controls.addTarget(self, action: #selector(GameViewController.controlsLaunch(sender:)), for: .touchUpInside)
 
         toolsContainer.addSubview(settings)
+        toolsContainer.addSubview(controls)
         
-        constrain(settings, toolsContainer) {
-            $0.top == $1.top
-            $0.leading == $1.leading
+        constrain(toolsContainer, settings, controls) {
+            $1.top == $0.top
+            $1.leading == $0.leading
+            
+            $2.top == $0.top
+            $2.leading == $1.trailing
         }
         
         view.addSubview(toolsContainer)
@@ -108,7 +124,7 @@ class GameViewController: UIViewController {
     }
     
     func createSettingsPane() -> InGameMenuView {
-        let settingsPane = InGameMenuView.create()
+        let settingsPane = InGameMenuView.create(motionDuration: menuAnimationTime)
         
         let settings = UserDefaults.standard
         
@@ -180,11 +196,11 @@ class GameViewController: UIViewController {
             }
             
             settingsPane.willBeginMotion = {
-                self.toggleSettings(on: false, duration: TimeInterval(self.settingsPane?.animationDuration ?? 1))
+                self.toggleMenus(on: false, duration: TimeInterval((self.settingsPane?.motionDuration ?? 1) / 2))
             }
             
             settingsPane.didFinishMotion = {
-                self.toggleSettings(on: true, duration: TimeInterval(self.settingsPane?.animationDuration ?? 1))
+                self.toggleMenus(on: true, duration: TimeInterval((self.settingsPane?.motionDuration ?? 1) / 2))
             }
             
             self.blurredScene = blur(node: scene, in: sceneView, withDuration: 1)
@@ -192,12 +208,13 @@ class GameViewController: UIViewController {
                 if let blurred = self.blurredScene {
                     self.unblur(node: blurred, withDuration: 1, completion: blurred.removeFromParent)
                 }
-                self.settingsPane = nil
                 self.scene.isUserInteractionEnabled = true
+                
+                self.toggleMenus(on: false, duration: TimeInterval(1))
             }
         }
         
-        toolsContainer.setNeedsLayout()
+        toolsContainer.layoutIfNeeded()
     
         if settingsPane.isShown {
             settingsPane.dismiss()
@@ -207,12 +224,77 @@ class GameViewController: UIViewController {
         }
     }
     
-    func toggleSettings(on: Bool, duration: TimeInterval) {
-        UIView.transition(with: self.settings,
-                      duration: duration,
-                       options: .transitionCrossDissolve,
-                    animations: { self.settings.isEnabled = on },
-                    completion: nil)
+    func controlsLaunch(sender: Any) {
+        let controlsPane = self.controlsPane ?? UserControlsView.create(motionDuration: menuAnimationTime)
+        self.controlsPane = controlsPane
+        
+        if controlsPane.superview == nil {
+            toolsContainer.addSubview(controlsPane)
+            controlsPane.visibleConstraints.active = false
+            controlsPane.hiddenConstraints.active = true
+            
+            constrain(controlsPane, toolsContainer) {
+                $0.width == $0.height * 1221.0/2325.0
+                $0.height == $1.height * 0.9
+                
+                $0.centerX == $1.centerX
+            }
+            
+            controlsPane.willBeginMotion = {
+                self.toggleMenus(on: false, duration: TimeInterval((self.controlsPane?.motionDuration ?? 1)/2))
+            }
+            
+            controlsPane.didFinishMotion = {
+                self.toggleMenus(on: true, duration: TimeInterval((self.controlsPane?.motionDuration ?? 1)/2))
+            }
+            
+            self.blurredScene = blur(node: scene, in: sceneView, withDuration: 1)
+            controlsPane.dismissBlock = {
+                if let blurred = self.blurredScene {
+                    self.unblur(node: blurred, withDuration: 1, completion: blurred.removeFromParent)
+                }
+                self.scene.isUserInteractionEnabled = true
+                
+            }
+        }
+        
+        toolsContainer.layoutIfNeeded()
+        
+        if controlsPane.isShown {
+            controlsPane.dismiss()
+        } else {
+            scene.isUserInteractionEnabled = false
+            controlsPane.show()
+            
+            let cancel = UITapGestureRecognizer(target: self, action: #selector(GameViewController.closeUserControlsMenu(recognizer:)))
+            toolsContainer.addGestureRecognizer(cancel)
+        }
+    }
+    
+    func closeUserControlsMenu(recognizer: UITapGestureRecognizer) {
+        controlsPane?.dismiss()
+        
+        recognizer.view?.removeGestureRecognizer(recognizer)
+    }
+    
+    func toggleMenus(on: Bool, duration: TimeInterval) {
+        menuButtons.forEach { button in
+            UIView.transition(with: button,
+                              duration: duration,
+                              options: .transitionCrossDissolve,
+                              animations: { button.isEnabled = on },
+                              completion: nil)
+        }
+    }
+    
+    func removeSettings(duration: TimeInterval) {
+        menuButtons.forEach { button in
+            UIView.transition(with: button,
+                              duration: duration,
+                              options: .transitionCrossDissolve,
+                              animations: { button.alpha = 0 },
+                              completion: { _ in button.removeFromSuperview() })
+        }
     }
     
     // MARK: Game Cycle
@@ -231,7 +313,7 @@ class GameViewController: UIViewController {
 
         let pars = [Int](repeatElement(3, count: 9))
         
-        toggleSettings(on: false, duration: TimeInterval(1.0))
+        removeSettings(duration: TimeInterval(1))
         
         scene.showScorecard(hole: hole, names: names, player1Strokes: player1Strokes, player2Strokes: player2Strokes, pars: pars) {
             
@@ -252,8 +334,6 @@ class GameViewController: UIViewController {
                 self.sceneView.presentScene(nil)
             }
             self.scene.run(SKAction.sequence([fadeOut, remove]))
-            
-            self.toggleSettings(on: true, duration: TimeInterval(1.0))
         }
     }
     

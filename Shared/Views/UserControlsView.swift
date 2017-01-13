@@ -1,8 +1,8 @@
 //
-//  InGameMenuView.swift
+//  UserControlsView.swift
 //  MrPutt
 //
-//  Created by Developer on 1/7/17.
+//  Created by Developer on 1/13/17.
 //  Copyright © 2017 CodeWithKenny. All rights reserved.
 //
 
@@ -10,10 +10,8 @@ import UIKit
 
 import Cartography
 
-class InGameMenuView: UIView {
+class UserControlsView: UIImageView {
 
-    @IBOutlet weak var mainStackView: UIStackView!
-    
     var willBeginMotion: ()->Void = {}
     var didFinishMotion: ()->Void = {}
     
@@ -38,37 +36,10 @@ class InGameMenuView: UIView {
     
     var motionDuration: TimeInterval!
     
-    var options: [InGameOptionView] = [] {
-        didSet {
-            oldValue.forEach { $0.removeFromSuperview() }
-            options.forEach {
-                mainStackView.insertArrangedSubview($0, at: mainStackView.arrangedSubviews.count-1)
-            }
-        }
-    }
-    
-    static func create(motionDuration: TimeInterval) -> InGameMenuView {
-        let menu = Bundle(for: GameViewController.self).loadNibNamed("InGameMenuView", owner: nil, options: nil)![0] as! InGameMenuView
+    static func create(motionDuration: TimeInterval) -> UserControlsView {
+        let menu = Bundle(for: GameViewController.self).loadNibNamed("UserControlsView", owner: nil, options: nil)![0] as! UserControlsView
         menu.motionDuration = motionDuration
         return menu
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        translatesAutoresizingMaskIntoConstraints = false
-    }
-    
-    @IBAction func savePressed(sender: Any) {
-        options.forEach {
-            UserDefaults.standard.setValue($0.enabled, forKey: $0.optionName)
-        }
-        UserDefaults.standard.synchronize()
-        dismiss()
-    }
-    
-    @IBAction func cancelPressed(sender: Any) {
-        dismiss()
     }
     
     func show() {
@@ -89,7 +60,7 @@ class InGameMenuView: UIView {
     
     func dismiss() {
         willBeginMotion()
-
+        
         visibleConstraints.active = false
         hiddenConstraints.active = true
         
@@ -98,5 +69,5 @@ class InGameMenuView: UIView {
         }
         dismissBlock()
     }
-    
+
 }

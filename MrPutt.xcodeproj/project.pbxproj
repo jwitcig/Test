@@ -91,6 +91,12 @@
 		8B6387091E21ECEE0059CFD2 /* SettingsButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B6387071E21ECEE0059CFD2 /* SettingsButton.xib */; };
 		8B8A304C1E28A93F00A681EF /* ShotIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8A304B1E28A93F00A681EF /* ShotIndicator.swift */; };
 		8B8A304D1E28A93F00A681EF /* ShotIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8A304B1E28A93F00A681EF /* ShotIndicator.swift */; };
+		8B8A304F1E297D8E00A681EF /* ControlsButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B8A304E1E297D8E00A681EF /* ControlsButton.xib */; };
+		8B8A30501E297D8E00A681EF /* ControlsButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B8A304E1E297D8E00A681EF /* ControlsButton.xib */; };
+		8B8A30521E297E4C00A681EF /* UserControlsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B8A30511E297E4C00A681EF /* UserControlsView.xib */; };
+		8B8A30531E297E4C00A681EF /* UserControlsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B8A30511E297E4C00A681EF /* UserControlsView.xib */; };
+		8B8A30551E297FFB00A681EF /* UserControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8A30541E297FFB00A681EF /* UserControlsView.swift */; };
+		8B8A30561E297FFB00A681EF /* UserControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8A30541E297FFB00A681EF /* UserControlsView.swift */; };
 		8B920F9D1E27719D00CE553E /* Timber-Hole1.sks in Resources */ = {isa = PBXBuildFile; fileRef = E865FFF21E1DC03C0072E2E3 /* Timber-Hole1.sks */; };
 		8B920F9E1E27719D00CE553E /* Timber-Hole2.sks in Resources */ = {isa = PBXBuildFile; fileRef = E865FFF41E1DC0440072E2E3 /* Timber-Hole2.sks */; };
 		8B920F9F1E27719D00CE553E /* Timber-Hole3.sks in Resources */ = {isa = PBXBuildFile; fileRef = E865FFF61E1DC04B0072E2E3 /* Timber-Hole3.sks */; };
@@ -501,6 +507,9 @@
 		8B5F8B401E22F925009C262F /* HoleTile.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HoleTile.sks; sourceTree = "<group>"; };
 		8B6387071E21ECEE0059CFD2 /* SettingsButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsButton.xib; sourceTree = "<group>"; };
 		8B8A304B1E28A93F00A681EF /* ShotIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotIndicator.swift; sourceTree = "<group>"; };
+		8B8A304E1E297D8E00A681EF /* ControlsButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ControlsButton.xib; sourceTree = "<group>"; };
+		8B8A30511E297E4C00A681EF /* UserControlsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserControlsView.xib; sourceTree = "<group>"; };
+		8B8A30541E297FFB00A681EF /* UserControlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserControlsView.swift; sourceTree = "<group>"; };
 		8B93AFF11E1E1F4000BA03C1 /* portalAmbience.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = portalAmbience.mp3; sourceTree = "<group>"; };
 		8B93AFF21E1E1F4000BA03C1 /* portalTransfer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = portalTransfer.mp3; sourceTree = "<group>"; };
 		8B961F211E1C601600678257 /* Bebas.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bebas.ttf; sourceTree = "<group>"; };
@@ -737,6 +746,9 @@
 				8B35A22A1E218A980063520C /* InGameOptionView.swift */,
 				8B35A22D1E218AA40063520C /* InGameOptionView.xib */,
 				8B6387071E21ECEE0059CFD2 /* SettingsButton.xib */,
+				8B8A304E1E297D8E00A681EF /* ControlsButton.xib */,
+				8B8A30541E297FFB00A681EF /* UserControlsView.swift */,
+				8B8A30511E297E4C00A681EF /* UserControlsView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1283,6 +1295,7 @@
 				8B5F8B581E23120D009C262F /* portalTransfer.mp3 in Resources */,
 				8B96204B1E1C608400678257 /* Bebas.ttf in Resources */,
 				8B35A22F1E218AA40063520C /* InGameOptionView.xib in Resources */,
+				8B8A30531E297E4C00A681EF /* UserControlsView.xib in Resources */,
 				8B5F8B571E23120D009C262F /* portalAmbience.mp3 in Resources */,
 				8B5F8B541E23120D009C262F /* snapClick.wav in Resources */,
 				8B920FA31E27719D00CE553E /* Timber-Hole7.sks in Resources */,
@@ -1451,6 +1464,7 @@
 				E89F98381E2226B300178B4F /* nebulaInsideCorner.sks in Resources */,
 				E87030401E21A423008A7DDD /* blazeCornerTopLeft.sks in Resources */,
 				E87030641E21A429008A7DDD /* timberUWallDown.sks in Resources */,
+				8B8A30501E297D8E00A681EF /* ControlsButton.xib in Resources */,
 				E87030351E21A41B008A7DDD /* frostTopWall.sks in Resources */,
 				8B13B35A1E1C891900C0044A /* Frost-Hole5.sks in Resources */,
 				8B6387091E21ECEE0059CFD2 /* SettingsButton.xib in Resources */,
@@ -1468,6 +1482,7 @@
 				E8C550481E218AE1000EC3E0 /* blazeStraightWall.sks in Resources */,
 				E8C550181E218A16000EC3E0 /* frostCurvedWallShort.sks in Resources */,
 				E865FFF31E1DC03C0072E2E3 /* Timber-Hole1.sks in Resources */,
+				8B8A304F1E297D8E00A681EF /* ControlsButton.xib in Resources */,
 				8B35A2281E2189710063520C /* InGameMenuView.xib in Resources */,
 				8B13B33C1E1C7E2A00C0044A /* clubHit.wav in Resources */,
 				E8C5501D1E218A16000EC3E0 /* frostUTileDown.sks in Resources */,
@@ -1591,6 +1606,7 @@
 				E8C5503F1E218AE1000EC3E0 /* blazeCornerTopLeft.sks in Resources */,
 				E8C54FEE1E218904000EC3E0 /* timberCornerWalls.sks in Resources */,
 				E806B5A11E22020700BC7C10 /* blazeMultiCorner.sks in Resources */,
+				8B8A30521E297E4C00A681EF /* UserControlsView.xib in Resources */,
 				8B5F8B411E22F925009C262F /* HoleTile.sks in Resources */,
 				8B9620071E1C601600678257 /* Actions.plist in Resources */,
 				E89F98311E22266E00178B4F /* nebulaStraightWall.sks in Resources */,
@@ -1756,6 +1772,7 @@
 				8B9620531E1C608900678257 /* HoleSetup.swift in Sources */,
 				8B35A2261E21895B0063520C /* InGameMenuView.swift in Sources */,
 				8B9620541E1C608900678257 /* Putt.swift in Sources */,
+				8B8A30561E297FFB00A681EF /* UserControlsView.swift in Sources */,
 				8BBDBD3A1E1C93E500878B3A /* Portal.swift in Sources */,
 				8B96204E1E1C608900678257 /* Ball.swift in Sources */,
 				8BD5ACDE1E23A3C100FAF51F /* ScorecardStyleKit.swift in Sources */,
@@ -1781,6 +1798,7 @@
 				8B96200B1E1C601600678257 /* Wall.swift in Sources */,
 				8B96200A1E1C601600678257 /* Mat.swift in Sources */,
 				8B35A2251E21895B0063520C /* InGameMenuView.swift in Sources */,
+				8B8A30551E297FFB00A681EF /* UserControlsView.swift in Sources */,
 				8BBDBD391E1C93E500878B3A /* Portal.swift in Sources */,
 				8B96200F1E1C601600678257 /* PuttScene.swift in Sources */,
 				8BD5ACDD1E23A3C100FAF51F /* ScorecardStyleKit.swift in Sources */,
