@@ -41,10 +41,6 @@ class PuttScene: SKScene {
     
     var opponentsSession: PuttSession?
     
-    var shotPath: SKShapeNode? = nil
-    var shotIntersectionNode: SKShapeNode? = nil
-    var shaper: SKShapeNode? = nil
-    
     var teleporting = false
     
     var shots: [Shot] = []
@@ -59,6 +55,8 @@ class PuttScene: SKScene {
     var ballFreedomRadius: CGFloat {
         return size.width * camera!.xScale * 0.4
     }
+    
+    let shotIndicator = SKShapeNode()
     
     var cameraXBound: SKConstraint?
     var cameraYBound: SKConstraint?
@@ -292,134 +290,144 @@ class PuttScene: SKScene {
             
             guard adjustingShot else { return }
             
-            let ballPosition = ball.parent!.convert(ball.position, to: self)
+            let offsets = [
+                CGPoint(x: -2.5, y: 0),
+                CGPoint(x: 2.5, y: 0),
+            ]
             
-            let angle = ballPosition.angle(toPoint: touchLocation)
-            let shotStart = ballPosition
-            let shotEnd = CGPoint(x: shotStart.x+30000*cos(angle),
-                                  y: shotStart.y+30000*sin(angle))
-            
-            let shot = CGVector(dx: shotStart.x-shotEnd.x, dy: shotStart.y-shotEnd.y)
-            let path = CGMutablePath()
-            path.move(to: shotStart)
-            
-            
-//            let path = CGMutablePath()
-//            path.move(to: ballPosition)
-//            path.addLine(to: CGPoint(x: ballPosition.x+300*cos(angle), y: ballPosition.y+300*sin(angle)))
-//            let rayEnd = CGPoint(x: ballPosition.x+300*cos(angle), y: ballPosition.y+300*sin(angle))
-            
-//            if let shotPath = shotPath {
-//                shotPath.path = path
-//            } else {
-//                shotPath = shotPath ?? SKShapeNode(path: path)
-//                shotPath?.lineWidth = 2
-//                shotPath?.strokeColor = .black
-//            }
-//
-//            if shotPath?.parent == nil {
-//                addChild(shotPath!)
-//            }
-
-            
-            
-            if let shotIntersectionNode = shotIntersectionNode {
-                shotIntersectionNode.path = path
-            } else {
-                shotIntersectionNode = shotPath ?? SKShapeNode(path: path)
-                shotIntersectionNode?.alpha = 0
-                shotIntersectionNode?.lineWidth = 4
-                
-                shotIntersectionNode?.strokeColor = .black
+            let pointsList = offsets.map {
+                addIndicator(toward: touchLocation, with: $0).1
             }
             
-            if shotIntersectionNode?.parent == nil {
-                addChild(shotIntersectionNode!)
-            }
+            let mutable = CGMutablePath()
             
-            let fadeIn = SKAction.fadeAlpha(to: 0.4, duration: 0.4)
-            shotIntersectionNode!.run(fadeIn)
-            
-            let end = CGPoint(x: ballPosition.x+30000*cos(angle), y: ballPosition.y+30000*sin(angle))
-            
-            if self.shaper?.parent != nil {
-                self.shaper?.removeFromParent()
-            }
-
-            physicsWorld.enumerateBodies(alongRayStart: ballPosition, end: shotEnd) { body, point, normal, stop in
-
-                if let hole = body.node, hole.name == Hole.name {
+            func path(from points: [CGPoint]) -> CGPath {
+                let path = CGMutablePath()
+                path.move(to: points[0])
+                for point in points[1..<points.count] {
                     path.addLine(to: point)
-                    self.shotIntersectionNode?.path = path
-                    stop.pointee = true
-                    return
                 }
-                
-                if let node = body.node, node.name == Wall.nodeName {
-                    var newPoint: CGPoint = .zero
-
-                    
-                    let linerEnd = CGPoint(x: point.x+normal.normalized.dx*self.ball.frame.width/2,
-                                           y: point.y+normal.normalized.dy*self.ball.frame.width/2)
-                    
-                    let linerStart = CGPoint(x: linerEnd.x-normal.normalized.dy*0.001, y: linerEnd.y-normal.normalized.dx*0.001)
-                    
-                    
-                    let liner = CGVector(dx: linerEnd.x - linerStart.x,
-                                         dy: linerEnd.y - linerStart.y)
-                    
-                    
-                    let cross = CGVector(dx: shotStart.x-linerStart.x, dy: shotStart.y-linerStart.x)
-                    
-                    let a = (shot.dx * liner.dx) + (cross.dx * shotStart.x)
-                    let b = (shotStart.y * liner.dx) + (shot.dx * linerStart.x)
-                    
-                    let t = a / b
-                    
-                    newPoint = CGPoint(x: linerStart.x + (liner * t).dx, y: linerStart.y + (liner * t).dy)
-
-                    
-                    let reflectedPath = path
-                    reflectedPath.addLine(to: newPoint)
-                    
-                    let reflected = self.reflect(vector: CGVector(dx: end.x-ballPosition.x, dy: end.y-ballPosition.y), across: normal, at: newPoint, offOf: body).normalized
-                    
-                    let reflectionLength: CGFloat = 50
-                    reflectedPath.addLine(to: CGPoint(x: newPoint.x+reflected.dx*reflectionLength, y: newPoint.y+reflected.dy*reflectionLength))
-                    
-                    self.shotIntersectionNode?.path = reflectedPath
-     
-                    self.shaper = self.shaper ?? SKShapeNode(circleOfRadius: self.ball.size.width/2)
-                    self.shaper?.alpha = 1
-                    self.shaper?.fillColor = .black
-                    self.shaper?.fillColor = .clear
-                    self.shaper?.strokeColor = .black
-                    self.shaper?.position = newPoint
-                    if self.shaper?.parent == nil {
-                        self.addChild(self.shaper!)
-                    }
-                    
-                    let fadeIn = SKAction.fadeAlpha(to: 0.4, duration: 0.4)
-                    self.shaper!.run(fadeIn)
-
-                    
-                    stop.pointee = true
-
-                    
-//                    
-//                    let reflectedPath = path
-//                    reflectedPath.addLine(to: newPoint)
-//                    
-//                    let reflected = self.reflect(vector: CGVector(dx: end.x-ballPosition.x, dy: end.y-ballPosition.y), forNormal: normal, at: point, offOf: body)
-//                    
-//                    reflectedPath.addLine(to: CGPoint(x: point.x+reflected.dx/5.0, y: point.y+reflected.dy/5.0))
-//                    
-//                    self.shotIntersectionNode?.path = reflectedPath
-//                    
-//                    stop.pointee = true
-                }
+                return path
+            }
+            
+            
+            let points = pointsList[0] + pointsList[1].reversed()
+            
+            
+            shotIndicator.alpha = 1
+            shotIndicator.lineWidth = 1
+            shotIndicator.fillColor = .black
+            shotIndicator.path = path(from: points)
+            
+            if shotIndicator.parent == nil {
+                addChild(shotIndicator)
             }
         }
+    }
+    
+    func addIndicator(toward direction: CGPoint, with offset: CGPoint) -> (CGPoint, [CGPoint]) {
+        
+        var points: [CGPoint] = []
+        
+        let ballCenter = convert(ball.position, from: ball.parent!)
+        let origin = CGPoint(x: ballCenter.x + offset.x, y: ballCenter.y + offset.y)
+        
+        let angle = origin.angle(toPoint: direction)
+        let shotStart = origin
+        let shotEnd = CGPoint(x: shotStart.x+30000*cos(angle),
+                              y: shotStart.y+30000*sin(angle))
+        
+        let shot = CGVector(dx: shotStart.x-shotEnd.x, dy: shotStart.y-shotEnd.y)
+        let path = CGMutablePath()
+//        path.move(to: shotStart)
+        points.append(shotStart)
+        
+        let shotIntersectionNode = SKShapeNode(path: path)
+        shotIntersectionNode.alpha = 0
+        shotIntersectionNode.lineWidth = 4
+        shotIntersectionNode.strokeColor = .black
+        shotIntersectionNode.path = path
+        
+        if shotIntersectionNode.parent == nil {
+//            addChild(shotIntersectionNode)
+        }
+        
+        let fadeIn = SKAction.fadeAlpha(to: 0.4, duration: 0.4)
+        shotIntersectionNode.run(fadeIn)
+        
+        let end = CGPoint(x: origin.x+30000*cos(angle), y: origin.y+30000*sin(angle))
+
+        let shaper = SKShapeNode(circleOfRadius: ball.size.width/2)
+        shaper.alpha = 1
+        shaper.fillColor = .black
+        shaper.fillColor = .clear
+        shaper.strokeColor = .black
+
+        if shaper.parent != nil {
+            shaper.removeFromParent()
+        }
+        
+        var reflectedPath: CGMutablePath!
+        physicsWorld.enumerateBodies(alongRayStart: origin, end: shotEnd) { body, point, normal, stop in
+            
+            if let hole = body.node, hole.name == Hole.name {
+                path.addLine(to: point)
+                shotIntersectionNode.path = path
+                stop.pointee = true
+                return
+            }
+            
+            if let node = body.node, node.name == Wall.nodeName {
+                var newPoint: CGPoint = .zero
+                
+                let linerEnd = CGPoint(x: point.x+normal.normalized.dx*self.ball.frame.width/2,
+                                       y: point.y+normal.normalized.dy*self.ball.frame.width/2)
+                
+                let linerStart = CGPoint(x: linerEnd.x-normal.normalized.dy*0.001, y: linerEnd.y-normal.normalized.dx*0.001)
+                
+                
+                let liner = CGVector(dx: linerEnd.x - linerStart.x,
+                                     dy: linerEnd.y - linerStart.y)
+                
+                
+                let cross = CGVector(dx: shotStart.x-linerStart.x, dy: shotStart.y-linerStart.x)
+                
+                let a = (shot.dx * liner.dx) + (cross.dx * shotStart.x)
+                let b = (shotStart.y * liner.dx) + (shot.dx * linerStart.x)
+                
+                let t = a / b
+                
+                newPoint = CGPoint(x: linerStart.x + (liner * t).dx, y: linerStart.y + (liner * t).dy)
+
+                newPoint.x += offset.x
+                newPoint.y += offset.y
+                reflectedPath = path
+//                reflectedPath.addLine(to: newPoint)
+                points.append(newPoint)
+
+                
+                let reflected = self.reflect(vector: CGVector(dx: end.x-origin.x, dy: end.y-origin.y), across: normal, at: newPoint, offOf: body).normalized
+                
+                let reflectionLength: CGFloat = 50
+//                reflectedPath.addLine(to: CGPoint(x: newPoint.x+reflected.dx*reflectionLength, y: newPoint.y+reflected.dy*reflectionLength))
+                points.append(CGPoint(x: newPoint.x+reflected.dx*reflectionLength, y: newPoint.y+reflected.dy*reflectionLength))
+                
+                shotIntersectionNode.path = reflectedPath
+                
+                shaper.position = newPoint
+                if shaper.parent == nil {
+//                    self.addChild(shaper)
+                }
+                
+                let fadeIn = SKAction.fadeAlpha(to: 0.4, duration: 0.4)
+                shaper.run(fadeIn)
+                
+                stop.pointee = true
+            }
+        }
+        
+//        return (offset, reflectedPath)
+        return (offset, points)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -441,33 +449,19 @@ class PuttScene: SKScene {
     }
    
     func fadeInShotIndicator() {
-        guard let shotIndicator = shotIntersectionNode, let angleIndicator = shaper else { return }
-        
         let fadeOut = SKAction.fadeOut(withDuration: 0.4)
         let remove = SKAction.removeFromParent()
-        let reset = SKAction.run {
-            self.shotIntersectionNode = nil
-            self.shaper = nil
-        }
+        let appear = SKAction.sequence([fadeOut, remove])
         
-        let disappear = SKAction.sequence([fadeOut, remove, reset])
-        shotIndicator.run(disappear)
-        angleIndicator.run(disappear)
+        shotIndicator.run(appear)
     }
     
     func fadeOutShotIndicator() {
-        guard let shotIndicator = shotIntersectionNode, let angleIndicator = shaper else { return }
-        
         let fadeOut = SKAction.fadeOut(withDuration: 0.4)
         let remove = SKAction.removeFromParent()
-        let reset = SKAction.run {
-            self.shotIntersectionNode = nil
-            self.shaper = nil
-        }
-        
-        let disappear = SKAction.sequence([fadeOut, remove, reset])
+        let disappear = SKAction.sequence([fadeOut, remove])
+
         shotIndicator.run(disappear)
-        angleIndicator.run(disappear)
     }
  
     func takeShot(at angle: CGFloat, with power: CGFloat) {
