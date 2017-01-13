@@ -684,9 +684,15 @@ extension PuttScene: SKPhysicsContactDelegate {
         if let destination = portal.parent?.parent?.parent?.userData?["destination"] as? String {
             
             enumerateChildNodes(withName: "//portal") { node, stop in
-                
-                if node.parent?.parent?.parent?.userData?["name"] as? String == destination {
+                let userData = node.parent?.parent?.parent?.userData
+                if userData?["name"] as? String == destination {
                     let move = SKAction.move(to: node.parent!.convert(node.position, to: self.ball.parent!), duration: 0)
+                    
+                    let velocityXMultipler = userData?["velocityXMultiplier"] as? CGFloat ?? 1
+                    let velocityYMultipler = userData?["velocityYMultiplier"] as? CGFloat ?? 1
+                    
+                    self.ball.physicsBody?.velocity.dx *= velocityXMultipler
+                    self.ball.physicsBody?.velocity.dy *= velocityYMultipler
                     self.ball.run(move)
                     
                     let sound = SKAction.playSoundFileNamed("portalTransfer.mp3", waitForCompletion: false)
