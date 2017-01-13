@@ -9,9 +9,11 @@
 import Messages
 import UIKit
 
+import Cartography
 import iMessageTools
 
 class MessagesViewController: MSMessagesAppViewController {
+    fileprivate var courseController: CourseSelectionViewController?
     fileprivate var gameController: GameViewController?
     
     var isAwaitingResponse = false
@@ -27,6 +29,7 @@ class MessagesViewController: MSMessagesAppViewController {
             handleStarterEvent(message: message, conversation: conversation)
         } else {
             let controller = createCourseSelectionController()
+            courseController = controller
             present(controller)
         }
     }
@@ -40,6 +43,26 @@ class MessagesViewController: MSMessagesAppViewController {
         messageCancelled = true
         if let controller = gameController {
             throwAway(controller: controller)
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        let controllers: [UIViewController?] = [
+            courseController, gameController
+        ]
+        controllers.forEach {
+            if let controller = $0 {
+                throwAway(controller: controller)
+            }
+        }
+        
+        let icon = UIImageView(image: #imageLiteral(resourceName: "LogoForCollapsedViewController"))
+        icon.contentMode = .scaleAspectFit
+        view.addSubview(icon)
+        
+        constrain(icon, view) {
+            $0.center == $1.center
+            $0.size == $1.size
         }
     }
     

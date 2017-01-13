@@ -89,6 +89,8 @@
 		8B5F8B581E23120D009C262F /* portalTransfer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B93AFF21E1E1F4000BA03C1 /* portalTransfer.mp3 */; };
 		8B6387081E21ECEE0059CFD2 /* SettingsButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B6387071E21ECEE0059CFD2 /* SettingsButton.xib */; };
 		8B6387091E21ECEE0059CFD2 /* SettingsButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B6387071E21ECEE0059CFD2 /* SettingsButton.xib */; };
+		8B8A304C1E28A93F00A681EF /* ShotIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8A304B1E28A93F00A681EF /* ShotIndicator.swift */; };
+		8B8A304D1E28A93F00A681EF /* ShotIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8A304B1E28A93F00A681EF /* ShotIndicator.swift */; };
 		8B920F9D1E27719D00CE553E /* Timber-Hole1.sks in Resources */ = {isa = PBXBuildFile; fileRef = E865FFF21E1DC03C0072E2E3 /* Timber-Hole1.sks */; };
 		8B920F9E1E27719D00CE553E /* Timber-Hole2.sks in Resources */ = {isa = PBXBuildFile; fileRef = E865FFF41E1DC0440072E2E3 /* Timber-Hole2.sks */; };
 		8B920F9F1E27719D00CE553E /* Timber-Hole3.sks in Resources */ = {isa = PBXBuildFile; fileRef = E865FFF61E1DC04B0072E2E3 /* Timber-Hole3.sks */; };
@@ -498,6 +500,7 @@
 		8B35A2311E218CF90063520C /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		8B5F8B401E22F925009C262F /* HoleTile.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HoleTile.sks; sourceTree = "<group>"; };
 		8B6387071E21ECEE0059CFD2 /* SettingsButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsButton.xib; sourceTree = "<group>"; };
+		8B8A304B1E28A93F00A681EF /* ShotIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotIndicator.swift; sourceTree = "<group>"; };
 		8B93AFF11E1E1F4000BA03C1 /* portalAmbience.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = portalAmbience.mp3; sourceTree = "<group>"; };
 		8B93AFF21E1E1F4000BA03C1 /* portalTransfer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = portalTransfer.mp3; sourceTree = "<group>"; };
 		8B961F211E1C601600678257 /* Bebas.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bebas.ttf; sourceTree = "<group>"; };
@@ -805,6 +808,7 @@
 				8B961F2A1E1C601600678257 /* Wall.swift */,
 				8BBDBD381E1C93E500878B3A /* Portal.swift */,
 				8B279D2D1E2724C30094DC62 /* Scorecard.swift */,
+				8B8A304B1E28A93F00A681EF /* ShotIndicator.swift */,
 			);
 			path = "Custom Nodes";
 			sourceTree = "<group>";
@@ -1742,6 +1746,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B279D2F1E2724C30094DC62 /* Scorecard.swift in Sources */,
+				8B8A304D1E28A93F00A681EF /* ShotIndicator.swift in Sources */,
 				8B35A2331E218CF90063520C /* CourseSelectionViewController.swift in Sources */,
 				8B9620751E1C60B400678257 /* CoursePreviewView.swift in Sources */,
 				8B9620521E1C608900678257 /* Data.swift in Sources */,
@@ -1766,6 +1771,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B279D2E1E2724C30094DC62 /* Scorecard.swift in Sources */,
+				8B8A304C1E28A93F00A681EF /* ShotIndicator.swift in Sources */,
 				8B35A2321E218CF90063520C /* CourseSelectionViewController.swift in Sources */,
 				8B96202F1E1C601600678257 /* CoursePreviewView.swift in Sources */,
 				8B9620081E1C601600678257 /* Ball.swift in Sources */,

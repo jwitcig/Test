@@ -36,16 +36,15 @@ class CourseSelectionViewController: UIViewController {
             
             $0.width == $1.width
         }
-        
-        headerView.removeFromSuperview()
+    
+        headerView.backgroundColor = .clear
         contentView.addSubview(headerView)
         
         constrain(headerView, contentView) {
             $0.top == $1.top
             $0.centerX == $1.centerX
             $0.width == $1.width
-        
-
+            $0.height == 52
         }
         
         let playBlock: (CoursePack.Type)->Void = { course in
@@ -78,7 +77,7 @@ class CourseSelectionViewController: UIViewController {
                 
                 $0.centerX == $1.centerX
                 
-                $0.top == $2.bottom + 20
+                $0.top == $2.bottom 
             }
         }
         
