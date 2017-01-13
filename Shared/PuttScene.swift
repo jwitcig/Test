@@ -78,11 +78,13 @@ class PuttScene: SKScene {
         let pan = UIPanGestureRecognizer(target: self, action: #selector(PuttScene.handlePan(recognizer:)))
         pan.minimumNumberOfTouches = 2
         pan.delegate = self
+        pan.cancelsTouchesInView = false
         return pan
     }()
     lazy var zoom: UIPinchGestureRecognizer = {
         let zoom = UIPinchGestureRecognizer(target: self, action: #selector(PuttScene.handleZoom(recognizer:)))
         zoom.delegate = self
+        zoom.cancelsTouchesInView = false
         return zoom
     }()
     
@@ -265,13 +267,24 @@ class PuttScene: SKScene {
             
             if let ballBody = ball.physicsBody {
                 
-                if location.distance(toPoint: ball.position) <= 100 {
-                    if ballBody.velocity.magnitude < 5.0 {
-                        beginShot()
+                if !adjustingShot {
+                    if location.distance(toPoint: ball.position) <= 100 {
+                        if ballBody.velocity.magnitude < 5.0 {
+                            beginShot()
+                        }
                     }
                 }
             }
         }
+    }
+    
+    func cancelShot(recognizer: UITapGestureRecognizer) {
+        adjustingShot = false
+        
+        let fadeOut = SKAction.fadeOut(withDuration: 0.2)
+        shotIndicator.run(fadeOut)
+        
+        view?.removeGestureRecognizer(recognizer)
     }
     
     func beginShot() {
@@ -292,6 +305,9 @@ class PuttScene: SKScene {
         
         let fadeIn = SKAction.fadeIn(withDuration: 0.5)
         shotIndicator.run(fadeIn)
+        
+        let cancel = UITapGestureRecognizer(target: self, action: #selector(PuttScene.cancelShot(recognizer:)))
+        view?.addGestureRecognizer(cancel)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -631,5 +647,16 @@ extension PuttScene: UIGestureRecognizerDelegate {
             return true
         }
         return false
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        
+        if gestureRecognizer == pan || gestureRecognizer == zoom {
+            if adjustingShot {
+                return false
+            }
+        }
+        
+        return true
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import AVFoundation
+import Messages
 import QuartzCore
 import SpriteKit
 import UIKit
@@ -179,11 +180,11 @@ class GameViewController: UIViewController {
             }
             
             settingsPane.willBeginMotion = {
-                self.settings.isEnabled = false
+                self.toggleSettings(on: false, duration: TimeInterval(self.settingsPane?.animationDuration ?? 1))
             }
             
             settingsPane.didFinishMotion = {
-                self.settings.isEnabled = true
+                self.toggleSettings(on: true, duration: TimeInterval(self.settingsPane?.animationDuration ?? 1))
             }
             
             self.blurredScene = blur(node: scene, in: sceneView, withDuration: 1)
@@ -206,6 +207,14 @@ class GameViewController: UIViewController {
         }
     }
     
+    func toggleSettings(on: Bool, duration: TimeInterval) {
+        UIView.transition(with: self.settings,
+                      duration: duration,
+                       options: .transitionCrossDissolve,
+                    animations: { self.settings.isEnabled = on },
+                    completion: nil)
+    }
+    
     // MARK: Game Cycle
     
     func started() {
@@ -215,19 +224,21 @@ class GameViewController: UIViewController {
     func finished(session: PuttSession) {
         let hole = session.initial.holeNumber
         
-        let names = ("John", "Chris")
+        let names = ("You", "Them")
         
         let player1Strokes = session.gameData.shots
         let player2Strokes = session.gameData.opponentShots
 
         let pars = [Int](repeatElement(3, count: 9))
         
+        toggleSettings(on: false, duration: TimeInterval(1.0))
+        
         scene.showScorecard(hole: hole, names: names, player1Strokes: player1Strokes, player2Strokes: player2Strokes, pars: pars) {
             
             guard let message = PuttMessageWriter(data: session.dictionary,
                                                   session: session.messageSession)?.message else { return }
-            
-            let layout = PuttMessageLayoutBuilder(session: session).generateLayout()
+            let activeConversation = (self.messageSender as? MSMessagesAppViewController)?.activeConversation
+            let layout = PuttMessageLayoutBuilder(session: session, conversation: activeConversation).generateLayout()
             
             self.messageSender?.send(message: message, layout: layout, completionHandler: { error in
             })
@@ -241,6 +252,8 @@ class GameViewController: UIViewController {
                 self.sceneView.presentScene(nil)
             }
             self.scene.run(SKAction.sequence([fadeOut, remove]))
+            
+            self.toggleSettings(on: true, duration: TimeInterval(1.0))
         }
     }
     
