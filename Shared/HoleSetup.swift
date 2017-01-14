@@ -58,9 +58,11 @@ class HoleSetup {
         switch course {
             
         case is Frost.Type:
-            
-            if let snow = scene.childNode(withName: "//snow") as? SKEmitterNode {
-                snow.advanceSimulationTime(30)
+    
+            if let snow = SKEmitterNode(fileNamed: "Snow") {
+                snow.position = CGPoint(x: 400, y: 0)
+                snow.advanceSimulationTime(TimeInterval(snow.particleLifetime))
+                scene.addChild(snow)
             }
             
             switch hole {

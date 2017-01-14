@@ -23,7 +23,7 @@ enum Options: String {
     case gameMusic = "Music"
 }
 
-let menuAnimationTime: TimeInterval = 1.0
+let menuAnimationTime: TimeInterval = 0.5
 
 class GameViewController: UIViewController {
 
