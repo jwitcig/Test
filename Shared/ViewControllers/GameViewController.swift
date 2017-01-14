@@ -73,7 +73,6 @@ class GameViewController: UIViewController {
             $0.bottom == $1.bottom
         }
         
-        
         toolsContainer.addSubview(settings)
         toolsContainer.addSubview(controls)
         
@@ -87,7 +86,6 @@ class GameViewController: UIViewController {
             $2.leading == $1.trailing
         }
 
-        
         toolsContainer.layoutIfNeeded()
         
         menuHiddenConstraints.active = false
@@ -172,10 +170,11 @@ class GameViewController: UIViewController {
         let animateBlur = SKAction.customAction(withDuration: duration) { node, elapsed in
             blur.setValue(radius * elapsed/CGFloat(duration), forKey: kCIInputRadiusKey)
         }
-        effect.run(animateBlur)
+        effecgit.run(animateBlur)
         
         let blurred = SKSpriteNode(texture: view.texture(from: node))
         blurred.position = scene.camera!.position
+        blurred.setScale(scene.camera!.xScale)
         
         effect.addChild(blurred)
         node.addChild(effect)
