@@ -68,13 +68,27 @@ class MessagesViewController: MSMessagesAppViewController {
     
     fileprivate func showWaitingForOpponent() {
         
+        if let controller = gameController {
+            throwAway(controller: controller)
+        }
+        if let controller = courseController {
+            throwAway(controller: controller)
+        }
+        
+        let controller = createGameController()
+        gameController = controller
+        
+        present(controller)
     }
     
-    func createGameController(fromReader reader: PuttMessageReader, course: CoursePack.Type) -> GameViewController {
+    func createGameController(fromReader reader: PuttMessageReader? = nil, course: CoursePack.Type? = nil) -> GameViewController {
         let controller = storyboard!.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
         controller.messageSender = self
         controller.orientationManager = self
-        controller.configureScene(previousSession: reader.session, course: course)
+        
+        guard let parser = reader, let course = course else { return controller }
+        
+        controller.configureScene(previousSession: parser.session, course: course)
         return controller
     }
     
@@ -89,6 +103,10 @@ class MessagesViewController: MSMessagesAppViewController {
 extension MessagesViewController: iMessageCycle {
     func handleStarterEvent(message: MSMessage, conversation: MSConversation) {
         if let controller = gameController {
+            throwAway(controller: controller)
+        }
+        
+        if let controller = courseController {
             throwAway(controller: controller)
         }
         
