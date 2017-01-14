@@ -167,6 +167,8 @@
 		E806B5A51E220F6000BC7C10 /* timberMultiCorner.sks in Resources */ = {isa = PBXBuildFile; fileRef = E806B5A31E220F6000BC7C10 /* timberMultiCorner.sks */; };
 		E81D456A1E21F83F008E0E01 /* blazeThumbnails.sks in Resources */ = {isa = PBXBuildFile; fileRef = E81D45691E21F83F008E0E01 /* blazeThumbnails.sks */; };
 		E81D456B1E21F83F008E0E01 /* blazeThumbnails.sks in Resources */ = {isa = PBXBuildFile; fileRef = E81D45691E21F83F008E0E01 /* blazeThumbnails.sks */; };
+		E85FE1901E28930F008440B7 /* frostOutsideTile.sks in Resources */ = {isa = PBXBuildFile; fileRef = E85FE18F1E28930F008440B7 /* frostOutsideTile.sks */; };
+		E85FE1911E28930F008440B7 /* frostOutsideTile.sks in Resources */ = {isa = PBXBuildFile; fileRef = E85FE18F1E28930F008440B7 /* frostOutsideTile.sks */; };
 		E86500011E1DC0700072E2E3 /* Timber-Hole8.sks in Resources */ = {isa = PBXBuildFile; fileRef = E86500001E1DC0700072E2E3 /* Timber-Hole8.sks */; };
 		E86500031E1DC0760072E2E3 /* Timber-Hole9.sks in Resources */ = {isa = PBXBuildFile; fileRef = E86500021E1DC0760072E2E3 /* Timber-Hole9.sks */; };
 		E86513C51E1DAB3A005FBA85 /* Blaze-Hole1.sks in Resources */ = {isa = PBXBuildFile; fileRef = E86513C41E1DAB3A005FBA85 /* Blaze-Hole1.sks */; };
@@ -536,6 +538,7 @@
 		E81D45691E21F83F008E0E01 /* blazeThumbnails.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = blazeThumbnails.sks; sourceTree = "<group>"; };
 		E83E06951E039586005711E3 /* MrPutt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MrPutt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E85386D3824CE7263E891102 /* Pods-MrPutt-iMessageExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MrPutt-iMessageExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MrPutt-iMessageExtension/Pods-MrPutt-iMessageExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		E85FE18F1E28930F008440B7 /* frostOutsideTile.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = frostOutsideTile.sks; path = Shared/SpriteKit/Nodes/Tiles/frostOutsideTile.sks; sourceTree = SOURCE_ROOT; };
 		E86500001E1DC0700072E2E3 /* Timber-Hole8.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Timber-Hole8.sks"; sourceTree = "<group>"; };
 		E86500021E1DC0760072E2E3 /* Timber-Hole9.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Timber-Hole9.sks"; sourceTree = "<group>"; };
 		E86513C41E1DAB3A005FBA85 /* Blaze-Hole1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Blaze-Hole1.sks"; sourceTree = "<group>"; };
@@ -822,6 +825,7 @@
 				8B13B3531E1C891900C0044A /* Frost-Hole8.sks */,
 				8B13B3541E1C891900C0044A /* Frost-Hole9.sks */,
 				E87030731E21D07A008A7DDD /* FrostBackground.sks */,
+				E85FE18F1E28930F008440B7 /* frostOutsideTile.sks */,
 			);
 			name = Frost;
 			path = Holes;
@@ -1371,6 +1375,7 @@
 				E87030511E21A423008A7DDD /* blazeBlank.sks in Resources */,
 				8B5F8B511E23120D009C262F /* notch.wav in Resources */,
 				E8A12A271E222B8F00768580 /* nebulaCornerTopLeft.sks in Resources */,
+				E85FE1911E28930F008440B7 /* frostOutsideTile.sks in Resources */,
 				8B9620581E1C60B300678257 /* BallTrail.sks in Resources */,
 				8B9620761E1C60B400678257 /* CoursePreviewView.xib in Resources */,
 				E870303F1E21A423008A7DDD /* blazeCornerConnecter.sks in Resources */,
@@ -1494,6 +1499,7 @@
 				E894740B1E24AB860013E9F4 /* Nebula-Hole9.sks in Resources */,
 				E89473F61E24AB040013E9F4 /* Nebula-Hole2.sks in Resources */,
 				E870306A1E21A5B2008A7DDD /* blazeSlabShort.sks in Resources */,
+				E85FE1901E28930F008440B7 /* frostOutsideTile.sks in Resources */,
 				E86513CF1E1DBA2E005FBA85 /* Blaze-Hole6.sks in Resources */,
 				8B9620161E1C601600678257 /* ShotPathIndicator.sks in Resources */,
 				E8C5504D1E218AE1000EC3E0 /* blazeUWallRight.sks in Resources */,
