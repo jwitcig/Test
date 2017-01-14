@@ -854,10 +854,10 @@
 		8B961F341E1C601600678257 /* Emitters */ = {
 			isa = PBXGroup;
 			children = (
+				8B13B3491E1C84F800C0044A /* Assets.xcassets */,
 				8B961F331E1C601600678257 /* BallTrail.sks */,
 				8B13B3481E1C84F800C0044A /* Snow.sks */,
 				8BBD3B5C1E1DAFAB00688836 /* PortalEmitter.sks */,
-				8B13B3491E1C84F800C0044A /* Assets.xcassets */,
 				E89473E41E245E790013E9F4 /* iceHit.sks */,
 			);
 			path = Emitters;
