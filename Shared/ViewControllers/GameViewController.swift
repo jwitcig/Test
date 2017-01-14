@@ -51,6 +51,8 @@ class GameViewController: UIViewController {
         return [settings, controls]
     }
     
+    var menuHiddenConstraints: ConstraintGroup!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -62,17 +64,6 @@ class GameViewController: UIViewController {
         
         controls.addTarget(self, action: #selector(GameViewController.controlsLaunch(sender:)), for: .touchUpInside)
 
-        toolsContainer.addSubview(settings)
-        toolsContainer.addSubview(controls)
-        
-        constrain(toolsContainer, settings, controls) {
-            $1.top == $0.top
-            $1.leading == $0.leading
-            
-            $2.top == $0.top
-            $2.leading == $1.trailing
-        }
-        
         view.addSubview(toolsContainer)
         
         constrain(toolsContainer, view) {
@@ -81,6 +72,32 @@ class GameViewController: UIViewController {
             $0.top == $1.top
             $0.bottom == $1.bottom
         }
+        
+        
+        toolsContainer.addSubview(settings)
+        toolsContainer.addSubview(controls)
+        
+        menuHiddenConstraints = constrain(toolsContainer, settings, controls) {
+            $1.bottom == $0.top
+            $2.bottom == $0.top
+        }
+        
+        constrain(toolsContainer, settings, controls) {
+            $1.leading == $0.leading
+            $2.leading == $1.trailing
+        }
+
+        
+        toolsContainer.layoutIfNeeded()
+        
+        menuHiddenConstraints.active = false
+        
+        constrain(toolsContainer, settings, controls) {
+            $1.top == $0.top
+            $2.top == $0.top
+        }
+        
+        UIView.animate(withDuration: 0.4, delay: 2, usingSpringWithDamping: 0.6, initialSpringVelocity: 20, options: .curveEaseInOut, animations: toolsContainer.layoutIfNeeded, completion: nil)
     }
     
     func configureScene(previousSession: PuttSession?, course: CoursePack.Type) {
@@ -96,7 +113,6 @@ class GameViewController: UIViewController {
         
             hole += 1
         }
-        
         scene = SKScene(fileNamed: "\(course.name)-Hole\(hole)")! as! PuttScene
         
         scene.course = course
@@ -202,6 +218,17 @@ class GameViewController: UIViewController {
             settingsPane.didFinishMotion = {
                 self.toggleMenus(on: true, duration: TimeInterval((self.settingsPane?.motionDuration ?? 1) / 2))
             }
+        }
+        
+        toolsContainer.layoutIfNeeded()
+    
+        if settingsPane.isShown {
+            settingsPane.dismiss()
+        } else if controlsPane?.isShown == true {
+            controlsPane?.dismiss()
+        } else {
+            scene.isUserInteractionEnabled = false
+            settingsPane.show()
             
             self.blurredScene = blur(node: scene, in: sceneView, withDuration: 1)
             settingsPane.dismissBlock = {
@@ -212,15 +239,6 @@ class GameViewController: UIViewController {
                 
                 self.toggleMenus(on: false, duration: TimeInterval(1))
             }
-        }
-        
-        toolsContainer.layoutIfNeeded()
-    
-        if settingsPane.isShown {
-            settingsPane.dismiss()
-        } else {
-            scene.isUserInteractionEnabled = false
-            settingsPane.show()
         }
     }
     
@@ -247,6 +265,17 @@ class GameViewController: UIViewController {
             controlsPane.didFinishMotion = {
                 self.toggleMenus(on: true, duration: TimeInterval((self.controlsPane?.motionDuration ?? 1)/2))
             }
+        }
+        
+        toolsContainer.layoutIfNeeded()
+        
+        if controlsPane.isShown  {
+            controlsPane.dismiss()
+        } else if settingsPane?.isShown == true {
+            settingsPane?.dismiss()
+        } else {
+            scene.isUserInteractionEnabled = false
+            controlsPane.show()
             
             self.blurredScene = blur(node: scene, in: sceneView, withDuration: 1)
             controlsPane.dismissBlock = {
@@ -254,17 +283,7 @@ class GameViewController: UIViewController {
                     self.unblur(node: blurred, withDuration: 1, completion: blurred.removeFromParent)
                 }
                 self.scene.isUserInteractionEnabled = true
-                
             }
-        }
-        
-        toolsContainer.layoutIfNeeded()
-        
-        if controlsPane.isShown {
-            controlsPane.dismiss()
-        } else {
-            scene.isUserInteractionEnabled = false
-            controlsPane.show()
             
             let cancel = UITapGestureRecognizer(target: self, action: #selector(GameViewController.closeUserControlsMenu(recognizer:)))
             toolsContainer.addGestureRecognizer(cancel)
