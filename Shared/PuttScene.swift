@@ -189,7 +189,7 @@ class PuttScene: SKScene {
     
     func setDebugOptions(on view: SKView) {
         view.showsFPS = true
-        view.showsPhysics = true
+        view.showsPhysics = false
         view.backgroundColor = .black
     }
     

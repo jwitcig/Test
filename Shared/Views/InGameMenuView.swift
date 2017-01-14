@@ -82,9 +82,9 @@ class InGameMenuView: UIView {
         hiddenConstraints.active = false
         visibleConstraints.active = true
         
-        UIView.animate(withDuration: TimeInterval(motionDuration), animations: superview!.layoutIfNeeded) { _ in
-            self.didFinishMotion()
-        }
+        
+        UIView.animate(withDuration: TimeInterval(motionDuration), delay: 0, usingSpringWithDamping: 0.75, initialSpringVelocity: 0, options: .curveEaseInOut, animations: superview!.layoutIfNeeded, completion: {_ in             self.didFinishMotion()
+        })
     }
     
     func dismiss() {
@@ -92,7 +92,7 @@ class InGameMenuView: UIView {
 
         visibleConstraints.active = false
         hiddenConstraints.active = true
-        
+    
         UIView.animate(withDuration: TimeInterval(motionDuration), animations: superview!.layoutIfNeeded) { _ in
             self.didFinishMotion()
         }
