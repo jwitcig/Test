@@ -97,6 +97,8 @@
 		8B8A30531E297E4C00A681EF /* UserControlsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B8A30511E297E4C00A681EF /* UserControlsView.xib */; };
 		8B8A30551E297FFB00A681EF /* UserControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8A30541E297FFB00A681EF /* UserControlsView.swift */; };
 		8B8A30561E297FFB00A681EF /* UserControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8A30541E297FFB00A681EF /* UserControlsView.swift */; };
+		8B8A30581E299B7C00A681EF /* SceneStart.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B8A30571E299B7C00A681EF /* SceneStart.sks */; };
+		8B8A30591E299B7C00A681EF /* SceneStart.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B8A30571E299B7C00A681EF /* SceneStart.sks */; };
 		8B920F9D1E27719D00CE553E /* Timber-Hole1.sks in Resources */ = {isa = PBXBuildFile; fileRef = E865FFF21E1DC03C0072E2E3 /* Timber-Hole1.sks */; };
 		8B920F9E1E27719D00CE553E /* Timber-Hole2.sks in Resources */ = {isa = PBXBuildFile; fileRef = E865FFF41E1DC0440072E2E3 /* Timber-Hole2.sks */; };
 		8B920F9F1E27719D00CE553E /* Timber-Hole3.sks in Resources */ = {isa = PBXBuildFile; fileRef = E865FFF61E1DC04B0072E2E3 /* Timber-Hole3.sks */; };
@@ -178,8 +180,6 @@
 		8BC378081E1CDB2D0014AFA2 /* blazeAmbience.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8BC378051E1CDB2D0014AFA2 /* blazeAmbience.m4a */; };
 		8BC378091E1CDB2D0014AFA2 /* frostAmbience.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BC378061E1CDB2D0014AFA2 /* frostAmbience.mp3 */; };
 		8BC3780A1E1CDB2D0014AFA2 /* timberAmbience.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BC378071E1CDB2D0014AFA2 /* timberAmbience.mp3 */; };
-		8BC3780C1E1CE9670014AFA2 /* SceneStart.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BC3780B1E1CE9670014AFA2 /* SceneStart.sks */; };
-		8BC3780D1E1CE9670014AFA2 /* SceneStart.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BC3780B1E1CE9670014AFA2 /* SceneStart.sks */; };
 		8BCF770C1E03CD0200D48A61 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BCF770B1E03CD0200D48A61 /* Messages.framework */; };
 		8BCF77121E03CD0200D48A61 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BCF77101E03CD0200D48A61 /* MainInterface.storyboard */; };
 		8BCF77141E03CD0200D48A61 /* iMessageAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BCF77131E03CD0200D48A61 /* iMessageAssets.xcassets */; };
@@ -510,6 +510,7 @@
 		8B8A304E1E297D8E00A681EF /* ControlsButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ControlsButton.xib; sourceTree = "<group>"; };
 		8B8A30511E297E4C00A681EF /* UserControlsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserControlsView.xib; sourceTree = "<group>"; };
 		8B8A30541E297FFB00A681EF /* UserControlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserControlsView.swift; sourceTree = "<group>"; };
+		8B8A30571E299B7C00A681EF /* SceneStart.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SceneStart.sks; sourceTree = "<group>"; };
 		8B93AFF11E1E1F4000BA03C1 /* portalAmbience.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = portalAmbience.mp3; sourceTree = "<group>"; };
 		8B93AFF21E1E1F4000BA03C1 /* portalTransfer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = portalTransfer.mp3; sourceTree = "<group>"; };
 		8B961F211E1C601600678257 /* Bebas.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bebas.ttf; sourceTree = "<group>"; };
@@ -548,7 +549,6 @@
 		8BC378051E1CDB2D0014AFA2 /* blazeAmbience.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = blazeAmbience.m4a; sourceTree = "<group>"; };
 		8BC378061E1CDB2D0014AFA2 /* frostAmbience.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = frostAmbience.mp3; sourceTree = "<group>"; };
 		8BC378071E1CDB2D0014AFA2 /* timberAmbience.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = timberAmbience.mp3; sourceTree = "<group>"; };
-		8BC3780B1E1CE9670014AFA2 /* SceneStart.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SceneStart.sks; sourceTree = "<group>"; };
 		8BCF770A1E03CD0200D48A61 /* iMessageExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = iMessageExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BCF770B1E03CD0200D48A61 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		8BCF77111E03CD0200D48A61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -828,9 +828,9 @@
 		8B961F321E1C601600678257 /* Actions */ = {
 			isa = PBXGroup;
 			children = (
+				8B8A30571E299B7C00A681EF /* SceneStart.sks */,
 				8B961F301E1C601600678257 /* BallInHole.sks */,
 				8B961F311E1C601600678257 /* WallHit.sks */,
-				8BC3780B1E1CE9670014AFA2 /* SceneStart.sks */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -1366,7 +1366,6 @@
 				8B920FA91E27719E00CE553E /* Blaze-Hole4.sks in Resources */,
 				E87030321E21A41B008A7DDD /* frostRightLeft.sks in Resources */,
 				8BCF77121E03CD0200D48A61 /* MainInterface.storyboard in Resources */,
-				8BC3780D1E1CE9670014AFA2 /* SceneStart.sks in Resources */,
 				8B5F8B421E22F925009C262F /* HoleTile.sks in Resources */,
 				E87030491E21A423008A7DDD /* blazeStraightWall.sks in Resources */,
 				E870304F1E21A423008A7DDD /* blazeUWallUp.sks in Resources */,
@@ -1416,6 +1415,7 @@
 				E8A12A271E222B8F00768580 /* nebulaCornerTopLeft.sks in Resources */,
 				8B9620581E1C60B300678257 /* BallTrail.sks in Resources */,
 				8B9620761E1C60B400678257 /* CoursePreviewView.xib in Resources */,
+				8B8A30591E299B7C00A681EF /* SceneStart.sks in Resources */,
 				E870303F1E21A423008A7DDD /* blazeCornerConnecter.sks in Resources */,
 				E87030411E21A423008A7DDD /* blazeCornerTopRight.sks in Resources */,
 				8B5F8B491E23120D009C262F /* clickSoft.wav in Resources */,
@@ -1482,6 +1482,7 @@
 				E8C550481E218AE1000EC3E0 /* blazeStraightWall.sks in Resources */,
 				E8C550181E218A16000EC3E0 /* frostCurvedWallShort.sks in Resources */,
 				E865FFF31E1DC03C0072E2E3 /* Timber-Hole1.sks in Resources */,
+				8B8A30581E299B7C00A681EF /* SceneStart.sks in Resources */,
 				8B8A304F1E297D8E00A681EF /* ControlsButton.xib in Resources */,
 				8B35A2281E2189710063520C /* InGameMenuView.xib in Resources */,
 				8B13B33C1E1C7E2A00C0044A /* clubHit.wav in Resources */,
@@ -1500,7 +1501,6 @@
 				E8C54FF91E218904000EC3E0 /* timberUWallDown.sks in Resources */,
 				E89567E71E27094300E020E3 /* nebulaCornerInside.sks in Resources */,
 				E89F982E1E22257100178B4F /* nebulaUWalls.sks in Resources */,
-				8BC3780C1E1CE9670014AFA2 /* SceneStart.sks in Resources */,
 				8B13B3381E1C7E2A00C0044A /* click2.wav in Resources */,
 				8B13B3431E1C7E2A00C0044A /* randomClick.wav in Resources */,
 				E89474051E24AB540013E9F4 /* Nebula-Hole7.sks in Resources */,
