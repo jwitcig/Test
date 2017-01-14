@@ -631,7 +631,7 @@ extension PuttScene: SKPhysicsContactDelegate {
     
     func sceneClosePressed(recognizer: UITapGestureRecognizer) {
         guard let scorecard = scorecard else { return  }
-        let viewLocation = recognizer.location(in: view!)
+        let viewLocation = recognizer.location(in: recognizer.view!)
         let sceneLocation = convertPoint(fromView: viewLocation)
         
         let location = convert(sceneLocation, to: scorecard)

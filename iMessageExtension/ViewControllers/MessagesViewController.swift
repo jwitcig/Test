@@ -34,6 +34,10 @@ class MessagesViewController: MSMessagesAppViewController {
         }
     }
     
+    override func didSelect(_ message: MSMessage, conversation: MSConversation) {
+        handleStarterEvent(message: message, conversation: conversation)
+    }
+    
     override func didStartSending(_ message: MSMessage, conversation: MSConversation) {
         isAwaitingResponse = true
     }
