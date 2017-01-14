@@ -170,7 +170,7 @@ class GameViewController: UIViewController {
         let animateBlur = SKAction.customAction(withDuration: duration) { node, elapsed in
             blur.setValue(radius * elapsed/CGFloat(duration), forKey: kCIInputRadiusKey)
         }
-        effecgit.run(animateBlur)
+        effect.run(animateBlur)
         
         let blurred = SKSpriteNode(texture: view.texture(from: node))
         blurred.position = scene.camera!.position
