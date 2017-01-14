@@ -173,7 +173,7 @@
 		18A3C769714ACCE55B3471DDB8AB5071 /* Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Session.swift; path = SwiftTools/Session.swift; sourceTree = "<group>"; };
 		1DF2BE1E1931C70822B1F1BA6DFDDDED /* Pods-MrPutt-iMessageExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MrPutt-iMessageExtension-dummy.m"; sourceTree = "<group>"; };
 		1E85B476E6020076D1E5A383AD117FAF /* SwiftTools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftTools.h; path = SwiftTools/SwiftTools.h; sourceTree = "<group>"; };
-		1EF7CEDD59305A6AB1F60279058643F6 /* Cartography.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Cartography.framework; path = Cartography.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EF7CEDD59305A6AB1F60279058643F6 /* Cartography.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cartography.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE33F7FD4B3021BB973118AF0062315 /* Game-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Game-prefix.pch"; sourceTree = "<group>"; };
 		21A72BADA8558EDB44F06F389993EB5C /* MapKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MapKit.swift; path = SwiftTools/MapKit.swift; sourceTree = "<group>"; };
 		24B61FFCFA8E17B89614293888ACC3C8 /* Messages.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Messages.swift; path = SwiftTools/Messages.swift; sourceTree = "<group>"; };
@@ -183,23 +183,23 @@
 		2CC83978AA27826D8CC6C3748B792D77 /* Pods-MrPutt-iMessageExtension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MrPutt-iMessageExtension-acknowledgements.plist"; sourceTree = "<group>"; };
 		36147F0E69606C6B8D2CC83FB8F9D786 /* Pods-MrPutt-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MrPutt-resources.sh"; sourceTree = "<group>"; };
 		3850157421C666EE3FCC37DE35D03E75 /* LocationHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocationHandler.swift; path = SwiftTools/LocationHandler.swift; sourceTree = "<group>"; };
-		3AE02794649707674E56876FB54B7A9A /* Pods_MrPutt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MrPutt.framework; path = "Pods-MrPutt.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AE02794649707674E56876FB54B7A9A /* Pods_MrPutt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MrPutt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41AB3A723839B09B544A733CFF2676FC /* Pods-MrPutt-iMessageExtension-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MrPutt-iMessageExtension-resources.sh"; sourceTree = "<group>"; };
 		43535514E18168F63FB84C9B8EBBB7C8 /* Game.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Game.swift; path = Game/Game.swift; sourceTree = "<group>"; };
-		491F5EC5F035B12643D5D691720BB2AF /* Cartography.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Cartography.modulemap; sourceTree = "<group>"; };
+		491F5EC5F035B12643D5D691720BB2AF /* Cartography.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Cartography.modulemap; sourceTree = "<group>"; };
 		51F22272469F527130555FF9939A4215 /* Pods-MrPutt-iMessageExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MrPutt-iMessageExtension.release.xcconfig"; sourceTree = "<group>"; };
 		52B308C19476C4AE01C30CD4325124C2 /* Property.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Property.swift; path = Cartography/Property.swift; sourceTree = "<group>"; };
 		53B54BFC0DFDA0CB1756450142FD43FD /* ViewUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewUtils.swift; path = Cartography/ViewUtils.swift; sourceTree = "<group>"; };
 		58F2FC93EA095EFFBC14C40F3A5F1F44 /* Compound.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Compound.swift; path = Cartography/Compound.swift; sourceTree = "<group>"; };
 		5A43F3B2A0A856728724FBF5C2976D71 /* Pods-MrPutt-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MrPutt-umbrella.h"; sourceTree = "<group>"; };
-		5DC0E1F5CFDFA524163C4F0F7848CC6F /* iMessageTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = iMessageTools.framework; path = iMessageTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DC0E1F5CFDFA524163C4F0F7848CC6F /* iMessageTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iMessageTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62460E51F29862DE20193051977E9DAA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		626E79ADB0966120D60CF54C513D5522 /* Game.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Game.h; path = Game/Game.h; sourceTree = "<group>"; };
 		62BBEB390CF7CFE4ED13C8F7F7D762F1 /* Edge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Edge.swift; path = Cartography/Edge.swift; sourceTree = "<group>"; };
 		66B482539D41AF6893FC812514AF71EF /* RandomGenerators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RandomGenerators.swift; path = SwiftTools/RandomGenerators.swift; sourceTree = "<group>"; };
 		69FA46F79EFA62C44D7B86B63209F7B5 /* Game.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Game.xcconfig; sourceTree = "<group>"; };
 		6ADFB557B3831658EA86A808CBEB561B /* View.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = View.swift; path = Cartography/View.swift; sourceTree = "<group>"; };
-		6B6FE5A1CB041B9CB0598D205D317568 /* Pods-MrPutt-iMessageExtension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MrPutt-iMessageExtension.modulemap"; sourceTree = "<group>"; };
+		6B6FE5A1CB041B9CB0598D205D317568 /* Pods-MrPutt-iMessageExtension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MrPutt-iMessageExtension.modulemap"; sourceTree = "<group>"; };
 		707D9CDF62E3A0D97C4FAC0FA5A6354A /* Expression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expression.swift; path = Cartography/Expression.swift; sourceTree = "<group>"; };
 		7537906E15B3FA073E25FBD15AA7F881 /* Priority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Priority.swift; path = Cartography/Priority.swift; sourceTree = "<group>"; };
 		779477F271E9DADD1DFE0EC68F92CFCF /* iMessageTools-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iMessageTools-umbrella.h"; sourceTree = "<group>"; };
@@ -211,7 +211,7 @@
 		8C9B4491C07910015412063A1EA123C8 /* Distribute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Distribute.swift; path = Cartography/Distribute.swift; sourceTree = "<group>"; };
 		8F1BFE7D101635B6D24ADDC50EE9EC63 /* Standard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Standard.swift; path = SwiftTools/Standard.swift; sourceTree = "<group>"; };
 		9154BE723D51E5B3AF870B579898DFD9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		94404FC39FEA24945E83C17EF6EB029F /* Cartography-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cartography-umbrella.h"; sourceTree = "<group>"; };
 		979AED05F61778CA8BD60EFA0B571492 /* Pods-MrPutt-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MrPutt-dummy.m"; sourceTree = "<group>"; };
 		9B912FAE8D5E83E216DF396E6ED3A724 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -222,30 +222,30 @@
 		A00F14B2E629D75CD59797734AB5C723 /* Point.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Point.swift; path = Cartography/Point.swift; sourceTree = "<group>"; };
 		A0E2A0D0A4C4864819154D61229650C1 /* JWSwiftTools.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JWSwiftTools.xcconfig; sourceTree = "<group>"; };
 		A1E29FA61CD8AECD1A4F9662C1CC2ED5 /* Interpreter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Interpreter.swift; path = iMessagePack/Interpreter.swift; sourceTree = "<group>"; };
-		A268DB7DEC9C55C86E05BAC2926A6E27 /* Pods-MrPutt.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MrPutt.modulemap"; sourceTree = "<group>"; };
+		A268DB7DEC9C55C86E05BAC2926A6E27 /* Pods-MrPutt.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MrPutt.modulemap"; sourceTree = "<group>"; };
 		A2C99382D5B71E9F4AB5EDED6C4E83F1 /* Coefficients.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Coefficients.swift; path = Cartography/Coefficients.swift; sourceTree = "<group>"; };
-		A37115C32F1ADC123CEC4B332CAA3576 /* JWSwiftTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JWSwiftTools.framework; path = JWSwiftTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A37115C32F1ADC123CEC4B332CAA3576 /* JWSwiftTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JWSwiftTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A439634197D8D0832921D212C096DAB1 /* Collections.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Collections.swift; path = SwiftTools/Collections.swift; sourceTree = "<group>"; };
 		A5F7B6A82A183F4BBCF35FD09AF0829E /* CloudKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CloudKit.swift; path = SwiftTools/Extensions/CloudKit.swift; sourceTree = "<group>"; };
 		A78B290A3079CF65876D6C70C17F0E02 /* Sequences.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sequences.swift; path = SwiftTools/Sequences.swift; sourceTree = "<group>"; };
 		AAAFB00C3342546C2906C8CD57585038 /* Pods-MrPutt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MrPutt.debug.xcconfig"; sourceTree = "<group>"; };
-		AADBDFC9FAF8A8FDBEE5CC363260C0CC /* Pods_MrPutt_iMessageExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MrPutt_iMessageExtension.framework; path = "Pods-MrPutt-iMessageExtension.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AADBDFC9FAF8A8FDBEE5CC363260C0CC /* Pods_MrPutt_iMessageExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MrPutt_iMessageExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE2ABDFD03AB35593A7B017E7E8582A6 /* Game-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Game-dummy.m"; sourceTree = "<group>"; };
 		B2989F31ABA41D738A0EE3EBBA3043BF /* Session-Structure.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Session-Structure.swift"; path = "SwiftTools/Session-Structure.swift"; sourceTree = "<group>"; };
 		B4065522E9823038E23908C61021F246 /* Pods-MrPutt-iMessageExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MrPutt-iMessageExtension.debug.xcconfig"; sourceTree = "<group>"; };
-		B605B0D5C9CF981FA252C89116CFE093 /* JWSwiftTools.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = JWSwiftTools.modulemap; sourceTree = "<group>"; };
+		B605B0D5C9CF981FA252C89116CFE093 /* JWSwiftTools.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = JWSwiftTools.modulemap; sourceTree = "<group>"; };
 		B615D0FA68B00D4C1184356069D4D85A /* Protocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = Game/Protocols.swift; sourceTree = "<group>"; };
 		B7EDC85CC19B7301012AB562F8C75E83 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		C109EE42AEE265143F568E1605105E80 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C3CABFF43CDAF2F2535B85876804F044 /* iMessageTools.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = iMessageTools.modulemap; sourceTree = "<group>"; };
-		C42843CA3B3C2FBB7506F9B9B217F44F /* Game.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Game.framework; path = Game.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3CABFF43CDAF2F2535B85876804F044 /* iMessageTools.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = iMessageTools.modulemap; sourceTree = "<group>"; };
+		C42843CA3B3C2FBB7506F9B9B217F44F /* Game.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Game.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C47B91F8CADE4C3A73BF8BC91421DE9B /* Pods-MrPutt-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MrPutt-frameworks.sh"; sourceTree = "<group>"; };
 		C4B4FAF64866D37662A32A535C6843E4 /* Dimension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Dimension.swift; path = Cartography/Dimension.swift; sourceTree = "<group>"; };
 		C4F2CB1A95FC362BE5D04028E72E5FB0 /* JWSwiftTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JWSwiftTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C55844C7ED0DEC56C721E486755D7D7D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = Game/Info.plist; sourceTree = "<group>"; };
 		C630DA765824FBCDD6BCB2338820FC71 /* Layout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Layout.swift; path = SwiftTools/Layout.swift; sourceTree = "<group>"; };
 		C8F28F680245A68C88D383602A2142D1 /* SortingAndFiltering.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SortingAndFiltering.swift; path = SwiftTools/SortingAndFiltering.swift; sourceTree = "<group>"; };
-		C9AB44C7ACE2337B53AE9BB444DD9C16 /* Game.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Game.modulemap; sourceTree = "<group>"; };
+		C9AB44C7ACE2337B53AE9BB444DD9C16 /* Game.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Game.modulemap; sourceTree = "<group>"; };
 		CA5CEB4139BC902AAA9AFA5A8A68CD27 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = iMessagePack/Info.plist; sourceTree = "<group>"; };
 		CAF6A91E34AE13FEF8845A77114E56FA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBE96B4F0FAF0D01DB3F95F23BC1D9E7 /* iMessageTools.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = iMessageTools.xcconfig; sourceTree = "<group>"; };
@@ -348,7 +348,6 @@
 				B615D0FA68B00D4C1184356069D4D85A /* Protocols.swift */,
 				D6CC5D2B96D57C4DB890E0E44B8CC58E /* Support Files */,
 			);
-			name = Game;
 			path = Game;
 			sourceTree = "<group>";
 		};
@@ -423,7 +422,6 @@
 				53B54BFC0DFDA0CB1756450142FD43FD /* ViewUtils.swift */,
 				01371F9483B6A3A6206583C1EF9E2629 /* Support Files */,
 			);
-			name = Cartography;
 			path = Cartography;
 			sourceTree = "<group>";
 		};
@@ -445,7 +443,6 @@
 				A1E29FA61CD8AECD1A4F9662C1CC2ED5 /* Interpreter.swift */,
 				273A3EABBE7C9EDCB30E7582C41F9B98 /* Support Files */,
 			);
-			name = iMessageTools;
 			path = iMessageTools;
 			sourceTree = "<group>";
 		};
@@ -545,7 +542,6 @@
 				D9CA8373334AF6B1B1A14E925E5EDD1F /* UIKit.swift */,
 				D3765547070F54773FE6DE6607CC46E5 /* Support Files */,
 			);
-			name = JWSwiftTools;
 			path = JWSwiftTools;
 			sourceTree = "<group>";
 		};

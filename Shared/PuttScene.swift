@@ -400,6 +400,12 @@ class PuttScene: SKScene {
         // grabs ball velocity before physics calculations,
         // used in wall reflection
         ballPrePhysicsVelocity = ball.physicsBody?.velocity ?? .zero
+        
+        guard ball.textureRenderer.node != nil else { return }
+        guard (ball.textureRenderer.components.filter{$0.parent==nil}).count == 0 else { return }
+        ball.textureRenderer.replace()
+        ball.textureRenderer.position.x += ball.physicsBody!.velocity.dx
+        ball.textureRenderer.position.y += ball.physicsBody!.velocity.dy
     }
     
     override func didSimulatePhysics() {
