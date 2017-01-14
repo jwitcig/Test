@@ -136,6 +136,14 @@ class PuttScene: SKScene {
             run(SKAction.sequence([delay, ballDrop]))
         }
         
+        
+        if let flagBob = SKAction(named: "FlagBobbing") {
+            
+            childNode(withName: "//flag")?.run(SKAction.repeatForever(flagBob))
+
+            
+        }
+        
 //        let light = ball.childNode(withName: "light") as! SKLightNode
 //        
 //        let random = GKRandomDistribution(lowestValue: 0, highestValue: 1)
@@ -368,7 +376,6 @@ class PuttScene: SKScene {
         
         let sound = SKAudioNode(fileNamed: "clubHit.wav")
         sound.autoplayLooped = false
-        sound.isPositional = true
         sound.position = convert(ball.position, from: ball.parent!)
         
         // scale volume with shot power
