@@ -102,7 +102,7 @@ class GameViewController: UIViewController {
         // setup any visuals with data specific to the previous session; if nil, start fresh
         opponentSession = previousSession
         
-        var hole = previousSession?.initial.holeNumber ?? 1
+        var hole = previousSession?.initial.holeNumber ?? 7
         
         let yourCompletedCourses = previousSession?.instance.opponentShots.count ?? 0
         let theirCompletedCourses = previousSession?.instance.shots.count ?? 0
@@ -218,9 +218,10 @@ class GameViewController: UIViewController {
                 self.toggleMenus(on: true, duration: TimeInterval((self.settingsPane?.motionDuration ?? 1) / 2))
             }
         }
-        
+        AudioPlayer.main.play("click")
+
         toolsContainer.layoutIfNeeded()
-    
+        
         if settingsPane.isShown {
             settingsPane.dismiss()
         } else if controlsPane?.isShown == true {
@@ -265,7 +266,8 @@ class GameViewController: UIViewController {
                 self.toggleMenus(on: true, duration: TimeInterval((self.controlsPane?.motionDuration ?? 1)/2))
             }
         }
-        
+        AudioPlayer.main.play("click")
+
         toolsContainer.layoutIfNeeded()
         
         if controlsPane.isShown  {
@@ -329,6 +331,17 @@ class GameViewController: UIViewController {
         let player1Strokes = session.gameData.shots
         let player2Strokes = session.gameData.opponentShots
 
+        if let winner = session.gameData.winner {
+            switch winner {
+            case .you:
+                AudioPlayer.main.play("winGame")
+            case .them:
+                AudioPlayer.main.play("gameOver")
+            case .tie:
+                break
+            }
+        }
+        
         let pars = [Int](repeatElement(3, count: 9))
         
         removeSettings(duration: TimeInterval(1))
@@ -363,11 +376,16 @@ class GameViewController: UIViewController {
             // your opponent's opponent is you
             shots = opponentSession.gameData.opponentShots + shots
             
-            let yourScore = shots.reduce(0, +)
-            let theirScore = opponentSession.gameData.shots.reduce(0, +)
+            let yourShots = shots
+            let theirShots = opponentSession.gameData.shots
             
-            winner = yourScore < theirScore  ? .you : .them
-            winner = yourScore == theirScore ? .tie : winner
+            let yourScore = yourShots.reduce(0, +)
+            let theirScore = theirShots.reduce(0, +)
+        
+            if yourShots.count == 9 && theirShots.count == 9 {
+                winner = yourScore < theirScore  ? .you : .them
+                winner = yourScore == theirScore ? .tie : winner
+            }
         }
         
         let instance = PuttInstanceData(shots: shots, opponentShots: opponentSession?.gameData.shots, winner: winner)

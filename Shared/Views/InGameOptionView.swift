@@ -28,7 +28,11 @@ class InGameOptionView: UIView {
     var onChanged: (Void)->Void = { }
     
     static func create() -> InGameOptionView {
-        return Bundle(for: InGameOptionView.self).loadNibNamed("InGameOptionView", owner: nil, options: nil)![0] as! InGameOptionView
+        let option = Bundle(for: InGameOptionView.self).loadNibNamed("InGameOptionView", owner: nil, options: nil)![0] as! InGameOptionView
+        
+        option.toggleSwitch.addTarget(option, action: #selector(InGameOptionView.settingChanged(sender:)), for: .valueChanged)
+        
+        return option
     }
     
     override func awakeFromNib() {
@@ -39,6 +43,10 @@ class InGameOptionView: UIView {
         constrain(self) {
             $0.height == 44
         }
+    }
+    
+    func settingChanged(sender: Any) {
+        AudioPlayer.main.play("toggle")
     }
 
 }

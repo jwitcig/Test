@@ -6,11 +6,29 @@
 //  Copyright © 2017 CodeWithKenny. All rights reserved.
 //
 
+import AVFoundation
 import UIKit
 
+import Cartography
 import iMessageTools
 
-import Cartography
+class AudioPlayer {
+    
+    static let main = AudioPlayer()
+    
+    private var player: AVAudioPlayer?
+    
+    func play(_ fileName: String, ofType fileType: String = "mp3") {
+        guard let url = Bundle(for: AudioPlayer.self).url(forResource: fileName, withExtension: fileType) else { return }
+        
+        do {
+            self.player = try AVAudioPlayer(contentsOf: url)
+            
+            self.player?.prepareToPlay()
+            self.player?.play()
+        } catch { }
+    }
+}
 
 class CourseSelectionViewController: UIViewController {
     
@@ -21,6 +39,8 @@ class CourseSelectionViewController: UIViewController {
     
     var messageSender: MessageSender?
     var orientationManager: OrientationManager?
+    
+    var audioPlayer: AVAudioPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +74,8 @@ class CourseSelectionViewController: UIViewController {
             controller.orientationManager = self.orientationManager
             controller.configureScene(previousSession: nil, course: course)
             self.present(controller)
+           
+            AudioPlayer.main.play("click")
         }
         
         let courses: [CoursePack.Type] = [
