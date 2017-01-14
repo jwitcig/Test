@@ -130,6 +130,12 @@ class PuttScene: SKScene {
         
         setupAmbience()
         
+        if let ballDrop = SKAction(named: "BallDrop") {
+            let delay = SKAction.wait(forDuration: 0.9)
+
+            run(SKAction.sequence([delay, ballDrop]))
+        }
+        
 //        let light = ball.childNode(withName: "light") as! SKLightNode
 //        
 //        let random = GKRandomDistribution(lowestValue: 0, highestValue: 1)
@@ -579,6 +585,15 @@ extension PuttScene: SKPhysicsContactDelegate {
                 if userData?["name"] as? String == destination {
                     let move = SKAction.move(to: node.parent!.convert(node.position, to: self.ball.parent!), duration: 0)
                     
+                    
+                    if let isVelocityFlipped = userData?["velocityFlipped"] as? Bool, isVelocityFlipped {
+                        
+                        let dx = self.ball.physicsBody!.velocity.dx
+                        let dy = self.ball.physicsBody!.velocity.dy
+                        self.ball.physicsBody?.velocity.dx = dy
+                        self.ball.physicsBody?.velocity.dy = dx
+                    }
+                    
                     let velocityXMultipler = userData?["velocityXMultiplier"] as? CGFloat ?? 1
                     let velocityYMultipler = userData?["velocityYMultiplier"] as? CGFloat ?? 1
                     
@@ -633,6 +648,8 @@ extension PuttScene: SKPhysicsContactDelegate {
         
         let touch = UITapGestureRecognizer(target: self, action: #selector(PuttScene.sceneClosePressed(recognizer:)))
         view?.addGestureRecognizer(touch)
+        
+        AudioPlayer.main.play("scoreCard")
     }
     
     func sceneClosePressed(recognizer: UITapGestureRecognizer) {
