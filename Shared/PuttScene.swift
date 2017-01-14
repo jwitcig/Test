@@ -51,7 +51,11 @@ class PuttScene: SKScene {
     var touchNode = SKNode()
     
     lazy var shotIndicator: ShotIndicator = {
-        return ShotIndicator(orientToward: self.touchNode)
+        if let matRotation = self.childNode(withName: "//\(Mat.name)")?.parent?.parent?.zRotation {
+            let offset = SKRange(constantValue: matRotation - .pi/2)
+            return ShotIndicator(orientToward: self.touchNode, withOffset: offset)
+        }
+        return ShotIndicator(orientToward: self.touchNode, withOffset: SKRange(constantValue: 0))
     }()
     
     var cameraLimiter: CGRect {
@@ -122,6 +126,7 @@ class PuttScene: SKScene {
         addSettingsListener(forKey: "Music")
         
         addChild(shotIndicator)
+        shotIndicator.alpha = 0
         
 //        let light = ball.childNode(withName: "light") as! SKLightNode
 //        
