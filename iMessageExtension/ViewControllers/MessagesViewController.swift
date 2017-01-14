@@ -123,6 +123,11 @@ extension MessagesViewController: iMessageCycle {
             return
         }
         
+        if reader.session.ended {
+            courseController = createCourseSelectionController()
+            present(courseController!)
+        }
+        
         isAwaitingResponse = false
         
         gameController = createGameController(fromReader: reader, course: reader.session.initial.course)

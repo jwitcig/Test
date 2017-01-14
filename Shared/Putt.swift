@@ -229,7 +229,7 @@ struct PuttSession: SessionType, StringDictionaryRepresentable, Messageable {
         self.instance = instance
         self.initial = initial
         
-        self.ended = ended
+        self.ended = instance.winner != nil
         
         self.messageSession = messageSession
     }

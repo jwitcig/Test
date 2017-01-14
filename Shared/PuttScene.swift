@@ -443,7 +443,11 @@ class PuttScene: SKScene {
             return
         }
         let tracking = SKConstraint.distance(SKRange(value: 0, variance: ballFreedomRadius), to: ball)
-        camera?.constraints?.insert(tracking, at: 0)
+        if let _ = camera?.constraints {
+            camera?.constraints?.insert(tracking, at: 0)
+        } else {
+            camera?.constraints = [tracking]
+        }
         camera?.removeAction(forKey: "trackingEnabler")
         
         ballTracking = tracking
@@ -625,8 +629,6 @@ extension PuttScene: SKPhysicsContactDelegate {
         scorecard.donePressed = donePressed
         scorecard.zPosition = 100
         
-        
-    
         let duration: TimeInterval = 0.8
         scorecard.children.forEach {
             let scale = camera!.xScale
@@ -636,9 +638,8 @@ extension PuttScene: SKPhysicsContactDelegate {
             let y = ($0.position.y * scale) + camera!.position.y
             let destination: CGPoint = self.convert(CGPoint(x: x, y: y), to: scorecard)
 
-            $0.position = CGPoint(x: $0.position.x-size.width*(0.75)*scale, y: $0.position.y*scale)
-            
-            
+            $0.position = CGPoint(x: destination.x-self.size.width*scale, y: destination.y)
+    
             let slide = SKAction.move(to: destination, duration: duration)
             slide.timingMode = .easeOut
             
