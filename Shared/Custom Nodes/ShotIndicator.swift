@@ -64,10 +64,10 @@ class ShotIndicator: SKNode {
         return node
     }()
     
-    init(orientToward node: SKNode) {
+    init(orientToward node: SKNode, withOffset offset: SKRange) {
         super.init()
         
-        let orient = SKConstraint.orient(to: node, offset: SKRange(constantValue: -.pi/2))
+        let orient = SKConstraint.orient(to: node, offset: offset)
         angleIndicator.constraints = [orient]
         
         addChild(angleIndicator)

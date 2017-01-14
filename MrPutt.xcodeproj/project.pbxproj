@@ -138,7 +138,6 @@
 		8B9620131E1C601600678257 /* Ball.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F351E1C601600678257 /* Ball.sks */; };
 		8B9620141E1C601600678257 /* Frost-Hole1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F361E1C601600678257 /* Frost-Hole1.sks */; };
 		8B9620151E1C601600678257 /* Frost-Hole2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F371E1C601600678257 /* Frost-Hole2.sks */; };
-		8B9620161E1C601600678257 /* ShotPathIndicator.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F391E1C601600678257 /* ShotPathIndicator.sks */; };
 		8B9620221E1C601600678257 /* Mat.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F451E1C601600678257 /* Mat.sks */; };
 		8B96202E1E1C601600678257 /* WindField.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F521E1C601600678257 /* WindField.sks */; };
 		8B96202F1E1C601600678257 /* CoursePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B961F551E1C601600678257 /* CoursePreviewView.swift */; };
@@ -163,7 +162,6 @@
 		8B9620591E1C60B300678257 /* Ball.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F351E1C601600678257 /* Ball.sks */; };
 		8B96205A1E1C60B300678257 /* Frost-Hole1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F361E1C601600678257 /* Frost-Hole1.sks */; };
 		8B96205B1E1C60B300678257 /* Frost-Hole2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F371E1C601600678257 /* Frost-Hole2.sks */; };
-		8B96205C1E1C60B300678257 /* ShotPathIndicator.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F391E1C601600678257 /* ShotPathIndicator.sks */; };
 		8B9620681E1C60B400678257 /* Mat.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F451E1C601600678257 /* Mat.sks */; };
 		8B9620741E1C60B400678257 /* WindField.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F521E1C601600678257 /* WindField.sks */; };
 		8B9620751E1C60B400678257 /* CoursePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B961F551E1C601600678257 /* CoursePreviewView.swift */; };
@@ -530,7 +528,6 @@
 		8B961F351E1C601600678257 /* Ball.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Ball.sks; sourceTree = "<group>"; };
 		8B961F361E1C601600678257 /* Frost-Hole1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Frost-Hole1.sks"; sourceTree = "<group>"; };
 		8B961F371E1C601600678257 /* Frost-Hole2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Frost-Hole2.sks"; sourceTree = "<group>"; };
-		8B961F391E1C601600678257 /* ShotPathIndicator.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ShotPathIndicator.sks; sourceTree = "<group>"; };
 		8B961F451E1C601600678257 /* Mat.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Mat.sks; path = Tiles/Mat.sks; sourceTree = "<group>"; };
 		8B961F521E1C601600678257 /* WindField.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = WindField.sks; sourceTree = "<group>"; };
 		8B961F551E1C601600678257 /* CoursePreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoursePreviewView.swift; path = ../UI/CoursePreviewView.swift; sourceTree = "<group>"; };
@@ -903,7 +900,6 @@
 			children = (
 				8B961F351E1C601600678257 /* Ball.sks */,
 				E86513D61E1DBB1A005FBA85 /* Grid.sks */,
-				8B961F391E1C601600678257 /* ShotPathIndicator.sks */,
 				8BBD3B5F1E1DB40A00688836 /* Portal.sks */,
 				8B073B661E1C92B7008BBAE6 /* Hill.sks */,
 				8B961F451E1C601600678257 /* Mat.sks */,
@@ -1433,7 +1429,6 @@
 				E87030531E21A429008A7DDD /* timberBottomWall.sks in Resources */,
 				8B5F8B521E23120D009C262F /* randomClick.wav in Resources */,
 				E89473EE1E24621F0013E9F4 /* blazeSlabCircle.sks in Resources */,
-				8B96205C1E1C60B300678257 /* ShotPathIndicator.sks in Resources */,
 				E8CC43DF1E243FD10075AD34 /* frostLeftWall.sks in Resources */,
 				E8A12A241E222B4B00768580 /* nebulaCornerTopRight.sks in Resources */,
 				8B5F8B451E23120D009C262F /* blazeAmbience.m4a in Resources */,
@@ -1546,7 +1541,6 @@
 				E89473F61E24AB040013E9F4 /* Nebula-Hole2.sks in Resources */,
 				E870306A1E21A5B2008A7DDD /* blazeSlabShort.sks in Resources */,
 				E86513CF1E1DBA2E005FBA85 /* Blaze-Hole6.sks in Resources */,
-				8B9620161E1C601600678257 /* ShotPathIndicator.sks in Resources */,
 				E8C5504D1E218AE1000EC3E0 /* blazeUWallRight.sks in Resources */,
 				E8C550191E218A16000EC3E0 /* frostRightLeft.sks in Resources */,
 				E86513C91E1DBA16005FBA85 /* Blaze-Hole3.sks in Resources */,
