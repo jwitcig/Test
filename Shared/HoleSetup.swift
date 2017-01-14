@@ -59,6 +59,10 @@ class HoleSetup {
             
         case is Frost.Type:
             
+            if let snow = scene.childNode(withName: "//snow") as? SKEmitterNode {
+                snow.advanceSimulationTime(30)
+            }
+            
             switch hole {
             default:
                 break

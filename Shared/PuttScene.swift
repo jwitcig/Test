@@ -128,6 +128,8 @@ class PuttScene: SKScene {
         addChild(shotIndicator)
         shotIndicator.alpha = 0
         
+        setupAmbience()
+        
 //        let light = ball.childNode(withName: "light") as! SKLightNode
 //        
 //        let random = GKRandomDistribution(lowestValue: 0, highestValue: 1)
@@ -204,6 +206,10 @@ class PuttScene: SKScene {
             camera = SKCameraNode()
             addChild(camera!)
         }
+    }
+    
+    func setupAmbience() {
+       HoleSetup.setup(self, forHole: hole, inCourse: course)
     }
     
     func addGestureRecognizers(in view: SKView) {
