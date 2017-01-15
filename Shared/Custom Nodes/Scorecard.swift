@@ -34,6 +34,14 @@ class Scorecard: SKScene {
         return self.childNode(withName: "continue")! as! SKSpriteNode
     }()
     
+    var token: ShotToken? {
+        didSet {
+            guard let token = token else { return }
+            token.zPosition = 100
+            addChild(token)
+        }
+    }
+    
     var donePressed: ()->Void = { }
     
     required init?(coder aDecoder: NSCoder) {
@@ -43,8 +51,10 @@ class Scorecard: SKScene {
     }
 
     func update(hole: Int, names: (String, String), player1Strokes: [Int], player2Strokes:
-        [Int], pars: [Int]) {
+        [Int], course: CoursePack.Type) {
     
+        let pars = (1...9).map { HoleInfo.par(forHole: $0, in: course) }
+        
         let shotsDefault = "-"
         let cardImage = ScorecardStyleKit.imageOfCard(color3: .white,
                             holeNumber: hole.string!, name1: names.0, name2: names.1,
@@ -98,6 +108,9 @@ class Scorecard: SKScene {
         crop.addChild(infoPanel)
         
         addChild(crop)
+        
+        let par = HoleInfo.par(forHole: hole, in: course)
+        token = ShotToken(forShots: player1Strokes[hole-1], onPar: par)
     }
     
     func showHoleInfo() {
@@ -105,6 +118,17 @@ class Scorecard: SKScene {
         slide.timingMode = .easeOut
         
         infoPanel.run(slide)
+    }
+    
+    func showToken() {
+        guard let token = token else { return }
+        
+        token.position = CGPoint(x: 0, y: card.frame.maxY*2+token.size.height/2)
+        
+        let destination = CGPoint(x: card.frame.maxX-token.size.width/1.5, y: card.frame.maxY-token.size.height/2)
+        
+        let move = SKAction.move(to: destination, duration: 0)
+        token.run(move)
     }
     
 }

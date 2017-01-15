@@ -15,6 +15,14 @@
 		8B1317071E2B51D40088162D /* ballSelect.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B1317051E2B51220088162D /* ballSelect.mp3 */; };
 		8B1317091E2B6B6A0088162D /* HolePars.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B1317081E2B6B6A0088162D /* HolePars.plist */; };
 		8B13170A1E2B6B6A0088162D /* HolePars.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B1317081E2B6B6A0088162D /* HolePars.plist */; };
+		8B13170C1E2B78780088162D /* ceramicHit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B13170B1E2B78780088162D /* ceramicHit.mp3 */; };
+		8B13170D1E2B78780088162D /* ceramicHit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B13170B1E2B78780088162D /* ceramicHit.mp3 */; };
+		8B13170F1E2B7B5A0088162D /* ShotToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B13170E1E2B7B5A0088162D /* ShotToken.swift */; };
+		8B1317101E2B7B5A0088162D /* ShotToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B13170E1E2B7B5A0088162D /* ShotToken.swift */; };
+		8B1317111E2B942A0088162D /* LogoStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9620361E1C605F00678257 /* LogoStyleKit.swift */; };
+		8B1317131E2B948B0088162D /* WaitingForOpponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1317121E2B948B0088162D /* WaitingForOpponentView.swift */; };
+		8B1317141E2B948B0088162D /* WaitingForOpponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1317121E2B948B0088162D /* WaitingForOpponentView.swift */; };
+		8B1317171E2B95C40088162D /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1317151E2B95C40088162D /* MessagesViewController.swift */; };
 		8B13B34A1E1C84F800C0044A /* Snow.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3481E1C84F800C0044A /* Snow.sks */; };
 		8B13B34B1E1C84F800C0044A /* Snow.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3481E1C84F800C0044A /* Snow.sks */; };
 		8B13B34C1E1C84F800C0044A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3491E1C84F800C0044A /* Assets.xcassets */; };
@@ -134,7 +142,7 @@
 		8B96202F1E1C601600678257 /* CoursePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B961F551E1C601600678257 /* CoursePreviewView.swift */; };
 		8B9620301E1C601600678257 /* CoursePreviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F561E1C601600678257 /* CoursePreviewView.xib */; };
 		8B9620321E1C603400678257 /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B9620311E1C603400678257 /* SharedAssets.xcassets */; };
-		8B9620391E1C605F00678257 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9620361E1C605F00678257 /* MessagesViewController.swift */; };
+		8B9620391E1C605F00678257 /* LogoStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9620361E1C605F00678257 /* LogoStyleKit.swift */; };
 		8B96203B1E1C607B00678257 /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B9620311E1C603400678257 /* SharedAssets.xcassets */; };
 		8B96204B1E1C608400678257 /* Bebas.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F211E1C601600678257 /* Bebas.ttf */; };
 		8B96204C1E1C608400678257 /* Neutra2Display-Titled.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F221E1C601600678257 /* Neutra2Display-Titled.otf */; };
@@ -493,6 +501,10 @@
 		8B073B661E1C92B7008BBAE6 /* Hill.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hill.sks; sourceTree = "<group>"; };
 		8B1317051E2B51220088162D /* ballSelect.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ballSelect.mp3; sourceTree = "<group>"; };
 		8B1317081E2B6B6A0088162D /* HolePars.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HolePars.plist; sourceTree = "<group>"; };
+		8B13170B1E2B78780088162D /* ceramicHit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ceramicHit.mp3; sourceTree = "<group>"; };
+		8B13170E1E2B7B5A0088162D /* ShotToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotToken.swift; sourceTree = "<group>"; };
+		8B1317121E2B948B0088162D /* WaitingForOpponentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingForOpponentView.swift; sourceTree = "<group>"; };
+		8B1317151E2B95C40088162D /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		8B13B3481E1C84F800C0044A /* Snow.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Snow.sks; sourceTree = "<group>"; };
 		8B13B3491E1C84F800C0044A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B13B34E1E1C891900C0044A /* Frost-Hole3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Frost-Hole3.sks"; sourceTree = "<group>"; };
@@ -554,7 +566,7 @@
 		8B961F551E1C601600678257 /* CoursePreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoursePreviewView.swift; path = ../UI/CoursePreviewView.swift; sourceTree = "<group>"; };
 		8B961F561E1C601600678257 /* CoursePreviewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CoursePreviewView.xib; path = ../UI/CoursePreviewView.xib; sourceTree = "<group>"; };
 		8B9620311E1C603400678257 /* SharedAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SharedAssets.xcassets; sourceTree = "<group>"; };
-		8B9620361E1C605F00678257 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		8B9620361E1C605F00678257 /* LogoStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoStyleKit.swift; sourceTree = "<group>"; };
 		8B9620781E1C60CB00678257 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B96207A1E1C60CB00678257 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B96207C1E1C60CB00678257 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -782,6 +794,7 @@
 				8B8A304E1E297D8E00A681EF /* ControlsButton.xib */,
 				8B8A30541E297FFB00A681EF /* UserControlsView.swift */,
 				8B8A30511E297E4C00A681EF /* UserControlsView.xib */,
+				8B1317121E2B948B0088162D /* WaitingForOpponentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -815,6 +828,7 @@
 				8B5799191E2A0F850083228D /* click.mp3 */,
 				8B57991A1E2A0F850083228D /* toggle.mp3 */,
 				8B1317051E2B51220088162D /* ballSelect.mp3 */,
+				8B13170B1E2B78780088162D /* ceramicHit.mp3 */,
 			);
 			path = Clicks;
 			sourceTree = "<group>";
@@ -878,6 +892,7 @@
 			isa = PBXGroup;
 			children = (
 				8BD5ACDC1E23A3C100FAF51F /* ScorecardStyleKit.swift */,
+				8B9620361E1C605F00678257 /* LogoStyleKit.swift */,
 				8B9620311E1C603400678257 /* SharedAssets.xcassets */,
 				8B5799141E2A0F850083228D /* Audio */,
 				8B961F231E1C601600678257 /* Fonts */,
@@ -897,6 +912,7 @@
 				8B279D2D1E2724C30094DC62 /* Scorecard.swift */,
 				8B8A304B1E28A93F00A681EF /* ShotIndicator.swift */,
 				8B9FD44B1E2A357F00FE4D3D /* Flag.swift */,
+				8B13170E1E2B7B5A0088162D /* ShotToken.swift */,
 			);
 			path = "Custom Nodes";
 			sourceTree = "<group>";
@@ -1034,7 +1050,7 @@
 		8B9620341E1C605F00678257 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8B9620361E1C605F00678257 /* MessagesViewController.swift */,
+				8B1317151E2B95C40088162D /* MessagesViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1403,6 +1419,7 @@
 				8B920FA31E27719D00CE553E /* Timber-Hole7.sks in Resources */,
 				E89474061E24AB540013E9F4 /* Nebula-Hole7.sks in Resources */,
 				8B920FAF1E27719E00CE553E /* timberSlabShort.sks in Resources */,
+				8B13170D1E2B78780088162D /* ceramicHit.mp3 in Resources */,
 				8B13B3561E1C891900C0044A /* Frost-Hole3.sks in Resources */,
 				E870302E1E21A41B008A7DDD /* frostCornerTopLeft.sks in Resources */,
 				8B920F9E1E27719D00CE553E /* Timber-Hole2.sks in Resources */,
@@ -1664,6 +1681,7 @@
 				E8C54FF31E218904000EC3E0 /* timberOutsideCorner.sks in Resources */,
 				8B57992B1E2A0F850083228D /* toggle.mp3 in Resources */,
 				E8C550471E218AE1000EC3E0 /* blazeRightWall.sks in Resources */,
+				8B13170C1E2B78780088162D /* ceramicHit.mp3 in Resources */,
 				E8C54FFC1E218904000EC3E0 /* timberUWalls.sks in Resources */,
 				8B13B34A1E1C84F800C0044A /* Snow.sks in Resources */,
 				E89473F91E24AB1D0013E9F4 /* Nebula-Hole3.sks in Resources */,
@@ -1884,6 +1902,7 @@
 				8B9620511E1C608900678257 /* Wall.swift in Sources */,
 				8B9620531E1C608900678257 /* HoleSetup.swift in Sources */,
 				8B35A2261E21895B0063520C /* InGameMenuView.swift in Sources */,
+				8B1317101E2B7B5A0088162D /* ShotToken.swift in Sources */,
 				8B9620541E1C608900678257 /* Putt.swift in Sources */,
 				8B8A30561E297FFB00A681EF /* UserControlsView.swift in Sources */,
 				8BBDBD3A1E1C93E500878B3A /* Portal.swift in Sources */,
@@ -1892,7 +1911,9 @@
 				8B35A2351E218CF90063520C /* GameViewController.swift in Sources */,
 				8B96204F1E1C608900678257 /* Hole.swift in Sources */,
 				8B9620551E1C608900678257 /* PuttScene.swift in Sources */,
-				8B9620391E1C605F00678257 /* MessagesViewController.swift in Sources */,
+				8B9620391E1C605F00678257 /* LogoStyleKit.swift in Sources */,
+				8B1317141E2B948B0088162D /* WaitingForOpponentView.swift in Sources */,
+				8B1317171E2B95C40088162D /* MessagesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1909,8 +1930,10 @@
 				8B96200E1E1C601600678257 /* Putt.swift in Sources */,
 				8B9FD44C1E2A357F00FE4D3D /* Flag.swift in Sources */,
 				8B35A22B1E218A980063520C /* InGameOptionView.swift in Sources */,
+				8B1317131E2B948B0088162D /* WaitingForOpponentView.swift in Sources */,
 				8B96200B1E1C601600678257 /* Wall.swift in Sources */,
 				8B96200A1E1C601600678257 /* Mat.swift in Sources */,
+				8B13170F1E2B7B5A0088162D /* ShotToken.swift in Sources */,
 				8B35A2251E21895B0063520C /* InGameMenuView.swift in Sources */,
 				8B8A30551E297FFB00A681EF /* UserControlsView.swift in Sources */,
 				8BBDBD391E1C93E500878B3A /* Portal.swift in Sources */,
@@ -1919,6 +1942,7 @@
 				8B35A2341E218CF90063520C /* GameViewController.swift in Sources */,
 				8B9620091E1C601600678257 /* Hole.swift in Sources */,
 				8B9620841E1C610F00678257 /* AppDelegate.swift in Sources */,
+				8B1317111E2B942A0088162D /* LogoStyleKit.swift in Sources */,
 				8B96200D1E1C601600678257 /* HoleSetup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
