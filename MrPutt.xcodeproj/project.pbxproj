@@ -164,8 +164,6 @@
 		8B9FD44D1E2A357F00FE4D3D /* Flag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9FD44B1E2A357F00FE4D3D /* Flag.swift */; };
 		8B9FD44F1E2A362100FE4D3D /* RaiseFlag.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B9FD44E1E2A362100FE4D3D /* RaiseFlag.sks */; };
 		8B9FD4501E2A362100FE4D3D /* RaiseFlag.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B9FD44E1E2A362100FE4D3D /* RaiseFlag.sks */; };
-		8B9FD4521E2A38B800FE4D3D /* DropFlag.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B9FD4511E2A38B800FE4D3D /* DropFlag.sks */; };
-		8B9FD4531E2A38B800FE4D3D /* DropFlag.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B9FD4511E2A38B800FE4D3D /* DropFlag.sks */; };
 		8B9FD4551E2A390F00FE4D3D /* FlagBobbing.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B9FD4541E2A390F00FE4D3D /* FlagBobbing.sks */; };
 		8B9FD4561E2A390F00FE4D3D /* FlagBobbing.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B9FD4541E2A390F00FE4D3D /* FlagBobbing.sks */; };
 		8BBD3B5D1E1DAFAB00688836 /* PortalEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8BBD3B5C1E1DAFAB00688836 /* PortalEmitter.sks */; };
@@ -561,7 +559,6 @@
 		8B9FD4481E2A353500FE4D3D /* Flag.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Flag.sks; sourceTree = "<group>"; };
 		8B9FD44B1E2A357F00FE4D3D /* Flag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flag.swift; sourceTree = "<group>"; };
 		8B9FD44E1E2A362100FE4D3D /* RaiseFlag.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RaiseFlag.sks; sourceTree = "<group>"; };
-		8B9FD4511E2A38B800FE4D3D /* DropFlag.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DropFlag.sks; sourceTree = "<group>"; };
 		8B9FD4541E2A390F00FE4D3D /* FlagBobbing.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FlagBobbing.sks; sourceTree = "<group>"; };
 		8BBD3B4B1E1D8BE000688836 /* iMessageExtensionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iMessageExtensionUITests.swift; sourceTree = "<group>"; };
 		8BBD3B4D1E1D8BE000688836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -908,7 +905,6 @@
 				8B961F301E1C601600678257 /* BallInHole.sks */,
 				8B961F311E1C601600678257 /* WallHit.sks */,
 				8B9FD44E1E2A362100FE4D3D /* RaiseFlag.sks */,
-				8B9FD4511E2A38B800FE4D3D /* DropFlag.sks */,
 				8B9FD4541E2A390F00FE4D3D /* FlagBobbing.sks */,
 			);
 			path = Actions;
@@ -1380,7 +1376,6 @@
 				8B57993C1E2A113A0083228D /* ballDrop.mp3 in Resources */,
 				8B57993D1E2A113A0083228D /* portalAmbience.mp3 in Resources */,
 				8B57993E1E2A113A0083228D /* portalTransfer.mp3 in Resources */,
-				8B9FD4531E2A38B800FE4D3D /* DropFlag.sks in Resources */,
 				8B57993F1E2A113A0083228D /* scoreCard.mp3 in Resources */,
 				8B5799401E2A113A0083228D /* gameOver.mp3 in Resources */,
 				8B5799411E2A113A0083228D /* winGame.mp3 in Resources */,
@@ -1697,7 +1692,6 @@
 				E8C5503E1E218AE1000EC3E0 /* blazeCornerConnecter.sks in Resources */,
 				E89567DE1E26FD0900E020E3 /* frostCornerInside.sks in Resources */,
 				E8C550411E218AE1000EC3E0 /* blazeCornerWalls.sks in Resources */,
-				8B9FD4521E2A38B800FE4D3D /* DropFlag.sks in Resources */,
 				8B57992D1E2A0F850083228D /* softWall.mp3 in Resources */,
 				E865FFFB1E1DC05A0072E2E3 /* Timber-Hole5.sks in Resources */,
 				E8C550461E218AE1000EC3E0 /* blazeRightLeft.sks in Resources */,

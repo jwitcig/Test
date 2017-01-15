@@ -77,8 +77,8 @@ class ShotIndicator: SKNode {
         angleIndicator.constraints = [orient]
         
         addChild(angleIndicator)
-        addChild(powerIndicator)
         addChild(ballIndicator)
+        addChild(powerIndicator)
     }
     
     required init?(coder aDecoder: NSCoder) {
