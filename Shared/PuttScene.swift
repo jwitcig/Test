@@ -212,7 +212,9 @@ class PuttScene: SKScene {
     }
     
     func updateShotIndicatorPosition() {
-        shotIndicator.position = ball.parent!.convert(ball.position, to: shotIndicator.parent!)
+        if let shotIndicatorParent = shotIndicator.parent, let ballParent = ball.parent {
+            shotIndicator.position = ballParent.convert(ball.position, to: shotIndicatorParent)
+        }
     }
     
     func addSettingsListener(forKey key: String) {
@@ -619,6 +621,11 @@ extension PuttScene: SKPhysicsContactDelegate {
             ball.run(group)
             
             game.finish()
+            
+            shotIndicator.removeFromParent()
+            
+            let par = HoleInfo.par(forHole: holeNumber, inCourse: course)
+            
         }
         holeComplete = true
     }
