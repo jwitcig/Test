@@ -114,7 +114,7 @@ class GameViewController: UIViewController {
         scene = SKScene(fileNamed: "\(course.name)-Hole\(hole)")! as! PuttScene
         
         scene.course = course
-        scene.hole = hole
+        scene.holeNumber = hole
         
         let cycle = SessionCycle(started: started, finished: finished, generateSession: generateSession)
 
@@ -389,7 +389,7 @@ class GameViewController: UIViewController {
         }
         
         let instance = PuttInstanceData(shots: shots, opponentShots: opponentSession?.gameData.shots, winner: winner)
-        let initial = PuttInitialData(course: scene.course, holeNumber: scene.hole, holeSet: Array(1...9))
+        let initial = PuttInitialData(course: scene.course, holeNumber: scene.holeNumber, holeSet: Array(1...9))
         return PuttSession(instance: instance, initial: initial, ended: false, messageSession: opponentSession?.messageSession)
     }
 

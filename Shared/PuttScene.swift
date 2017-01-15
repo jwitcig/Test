@@ -31,8 +31,16 @@ class PuttScene: SKScene {
         return self.childNode(withName: "//\(Ball.name)")! as! Ball
     }()
     
-    lazy var mat: SKNode = {
+    lazy var mat: Mat = {
         return self.childNode(withName: "//\(Mat.name)")! as! Mat
+    }()
+    
+    lazy var hole: Hole = {
+        return self.childNode(withName: "//\(Hole.name)")! as! Hole
+    }()
+    
+    lazy var flag: Flag = {
+        return self.childNode(withName: "//\(Flag.name)")! as! Flag
     }()
     
     var game: Putt!
@@ -46,7 +54,7 @@ class PuttScene: SKScene {
     var shots: [Shot] = []
     
     var course: CoursePack.Type!
-    var hole: Int!
+    var holeNumber: Int!
     
     var backgroundMusic: AudioPlayer?
     var temporaryPlayers: [AudioPlayer] = []
@@ -152,9 +160,7 @@ class PuttScene: SKScene {
         }
         run(SKAction.sequence([delay, beginShot]))
         
-        if let flagBob = SKAction(named: "FlagBobbing") {
-            childNode(withName: "//flag")?.run(SKAction.repeatForever(flagBob))
-        }
+        flag.wiggle()
         
 //        let light = ball.childNode(withName: "light") as! SKLightNode
 //        
@@ -239,7 +245,7 @@ class PuttScene: SKScene {
     }
     
     func setupAmbience() {
-       HoleSetup.setup(self, forHole: hole, inCourse: course)
+       HoleSetup.setup(self, forHole: holeNumber, inCourse: course)
     }
     
     func addGestureRecognizers(in view: SKView) {
@@ -330,6 +336,11 @@ class PuttScene: SKScene {
     }
     
     func beginShot() {
+        let ballPosition = hole.parent!.convert(ball.position, from: ball.parent!)
+        if ballPosition.distance(toPoint: hole.position) <= 150 {
+            flag.raise()
+        }
+        
         let selection = SKAction.playSoundFileNamed("ballSelect.mp3", waitForCompletion: false)
         ball.run(selection)
         
@@ -434,6 +445,11 @@ class PuttScene: SKScene {
             if shotIndicator.ballIndicator.alpha != 1.0 {
                 updateShotIndicatorPosition()
                 shotIndicator.ballStopped()
+            }
+            
+            let ballPosition = hole.parent!.convert(ball.position, from: ball.parent!)
+            if ballPosition.distance(toPoint: hole.position) > 150, !flag.isWiggling {
+                flag.lower()
             }
         }
     }
