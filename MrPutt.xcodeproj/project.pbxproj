@@ -13,6 +13,8 @@
 		8B073B681E1C92B7008BBAE6 /* Hill.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B073B661E1C92B7008BBAE6 /* Hill.sks */; };
 		8B1317061E2B51220088162D /* ballSelect.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B1317051E2B51220088162D /* ballSelect.mp3 */; };
 		8B1317071E2B51D40088162D /* ballSelect.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B1317051E2B51220088162D /* ballSelect.mp3 */; };
+		8B1317091E2B6B6A0088162D /* HolePars.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B1317081E2B6B6A0088162D /* HolePars.plist */; };
+		8B13170A1E2B6B6A0088162D /* HolePars.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B1317081E2B6B6A0088162D /* HolePars.plist */; };
 		8B13B34A1E1C84F800C0044A /* Snow.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3481E1C84F800C0044A /* Snow.sks */; };
 		8B13B34B1E1C84F800C0044A /* Snow.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3481E1C84F800C0044A /* Snow.sks */; };
 		8B13B34C1E1C84F800C0044A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3491E1C84F800C0044A /* Assets.xcassets */; };
@@ -490,6 +492,7 @@
 		7B8B9F42799F64010D73C350 /* Pods-testGolf-iMessageExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGolf-iMessageExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-testGolf-iMessageExtension/Pods-testGolf-iMessageExtension.release.xcconfig"; sourceTree = "<group>"; };
 		8B073B661E1C92B7008BBAE6 /* Hill.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hill.sks; sourceTree = "<group>"; };
 		8B1317051E2B51220088162D /* ballSelect.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ballSelect.mp3; sourceTree = "<group>"; };
+		8B1317081E2B6B6A0088162D /* HolePars.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HolePars.plist; sourceTree = "<group>"; };
 		8B13B3481E1C84F800C0044A /* Snow.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Snow.sks; sourceTree = "<group>"; };
 		8B13B3491E1C84F800C0044A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B13B34E1E1C891900C0044A /* Frost-Hole3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Frost-Hole3.sks"; sourceTree = "<group>"; };
@@ -866,6 +869,7 @@
 			isa = PBXGroup;
 			children = (
 				8B961F241E1C601600678257 /* Actions.plist */,
+				8B1317081E2B6B6A0088162D /* HolePars.plist */,
 			);
 			path = Plists;
 			sourceTree = "<group>";
@@ -1496,6 +1500,7 @@
 				E87030441E21A423008A7DDD /* blazeInsideCornerPiece.sks in Resources */,
 				8B9FD4561E2A390F00FE4D3D /* FlagBobbing.sks in Resources */,
 				E87030571E21A429008A7DDD /* timberCornerTopLeft.sks in Resources */,
+				8B13170A1E2B6B6A0088162D /* HolePars.plist in Resources */,
 				E870302A1E21A41B008A7DDD /* frostBottomWall.sks in Resources */,
 				E89473F11E2462920013E9F4 /* nebulaSlabCircle.sks in Resources */,
 				E87030331E21A41B008A7DDD /* frostStraightTileUpDown.sks in Resources */,
@@ -1614,6 +1619,7 @@
 				E8A12A261E222B8F00768580 /* nebulaCornerTopLeft.sks in Resources */,
 				E8A12A3E1E222D5400768580 /* nebulaUWallRight.sks in Resources */,
 				E86500011E1DC0700072E2E3 /* Timber-Hole8.sks in Resources */,
+				8B1317091E2B6B6A0088162D /* HolePars.plist in Resources */,
 				E8C54FF01E218904000EC3E0 /* timberHole.sks in Resources */,
 				E86513D71E1DBB1A005FBA85 /* Grid.sks in Resources */,
 				E8C550421E218AE1000EC3E0 /* blazeHole.sks in Resources */,

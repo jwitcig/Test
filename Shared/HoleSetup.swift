@@ -52,7 +52,6 @@ struct Nebula: CoursePack {
 }
 
 class HoleSetup {
-    
     static func setup(_ scene: PuttScene, forHole hole: Int, inCourse course: CoursePack.Type) {
 
         let settings = UserDefaults.standard
@@ -108,5 +107,23 @@ class HoleSetup {
         
         }
     }
-    
 }
+
+class HoleInfo {
+    
+    static let parsDefault = 3
+    
+    static func par(forHole hole: Int, inCourse course: CoursePack.Type) -> Int {
+        guard let path = Bundle.main.path(forResource: "HolePars", ofType: "plist") else {
+            return HoleInfo.parsDefault
+        }
+        guard let allPars = NSDictionary(contentsOfFile: path) else {
+            return HoleInfo.parsDefault
+        }
+        guard let coursePars = allPars[course.name] as? Array<Int> else {
+            return HoleInfo.parsDefault
+        }
+        return coursePars[safe: hole] ?? HoleInfo.parsDefault
+    }
+}
+
