@@ -395,47 +395,46 @@ struct PuttMessageLayoutBuilder: MessageLayoutBuilder {
             layout.imageTitle = "It's a tie!"
         }
         return layout
-        
-        //        let winners = ["😀", "😘", "😏", "😎", "🤑", "😛", "😝", "😋"]
-        //        let losers  = ["😬", "🙃", "😑", "😐", "😶", "😒", "🙄", "😳", "😞", "😠", "☹️"]
-        //
-        //        if let winner = session.instance.winner {
-        //
-        //            switch winner {
-        //            case .you:
-        //                let randomIndex = GKRandomDistribution(lowestValue: 0, highestValue: winners.count-1).nextInt()
-        //                layout.caption = "I won! " + winners[randomIndex]
-        //            case .them:
-        //                let randomIndex = GKRandomDistribution(lowestValue: 0, highestValue: losers.count-1).nextInt()
-        //                layout.caption = "You won. " + losers[randomIndex]
-        //            case .tie:
-        //                layout.caption = "We tied."
-        //            }
-        //        }
     }
     
     func inProgressGameLayout(session: PuttSession) -> MSMessageTemplateLayout {
         let layout = MSMessageTemplateLayout()
         layout.image = UIImage(named: "MessageImage")
 
-        let player1HolesPlayed = session.instance.shots.count
-        let player2HolesPlayed = session.instance.opponentShots.count
+        let localPlayerHolesPlayed = session.instance.shots.count
+        let remotePlayerHolesPlayed = session.instance.opponentShots.count
         
-        let hole = player1HolesPlayed == player2HolesPlayed ? player1HolesPlayed + 1 : player1HolesPlayed
+        let localPlayerScore = session.instance.shots.reduce(0, +)
+        let remotePlayerScore = session.instance.opponentShots.reduce(0, +)
+        
+        let hole = localPlayerHolesPlayed == remotePlayerHolesPlayed ? localPlayerHolesPlayed + 1 : localPlayerHolesPlayed
         
         layout.imageTitle = session.initial.course.name.uppercased()
         layout.imageSubtitle = "Hole \(hole)"
         
         if let localPlayer = conversation?.localParticipantIdentifier {
             layout.caption = "$\(localPlayer)"
-            layout.subcaption = session.instance.shots.reduce(0, +).string
+            layout.subcaption = localPlayerScore.string
         }
         
         if let remotePlayer = conversation?.remoteParticipantIdentifiers.first {
             layout.trailingCaption = "$\(remotePlayer)"
-            layout.trailingSubcaption = session.instance.opponentShots.reduce(0, +).string
+            layout.trailingSubcaption = remotePlayerScore.string
         }
+        
+        let winners = ["😀", "😘", "😏", "😎", "🤑", "😛", "😝", "😋"]
+        let randomIndex = GKRandomDistribution(lowestValue: 0, highestValue: winners.count-1).nextInt()
+        let winningEmoji = winners[randomIndex]
 
+        if hole > 2 {
+            if localPlayerScore < remotePlayerScore {
+                layout.subcaption = (layout.subcaption ?? "") + winningEmoji
+            } else if localPlayerScore > remotePlayerScore {
+                layout.trailingSubcaption = winningEmoji + (layout.trailingSubcaption ?? "")
+            }
+        }
+        
+        
         return layout
     }
 }
