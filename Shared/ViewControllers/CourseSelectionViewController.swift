@@ -28,6 +28,14 @@ class AudioPlayer {
             self.player?.play()
         } catch { }
     }
+    
+    func resume() {
+        player?.play()
+    }
+    
+    func pause() {
+        player?.pause()
+    }
 }
 
 class CourseSelectionViewController: UIViewController {

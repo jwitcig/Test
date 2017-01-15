@@ -47,6 +47,8 @@ class PuttScene: SKScene {
     
     var course: CoursePack.Type!
     var hole: Int!
+    
+    var backgroundMusic: AudioPlayer?
 
     var touchNode = SKNode()
     
@@ -100,7 +102,14 @@ class PuttScene: SKScene {
         if context == &settingsContext {
             if let newValue = change?[.newKey] {
                 if keyPath == Options.gameMusic.rawValue {
-                     audioEngine.mainMixerNode.outputVolume = (newValue as? NSNumber)?.floatValue ?? 1.0
+                    
+                    if let isMusicOn = newValue as? Bool {
+                        if isMusicOn {
+                            backgroundMusic?.resume()
+                        } else {
+                            backgroundMusic?.pause()
+                        }
+                    }
                 }
             }
         } else {
@@ -126,22 +135,24 @@ class PuttScene: SKScene {
         addSettingsListener(forKey: "Music")
         
         addChild(shotIndicator)
-        shotIndicator.alpha = 0
         
         setupAmbience()
         
+        let delay = SKAction.wait(forDuration: 0.9)
+        
         if let ballDrop = SKAction(named: "BallDrop") {
-            let delay = SKAction.wait(forDuration: 0.9)
-
             run(SKAction.sequence([delay, ballDrop]))
         }
         
+        shotIndicator.shotTaken()
+
+        let beginShot = SKAction.run {
+            self.shotIndicator.ballStopped()
+        }
+        run(SKAction.sequence([delay, beginShot]))
         
         if let flagBob = SKAction(named: "FlagBobbing") {
-            
             childNode(withName: "//flag")?.run(SKAction.repeatForever(flagBob))
-
-            
         }
         
 //        let light = ball.childNode(withName: "light") as! SKLightNode
@@ -191,6 +202,10 @@ class PuttScene: SKScene {
 //        let flash = SKAction.sequence(colorizers.map{$0.2})
 //        light.run(SKAction.repeatForever(flash))
 //        light.removeFromParent()
+    }
+    
+    func updateShotIndicatorPosition() {
+        shotIndicator.position = ball.parent!.convert(ball.position, to: shotIndicator.parent!)
     }
     
     func addSettingsListener(forKey key: String) {
@@ -296,6 +311,8 @@ class PuttScene: SKScene {
                     if location.distance(toPoint: ball.position) <= 100 {
                         if ballBody.velocity.magnitude < 5.0 {
                             beginShot()
+                            
+                            shotIndicator.showAngle()
                         }
                     }
                 }
@@ -306,8 +323,7 @@ class PuttScene: SKScene {
     func cancelShot(recognizer: UITapGestureRecognizer) {
         adjustingShot = false
         
-        let fadeOut = SKAction.fadeOut(withDuration: 0.2)
-        shotIndicator.run(fadeOut)
+        shotIndicator.shotCancelled()
         
         view?.removeGestureRecognizer(recognizer)
     }
@@ -327,9 +343,6 @@ class PuttScene: SKScene {
         
         shotIndicator.position = convert(ball.position, from: ball.parent!)
         adjustingShot = true
-        
-        let fadeIn = SKAction.fadeIn(withDuration: 0.5)
-        shotIndicator.run(fadeIn)
         
         let cancel = UITapGestureRecognizer(target: self, action: #selector(PuttScene.cancelShot(recognizer:)))
         view?.addGestureRecognizer(cancel)
@@ -365,8 +378,7 @@ class PuttScene: SKScene {
             adjustingShot = false
             takeShot(at: angle, with: power)
             
-            let fadeOut = SKAction.fadeOut(withDuration: 0.5)
-            shotIndicator.run(fadeOut)
+            shotIndicator.shotTaken()
         }
     }
    
@@ -413,6 +425,13 @@ class PuttScene: SKScene {
         // grabs ball velocity before physics calculations,
         // used in wall reflection
         ballPrePhysicsVelocity = ball.physicsBody?.velocity ?? .zero
+        
+        if let body = ball.physicsBody, body.velocity.magnitude < 5.0 {
+            if shotIndicator.ballIndicator.alpha != 1.0 {
+                updateShotIndicatorPosition()
+                shotIndicator.ballStopped()
+            }
+        }
     }
     
     override func didSimulatePhysics() {
@@ -537,19 +556,11 @@ extension PuttScene: SKPhysicsContactDelegate {
     
     func reflect(vector entrance: CGVector, across normal: CGVector, at point: CGPoint, offOf body: SKPhysicsBody) -> CGVector {
   
-//        let r =d−2(d⋅n)n
-//        let reflected = entrance − 2(entrance ⋅ normal)normal
-//        r = d−(2d⋅n)‖n‖n
-        
-        let normalized = normal.normalized
-        
+        let normalized = normal.normalized        
         let dot = entrance • normalized
         let directed = CGVector(dx: dot*normalized.dx, dy: dot*normalized.dy)
         let scaled = CGVector(dx: 2*directed.dx, dy: 2*directed.dy)
-        
-        let r = CGVector(dx: entrance.dx-scaled.dx, dy: entrance.dy-scaled.dy)
-        
-        return r
+        return CGVector(dx: entrance.dx-scaled.dx, dy: entrance.dy-scaled.dy)
     }
     
     func ballHitWall(_ wall: Wall, contact: SKPhysicsContact) {

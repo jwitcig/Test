@@ -21,6 +21,8 @@ extension UIColor {
 }
 
 class ShotIndicator: SKNode {
+    
+    let motionDuration: TimeInterval = 0.2
 
     var power: CGFloat = 0 {
         didSet {
@@ -53,6 +55,10 @@ class ShotIndicator: SKNode {
         }
     }
     
+    lazy var ballIndicator: SKSpriteNode = {
+        return SKSpriteNode(imageNamed: "shotIndicatorCircle")
+    }()
+    
     lazy var angleIndicator: SKSpriteNode = {
         return SKSpriteNode(imageNamed: "shotIndicatorArrow")
     }()
@@ -72,10 +78,34 @@ class ShotIndicator: SKNode {
         
         addChild(angleIndicator)
         addChild(powerIndicator)
+        addChild(ballIndicator)
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    func ballStopped() {
+        let fadeIn = SKAction.fadeIn(withDuration: motionDuration)
+        ballIndicator.run(fadeIn)
+    }
+    
+    func showAngle() {
+        let fadeIn = SKAction.fadeIn(withDuration: motionDuration)
+        angleIndicator.run(fadeIn)
+    }
+    
+    func shotTaken() {
+        let fadeOut = SKAction.fadeOut(withDuration: motionDuration)
+        ballIndicator.run(fadeOut)
+        angleIndicator.run(fadeOut)
+        power = 0
+    }
+    
+    func shotCancelled() {
+        let fadeOut = SKAction.fadeOut(withDuration: motionDuration)
+        angleIndicator.run(fadeOut)
+        power = 0
     }
     
 }
