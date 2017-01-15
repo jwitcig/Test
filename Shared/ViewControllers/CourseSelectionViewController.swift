@@ -12,18 +12,27 @@ import UIKit
 import Cartography
 import iMessageTools
 
-class AudioPlayer {
+class AudioPlayer: NSObject {
     
     static let main = AudioPlayer()
     
-    private var player: AVAudioPlayer?
+    fileprivate var player: AVAudioPlayer?
     
-    func play(_ fileName: String, ofType fileType: String = "mp3") {
+    var volume: Float {
+        get { return player?.volume ?? 1 }
+        set { player?.volume = newValue }
+    }
+    
+    var completion: (()->Void)?
+    
+    func play(_ fileName: String, ofType fileType: String = "mp3", completion: (()->Void)? = nil) {
         guard let url = Bundle(for: AudioPlayer.self).url(forResource: fileName, withExtension: fileType) else { return }
+        
+        self.completion = completion
         
         do {
             self.player = try AVAudioPlayer(contentsOf: url)
-            
+            self.player?.delegate = self
             self.player?.prepareToPlay()
             self.player?.play()
         } catch { }
@@ -35,6 +44,12 @@ class AudioPlayer {
     
     func pause() {
         player?.pause()
+    }
+}
+
+extension AudioPlayer: AVAudioPlayerDelegate {
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        completion?()
     }
 }
 
