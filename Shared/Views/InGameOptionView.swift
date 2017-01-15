@@ -30,8 +30,7 @@ class InGameOptionView: UIView {
     static func create() -> InGameOptionView {
         let option = Bundle(for: InGameOptionView.self).loadNibNamed("InGameOptionView", owner: nil, options: nil)![0] as! InGameOptionView
         
-        option.toggleSwitch.addTarget(option, action: #selector(InGameOptionView.settingChanged(sender:)), for: .valueChanged)
-        
+        option.toggleSwitch.addTarget(option, action: #selector(InGameOptionView.settingChanged(toggle:)), for: .valueChanged)
         return option
     }
     
@@ -45,8 +44,16 @@ class InGameOptionView: UIView {
         }
     }
     
-    func settingChanged(sender: Any) {
+    func settingChanged(toggle: UISwitch) {
         AudioPlayer.main.play("toggle")
+
+        let settings = UserDefaults.standard
+        settings.setValue(toggle.isOn, forKey: optionName)
+        settings.synchronize()
+    }
+    
+    func updateUI() {
+        enabled = UserDefaults.standard.value(forKey: optionName) as? Bool ?? true
     }
 
 }

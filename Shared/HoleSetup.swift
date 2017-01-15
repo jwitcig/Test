@@ -53,7 +53,19 @@ struct Nebula: CoursePack {
 
 class HoleSetup {
     
-    static func setup(_ scene: SKScene, forHole hole: Int, inCourse course: CoursePack.Type) {
+    static func setup(_ scene: PuttScene, forHole hole: Int, inCourse course: CoursePack.Type) {
+
+        let settings = UserDefaults.standard
+        
+        let music = AudioPlayer()
+        music.play("HoleMusic")
+
+        scene.backgroundMusic = music
+        
+        let isMusicOn = settings.value(forKey: Options.gameMusic.rawValue) as? Bool ?? true
+        if !isMusicOn {
+            music.pause()
+        }
         
         switch course {
             

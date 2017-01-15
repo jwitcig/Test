@@ -41,11 +41,16 @@ class InGameMenuView: UIView {
     var options: [InGameOptionView] = [] {
         didSet {
             oldValue.forEach { $0.removeFromSuperview() }
+            
             options.forEach {
+                $0.updateUI()
+                
                 mainStackView.insertArrangedSubview($0, at: mainStackView.arrangedSubviews.count-1)
             }
         }
     }
+    
+    var lastSavedOptions: [String : Any?] = [:]
     
     static func create(motionDuration: TimeInterval) -> InGameMenuView {
         let menu = Bundle(for: GameViewController.self).loadNibNamed("InGameMenuView", owner: nil, options: nil)![0] as! InGameMenuView
@@ -60,14 +65,17 @@ class InGameMenuView: UIView {
     }
     
     @IBAction func savePressed(sender: Any) {
-        options.forEach {
-            UserDefaults.standard.setValue($0.enabled, forKey: $0.optionName)
-        }
-        UserDefaults.standard.synchronize()
         dismiss()
     }
     
     @IBAction func cancelPressed(sender: Any) {
+        let settings = UserDefaults.standard
+        options.forEach {
+            if let value = lastSavedOptions[$0.optionName] {
+                settings.setValue(value, forKey: $0.optionName)
+            }
+        }
+        settings.synchronize()
         dismiss()
     }
     
@@ -82,9 +90,13 @@ class InGameMenuView: UIView {
         hiddenConstraints.active = false
         visibleConstraints.active = true
         
-        
         UIView.animate(withDuration: TimeInterval(motionDuration), delay: 0, usingSpringWithDamping: 0.75, initialSpringVelocity: 0, options: .curveEaseInOut, animations: superview!.layoutIfNeeded, completion: {_ in             self.didFinishMotion()
         })
+        
+        options.forEach {
+            $0.updateUI()
+        }
+        updateLastSaved()
     }
     
     func dismiss() {
@@ -97,6 +109,15 @@ class InGameMenuView: UIView {
             self.didFinishMotion()
         }
         dismissBlock()
+    }
+    
+    func updateLastSaved() {
+        let settings = UserDefaults.standard
+        lastSavedOptions = options.reduce([:]) {
+            var lastOptions: [String : Any?] = $0
+            lastOptions[$1.optionName] = settings.value(forKey: $1.optionName)
+            return lastOptions
+        }
     }
     
 }
