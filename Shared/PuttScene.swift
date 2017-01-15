@@ -49,6 +49,7 @@ class PuttScene: SKScene {
     var hole: Int!
     
     var backgroundMusic: AudioPlayer?
+    var temporaryPlayers: [AudioPlayer] = []
 
     var touchNode = SKNode()
     
@@ -329,6 +330,9 @@ class PuttScene: SKScene {
     }
     
     func beginShot() {
+        let selection = SKAction.playSoundFileNamed("ballSelect.mp3", waitForCompletion: false)
+        ball.run(selection)
+        
         ball.disableTrail()
 
         let dim = SKAction.fadeAlpha(by: -0.3, duration: 0.5)
@@ -564,8 +568,14 @@ extension PuttScene: SKPhysicsContactDelegate {
     }
     
     func ballHitWall(_ wall: Wall, contact: SKPhysicsContact) {
-        wall.run(Action.with(name: .wallHit))
-        
+        let sound = AudioPlayer()
+        sound.play("softWall") {
+            if let index = self.temporaryPlayers.index(of: sound) {
+                self.temporaryPlayers.remove(at: index)
+            }
+        }
+        sound.volume = Float(ball.physicsBody!.velocity.magnitude / 50.0)
+
         reflectionVelocity = reflect(velocity: ballPrePhysicsVelocity,
                                           for: contact,
                                          with: wall.physicsBody!)
@@ -648,7 +658,7 @@ extension PuttScene: SKPhysicsContactDelegate {
             let x = ($0.position.x * scale) + camera!.position.x
             let y = ($0.position.y * scale) + camera!.position.y
             let destination: CGPoint = self.convert(CGPoint(x: x, y: y), to: scorecard)
-
+            
             $0.position = CGPoint(x: destination.x-self.size.width*scale, y: destination.y)
     
             let slide = SKAction.move(to: destination, duration: duration)
