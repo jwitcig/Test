@@ -624,7 +624,7 @@ extension PuttScene: SKPhysicsContactDelegate {
             
             shotIndicator.removeFromParent()
             
-            let par = HoleInfo.par(forHole: holeNumber, inCourse: course)
+            let par = HoleInfo.par(forHole: holeNumber, in: course)
             
         }
         holeComplete = true
@@ -669,7 +669,7 @@ extension PuttScene: SKPhysicsContactDelegate {
         
         let scorecard = SKScene(fileNamed: "Scorecard")! as! Scorecard
         self.scorecard = scorecard
-        scorecard.update(hole: hole, names: names, player1Strokes: player1Strokes, player2Strokes: player2Strokes, pars: pars)
+        scorecard.update(hole: hole, names: names, player1Strokes: player1Strokes, player2Strokes: player2Strokes, course: course)
         scorecard.donePressed = donePressed
         scorecard.zPosition = 100
         
@@ -691,9 +691,15 @@ extension PuttScene: SKPhysicsContactDelegate {
         }
         
         let delay = SKAction.wait(forDuration: duration)
-        let show = SKAction.run(scorecard.showHoleInfo)
+        let infoDelay = SKAction.wait(forDuration: 0.4)
+
+        let showInfo = SKAction.run(scorecard.showHoleInfo)
+        let showToken = SKAction.run(scorecard.showToken)
         
-        let sequence = SKAction.sequence([delay, show])
+        let tokenSequence = SKAction.sequence([delay, showToken])
+        scorecard.run(tokenSequence)
+        
+        let sequence = SKAction.sequence([delay, infoDelay, showInfo])
         scorecard.infoPanel.run(sequence)
         
         addChild(scorecard)

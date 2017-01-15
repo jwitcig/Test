@@ -113,7 +113,7 @@ class HoleInfo {
     
     static let parsDefault = 3
     
-    static func par(forHole hole: Int, inCourse course: CoursePack.Type) -> Int {
+    static func par(forHole hole: Int, in course: CoursePack.Type) -> Int {
         guard let path = Bundle.main.path(forResource: "HolePars", ofType: "plist") else {
             return HoleInfo.parsDefault
         }

@@ -96,6 +96,16 @@ class GameViewController: UIViewController {
         }
         
         UIView.animate(withDuration: 0.4, delay: 2, usingSpringWithDamping: 0.6, initialSpringVelocity: 20, options: .curveEaseInOut, animations: toolsContainer.layoutIfNeeded, completion: nil)
+        
+        
+        let waitingForOpponent = WaitingForOpponentView()
+        view.addSubview(waitingForOpponent)
+        
+        constrain(waitingForOpponent, view) {
+            $0.width == $1.width
+            $0.height == $1.height
+            $0.center == $1.center
+        }
     }
     
     func configureScene(previousSession: PuttSession?, course: CoursePack.Type) {
