@@ -15,7 +15,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8BCF77091E03CD0200D48A61"
+               BlueprintIdentifier = "8B81C0291E2D76220041A45A"
                BuildableName = "iMessageExtension.appex"
                BlueprintName = "iMessageExtension"
                ReferencedContainer = "container:MrPutt.xcodeproj">
@@ -29,7 +29,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E83E06941E039586005711E3"
+               BlueprintIdentifier = "8B81C0201E2D76220041A45A"
                BuildableName = "MrPutt.app"
                BlueprintName = "MrPutt"
                ReferencedContainer = "container:MrPutt.xcodeproj">
@@ -67,7 +67,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8BCF77091E03CD0200D48A61"
+            BlueprintIdentifier = "8B81C0291E2D76220041A45A"
             BuildableName = "iMessageExtension.appex"
             BlueprintName = "iMessageExtension"
             ReferencedContainer = "container:MrPutt.xcodeproj">
@@ -94,7 +94,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8BCF77091E03CD0200D48A61"
+            BlueprintIdentifier = "8B81C0291E2D76220041A45A"
             BuildableName = "iMessageExtension.appex"
             BlueprintName = "iMessageExtension"
             ReferencedContainer = "container:MrPutt.xcodeproj">
@@ -114,7 +114,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E83E06941E039586005711E3"
+            BlueprintIdentifier = "8B81C0201E2D76220041A45A"
             BuildableName = "MrPutt.app"
             BlueprintName = "MrPutt"
             ReferencedContainer = "container:MrPutt.xcodeproj">
