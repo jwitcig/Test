@@ -665,6 +665,14 @@ extension PuttScene: SKPhysicsContactDelegate {
         }
     }
     
+    func preScorecardTearDown() {
+        enumerateChildNodes(withName: "//portalEmitter") { node, stop in
+            guard let portal = node as? SKEmitterNode else { return }
+            
+            portal.particleBirthRate = 0
+        }
+    }
+    
     func showScorecard(hole: Int, names: (String, String), player1Strokes: [Int], player2Strokes: [Int], pars: [Int], donePressed: @escaping ()->Void) {
         
         let scorecard = SKScene(fileNamed: "Scorecard")! as! Scorecard

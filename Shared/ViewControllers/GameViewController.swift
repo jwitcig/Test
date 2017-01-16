@@ -356,6 +356,8 @@ class GameViewController: UIViewController {
         
         removeSettings(duration: TimeInterval(1))
         
+        scene.preScorecardTearDown()
+        
         scene.showScorecard(hole: hole, names: names, player1Strokes: player1Strokes, player2Strokes: player2Strokes, pars: pars) {
             
             guard let message = PuttMessageWriter(data: session.dictionary,
