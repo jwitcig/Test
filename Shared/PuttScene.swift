@@ -13,6 +13,9 @@ import SpriteKit
 import Game
 import JWSwiftTools
 
+import PocketSVG
+import SWXMLHash
+
 private var settingsContext = 0
 
 public extension SKRange {
@@ -209,6 +212,85 @@ class PuttScene: SKScene {
 //        let flash = SKAction.sequence(colorizers.map{$0.2})
 //        light.run(SKAction.repeatForever(flash))
 //        light.removeFromParent()
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        let url = Bundle(for: PuttScene.self).url(forResource: "testerActionGuy", withExtension: "svg")!
+        
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 490, height: 253))
+        self.view!.addSubview(view)
+        
+        
+        let paths: [SVGBezierPath] = parse().map {
+            SVGBezierPath.paths(fromSVGString: $0).first! as! SVGBezierPath
+        }
+        
+        
+        for path in SVGBezierPath.pathsFromSVG(at: url) {
+            let layer = CAShapeLayer()
+            layer.path = path.cgPath
+            
+            
+            let transform = CGAffineTransform(scaleX: 1, y: -1).translatedBy(x: -view.layer.bounds.width/2, y: -view.layer.bounds.height/2)
+            
+            let pathCopy = CGMutablePath()
+            pathCopy.addPath(path.cgPath, transform: transform)
+            
+                
+            layer.lineWidth = 2
+            layer.strokeColor = path.svgAttributes["stroke"] as! CGColor
+            layer.fillColor = path.svgAttributes["fill"] as! CGColor
+            
+            
+            let physics = SKNode()
+            physics.position = CGPoint(x: 0, y: 0)
+            physics.physicsBody = SKPhysicsBody(edgeLoopFrom: pathCopy)
+            physics.physicsBody?.isDynamic = false
+            physics.physicsBody?.collisionBitMask = Category.ball.rawValue
+            addChild(physics)
+            view.layer.addSublayer(layer)
+        }
+        
+        let image = renderImage(from: view.layer)
+        
+        let texture = SKTexture(image: #imageLiteral(resourceName: "Test.png"))
+        let sprite = SKSpriteNode(texture: texture)
+        sprite.position = CGPoint(x: 0, y: 0)
+//        sprite.physicsBody = SKPhysicsBody(texture: texture, alphaThreshold: 0.8, size: texture.size())
+        addChild(sprite)
+        
+        view.removeFromSuperview()
+    }
+    
+    func parse() -> [String] {
+        let url = Bundle(for: PuttScene.self).url(forResource: "testerActionGuy", withExtension: "svg")!
+        
+        let data = try! Data(contentsOf: url)
+        let xml = SWXMLHash.parse(data)
+        
+        let paths = xml["svg"]["g"]["path"].filter {
+            !(try! $0.value(ofAttribute: "fill") as! String).contains("url(")
+        }
+        
+        return paths.map {
+            $0.element!.description
+        }
+    }
+    
+    func renderImage(from layer: CALayer) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(layer.bounds.size, false, 3)
+        
+        layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()!
+        
+        UIGraphicsEndImageContext()
+        return image
     }
     
     func updateShotIndicatorPosition() {
@@ -227,7 +309,7 @@ class PuttScene: SKScene {
     
     func setDebugOptions(on view: SKView) {
         view.showsFPS = true
-        view.showsPhysics = false
+        view.showsPhysics = true
         view.backgroundColor = .black
     }
     

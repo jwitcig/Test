@@ -5,19 +5,25 @@ PODS:
   - iMessageTools (1.0.4):
     - JWSwiftTools
   - JWSwiftTools (1.1.14)
+  - PocketSVG (2.0.0)
+  - SWXMLHash (3.0.3)
 
 DEPENDENCIES:
   - Cartography
   - Game
   - iMessageTools
   - JWSwiftTools
+  - PocketSVG
+  - SWXMLHash
 
 SPEC CHECKSUMS:
   Cartography: c1460e99395b824d9d75360b0382faeb0b33dcd7
   Game: 7d15ab85264fa1791af1d15a66c85a3b2b882dd7
   iMessageTools: f180b9f986835371d3f1d82b287ab5c9222e3de7
   JWSwiftTools: c07152e274af4fbb834b350fc54ab52369a41f80
+  PocketSVG: 5924c20ec9220fe1717087e56c3d5da27ca76863
+  SWXMLHash: 80d2529d74891bb2f15305a0b9e08f2a4f229ee7
 
-PODFILE CHECKSUM: 7b97445131b5bf4e0e016ee6dbb01b2e70e49651
+PODFILE CHECKSUM: 5e1aa3d309817c298ae824d86d08bc76d27e2197
 
 COCOAPODS: 1.1.1
