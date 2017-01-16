@@ -262,7 +262,7 @@ class PuttScene: SKScene {
             recognizer.scale = 1 / camera.xScale
         }
         
-        if (0.5...2).contains(recognizer.scale) {
+        if (0.8...1.3).contains(recognizer.scale) {
             
             // if within allowable range, set camera scale
             camera.setScale(1 / recognizer.scale)
@@ -377,7 +377,7 @@ class PuttScene: SKScene {
             touchNode.position = touch.location(in: ball)
             
             let ballLocation = convert(ball.position, from: ball.parent!)
-            shotIndicator.power = touchLocation.distance(toPoint: ballLocation) / 300.0
+            shotIndicator.power = touchLocation.distance(toPoint: ballLocation) / 600.0
         }
     }
     
@@ -389,11 +389,12 @@ class PuttScene: SKScene {
 
             let ballPosition = ball.parent!.convert(ball.position, to: self)
 
-            let power = ballPosition.distance(toPoint: touchLocation)
+//            let power = ballPosition.distance(toPoint: touchLocation)
+            
             let angle = ballPosition.angle(toPoint: touchLocation)
             
             adjustingShot = false
-            takeShot(at: angle, with: power)
+            takeShot(at: angle, with: shotIndicator.power * 600)
             
             shotIndicator.shotTaken()
         }
