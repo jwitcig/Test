@@ -12,6 +12,9 @@ target 'MrPutt' do
 
     pod 'Cartography'
 
+    pod 'PocketSVG'
+    pod 'SWXMLHash'
+
   end
 
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks

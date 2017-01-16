@@ -88,10 +88,14 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Game/Game.framework"
   install_framework "$BUILT_PRODUCTS_DIR/JWSwiftTools/JWSwiftTools.framework"
   install_framework "$BUILT_PRODUCTS_DIR/iMessageTools/iMessageTools.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/PocketSVG/PocketSVG.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SWXMLHash/SWXMLHash.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Cartography/Cartography.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Game/Game.framework"
   install_framework "$BUILT_PRODUCTS_DIR/JWSwiftTools/JWSwiftTools.framework"
   install_framework "$BUILT_PRODUCTS_DIR/iMessageTools/iMessageTools.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/PocketSVG/PocketSVG.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SWXMLHash/SWXMLHash.framework"
 fi
