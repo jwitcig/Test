@@ -209,7 +209,43 @@ class PuttScene: SKScene {
 //        let flash = SKAction.sequence(colorizers.map{$0.2})
 //        light.run(SKAction.repeatForever(flash))
 //        light.removeFromParent()
+        
+        
+        let patherNode = SKShapeNode(rectOf: CGSize(width: 10, height: 30))
+        patherNode.fillColor = .blue
+        patherNode.strokeColor = .clear
+        patherNode.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 10, height: 30))
+        patherNode.position = CGPoint(x: 200, y: 400)
+        
+        let trackerNode =  SKShapeNode(rectOf: CGSize(width: 10, height: 30))
+        trackerNode.fillColor = .red
+        trackerNode.strokeColor = .clear
+        trackerNode.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 10, height: 30))
+        trackerNode.position = CGPoint(x: 300, y: 0)
+        
+        let points = [
+            CGPoint(x: cameraLimiter.minX-50, y: cameraLimiter.minY-50),
+            CGPoint(x: cameraLimiter.maxX+50, y: cameraLimiter.minY-50),
+            CGPoint(x: cameraLimiter.maxX+50, y: cameraLimiter.maxY+50),
+            CGPoint(x: cameraLimiter.minX-50, y: cameraLimiter.maxY+50),
+        ]
+
+        let pather = Cart(node: patherNode, follow: points)
+        let tracker = Cart(node: trackerNode, track: pather.agent)
+        
+        cartSystem.addComponent(pather.agent)
+        cartSystem.addComponent(tracker.agent)
+        
+        addChild(pather.node)
+        addChild(tracker.node)
+        
+        entities.append(pather)
+        entities.append(tracker)
     }
+    
+    var entities: [GKEntity] = []
+    
+    var cartSystem = GKComponentSystem(componentClass: GKAgent2D.self)
     
     func updateShotIndicatorPosition() {
         if let shotIndicatorParent = shotIndicator.parent, let ballParent = ball.parent {
@@ -438,7 +474,13 @@ class PuttScene: SKScene {
     
     // MARK: Game Loop
     
+    var lastUpdate: TimeInterval?
+    
     override func update(_ currentTime: TimeInterval) {
+        if let lastUpdate = lastUpdate {
+            cartSystem.update(deltaTime: currentTime - lastUpdate)
+        }
+        
         // grabs ball velocity before physics calculations,
         // used in wall reflection
         ballPrePhysicsVelocity = ball.physicsBody?.velocity ?? .zero
@@ -454,6 +496,8 @@ class PuttScene: SKScene {
                 flag.lower()
             }
         }
+        
+        lastUpdate = currentTime
     }
     
     override func didSimulatePhysics() {
