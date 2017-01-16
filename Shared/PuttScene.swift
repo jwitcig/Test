@@ -626,6 +626,22 @@ extension PuttScene: SKPhysicsContactDelegate {
             
             let par = HoleInfo.par(forHole: holeNumber, in: course)
             
+            if let holeParent = hole.parent {
+                let pulse = SKSpriteNode(imageNamed: "holeBurst")
+                pulse.size = CGSize(width: hole.size.width*(0.9), height: hole.size.height*(0.9))
+                pulse.position = convert(hole.position, from: holeParent)
+                addChild(pulse)
+                
+                let duration: TimeInterval = 1
+                let scale = SKAction.scale(to: CGSize(width: 80, height: 80), duration: duration)
+                let fadeOut = SKAction.fadeOut(withDuration: duration)
+                let remove = SKAction.removeFromParent()
+                
+                let group = SKAction.group([fadeOut, scale])
+                
+                let sequence = SKAction.sequence([group, remove])
+                pulse.run(sequence)
+            }
         }
         holeComplete = true
     }

@@ -358,25 +358,29 @@ class GameViewController: UIViewController {
         
         scene.preScorecardTearDown()
         
-        scene.showScorecard(hole: hole, names: names, player1Strokes: player1Strokes, player2Strokes: player2Strokes, pars: pars) {
-            
-            guard let message = PuttMessageWriter(data: session.dictionary,
-                                                  session: session.messageSession)?.message else { return }
-            let activeConversation = (self.messageSender as? MSMessagesAppViewController)?.activeConversation
-            let layout = PuttMessageLayoutBuilder(session: session, conversation: activeConversation).generateLayout()
-            
-            self.messageSender?.send(message: message, layout: layout, completionHandler: { error in
-            })
-            
-            self.orientationManager?.requestPresentationStyle(.compact)
-            
-            self.showGameViewControllerViews()
-            
-            let fadeOut = SKAction.fadeOut(withDuration: 0.5)
-            let remove = SKAction.run {
-                self.sceneView.presentScene(nil)
+        let when = DispatchTime.now() + 1.5
+        DispatchQueue.main.asyncAfter(deadline: when) { 
+            self.scene.showScorecard(hole: hole, names: names, player1Strokes: player1Strokes, player2Strokes: player2Strokes, pars: pars) {
+                
+                guard let message = PuttMessageWriter(data: session.dictionary,
+                                                      session: session.messageSession)?.message else { return }
+                let activeConversation = (self.messageSender as? MSMessagesAppViewController)?.activeConversation
+                let layout = PuttMessageLayoutBuilder(session: session, conversation: activeConversation).generateLayout()
+                
+                self.messageSender?.send(message: message, layout: layout, completionHandler: { error in
+                })
+                
+                self.orientationManager?.requestPresentationStyle(.compact)
+                
+                self.showGameViewControllerViews()
+                
+                let fadeOut = SKAction.fadeOut(withDuration: 0.5)
+                let remove = SKAction.run {
+                    self.sceneView.presentScene(nil)
+                }
+                self.scene.run(SKAction.sequence([fadeOut, remove]))
             }
-            self.scene.run(SKAction.sequence([fadeOut, remove]))
+
         }
     }
     
