@@ -387,7 +387,7 @@ class GameViewController: UIViewController {
     func generateSession() -> PuttSession {
         let strokes = scene.shots.count
         
-        var shots = [strokes > 1 ? strokes : 0]
+        var shots = [strokes]
         var winner: Team.OneOnOne? = nil
 
         if let opponentSession = opponentSession {
