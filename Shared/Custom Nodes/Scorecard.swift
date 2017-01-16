@@ -110,7 +110,14 @@ class Scorecard: SKScene {
         addChild(crop)
         
         let par = HoleInfo.par(forHole: hole, in: course)
-        token = ShotToken(forShots: player1Strokes[hole-1], onPar: par)
+        
+        if let strokes = player1Strokes[safe: hole-1] {
+            token = ShotToken(forShots: strokes, onPar: par)
+        } else {
+            let strokesList = [Int](repeatElement(0, count: hole-1)) + player1Strokes
+            token = ShotToken(forShots: strokesList[hole-1], onPar: par)
+        }
+        
     }
     
     func showHoleInfo() {
