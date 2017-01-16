@@ -33,19 +33,5 @@ class Ball: SKSpriteNode {
         return physicsBody
     }
     
-    /* Should be called once ball is added to scene */
-    func updateTrailEmitter() {
-        ballTrail.targetNode = scene
-        ballTrail.particleScale *= 0.15
-        ballTrail.particleScaleSpeed *= 0.15
-    }
     
-    func enableTrail() {
-        ballTrail.particleBirthRate = trailBirthrate
-    }
-    
-    func disableTrail() {
-        trailBirthrate = ballTrail.particleBirthRate
-        ballTrail.particleBirthRate = 0
-    }
 }

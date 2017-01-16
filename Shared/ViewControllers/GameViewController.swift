@@ -123,8 +123,7 @@ class GameViewController: UIViewController {
         }
         scene = SKScene(fileNamed: "\(course.name)-Hole\(hole)")! as! PuttScene
         
-        scene.course = course
-        scene.holeNumber = hole
+        scene.info = HoleInfo(holeNumber: hole, course: course)
         
         let cycle = SessionCycle(started: started, finished: finished, generateSession: generateSession)
 
@@ -333,9 +332,7 @@ class GameViewController: UIViewController {
         
     }
     
-    func finished(session: PuttSession) {
-        let hole = session.initial.holeNumber
-        
+    func finished(session: PuttSession) {        
         let names = ("You", "Them")
         
         let player1Strokes = session.gameData.shots
@@ -356,7 +353,7 @@ class GameViewController: UIViewController {
         
         removeSettings(duration: TimeInterval(1))
         
-        scene.showScorecard(hole: hole, names: names, player1Strokes: player1Strokes, player2Strokes: player2Strokes, pars: pars) {
+        scene.showScorecard(names: names, player1Strokes: player1Strokes, player2Strokes: player2Strokes, pars: pars) {
             
             guard let message = PuttMessageWriter(data: session.dictionary,
                                                   session: session.messageSession)?.message else { return }
@@ -399,7 +396,7 @@ class GameViewController: UIViewController {
         }
         
         let instance = PuttInstanceData(shots: shots, opponentShots: opponentSession?.gameData.shots, winner: winner)
-        let initial = PuttInitialData(course: scene.course, holeNumber: scene.holeNumber, holeSet: Array(1...9))
+        let initial = PuttInitialData(course: scene.info.course, holeNumber: scene.info.number, holeSet: Array(1...9))
         return PuttSession(instance: instance, initial: initial, ended: false, messageSession: opponentSession?.messageSession)
     }
 

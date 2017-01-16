@@ -59,7 +59,7 @@ class HoleSetup {
         let music = AudioPlayer()
         music.play("HoleMusic")
 
-        scene.backgroundMusic = music
+        scene.audio.backgroundMusic = music
         
         let isMusicOn = settings.value(forKey: Options.gameMusic.rawValue) as? Bool ?? true
         if !isMusicOn {
@@ -110,8 +110,10 @@ class HoleSetup {
 }
 
 class HoleInfo {
-    
     static let parsDefault = 3
+    
+    let number: Int
+    let course: CoursePack.Type
     
     static func par(forHole hole: Int, in course: CoursePack.Type) -> Int {
         guard let path = Bundle.main.path(forResource: "HolePars", ofType: "plist") else {
@@ -125,5 +127,9 @@ class HoleInfo {
         }
         return coursePars[safe: hole] ?? HoleInfo.parsDefault
     }
+    
+    init(holeNumber: Int, course: CoursePack.Type) {
+        self.number = holeNumber
+        self.course = course
+    }
 }
-

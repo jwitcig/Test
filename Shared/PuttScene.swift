@@ -15,21 +15,16 @@ import JWSwiftTools
 
 private var settingsContext = 0
 
-public extension SKRange {
-    public var openInterval: Range<CGFloat> {
-        return lowerLimit..<upperLimit
-    }
-    
-    public var closedInterval: ClosedRange<CGFloat> {
-        return lowerLimit...upperLimit
-    }
+class AudioManager {
+    var backgroundMusic: AudioPlayer?
+    var temporaryPlayers: [AudioPlayer] = []
 }
 
 class PuttScene: SKScene {
     
-    lazy var ball: Ball = {
-        return self.childNode(withName: "//\(Ball.name)")! as! Ball
-    }()
+    var activeCamera: SKCameraNode!
+    
+    var ball: BallEntity!
     
     lazy var mat: Mat = {
         return self.childNode(withName: "//\(Mat.name)")! as! Mat
@@ -45,6 +40,8 @@ class PuttScene: SKScene {
     
     var game: Putt!
     
+    var info: HoleInfo!
+    
     var holeComplete = false
     
     var opponentsSession: PuttSession?
@@ -53,20 +50,18 @@ class PuttScene: SKScene {
     
     var shots: [Shot] = []
     
-    var course: CoursePack.Type!
-    var holeNumber: Int!
+    let audio = AudioManager()
     
-    var backgroundMusic: AudioPlayer?
-    var temporaryPlayers: [AudioPlayer] = []
-
-    var touchNode = SKNode()
+    let touchNode = SKNode()
     
-    lazy var shotIndicator: ShotIndicator = {
+    lazy var shotIndicator: ShotIndicatorEntity = {
+        var node = ShotIndicator(orientToward: self.touchNode, withOffset: SKRange(constantValue: 0))
+        
         if let matRotation = self.childNode(withName: "//\(Mat.name)")?.parent?.parent?.zRotation {
             let offset = SKRange(constantValue: matRotation - .pi/2)
-            return ShotIndicator(orientToward: self.touchNode, withOffset: offset)
+            node = ShotIndicator(orientToward: self.touchNode, withOffset: offset)
         }
-        return ShotIndicator(orientToward: self.touchNode, withOffset: SKRange(constantValue: 0))
+        return ShotIndicatorEntity(node: node, ball: self.ball)
     }()
     
     var cameraLimiter: CGRect {
@@ -114,15 +109,25 @@ class PuttScene: SKScene {
                     
                     if let isMusicOn = newValue as? Bool {
                         if isMusicOn {
-                            backgroundMusic?.resume()
+                            audio.backgroundMusic?.resume()
                         } else {
-                            backgroundMusic?.pause()
+                            audio.backgroundMusic?.pause()
                         }
                     }
                 }
             }
         } else {
             super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
+        }
+    }
+    
+    var entities: [GKEntity] = []
+    
+    func add(entity: GKEntity, in parent: SKNode? = nil) {
+        entities.append(entity)
+        
+        if let node = entity.component(ofType: RenderComponent.self)?.node {
+            (parent ?? scene)?.addChild(node)
         }
     }
 
@@ -132,6 +137,8 @@ class PuttScene: SKScene {
         scaleMode = .resizeFill
         
         removeGrid()
+        
+        setupGameNodes()
         
         addGestureRecognizers(in: view)
         
@@ -143,7 +150,7 @@ class PuttScene: SKScene {
         
         addSettingsListener(forKey: "Music")
         
-        addChild(shotIndicator)
+        add(entity: shotIndicator)
         
         setupAmbience()
         
@@ -161,60 +168,11 @@ class PuttScene: SKScene {
         run(SKAction.sequence([delay, beginShot]))
         
         flag.wiggle()
-        
-//        let light = ball.childNode(withName: "light") as! SKLightNode
-//        
-//        let random = GKRandomDistribution(lowestValue: 0, highestValue: 1)
-//        
-//        let quantity = 2
-//        
-//        if let snow = childNode(withName: "//snow") as? SKEmitterNode {
-//            snow.targetNode = self
-//        }
-//        
-//        var colorizers: [((CGFloat, CGFloat, CGFloat), String, SKAction)] = []
-//        
-//        for i in 0..<quantity {
-//            let r = CGFloat(random.nextUniform())
-//            let g = CGFloat(random.nextUniform())
-//            let b = CGFloat(random.nextUniform())
-//            
-//            let duration: CGFloat = 0.3
-//        
-//            let previous = i > 0 ? colorizers[i-1].0 : (1, 1, 1)
-//            let action: (SKNode, CGFloat)->Void = { node, timestep in
-//                let tR = previous.0 + (r - previous.0) * (timestep/duration)
-//                let tG = previous.1 + (g - previous.1) * (timestep/duration)
-//                let tB = previous.2 + (b - previous.2) * (timestep/duration)
-//                
-//                light.lightColor = UIColor(red: tR,
-//                                         green: tG,
-//                                          blue: tB,
-//                                         alpha: 1)
-//            }
-//            
-//            let colorizer = SKAction.customAction(withDuration: TimeInterval(duration), actionBlock: action)
-//        
-//            colorizers.append(((r, g, b), "\(i)", colorizer))
-//        }
-        
-//        let colorizeRed = SKAction.customAction(withDuration: 0.5) { node, timestep in
-//            light.lightColor = UIColor(red: 1.0 * (timestep/0.5), green: 0, blue: 0, alpha: 1)
-//        }
-//        
-//        let colorizeBlue = SKAction.customAction(withDuration: 0.5) { node, timestep in
-//            light.lightColor = UIColor(red: 0, green: 0, blue: 1.0 * (timestep/0.5), alpha: 1)
-//        }
-        
-//        let flash = SKAction.sequence(colorizers.map{$0.2})
-//        light.run(SKAction.repeatForever(flash))
-//        light.removeFromParent()
     }
     
-    func updateShotIndicatorPosition() {
-        if let shotIndicatorParent = shotIndicator.parent, let ballParent = ball.parent {
-            shotIndicator.position = ballParent.convert(ball.position, to: shotIndicatorParent)
-        }
+    func setupGameNodes() {
+        let ballNode = childNode(withName: "//\(Ball.name)")! as! Ball
+        ball = BallEntity(node: ballNode, physics: ballNode.physicsBody!)
     }
     
     func addSettingsListener(forKey key: String) {
@@ -236,18 +194,19 @@ class PuttScene: SKScene {
         physicsWorld.contactDelegate = self
         
         // positional audio target
-        listener = ball
+        listener = ball.visual.node
     }
     
     func setupCamera() {
         if camera == nil {
-            camera = SKCameraNode()
-            addChild(camera!)
+            activeCamera = SKCameraNode()
+            addChild(activeCamera)
+            camera = activeCamera
         }
     }
     
     func setupAmbience() {
-       HoleSetup.setup(self, forHole: holeNumber, inCourse: course)
+       HoleSetup.setup(self, forHole: info.number, inCourse: info.course)
     }
     
     func addGestureRecognizers(in view: SKView) {
@@ -284,7 +243,7 @@ class PuttScene: SKScene {
                 }
                 
                 let range = SKRange(value: 0, variance: ballFreedomRadius)
-                ballTracking = SKConstraint.distance(range, to: ball)
+                ballTracking = SKConstraint.distance(range, to: ball.visual.node)
                 camera.constraints?.insert(ballTracking!, at: 0)
             }
         }
@@ -312,20 +271,22 @@ class PuttScene: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             
-            let location = touch.location(in: ball.parent!)
+            guard let ballParent = ball.visual.node.parent else {
+                return
+            }
             
-            if let ballBody = ball.physicsBody {
-                
-                if !adjustingShot {
-                    if location.distance(toPoint: ball.position) <= 100 {
-                        if ballBody.velocity.magnitude < 5.0 {
-                            beginShot()
-                            
-                            shotIndicator.showAngle()
-                        }
+            let location = touch.location(in: ballParent)
+            
+            if !adjustingShot {
+                if location.distance(toPoint: ball.visual.node.position) <= 100 {
+                    if ball.physics.body.velocity.magnitude < 5.0 {
+                        beginShot()
+                        
+                        shotIndicator.showAngle()
                     }
                 }
             }
+            
         }
     }
     
@@ -338,13 +299,16 @@ class PuttScene: SKScene {
     }
     
     func beginShot() {
-        let ballPosition = hole.parent!.convert(ball.position, from: ball.parent!)
+        guard let ballParent = ball.visual.parent else { return }
+    
+        let ballPosition = hole.parent!.convert(ball.visual.position, from: ballParent)
+        
         if ballPosition.distance(toPoint: hole.position) <= 150 {
             flag.raise()
         }
         
         let selection = SKAction.playSoundFileNamed("ballSelect.mp3", waitForCompletion: false)
-        ball.run(selection)
+        ball.visual.node.run(selection)
         
         ball.disableTrail()
 
@@ -353,12 +317,12 @@ class PuttScene: SKScene {
         
         let enableTrail = SKAction.run(ball.enableTrail)
         let flash = SKAction.sequence([dim, dim.reversed(), enableTrail])
-        ball.run(flash)
+        ball.visual.node.run(flash)
         
         // force ball to a halt
-        ball.physicsBody?.velocity = .zero
+        ball.physics.body.velocity = .zero
         
-        shotIndicator.position = convert(ball.position, from: ball.parent!)
+        shotIndicator.visual.position = convert(ball.visual.position, from: ballParent)
         adjustingShot = true
         
         let cancel = UITapGestureRecognizer(target: self, action: #selector(PuttScene.cancelShot(recognizer:)))
@@ -376,7 +340,7 @@ class PuttScene: SKScene {
             }
             touchNode.position = touch.location(in: ball)
             
-            let ballLocation = convert(ball.position, from: ball.parent!)
+            let ballLocation = convert(ball.visual.position, from: ball.parent!)
             shotIndicator.power = touchLocation.distance(toPoint: ballLocation) / 300.0
         }
     }
@@ -386,8 +350,9 @@ class PuttScene: SKScene {
             let touchLocation = touch.location(in: self)
             
             guard adjustingShot else { return }
+            guard let ballParent = ball.visual.parent else { return }
 
-            let ballPosition = ball.parent!.convert(ball.position, to: self)
+            let ballPosition = ballParent.convert(ball.visual.position, to: self)
 
             let power = ballPosition.distance(toPoint: touchLocation)
             let angle = ballPosition.angle(toPoint: touchLocation)
@@ -405,7 +370,11 @@ class PuttScene: SKScene {
         
         let sound = SKAudioNode(fileNamed: "clubHit.wav")
         sound.autoplayLooped = false
-        sound.position = convert(ball.position, from: ball.parent!)
+        
+        guard let ballPosition = ball.visual.position(in: self) else { return }
+        guard let ballParent = ball.visual.parent else { return }
+
+        sound.position = ballPosition
         
         // scale volume with shot power
         let setVolume = SKAction.changeVolume(to: Float(power / 100.0), duration: 0)
@@ -418,17 +387,16 @@ class PuttScene: SKScene {
 
         addChild(sound)
         
-        ball.physicsBody?.applyImpulse(stroke)
+        ball.physics.body.applyImpulse(stroke)
         
         let shot = Shot(power: power,
                         angle: angle,
-                     position: convert(ball.position, from: ball.parent!))
+                     position: convert(ball.visual.position, from: ballParent))
         // shot data tracked for sending
         shots.append(shot)
         
         // if no ball tracking, move camera toward ball
         if !isBallTrackingEnabled {
-            let ballPosition = convert(ball.position, from: ball.parent!)
             
             let pan = SKAction.move(to: ballPosition, duration: 1)
             pan.timingMode = .easeIn
@@ -441,12 +409,11 @@ class PuttScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         // grabs ball velocity before physics calculations,
         // used in wall reflection
-        ballPrePhysicsVelocity = ball.physicsBody?.velocity ?? .zero
+        ballPrePhysicsVelocity = ball.physics.body.velocity
         
-        if let body = ball.physicsBody, body.velocity.magnitude < 5.0 {
-            if shotIndicator.ballIndicator.alpha != 1.0 {
-                updateShotIndicatorPosition()
-                shotIndicator.ballStopped()
+        if ball.physics.body.velocity.magnitude < 5.0 {
+            if shotIndicator.visual.ballIndicator.alpha != 1.0 {
+                shotIndicator.stateMachine.enter(BallStoppedState.self)
             }
             
             let ballPosition = hole.parent!.convert(ball.position, from: ball.parent!)
@@ -588,8 +555,8 @@ extension PuttScene: SKPhysicsContactDelegate {
     func ballHitWall(_ wall: Wall, contact: SKPhysicsContact) {
         let sound = AudioPlayer()
         sound.play("softWall") {
-            if let index = self.temporaryPlayers.index(of: sound) {
-                self.temporaryPlayers.remove(at: index)
+            if let index = self.audio.temporaryPlayers.index(of: sound) {
+                self.audio.temporaryPlayers.remove(at: index)
             }
         }
         sound.volume = Float(ball.physicsBody!.velocity.magnitude / 50.0)
@@ -624,8 +591,7 @@ extension PuttScene: SKPhysicsContactDelegate {
             
             shotIndicator.removeFromParent()
             
-            let par = HoleInfo.par(forHole: holeNumber, in: course)
-            
+            let _ = HoleInfo.par(forHole: info.number, in: info.course)
         }
         holeComplete = true
     }
@@ -638,23 +604,23 @@ extension PuttScene: SKPhysicsContactDelegate {
             enumerateChildNodes(withName: "//portal") { node, stop in
                 let userData = node.parent?.parent?.parent?.userData
                 if userData?["name"] as? String == destination {
-                    let move = SKAction.move(to: node.parent!.convert(node.position, to: self.ball.parent!), duration: 0)
                     
+                    let move = SKAction.move(to: node.parent!.convert(node.position, to: self.ball.visual.parent!), duration: 0)
                     
                     if let isVelocityFlipped = userData?["velocityFlipped"] as? Bool, isVelocityFlipped {
                         
-                        let dx = self.ball.physicsBody!.velocity.dx
-                        let dy = self.ball.physicsBody!.velocity.dy
-                        self.ball.physicsBody?.velocity.dx = dy
-                        self.ball.physicsBody?.velocity.dy = dx
+                        let dx = self.ball.physics.body.velocity.dx
+                        let dy = self.ball.physics.body.velocity.dy
+                        self.ball.physics.body.velocity.dx = dy
+                        self.ball.physics.body.velocity.dy = dx
                     }
                     
                     let velocityXMultipler = userData?["velocityXMultiplier"] as? CGFloat ?? 1
                     let velocityYMultipler = userData?["velocityYMultiplier"] as? CGFloat ?? 1
                     
-                    self.ball.physicsBody?.velocity.dx *= velocityXMultipler
-                    self.ball.physicsBody?.velocity.dy *= velocityYMultipler
-                    self.ball.run(move)
+                    self.ball.physics.body.velocity.dx *= velocityXMultipler
+                    self.ball.physics.body.velocity.dy *= velocityYMultipler
+                    self.ball.visual.node.run(move)
                     
                     let sound = SKAction.playSoundFileNamed("portalTransfer.mp3", waitForCompletion: false)
                     self.run(sound)
@@ -665,11 +631,11 @@ extension PuttScene: SKPhysicsContactDelegate {
         }
     }
     
-    func showScorecard(hole: Int, names: (String, String), player1Strokes: [Int], player2Strokes: [Int], pars: [Int], donePressed: @escaping ()->Void) {
+    func showScorecard(names: (String, String), player1Strokes: [Int], player2Strokes: [Int], pars: [Int], donePressed: @escaping ()->Void) {
         
         let scorecard = SKScene(fileNamed: "Scorecard")! as! Scorecard
         self.scorecard = scorecard
-        scorecard.update(hole: hole, names: names, player1Strokes: player1Strokes, player2Strokes: player2Strokes, course: course)
+        scorecard.update(hole: info.number, names: names, player1Strokes: player1Strokes, player2Strokes: player2Strokes, course: info.course)
         scorecard.donePressed = donePressed
         scorecard.zPosition = 100
         
