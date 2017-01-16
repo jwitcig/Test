@@ -90,6 +90,7 @@
 		8B5F8B421E22F925009C262F /* HoleTile.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B5F8B401E22F925009C262F /* HoleTile.sks */; };
 		8B6387081E21ECEE0059CFD2 /* SettingsButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B6387071E21ECEE0059CFD2 /* SettingsButton.xib */; };
 		8B6387091E21ECEE0059CFD2 /* SettingsButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B6387071E21ECEE0059CFD2 /* SettingsButton.xib */; };
+		8B81C01B1E2D75F70041A45A /* iMessageExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8BCF770A1E03CD0200D48A61 /* iMessageExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8B8A304C1E28A93F00A681EF /* ShotIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8A304B1E28A93F00A681EF /* ShotIndicator.swift */; };
 		8B8A304D1E28A93F00A681EF /* ShotIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8A304B1E28A93F00A681EF /* ShotIndicator.swift */; };
 		8B8A304F1E297D8E00A681EF /* ControlsButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B8A304E1E297D8E00A681EF /* ControlsButton.xib */; };
@@ -467,6 +468,30 @@
 		E8CC43E11E243FFF0075AD34 /* frostRightWall.sks in Resources */ = {isa = PBXBuildFile; fileRef = E8CC43E01E243FFF0075AD34 /* frostRightWall.sks */; };
 		E8CC43E21E243FFF0075AD34 /* frostRightWall.sks in Resources */ = {isa = PBXBuildFile; fileRef = E8CC43E01E243FFF0075AD34 /* frostRightWall.sks */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8B81C01C1E2D75F70041A45A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E83E068D1E039586005711E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8BCF77091E03CD0200D48A61;
+			remoteInfo = iMessageExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8B81C01E1E2D75F70041A45A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8B81C01B1E2D75F70041A45A /* iMessageExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0128F77969A0CAE152AE9749 /* Pods-MrPutt-iMessageExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MrPutt-iMessageExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-MrPutt-iMessageExtension/Pods-MrPutt-iMessageExtension.release.xcconfig"; sourceTree = "<group>"; };
@@ -1303,10 +1328,12 @@
 				E83E06931E039586005711E3 /* Resources */,
 				0F8EACD25443713C4C7B5B5C /* [CP] Embed Pods Frameworks */,
 				4041775BA68B6FF9355126FC /* [CP] Copy Pods Resources */,
+				8B81C01E1E2D75F70041A45A /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8B81C01D1E2D75F70041A45A /* PBXTargetDependency */,
 			);
 			name = MrPutt;
 			productName = testGolf;
@@ -1922,6 +1949,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		8B81C01D1E2D75F70041A45A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8BCF77091E03CD0200D48A61 /* iMessageExtension */;
+			targetProxy = 8B81C01C1E2D75F70041A45A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		8B9620791E1C60CB00678257 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -2095,6 +2130,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8F24A3D33C0A0B644C3537BB /* Pods-MrPutt.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -2115,6 +2151,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9AE52D809E1573D35DD5E166 /* Pods-MrPutt.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = 1;
