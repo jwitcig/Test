@@ -339,6 +339,14 @@ class GameViewController: UIViewController {
         }
     }
     
+    func removeHUD(duration: TimeInterval) {
+        UIView.transition(with: scene.hud,
+                          duration: duration,
+                          options: .transitionCrossDissolve,
+                          animations: { self.scene.hud.alpha = 0 },
+                          completion: { _ in self.scene.hud.removeFromSuperview() })
+    }
+    
     // MARK: Game Cycle
     
     func started() {
@@ -366,7 +374,9 @@ class GameViewController: UIViewController {
         
         let pars = [Int](repeatElement(3, count: 9))
         
-        removeSettings(duration: TimeInterval(1))
+        let removalDuration: TimeInterval = 1
+        removeSettings(duration: removalDuration)
+        removeHUD(duration: removalDuration)
         
         scene.preScorecardTearDown()
         
