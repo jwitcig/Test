@@ -150,6 +150,11 @@ class PuttScene: SKScene {
         
         setupAmbience()
         
+        mat.removeFromParent()
+        
+        ball.removeFromParent()
+        addChild(ball)
+        
         let delay = SKAction.wait(forDuration: 0.9)
         
         if let ballDrop = SKAction(named: "BallDrop") {
