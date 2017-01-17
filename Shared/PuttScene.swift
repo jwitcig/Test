@@ -165,74 +165,21 @@ class PuttScene: SKScene {
         
         flag.wiggle()
         
-//        let light = ball.childNode(withName: "light") as! SKLightNode
-//        
-//        let random = GKRandomDistribution(lowestValue: 0, highestValue: 1)
-//        
-//        let quantity = 2
-//        
-//        if let snow = childNode(withName: "//snow") as? SKEmitterNode {
-//            snow.targetNode = self
-//        }
-//        
-//        var colorizers: [((CGFloat, CGFloat, CGFloat), String, SKAction)] = []
-//        
-//        for i in 0..<quantity {
-//            let r = CGFloat(random.nextUniform())
-//            let g = CGFloat(random.nextUniform())
-//            let b = CGFloat(random.nextUniform())
-//            
-//            let duration: CGFloat = 0.3
-//        
-//            let previous = i > 0 ? colorizers[i-1].0 : (1, 1, 1)
-//            let action: (SKNode, CGFloat)->Void = { node, timestep in
-//                let tR = previous.0 + (r - previous.0) * (timestep/duration)
-//                let tG = previous.1 + (g - previous.1) * (timestep/duration)
-//                let tB = previous.2 + (b - previous.2) * (timestep/duration)
-//                
-//                light.lightColor = UIColor(red: tR,
-//                                         green: tG,
-//                                          blue: tB,
-//                                         alpha: 1)
-//            }
-//            
-//            let colorizer = SKAction.customAction(withDuration: TimeInterval(duration), actionBlock: action)
-//        
-//            colorizers.append(((r, g, b), "\(i)", colorizer))
-//        }
+        parse(hole: holeNumber)
+    }
+    
+    func parse(hole: Int) {
+        let url = Bundle(for: PuttScene.self).url(forResource: "hole\(hole)", withExtension: "svg")!
         
-//        let colorizeRed = SKAction.customAction(withDuration: 0.5) { node, timestep in
-//            light.lightColor = UIColor(red: 1.0 * (timestep/0.5), green: 0, blue: 0, alpha: 1)
-//        }
-//        
-//        let colorizeBlue = SKAction.customAction(withDuration: 0.5) { node, timestep in
-//            light.lightColor = UIColor(red: 0, green: 0, blue: 1.0 * (timestep/0.5), alpha: 1)
-//        }
-        
-//        let flash = SKAction.sequence(colorizers.map{$0.2})
-//        light.run(SKAction.repeatForever(flash))
-//        light.removeFromParent()
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        let url = Bundle(for: PuttScene.self).url(forResource: "testerActionGuy", withExtension: "svg")!
-        
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 490, height: 253))
+        let view = UIView(frame: CGRect(origin: .zero, size: holeSize(url: url)))
         self.view!.addSubview(view)
         
-        
-        let paths: [SVGBezierPath] = parse().map {
+        let paths: [SVGBezierPath] = beziers(url: url).map {
             SVGBezierPath.paths(fromSVGString: $0).first! as! SVGBezierPath
         }
         
         
-        for path in SVGBezierPath.pathsFromSVG(at: url) {
+        for path in paths {
             let layer = CAShapeLayer()
             layer.path = path.cgPath
             
@@ -242,13 +189,12 @@ class PuttScene: SKScene {
             let pathCopy = CGMutablePath()
             pathCopy.addPath(path.cgPath, transform: transform)
             
-                
             layer.lineWidth = 2
-            layer.strokeColor = path.svgAttributes["stroke"] as! CGColor
-            layer.fillColor = path.svgAttributes["fill"] as! CGColor
-            
+            layer.strokeColor = path.svgAttributes["stroke"] as! CGColor?
+            layer.fillColor = path.svgAttributes["fill"] as! CGColor?
             
             let physics = SKNode()
+            physics.name = "wall"
             physics.position = CGPoint(x: 0, y: 0)
             physics.physicsBody = SKPhysicsBody(edgeLoopFrom: pathCopy)
             physics.physicsBody?.isDynamic = false
@@ -259,32 +205,64 @@ class PuttScene: SKScene {
         
         let image = renderImage(from: view.layer)
         
-        let texture = SKTexture(image: #imageLiteral(resourceName: "Test.png"))
+        let texture = SKTexture(imageNamed: "hole\(hole)")
         let sprite = SKSpriteNode(texture: texture)
         sprite.position = CGPoint(x: 0, y: 0)
-//        sprite.physicsBody = SKPhysicsBody(texture: texture, alphaThreshold: 0.8, size: texture.size())
+        //        sprite.physicsBody = SKPhysicsBody(texture: texture, alphaThreshold: 0.8, size: texture.size())
         addChild(sprite)
         
         view.removeFromSuperview()
+
     }
     
-    func parse() -> [String] {
-        let url = Bundle(for: PuttScene.self).url(forResource: "testerActionGuy", withExtension: "svg")!
+    func holeSize(url: URL) -> CGSize {
+        let data = try! Data(contentsOf: url)
+        let xml = SWXMLHash.parse(data)
+        
+        let svg: XMLIndexer = xml["svg"]
+        
+        let width = try! (svg.value(ofAttribute: "width") as String).int!
+        let height = try! (svg.value(ofAttribute: "height") as String).int!
+        
+        return CGSize(width: width, height: height)
+    }
+    
+    func beziers(url: URL) -> [String] {
         
         let data = try! Data(contentsOf: url)
         let xml = SWXMLHash.parse(data)
         
-        let paths = xml["svg"]["g"]["path"].filter {
-            !(try! $0.value(ofAttribute: "fill") as! String).contains("url(")
-        }
+        let paths = xml["svg"]["g"]["path"]
         
-        return paths.map {
+        let strings = paths.map {
             $0.element!.description
         }
+        
+        var corrected: [String] = strings.map {
+            guard let startRange = $0.range(of: "stroke=") else { return $0 }
+            
+            let start = $0.index(before: startRange.lowerBound)
+            
+            guard let end = $0.range(of: ")\"", options: .caseInsensitive, range: start..<$0.endIndex, locale: nil) else { return $0 }
+            
+            return $0.replacingCharacters(in: start..<end.upperBound, with: "")
+        }
+            
+        corrected = corrected.map {
+            guard let startRange = $0.range(of: "fill=") else { return $0 }
+            
+            let start = $0.index(before: startRange.lowerBound)
+            
+            guard let end = $0.range(of: ")\"", options: .caseInsensitive, range: start..<$0.endIndex, locale: nil) else { return $0 }
+            
+            return $0.replacingCharacters(in: start..<end.upperBound, with: "")
+        }
+        
+        return corrected
     }
     
     func renderImage(from layer: CALayer) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(layer.bounds.size, false, 3)
+        UIGraphicsBeginImageContextWithOptions(layer.bounds.size, false, 0)
         
         layer.render(in: UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()!
@@ -629,7 +607,7 @@ extension PuttScene: SKPhysicsContactDelegate {
         }
         
         if let _ = node(withName: Ball.name) as? Ball,
-            let wall = node(withName: Wall.nodeName) as? Wall {
+            let wall = node(withName: Wall.nodeName) {
             
             ballHitWall(wall, contact: contact)
         }
@@ -668,7 +646,7 @@ extension PuttScene: SKPhysicsContactDelegate {
         return CGVector(dx: entrance.dx-scaled.dx, dy: entrance.dy-scaled.dy)
     }
     
-    func ballHitWall(_ wall: Wall, contact: SKPhysicsContact) {
+    func ballHitWall(_ wall: SKNode, contact: SKPhysicsContact) {
         let sound = AudioPlayer()
         sound.play("softWall") {
             if let index = self.temporaryPlayers.index(of: sound) {
@@ -680,6 +658,7 @@ extension PuttScene: SKPhysicsContactDelegate {
         reflectionVelocity = reflect(velocity: ballPrePhysicsVelocity,
                                           for: contact,
                                          with: wall.physicsBody!)
+        
     }
     
     func ballHitHole(_ hole: Hole, contact: SKPhysicsContact) {
