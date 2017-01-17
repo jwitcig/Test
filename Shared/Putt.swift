@@ -57,6 +57,10 @@ public func *(vector: CGVector, scalar: CGFloat) -> CGVector {
     return CGVector(dx: vector.dx*scalar, dy: vector.dy*scalar)
 }
 
+public func /(vector: CGVector, scalar: CGFloat) -> CGVector {
+    return CGVector(dx: vector.dx/scalar, dy: vector.dy/scalar)
+}
+
 enum Category: UInt32 {
     case none = 0
     case ball = 1
