@@ -172,7 +172,9 @@ class PuttScene: SKScene {
         
         flag.wiggle()
         
-        let url = Bundle(for: PuttScene.self).url(forResource: "nebulaHole\(holeNumber!)-\(holeNumber!)", withExtension: "svg")!
+        let coursePrefix = course.name.lowercased()
+        
+        let url = Bundle(for: PuttScene.self).url(forResource: "\(coursePrefix)Hole\(holeNumber!)-\(holeNumber!)", withExtension: "svg")!
 
         parse(url: url)
         
@@ -217,7 +219,9 @@ class PuttScene: SKScene {
             addChild(physics)
         }
         
-        let texture = SKTexture(imageNamed: "nebulaHole\(holeNumber!)")
+        let coursePrefix = course.name.lowercased()
+
+        let texture = SKTexture(imageNamed: "\(coursePrefix)Hole\(holeNumber!)")
         let sprite = SKSpriteNode(texture: texture)
         sprite.zPosition = -1
         sprite.position = CGPoint(x: 0, y: 0)
@@ -711,17 +715,11 @@ extension PuttScene: SKPhysicsContactDelegate {
     }
     
     func ballHitWall(_ wall: SKNode, contact: SKPhysicsContact) {
-
-//        var angle = acos(contact.contactNormal • ball.physicsBody!.velocity.normalized)
-//        angle = angle < 0 ? angle + .pi * 2 : angle
-//        print(angle)
-//        
-        
         let reflected = reflect(velocity: ballPrePhysicsVelocity,
                                  for: contact,
                                  with: wall.physicsBody!)
         let angle = acos(reflected.normalized • ballPrePhysicsVelocity.normalized)
-        print(angle)
+        
         guard angle > .pi / 6.0 else { return }
         
         let sound = AudioPlayer()
