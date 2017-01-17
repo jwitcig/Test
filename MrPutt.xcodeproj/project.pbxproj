@@ -17,6 +17,33 @@
 		8B1162471E2E06DC005520DB /* nebulaHole7-7.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B11623E1E2E06DC005520DB /* nebulaHole7-7.svg */; };
 		8B1162481E2E06DC005520DB /* nebulaHole8-8.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B11623F1E2E06DC005520DB /* nebulaHole8-8.svg */; };
 		8B1162491E2E06DC005520DB /* nebulaHole9-9.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B1162401E2E06DC005520DB /* nebulaHole9-9.svg */; };
+		8B1162971E2E1894005520DB /* blazeHole1-1.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B1162851E2E1891005520DB /* blazeHole1-1.svg */; };
+		8B1162981E2E1894005520DB /* blazeHole2-2.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B1162861E2E1891005520DB /* blazeHole2-2.svg */; };
+		8B1162991E2E1894005520DB /* blazeHole3-3.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B1162871E2E1891005520DB /* blazeHole3-3.svg */; };
+		8B11629A1E2E1894005520DB /* blazeHole4-4.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B1162881E2E1891005520DB /* blazeHole4-4.svg */; };
+		8B11629B1E2E1894005520DB /* blazeHole5-5.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B1162891E2E1891005520DB /* blazeHole5-5.svg */; };
+		8B11629C1E2E1894005520DB /* blazeHole6-6.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B11628A1E2E1891005520DB /* blazeHole6-6.svg */; };
+		8B11629D1E2E1894005520DB /* blazeHole7-7.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B11628B1E2E1891005520DB /* blazeHole7-7.svg */; };
+		8B11629E1E2E1894005520DB /* blazeHole8-8.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B11628C1E2E1891005520DB /* blazeHole8-8.svg */; };
+		8B11629F1E2E1894005520DB /* blazeHole9-9.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B11628D1E2E1891005520DB /* blazeHole9-9.svg */; };
+		8B63C04C1E2E2ECB004C028C /* timberHole1-1.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0431E2E2ECB004C028C /* timberHole1-1.svg */; };
+		8B63C04D1E2E2ECB004C028C /* timberHole1-1.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0431E2E2ECB004C028C /* timberHole1-1.svg */; };
+		8B63C04E1E2E2ECB004C028C /* timberHole2-2.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0441E2E2ECB004C028C /* timberHole2-2.svg */; };
+		8B63C04F1E2E2ECB004C028C /* timberHole2-2.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0441E2E2ECB004C028C /* timberHole2-2.svg */; };
+		8B63C0501E2E2ECB004C028C /* timberHole3-3.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0451E2E2ECB004C028C /* timberHole3-3.svg */; };
+		8B63C0511E2E2ECB004C028C /* timberHole3-3.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0451E2E2ECB004C028C /* timberHole3-3.svg */; };
+		8B63C0521E2E2ECB004C028C /* timberHole4-4.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0461E2E2ECB004C028C /* timberHole4-4.svg */; };
+		8B63C0531E2E2ECB004C028C /* timberHole4-4.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0461E2E2ECB004C028C /* timberHole4-4.svg */; };
+		8B63C0541E2E2ECB004C028C /* timberHole5-5.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0471E2E2ECB004C028C /* timberHole5-5.svg */; };
+		8B63C0551E2E2ECB004C028C /* timberHole5-5.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0471E2E2ECB004C028C /* timberHole5-5.svg */; };
+		8B63C0561E2E2ECB004C028C /* timberHole6-6.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0481E2E2ECB004C028C /* timberHole6-6.svg */; };
+		8B63C0571E2E2ECB004C028C /* timberHole6-6.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0481E2E2ECB004C028C /* timberHole6-6.svg */; };
+		8B63C0581E2E2ECB004C028C /* timberHole7-7.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0491E2E2ECB004C028C /* timberHole7-7.svg */; };
+		8B63C0591E2E2ECB004C028C /* timberHole7-7.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0491E2E2ECB004C028C /* timberHole7-7.svg */; };
+		8B63C05A1E2E2ECB004C028C /* timberHole8-8.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C04A1E2E2ECB004C028C /* timberHole8-8.svg */; };
+		8B63C05B1E2E2ECB004C028C /* timberHole8-8.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C04A1E2E2ECB004C028C /* timberHole8-8.svg */; };
+		8B63C05C1E2E2ECB004C028C /* timberHole9-9.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C04B1E2E2ECB004C028C /* timberHole9-9.svg */; };
+		8B63C05D1E2E2ECB004C028C /* timberHole9-9.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C04B1E2E2ECB004C028C /* timberHole9-9.svg */; };
 		8B9012D31E2DEACD00EC9FEC /* HUDView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B9012D21E2DEACD00EC9FEC /* HUDView.xib */; };
 		8B9012D51E2DEAE300EC9FEC /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9012D41E2DEAE300EC9FEC /* HUDView.swift */; };
 		8BD6526F1E2D92A3001FA373 /* iMessageExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8BD6526E1E2D92A3001FA373 /* iMessageExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -147,6 +174,15 @@
 		8B11623E1E2E06DC005520DB /* nebulaHole7-7.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "nebulaHole7-7.svg"; sourceTree = "<group>"; };
 		8B11623F1E2E06DC005520DB /* nebulaHole8-8.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "nebulaHole8-8.svg"; sourceTree = "<group>"; };
 		8B1162401E2E06DC005520DB /* nebulaHole9-9.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "nebulaHole9-9.svg"; sourceTree = "<group>"; };
+		8B1162851E2E1891005520DB /* blazeHole1-1.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "blazeHole1-1.svg"; sourceTree = "<group>"; };
+		8B1162861E2E1891005520DB /* blazeHole2-2.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "blazeHole2-2.svg"; sourceTree = "<group>"; };
+		8B1162871E2E1891005520DB /* blazeHole3-3.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "blazeHole3-3.svg"; sourceTree = "<group>"; };
+		8B1162881E2E1891005520DB /* blazeHole4-4.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "blazeHole4-4.svg"; sourceTree = "<group>"; };
+		8B1162891E2E1891005520DB /* blazeHole5-5.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "blazeHole5-5.svg"; sourceTree = "<group>"; };
+		8B11628A1E2E1891005520DB /* blazeHole6-6.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "blazeHole6-6.svg"; sourceTree = "<group>"; };
+		8B11628B1E2E1891005520DB /* blazeHole7-7.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "blazeHole7-7.svg"; sourceTree = "<group>"; };
+		8B11628C1E2E1891005520DB /* blazeHole8-8.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "blazeHole8-8.svg"; sourceTree = "<group>"; };
+		8B11628D1E2E1891005520DB /* blazeHole9-9.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "blazeHole9-9.svg"; sourceTree = "<group>"; };
 		8B1317051E2B51220088162D /* ballSelect.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ballSelect.mp3; sourceTree = "<group>"; };
 		8B1317081E2B6B6A0088162D /* HolePars.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HolePars.plist; sourceTree = "<group>"; };
 		8B13170B1E2B78780088162D /* ceramicHit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ceramicHit.mp3; sourceTree = "<group>"; };
@@ -187,6 +223,15 @@
 		8B5799421E2A18D30083228D /* BallDrop.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BallDrop.sks; sourceTree = "<group>"; };
 		8B5F8B401E22F925009C262F /* HoleTile.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HoleTile.sks; sourceTree = "<group>"; };
 		8B6387071E21ECEE0059CFD2 /* SettingsButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsButton.xib; sourceTree = "<group>"; };
+		8B63C0431E2E2ECB004C028C /* timberHole1-1.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole1-1.svg"; sourceTree = "<group>"; };
+		8B63C0441E2E2ECB004C028C /* timberHole2-2.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole2-2.svg"; sourceTree = "<group>"; };
+		8B63C0451E2E2ECB004C028C /* timberHole3-3.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole3-3.svg"; sourceTree = "<group>"; };
+		8B63C0461E2E2ECB004C028C /* timberHole4-4.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole4-4.svg"; sourceTree = "<group>"; };
+		8B63C0471E2E2ECB004C028C /* timberHole5-5.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole5-5.svg"; sourceTree = "<group>"; };
+		8B63C0481E2E2ECB004C028C /* timberHole6-6.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole6-6.svg"; sourceTree = "<group>"; };
+		8B63C0491E2E2ECB004C028C /* timberHole7-7.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole7-7.svg"; sourceTree = "<group>"; };
+		8B63C04A1E2E2ECB004C028C /* timberHole8-8.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole8-8.svg"; sourceTree = "<group>"; };
+		8B63C04B1E2E2ECB004C028C /* timberHole9-9.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole9-9.svg"; sourceTree = "<group>"; };
 		8B8A304B1E28A93F00A681EF /* ShotIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotIndicator.swift; sourceTree = "<group>"; };
 		8B8A304E1E297D8E00A681EF /* ControlsButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ControlsButton.xib; sourceTree = "<group>"; };
 		8B8A30511E297E4C00A681EF /* UserControlsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserControlsView.xib; sourceTree = "<group>"; };
@@ -428,6 +473,16 @@
 		8B1162371E2E06BA005520DB /* SVGs */ = {
 			isa = PBXGroup;
 			children = (
+				8B63C0421E2E2E65004C028C /* Timber */,
+				8B11624E1E2E17AD005520DB /* Blaze */,
+				8B11624D1E2E178B005520DB /* Nebula */,
+			);
+			name = SVGs;
+			sourceTree = "<group>";
+		};
+		8B11624D1E2E178B005520DB /* Nebula */ = {
+			isa = PBXGroup;
+			children = (
 				8B1162381E2E06DC005520DB /* nebulaHole1-1.svg */,
 				8B1162391E2E06DC005520DB /* nebulaHole2-2.svg */,
 				8B11623A1E2E06DC005520DB /* nebulaHole3-3.svg */,
@@ -438,7 +493,23 @@
 				8B11623F1E2E06DC005520DB /* nebulaHole8-8.svg */,
 				8B1162401E2E06DC005520DB /* nebulaHole9-9.svg */,
 			);
-			name = SVGs;
+			name = Nebula;
+			sourceTree = "<group>";
+		};
+		8B11624E1E2E17AD005520DB /* Blaze */ = {
+			isa = PBXGroup;
+			children = (
+				8B1162851E2E1891005520DB /* blazeHole1-1.svg */,
+				8B1162861E2E1891005520DB /* blazeHole2-2.svg */,
+				8B1162871E2E1891005520DB /* blazeHole3-3.svg */,
+				8B1162881E2E1891005520DB /* blazeHole4-4.svg */,
+				8B1162891E2E1891005520DB /* blazeHole5-5.svg */,
+				8B11628A1E2E1891005520DB /* blazeHole6-6.svg */,
+				8B11628B1E2E1891005520DB /* blazeHole7-7.svg */,
+				8B11628C1E2E1891005520DB /* blazeHole8-8.svg */,
+				8B11628D1E2E1891005520DB /* blazeHole9-9.svg */,
+			);
+			name = Blaze;
 			sourceTree = "<group>";
 		};
 		8B35A2231E21895B0063520C /* Views */ = {
@@ -530,6 +601,22 @@
 				8B5799271E2A0F850083228D /* winGame.mp3 */,
 			);
 			path = "Win-Loss";
+			sourceTree = "<group>";
+		};
+		8B63C0421E2E2E65004C028C /* Timber */ = {
+			isa = PBXGroup;
+			children = (
+				8B63C0431E2E2ECB004C028C /* timberHole1-1.svg */,
+				8B63C0441E2E2ECB004C028C /* timberHole2-2.svg */,
+				8B63C0451E2E2ECB004C028C /* timberHole3-3.svg */,
+				8B63C0461E2E2ECB004C028C /* timberHole4-4.svg */,
+				8B63C0471E2E2ECB004C028C /* timberHole5-5.svg */,
+				8B63C0481E2E2ECB004C028C /* timberHole6-6.svg */,
+				8B63C0491E2E2ECB004C028C /* timberHole7-7.svg */,
+				8B63C04A1E2E2ECB004C028C /* timberHole8-8.svg */,
+				8B63C04B1E2E2ECB004C028C /* timberHole9-9.svg */,
+			);
+			name = Timber;
 			sourceTree = "<group>";
 		};
 		8B961F231E1C601600678257 /* Fonts */ = {
@@ -1035,7 +1122,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B63C04E1E2E2ECB004C028C /* timberHole2-2.svg in Resources */,
+				8B63C0501E2E2ECB004C028C /* timberHole3-3.svg in Resources */,
 				8BD652831E2D92EC001FA373 /* PlaceholderAppAssets.xcassets in Resources */,
+				8B63C05C1E2E2ECB004C028C /* timberHole9-9.svg in Resources */,
+				8B63C05A1E2E2ECB004C028C /* timberHole8-8.svg in Resources */,
+				8B63C0541E2E2ECB004C028C /* timberHole5-5.svg in Resources */,
+				8B63C0521E2E2ECB004C028C /* timberHole4-4.svg in Resources */,
+				8B63C0581E2E2ECB004C028C /* timberHole7-7.svg in Resources */,
+				8B63C04C1E2E2ECB004C028C /* timberHole1-1.svg in Resources */,
+				8B63C0561E2E2ECB004C028C /* timberHole6-6.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1046,10 +1142,15 @@
 				8BD652CB1E2D93AE001FA373 /* Scorecard.sks in Resources */,
 				8BD652C91E2D93AE001FA373 /* Mat.sks in Resources */,
 				8BD652A21E2D93AE001FA373 /* ballDrop.mp3 in Resources */,
+				8B63C04F1E2E2ECB004C028C /* timberHole2-2.svg in Resources */,
 				8BD6528F1E2D93AE001FA373 /* ControlsButton.xib in Resources */,
 				8BD6529F1E2D93AE001FA373 /* clubHit.wav in Resources */,
+				8B11629D1E2E1894005520DB /* blazeHole7-7.svg in Resources */,
 				8B1162441E2E06DC005520DB /* nebulaHole4-4.svg in Resources */,
 				8BD652C11E2D93AE001FA373 /* BallTrail.sks in Resources */,
+				8B1162981E2E1894005520DB /* blazeHole2-2.svg in Resources */,
+				8B63C0531E2E2ECB004C028C /* timberHole4-4.svg in Resources */,
+				8B63C04D1E2E2ECB004C028C /* timberHole1-1.svg in Resources */,
 				8BF679D61E2D96FB00EF44FE /* Frost-Hole5.sks in Resources */,
 				8BD652C61E2D93AE001FA373 /* Grid.sks in Resources */,
 				8BD652D31E2D9660001FA373 /* MainInterface.storyboard in Resources */,
@@ -1058,11 +1159,15 @@
 				8BD652C21E2D93AE001FA373 /* Snow.sks in Resources */,
 				8BD6529A1E2D93AE001FA373 /* Wind_StayOnBeat.com.mp3 in Resources */,
 				8BF679D71E2D96FB00EF44FE /* Frost-Hole6.sks in Resources */,
+				8B11629C1E2E1894005520DB /* blazeHole6-6.svg in Resources */,
+				8B1162991E2E1894005520DB /* blazeHole3-3.svg in Resources */,
 				8BD652C01E2D93AE001FA373 /* Assets.xcassets in Resources */,
 				8BF679D41E2D96FB00EF44FE /* Frost-Hole3.sks in Resources */,
+				8B63C05B1E2E2ECB004C028C /* timberHole8-8.svg in Resources */,
 				8BD652D41E2D9664001FA373 /* iMessageAssets.xcassets in Resources */,
 				8BD6529C1E2D93AE001FA373 /* toggle.mp3 in Resources */,
 				8BD6529B1E2D93AE001FA373 /* click.mp3 in Resources */,
+				8B11629B1E2E1894005520DB /* blazeHole5-5.svg in Resources */,
 				8B1162451E2E06DC005520DB /* nebulaHole5-5.svg in Resources */,
 				8BD6528E1E2D93AE001FA373 /* SettingsButton.xib in Resources */,
 				8BD652A31E2D93AE001FA373 /* portalAmbience.mp3 in Resources */,
@@ -1072,6 +1177,7 @@
 				8BF679D91E2D96FB00EF44FE /* Frost-Hole8.sks in Resources */,
 				8BD652AB1E2D93AE001FA373 /* HolePars.plist in Resources */,
 				8BD652A01E2D93AE001FA373 /* softWall.mp3 in Resources */,
+				8B11629F1E2E1894005520DB /* blazeHole9-9.svg in Resources */,
 				8BD652BF1E2D93AE001FA373 /* FlagBobbing.sks in Resources */,
 				8BD652CC1E2D93AE001FA373 /* Flag.sks in Resources */,
 				8BD652A81E2D93AE001FA373 /* Bebas.ttf in Resources */,
@@ -1090,10 +1196,13 @@
 				8BD652BB1E2D93AE001FA373 /* BallDrop.sks in Resources */,
 				8BF679DB1E2D96FB00EF44FE /* FrostBackground.sks in Resources */,
 				8BD6528B1E2D93AE001FA373 /* InGameMenuView.xib in Resources */,
+				8B63C05D1E2E2ECB004C028C /* timberHole9-9.svg in Resources */,
 				8BF679D21E2D96FB00EF44FE /* Frost-Hole1.sks in Resources */,
+				8B63C0551E2E2ECB004C028C /* timberHole5-5.svg in Resources */,
 				8BD652BE1E2D93AE001FA373 /* RaiseFlag.sks in Resources */,
 				8BD652A11E2D93AE001FA373 /* woodHit.mp3 in Resources */,
 				8BD652C71E2D93AE001FA373 /* Portal.sks in Resources */,
+				8B11629E1E2E1894005520DB /* blazeHole8-8.svg in Resources */,
 				8BD652BC1E2D93AE001FA373 /* BallInHole.sks in Resources */,
 				8B1162431E2E06DC005520DB /* nebulaHole3-3.svg in Resources */,
 				8BD652991E2D93AE001FA373 /* Legend of Ace - Desert LocationCasual Environmental Ambience by DFAD.mp3 in Resources */,
@@ -1101,10 +1210,15 @@
 				8B9012D31E2DEACD00EC9FEC /* HUDView.xib in Resources */,
 				8B1162471E2E06DC005520DB /* nebulaHole7-7.svg in Resources */,
 				8BD652BA1E2D93AE001FA373 /* SceneStart.sks in Resources */,
+				8B63C0571E2E2ECB004C028C /* timberHole6-6.svg in Resources */,
+				8B1162971E2E1894005520DB /* blazeHole1-1.svg in Resources */,
 				8BF679DC1E2D96FB00EF44FE /* frostOutsideTile.sks in Resources */,
 				8B1162481E2E06DC005520DB /* nebulaHole8-8.svg in Resources */,
 				8BD652AA1E2D93AE001FA373 /* Actions.plist in Resources */,
+				8B63C0511E2E2ECB004C028C /* timberHole3-3.svg in Resources */,
+				8B11629A1E2E1894005520DB /* blazeHole4-4.svg in Resources */,
 				8BD652971E2D93AE001FA373 /* SharedAssets.xcassets in Resources */,
+				8B63C0591E2E2ECB004C028C /* timberHole7-7.svg in Resources */,
 				8BD652A91E2D93AE001FA373 /* Neutra2Display-Titled.otf in Resources */,
 				8BD652891E2D93AE001FA373 /* CoursePreviewView.xib in Resources */,
 				8BD652C81E2D93AE001FA373 /* Hill.sks in Resources */,
@@ -1258,7 +1372,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 349WFX4WJR;
 				INFOPLIST_FILE = "$(SRCROOT)/iMessageExtension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jwitapps.MrPutt.iMessageExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1279,7 +1393,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 349WFX4WJR;
 				INFOPLIST_FILE = "$(SRCROOT)/iMessageExtension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jwitapps.MrPutt.iMessageExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1300,7 +1414,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 349WFX4WJR;
 				INFOPLIST_FILE = MrPutt/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jwitapps.MrPutt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "51ba0a67-d0ed-4ea3-b7f3-13cfa1bd2817";
@@ -1321,7 +1435,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 349WFX4WJR;
 				INFOPLIST_FILE = MrPutt/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jwitapps.MrPutt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "fe55cbea-9f3e-46db-8485-06d191e8e7d3";
