@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3D9B7D98E3F45A7434463485 /* Pods_MrPutt_iMessageExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EC3BB72C39C396407F4004 /* Pods_MrPutt_iMessageExtension.framework */; };
 		8B3521AF1E2DBFA800F3A374 /* hole1.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B3521AE1E2DBFA800F3A374 /* hole1.svg */; };
+		8B9012D31E2DEACD00EC9FEC /* HUDView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B9012D21E2DEACD00EC9FEC /* HUDView.xib */; };
+		8B9012D51E2DEAE300EC9FEC /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9012D41E2DEAE300EC9FEC /* HUDView.swift */; };
 		8BD6526F1E2D92A3001FA373 /* iMessageExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8BD6526E1E2D92A3001FA373 /* iMessageExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8BD652721E2D92A3001FA373 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BCF770B1E03CD0200D48A61 /* Messages.framework */; };
 		8BD652831E2D92EC001FA373 /* PlaceholderAppAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D29256831E1F7A60000FB092 /* PlaceholderAppAssets.xcassets */; };
@@ -175,6 +177,8 @@
 		8B8A30511E297E4C00A681EF /* UserControlsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserControlsView.xib; sourceTree = "<group>"; };
 		8B8A30541E297FFB00A681EF /* UserControlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserControlsView.swift; sourceTree = "<group>"; };
 		8B8A30571E299B7C00A681EF /* SceneStart.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SceneStart.sks; sourceTree = "<group>"; };
+		8B9012D21E2DEACD00EC9FEC /* HUDView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HUDView.xib; sourceTree = "<group>"; };
+		8B9012D41E2DEAE300EC9FEC /* HUDView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
 		8B961F211E1C601600678257 /* Bebas.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bebas.ttf; sourceTree = "<group>"; };
 		8B961F221E1C601600678257 /* Neutra2Display-Titled.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neutra2Display-Titled.otf"; sourceTree = "<group>"; };
 		8B961F241E1C601600678257 /* Actions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Actions.plist; sourceTree = "<group>"; };
@@ -421,6 +425,8 @@
 				8B8A30541E297FFB00A681EF /* UserControlsView.swift */,
 				8B8A30511E297E4C00A681EF /* UserControlsView.xib */,
 				8B1317121E2B948B0088162D /* WaitingForOpponentView.swift */,
+				8B9012D41E2DEAE300EC9FEC /* HUDView.swift */,
+				8B9012D21E2DEACD00EC9FEC /* HUDView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1065,6 +1071,7 @@
 				8BD652BC1E2D93AE001FA373 /* BallInHole.sks in Resources */,
 				8BD652991E2D93AE001FA373 /* Legend of Ace - Desert LocationCasual Environmental Ambience by DFAD.mp3 in Resources */,
 				8BD652981E2D93AE001FA373 /* HoleMusic.mp3 in Resources */,
+				8B9012D31E2DEACD00EC9FEC /* HUDView.xib in Resources */,
 				8BD652BA1E2D93AE001FA373 /* SceneStart.sks in Resources */,
 				8BF679DC1E2D96FB00EF44FE /* frostOutsideTile.sks in Resources */,
 				8BD652AA1E2D93AE001FA373 /* Actions.plist in Resources */,
@@ -1178,6 +1185,7 @@
 				8BD652B21E2D93AE001FA373 /* ShotIndicator.swift in Sources */,
 				8BD6528A1E2D93AE001FA373 /* InGameMenuView.swift in Sources */,
 				8BD652B31E2D93AE001FA373 /* Flag.swift in Sources */,
+				8B9012D51E2DEAE300EC9FEC /* HUDView.swift in Sources */,
 				8BD652881E2D93AE001FA373 /* CoursePreviewView.swift in Sources */,
 				8BD652901E2D93AE001FA373 /* UserControlsView.swift in Sources */,
 				8BD652AE1E2D93AE001FA373 /* Mat.swift in Sources */,

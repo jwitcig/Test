@@ -64,6 +64,8 @@ class PuttScene: SKScene {
 
     var touchNode = SKNode()
     
+    var hud: HUDView!
+    
     lazy var shotIndicator: ShotIndicator = {
         if let matRotation = self.childNode(withName: "//\(Mat.name)")?.parent?.parent?.zRotation {
             let offset = SKRange(constantValue: matRotation - .pi/2)
@@ -555,6 +557,8 @@ class PuttScene: SKScene {
             pan.timingMode = .easeIn
             camera?.run(pan, withKey: "trackingEnabler")
         }
+        
+        hud.strokes = shots.count
     }
     
     // MARK: Game Loop
