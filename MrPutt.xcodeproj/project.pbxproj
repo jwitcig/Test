@@ -8,7 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		3D9B7D98E3F45A7434463485 /* Pods_MrPutt_iMessageExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EC3BB72C39C396407F4004 /* Pods_MrPutt_iMessageExtension.framework */; };
-		8B3521AF1E2DBFA800F3A374 /* hole1.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B3521AE1E2DBFA800F3A374 /* hole1.svg */; };
+		8B1162411E2E06DC005520DB /* nebulaHole1-1.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B1162381E2E06DC005520DB /* nebulaHole1-1.svg */; };
+		8B1162421E2E06DC005520DB /* nebulaHole2-2.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B1162391E2E06DC005520DB /* nebulaHole2-2.svg */; };
+		8B1162431E2E06DC005520DB /* nebulaHole3-3.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B11623A1E2E06DC005520DB /* nebulaHole3-3.svg */; };
+		8B1162441E2E06DC005520DB /* nebulaHole4-4.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B11623B1E2E06DC005520DB /* nebulaHole4-4.svg */; };
+		8B1162451E2E06DC005520DB /* nebulaHole5-5.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B11623C1E2E06DC005520DB /* nebulaHole5-5.svg */; };
+		8B1162461E2E06DC005520DB /* nebulaHole6-6.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B11623D1E2E06DC005520DB /* nebulaHole6-6.svg */; };
+		8B1162471E2E06DC005520DB /* nebulaHole7-7.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B11623E1E2E06DC005520DB /* nebulaHole7-7.svg */; };
+		8B1162481E2E06DC005520DB /* nebulaHole8-8.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B11623F1E2E06DC005520DB /* nebulaHole8-8.svg */; };
+		8B1162491E2E06DC005520DB /* nebulaHole9-9.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B1162401E2E06DC005520DB /* nebulaHole9-9.svg */; };
 		8B9012D31E2DEACD00EC9FEC /* HUDView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B9012D21E2DEACD00EC9FEC /* HUDView.xib */; };
 		8B9012D51E2DEAE300EC9FEC /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9012D41E2DEAE300EC9FEC /* HUDView.swift */; };
 		8BD6526F1E2D92A3001FA373 /* iMessageExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8BD6526E1E2D92A3001FA373 /* iMessageExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -82,7 +90,6 @@
 		8BD652CA1E2D93AE001FA373 /* HoleTile.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B5F8B401E22F925009C262F /* HoleTile.sks */; };
 		8BD652CB1E2D93AE001FA373 /* Scorecard.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B279D301E2725CF0094DC62 /* Scorecard.sks */; };
 		8BD652CC1E2D93AE001FA373 /* Flag.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B9FD4481E2A353500FE4D3D /* Flag.sks */; };
-		8BD652D11E2D9618001FA373 /* Stickers.xcstickers in Resources */ = {isa = PBXBuildFile; fileRef = 8BD652D01E2D9618001FA373 /* Stickers.xcstickers */; };
 		8BD652D21E2D965E001FA373 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B25439A1E2D904600326E7B /* MessagesViewController.swift */; };
 		8BD652D31E2D9660001FA373 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BCF77101E03CD0200D48A61 /* MainInterface.storyboard */; };
 		8BD652D41E2D9664001FA373 /* iMessageAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BCF77131E03CD0200D48A61 /* iMessageAssets.xcassets */; };
@@ -131,6 +138,15 @@
 		73EC3BB72C39C396407F4004 /* Pods_MrPutt_iMessageExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MrPutt_iMessageExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B8B9F42799F64010D73C350 /* Pods-testGolf-iMessageExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGolf-iMessageExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-testGolf-iMessageExtension/Pods-testGolf-iMessageExtension.release.xcconfig"; sourceTree = "<group>"; };
 		8B073B661E1C92B7008BBAE6 /* Hill.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hill.sks; sourceTree = "<group>"; };
+		8B1162381E2E06DC005520DB /* nebulaHole1-1.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "nebulaHole1-1.svg"; sourceTree = "<group>"; };
+		8B1162391E2E06DC005520DB /* nebulaHole2-2.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "nebulaHole2-2.svg"; sourceTree = "<group>"; };
+		8B11623A1E2E06DC005520DB /* nebulaHole3-3.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "nebulaHole3-3.svg"; sourceTree = "<group>"; };
+		8B11623B1E2E06DC005520DB /* nebulaHole4-4.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "nebulaHole4-4.svg"; sourceTree = "<group>"; };
+		8B11623C1E2E06DC005520DB /* nebulaHole5-5.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "nebulaHole5-5.svg"; sourceTree = "<group>"; };
+		8B11623D1E2E06DC005520DB /* nebulaHole6-6.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "nebulaHole6-6.svg"; sourceTree = "<group>"; };
+		8B11623E1E2E06DC005520DB /* nebulaHole7-7.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "nebulaHole7-7.svg"; sourceTree = "<group>"; };
+		8B11623F1E2E06DC005520DB /* nebulaHole8-8.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "nebulaHole8-8.svg"; sourceTree = "<group>"; };
+		8B1162401E2E06DC005520DB /* nebulaHole9-9.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "nebulaHole9-9.svg"; sourceTree = "<group>"; };
 		8B1317051E2B51220088162D /* ballSelect.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ballSelect.mp3; sourceTree = "<group>"; };
 		8B1317081E2B6B6A0088162D /* HolePars.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HolePars.plist; sourceTree = "<group>"; };
 		8B13170B1E2B78780088162D /* ceramicHit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ceramicHit.mp3; sourceTree = "<group>"; };
@@ -149,7 +165,6 @@
 		8B2543C01E2D918800326E7B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B279D2D1E2724C30094DC62 /* Scorecard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scorecard.swift; sourceTree = "<group>"; };
 		8B279D301E2725CF0094DC62 /* Scorecard.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scorecard.sks; sourceTree = "<group>"; };
-		8B3521AE1E2DBFA800F3A374 /* hole1.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = hole1.svg; path = ../../../../Desktop/hole1.svg; sourceTree = "<group>"; };
 		8B35A2241E21895B0063520C /* InGameMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InGameMenuView.swift; sourceTree = "<group>"; };
 		8B35A2271E2189710063520C /* InGameMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InGameMenuView.xib; sourceTree = "<group>"; };
 		8B35A22A1E218A980063520C /* InGameOptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InGameOptionView.swift; sourceTree = "<group>"; };
@@ -216,7 +231,6 @@
 		8BD5ACDC1E23A3C100FAF51F /* ScorecardStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScorecardStyleKit.swift; sourceTree = "<group>"; };
 		8BD652651E2D92A3001FA373 /* MrPutt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MrPutt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BD6526E1E2D92A3001FA373 /* iMessageExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = iMessageExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		8BD652D01E2D9618001FA373 /* Stickers.xcstickers */ = {isa = PBXFileReference; lastKnownFileType = folder.stickers; path = Stickers.xcstickers; sourceTree = "<group>"; };
 		8BE7DACF1E2B448900221ECA /* HoleMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = HoleMusic.mp3; sourceTree = "<group>"; };
 		8F233FA75BF56CABCE8E437B /* Pods-testGolf-iMessageExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGolf-iMessageExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testGolf-iMessageExtension/Pods-testGolf-iMessageExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		8F24A3D33C0A0B644C3537BB /* Pods-MrPutt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MrPutt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MrPutt/Pods-MrPutt.debug.xcconfig"; sourceTree = "<group>"; };
@@ -411,6 +425,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8B1162371E2E06BA005520DB /* SVGs */ = {
+			isa = PBXGroup;
+			children = (
+				8B1162381E2E06DC005520DB /* nebulaHole1-1.svg */,
+				8B1162391E2E06DC005520DB /* nebulaHole2-2.svg */,
+				8B11623A1E2E06DC005520DB /* nebulaHole3-3.svg */,
+				8B11623B1E2E06DC005520DB /* nebulaHole4-4.svg */,
+				8B11623C1E2E06DC005520DB /* nebulaHole5-5.svg */,
+				8B11623D1E2E06DC005520DB /* nebulaHole6-6.svg */,
+				8B11623E1E2E06DC005520DB /* nebulaHole7-7.svg */,
+				8B11623F1E2E06DC005520DB /* nebulaHole8-8.svg */,
+				8B1162401E2E06DC005520DB /* nebulaHole9-9.svg */,
+			);
+			name = SVGs;
+			sourceTree = "<group>";
+		};
 		8B35A2231E21895B0063520C /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -523,6 +553,7 @@
 		8B961F261E1C601600678257 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				8B1162371E2E06BA005520DB /* SVGs */,
 				8BD5ACDC1E23A3C100FAF51F /* ScorecardStyleKit.swift */,
 				8B9620361E1C605F00678257 /* LogoStyleKit.swift */,
 				8B9620311E1C603400678257 /* SharedAssets.xcassets */,
@@ -674,7 +705,6 @@
 				8B961F2D1E1C601600678257 /* HoleSetup.swift */,
 				8B961F2E1E1C601600678257 /* Putt.swift */,
 				8B961F2F1E1C601600678257 /* PuttScene.swift */,
-				8B9AAB051E2D8B4100686627 /* Holes */,
 				8B961F541E1C601600678257 /* SpriteKit */,
 			);
 			path = Shared;
@@ -707,14 +737,6 @@
 			path = Shared/ViewControllers;
 			sourceTree = SOURCE_ROOT;
 		};
-		8B9AAB051E2D8B4100686627 /* Holes */ = {
-			isa = PBXGroup;
-			children = (
-				8B3521AE1E2DBFA800F3A374 /* hole1.svg */,
-			);
-			name = Holes;
-			sourceTree = "<group>";
-		};
 		8BCF770D1E03CD0200D48A61 /* iMessageExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -722,7 +744,6 @@
 				8BCF77101E03CD0200D48A61 /* MainInterface.storyboard */,
 				8BCF77131E03CD0200D48A61 /* iMessageAssets.xcassets */,
 				D22F14101E1F7AAD00CA90CA /* PlaceholderiMessageAssets.xcassets */,
-				8BD652D01E2D9618001FA373 /* Stickers.xcstickers */,
 				8BCF77151E03CD0200D48A61 /* Info.plist */,
 			);
 			path = iMessageExtension;
@@ -1027,11 +1048,12 @@
 				8BD652A21E2D93AE001FA373 /* ballDrop.mp3 in Resources */,
 				8BD6528F1E2D93AE001FA373 /* ControlsButton.xib in Resources */,
 				8BD6529F1E2D93AE001FA373 /* clubHit.wav in Resources */,
+				8B1162441E2E06DC005520DB /* nebulaHole4-4.svg in Resources */,
 				8BD652C11E2D93AE001FA373 /* BallTrail.sks in Resources */,
 				8BF679D61E2D96FB00EF44FE /* Frost-Hole5.sks in Resources */,
 				8BD652C61E2D93AE001FA373 /* Grid.sks in Resources */,
-				8B3521AF1E2DBFA800F3A374 /* hole1.svg in Resources */,
 				8BD652D31E2D9660001FA373 /* MainInterface.storyboard in Resources */,
+				8B1162491E2E06DC005520DB /* nebulaHole9-9.svg in Resources */,
 				8BD652CA1E2D93AE001FA373 /* HoleTile.sks in Resources */,
 				8BD652C21E2D93AE001FA373 /* Snow.sks in Resources */,
 				8BD6529A1E2D93AE001FA373 /* Wind_StayOnBeat.com.mp3 in Resources */,
@@ -1041,6 +1063,7 @@
 				8BD652D41E2D9664001FA373 /* iMessageAssets.xcassets in Resources */,
 				8BD6529C1E2D93AE001FA373 /* toggle.mp3 in Resources */,
 				8BD6529B1E2D93AE001FA373 /* click.mp3 in Resources */,
+				8B1162451E2E06DC005520DB /* nebulaHole5-5.svg in Resources */,
 				8BD6528E1E2D93AE001FA373 /* SettingsButton.xib in Resources */,
 				8BD652A31E2D93AE001FA373 /* portalAmbience.mp3 in Resources */,
 				8BF679D31E2D96FB00EF44FE /* Frost-Hole2.sks in Resources */,
@@ -1053,13 +1076,16 @@
 				8BD652CC1E2D93AE001FA373 /* Flag.sks in Resources */,
 				8BD652A81E2D93AE001FA373 /* Bebas.ttf in Resources */,
 				8BD652C31E2D93AE001FA373 /* PortalEmitter.sks in Resources */,
+				8B1162421E2E06DC005520DB /* nebulaHole2-2.svg in Resources */,
 				8BD652C51E2D93AE001FA373 /* Ball.sks in Resources */,
 				8BD652A51E2D93AE001FA373 /* scoreCard.mp3 in Resources */,
 				8BD652D51E2D9664001FA373 /* PlaceholderiMessageAssets.xcassets in Resources */,
 				8BF679D81E2D96FB00EF44FE /* Frost-Hole7.sks in Resources */,
 				8BD6529E1E2D93AE001FA373 /* ceramicHit.mp3 in Resources */,
+				8B1162461E2E06DC005520DB /* nebulaHole6-6.svg in Resources */,
 				8BD6529D1E2D93AE001FA373 /* ballSelect.mp3 in Resources */,
 				8BD652A61E2D93AE001FA373 /* gameOver.mp3 in Resources */,
+				8B1162411E2E06DC005520DB /* nebulaHole1-1.svg in Resources */,
 				8BD6528D1E2D93AE001FA373 /* InGameOptionView.xib in Resources */,
 				8BD652BB1E2D93AE001FA373 /* BallDrop.sks in Resources */,
 				8BF679DB1E2D96FB00EF44FE /* FrostBackground.sks in Resources */,
@@ -1069,18 +1095,20 @@
 				8BD652A11E2D93AE001FA373 /* woodHit.mp3 in Resources */,
 				8BD652C71E2D93AE001FA373 /* Portal.sks in Resources */,
 				8BD652BC1E2D93AE001FA373 /* BallInHole.sks in Resources */,
+				8B1162431E2E06DC005520DB /* nebulaHole3-3.svg in Resources */,
 				8BD652991E2D93AE001FA373 /* Legend of Ace - Desert LocationCasual Environmental Ambience by DFAD.mp3 in Resources */,
 				8BD652981E2D93AE001FA373 /* HoleMusic.mp3 in Resources */,
 				8B9012D31E2DEACD00EC9FEC /* HUDView.xib in Resources */,
+				8B1162471E2E06DC005520DB /* nebulaHole7-7.svg in Resources */,
 				8BD652BA1E2D93AE001FA373 /* SceneStart.sks in Resources */,
 				8BF679DC1E2D96FB00EF44FE /* frostOutsideTile.sks in Resources */,
+				8B1162481E2E06DC005520DB /* nebulaHole8-8.svg in Resources */,
 				8BD652AA1E2D93AE001FA373 /* Actions.plist in Resources */,
 				8BD652971E2D93AE001FA373 /* SharedAssets.xcassets in Resources */,
 				8BD652A91E2D93AE001FA373 /* Neutra2Display-Titled.otf in Resources */,
 				8BD652891E2D93AE001FA373 /* CoursePreviewView.xib in Resources */,
 				8BD652C81E2D93AE001FA373 /* Hill.sks in Resources */,
 				8BF679DA1E2D96FB00EF44FE /* Frost-Hole9.sks in Resources */,
-				8BD652D11E2D9618001FA373 /* Stickers.xcstickers in Resources */,
 				8BD652911E2D93AE001FA373 /* UserControlsView.xib in Resources */,
 				8BD652A41E2D93AE001FA373 /* portalTransfer.mp3 in Resources */,
 				8BD652BD1E2D93AE001FA373 /* WallHit.sks in Resources */,
