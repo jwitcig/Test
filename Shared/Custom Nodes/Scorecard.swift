@@ -92,7 +92,6 @@ class Scorecard: SKScene {
                                       parHole8: pars[safe: 7]?.string ?? parDefault,
                                       parHole9: pars[safe: 8]?.string ?? parDefault)
         
-        
         card.texture = SKTexture(image: cardImage)
         infoPanel.texture = SKTexture(image: infoImage)
         
@@ -117,7 +116,6 @@ class Scorecard: SKScene {
             let strokesList = [Int](repeatElement(0, count: hole-1)) + player1Strokes
             token = ShotToken(forShots: strokesList[hole-1], onPar: par)
         }
-        
     }
     
     func showHoleInfo() {
@@ -129,12 +127,13 @@ class Scorecard: SKScene {
     
     func showToken() {
         guard let token = token else { return }
-        
+
         token.position = CGPoint(x: 0, y: card.frame.maxY*2+token.size.height/2)
         
         let destination = CGPoint(x: card.frame.maxX-token.size.width/1.5, y: card.frame.maxY-token.size.height/2)
-        
-        let move = SKAction.move(to: destination, duration: 0)
+    
+        let move = SKAction.move(to: destination, duration: 0.5)
+        move.timingMode = .easeInEaseOut
         token.run(move)
     }
     
