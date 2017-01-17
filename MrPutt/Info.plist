@@ -17,6 +17,10 @@
 	<key>CFBundleShortVersionString</key>
 	<string>0.1</string>
 	<key>CFBundleVersion</key>
-	<string>304</string>
+	<string>305</string>
+	<key>UILaunchImageName</key>
+	<string>Default-568</string>
+	<key>UILaunchImageSize</key>
+	<string>{320, 568}</string>
 </dict>
 </plist>
