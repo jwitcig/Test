@@ -720,7 +720,7 @@ extension PuttScene: SKPhysicsContactDelegate {
                                  with: wall.physicsBody!)
         let angle = acos(reflected.normalized • ballPrePhysicsVelocity.normalized)
         
-        guard angle > .pi / 6.0 else { return }
+        guard angle > .pi / 3.0 else { return }
         
         let sound = AudioPlayer()
         sound.play("softWall") {
