@@ -707,6 +707,19 @@ extension PuttScene: SKPhysicsContactDelegate {
     }
     
     func ballHitWall(_ wall: SKNode, contact: SKPhysicsContact) {
+
+//        var angle = acos(contact.contactNormal • ball.physicsBody!.velocity.normalized)
+//        angle = angle < 0 ? angle + .pi * 2 : angle
+//        print(angle)
+//        
+        
+        let reflected = reflect(velocity: ballPrePhysicsVelocity,
+                                 for: contact,
+                                 with: wall.physicsBody!)
+        let angle = acos(reflected.normalized • ball.physicsBody!.velocity.normalized)
+        print(angle)
+        guard angle > .pi / 6.0 else { return }
+        
         let sound = AudioPlayer()
         sound.play("softWall") {
             if let index = self.temporaryPlayers.index(of: sound) {
@@ -714,6 +727,7 @@ extension PuttScene: SKPhysicsContactDelegate {
             }
         }
         sound.volume = Float(ball.physicsBody!.velocity.magnitude / 50.0)
+
 
         reflectionVelocity = reflect(velocity: ballPrePhysicsVelocity,
                                           for: contact,
