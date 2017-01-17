@@ -134,6 +134,18 @@ class GameViewController: UIViewController {
     
         orientationManager?.requestPresentationStyle(.expanded)
         sceneView.presentScene(scene)
+        
+        let par = HoleInfo.par(forHole: hole, in: course)
+        let hud = HUDView.create(par: par)
+        toolsContainer.addSubview(hud)
+        constrain(hud, toolsContainer) {
+            $0.top == $1.top + 10
+            $0.trailing == $1.trailing - 10
+            
+            $0.width == 140
+            $0.height == 60
+        }
+        scene.hud = hud
      
         hideGameViewControllerViews()
     }
