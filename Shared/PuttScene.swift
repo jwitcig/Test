@@ -172,7 +172,7 @@ class PuttScene: SKScene {
         
         flag.wiggle()
         
-        let url = Bundle(for: PuttScene.self).url(forResource: "hole\(holeNumber!)", withExtension: "svg")!
+        let url = Bundle(for: PuttScene.self).url(forResource: "nebulaHole\(holeNumber!)-\(holeNumber!)", withExtension: "svg")!
 
         parse(url: url)
         
@@ -217,7 +217,7 @@ class PuttScene: SKScene {
             addChild(physics)
         }
         
-        let texture = SKTexture(imageNamed: "hole\(holeNumber!)")
+        let texture = SKTexture(imageNamed: "nebulaHole\(holeNumber!)")
         let sprite = SKSpriteNode(texture: texture)
         sprite.zPosition = -1
         sprite.position = CGPoint(x: 0, y: 0)
@@ -352,7 +352,7 @@ class PuttScene: SKScene {
     
     func setDebugOptions(on view: SKView) {
         view.showsFPS = true
-        view.showsPhysics = false
+        view.showsPhysics = true
         view.backgroundColor = .black
     }
     
@@ -720,7 +720,7 @@ extension PuttScene: SKPhysicsContactDelegate {
         let reflected = reflect(velocity: ballPrePhysicsVelocity,
                                  for: contact,
                                  with: wall.physicsBody!)
-        let angle = acos(reflected.normalized • ball.physicsBody!.velocity.normalized)
+        let angle = acos(reflected.normalized • ballPrePhysicsVelocity.normalized)
         print(angle)
         guard angle > .pi / 6.0 else { return }
         
@@ -736,7 +736,7 @@ extension PuttScene: SKPhysicsContactDelegate {
         reflectionVelocity = reflect(velocity: ballPrePhysicsVelocity,
                                           for: contact,
                                          with: wall.physicsBody!)
-        reflectionVelocity = reflectionVelocity! * 0.8
+        reflectionVelocity = reflectionVelocity! * 0.6
     }
     
     func ballHitHole(_ hole: Hole, contact: SKPhysicsContact) {

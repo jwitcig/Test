@@ -51,7 +51,7 @@ platform :ios do
      push_git_tags
 
      gym(
-      scheme: "iMessageExtension",
+      scheme: "MrPutt",
       workspace: "MrPutt.xcworkspace",
       configuration: "Release",
       clean:  true,
