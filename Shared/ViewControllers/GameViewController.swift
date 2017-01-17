@@ -118,10 +118,10 @@ class GameViewController: UIViewController {
         let theirCompletedCourses = previousSession?.instance.shots.count ?? 0
         
         if yourCompletedCourses == theirCompletedCourses, yourCompletedCourses > 0, yourCompletedCourses < 9 {
-        
             hole += 1
         }
-        scene = SKScene(fileNamed: "\(course.name)-Hole\(hole)")! as! PuttScene
+//        scene = SKScene(fileNamed: "\(course.name)-Hole\(hole)")! as! PuttScene
+        scene = SKScene(fileNamed: "Frost-Hole1")! as! PuttScene
         
         scene.course = course
         scene.holeNumber = hole
