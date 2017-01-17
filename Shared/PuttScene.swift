@@ -165,26 +165,34 @@ class PuttScene: SKScene {
         
         flag.wiggle()
         
-        parse(hole: holeNumber)
+        let url = Bundle(for: PuttScene.self).url(forResource: "hole\(holeNumber!)", withExtension: "svg")!
+
+        parse(url: url)
+        
+        let ballPosition = ballLocation(url: url)
+        let holePosition = holeLocation(url: url)
+    
+        let doIt = SKAction.run {
+            self.ball.position = self.convert(ballPosition, to: self.ball.parent!)
+            self.hole.position = self.convert(holePosition, to: self.hole.parent!)
+        }
+        let wait = SKAction.wait(forDuration: 2)
+        run(SKAction.sequence([wait, doIt]))
     }
     
-    func parse(hole: Int) {
-        let url = Bundle(for: PuttScene.self).url(forResource: "hole\(hole)", withExtension: "svg")!
-        
-        let view = UIView(frame: CGRect(origin: .zero, size: holeSize(url: url)))
-        self.view!.addSubview(view)
+    func parse(url: URL) {
         
         let paths: [SVGBezierPath] = beziers(url: url).map {
             SVGBezierPath.paths(fromSVGString: $0).first! as! SVGBezierPath
         }
         
-        
         for path in paths {
             let layer = CAShapeLayer()
             layer.path = path.cgPath
             
+            let size = holeSize(url: url)
             
-            let transform = CGAffineTransform(scaleX: 1, y: -1).translatedBy(x: -view.layer.bounds.width/2, y: -view.layer.bounds.height/2)
+            let transform = CGAffineTransform(scaleX: 1, y: -1).translatedBy(x: -size.width/2, y: -size.height/2)
             
             let pathCopy = CGMutablePath()
             pathCopy.addPath(path.cgPath, transform: transform)
@@ -200,19 +208,55 @@ class PuttScene: SKScene {
             physics.physicsBody?.isDynamic = false
             physics.physicsBody?.collisionBitMask = Category.ball.rawValue
             addChild(physics)
-            view.layer.addSublayer(layer)
         }
         
-        let image = renderImage(from: view.layer)
-        
-        let texture = SKTexture(imageNamed: "hole\(hole)")
+        let texture = SKTexture(imageNamed: "hole\(holeNumber!)")
         let sprite = SKSpriteNode(texture: texture)
+        sprite.zPosition = -1
         sprite.position = CGPoint(x: 0, y: 0)
-        //        sprite.physicsBody = SKPhysicsBody(texture: texture, alphaThreshold: 0.8, size: texture.size())
         addChild(sprite)
+    }
+    
+    func holeLocation(url: URL) -> CGPoint {
+        let data = try! Data(contentsOf: url)
+        let xml = SWXMLHash.parse(data)
+       
+        let hole = all(indexer: xml).filter {
+            var id = ""
+            do {
+                id = try $0.value(ofAttribute: "id") as String
+            } catch { }
+            
+            return id.contains("end")
+        }[0]
+        let x = CGFloat((try! hole.value(ofAttribute: "x") as String).double!)
+        let y = CGFloat((try! hole.value(ofAttribute: "y") as String).double!)
         
-        view.removeFromSuperview()
+        let size = holeSize(url: url)
 
+        return CGPoint(x: x-size.width/2, y: -(y-size.height/2))
+    }
+    
+    func ballLocation(url: URL) -> CGPoint {
+        let data = try! Data(contentsOf: url)
+        let xml = SWXMLHash.parse(data)
+        
+        
+        let ball = all(indexer: xml).filter {
+            var id = ""
+            do {
+                id = try $0.value(ofAttribute: "id") as String
+            } catch { }
+            
+            return id.contains("ball")
+        }[0]
+        
+        let x = CGFloat((try! ball.value(ofAttribute: "x") as String).double!)
+        let y = CGFloat((try! ball.value(ofAttribute: "y") as String).double!)
+        
+        let size = holeSize(url: url)
+        
+        return CGPoint(x: x-size.width/2, y: -(y-size.height/2))
     }
     
     func holeSize(url: URL) -> CGSize {
@@ -227,14 +271,28 @@ class PuttScene: SKScene {
         return CGSize(width: width, height: height)
     }
     
-    func beziers(url: URL) -> [String] {
+    func all(indexer: XMLIndexer, withName name: String? = nil) -> [XMLIndexer] {
+        var indexers: [XMLIndexer] = indexer.children
         
+        for child in indexer.children {
+            indexers.append(contentsOf: all(indexer: child, withName: name))
+        }
+        
+        if let name = name {
+            return indexers.filter {
+                ($0.element?.name == name) == true
+            }
+        }
+        return indexers
+    }
+    
+    func beziers(url: URL) -> [String] {
         let data = try! Data(contentsOf: url)
         let xml = SWXMLHash.parse(data)
+    
+        let allPaths = all(indexer: xml, withName: "path")
         
-        let paths = xml["svg"]["g"]["path"]
-        
-        let strings = paths.map {
+        let strings: [String] = allPaths.map {
             $0.element!.description
         }
         
@@ -287,7 +345,7 @@ class PuttScene: SKScene {
     
     func setDebugOptions(on view: SKView) {
         view.showsFPS = true
-        view.showsPhysics = true
+        view.showsPhysics = false
         view.backgroundColor = .black
     }
     
@@ -300,10 +358,7 @@ class PuttScene: SKScene {
     }
     
     func setupCamera() {
-        if camera == nil {
-            camera = SKCameraNode()
-            addChild(camera!)
-        }
+        camera?.zPosition = -10
     }
     
     func setupAmbience() {
@@ -437,7 +492,7 @@ class PuttScene: SKScene {
             touchNode.position = touch.location(in: ball)
             
             let ballLocation = convert(ball.position, from: ball.parent!)
-            shotIndicator.power = touchLocation.distance(toPoint: ballLocation) / 600.0
+            shotIndicator.power = touchLocation.distance(toPoint: ballLocation) * camera!.xScale / 500.0
         }
     }
     
@@ -658,7 +713,7 @@ extension PuttScene: SKPhysicsContactDelegate {
         reflectionVelocity = reflect(velocity: ballPrePhysicsVelocity,
                                           for: contact,
                                          with: wall.physicsBody!)
-        
+        reflectionVelocity = reflectionVelocity! * 0.8
     }
     
     func ballHitHole(_ hole: Hole, contact: SKPhysicsContact) {

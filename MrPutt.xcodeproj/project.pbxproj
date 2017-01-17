@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D9B7D98E3F45A7434463485 /* Pods_MrPutt_iMessageExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EC3BB72C39C396407F4004 /* Pods_MrPutt_iMessageExtension.framework */; };
-		8B1AA9241E2DAF1500D1BC69 /* hole1.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B1AA9221E2DAED800D1BC69 /* hole1.svg */; };
+		8B3521AF1E2DBFA800F3A374 /* hole1.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B3521AE1E2DBFA800F3A374 /* hole1.svg */; };
 		8BD6526F1E2D92A3001FA373 /* iMessageExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8BD6526E1E2D92A3001FA373 /* iMessageExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8BD652721E2D92A3001FA373 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BCF770B1E03CD0200D48A61 /* Messages.framework */; };
 		8BD652831E2D92EC001FA373 /* PlaceholderAppAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D29256831E1F7A60000FB092 /* PlaceholderAppAssets.xcassets */; };
@@ -143,11 +143,11 @@
 		8B13B3521E1C891900C0044A /* Frost-Hole7.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Frost-Hole7.sks"; sourceTree = "<group>"; };
 		8B13B3531E1C891900C0044A /* Frost-Hole8.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Frost-Hole8.sks"; sourceTree = "<group>"; };
 		8B13B3541E1C891900C0044A /* Frost-Hole9.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Frost-Hole9.sks"; sourceTree = "<group>"; };
-		8B1AA9221E2DAED800D1BC69 /* hole1.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = hole1.svg; sourceTree = "<group>"; };
 		8B25439A1E2D904600326E7B /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		8B2543C01E2D918800326E7B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B279D2D1E2724C30094DC62 /* Scorecard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scorecard.swift; sourceTree = "<group>"; };
 		8B279D301E2725CF0094DC62 /* Scorecard.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scorecard.sks; sourceTree = "<group>"; };
+		8B3521AE1E2DBFA800F3A374 /* hole1.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = hole1.svg; path = ../../../../Desktop/hole1.svg; sourceTree = "<group>"; };
 		8B35A2241E21895B0063520C /* InGameMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InGameMenuView.swift; sourceTree = "<group>"; };
 		8B35A2271E2189710063520C /* InGameMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InGameMenuView.xib; sourceTree = "<group>"; };
 		8B35A22A1E218A980063520C /* InGameOptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InGameOptionView.swift; sourceTree = "<group>"; };
@@ -704,7 +704,7 @@
 		8B9AAB051E2D8B4100686627 /* Holes */ = {
 			isa = PBXGroup;
 			children = (
-				8B1AA9221E2DAED800D1BC69 /* hole1.svg */,
+				8B3521AE1E2DBFA800F3A374 /* hole1.svg */,
 			);
 			name = Holes;
 			sourceTree = "<group>";
@@ -1024,6 +1024,7 @@
 				8BD652C11E2D93AE001FA373 /* BallTrail.sks in Resources */,
 				8BF679D61E2D96FB00EF44FE /* Frost-Hole5.sks in Resources */,
 				8BD652C61E2D93AE001FA373 /* Grid.sks in Resources */,
+				8B3521AF1E2DBFA800F3A374 /* hole1.svg in Resources */,
 				8BD652D31E2D9660001FA373 /* MainInterface.storyboard in Resources */,
 				8BD652CA1E2D93AE001FA373 /* HoleTile.sks in Resources */,
 				8BD652C21E2D93AE001FA373 /* Snow.sks in Resources */,
@@ -1036,7 +1037,6 @@
 				8BD6529B1E2D93AE001FA373 /* click.mp3 in Resources */,
 				8BD6528E1E2D93AE001FA373 /* SettingsButton.xib in Resources */,
 				8BD652A31E2D93AE001FA373 /* portalAmbience.mp3 in Resources */,
-				8B1AA9241E2DAF1500D1BC69 /* hole1.svg in Resources */,
 				8BF679D31E2D96FB00EF44FE /* Frost-Hole2.sks in Resources */,
 				8BD652C41E2D93AE001FA373 /* iceHit.sks in Resources */,
 				8BD652A71E2D93AE001FA373 /* winGame.mp3 in Resources */,
