@@ -20,7 +20,7 @@ class Flag: SKSpriteNode {
     }
     
     func raise() {
-        if let raise = SKAction(named: "RaiseFlag") {
+        if let raise = SKAction(named: "RaiseFlag"), isWiggling {
             isWiggling = false
             
             removeAction(forKey: Flag.bobActionName)
@@ -34,7 +34,7 @@ class Flag: SKSpriteNode {
     }
     
     func lower() {
-        if let raise = SKAction(named: "RaiseFlag") {
+        if let raise = SKAction(named: "RaiseFlag"), !isWiggling {
             let lower = SKAction.move(to: .zero, duration: raise.duration)
             let wiggle = SKAction.run(self.wiggle)
             let sequence = SKAction.sequence([lower, wiggle])
