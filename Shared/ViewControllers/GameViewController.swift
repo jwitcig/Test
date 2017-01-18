@@ -356,8 +356,8 @@ class GameViewController: UIViewController {
     
     func tearDown() {
         view.removeFromSuperview()
-        sceneView.presentScene(nil)
         scene.backgroundMusic?.pause()
+        sceneView.presentScene(nil)
     }
     
     // MARK: Game Cycle

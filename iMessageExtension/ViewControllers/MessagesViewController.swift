@@ -25,7 +25,9 @@ class MessagesViewController: MSMessagesAppViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        FIRApp.configure()
+        if FIRApp.defaultApp() == nil {
+            FIRApp.configure()
+        }
     }
     
     override func willBecomeActive(with conversation: MSConversation) {

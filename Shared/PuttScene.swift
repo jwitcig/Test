@@ -74,9 +74,7 @@ class PuttScene: SKScene {
         return ShotIndicator(orientToward: self.touchNode, withOffset: SKRange(constantValue: 0))
     }()
     
-    var cameraLimiter: CGRect {
-        return childNode(withName: "cameraBounds")!.frame
-    }
+    var cameraLimiter: CGRect = .zero
     
     var ballFreedomRadius: CGFloat {
         return size.width * camera!.xScale * 0.4
@@ -193,11 +191,22 @@ class PuttScene: SKScene {
         let coursePrefix = course.name.lowercased()
         
         let url = Bundle(for: PuttScene.self).url(forResource: "\(coursePrefix)Hole\(holeNumber!)-\(holeNumber!)", withExtension: "svg")!
-
+        
+        let size = holeSize(url: url)
+        cameraLimiter = CGRect(origin: .zero, size: size)
+        
+        passivelyEnableCameraBounds()
+        
         parse(url: url)
         
         let ballPosition = ballLocation(url: url)
         let holePosition = holeLocation(url: url)
+        
+        camera?.position = holePosition
+        
+        let pan = SKAction.move(to: ballPosition, duration: 4.0)
+        pan.timingMode = .easeOut
+        camera?.run(pan)
     
         ball.alpha = 0
         ball.ballTrail.particleAlpha = 0
@@ -680,24 +689,32 @@ class PuttScene: SKScene {
         if cameraLimiter.width < cameraSize.width {
 
         } else {
-            xRange = SKRange(lowerLimit: cameraLimiter.minX + cameraSize.width/2,
-                             upperLimit: cameraLimiter.maxX - cameraSize.width/2)
+//            xRange = SKRange(lowerLimit: cameraLimiter.minX + cameraSize.width/2,
+//                             upperLimit: cameraLimiter.maxX - cameraSize.width/2)
         }
+        xRange = SKRange(lowerLimit: cameraLimiter.minX - cameraLimiter.width/2 + cameraSize.width/2,
+                         upperLimit: cameraLimiter.maxX - cameraLimiter.width/2 - cameraSize.width/2)
+
         
         if cameraLimiter.height < cameraSize.height {
 
         } else {
-            yRange = SKRange(lowerLimit: cameraLimiter.minY + cameraSize.height/2,
-                             upperLimit: cameraLimiter.maxY - cameraSize.height/2)
+//            yRange = SKRange(lowerLimit: cameraLimiter.minY + cameraSize.height/2,
+//                             upperLimit: cameraLimiter.maxY - cameraSize.height/2)
         }
+        yRange = SKRange(lowerLimit: cameraLimiter.minY - cameraLimiter.size.height/2 + cameraSize.height/2,
+                         upperLimit: cameraLimiter.maxY - cameraLimiter.size.height/2 - cameraSize.height/2)
+
+        camera?.constraints = camera?.constraints ?? []
         
-        if let range = xRange, range.closedInterval.contains(camera!.position.x), cameraXBound == nil {
+        if let range = xRange /*, range.closedInterval.contains(camera!.position.x), cameraXBound == nil */ {
             
             cameraXBound = SKConstraint.positionX(range)
+            
             camera?.constraints?.insert(cameraXBound!, at: camera!.constraints!.count)
         }
         
-        if let range = yRange, range.closedInterval.contains(camera!.position.y), cameraYBound == nil {
+        if let range = yRange /*, range.closedInterval.contains(camera!.position.y), cameraYBound == nil */ {
             
             cameraYBound = SKConstraint.positionY(range)
             camera?.constraints?.insert(cameraYBound!, at: camera!.constraints!.count)
