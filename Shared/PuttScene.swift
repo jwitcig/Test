@@ -54,7 +54,18 @@ class PuttScene: SKScene {
     
     var teleporting = false
     
-    var shots: [Shot] = []
+    var shots: [Shot] = [] {
+        didSet {
+            hud.strokes = shots.count
+            
+            let par = HoleInfo.par(forHole: holeNumber, in: course)
+            if shots.count > par {
+                UIView.animate(withDuration: 0.5) {
+                    self.hud.backgroundColor = .red
+                }
+            }
+        }
+    }
     
     var course: CoursePack.Type!
     var holeNumber: Int!
@@ -564,8 +575,13 @@ class PuttScene: SKScene {
             guard adjustingShot else { return }
 
             let ballPosition = ball.parent!.convert(ball.position, to: self)
-
-//            let power = ballPosition.distance(toPoint: touchLocation)
+            
+            let shotThreshold = shotIndicator.ballIndicator.size.width / 2
+            
+            guard ballPosition.distance(toPoint: touchLocation) > shotThreshold else {
+                adjustingShot = false
+                return
+            }
             
             let angle = ballPosition.angle(toPoint: touchLocation)
             
@@ -618,8 +634,6 @@ class PuttScene: SKScene {
             pan.timingMode = .easeIn
             camera?.run(pan, withKey: "trackingEnabler")
         }
-        
-        hud.strokes = shots.count
     }
     
     // MARK: Game Loop
