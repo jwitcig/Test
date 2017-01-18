@@ -21,6 +21,7 @@ import CoreImage
 
 enum Options: String {
     case gameMusic = "Music"
+    case effects = "Effects"
 }
 
 let menuAnimationTime: TimeInterval = 0.5

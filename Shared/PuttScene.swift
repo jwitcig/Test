@@ -743,15 +743,20 @@ extension PuttScene: SKPhysicsContactDelegate {
         guard angle > .pi / 3.0 else {
             return
         }
-        
-        let sound = AudioPlayer()
-        sound.play("softWall") {
-            if let index = self.temporaryPlayers.index(of: sound) {
-                self.temporaryPlayers.remove(at: index)
+
+        let settings = UserDefaults.standard
+        let isEffectsOn = settings.value(forKey: Options.effects.rawValue) as? Bool ?? true
+    
+        if isEffectsOn {
+            let sound = AudioPlayer()
+            sound.play("softWall") {
+                if let index = self.temporaryPlayers.index(of: sound) {
+                    self.temporaryPlayers.remove(at: index)
+                }
             }
+            sound.volume = Float(ball.physicsBody!.velocity.magnitude / 50.0)
+            temporaryPlayers.append(sound)
         }
-        sound.volume = Float(ball.physicsBody!.velocity.magnitude / 50.0)
-        temporaryPlayers.append(sound)
         
         reflectionVelocity = reflected * 0.7
     }

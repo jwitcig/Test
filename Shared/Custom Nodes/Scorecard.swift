@@ -117,7 +117,7 @@ class Scorecard: SKScene {
             token = ShotToken(forShots: strokesList[hole-1], onPar: par)
         }
         
-        token!.position = CGPoint(x: card.frame.maxX-token!.size.width/1.5, y: card.frame.maxY*2+token!.size.height/2)
+        token!.position = CGPoint(x: card.frame.maxX-token!.size.width/1.5, y: card.frame.maxY*3+token!.size.height/2)
     }
     
     func showHoleInfo() {
