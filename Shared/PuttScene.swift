@@ -503,7 +503,7 @@ class PuttScene: SKScene {
             touchNode.position = touch.location(in: ball)
             
             let ballLocation = convert(ball.position, from: ball.parent!)
-            shotIndicator.power = touchLocation.distance(toPoint: ballLocation) * camera!.xScale / 500.0
+            shotIndicator.power = touchLocation.distance(toPoint: ballLocation) * camera!.xScale / 250.0
         }
     }
     
@@ -527,6 +527,8 @@ class PuttScene: SKScene {
     }
    
     func takeShot(at angle: CGFloat, with power: CGFloat) {
+        print("\(angle) - \(power)")
+        
         let stroke = CGVector(dx: cos(angle) * power,
                               dy: sin(angle) * power)
         
@@ -577,7 +579,7 @@ class PuttScene: SKScene {
                 updateShotIndicatorPosition()
                 shotIndicator.ballStopped()
             }
-            
+    
             let ballPosition = hole.parent!.convert(ball.position, from: ball.parent!)
             if ballPosition.distance(toPoint: hole.position) > 150, !flag.isWiggling {
                 flag.lower()
@@ -715,12 +717,6 @@ extension PuttScene: SKPhysicsContactDelegate {
     }
     
     func ballHitWall(_ wall: SKNode, contact: SKPhysicsContact) {
-        let reflected = reflect(velocity: ballPrePhysicsVelocity,
-                                 for: contact,
-                                 with: wall.physicsBody!)
-        let angle = acos(reflected.normalized • ballPrePhysicsVelocity.normalized)
-        
-        guard angle > .pi / 3.0 else { return }
         
         let sound = AudioPlayer()
         sound.play("softWall") {
@@ -730,11 +726,15 @@ extension PuttScene: SKPhysicsContactDelegate {
         }
         sound.volume = Float(ball.physicsBody!.velocity.magnitude / 50.0)
 
+        let reflected = reflect(velocity: ballPrePhysicsVelocity,
+                                 for: contact,
+                                 with: wall.physicsBody!)
+        let angle = acos(reflected.normalized • ballPrePhysicsVelocity.normalized)
+        
+        guard angle > .pi / 3.0 else { return }
 
-        reflectionVelocity = reflect(velocity: ballPrePhysicsVelocity,
-                                          for: contact,
-                                         with: wall.physicsBody!)
-        reflectionVelocity = reflectionVelocity! * 0.6
+    
+        reflectionVelocity = reflected * 0.7
     }
     
     func ballHitHole(_ hole: Hole, contact: SKPhysicsContact) {
@@ -825,6 +825,10 @@ extension PuttScene: SKPhysicsContactDelegate {
             
             portal.particleBirthRate = 0
         }
+    }
+    
+    func postScorecardTearDown() {
+        backgroundMusic?.pause()
     }
     
     func showScorecard(hole: Int, names: (String, String), player1Strokes: [Int], player2Strokes: [Int], pars: [Int], donePressed: @escaping ()->Void) {

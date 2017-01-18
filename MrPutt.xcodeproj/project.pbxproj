@@ -46,6 +46,8 @@
 		8B63C05D1E2E2ECB004C028C /* timberHole9-9.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C04B1E2E2ECB004C028C /* timberHole9-9.svg */; };
 		8B9012D31E2DEACD00EC9FEC /* HUDView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B9012D21E2DEACD00EC9FEC /* HUDView.xib */; };
 		8B9012D51E2DEAE300EC9FEC /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9012D41E2DEAE300EC9FEC /* HUDView.swift */; };
+		8B985A7E1E2E39480047CA7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B985A7D1E2E39480047CA7B /* GoogleService-Info.plist */; };
+		8B985A7F1E2E39480047CA7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B985A7D1E2E39480047CA7B /* GoogleService-Info.plist */; };
 		8BD6526F1E2D92A3001FA373 /* iMessageExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8BD6526E1E2D92A3001FA373 /* iMessageExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8BD652721E2D92A3001FA373 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BCF770B1E03CD0200D48A61 /* Messages.framework */; };
 		8BD652831E2D92EC001FA373 /* PlaceholderAppAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D29256831E1F7A60000FB092 /* PlaceholderAppAssets.xcassets */; };
@@ -262,6 +264,7 @@
 		8B961F561E1C601600678257 /* CoursePreviewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CoursePreviewView.xib; path = ../UI/CoursePreviewView.xib; sourceTree = "<group>"; };
 		8B9620311E1C603400678257 /* SharedAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SharedAssets.xcassets; sourceTree = "<group>"; };
 		8B9620361E1C605F00678257 /* LogoStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoStyleKit.swift; sourceTree = "<group>"; };
+		8B985A7D1E2E39480047CA7B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8B9FD4481E2A353500FE4D3D /* Flag.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Flag.sks; sourceTree = "<group>"; };
 		8B9FD44B1E2A357F00FE4D3D /* Flag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flag.swift; sourceTree = "<group>"; };
 		8B9FD44E1E2A362100FE4D3D /* RaiseFlag.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RaiseFlag.sks; sourceTree = "<group>"; };
@@ -784,6 +787,7 @@
 		8B961F581E1C601600678257 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				8B985A7D1E2E39480047CA7B /* GoogleService-Info.plist */,
 				8B35A2231E21895B0063520C /* Views */,
 				8B96208B1E1C623400678257 /* ViewControllers */,
 				8B961F261E1C601600678257 /* Assets */,
@@ -1130,6 +1134,7 @@
 				8B63C0541E2E2ECB004C028C /* timberHole5-5.svg in Resources */,
 				8B63C0521E2E2ECB004C028C /* timberHole4-4.svg in Resources */,
 				8B63C0581E2E2ECB004C028C /* timberHole7-7.svg in Resources */,
+				8B985A7E1E2E39480047CA7B /* GoogleService-Info.plist in Resources */,
 				8B63C04C1E2E2ECB004C028C /* timberHole1-1.svg in Resources */,
 				8B63C0561E2E2ECB004C028C /* timberHole6-6.svg in Resources */,
 			);
@@ -1181,6 +1186,7 @@
 				8BD652BF1E2D93AE001FA373 /* FlagBobbing.sks in Resources */,
 				8BD652CC1E2D93AE001FA373 /* Flag.sks in Resources */,
 				8BD652A81E2D93AE001FA373 /* Bebas.ttf in Resources */,
+				8B985A7F1E2E39480047CA7B /* GoogleService-Info.plist in Resources */,
 				8BD652C31E2D93AE001FA373 /* PortalEmitter.sks in Resources */,
 				8B1162421E2E06DC005520DB /* nebulaHole2-2.svg in Resources */,
 				8BD652C51E2D93AE001FA373 /* Ball.sks in Resources */,
