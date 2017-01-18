@@ -856,10 +856,9 @@ extension PuttScene: SKPhysicsContactDelegate {
         self.scorecard = scorecard
         scorecard.update(hole: hole, names: names, player1Strokes: player1Strokes, player2Strokes: player2Strokes, course: course)
         scorecard.donePressed = donePressed
-        scorecard.zPosition = 100
         
         let duration: TimeInterval = 0.8
-        scorecard.children.forEach {
+        scorecard.children.filter{$0 != scorecard.token}.forEach {
             let scale = camera!.xScale
             $0.setScale(scale)
             
