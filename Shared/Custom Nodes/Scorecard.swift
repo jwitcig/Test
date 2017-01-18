@@ -116,6 +116,8 @@ class Scorecard: SKScene {
             let strokesList = [Int](repeatElement(0, count: hole-1)) + player1Strokes
             token = ShotToken(forShots: strokesList[hole-1], onPar: par)
         }
+        
+        token!.position = CGPoint(x: card.frame.maxX-token!.size.width/1.5, y: card.frame.maxY*2+token!.size.height/2)
     }
     
     func showHoleInfo() {
@@ -127,9 +129,6 @@ class Scorecard: SKScene {
     
     func showToken() {
         guard let token = token else { return }
-
-        token.position = CGPoint(x: 0, y: card.frame.maxY*2+token.size.height/2)
-        
         let destination = CGPoint(x: card.frame.maxX-token.size.width/1.5, y: card.frame.maxY-token.size.height/2)
     
         let move = SKAction.move(to: destination, duration: 0.5)

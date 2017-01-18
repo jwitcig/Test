@@ -392,9 +392,17 @@ struct PuttMessageLayoutBuilder: MessageLayoutBuilder {
         switch winner {
             
         case .you:
-            layout.imageTitle = "YOU WIN!"
+            if let id = conversation?.localParticipantIdentifier {
+                layout.imageTitle = "$\(id) won!"
+            } else {
+                layout.imageTitle = "You win!"
+            }
         case .them:
-            layout.imageTitle = "You lost."
+            if let id = conversation?.remoteParticipantIdentifiers.first {
+                layout.imageTitle = "$\(id) won!"
+            } else {
+                layout.imageTitle = "You win!"
+            }
         case .tie:
             layout.imageTitle = "It's a tie!"
         }
