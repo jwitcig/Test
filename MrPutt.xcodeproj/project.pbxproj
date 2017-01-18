@@ -54,6 +54,7 @@
 		8B6F0B271E2F246400E168CB /* frostHole7-7.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B6F0B151E2F246000E168CB /* frostHole7-7.svg */; };
 		8B6F0B281E2F246400E168CB /* frostHole8-8.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B6F0B161E2F246000E168CB /* frostHole8-8.svg */; };
 		8B6F0B291E2F246400E168CB /* frostHole9-9.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B6F0B171E2F246000E168CB /* frostHole9-9.svg */; };
+		8B6F0B2C1E2F2E9E00E168CB /* ballMade.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B6F0B2A1E2F2E9E00E168CB /* ballMade.mp3 */; };
 		8B9012D31E2DEACD00EC9FEC /* HUDView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B9012D21E2DEACD00EC9FEC /* HUDView.xib */; };
 		8B9012D51E2DEAE300EC9FEC /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9012D41E2DEAE300EC9FEC /* HUDView.swift */; };
 		8B985A7E1E2E39480047CA7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B985A7D1E2E39480047CA7B /* GoogleService-Info.plist */; };
@@ -254,6 +255,7 @@
 		8B6F0B151E2F246000E168CB /* frostHole7-7.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "frostHole7-7.svg"; sourceTree = "<group>"; };
 		8B6F0B161E2F246000E168CB /* frostHole8-8.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "frostHole8-8.svg"; sourceTree = "<group>"; };
 		8B6F0B171E2F246000E168CB /* frostHole9-9.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "frostHole9-9.svg"; sourceTree = "<group>"; };
+		8B6F0B2A1E2F2E9E00E168CB /* ballMade.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ballMade.mp3; sourceTree = "<group>"; };
 		8B8A304B1E28A93F00A681EF /* ShotIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotIndicator.swift; sourceTree = "<group>"; };
 		8B8A304E1E297D8E00A681EF /* ControlsButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ControlsButton.xib; sourceTree = "<group>"; };
 		8B8A30511E297E4C00A681EF /* UserControlsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserControlsView.xib; sourceTree = "<group>"; };
@@ -597,6 +599,7 @@
 				8B3899EF1E2EF3A3002E63CE /* ballRollingFadeInOut.mp3 */,
 				8B57991D1E2A0F850083228D /* softWall.mp3 */,
 				8B57991E1E2A0F850083228D /* woodHit.mp3 */,
+				8B6F0B2A1E2F2E9E00E168CB /* ballMade.mp3 */,
 			);
 			path = Collisions;
 			sourceTree = "<group>";
@@ -1182,6 +1185,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B6F0B2C1E2F2E9E00E168CB /* ballMade.mp3 in Resources */,
 				8BD652CB1E2D93AE001FA373 /* Scorecard.sks in Resources */,
 				8BD652C91E2D93AE001FA373 /* Mat.sks in Resources */,
 				8BD652A21E2D93AE001FA373 /* ballDrop.mp3 in Resources */,

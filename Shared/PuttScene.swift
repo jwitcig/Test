@@ -700,6 +700,8 @@ var reflectionVelocity: CGVector? = nil
 
 var lastFrameContact: SKPhysicsBody?
 
+var holeCupConstraint: SKConstraint?
+
 extension PuttScene: SKPhysicsContactDelegate {
    
     func didBegin(_ contact: SKPhysicsContact) {
@@ -777,10 +779,10 @@ extension PuttScene: SKPhysicsContactDelegate {
     }
     
     func ballHitHole(_ hole: Hole, contact: SKPhysicsContact) {
-        // if one node was the ball and another was the hole
         
         guard !holeComplete else { return }
         // if hole isn't already completed
+        // collision can occur several times during animation
         
         if let drop = SKAction(named: "Drop") {
             let holePosition = hole.parent!.convert(hole.position, to: ball.parent!)
@@ -793,14 +795,65 @@ extension PuttScene: SKPhysicsContactDelegate {
             let group = SKAction.group([drop, insideHole, stopTrail])
 
             // stop ball's existing motion
-            ball.physicsBody?.velocity = .zero
+//            ball.physicsBody?.velocity = .zero
             
-            ball.run(group)
+//            ball.run(group)
             
-            game.finish()
+//            game.finish()
             
             shotIndicator.removeFromParent()
             
+                    
+            let ballInHoleKey = "spiral"
+            
+            let delay = SKAction.wait(forDuration: 0.05)
+            let move = SKAction.run {
+                let ballPosition = hole.parent!.convert(self.ball.position, from: self.ball.parent!)
+
+                let distance = ballPosition.distance(toPoint: hole.position)-1
+                guard distance > 1, !self.holeComplete else {
+                    self.holeComplete = true
+                    
+                    self.ball.removeAction(forKey: ballInHoleKey)
+                    let settings = UserDefaults.standard
+                    let isEffectsOn = settings.value(forKey: Options.effects.rawValue) as? Bool ?? true
+                    
+                    print("holer")
+                    
+                    if isEffectsOn {
+                        let sound = AudioPlayer()
+                        sound.play("ballMade") {
+                            if let index = self.temporaryPlayers.index(of: sound) {
+                                self.temporaryPlayers.remove(at: index)
+                            }
+                        }
+                        self.temporaryPlayers.append(sound)
+                    }
+                    
+                    self.ball.run(group)
+
+                    self.game.finish()
+                    return
+                }
+                
+                
+                if let joint = holeCupConstraint, let index = self.ball.constraints?.index(of: joint) {
+                    self.ball.constraints?.remove(at: index)
+                }
+                
+                
+                let range = SKRange(constantValue: distance)
+                let joint = SKConstraint.distance(range, to: hole)
+                holeCupConstraint = joint
+                
+                self.ball.constraints = self.ball.constraints ?? []
+                self.ball.constraints?.append(joint)
+            }
+            
+            let sequence = SKAction.sequence([delay, move])
+            ball.run(SKAction.repeatForever(sequence), withKey: ballInHoleKey)
+            
+            return
             let par = HoleInfo.par(forHole: holeNumber, in: course)
             
             if let holeParent = hole.parent {
