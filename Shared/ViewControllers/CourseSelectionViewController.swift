@@ -60,6 +60,8 @@ class CourseSelectionViewController: UIViewController {
     
     @IBOutlet weak var headerView: UIView!
     
+    var mainController: MessagesViewController!
+    
     var messageSender: MessageSender?
     var orientationManager: OrientationManager?
     
@@ -67,9 +69,7 @@ class CourseSelectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        
+    
         scrollView.addSubview(contentView)
         constrain(contentView, scrollView) {
             $0.leading == $1.leading
@@ -91,12 +91,12 @@ class CourseSelectionViewController: UIViewController {
         }
         
         let playBlock: (CoursePack.Type)->Void = { course in
-            let controller = self.storyboard!.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
-            
+            let controller = self.mainController.createGameController()
+            self.mainController.gameController = controller
             controller.messageSender = self.messageSender
             controller.orientationManager = self.orientationManager
             controller.configureScene(previousSession: nil, course: course)
-            self.present(controller)
+            self.mainController.present(controller)
            
             AudioPlayer.main.play("click")
         }

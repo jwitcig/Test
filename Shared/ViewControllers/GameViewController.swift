@@ -53,6 +53,8 @@ class GameViewController: UIViewController {
     
     var menuHiddenConstraints: ConstraintGroup!
     
+    var hud: HUDView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -97,6 +99,16 @@ class GameViewController: UIViewController {
         
         UIView.animate(withDuration: 0.4, delay: 2, usingSpringWithDamping: 0.6, initialSpringVelocity: 20, options: .curveEaseInOut, animations: toolsContainer.layoutIfNeeded, completion: nil)
         
+        hud = HUDView.create(par: 0)
+        toolsContainer.addSubview(hud)
+        constrain(hud, toolsContainer) {
+            $0.top == $1.top + 10
+            $0.trailing == $1.trailing - 10
+            
+            $0.width == 140
+            $0.height == 60
+        }
+        hud.isHidden = true
         
         let waitingForOpponent = WaitingForOpponentView()
         view.addSubview(waitingForOpponent)
@@ -134,19 +146,12 @@ class GameViewController: UIViewController {
     
         orientationManager?.requestPresentationStyle(.expanded)
         sceneView.presentScene(scene)
-        
+
         let par = HoleInfo.par(forHole: hole, in: course)
-        let hud = HUDView.create(par: par)
-        toolsContainer.addSubview(hud)
-        constrain(hud, toolsContainer) {
-            $0.top == $1.top + 10
-            $0.trailing == $1.trailing - 10
-            
-            $0.width == 140
-            $0.height == 60
-        }
+        hud.parLabel.text = "\(par)"
         scene.hud = hud
-     
+        scene.hud.isHidden = false
+        
         hideGameViewControllerViews()
     }
     
@@ -171,12 +176,8 @@ class GameViewController: UIViewController {
         let effects = InGameOptionView.create()
         effects.optionName = "Effects"
         effects.enabled = settings.value(forKey: effects.optionName) as? Bool ?? true
-        
-        let hud = InGameOptionView.create()
-        hud.optionName = "HUD"
-        hud.enabled = settings.value(forKey: hud.optionName) as? Bool ?? true
-        
-        settingsPane.options = [music, effects, hud]
+    
+        settingsPane.options = [music, effects]
         return settingsPane
     }
     
@@ -345,6 +346,12 @@ class GameViewController: UIViewController {
                           options: .transitionCrossDissolve,
                           animations: { self.scene.hud.alpha = 0 },
                           completion: { _ in self.scene.hud.removeFromSuperview() })
+    }
+    
+    func tearDown() {
+        view.removeFromSuperview()
+        sceneView.presentScene(nil)
+        scene.backgroundMusic?.pause()
     }
     
     // MARK: Game Cycle

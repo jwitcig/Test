@@ -57,14 +57,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="E4f-mG-lVD" firstAttribute="width" secondItem="tns-IW-MKR" secondAttribute="width" id="3li-ut-b7q"/>
+                            <constraint firstItem="E4f-mG-lVD" firstAttribute="height" secondItem="tns-IW-MKR" secondAttribute="height" id="It2-GQ-alY"/>
                             <constraint firstItem="4tM-Ze-Zt2" firstAttribute="height" secondItem="tns-IW-MKR" secondAttribute="height" id="LUH-w5-DJZ"/>
                             <constraint firstItem="4tM-Ze-Zt2" firstAttribute="centerY" secondItem="tns-IW-MKR" secondAttribute="centerY" id="R4t-jw-0Ff"/>
                             <constraint firstItem="4tM-Ze-Zt2" firstAttribute="width" secondItem="tns-IW-MKR" secondAttribute="width" id="Sdo-J6-1O7"/>
-                            <constraint firstItem="E4f-mG-lVD" firstAttribute="top" secondItem="BDj-cZ-dTz" secondAttribute="bottom" id="kMc-Kd-a3v"/>
-                            <constraint firstItem="E4f-mG-lVD" firstAttribute="leading" secondItem="tns-IW-MKR" secondAttribute="leading" id="pl4-PT-cEN"/>
+                            <constraint firstItem="E4f-mG-lVD" firstAttribute="centerX" secondItem="tns-IW-MKR" secondAttribute="centerX" id="f6u-dA-DML"/>
                             <constraint firstItem="4tM-Ze-Zt2" firstAttribute="centerX" secondItem="tns-IW-MKR" secondAttribute="centerX" id="qQH-uN-Qul"/>
-                            <constraint firstAttribute="trailing" secondItem="E4f-mG-lVD" secondAttribute="trailing" id="ymR-Wk-CMX"/>
-                            <constraint firstItem="0K5-cI-TmE" firstAttribute="top" secondItem="E4f-mG-lVD" secondAttribute="bottom" id="zKx-w9-e34"/>
+                            <constraint firstItem="E4f-mG-lVD" firstAttribute="centerY" secondItem="tns-IW-MKR" secondAttribute="centerY" id="zVb-Oz-VsO"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>

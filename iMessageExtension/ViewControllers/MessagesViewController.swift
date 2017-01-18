@@ -15,8 +15,8 @@ import FirebaseDatabase
 import iMessageTools
 
 class MessagesViewController: MSMessagesAppViewController {
-    fileprivate var courseController: CourseSelectionViewController?
-    fileprivate var gameController: GameViewController?
+    var courseController: CourseSelectionViewController?
+    var gameController: GameViewController?
     
     var isAwaitingResponse = false
     
@@ -33,6 +33,7 @@ class MessagesViewController: MSMessagesAppViewController {
             handleStarterEvent(message: message, conversation: conversation)
         } else {
             let controller = createCourseSelectionController()
+            controller.mainController = self
             courseController = controller
             present(controller)
         }
@@ -54,28 +55,7 @@ class MessagesViewController: MSMessagesAppViewController {
         }
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        let controllers: [UIViewController?] = [
-            courseController, gameController
-        ]
-        controllers.forEach {
-            if let controller = $0 {
-                throwAway(controller: controller)
-            }
-        }
-        
-        let icon = UIImageView(image: #imageLiteral(resourceName: "LogoForCollapsedViewController"))
-        icon.contentMode = .scaleAspectFit
-        view.addSubview(icon)
-        
-        constrain(icon, view) {
-            $0.center == $1.center
-            $0.size == $1.size
-        }
-    }
-    
     fileprivate func showWaitingForOpponent() {
-        
         if let controller = gameController {
             throwAway(controller: controller)
         }
@@ -106,6 +86,30 @@ class MessagesViewController: MSMessagesAppViewController {
         controller.orientationManager = self
         return controller
     }
+    
+    override func didTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
+        switch presentationStyle {
+        case .compact:
+            if let controller = gameController {
+                controller.tearDown()
+                throwAway(controller: controller)
+                gameController = nil
+            }
+            
+            if let controller = courseController {
+                throwAway(controller: controller)
+                courseController = nil
+            }
+            
+            let controller = createCourseSelectionController()
+            controller.mainController = self
+            courseController = controller
+            present(controller)
+
+        default:
+            break
+        }
+    }
 }
 
 extension MessagesViewController: iMessageCycle {
@@ -127,9 +131,11 @@ extension MessagesViewController: iMessageCycle {
             return
         }
         
-        if reader.session.ended {
+        guard !reader.session.ended else {
             courseController = createCourseSelectionController()
+            courseController?.mainController = self
             present(courseController!)
+            return
         }
         
         isAwaitingResponse = false

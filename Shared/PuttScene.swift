@@ -181,12 +181,25 @@ class PuttScene: SKScene {
         let ballPosition = ballLocation(url: url)
         let holePosition = holeLocation(url: url)
     
-        let doIt = SKAction.run {
+        ball.alpha = 0
+        ball.ballTrail.particleAlpha = 0
+        shotIndicator.alpha = 0
+        hole.alpha = 0
+        
+        let placement = SKAction.run {
             self.ball.position = self.convert(ballPosition, to: self.ball.parent!)
             self.hole.position = self.convert(holePosition, to: self.hole.parent!)
         }
+        let fadeIn = SKAction.run {
+            let fade = SKAction.fadeIn(withDuration: 0.5)
+            self.ball.run(fade)
+            self.hole.run(fade)
+            
+            self.ball.ballTrail.particleAlpha = 1
+            self.shotIndicator.run(fade)
+        }
         let wait = SKAction.wait(forDuration: 2)
-        run(SKAction.sequence([wait, doIt]))
+        run(SKAction.sequence([wait, placement, fadeIn]))
     }
     
     func parse(url: URL) {
@@ -356,7 +369,7 @@ class PuttScene: SKScene {
     
     func setDebugOptions(on view: SKView) {
         view.showsFPS = true
-        view.showsPhysics = true
+        view.showsPhysics = false
         view.backgroundColor = .black
     }
     
@@ -388,7 +401,7 @@ class PuttScene: SKScene {
             recognizer.scale = 1 / camera.xScale
         }
         
-        if (0.8...1.3).contains(recognizer.scale) {
+        if (0.6...1.3).contains(recognizer.scale) {
             
             // if within allowable range, set camera scale
             camera.setScale(1 / recognizer.scale)
@@ -457,6 +470,11 @@ class PuttScene: SKScene {
     
     func cancelShot(recognizer: UITapGestureRecognizer) {
         adjustingShot = false
+        
+        let ballPosition = hole.parent!.convert(ball.position, from: ball.parent!)
+        if ballPosition.distance(toPoint: hole.position) <= 150 {
+            flag.lower()
+        }
         
         shotIndicator.shotCancelled()
         
@@ -717,6 +735,14 @@ extension PuttScene: SKPhysicsContactDelegate {
     }
     
     func ballHitWall(_ wall: SKNode, contact: SKPhysicsContact) {
+        let reflected = reflect(velocity: ballPrePhysicsVelocity,
+                                 for: contact,
+                                 with: wall.physicsBody!)
+        let angle = acos(reflected.normalized • ballPrePhysicsVelocity.normalized)
+
+        guard angle > .pi / 3.0 else {
+            return
+        }
         
         let sound = AudioPlayer()
         sound.play("softWall") {
@@ -725,15 +751,8 @@ extension PuttScene: SKPhysicsContactDelegate {
             }
         }
         sound.volume = Float(ball.physicsBody!.velocity.magnitude / 50.0)
-
-        let reflected = reflect(velocity: ballPrePhysicsVelocity,
-                                 for: contact,
-                                 with: wall.physicsBody!)
-        let angle = acos(reflected.normalized • ballPrePhysicsVelocity.normalized)
+        temporaryPlayers.append(sound)
         
-        guard angle > .pi / 3.0 else { return }
-
-    
         reflectionVelocity = reflected * 0.7
     }
     
@@ -872,8 +891,9 @@ extension PuttScene: SKPhysicsContactDelegate {
         
         let touch = UITapGestureRecognizer(target: self, action: #selector(PuttScene.sceneClosePressed(recognizer:)))
         view?.addGestureRecognizer(touch)
-        
-        AudioPlayer.main.play("scoreCard")
+        let temporary = AudioPlayer()
+        temporary.play("scoreCard")
+        temporaryPlayers.append(temporary)
     }
     
     func sceneClosePressed(recognizer: UITapGestureRecognizer) {
