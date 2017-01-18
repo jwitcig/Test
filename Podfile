@@ -15,6 +15,9 @@ target 'MrPutt' do
     pod 'PocketSVG'
     pod 'SWXMLHash'
 
+    pod 'Firebase/Core'
+    pod 'Firebase/Database'
+
   end
 
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -27,5 +30,8 @@ target 'MrPutt' do
   pod 'Game'
 
   pod 'Cartography'
+
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
 
 end

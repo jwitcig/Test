@@ -10,6 +10,8 @@ import Messages
 import UIKit
 
 import Cartography
+import Firebase
+import FirebaseDatabase
 import iMessageTools
 
 class MessagesViewController: MSMessagesAppViewController {
@@ -22,6 +24,8 @@ class MessagesViewController: MSMessagesAppViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        FIRApp.configure()
     }
     
     override func willBecomeActive(with conversation: MSConversation) {

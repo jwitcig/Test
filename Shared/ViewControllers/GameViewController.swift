@@ -384,13 +384,14 @@ class GameViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: when) { 
             self.scene.showScorecard(hole: hole, names: names, player1Strokes: player1Strokes, player2Strokes: player2Strokes, pars: pars) {
                 
+                self.scene.postScorecardTearDown()
+                
                 guard let message = PuttMessageWriter(data: session.dictionary,
                                                       session: session.messageSession)?.message else { return }
                 let activeConversation = (self.messageSender as? MSMessagesAppViewController)?.activeConversation
                 let layout = PuttMessageLayoutBuilder(session: session, conversation: activeConversation).generateLayout()
                 
-                self.messageSender?.send(message: message, layout: layout, completionHandler: { error in
-                })
+                self.messageSender?.send(message: message, layout: layout, completionHandler: nil)
                 
                 self.orientationManager?.requestPresentationStyle(.compact)
                 
@@ -402,7 +403,6 @@ class GameViewController: UIViewController {
                 }
                 self.scene.run(SKAction.sequence([fadeOut, remove]))
             }
-
         }
     }
     
