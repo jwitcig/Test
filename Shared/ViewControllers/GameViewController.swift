@@ -87,6 +87,10 @@ class GameViewController: UIViewController {
         constrain(toolsContainer, settings, controls) {
             $1.leading == $0.leading
             $2.leading == $1.trailing
+            
+            $1.width == 60
+            $1.height == 60
+            $2.size == $1.size
         }
 
         toolsContainer.layoutIfNeeded()
@@ -106,8 +110,9 @@ class GameViewController: UIViewController {
             $0.top == $1.top + 10
             $0.trailing == $1.trailing - 10
             
-            $0.width == 140
-            $0.height == 60
+            $0.width == 120
+            $0.height == 40
+            
         }
         hud.isHidden = true
         

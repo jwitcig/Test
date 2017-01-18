@@ -158,9 +158,14 @@ class PuttScene: SKScene {
         addChild(ball)
         
         let delay = SKAction.wait(forDuration: 0.9)
+
+        let settings = UserDefaults.standard
+        let isEffectsOn = settings.value(forKey: Options.effects.rawValue) as? Bool ?? true
         
-        if let ballDrop = SKAction(named: "BallDrop") {
-            run(SKAction.sequence([delay, ballDrop]))
+        if isEffectsOn {
+            if let ballDrop = SKAction(named: "BallDrop") {
+                run(SKAction.sequence([delay, ballDrop]))
+            }
         }
         
         shotIndicator.shotTaken()
@@ -487,8 +492,13 @@ class PuttScene: SKScene {
             flag.raise()
         }
         
-        let selection = SKAction.playSoundFileNamed("ballSelect.mp3", waitForCompletion: false)
-        ball.run(selection)
+        let settings = UserDefaults.standard
+        let isEffectsOn = settings.value(forKey: Options.effects.rawValue) as? Bool ?? true
+        
+        if isEffectsOn {
+            let selection = SKAction.playSoundFileNamed("ballSelect.mp3", waitForCompletion: false)
+            ball.run(selection)
+        }
         
         ball.disableTrail()
 
@@ -550,20 +560,25 @@ class PuttScene: SKScene {
         let stroke = CGVector(dx: cos(angle) * power,
                               dy: sin(angle) * power)
         
-        let sound = SKAudioNode(fileNamed: "clubHit.wav")
-        sound.autoplayLooped = false
-        sound.position = convert(ball.position, from: ball.parent!)
+        let settings = UserDefaults.standard
+        let isEffectsOn = settings.value(forKey: Options.effects.rawValue) as? Bool ?? true
         
-        // scale volume with shot power
-        let setVolume = SKAction.changeVolume(to: Float(power / 100.0), duration: 0)
+        if isEffectsOn {
+            let sound = SKAudioNode(fileNamed: "clubHit.wav")
+            sound.autoplayLooped = false
+            sound.position = convert(ball.position, from: ball.parent!)
+            
+            // scale volume with shot power
+            let setVolume = SKAction.changeVolume(to: Float(power / 100.0), duration: 0)
+            
+            let remove = SKAction.sequence([
+                SKAction.wait(forDuration: 1),
+                SKAction.removeFromParent(),
+                ])
+            sound.run(SKAction.group([setVolume, SKAction.play(), remove]))
 
-        let remove = SKAction.sequence([
-            SKAction.wait(forDuration: 1),
-            SKAction.removeFromParent(),
-        ])
-        sound.run(SKAction.group([setVolume, SKAction.play(), remove]))
-
-        addChild(sound)
+            addChild(sound)
+        }
         
         ball.physicsBody?.applyImpulse(stroke)
         
@@ -895,9 +910,20 @@ extension PuttScene: SKPhysicsContactDelegate {
         
         let touch = UITapGestureRecognizer(target: self, action: #selector(PuttScene.sceneClosePressed(recognizer:)))
         view?.addGestureRecognizer(touch)
-        let temporary = AudioPlayer()
-        temporary.play("scoreCard")
-        temporaryPlayers.append(temporary)
+        
+        
+        let settings = UserDefaults.standard
+        let isEffectsOn = settings.value(forKey: Options.effects.rawValue) as? Bool ?? true
+        
+        if isEffectsOn {
+            let temporary = AudioPlayer()
+            temporary.play("scoreCard") {
+                if let index = self.temporaryPlayers.index(of: temporary) {
+                    self.temporaryPlayers.remove(at: index)
+                }
+            }
+            temporaryPlayers.append(temporary)
+        }
     }
     
     func sceneClosePressed(recognizer: UITapGestureRecognizer) {
