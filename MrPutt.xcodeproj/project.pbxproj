@@ -26,6 +26,7 @@
 		8B11629D1E2E1894005520DB /* blazeHole7-7.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B11628B1E2E1891005520DB /* blazeHole7-7.svg */; };
 		8B11629E1E2E1894005520DB /* blazeHole8-8.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B11628C1E2E1891005520DB /* blazeHole8-8.svg */; };
 		8B11629F1E2E1894005520DB /* blazeHole9-9.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B11628D1E2E1891005520DB /* blazeHole9-9.svg */; };
+		8B3899F11E2EF3A8002E63CE /* ballRollingFadeInOut.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B3899EF1E2EF3A3002E63CE /* ballRollingFadeInOut.mp3 */; };
 		8B63C04C1E2E2ECB004C028C /* timberHole1-1.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0431E2E2ECB004C028C /* timberHole1-1.svg */; };
 		8B63C04D1E2E2ECB004C028C /* timberHole1-1.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0431E2E2ECB004C028C /* timberHole1-1.svg */; };
 		8B63C04E1E2E2ECB004C028C /* timberHole2-2.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0441E2E2ECB004C028C /* timberHole2-2.svg */; };
@@ -207,8 +208,9 @@
 		8B35A2271E2189710063520C /* InGameMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InGameMenuView.xib; sourceTree = "<group>"; };
 		8B35A22A1E218A980063520C /* InGameOptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InGameOptionView.swift; sourceTree = "<group>"; };
 		8B35A22D1E218AA40063520C /* InGameOptionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InGameOptionView.xib; sourceTree = "<group>"; };
-		8B35A2301E218CF90063520C /* CourseSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseSelectionViewController.swift; sourceTree = "<group>"; };
+		8B35A2301E218CF90063520C /* CourseSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CourseSelectionViewController.swift; path = ../../Shared/ViewControllers/CourseSelectionViewController.swift; sourceTree = "<group>"; };
 		8B35A2311E218CF90063520C /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		8B3899EF1E2EF3A3002E63CE /* ballRollingFadeInOut.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ballRollingFadeInOut.mp3; sourceTree = "<group>"; };
 		8B5799161E2A0F850083228D /* Legend of Ace - Desert LocationCasual Environmental Ambience by DFAD.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Legend of Ace - Desert LocationCasual Environmental Ambience by DFAD.mp3"; sourceTree = "<group>"; };
 		8B5799171E2A0F850083228D /* Wind_StayOnBeat.com.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Wind_StayOnBeat.com.mp3; sourceTree = "<group>"; };
 		8B5799191E2A0F850083228D /* click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = click.mp3; sourceTree = "<group>"; };
@@ -573,6 +575,7 @@
 			isa = PBXGroup;
 			children = (
 				8B57991C1E2A0F850083228D /* clubHit.wav */,
+				8B3899EF1E2EF3A3002E63CE /* ballRollingFadeInOut.mp3 */,
 				8B57991D1E2A0F850083228D /* softWall.mp3 */,
 				8B57991E1E2A0F850083228D /* woodHit.mp3 */,
 			);
@@ -805,6 +808,7 @@
 			isa = PBXGroup;
 			children = (
 				8B25439A1E2D904600326E7B /* MessagesViewController.swift */,
+				8B35A2301E218CF90063520C /* CourseSelectionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -821,7 +825,6 @@
 		8B96208B1E1C623400678257 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8B35A2301E218CF90063520C /* CourseSelectionViewController.swift */,
 				8B35A2311E218CF90063520C /* GameViewController.swift */,
 			);
 			name = ViewControllers;
@@ -1217,6 +1220,7 @@
 				8B1162471E2E06DC005520DB /* nebulaHole7-7.svg in Resources */,
 				8BD652BA1E2D93AE001FA373 /* SceneStart.sks in Resources */,
 				8B63C0571E2E2ECB004C028C /* timberHole6-6.svg in Resources */,
+				8B3899F11E2EF3A8002E63CE /* ballRollingFadeInOut.mp3 in Resources */,
 				8B1162971E2E1894005520DB /* blazeHole1-1.svg in Resources */,
 				8BF679DC1E2D96FB00EF44FE /* frostOutsideTile.sks in Resources */,
 				8B1162481E2E06DC005520DB /* nebulaHole8-8.svg in Resources */,

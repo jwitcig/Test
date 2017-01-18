@@ -34,7 +34,8 @@ class Flag: SKSpriteNode {
     }
     
     func lower() {
-        if let lower = SKAction(named: "RaiseFlag")?.reversed() {
+        if let raise = SKAction(named: "RaiseFlag") {
+            let lower = SKAction.move(to: .zero, duration: raise.duration)
             let wiggle = SKAction.run(self.wiggle)
             let sequence = SKAction.sequence([lower, wiggle])
             run(sequence)
