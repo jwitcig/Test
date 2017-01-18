@@ -158,14 +158,27 @@ class PuttScene: SKScene {
         addChild(ball)
         
         let delay = SKAction.wait(forDuration: 0.9)
-
+        
         let settings = UserDefaults.standard
         let isEffectsOn = settings.value(forKey: Options.effects.rawValue) as? Bool ?? true
         
         if isEffectsOn {
-            if let ballDrop = SKAction(named: "BallDrop") {
-                run(SKAction.sequence([delay, ballDrop]))
+        
+            let sound = SKAction.run {
+                let audio = AudioPlayer()
+                audio.play("ballDrop") {
+                    if let index = self.temporaryPlayers.index(of: audio) {
+                        self.temporaryPlayers.remove(at: index)
+                    }
+                }
+                audio.volume = 0.8
+                self.temporaryPlayers.append(audio)
             }
+            run(SKAction.sequence([delay, sound]))
+        }
+        
+        if let ballDrop = SKAction(named: "BallDrop") {
+            run(SKAction.sequence([delay, ballDrop]))
         }
         
         shotIndicator.shotTaken()
@@ -702,6 +715,8 @@ var lastFrameContact: SKPhysicsBody?
 
 var holeCupConstraint: SKConstraint?
 
+var lockedDistanceToHole: CGFloat = 10000000
+
 extension PuttScene: SKPhysicsContactDelegate {
    
     func didBegin(_ contact: SKPhysicsContact) {
@@ -806,20 +821,28 @@ extension PuttScene: SKPhysicsContactDelegate {
                     
             let ballInHoleKey = "spiral"
             
-            let delay = SKAction.wait(forDuration: 0.05)
+            var ballPosition: CGPoint {
+                return hole.parent!.convert(self.ball.position, from: self.ball.parent!)
+            }
+            
+            var distance: CGFloat {
+                return ballPosition.distance(toPoint: hole.position)
+            }
+            
+            lockedDistanceToHole = distance
+            
+            let delay = SKAction.wait(forDuration: 0.005)
             let move = SKAction.run {
-                let ballPosition = hole.parent!.convert(self.ball.position, from: self.ball.parent!)
-
-                let distance = ballPosition.distance(toPoint: hole.position)-1
-                guard distance > 1, !self.holeComplete else {
+//                let ballPosition = hole.parent!.convert(self.ball.position, from: self.ball.parent!)
+//
+//                let distance = ballPosition.distance(toPoint: hole.position)-1
+                guard lockedDistanceToHole > 1, !self.holeComplete else {
                     self.holeComplete = true
                     
                     self.ball.removeAction(forKey: ballInHoleKey)
                     let settings = UserDefaults.standard
                     let isEffectsOn = settings.value(forKey: Options.effects.rawValue) as? Bool ?? true
-                    
-                    print("holer")
-                    
+                
                     if isEffectsOn {
                         let sound = AudioPlayer()
                         sound.play("ballMade") {
@@ -841,8 +864,10 @@ extension PuttScene: SKPhysicsContactDelegate {
                     self.ball.constraints?.remove(at: index)
                 }
                 
+                lockedDistanceToHole -= 0.4
+                lockedDistanceToHole = lockedDistanceToHole < distance ? lockedDistanceToHole : distance
                 
-                let range = SKRange(constantValue: distance)
+                let range = SKRange(upperLimit: lockedDistanceToHole)
                 let joint = SKConstraint.distance(range, to: hole)
                 holeCupConstraint = joint
                 

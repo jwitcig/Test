@@ -131,9 +131,22 @@ class Scorecard: SKScene {
         guard let token = token else { return }
         let destination = CGPoint(x: card.frame.maxX-token.size.width/1.5, y: card.frame.maxY-token.size.height/2)
     
-        let move = SKAction.move(to: destination, duration: 0.5)
+        let animationDuration: TimeInterval = 0.5
+        
+        let move = SKAction.move(to: destination, duration: animationDuration)
         move.timingMode = .easeInEaseOut
         token.run(move)
+        
+        let settings = UserDefaults.standard
+        let isEffectsOn = settings.value(forKey: Options.effects.rawValue) as? Bool ?? true
+    
+        if isEffectsOn {
+            let sound = SKAction.playSoundFileNamed("coinSound.wav", waitForCompletion: false)
+            let delay = SKAction.wait(forDuration: animationDuration/2)
+            let sequence = SKAction.sequence([delay, sound])
+            token.run(sequence)
+        }
+        
     }
     
 }
