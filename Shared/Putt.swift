@@ -387,7 +387,7 @@ struct PuttMessageLayoutBuilder: MessageLayoutBuilder {
     
     func completedGameLayout(session: PuttSession, winner: Team.OneOnOne) -> MSMessageTemplateLayout {
         let layout = MSMessageTemplateLayout()
-        layout.image = UIImage(named: "MessageImage")
+        layout.image = UIImage(named: "MessageImage\(session.initial.course.name)")
         
         switch winner {
             
@@ -411,7 +411,7 @@ struct PuttMessageLayoutBuilder: MessageLayoutBuilder {
     
     func inProgressGameLayout(session: PuttSession) -> MSMessageTemplateLayout {
         let layout = MSMessageTemplateLayout()
-        layout.image = UIImage(named: "MessageImage")
+        layout.image = UIImage(named: "MessageImage\(session.initial.course.name)")
 
         let localPlayerHolesPlayed = session.instance.shots.count
         let remotePlayerHolesPlayed = session.instance.opponentShots.count

@@ -45,6 +45,15 @@
 		8B63C05B1E2E2ECB004C028C /* timberHole8-8.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C04A1E2E2ECB004C028C /* timberHole8-8.svg */; };
 		8B63C05C1E2E2ECB004C028C /* timberHole9-9.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C04B1E2E2ECB004C028C /* timberHole9-9.svg */; };
 		8B63C05D1E2E2ECB004C028C /* timberHole9-9.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C04B1E2E2ECB004C028C /* timberHole9-9.svg */; };
+		8B6F0B211E2F246400E168CB /* frostHole1-1.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B6F0B0F1E2F246000E168CB /* frostHole1-1.svg */; };
+		8B6F0B221E2F246400E168CB /* frostHole2-2.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B6F0B101E2F246000E168CB /* frostHole2-2.svg */; };
+		8B6F0B231E2F246400E168CB /* frostHole3-3.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B6F0B111E2F246000E168CB /* frostHole3-3.svg */; };
+		8B6F0B241E2F246400E168CB /* frostHole4-4.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B6F0B121E2F246000E168CB /* frostHole4-4.svg */; };
+		8B6F0B251E2F246400E168CB /* frostHole5-5.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B6F0B131E2F246000E168CB /* frostHole5-5.svg */; };
+		8B6F0B261E2F246400E168CB /* frostHole6-6.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B6F0B141E2F246000E168CB /* frostHole6-6.svg */; };
+		8B6F0B271E2F246400E168CB /* frostHole7-7.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B6F0B151E2F246000E168CB /* frostHole7-7.svg */; };
+		8B6F0B281E2F246400E168CB /* frostHole8-8.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B6F0B161E2F246000E168CB /* frostHole8-8.svg */; };
+		8B6F0B291E2F246400E168CB /* frostHole9-9.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B6F0B171E2F246000E168CB /* frostHole9-9.svg */; };
 		8B9012D31E2DEACD00EC9FEC /* HUDView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B9012D21E2DEACD00EC9FEC /* HUDView.xib */; };
 		8B9012D51E2DEAE300EC9FEC /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9012D41E2DEAE300EC9FEC /* HUDView.swift */; };
 		8B985A7E1E2E39480047CA7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B985A7D1E2E39480047CA7B /* GoogleService-Info.plist */; };
@@ -236,6 +245,15 @@
 		8B63C0491E2E2ECB004C028C /* timberHole7-7.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole7-7.svg"; sourceTree = "<group>"; };
 		8B63C04A1E2E2ECB004C028C /* timberHole8-8.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole8-8.svg"; sourceTree = "<group>"; };
 		8B63C04B1E2E2ECB004C028C /* timberHole9-9.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole9-9.svg"; sourceTree = "<group>"; };
+		8B6F0B0F1E2F246000E168CB /* frostHole1-1.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "frostHole1-1.svg"; sourceTree = "<group>"; };
+		8B6F0B101E2F246000E168CB /* frostHole2-2.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "frostHole2-2.svg"; sourceTree = "<group>"; };
+		8B6F0B111E2F246000E168CB /* frostHole3-3.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "frostHole3-3.svg"; sourceTree = "<group>"; };
+		8B6F0B121E2F246000E168CB /* frostHole4-4.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "frostHole4-4.svg"; sourceTree = "<group>"; };
+		8B6F0B131E2F246000E168CB /* frostHole5-5.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "frostHole5-5.svg"; sourceTree = "<group>"; };
+		8B6F0B141E2F246000E168CB /* frostHole6-6.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "frostHole6-6.svg"; sourceTree = "<group>"; };
+		8B6F0B151E2F246000E168CB /* frostHole7-7.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "frostHole7-7.svg"; sourceTree = "<group>"; };
+		8B6F0B161E2F246000E168CB /* frostHole8-8.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "frostHole8-8.svg"; sourceTree = "<group>"; };
+		8B6F0B171E2F246000E168CB /* frostHole9-9.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "frostHole9-9.svg"; sourceTree = "<group>"; };
 		8B8A304B1E28A93F00A681EF /* ShotIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotIndicator.swift; sourceTree = "<group>"; };
 		8B8A304E1E297D8E00A681EF /* ControlsButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ControlsButton.xib; sourceTree = "<group>"; };
 		8B8A30511E297E4C00A681EF /* UserControlsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserControlsView.xib; sourceTree = "<group>"; };
@@ -478,6 +496,7 @@
 		8B1162371E2E06BA005520DB /* SVGs */ = {
 			isa = PBXGroup;
 			children = (
+				8B6F0AF31E2F1EEE00E168CB /* Frost */,
 				8B63C0421E2E2E65004C028C /* Timber */,
 				8B11624E1E2E17AD005520DB /* Blaze */,
 				8B11624D1E2E178B005520DB /* Nebula */,
@@ -623,6 +642,22 @@
 				8B63C04B1E2E2ECB004C028C /* timberHole9-9.svg */,
 			);
 			name = Timber;
+			sourceTree = "<group>";
+		};
+		8B6F0AF31E2F1EEE00E168CB /* Frost */ = {
+			isa = PBXGroup;
+			children = (
+				8B6F0B0F1E2F246000E168CB /* frostHole1-1.svg */,
+				8B6F0B101E2F246000E168CB /* frostHole2-2.svg */,
+				8B6F0B111E2F246000E168CB /* frostHole3-3.svg */,
+				8B6F0B121E2F246000E168CB /* frostHole4-4.svg */,
+				8B6F0B131E2F246000E168CB /* frostHole5-5.svg */,
+				8B6F0B141E2F246000E168CB /* frostHole6-6.svg */,
+				8B6F0B151E2F246000E168CB /* frostHole7-7.svg */,
+				8B6F0B161E2F246000E168CB /* frostHole8-8.svg */,
+				8B6F0B171E2F246000E168CB /* frostHole9-9.svg */,
+			);
+			name = Frost;
 			sourceTree = "<group>";
 		};
 		8B961F231E1C601600678257 /* Fonts */ = {
@@ -1164,6 +1199,7 @@
 				8BD652D31E2D9660001FA373 /* MainInterface.storyboard in Resources */,
 				8B1162491E2E06DC005520DB /* nebulaHole9-9.svg in Resources */,
 				8BD652CA1E2D93AE001FA373 /* HoleTile.sks in Resources */,
+				8B6F0B281E2F246400E168CB /* frostHole8-8.svg in Resources */,
 				8BD652C21E2D93AE001FA373 /* Snow.sks in Resources */,
 				8BD6529A1E2D93AE001FA373 /* Wind_StayOnBeat.com.mp3 in Resources */,
 				8BF679D71E2D96FB00EF44FE /* Frost-Hole6.sks in Resources */,
@@ -1176,6 +1212,8 @@
 				8BD6529C1E2D93AE001FA373 /* toggle.mp3 in Resources */,
 				8BD6529B1E2D93AE001FA373 /* click.mp3 in Resources */,
 				8B11629B1E2E1894005520DB /* blazeHole5-5.svg in Resources */,
+				8B6F0B291E2F246400E168CB /* frostHole9-9.svg in Resources */,
+				8B6F0B241E2F246400E168CB /* frostHole4-4.svg in Resources */,
 				8B1162451E2E06DC005520DB /* nebulaHole5-5.svg in Resources */,
 				8BD6528E1E2D93AE001FA373 /* SettingsButton.xib in Resources */,
 				8BD652A31E2D93AE001FA373 /* portalAmbience.mp3 in Resources */,
@@ -1191,6 +1229,7 @@
 				8BD652A81E2D93AE001FA373 /* Bebas.ttf in Resources */,
 				8B985A7F1E2E39480047CA7B /* GoogleService-Info.plist in Resources */,
 				8BD652C31E2D93AE001FA373 /* PortalEmitter.sks in Resources */,
+				8B6F0B271E2F246400E168CB /* frostHole7-7.svg in Resources */,
 				8B1162421E2E06DC005520DB /* nebulaHole2-2.svg in Resources */,
 				8BD652C51E2D93AE001FA373 /* Ball.sks in Resources */,
 				8BD652A51E2D93AE001FA373 /* scoreCard.mp3 in Resources */,
@@ -1198,8 +1237,11 @@
 				8BF679D81E2D96FB00EF44FE /* Frost-Hole7.sks in Resources */,
 				8BD6529E1E2D93AE001FA373 /* ceramicHit.mp3 in Resources */,
 				8B1162461E2E06DC005520DB /* nebulaHole6-6.svg in Resources */,
+				8B6F0B251E2F246400E168CB /* frostHole5-5.svg in Resources */,
 				8BD6529D1E2D93AE001FA373 /* ballSelect.mp3 in Resources */,
 				8BD652A61E2D93AE001FA373 /* gameOver.mp3 in Resources */,
+				8B6F0B221E2F246400E168CB /* frostHole2-2.svg in Resources */,
+				8B6F0B231E2F246400E168CB /* frostHole3-3.svg in Resources */,
 				8B1162411E2E06DC005520DB /* nebulaHole1-1.svg in Resources */,
 				8BD6528D1E2D93AE001FA373 /* InGameOptionView.xib in Resources */,
 				8BD652BB1E2D93AE001FA373 /* BallDrop.sks in Resources */,
@@ -1234,7 +1276,9 @@
 				8BD652C81E2D93AE001FA373 /* Hill.sks in Resources */,
 				8BF679DA1E2D96FB00EF44FE /* Frost-Hole9.sks in Resources */,
 				8BD652911E2D93AE001FA373 /* UserControlsView.xib in Resources */,
+				8B6F0B211E2F246400E168CB /* frostHole1-1.svg in Resources */,
 				8BD652A41E2D93AE001FA373 /* portalTransfer.mp3 in Resources */,
+				8B6F0B261E2F246400E168CB /* frostHole6-6.svg in Resources */,
 				8BD652BD1E2D93AE001FA373 /* WallHit.sks in Resources */,
 				8BF679D51E2D96FB00EF44FE /* Frost-Hole4.sks in Resources */,
 			);
