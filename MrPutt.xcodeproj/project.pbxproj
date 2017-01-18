@@ -18,6 +18,7 @@
 		8B1162481E2E06DC005520DB /* nebulaHole8-8.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B11623F1E2E06DC005520DB /* nebulaHole8-8.svg */; };
 		8B1162491E2E06DC005520DB /* nebulaHole9-9.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B1162401E2E06DC005520DB /* nebulaHole9-9.svg */; };
 		8B3899F11E2EF3A8002E63CE /* ballRollingFadeInOut.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B3899EF1E2EF3A3002E63CE /* ballRollingFadeInOut.mp3 */; };
+		8B40C9821E2F6DA70022E4ED /* NebulaCloud.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B40C9811E2F6DA70022E4ED /* NebulaCloud.sks */; };
 		8B63C04C1E2E2ECB004C028C /* timberHole1-1.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0431E2E2ECB004C028C /* timberHole1-1.svg */; };
 		8B63C04D1E2E2ECB004C028C /* timberHole1-1.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0431E2E2ECB004C028C /* timberHole1-1.svg */; };
 		8B63C04E1E2E2ECB004C028C /* timberHole2-2.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0441E2E2ECB004C028C /* timberHole2-2.svg */; };
@@ -213,6 +214,7 @@
 		8B35A2301E218CF90063520C /* CourseSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CourseSelectionViewController.swift; path = ../../Shared/ViewControllers/CourseSelectionViewController.swift; sourceTree = "<group>"; };
 		8B35A2311E218CF90063520C /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		8B3899EF1E2EF3A3002E63CE /* ballRollingFadeInOut.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ballRollingFadeInOut.mp3; sourceTree = "<group>"; };
+		8B40C9811E2F6DA70022E4ED /* NebulaCloud.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = NebulaCloud.sks; sourceTree = "<group>"; };
 		8B5799161E2A0F850083228D /* Legend of Ace - Desert LocationCasual Environmental Ambience by DFAD.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Legend of Ace - Desert LocationCasual Environmental Ambience by DFAD.mp3"; sourceTree = "<group>"; };
 		8B5799171E2A0F850083228D /* Wind_StayOnBeat.com.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Wind_StayOnBeat.com.mp3; sourceTree = "<group>"; };
 		8B5799191E2A0F850083228D /* click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = click.mp3; sourceTree = "<group>"; };
@@ -735,6 +737,7 @@
 				8B13B3481E1C84F800C0044A /* Snow.sks */,
 				8BBD3B5C1E1DAFAB00688836 /* PortalEmitter.sks */,
 				E89473E41E245E790013E9F4 /* iceHit.sks */,
+				8B40C9811E2F6DA70022E4ED /* NebulaCloud.sks */,
 			);
 			path = Emitters;
 			sourceTree = "<group>";
@@ -1206,6 +1209,7 @@
 				8BB5870C1E2F3AB400FEF4EA /* blazeHole9-9.svg in Resources */,
 				8BD652CA1E2D93AE001FA373 /* HoleTile.sks in Resources */,
 				8B6F0B281E2F246400E168CB /* frostHole8-8.svg in Resources */,
+				8B40C9821E2F6DA70022E4ED /* NebulaCloud.sks in Resources */,
 				8BB587061E2F3AB400FEF4EA /* blazeHole3-3.svg in Resources */,
 				8BD652C21E2D93AE001FA373 /* Snow.sks in Resources */,
 				8BD6529A1E2D93AE001FA373 /* Wind_StayOnBeat.com.mp3 in Resources */,

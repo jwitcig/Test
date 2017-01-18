@@ -981,7 +981,7 @@ extension PuttScene: SKPhysicsContactDelegate {
             let y = ($0.position.y * scale) + camera!.position.y
             let destination: CGPoint = self.convert(CGPoint(x: x, y: y), to: scorecard)
             
-            $0.position = CGPoint(x: destination.x-self.size.width*scale, y: destination.y)
+            $0.position = CGPoint(x: destination.x-self.size.width*scale, y: destination.y-self.size.height*scale)
     
             let slide = SKAction.move(to: destination, duration: duration)
             slide.timingMode = .easeOut
