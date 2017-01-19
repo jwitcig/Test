@@ -17,27 +17,21 @@
 		8B1162471E2E06DC005520DB /* nebulaHole7-7.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B11623E1E2E06DC005520DB /* nebulaHole7-7.svg */; };
 		8B1162481E2E06DC005520DB /* nebulaHole8-8.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B11623F1E2E06DC005520DB /* nebulaHole8-8.svg */; };
 		8B1162491E2E06DC005520DB /* nebulaHole9-9.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B1162401E2E06DC005520DB /* nebulaHole9-9.svg */; };
+		8B13C6B71E30878A00FAD4BB /* timberHole2-2.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B13C6AE1E30878A00FAD4BB /* timberHole2-2.svg */; };
+		8B13C6B81E30878A00FAD4BB /* timberHole3-3.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B13C6AF1E30878A00FAD4BB /* timberHole3-3.svg */; };
+		8B13C6B91E30878A00FAD4BB /* timberHole4-4.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B13C6B01E30878A00FAD4BB /* timberHole4-4.svg */; };
+		8B13C6BA1E30878A00FAD4BB /* timberHole6-6.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B13C6B11E30878A00FAD4BB /* timberHole6-6.svg */; };
+		8B13C6BB1E30878A00FAD4BB /* timberHole7-7.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B13C6B21E30878A00FAD4BB /* timberHole7-7.svg */; };
+		8B13C6BC1E30878A00FAD4BB /* timberHole8-8.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B13C6B31E30878A00FAD4BB /* timberHole8-8.svg */; };
+		8B13C6BD1E30878A00FAD4BB /* timberHole9-9.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B13C6B41E30878A00FAD4BB /* timberHole9-9.svg */; };
+		8B13C6BF1E30878A00FAD4BB /* timberHole5-5.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B13C6B61E30878A00FAD4BB /* timberHole5-5.svg */; };
 		8B3899F11E2EF3A8002E63CE /* ballRollingFadeInOut.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B3899EF1E2EF3A3002E63CE /* ballRollingFadeInOut.mp3 */; };
-		8B40C9821E2F6DA70022E4ED /* NebulaCloud.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B40C9811E2F6DA70022E4ED /* NebulaCloud.sks */; };
+		8B3ED4401E307F3F00564D7F /* AsteroidLarge.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B3ED43F1E307F3F00564D7F /* AsteroidLarge.sks */; };
+		8B3ED4421E30827C00564D7F /* Leaves1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B3ED4411E30827C00564D7F /* Leaves1.sks */; };
+		8B3ED4451E30834700564D7F /* Leaves2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B3ED4431E30834700564D7F /* Leaves2.sks */; };
+		8B3ED4461E30834700564D7F /* Leaves3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B3ED4441E30834700564D7F /* Leaves3.sks */; };
+		8B40C9821E2F6DA70022E4ED /* AsteroidSmall.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B40C9811E2F6DA70022E4ED /* AsteroidSmall.sks */; };
 		8B4BF5B11E3049450045FD56 /* ScorecardStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4BF5B01E3049450045FD56 /* ScorecardStyleKit.swift */; };
-		8B63C04C1E2E2ECB004C028C /* timberHole1-1.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0431E2E2ECB004C028C /* timberHole1-1.svg */; };
-		8B63C04D1E2E2ECB004C028C /* timberHole1-1.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0431E2E2ECB004C028C /* timberHole1-1.svg */; };
-		8B63C04E1E2E2ECB004C028C /* timberHole2-2.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0441E2E2ECB004C028C /* timberHole2-2.svg */; };
-		8B63C04F1E2E2ECB004C028C /* timberHole2-2.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0441E2E2ECB004C028C /* timberHole2-2.svg */; };
-		8B63C0501E2E2ECB004C028C /* timberHole3-3.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0451E2E2ECB004C028C /* timberHole3-3.svg */; };
-		8B63C0511E2E2ECB004C028C /* timberHole3-3.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0451E2E2ECB004C028C /* timberHole3-3.svg */; };
-		8B63C0521E2E2ECB004C028C /* timberHole4-4.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0461E2E2ECB004C028C /* timberHole4-4.svg */; };
-		8B63C0531E2E2ECB004C028C /* timberHole4-4.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0461E2E2ECB004C028C /* timberHole4-4.svg */; };
-		8B63C0541E2E2ECB004C028C /* timberHole5-5.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0471E2E2ECB004C028C /* timberHole5-5.svg */; };
-		8B63C0551E2E2ECB004C028C /* timberHole5-5.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0471E2E2ECB004C028C /* timberHole5-5.svg */; };
-		8B63C0561E2E2ECB004C028C /* timberHole6-6.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0481E2E2ECB004C028C /* timberHole6-6.svg */; };
-		8B63C0571E2E2ECB004C028C /* timberHole6-6.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0481E2E2ECB004C028C /* timberHole6-6.svg */; };
-		8B63C0581E2E2ECB004C028C /* timberHole7-7.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0491E2E2ECB004C028C /* timberHole7-7.svg */; };
-		8B63C0591E2E2ECB004C028C /* timberHole7-7.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0491E2E2ECB004C028C /* timberHole7-7.svg */; };
-		8B63C05A1E2E2ECB004C028C /* timberHole8-8.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C04A1E2E2ECB004C028C /* timberHole8-8.svg */; };
-		8B63C05B1E2E2ECB004C028C /* timberHole8-8.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C04A1E2E2ECB004C028C /* timberHole8-8.svg */; };
-		8B63C05C1E2E2ECB004C028C /* timberHole9-9.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C04B1E2E2ECB004C028C /* timberHole9-9.svg */; };
-		8B63C05D1E2E2ECB004C028C /* timberHole9-9.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C04B1E2E2ECB004C028C /* timberHole9-9.svg */; };
 		8B6F0B211E2F246400E168CB /* frostHole1-1.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B6F0B0F1E2F246000E168CB /* frostHole1-1.svg */; };
 		8B6F0B221E2F246400E168CB /* frostHole2-2.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B6F0B101E2F246000E168CB /* frostHole2-2.svg */; };
 		8B6F0B231E2F246400E168CB /* frostHole3-3.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B6F0B111E2F246000E168CB /* frostHole3-3.svg */; };
@@ -52,6 +46,7 @@
 		8B9012D51E2DEAE300EC9FEC /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9012D41E2DEAE300EC9FEC /* HUDView.swift */; };
 		8B985A7E1E2E39480047CA7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B985A7D1E2E39480047CA7B /* GoogleService-Info.plist */; };
 		8B985A7F1E2E39480047CA7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B985A7D1E2E39480047CA7B /* GoogleService-Info.plist */; };
+		8B9C6F6E1E30952B0065D205 /* timberHole1-1.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B9C6F6D1E30952B0065D205 /* timberHole1-1.svg */; };
 		8BA977C91E2F3C00002F314E /* coinSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8BA977C71E2F3B6D002F314E /* coinSound.wav */; };
 		8BA977CC1E2F412D002F314E /* ballDrop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BA977CA1E2F412B002F314E /* ballDrop.mp3 */; };
 		8BB587041E2F3AB400FEF4EA /* blazeHole1-1.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8BB586F21E2F3AB100FEF4EA /* blazeHole1-1.svg */; };
@@ -203,6 +198,14 @@
 		8B13B3521E1C891900C0044A /* Frost-Hole7.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Frost-Hole7.sks"; sourceTree = "<group>"; };
 		8B13B3531E1C891900C0044A /* Frost-Hole8.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Frost-Hole8.sks"; sourceTree = "<group>"; };
 		8B13B3541E1C891900C0044A /* Frost-Hole9.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Frost-Hole9.sks"; sourceTree = "<group>"; };
+		8B13C6AE1E30878A00FAD4BB /* timberHole2-2.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole2-2.svg"; sourceTree = "<group>"; };
+		8B13C6AF1E30878A00FAD4BB /* timberHole3-3.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole3-3.svg"; sourceTree = "<group>"; };
+		8B13C6B01E30878A00FAD4BB /* timberHole4-4.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole4-4.svg"; sourceTree = "<group>"; };
+		8B13C6B11E30878A00FAD4BB /* timberHole6-6.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole6-6.svg"; sourceTree = "<group>"; };
+		8B13C6B21E30878A00FAD4BB /* timberHole7-7.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole7-7.svg"; sourceTree = "<group>"; };
+		8B13C6B31E30878A00FAD4BB /* timberHole8-8.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole8-8.svg"; sourceTree = "<group>"; };
+		8B13C6B41E30878A00FAD4BB /* timberHole9-9.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole9-9.svg"; sourceTree = "<group>"; };
+		8B13C6B61E30878A00FAD4BB /* timberHole5-5.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole5-5.svg"; sourceTree = "<group>"; };
 		8B25439A1E2D904600326E7B /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		8B2543C01E2D918800326E7B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B279D2D1E2724C30094DC62 /* Scorecard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scorecard.swift; sourceTree = "<group>"; };
@@ -214,7 +217,11 @@
 		8B35A2301E218CF90063520C /* CourseSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CourseSelectionViewController.swift; path = ../../Shared/ViewControllers/CourseSelectionViewController.swift; sourceTree = "<group>"; };
 		8B35A2311E218CF90063520C /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		8B3899EF1E2EF3A3002E63CE /* ballRollingFadeInOut.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ballRollingFadeInOut.mp3; sourceTree = "<group>"; };
-		8B40C9811E2F6DA70022E4ED /* NebulaCloud.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = NebulaCloud.sks; sourceTree = "<group>"; };
+		8B3ED43F1E307F3F00564D7F /* AsteroidLarge.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AsteroidLarge.sks; sourceTree = "<group>"; };
+		8B3ED4411E30827C00564D7F /* Leaves1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Leaves1.sks; sourceTree = "<group>"; };
+		8B3ED4431E30834700564D7F /* Leaves2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Leaves2.sks; sourceTree = "<group>"; };
+		8B3ED4441E30834700564D7F /* Leaves3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Leaves3.sks; sourceTree = "<group>"; };
+		8B40C9811E2F6DA70022E4ED /* AsteroidSmall.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AsteroidSmall.sks; sourceTree = "<group>"; };
 		8B4BF5B01E3049450045FD56 /* ScorecardStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScorecardStyleKit.swift; sourceTree = "<group>"; };
 		8B5799161E2A0F850083228D /* Legend of Ace - Desert LocationCasual Environmental Ambience by DFAD.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Legend of Ace - Desert LocationCasual Environmental Ambience by DFAD.mp3"; sourceTree = "<group>"; };
 		8B5799171E2A0F850083228D /* Wind_StayOnBeat.com.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Wind_StayOnBeat.com.mp3; sourceTree = "<group>"; };
@@ -231,15 +238,6 @@
 		8B5799421E2A18D30083228D /* BallDrop.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BallDrop.sks; sourceTree = "<group>"; };
 		8B5F8B401E22F925009C262F /* HoleTile.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HoleTile.sks; sourceTree = "<group>"; };
 		8B6387071E21ECEE0059CFD2 /* SettingsButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsButton.xib; sourceTree = "<group>"; };
-		8B63C0431E2E2ECB004C028C /* timberHole1-1.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole1-1.svg"; sourceTree = "<group>"; };
-		8B63C0441E2E2ECB004C028C /* timberHole2-2.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole2-2.svg"; sourceTree = "<group>"; };
-		8B63C0451E2E2ECB004C028C /* timberHole3-3.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole3-3.svg"; sourceTree = "<group>"; };
-		8B63C0461E2E2ECB004C028C /* timberHole4-4.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole4-4.svg"; sourceTree = "<group>"; };
-		8B63C0471E2E2ECB004C028C /* timberHole5-5.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole5-5.svg"; sourceTree = "<group>"; };
-		8B63C0481E2E2ECB004C028C /* timberHole6-6.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole6-6.svg"; sourceTree = "<group>"; };
-		8B63C0491E2E2ECB004C028C /* timberHole7-7.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole7-7.svg"; sourceTree = "<group>"; };
-		8B63C04A1E2E2ECB004C028C /* timberHole8-8.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole8-8.svg"; sourceTree = "<group>"; };
-		8B63C04B1E2E2ECB004C028C /* timberHole9-9.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole9-9.svg"; sourceTree = "<group>"; };
 		8B6F0B0F1E2F246000E168CB /* frostHole1-1.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "frostHole1-1.svg"; sourceTree = "<group>"; };
 		8B6F0B101E2F246000E168CB /* frostHole2-2.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "frostHole2-2.svg"; sourceTree = "<group>"; };
 		8B6F0B111E2F246000E168CB /* frostHole3-3.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "frostHole3-3.svg"; sourceTree = "<group>"; };
@@ -281,6 +279,7 @@
 		8B9620311E1C603400678257 /* SharedAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SharedAssets.xcassets; sourceTree = "<group>"; };
 		8B9620361E1C605F00678257 /* LogoStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoStyleKit.swift; sourceTree = "<group>"; };
 		8B985A7D1E2E39480047CA7B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8B9C6F6D1E30952B0065D205 /* timberHole1-1.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole1-1.svg"; sourceTree = "<group>"; };
 		8B9FD4481E2A353500FE4D3D /* Flag.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Flag.sks; sourceTree = "<group>"; };
 		8B9FD44B1E2A357F00FE4D3D /* Flag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flag.swift; sourceTree = "<group>"; };
 		8B9FD44E1E2A362100FE4D3D /* RaiseFlag.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RaiseFlag.sks; sourceTree = "<group>"; };
@@ -639,15 +638,15 @@
 		8B63C0421E2E2E65004C028C /* Timber */ = {
 			isa = PBXGroup;
 			children = (
-				8B63C0431E2E2ECB004C028C /* timberHole1-1.svg */,
-				8B63C0441E2E2ECB004C028C /* timberHole2-2.svg */,
-				8B63C0451E2E2ECB004C028C /* timberHole3-3.svg */,
-				8B63C0461E2E2ECB004C028C /* timberHole4-4.svg */,
-				8B63C0471E2E2ECB004C028C /* timberHole5-5.svg */,
-				8B63C0481E2E2ECB004C028C /* timberHole6-6.svg */,
-				8B63C0491E2E2ECB004C028C /* timberHole7-7.svg */,
-				8B63C04A1E2E2ECB004C028C /* timberHole8-8.svg */,
-				8B63C04B1E2E2ECB004C028C /* timberHole9-9.svg */,
+				8B9C6F6D1E30952B0065D205 /* timberHole1-1.svg */,
+				8B13C6AE1E30878A00FAD4BB /* timberHole2-2.svg */,
+				8B13C6AF1E30878A00FAD4BB /* timberHole3-3.svg */,
+				8B13C6B01E30878A00FAD4BB /* timberHole4-4.svg */,
+				8B13C6B11E30878A00FAD4BB /* timberHole6-6.svg */,
+				8B13C6B21E30878A00FAD4BB /* timberHole7-7.svg */,
+				8B13C6B31E30878A00FAD4BB /* timberHole8-8.svg */,
+				8B13C6B41E30878A00FAD4BB /* timberHole9-9.svg */,
+				8B13C6B61E30878A00FAD4BB /* timberHole5-5.svg */,
 			);
 			name = Timber;
 			sourceTree = "<group>";
@@ -737,7 +736,11 @@
 				8B13B3481E1C84F800C0044A /* Snow.sks */,
 				8BBD3B5C1E1DAFAB00688836 /* PortalEmitter.sks */,
 				E89473E41E245E790013E9F4 /* iceHit.sks */,
-				8B40C9811E2F6DA70022E4ED /* NebulaCloud.sks */,
+				8B40C9811E2F6DA70022E4ED /* AsteroidSmall.sks */,
+				8B3ED43F1E307F3F00564D7F /* AsteroidLarge.sks */,
+				8B3ED4411E30827C00564D7F /* Leaves1.sks */,
+				8B3ED4431E30834700564D7F /* Leaves2.sks */,
+				8B3ED4441E30834700564D7F /* Leaves3.sks */,
 			);
 			path = Emitters;
 			sourceTree = "<group>";
@@ -1174,17 +1177,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B63C04E1E2E2ECB004C028C /* timberHole2-2.svg in Resources */,
-				8B63C0501E2E2ECB004C028C /* timberHole3-3.svg in Resources */,
 				8BD652831E2D92EC001FA373 /* PlaceholderAppAssets.xcassets in Resources */,
-				8B63C05C1E2E2ECB004C028C /* timberHole9-9.svg in Resources */,
-				8B63C05A1E2E2ECB004C028C /* timberHole8-8.svg in Resources */,
-				8B63C0541E2E2ECB004C028C /* timberHole5-5.svg in Resources */,
-				8B63C0521E2E2ECB004C028C /* timberHole4-4.svg in Resources */,
-				8B63C0581E2E2ECB004C028C /* timberHole7-7.svg in Resources */,
 				8B985A7E1E2E39480047CA7B /* GoogleService-Info.plist in Resources */,
-				8B63C04C1E2E2ECB004C028C /* timberHole1-1.svg in Resources */,
-				8B63C0561E2E2ECB004C028C /* timberHole6-6.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1195,31 +1189,29 @@
 				8B6F0B2C1E2F2E9E00E168CB /* ballMade.mp3 in Resources */,
 				8BD652CB1E2D93AE001FA373 /* Scorecard.sks in Resources */,
 				8BD652C91E2D93AE001FA373 /* Mat.sks in Resources */,
-				8B63C04F1E2E2ECB004C028C /* timberHole2-2.svg in Resources */,
 				8BD6528F1E2D93AE001FA373 /* ControlsButton.xib in Resources */,
 				8BD6529F1E2D93AE001FA373 /* clubHit.wav in Resources */,
 				8B1162441E2E06DC005520DB /* nebulaHole4-4.svg in Resources */,
 				8BD652C11E2D93AE001FA373 /* BallTrail.sks in Resources */,
 				8BA977CC1E2F412D002F314E /* ballDrop.mp3 in Resources */,
-				8B63C0531E2E2ECB004C028C /* timberHole4-4.svg in Resources */,
-				8B63C04D1E2E2ECB004C028C /* timberHole1-1.svg in Resources */,
 				8BF679D61E2D96FB00EF44FE /* Frost-Hole5.sks in Resources */,
 				8BD652C61E2D93AE001FA373 /* Grid.sks in Resources */,
 				8BD652D31E2D9660001FA373 /* MainInterface.storyboard in Resources */,
 				8B1162491E2E06DC005520DB /* nebulaHole9-9.svg in Resources */,
 				8BB5870C1E2F3AB400FEF4EA /* blazeHole9-9.svg in Resources */,
+				8B13C6BC1E30878A00FAD4BB /* timberHole8-8.svg in Resources */,
 				8BD652CA1E2D93AE001FA373 /* HoleTile.sks in Resources */,
 				8B6F0B281E2F246400E168CB /* frostHole8-8.svg in Resources */,
-				8B40C9821E2F6DA70022E4ED /* NebulaCloud.sks in Resources */,
+				8B40C9821E2F6DA70022E4ED /* AsteroidSmall.sks in Resources */,
 				8BB587061E2F3AB400FEF4EA /* blazeHole3-3.svg in Resources */,
 				8BD652C21E2D93AE001FA373 /* Snow.sks in Resources */,
 				8BD6529A1E2D93AE001FA373 /* Wind_StayOnBeat.com.mp3 in Resources */,
 				8BF679D71E2D96FB00EF44FE /* Frost-Hole6.sks in Resources */,
 				8BD652C01E2D93AE001FA373 /* Assets.xcassets in Resources */,
 				8BF679D41E2D96FB00EF44FE /* Frost-Hole3.sks in Resources */,
-				8B63C05B1E2E2ECB004C028C /* timberHole8-8.svg in Resources */,
 				8BD652D41E2D9664001FA373 /* iMessageAssets.xcassets in Resources */,
 				8BD6529C1E2D93AE001FA373 /* toggle.mp3 in Resources */,
+				8B3ED4451E30834700564D7F /* Leaves2.sks in Resources */,
 				8BD6529B1E2D93AE001FA373 /* click.mp3 in Resources */,
 				8B6F0B291E2F246400E168CB /* frostHole9-9.svg in Resources */,
 				8B6F0B241E2F246400E168CB /* frostHole4-4.svg in Resources */,
@@ -1230,6 +1222,7 @@
 				8BF679D31E2D96FB00EF44FE /* Frost-Hole2.sks in Resources */,
 				8BD652C41E2D93AE001FA373 /* iceHit.sks in Resources */,
 				8BD652A71E2D93AE001FA373 /* winGame.mp3 in Resources */,
+				8B3ED4401E307F3F00564D7F /* AsteroidLarge.sks in Resources */,
 				8BF679D91E2D96FB00EF44FE /* Frost-Hole8.sks in Resources */,
 				8BD652AB1E2D93AE001FA373 /* HolePars.plist in Resources */,
 				8BD652A01E2D93AE001FA373 /* softWall.mp3 in Resources */,
@@ -1237,6 +1230,8 @@
 				8BB587051E2F3AB400FEF4EA /* blazeHole2-2.svg in Resources */,
 				8BD652CC1E2D93AE001FA373 /* Flag.sks in Resources */,
 				8BD652A81E2D93AE001FA373 /* Bebas.ttf in Resources */,
+				8B13C6B91E30878A00FAD4BB /* timberHole4-4.svg in Resources */,
+				8B3ED4461E30834700564D7F /* Leaves3.sks in Resources */,
 				8B985A7F1E2E39480047CA7B /* GoogleService-Info.plist in Resources */,
 				8BD652C31E2D93AE001FA373 /* PortalEmitter.sks in Resources */,
 				8B6F0B271E2F246400E168CB /* frostHole7-7.svg in Resources */,
@@ -1246,7 +1241,9 @@
 				8BD652A51E2D93AE001FA373 /* scoreCard.mp3 in Resources */,
 				8BD652D51E2D9664001FA373 /* PlaceholderiMessageAssets.xcassets in Resources */,
 				8BF679D81E2D96FB00EF44FE /* Frost-Hole7.sks in Resources */,
+				8B9C6F6E1E30952B0065D205 /* timberHole1-1.svg in Resources */,
 				8BD6529E1E2D93AE001FA373 /* ceramicHit.mp3 in Resources */,
+				8B13C6B81E30878A00FAD4BB /* timberHole3-3.svg in Resources */,
 				8BA977C91E2F3C00002F314E /* coinSound.wav in Resources */,
 				8B1162461E2E06DC005520DB /* nebulaHole6-6.svg in Resources */,
 				8B6F0B251E2F246400E168CB /* frostHole5-5.svg in Resources */,
@@ -1255,14 +1252,13 @@
 				8B6F0B221E2F246400E168CB /* frostHole2-2.svg in Resources */,
 				8B6F0B231E2F246400E168CB /* frostHole3-3.svg in Resources */,
 				8B1162411E2E06DC005520DB /* nebulaHole1-1.svg in Resources */,
+				8B13C6BD1E30878A00FAD4BB /* timberHole9-9.svg in Resources */,
 				8BB587081E2F3AB400FEF4EA /* blazeHole5-5.svg in Resources */,
 				8BD6528D1E2D93AE001FA373 /* InGameOptionView.xib in Resources */,
 				8BD652BB1E2D93AE001FA373 /* BallDrop.sks in Resources */,
 				8BF679DB1E2D96FB00EF44FE /* FrostBackground.sks in Resources */,
 				8BD6528B1E2D93AE001FA373 /* InGameMenuView.xib in Resources */,
-				8B63C05D1E2E2ECB004C028C /* timberHole9-9.svg in Resources */,
 				8BF679D21E2D96FB00EF44FE /* Frost-Hole1.sks in Resources */,
-				8B63C0551E2E2ECB004C028C /* timberHole5-5.svg in Resources */,
 				8BD652BE1E2D93AE001FA373 /* RaiseFlag.sks in Resources */,
 				8BD652A11E2D93AE001FA373 /* woodHit.mp3 in Resources */,
 				8BD652C71E2D93AE001FA373 /* Portal.sks in Resources */,
@@ -1274,22 +1270,24 @@
 				8B1162471E2E06DC005520DB /* nebulaHole7-7.svg in Resources */,
 				8BB587091E2F3AB400FEF4EA /* blazeHole6-6.svg in Resources */,
 				8BD652BA1E2D93AE001FA373 /* SceneStart.sks in Resources */,
-				8B63C0571E2E2ECB004C028C /* timberHole6-6.svg in Resources */,
 				8B3899F11E2EF3A8002E63CE /* ballRollingFadeInOut.mp3 in Resources */,
 				8BF679DC1E2D96FB00EF44FE /* frostOutsideTile.sks in Resources */,
+				8B13C6BA1E30878A00FAD4BB /* timberHole6-6.svg in Resources */,
 				8B1162481E2E06DC005520DB /* nebulaHole8-8.svg in Resources */,
 				8BB587071E2F3AB400FEF4EA /* blazeHole4-4.svg in Resources */,
 				8BD652AA1E2D93AE001FA373 /* Actions.plist in Resources */,
-				8B63C0511E2E2ECB004C028C /* timberHole3-3.svg in Resources */,
 				8BD652971E2D93AE001FA373 /* SharedAssets.xcassets in Resources */,
-				8B63C0591E2E2ECB004C028C /* timberHole7-7.svg in Resources */,
 				8BD652A91E2D93AE001FA373 /* Neutra2Display-Titled.otf in Resources */,
 				8BD652891E2D93AE001FA373 /* CoursePreviewView.xib in Resources */,
 				8BD652C81E2D93AE001FA373 /* Hill.sks in Resources */,
 				8BF679DA1E2D96FB00EF44FE /* Frost-Hole9.sks in Resources */,
 				8BD652911E2D93AE001FA373 /* UserControlsView.xib in Resources */,
+				8B13C6BB1E30878A00FAD4BB /* timberHole7-7.svg in Resources */,
 				8B6F0B211E2F246400E168CB /* frostHole1-1.svg in Resources */,
+				8B13C6B71E30878A00FAD4BB /* timberHole2-2.svg in Resources */,
 				8BD652A41E2D93AE001FA373 /* portalTransfer.mp3 in Resources */,
+				8B3ED4421E30827C00564D7F /* Leaves1.sks in Resources */,
+				8B13C6BF1E30878A00FAD4BB /* timberHole5-5.svg in Resources */,
 				8BB5870B1E2F3AB400FEF4EA /* blazeHole8-8.svg in Resources */,
 				8B6F0B261E2F246400E168CB /* frostHole6-6.svg in Resources */,
 				8BD652BD1E2D93AE001FA373 /* WallHit.sks in Resources */,

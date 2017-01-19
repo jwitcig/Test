@@ -151,5 +151,4 @@ class Scorecard: SKScene {
         }
         
     }
-    
 }

@@ -13,8 +13,10 @@ import SpriteKit
 import Game
 import JWSwiftTools
 
+import FirebaseAnalytics
 import PocketSVG
 import SWXMLHash
+
 
 private var settingsContext = 0
 
@@ -141,6 +143,12 @@ class PuttScene: SKScene {
     }
 
     override func didMove(to view: SKView) {
+        let params: [String : NSObject] = [
+            "course": course.name as NSObject,
+            "hole": course.holeCount as NSObject,
+        ]
+        FIRAnalytics.logEvent(withName: "RoundStart", parameters: params)
+        
         setDebugOptions(on: view)
     
         scaleMode = .resizeFill
@@ -411,7 +419,7 @@ class PuttScene: SKScene {
     
     func setDebugOptions(on view: SKView) {
         view.showsFPS = true
-        view.showsPhysics = false
+        view.showsPhysics = true
         view.backgroundColor = .black
     }
     
@@ -425,6 +433,10 @@ class PuttScene: SKScene {
     
     func setupCamera() {
         camera?.zPosition = -10
+        
+        let background = SKSpriteNode(imageNamed: course.name.lowercased()+"Background")
+        background.size = CGSize(width: 800, height: 1600)
+        camera?.addChild(background)
     }
     
     func setupAmbience() {
@@ -749,7 +761,7 @@ var ballPrePhysicsVelocity: CGVector = .zero
 
 var reflectionVelocity: CGVector? = nil
 
-var lastFrameContact: SKPhysicsBody?
+var lastFrameContact: SKPhysicsContact?
 
 var holeCupConstraint: SKConstraint?
 
@@ -770,7 +782,7 @@ extension PuttScene: SKPhysicsContactDelegate {
             ballHitWall(wall, contact: contact)
         }
         
-        if let _ = node(withName: Ball.name) as? Ball, let hole = node(withName: Hole.name) as? Hole {
+        if let _ = node(withName: Ball.name) as? Ball, let hole = node(withName: "bodyPiece")?.parent as? Hole {
            ballHitHole(hole, contact: contact)
         }
         
@@ -805,12 +817,27 @@ extension PuttScene: SKPhysicsContactDelegate {
     }
     
     func ballHitWall(_ wall: SKNode, contact: SKPhysicsContact) {
+        ball.physicsBody?.applyImpulse(contact.contactNormal * 5)
+    
         let reflected = reflect(velocity: ballPrePhysicsVelocity,
                                  for: contact,
                                  with: wall.physicsBody!)
         let angle = acos(reflected.normalized • ballPrePhysicsVelocity.normalized)
 
         guard angle > .pi / 3.0 else {
+            let settings = UserDefaults.standard
+            let isEffectsOn = settings.value(forKey: Options.effects.rawValue) as? Bool ?? true
+            
+            if isEffectsOn {
+                let sound = AudioPlayer()
+                sound.play("softWall") {
+                    if let index = self.temporaryPlayers.index(of: sound) {
+                        self.temporaryPlayers.remove(at: index)
+                    }
+                }
+                sound.volume = (Float(angle) / (.pi / 3.0))
+                temporaryPlayers.append(sound)
+            }
             return
         }
 
@@ -827,6 +854,21 @@ extension PuttScene: SKPhysicsContactDelegate {
             sound.volume = Float(ball.physicsBody!.velocity.magnitude / 50.0)
             temporaryPlayers.append(sound)
         }
+        
+//        if let lastFrame = lastFrameContact {
+//            
+//            let difference = acos(lastFrame.contactNormal • contact.contactNormal)
+//            
+//            if difference > 0.5, difference < 2 {
+//                reflected = reflect(velocity: ballPrePhysicsVelocity,
+//                                    for: lastFrame,
+//                                    with: wall.physicsBody!)
+//            } else {
+//                lastFrameContact = contact
+//            }
+//        } else {
+//            lastFrameContact = contact
+//        }
         
         reflectionVelocity = reflected * 0.7
     }
@@ -1049,7 +1091,14 @@ extension PuttScene: SKPhysicsContactDelegate {
         let location = convert(sceneLocation, to: scorecard)
         
         if scorecard.button.contains(location) {
-            scorecard.donePressed()
+            let highlight = SKAction.run {
+                scorecard.button.texture = SKTexture(imageNamed: "ContinueButtonPressed")
+            }
+            highlight.duration = 0.2
+            let done = SKAction.run(scorecard.donePressed)
+            
+            let sequence = SKAction.sequence([highlight, done])
+            scorecard.run(sequence)
         }
     }
 }
