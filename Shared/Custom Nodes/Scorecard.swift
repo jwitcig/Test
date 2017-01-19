@@ -124,7 +124,7 @@ class Scorecard: SKScene {
     }
     
     func showHoleInfo() {
-        let slide = SKAction.moveBy(x: -48, y: 0, duration: 0.8)
+        let slide = SKAction.moveBy(x: -50, y: 0, duration: 0.8)
         slide.timingMode = .easeOut
         
         infoPanel.run(slide)

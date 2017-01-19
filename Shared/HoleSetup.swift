@@ -71,7 +71,14 @@ class HoleSetup {
         case is Frost.Type:
     
             if let snow = SKEmitterNode(fileNamed: "Snow") {
-                snow.position = CGPoint(x: 400, y: 0)
+                
+                let holeSize = scene.holeSize()
+                
+                let density = snow.particleBirthRate / snow.particlePositionRange.dy
+                
+                snow.position = CGPoint(x: holeSize.width, y: 0)
+                snow.particlePositionRange = CGVector(dx: 0, dy: holeSize.height)
+                snow.particleBirthRate = density * snow.particlePositionRange.dy
                 snow.advanceSimulationTime(TimeInterval(snow.particleLifetime))
                 scene.addChild(snow)
             }
