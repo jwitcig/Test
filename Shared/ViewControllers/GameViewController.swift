@@ -377,7 +377,7 @@ class GameViewController: UIViewController {
         if let winner = session.gameData.winner {
             switch winner {
             case .you:
-                AudioPlayer.main.play("winGame")
+                AudioPlayer.main.play("winGame", ofType: "wav")
             case .them:
                 AudioPlayer.main.play("gameOver")
             case .tie:

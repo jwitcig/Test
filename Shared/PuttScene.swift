@@ -591,7 +591,7 @@ class PuttScene: SKScene {
             touchNode.position = touch.location(in: ball)
             
             let ballLocation = convert(ball.position, from: ball.parent!)
-            shotIndicator.power = touchLocation.distance(toPoint: ballLocation) * camera!.xScale / 250.0
+            shotIndicator.power = (touchLocation.distance(toPoint: ballLocation) * camera!.xScale - shotIndicator.ballIndicator.size.width / 2) / 250.0
         }
     }
     
@@ -629,7 +629,7 @@ class PuttScene: SKScene {
         let isEffectsOn = settings.value(forKey: Options.effects.rawValue) as? Bool ?? true
         
         if isEffectsOn {
-            let sound = SKAudioNode(fileNamed: "clubHit.wav")
+            let sound = SKAudioNode(fileNamed: "golfSwingHit.wav")
             sound.autoplayLooped = false
             sound.position = convert(ball.position, from: ball.parent!)
             
@@ -1083,7 +1083,7 @@ extension PuttScene: SKPhysicsContactDelegate {
         
         if isEffectsOn {
             let temporary = AudioPlayer()
-            temporary.play("scoreCard") {
+            temporary.play("scorecard2", ofType: "wav") {
                 if let index = self.temporaryPlayers.index(of: temporary) {
                     self.temporaryPlayers.remove(at: index)
                 }
