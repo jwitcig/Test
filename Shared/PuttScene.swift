@@ -199,11 +199,8 @@ class PuttScene: SKScene {
         
         flag.wiggle()
         
-        let coursePrefix = course.name.lowercased()
         
-        let url = Bundle(for: PuttScene.self).url(forResource: "\(coursePrefix)Hole\(holeNumber!)-\(holeNumber!)", withExtension: "svg")!
-        
-        let size = holeSize(url: url)
+        let size = holeSize()
         cameraLimiter = CGRect(origin: .zero, size: size)
         
         passivelyEnableCameraBounds()
@@ -240,6 +237,11 @@ class PuttScene: SKScene {
         run(SKAction.sequence([wait, placement, fadeIn]))
     }
     
+    var url: URL {
+        let coursePrefix = course.name.lowercased()
+        return Bundle(for: PuttScene.self).url(forResource: "\(coursePrefix)Hole\(holeNumber!)-\(holeNumber!)", withExtension: "svg")!
+    }
+    
     func parse(url: URL) {
         
         let paths: [SVGBezierPath] = beziers(url: url).map {
@@ -250,7 +252,7 @@ class PuttScene: SKScene {
             let layer = CAShapeLayer()
             layer.path = path.cgPath
             
-            let size = holeSize(url: url)
+            let size = holeSize()
             
             let transform = CGAffineTransform(scaleX: 1, y: -1).translatedBy(x: -size.width/2, y: -size.height/2)
             
@@ -294,7 +296,7 @@ class PuttScene: SKScene {
         let x = CGFloat((try! hole.value(ofAttribute: "x") as String).double!)
         let y = CGFloat((try! hole.value(ofAttribute: "y") as String).double!)
         
-        let size = holeSize(url: url)
+        let size = holeSize()
 
         return CGPoint(x: x-size.width/2, y: -(y-size.height/2))
     }
@@ -316,12 +318,14 @@ class PuttScene: SKScene {
         let x = CGFloat((try! ball.value(ofAttribute: "x") as String).double!)
         let y = CGFloat((try! ball.value(ofAttribute: "y") as String).double!)
         
-        let size = holeSize(url: url)
+        let size = holeSize()
         
         return CGPoint(x: x-size.width/2, y: -(y-size.height/2))
     }
     
-    func holeSize(url: URL) -> CGSize {
+    func holeSize() -> CGSize {
+        
+        
         let data = try! Data(contentsOf: url)
         let xml = SWXMLHash.parse(data)
         
@@ -991,7 +995,7 @@ extension PuttScene: SKPhysicsContactDelegate {
         let duration: TimeInterval = 0.8
         scorecard.children.filter{$0 != scorecard.token}.forEach {
             let scale = camera!.xScale
-//            $0.setScale(scale)
+            $0.setScale($0.xScale * scale)
             
             let x = ($0.position.x * scale) + camera!.position.x
             let y = ($0.position.y * scale) + camera!.position.y
