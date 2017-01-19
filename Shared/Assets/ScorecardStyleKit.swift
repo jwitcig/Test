@@ -22,72 +22,7 @@ public class ScorecardStyleKit : NSObject {
         static var continueButtonTargets: [AnyObject]?
     }
 
-    //// Drawing Methods®
-
-    public dynamic class func drawCanvas3(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 235, height: 20), resizing: ResizingBehavior = .aspectFit, color3: UIColor = UIColor(red: 0.012, green: 0.549, blue: 0.875, alpha: 1.000)) {
-        //// General Declarations
-        let context = UIGraphicsGetCurrentContext()!
-        
-        //// Resize to Target Frame
-        context.saveGState()
-        let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 235, height: 20), target: targetFrame)
-        context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
-        context.scaleBy(x: resizedFrame.width / 235, y: resizedFrame.height / 20)
-
-
-        //// Color Declarations
-        let gradientColor2 = UIColor(red: 0.988, green: 0.933, blue: 0.349, alpha: 1.000)
-        let gradient2Color = UIColor(red: 0.502, green: 0.502, blue: 0.502, alpha: 1.000)
-
-        //// Gradient Declarations
-        let gradient2 = CGGradient(colorsSpace: nil, colors: [UIColor.black.cgColor, UIColor.black.blended(withFraction: 0.5, of: gradient2Color).cgColor, gradient2Color.cgColor, gradient2Color.blended(withFraction: 0.5, of: UIColor.black).cgColor, UIColor.black.cgColor] as CFArray, locations: [0, 0.08, 0.5, 0.91, 1])!
-
-        //// Text 3 Drawing
-        let text3Rect = CGRect(x: 35, y: 4, width: 100, height: 16)
-        let text3Style = NSMutableParagraphStyle()
-        text3Style.alignment = .center
-        let text3FontAttributes = [NSFontAttributeName: UIFont(name: "Neutraface2Display-Titling", size: 14)!, NSForegroundColorAttributeName: UIColor.white, NSParagraphStyleAttributeName: text3Style]
-
-        "2".draw(in: text3Rect, withAttributes: text3FontAttributes)
-
-
-        //// Text Drawing
-        let textRect = CGRect(x: 135, y: 4, width: 100, height: 16)
-        let textStyle = NSMutableParagraphStyle()
-        textStyle.alignment = .center
-        let textFontAttributes = [NSFontAttributeName: UIFont(name: "Neutraface2Display-Titling", size: 14)!, NSForegroundColorAttributeName: UIColor.white, NSParagraphStyleAttributeName: textStyle]
-
-        "2".draw(in: textRect, withAttributes: textFontAttributes)
-
-
-        //// Rectangle 5 Drawing
-        let rectangle5Path = UIBezierPath(rect: CGRect(x: 35, y: 0, width: 200, height: 1))
-        context.saveGState()
-        rectangle5Path.addClip()
-        context.drawLinearGradient(gradient2, start: CGPoint(x: 35, y: 0.5), end: CGPoint(x: 235, y: 0.5), options: [])
-        context.restoreGState()
-
-
-        //// Text 2 Drawing
-        let text2Rect = CGRect(x: 3, y: 4, width: 13, height: 16)
-        let text2Style = NSMutableParagraphStyle()
-        text2Style.alignment = .center
-        let text2FontAttributes = [NSFontAttributeName: UIFont(name: "Neutraface2Display-Titling", size: 14)!, NSForegroundColorAttributeName: gradientColor2, NSParagraphStyleAttributeName: text2Style]
-
-        "2".draw(in: text2Rect, withAttributes: text2FontAttributes)
-
-
-        //// Text 4 Drawing
-        let text4Rect = CGRect(x: 18, y: 4, width: 13, height: 16)
-        let text4Style = NSMutableParagraphStyle()
-        text4Style.alignment = .center
-        let text4FontAttributes = [NSFontAttributeName: UIFont(name: "Neutraface2Display-Titling", size: 14)!, NSForegroundColorAttributeName: color3, NSParagraphStyleAttributeName: text4Style]
-
-        "2".draw(in: text4Rect, withAttributes: text4FontAttributes)
-        
-        context.restoreGState()
-
-    }
+    //// Drawing Methods
 
     public dynamic class func drawCanvas4(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 100, height: 100), resizing: ResizingBehavior = .aspectFit, color3: UIColor = UIColor(red: 0.012, green: 0.549, blue: 0.875, alpha: 1.000)) {
         //// General Declarations
@@ -189,431 +124,15 @@ public class ScorecardStyleKit : NSObject {
 
     }
 
-    public dynamic class func drawCanvas7(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 235, height: 356), resizing: ResizingBehavior = .aspectFit, color3: UIColor = UIColor(red: 0.012, green: 0.549, blue: 0.875, alpha: 1.000), name1: String = "Kenny", name2: String = "Jonah") {
+    public dynamic class func drawCard(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 200, height: 312), resizing: ResizingBehavior = .aspectFit, color3: UIColor = UIColor(red: 0.012, green: 0.549, blue: 0.875, alpha: 1.000), holeNumber: String = "3", name1: String = "Kenny", name2: String = "Jonah", player1Hole1: String = "2", player1Hole2: String = "2", player1Hole3: String = "2", player1Hole4: String = "2", player1Hole5: String = "2", player1Hole6: String = "2", player1Hole7: String = "2", player1Hole8: String = "2", player1Hole9: String = "2", player2Hole1: String = "2", player2Hole2: String = "2", player2Hole3: String = "2", player2Hole4: String = "2", player2Hole5: String = "2", player2Hole6: String = "2", player2Hole7: String = "2", player2Hole8: String = "2", player2Hole9: String = "2", player1Total: String = "18", player2Total: String = "10") {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
         //// Resize to Target Frame
         context.saveGState()
-        let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 235, height: 356), target: targetFrame)
+        let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 200, height: 312), target: targetFrame)
         context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
-        context.scaleBy(x: resizedFrame.width / 235, y: resizedFrame.height / 356)
-        let resizedShadowScale: CGFloat = min(resizedFrame.width / 235, resizedFrame.height / 356)
-
-
-        //// Color Declarations
-        let color = UIColor(red: 0.152, green: 0.865, blue: 0.284, alpha: 1.000)
-        let color2 = UIColor(red: 0.012, green: 0.012, blue: 0.012, alpha: 0.862)
-        let gradientColor = UIColor(red: 0.922, green: 0.631, blue: 0.000, alpha: 1.000)
-        let gradientColor2 = UIColor(red: 0.988, green: 0.933, blue: 0.349, alpha: 1.000)
-        var gradientColor2HueComponent: CGFloat = 1
-        var gradientColor2SaturationComponent: CGFloat = 1
-        var gradientColor2BrightnessComponent: CGFloat = 1
-        gradientColor2.getHue(&gradientColor2HueComponent, saturation: &gradientColor2SaturationComponent, brightness: &gradientColor2BrightnessComponent, alpha: nil)
-
-        let color8 = UIColor(hue: gradientColor2HueComponent, saturation: gradientColor2SaturationComponent, brightness: 0.4, alpha: gradientColor2.cgColor.alpha)
-        let color5 = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1.000)
-        let color6 = UIColor(red: 0.126, green: 0.126, blue: 0.126, alpha: 1.000)
-        let gradient3Color = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 0.000)
-        let gradient3Color2 = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 0.630)
-
-        //// Gradient Declarations
-        let gradient = CGGradient(colorsSpace: nil, colors: [gradientColor2.cgColor, gradientColor.cgColor] as CFArray, locations: [0, 1])!
-        let gradient3 = CGGradient(colorsSpace: nil, colors: [gradient3Color.cgColor, gradient3Color.blended(withFraction: 0.5, of: gradient3Color2).cgColor, gradient3Color2.cgColor] as CFArray, locations: [0, 0.8, 1])!
-
-        //// Shadow Declarations
-        let shadow = NSShadow()
-        shadow.shadowColor = UIColor.black
-        shadow.shadowOffset = CGSize(width: -1, height: 5)
-        shadow.shadowBlurRadius = 13
-
-        //// Image Declarations
-        let whiteCheckmark = UIImage(named: "whiteCheckmark.png")!
-
-        //// Bezier 2 Drawing
-        let bezier2Path = UIBezierPath()
-        bezier2Path.move(to: CGPoint(x: 35, y: 341))
-        bezier2Path.addCurve(to: CGPoint(x: 0, y: 307), controlPoint1: CGPoint(x: 35, y: 324), controlPoint2: CGPoint(x: 0, y: 325))
-        bezier2Path.addCurve(to: CGPoint(x: 0, y: 182), controlPoint1: CGPoint(x: 0, y: 286), controlPoint2: CGPoint(x: 0, y: 182))
-        bezier2Path.addLine(to: CGPoint(x: 35, y: 182))
-        bezier2Path.addCurve(to: CGPoint(x: 35, y: 341), controlPoint1: CGPoint(x: 35, y: 182), controlPoint2: CGPoint(x: 35, y: 358))
-        bezier2Path.close()
-        color6.setFill()
-        bezier2Path.fill()
-
-        ////// Bezier 2 Inner Shadow
-        context.saveGState()
-        context.clip(to: bezier2Path.bounds)
-        context.setShadow(offset: CGSize.zero, blur: 0)
-        context.setAlpha((shadow.shadowColor as! UIColor).cgColor.alpha)
-        context.beginTransparencyLayer(auxiliaryInfo: nil)
-        let bezier2OpaqueShadow = (shadow.shadowColor as! UIColor).withAlphaComponent(1)
-        context.setShadow(offset: CGSize(width: shadow.shadowOffset.width * resizedShadowScale, height: shadow.shadowOffset.height * resizedShadowScale), blur: shadow.shadowBlurRadius * resizedShadowScale, color: bezier2OpaqueShadow.cgColor)
-        context.setBlendMode(.sourceOut)
-        context.beginTransparencyLayer(auxiliaryInfo: nil)
-
-        bezier2OpaqueShadow.setFill()
-        bezier2Path.fill()
-
-        context.endTransparencyLayer()
-        context.endTransparencyLayer()
-        context.restoreGState()
-
-
-
-        //// Bezier Drawing
-        let bezierPath = UIBezierPath()
-        bezierPath.move(to: CGPoint(x: 35, y: 66))
-        bezierPath.addCurve(to: CGPoint(x: 0, y: 100), controlPoint1: CGPoint(x: 35, y: 83), controlPoint2: CGPoint(x: 0, y: 82))
-        bezierPath.addCurve(to: CGPoint(x: 0, y: 182), controlPoint1: CGPoint(x: 0, y: 121), controlPoint2: CGPoint(x: 0, y: 182))
-        bezierPath.addLine(to: CGPoint(x: 35, y: 182))
-        bezierPath.addCurve(to: CGPoint(x: 35, y: 66), controlPoint1: CGPoint(x: 35, y: 182), controlPoint2: CGPoint(x: 35, y: 49))
-        bezierPath.close()
-        color6.setFill()
-        bezierPath.fill()
-
-        ////// Bezier Inner Shadow
-        context.saveGState()
-        context.clip(to: bezierPath.bounds)
-        context.setShadow(offset: CGSize.zero, blur: 0)
-        context.setAlpha((shadow.shadowColor as! UIColor).cgColor.alpha)
-        context.beginTransparencyLayer(auxiliaryInfo: nil)
-        let bezierOpaqueShadow = (shadow.shadowColor as! UIColor).withAlphaComponent(1)
-        context.setShadow(offset: CGSize(width: shadow.shadowOffset.width * resizedShadowScale, height: shadow.shadowOffset.height * resizedShadowScale), blur: shadow.shadowBlurRadius * resizedShadowScale, color: bezierOpaqueShadow.cgColor)
-        context.setBlendMode(.sourceOut)
-        context.beginTransparencyLayer(auxiliaryInfo: nil)
-
-        bezierOpaqueShadow.setFill()
-        bezierPath.fill()
-
-        context.endTransparencyLayer()
-        context.endTransparencyLayer()
-        context.restoreGState()
-
-
-
-        //// Rectangle Drawing
-        let rectanglePath = UIBezierPath(roundedRect: CGRect(x: 35, y: 0, width: 200, height: 312), byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 14, height: 14))
-        rectanglePath.close()
-        color2.setFill()
-        rectanglePath.fill()
-
-
-        //// Text Drawing
-        let textRect = CGRect(x: 35, y: 93, width: 100, height: 20)
-        let textStyle = NSMutableParagraphStyle()
-        textStyle.alignment = .center
-        let textFontAttributes = [NSFontAttributeName: UIFont(name: "Neutraface2Display-Titling", size: 16)!, NSForegroundColorAttributeName: UIColor.white, NSParagraphStyleAttributeName: textStyle]
-
-        let textTextHeight: CGFloat = name1.boundingRect(with: CGSize(width: textRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: textFontAttributes, context: nil).height
-        context.saveGState()
-        context.clip(to: textRect)
-        name1.draw(in: CGRect(x: textRect.minX, y: textRect.minY + textRect.height - textTextHeight, width: textRect.width, height: textTextHeight), withAttributes: textFontAttributes)
-        context.restoreGState()
-
-
-        //// Text 2 Drawing
-        let text2Rect = CGRect(x: 135, y: 93, width: 100, height: 20)
-        let text2Style = NSMutableParagraphStyle()
-        text2Style.alignment = .center
-        let text2FontAttributes = [NSFontAttributeName: UIFont(name: "Neutraface2Display-Titling", size: 16)!, NSForegroundColorAttributeName: UIColor.white, NSParagraphStyleAttributeName: text2Style]
-
-        let text2TextHeight: CGFloat = name2.boundingRect(with: CGSize(width: text2Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: text2FontAttributes, context: nil).height
-        context.saveGState()
-        context.clip(to: text2Rect)
-        name2.draw(in: CGRect(x: text2Rect.minX, y: text2Rect.minY + text2Rect.height - text2TextHeight, width: text2Rect.width, height: text2TextHeight), withAttributes: text2FontAttributes)
-        context.restoreGState()
-
-
-        //// Rectangle 3 Drawing
-        let rectangle3Path = UIBezierPath(rect: CGRect(x: 135, y: 113, width: 1, height: 300))
-        context.saveGState()
-        rectangle3Path.addClip()
-        context.drawLinearGradient(gradient3,
-            start: CGPoint(x: 134.37, y: -336.56),
-            end: CGPoint(x: 136.11, y: 333.83),
-            options: [.drawsBeforeStartLocation, .drawsAfterEndLocation])
-        context.restoreGState()
-
-
-        //// Group
-        //// Symbol Drawing
-        let symbolRect = CGRect(x: 0, y: 153, width: 235, height: 20)
-        context.saveGState()
-        context.clip(to: symbolRect)
-        context.translateBy(x: symbolRect.minX, y: symbolRect.minY)
-
-        ScorecardStyleKit.drawCanvas3(frame: CGRect(origin: .zero, size: symbolRect.size), resizing: .stretch, color3: color3)
-        context.restoreGState()
-
-
-        //// Symbol 2 Drawing
-        let symbol2Rect = CGRect(x: 0, y: 133, width: 235, height: 20)
-        context.saveGState()
-        context.clip(to: symbol2Rect)
-        context.translateBy(x: symbol2Rect.minX, y: symbol2Rect.minY)
-
-        ScorecardStyleKit.drawCanvas3(frame: CGRect(origin: .zero, size: symbol2Rect.size), resizing: .stretch, color3: color3)
-        context.restoreGState()
-
-
-        //// Symbol 3 Drawing
-        let symbol3Rect = CGRect(x: 0, y: 173, width: 235, height: 20)
-        context.saveGState()
-        context.clip(to: symbol3Rect)
-        context.translateBy(x: symbol3Rect.minX, y: symbol3Rect.minY)
-
-        ScorecardStyleKit.drawCanvas3(frame: CGRect(origin: .zero, size: symbol3Rect.size), resizing: .stretch, color3: color3)
-        context.restoreGState()
-
-
-        //// Symbol 4 Drawing
-        let symbol4Rect = CGRect(x: 0, y: 233, width: 235, height: 20)
-        context.saveGState()
-        context.clip(to: symbol4Rect)
-        context.translateBy(x: symbol4Rect.minX, y: symbol4Rect.minY)
-
-        ScorecardStyleKit.drawCanvas3(frame: CGRect(origin: .zero, size: symbol4Rect.size), resizing: .stretch, color3: color3)
-        context.restoreGState()
-
-
-        //// Symbol 5 Drawing
-        let symbol5Rect = CGRect(x: 0, y: 193, width: 235, height: 20)
-        context.saveGState()
-        context.clip(to: symbol5Rect)
-        context.translateBy(x: symbol5Rect.minX, y: symbol5Rect.minY)
-
-        ScorecardStyleKit.drawCanvas3(frame: CGRect(origin: .zero, size: symbol5Rect.size), resizing: .stretch, color3: color3)
-        context.restoreGState()
-
-
-        //// Symbol 6 Drawing
-        let symbol6Rect = CGRect(x: 0, y: 213, width: 235, height: 20)
-        context.saveGState()
-        context.clip(to: symbol6Rect)
-        context.translateBy(x: symbol6Rect.minX, y: symbol6Rect.minY)
-
-        ScorecardStyleKit.drawCanvas3(frame: CGRect(origin: .zero, size: symbol6Rect.size), resizing: .stretch, color3: color3)
-        context.restoreGState()
-
-
-        //// Symbol 7 Drawing
-        let symbol7Rect = CGRect(x: 0, y: 253, width: 235, height: 20)
-        context.saveGState()
-        context.clip(to: symbol7Rect)
-        context.translateBy(x: symbol7Rect.minX, y: symbol7Rect.minY)
-
-        ScorecardStyleKit.drawCanvas3(frame: CGRect(origin: .zero, size: symbol7Rect.size), resizing: .stretch, color3: color3)
-        context.restoreGState()
-
-
-        //// Symbol 8 Drawing
-        let symbol8Rect = CGRect(x: 0, y: 273, width: 235, height: 20)
-        context.saveGState()
-        context.clip(to: symbol8Rect)
-        context.translateBy(x: symbol8Rect.minX, y: symbol8Rect.minY)
-
-        ScorecardStyleKit.drawCanvas3(frame: CGRect(origin: .zero, size: symbol8Rect.size), resizing: .stretch, color3: color3)
-        context.restoreGState()
-
-
-        //// Symbol 9 Drawing
-        let symbol9Rect = CGRect(x: 0, y: 113, width: 235, height: 20)
-        context.saveGState()
-        context.clip(to: symbol9Rect)
-        context.translateBy(x: symbol9Rect.minX, y: symbol9Rect.minY)
-
-        ScorecardStyleKit.drawCanvas3(frame: CGRect(origin: .zero, size: symbol9Rect.size), resizing: .stretch, color3: color3)
-        context.restoreGState()
-
-
-        //// Symbol 10 Drawing
-        let symbol10Rect = CGRect(x: 18, y: 97, width: 13, height: 13)
-        context.saveGState()
-        context.clip(to: symbol10Rect)
-        context.translateBy(x: symbol10Rect.minX, y: symbol10Rect.minY)
-
-        ScorecardStyleKit.drawCanvas4(frame: CGRect(origin: .zero, size: symbol10Rect.size), resizing: .stretch, color3: color8)
-        context.restoreGState()
-
-
-        //// Symbol 11 Drawing
-        let symbol11Rect = CGRect(x: 7, y: 97, width: 7, height: 13)
-        context.saveGState()
-        context.clip(to: symbol11Rect)
-        context.translateBy(x: symbol11Rect.minX, y: symbol11Rect.minY)
-
-        ScorecardStyleKit.drawCanvas5(frame: CGRect(origin: .zero, size: symbol11Rect.size), resizing: .stretch)
-        context.restoreGState()
-
-
-        //// Symbol 15 Drawing
-        let symbol15Rect = CGRect(x: 0, y: 292, width: 235, height: 20)
-        context.saveGState()
-        context.clip(to: symbol15Rect)
-        context.translateBy(x: symbol15Rect.minX, y: symbol15Rect.minY)
-
-        ScorecardStyleKit.drawCanvas3(frame: CGRect(origin: .zero, size: symbol15Rect.size), resizing: .stretch, color3: color3)
-        context.restoreGState()
-
-
-
-
-        //// Group 3
-        //// Rectangle 2 Drawing
-        let rectangle2Path = UIBezierPath(roundedRect: CGRect(x: 35, y: 312, width: 200, height: 44), byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: 14, height: 14))
-        rectangle2Path.close()
-        color.setFill()
-        rectangle2Path.fill()
-
-
-        //// Rectangle 5 Drawing
-        context.saveGState()
-        context.translateBy(x: 125, y: 322.45)
-        context.scaleBy(x: 0.5, y: 0.5)
-
-        let rectangle5Path = UIBezierPath(rect: CGRect(x: 0, y: 0, width: 45, height: 45.1))
-        context.saveGState()
-        rectangle5Path.addClip()
-        whiteCheckmark.draw(in: CGRect(x: 0, y: 0, width: whiteCheckmark.size.width, height: whiteCheckmark.size.height))
-        context.restoreGState()
-
-        context.restoreGState()
-
-
-
-
-        //// Rectangle 4 Drawing
-        let rectangle4Path = UIBezierPath(rect: CGRect(x: 35, y: 113, width: 200, height: 3))
-        color5.setFill()
-        rectangle4Path.fill()
-
-
-        //// Symbol 12 Drawing
-        let symbol12Rect = CGRect(x: 80, y: -442, width: 56, height: 52)
-        context.saveGState()
-        context.clip(to: symbol12Rect)
-        context.translateBy(x: symbol12Rect.minX, y: symbol12Rect.minY)
-
-        ScorecardStyleKit.drawCanvas6(frame: CGRect(origin: .zero, size: symbol12Rect.size), resizing: .stretch)
-        context.restoreGState()
-
-
-        //// Symbol 13 Drawing
-        let symbol13Rect = CGRect(x: 70, y: 3, width: 90, height: 90)
-        context.saveGState()
-        context.clip(to: symbol13Rect)
-        context.translateBy(x: symbol13Rect.minX, y: symbol13Rect.minY)
-
-        ScorecardStyleKit.drawCanvas6(frame: CGRect(origin: .zero, size: symbol13Rect.size), resizing: .stretch)
-        context.restoreGState()
-
-
-        //// Symbol 14 Drawing
-        context.saveGState()
-        context.translateBy(x: 201, y: 3)
-        context.scaleBy(x: -1, y: 1)
-
-        let symbol14Rect = CGRect(x: 0, y: 0, width: 90, height: 90)
-        context.saveGState()
-        context.clip(to: symbol14Rect)
-        context.translateBy(x: symbol14Rect.minX, y: symbol14Rect.minY)
-
-        ScorecardStyleKit.drawCanvas6(frame: CGRect(origin: .zero, size: symbol14Rect.size), resizing: .stretch)
-        context.restoreGState()
-
-        context.restoreGState()
-
-
-        //// Oval Drawing
-        let ovalPath = UIBezierPath()
-        ovalPath.move(to: CGPoint(x: 0, y: 157))
-        ovalPath.addCurve(to: CGPoint(x: 198, y: 22), controlPoint1: CGPoint(x: 13.79, y: 131.81), controlPoint2: CGPoint(x: 148.65, y: -20.88))
-        ovalPath.addCurve(to: CGPoint(x: 234, y: 327), controlPoint1: CGPoint(x: 245.6, y: 63.36), controlPoint2: CGPoint(x: 234, y: 308.57))
-        ovalPath.addCurve(to: CGPoint(x: 73, y: 277), controlPoint1: CGPoint(x: 234, y: 327), controlPoint2: CGPoint(x: 125.5, y: 320.5))
-        ovalPath.addCurve(to: CGPoint(x: 0, y: 157), controlPoint1: CGPoint(x: 20.5, y: 233.5), controlPoint2: CGPoint(x: 0, y: 157))
-        ovalPath.close()
-        context.saveGState()
-        ovalPath.addClip()
-        context.drawLinearGradient(gradient3, start: CGPoint(x: 117.62, y: 14.45), end: CGPoint(x: 117.62, y: 327), options: [])
-        context.restoreGState()
-
-
-        //// Rectangle 6 Drawing
-        let rectangle6Path = UIBezierPath()
-        rectangle6Path.move(to: CGPoint(x: 39, y: 9))
-        rectangle6Path.addLine(to: CGPoint(x: 39, y: 6))
-        rectangle6Path.addLine(to: CGPoint(x: 39, y: 6))
-        rectangle6Path.addLine(to: CGPoint(x: 39, y: 5.85))
-        rectangle6Path.addCurve(to: CGPoint(x: 40.84, y: 3.22), controlPoint1: CGPoint(x: 39, y: 4.68), controlPoint2: CGPoint(x: 39.73, y: 3.63))
-        rectangle6Path.addCurve(to: CGPoint(x: 43.53, y: 3), controlPoint1: CGPoint(x: 41.55, y: 3), controlPoint2: CGPoint(x: 42.21, y: 3))
-        rectangle6Path.addLine(to: CGPoint(x: 54.29, y: 3))
-        rectangle6Path.addLine(to: CGPoint(x: 42.94, y: 3))
-        rectangle6Path.addLine(to: CGPoint(x: 215.71, y: 3))
-        rectangle6Path.addCurve(to: CGPoint(x: 229.05, y: 3.2), controlPoint1: CGPoint(x: 227.79, y: 3), controlPoint2: CGPoint(x: 228.45, y: 3))
-        rectangle6Path.addLine(to: CGPoint(x: 229.16, y: 3.22))
-        rectangle6Path.addCurve(to: CGPoint(x: 231, y: 9), controlPoint1: CGPoint(x: 230.27, y: 3.63), controlPoint2: CGPoint(x: 231, y: 7.83))
-        rectangle6Path.addCurve(to: CGPoint(x: 231, y: 6), controlPoint1: CGPoint(x: 231, y: 9.15), controlPoint2: CGPoint(x: 231, y: 6))
-        rectangle6Path.addLine(to: CGPoint(x: 231, y: 6))
-        color2.setFill()
-        rectangle6Path.fill()
-
-
-        //// Rectangle 7 Drawing
-        let rectangle7Path = UIBezierPath(roundedRect: CGRect(x: 39, y: 4, width: 192, height: 85), byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 10, height: 10))
-        rectangle7Path.close()
-        context.saveGState()
-        rectangle7Path.addClip()
-        context.drawLinearGradient(gradient3, start: CGPoint(x: 135, y: 89), end: CGPoint(x: 135, y: 4), options: [])
-        context.restoreGState()
-
-
-        //// Group 2
-        //// Polygon Drawing
-        let polygonPath = UIBezierPath()
-        polygonPath.move(to: CGPoint(x: 135.56, y: 14))
-        polygonPath.addCurve(to: CGPoint(x: 167.79, y: 31), controlPoint1: CGPoint(x: 140.88, y: 14), controlPoint2: CGPoint(x: 166.35, y: 27.6))
-        polygonPath.addCurve(to: CGPoint(x: 167.79, y: 65), controlPoint1: CGPoint(x: 169.23, y: 34.4), controlPoint2: CGPoint(x: 169.23, y: 61.6))
-        polygonPath.addCurve(to: CGPoint(x: 135.56, y: 82), controlPoint1: CGPoint(x: 166.35, y: 68.4), controlPoint2: CGPoint(x: 144.42, y: 82))
-        polygonPath.addCurve(to: CGPoint(x: 103.34, y: 65), controlPoint1: CGPoint(x: 126.71, y: 82), controlPoint2: CGPoint(x: 105.44, y: 68.4))
-        polygonPath.addCurve(to: CGPoint(x: 103.34, y: 31), controlPoint1: CGPoint(x: 101.24, y: 61.6), controlPoint2: CGPoint(x: 101.9, y: 34.4))
-        polygonPath.addCurve(to: CGPoint(x: 135.56, y: 14), controlPoint1: CGPoint(x: 104.78, y: 27.6), controlPoint2: CGPoint(x: 130.25, y: 14))
-        polygonPath.close()
-        context.saveGState()
-        polygonPath.addClip()
-        context.drawLinearGradient(gradient, start: CGPoint(x: 144.11, y: 16.1), end: CGPoint(x: 126.95, y: 80.13), options: [])
-        context.restoreGState()
-        UIColor.white.setStroke()
-        polygonPath.lineWidth = 2
-        polygonPath.stroke()
-
-
-        //// Text 3 Drawing
-        let text3Rect = CGRect(x: 117.97, y: 25, width: 35, height: 68)
-        let text3TextContent = "3"
-        let text3Style = NSMutableParagraphStyle()
-        text3Style.alignment = .center
-        let text3FontAttributes = [NSFontAttributeName: UIFont(name: "Neutraface2Display-Titling", size: 60)!, NSForegroundColorAttributeName: UIColor.black, NSParagraphStyleAttributeName: text3Style]
-
-        let text3TextHeight: CGFloat = text3TextContent.boundingRect(with: CGSize(width: text3Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: text3FontAttributes, context: nil).height
-        context.saveGState()
-        context.clip(to: text3Rect)
-        text3TextContent.draw(in: CGRect(x: text3Rect.minX, y: text3Rect.minY + (text3Rect.height - text3TextHeight) / 2, width: text3Rect.width, height: text3TextHeight), withAttributes: text3FontAttributes)
-        context.restoreGState()
-        
-        context.restoreGState()
-
-    }
-
-    public dynamic class func drawCard(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 200, height: 311), resizing: ResizingBehavior = .aspectFit, color3: UIColor = UIColor(red: 0.012, green: 0.549, blue: 0.875, alpha: 1.000), holeNumber: String = "3", name1: String = "Kenny", name2: String = "Jonah", player1Hole1: String = "2", player1Hole2: String = "2", player1Hole3: String = "2", player1Hole4: String = "2", player1Hole5: String = "2", player1Hole6: String = "2", player1Hole7: String = "2", player1Hole8: String = "2", player1Hole9: String = "2", player2Hole1: String = "2", player2Hole2: String = "2", player2Hole3: String = "2", player2Hole4: String = "2", player2Hole5: String = "2", player2Hole6: String = "2", player2Hole7: String = "2", player2Hole8: String = "2", player2Hole9: String = "2", player1Total: String = "18", player2Total: String = "10") {
-        //// General Declarations
-        let context = UIGraphicsGetCurrentContext()!
-        
-        //// Resize to Target Frame
-        context.saveGState()
-        let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 200, height: 311), target: targetFrame)
-        context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
-        context.scaleBy(x: resizedFrame.width / 200, y: resizedFrame.height / 311)
+        context.scaleBy(x: resizedFrame.width / 200, y: resizedFrame.height / 312)
 
 
         //// Color Declarations
@@ -1039,89 +558,12 @@ public class ScorecardStyleKit : NSObject {
 
 
         //// Text 3 Drawing
-        let text3Rect = CGRect(x: 67, y: 25, width: 67, height: 52)
+        let text3Rect = CGRect(x: 68, y: 24, width: 67, height: 52)
         let text3Style = NSMutableParagraphStyle()
         text3Style.alignment = .center
         let text3FontAttributes = [NSFontAttributeName: UIFont(name: "Neutraface2Display-Titling", size: 51)!, NSForegroundColorAttributeName: UIColor.black, NSParagraphStyleAttributeName: text3Style]
 
         holeNumber.draw(in: text3Rect, withAttributes: text3FontAttributes)
-
-
-
-
-        //// Symbol Drawing
-        context.saveGState()
-        context.translateBy(x: -35, y: -100)
-
-        let symbolRect = CGRect(x: 35, y: -44, width: 200, height: 44)
-        context.saveGState()
-        context.clip(to: symbolRect)
-        context.translateBy(x: symbolRect.minX, y: symbolRect.minY)
-
-        ScorecardStyleKit.drawContinueButton(frame: CGRect(origin: .zero, size: symbolRect.size), resizing: .stretch)
-        context.restoreGState()
-
-        context.restoreGState()
-
-
-        //// Symbol 2 Drawing
-        context.saveGState()
-        context.translateBy(x: -35, y: -100)
-
-        let symbol2Rect = CGRect(x: 0, y: -285.84, width: 35, height: 242)
-        context.saveGState()
-        context.clip(to: symbol2Rect)
-        context.translateBy(x: symbol2Rect.minX, y: symbol2Rect.minY)
-
-        ScorecardStyleKit.drawHoleInfo(frame: CGRect(origin: .zero, size: symbol2Rect.size), resizing: .stretch, color3: color3, parHole1: "3", parHole2: "3", parHole3: "3", parHole4: "3", parHole5: "3", parHole6: "3", parHole7: "3", parHole8: "3", parHole9: "3")
-        context.restoreGState()
-
-        context.restoreGState()
-        
-        context.restoreGState()
-
-    }
-
-    public dynamic class func drawCard2(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 302, height: 457), resizing: ResizingBehavior = .aspectFit, color3: UIColor = UIColor(red: 0.012, green: 0.549, blue: 0.875, alpha: 1.000)) {
-        //// General Declarations
-        let context = UIGraphicsGetCurrentContext()!
-        
-        //// Resize to Target Frame
-        context.saveGState()
-        let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 302, height: 457), target: targetFrame)
-        context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
-        context.scaleBy(x: resizedFrame.width / 302, y: resizedFrame.height / 457)
-
-
-        //// Group
-        //// Symbol Drawing
-        let symbolRect = CGRect(x: 45, y: 400, width: 257, height: 57)
-        context.saveGState()
-        context.clip(to: symbolRect)
-        context.translateBy(x: symbolRect.minX, y: symbolRect.minY)
-
-        ScorecardStyleKit.drawContinueButton(frame: CGRect(origin: .zero, size: symbolRect.size), resizing: .stretch)
-        context.restoreGState()
-
-
-        //// Symbol 2 Drawing
-        let symbol2Rect = CGRect(x: 0, y: 90, width: 45, height: 312)
-        context.saveGState()
-        context.clip(to: symbol2Rect)
-        context.translateBy(x: symbol2Rect.minX, y: symbol2Rect.minY)
-
-        ScorecardStyleKit.drawHoleInfo(frame: CGRect(origin: .zero, size: symbol2Rect.size), resizing: .stretch, color3: color3, parHole1: "3", parHole2: "3", parHole3: "3", parHole4: "3", parHole5: "3", parHole6: "3", parHole7: "3", parHole8: "3", parHole9: "3")
-        context.restoreGState()
-
-
-        //// Symbol 3 Drawing
-        let symbol3Rect = CGRect(x: 45, y: 0, width: 257, height: 400)
-        context.saveGState()
-        context.clip(to: symbol3Rect)
-        context.translateBy(x: symbol3Rect.minX, y: symbol3Rect.minY)
-
-        ScorecardStyleKit.drawCard(frame: CGRect(origin: .zero, size: symbol3Rect.size), resizing: .stretch, color3: color3, holeNumber: "3", name1: "Kenny", name2: "Jonah", player1Hole1: "2", player1Hole2: "2", player1Hole3: "2", player1Hole4: "2", player1Hole5: "2", player1Hole6: "2", player1Hole7: "2", player1Hole8: "2", player1Hole9: "2", player2Hole1: "2", player2Hole2: "2", player2Hole3: "2", player2Hole4: "2", player2Hole5: "2", player2Hole6: "2", player2Hole7: "2", player2Hole8: "2", player2Hole9: "2", player1Total: "18", player2Total: "18")
-        context.restoreGState()
         
         context.restoreGState()
 
@@ -1169,16 +611,16 @@ public class ScorecardStyleKit : NSObject {
 
     }
 
-    public dynamic class func drawHoleInfo(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 35, height: 242), resizing: ResizingBehavior = .aspectFit, color3: UIColor = UIColor(red: 0.012, green: 0.549, blue: 0.875, alpha: 1.000), parHole1: String = "3", parHole2: String = "3", parHole3: String = "3", parHole4: String = "3", parHole5: String = "3", parHole6: String = "3", parHole7: String = "3", parHole8: String = "3", parHole9: String = "3") {
+    public dynamic class func drawHoleInfo(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 35, height: 241), resizing: ResizingBehavior = .aspectFit, color3: UIColor = UIColor(red: 0.012, green: 0.549, blue: 0.875, alpha: 1.000), parHole1: String = "3", parHole2: String = "3", parHole3: String = "3", parHole4: String = "3", parHole5: String = "3", parHole6: String = "3", parHole7: String = "3", parHole8: String = "3", parHole9: String = "3") {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
         //// Resize to Target Frame
         context.saveGState()
-        let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 35, height: 242), target: targetFrame)
+        let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 35, height: 241), target: targetFrame)
         context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
-        context.scaleBy(x: resizedFrame.width / 35, y: resizedFrame.height / 242)
-        let resizedShadowScale: CGFloat = min(resizedFrame.width / 35, resizedFrame.height / 242)
+        context.scaleBy(x: resizedFrame.width / 35, y: resizedFrame.height / 241)
+        let resizedShadowScale: CGFloat = min(resizedFrame.width / 35, resizedFrame.height / 241)
 
 
         //// Color Declarations
@@ -1197,19 +639,18 @@ public class ScorecardStyleKit : NSObject {
         shadow.shadowOffset = CGSize(width: -1, height: 5)
         shadow.shadowBlurRadius = 13
 
-        //// Group
         //// Bezier Drawing
         let bezierPath = UIBezierPath()
-        bezierPath.move(to: CGPoint(x: 35, y: 81.84))
-        bezierPath.addCurve(to: CGPoint(x: 35, y: 160.84), controlPoint1: CGPoint(x: 35, y: 121.52), controlPoint2: CGPoint(x: 35, y: 160.84))
-        bezierPath.addCurve(to: CGPoint(x: 35, y: 240.84), controlPoint1: CGPoint(x: 35, y: 205.11), controlPoint2: CGPoint(x: 35, y: 249.81))
-        bezierPath.addCurve(to: CGPoint(x: 34.8, y: 238.7), controlPoint1: CGPoint(x: 35, y: 240.08), controlPoint2: CGPoint(x: 34.93, y: 239.37))
-        bezierPath.addCurve(to: CGPoint(x: 0, y: 211.84), controlPoint1: CGPoint(x: 31.94, y: 224.33), controlPoint2: CGPoint(x: 0, y: 229.04))
-        bezierPath.addCurve(to: CGPoint(x: 0, y: 160.84), controlPoint1: CGPoint(x: 0, y: 203.89), controlPoint2: CGPoint(x: 0, y: 183.33))
-        bezierPath.addCurve(to: CGPoint(x: 0, y: 81.84), controlPoint1: CGPoint(x: 0, y: 160.84), controlPoint2: CGPoint(x: 0, y: 118.75))
-        bezierPath.addCurve(to: CGPoint(x: 0, y: 30.84), controlPoint1: CGPoint(x: 0, y: 59.36), controlPoint2: CGPoint(x: 0, y: 38.79))
-        bezierPath.addCurve(to: CGPoint(x: 35, y: 1.84), controlPoint1: CGPoint(x: 0, y: 12.84), controlPoint2: CGPoint(x: 35, y: 18.84))
-        bezierPath.addCurve(to: CGPoint(x: 35, y: 81.84), controlPoint1: CGPoint(x: 35, y: -7.12), controlPoint2: CGPoint(x: 35, y: 37.58))
+        bezierPath.move(to: CGPoint(x: 35, y: 80.84))
+        bezierPath.addCurve(to: CGPoint(x: 35, y: 159.84), controlPoint1: CGPoint(x: 35, y: 120.52), controlPoint2: CGPoint(x: 35, y: 159.84))
+        bezierPath.addCurve(to: CGPoint(x: 35, y: 239.84), controlPoint1: CGPoint(x: 35, y: 204.11), controlPoint2: CGPoint(x: 35, y: 248.81))
+        bezierPath.addCurve(to: CGPoint(x: 34.8, y: 237.7), controlPoint1: CGPoint(x: 35, y: 239.08), controlPoint2: CGPoint(x: 34.93, y: 238.37))
+        bezierPath.addCurve(to: CGPoint(x: 0, y: 210.84), controlPoint1: CGPoint(x: 31.94, y: 223.33), controlPoint2: CGPoint(x: 0, y: 228.04))
+        bezierPath.addCurve(to: CGPoint(x: 0, y: 159.84), controlPoint1: CGPoint(x: 0, y: 202.89), controlPoint2: CGPoint(x: 0, y: 182.33))
+        bezierPath.addCurve(to: CGPoint(x: 0, y: 80.84), controlPoint1: CGPoint(x: 0, y: 159.84), controlPoint2: CGPoint(x: 0, y: 117.75))
+        bezierPath.addCurve(to: CGPoint(x: 0, y: 29.84), controlPoint1: CGPoint(x: 0, y: 58.36), controlPoint2: CGPoint(x: 0, y: 37.79))
+        bezierPath.addCurve(to: CGPoint(x: 35, y: 0.84), controlPoint1: CGPoint(x: 0, y: 11.84), controlPoint2: CGPoint(x: 35, y: 17.84))
+        bezierPath.addCurve(to: CGPoint(x: 35, y: 80.84), controlPoint1: CGPoint(x: 35, y: -8.12), controlPoint2: CGPoint(x: 35, y: 36.58))
         bezierPath.close()
         color6.setFill()
         bezierPath.fill()
@@ -1235,7 +676,7 @@ public class ScorecardStyleKit : NSObject {
 
 
         //// Text 8 Drawing
-        let text8Rect = CGRect(x: 3, y: 206.84, width: 13, height: 16)
+        let text8Rect = CGRect(x: 3, y: 205.84, width: 13, height: 16)
         let text8Style = NSMutableParagraphStyle()
         text8Style.alignment = .center
         let text8FontAttributes = [NSFontAttributeName: UIFont(name: "Neutraface2Display-Titling", size: 14)!, NSForegroundColorAttributeName: gradientColor2, NSParagraphStyleAttributeName: text8Style]
@@ -1244,7 +685,7 @@ public class ScorecardStyleKit : NSObject {
 
 
         //// Text 9 Drawing
-        let text9Rect = CGRect(x: 18, y: 206.84, width: 13, height: 16)
+        let text9Rect = CGRect(x: 18, y: 205.84, width: 13, height: 16)
         let text9Style = NSMutableParagraphStyle()
         text9Style.alignment = .center
         let text9FontAttributes = [NSFontAttributeName: UIFont(name: "Neutraface2Display-Titling", size: 14)!, NSForegroundColorAttributeName: color8, NSParagraphStyleAttributeName: text9Style]
@@ -1253,7 +694,7 @@ public class ScorecardStyleKit : NSObject {
 
 
         //// Text 16 Drawing
-        let text16Rect = CGRect(x: 3, y: 186.84, width: 13, height: 16)
+        let text16Rect = CGRect(x: 3, y: 185.84, width: 13, height: 16)
         let text16Style = NSMutableParagraphStyle()
         text16Style.alignment = .center
         let text16FontAttributes = [NSFontAttributeName: UIFont(name: "Neutraface2Display-Titling", size: 14)!, NSForegroundColorAttributeName: gradientColor2, NSParagraphStyleAttributeName: text16Style]
@@ -1262,7 +703,7 @@ public class ScorecardStyleKit : NSObject {
 
 
         //// Text 17 Drawing
-        let text17Rect = CGRect(x: 18, y: 186.84, width: 13, height: 16)
+        let text17Rect = CGRect(x: 18, y: 185.84, width: 13, height: 16)
         let text17Style = NSMutableParagraphStyle()
         text17Style.alignment = .center
         let text17FontAttributes = [NSFontAttributeName: UIFont(name: "Neutraface2Display-Titling", size: 14)!, NSForegroundColorAttributeName: color8, NSParagraphStyleAttributeName: text17Style]
@@ -1271,7 +712,7 @@ public class ScorecardStyleKit : NSObject {
 
 
         //// Text 20 Drawing
-        let text20Rect = CGRect(x: 3, y: 166.84, width: 13, height: 16)
+        let text20Rect = CGRect(x: 3, y: 165.84, width: 13, height: 16)
         let text20Style = NSMutableParagraphStyle()
         text20Style.alignment = .center
         let text20FontAttributes = [NSFontAttributeName: UIFont(name: "Neutraface2Display-Titling", size: 14)!, NSForegroundColorAttributeName: gradientColor2, NSParagraphStyleAttributeName: text20Style]
@@ -1280,7 +721,7 @@ public class ScorecardStyleKit : NSObject {
 
 
         //// Text 21 Drawing
-        let text21Rect = CGRect(x: 18, y: 166.84, width: 13, height: 16)
+        let text21Rect = CGRect(x: 18, y: 165.84, width: 13, height: 16)
         let text21Style = NSMutableParagraphStyle()
         text21Style.alignment = .center
         let text21FontAttributes = [NSFontAttributeName: UIFont(name: "Neutraface2Display-Titling", size: 14)!, NSForegroundColorAttributeName: color8, NSParagraphStyleAttributeName: text21Style]
@@ -1289,7 +730,7 @@ public class ScorecardStyleKit : NSObject {
 
 
         //// Text 24 Drawing
-        let text24Rect = CGRect(x: 3, y: 146.84, width: 13, height: 16)
+        let text24Rect = CGRect(x: 3, y: 145.84, width: 13, height: 16)
         let text24Style = NSMutableParagraphStyle()
         text24Style.alignment = .center
         let text24FontAttributes = [NSFontAttributeName: UIFont(name: "Neutraface2Display-Titling", size: 14)!, NSForegroundColorAttributeName: gradientColor2, NSParagraphStyleAttributeName: text24Style]
@@ -1298,7 +739,7 @@ public class ScorecardStyleKit : NSObject {
 
 
         //// Text 25 Drawing
-        let text25Rect = CGRect(x: 18, y: 146.84, width: 13, height: 16)
+        let text25Rect = CGRect(x: 18, y: 145.84, width: 13, height: 16)
         let text25Style = NSMutableParagraphStyle()
         text25Style.alignment = .center
         let text25FontAttributes = [NSFontAttributeName: UIFont(name: "Neutraface2Display-Titling", size: 14)!, NSForegroundColorAttributeName: color8, NSParagraphStyleAttributeName: text25Style]
@@ -1307,7 +748,7 @@ public class ScorecardStyleKit : NSObject {
 
 
         //// Text 28 Drawing
-        let text28Rect = CGRect(x: 3, y: 126.84, width: 13, height: 16)
+        let text28Rect = CGRect(x: 3, y: 125.84, width: 13, height: 16)
         let text28Style = NSMutableParagraphStyle()
         text28Style.alignment = .center
         let text28FontAttributes = [NSFontAttributeName: UIFont(name: "Neutraface2Display-Titling", size: 14)!, NSForegroundColorAttributeName: gradientColor2, NSParagraphStyleAttributeName: text28Style]
@@ -1316,7 +757,7 @@ public class ScorecardStyleKit : NSObject {
 
 
         //// Text 29 Drawing
-        let text29Rect = CGRect(x: 18, y: 126.84, width: 13, height: 16)
+        let text29Rect = CGRect(x: 18, y: 125.84, width: 13, height: 16)
         let text29Style = NSMutableParagraphStyle()
         text29Style.alignment = .center
         let text29FontAttributes = [NSFontAttributeName: UIFont(name: "Neutraface2Display-Titling", size: 14)!, NSForegroundColorAttributeName: color8, NSParagraphStyleAttributeName: text29Style]
@@ -1325,7 +766,7 @@ public class ScorecardStyleKit : NSObject {
 
 
         //// Text 32 Drawing
-        let text32Rect = CGRect(x: 3, y: 106.84, width: 13, height: 16)
+        let text32Rect = CGRect(x: 3, y: 105.84, width: 13, height: 16)
         let text32Style = NSMutableParagraphStyle()
         text32Style.alignment = .center
         let text32FontAttributes = [NSFontAttributeName: UIFont(name: "Neutraface2Display-Titling", size: 14)!, NSForegroundColorAttributeName: gradientColor2, NSParagraphStyleAttributeName: text32Style]
@@ -1334,7 +775,7 @@ public class ScorecardStyleKit : NSObject {
 
 
         //// Text 33 Drawing
-        let text33Rect = CGRect(x: 18, y: 106.84, width: 13, height: 16)
+        let text33Rect = CGRect(x: 18, y: 105.84, width: 13, height: 16)
         let text33Style = NSMutableParagraphStyle()
         text33Style.alignment = .center
         let text33FontAttributes = [NSFontAttributeName: UIFont(name: "Neutraface2Display-Titling", size: 14)!, NSForegroundColorAttributeName: color8, NSParagraphStyleAttributeName: text33Style]
@@ -1343,7 +784,7 @@ public class ScorecardStyleKit : NSObject {
 
 
         //// Text 40 Drawing
-        let text40Rect = CGRect(x: 3, y: 86.84, width: 13, height: 16)
+        let text40Rect = CGRect(x: 3, y: 85.84, width: 13, height: 16)
         let text40Style = NSMutableParagraphStyle()
         text40Style.alignment = .center
         let text40FontAttributes = [NSFontAttributeName: UIFont(name: "Neutraface2Display-Titling", size: 14)!, NSForegroundColorAttributeName: gradientColor2, NSParagraphStyleAttributeName: text40Style]
@@ -1352,7 +793,7 @@ public class ScorecardStyleKit : NSObject {
 
 
         //// Text 41 Drawing
-        let text41Rect = CGRect(x: 18, y: 86.84, width: 13, height: 16)
+        let text41Rect = CGRect(x: 18, y: 85.84, width: 13, height: 16)
         let text41Style = NSMutableParagraphStyle()
         text41Style.alignment = .center
         let text41FontAttributes = [NSFontAttributeName: UIFont(name: "Neutraface2Display-Titling", size: 14)!, NSForegroundColorAttributeName: color8, NSParagraphStyleAttributeName: text41Style]
@@ -1361,7 +802,7 @@ public class ScorecardStyleKit : NSObject {
 
 
         //// Text 36 Drawing
-        let text36Rect = CGRect(x: 3, y: 66.84, width: 13, height: 16)
+        let text36Rect = CGRect(x: 3, y: 65.84, width: 13, height: 16)
         let text36Style = NSMutableParagraphStyle()
         text36Style.alignment = .center
         let text36FontAttributes = [NSFontAttributeName: UIFont(name: "Neutraface2Display-Titling", size: 14)!, NSForegroundColorAttributeName: gradientColor2, NSParagraphStyleAttributeName: text36Style]
@@ -1370,7 +811,7 @@ public class ScorecardStyleKit : NSObject {
 
 
         //// Text 37 Drawing
-        let text37Rect = CGRect(x: 18, y: 66.84, width: 13, height: 16)
+        let text37Rect = CGRect(x: 18, y: 65.84, width: 13, height: 16)
         let text37Style = NSMutableParagraphStyle()
         text37Style.alignment = .center
         let text37FontAttributes = [NSFontAttributeName: UIFont(name: "Neutraface2Display-Titling", size: 14)!, NSForegroundColorAttributeName: color8, NSParagraphStyleAttributeName: text37Style]
@@ -1379,7 +820,7 @@ public class ScorecardStyleKit : NSObject {
 
 
         //// Text 6 Drawing
-        let text6Rect = CGRect(x: 4, y: 46.84, width: 13, height: 16)
+        let text6Rect = CGRect(x: 4, y: 45.84, width: 13, height: 16)
         let text6Style = NSMutableParagraphStyle()
         text6Style.alignment = .center
         let text6FontAttributes = [NSFontAttributeName: UIFont(name: "Neutraface2Display-Titling", size: 14)!, NSForegroundColorAttributeName: gradientColor2, NSParagraphStyleAttributeName: text6Style]
@@ -1388,7 +829,7 @@ public class ScorecardStyleKit : NSObject {
 
 
         //// Text 7 Drawing
-        let text7Rect = CGRect(x: 19, y: 46.84, width: 13, height: 16)
+        let text7Rect = CGRect(x: 19, y: 45.84, width: 13, height: 16)
         let text7Style = NSMutableParagraphStyle()
         text7Style.alignment = .center
         let text7FontAttributes = [NSFontAttributeName: UIFont(name: "Neutraface2Display-Titling", size: 14)!, NSForegroundColorAttributeName: color8, NSParagraphStyleAttributeName: text7Style]
@@ -1397,7 +838,7 @@ public class ScorecardStyleKit : NSObject {
 
 
         //// Symbol 10 Drawing
-        let symbol10Rect = CGRect(x: 18, y: 26.84, width: 13, height: 13)
+        let symbol10Rect = CGRect(x: 18, y: 25.84, width: 13, height: 13)
         context.saveGState()
         context.clip(to: symbol10Rect)
         context.translateBy(x: symbol10Rect.minX, y: symbol10Rect.minY)
@@ -1407,7 +848,7 @@ public class ScorecardStyleKit : NSObject {
 
 
         //// Symbol 11 Drawing
-        let symbol11Rect = CGRect(x: 7, y: 26.84, width: 7, height: 13)
+        let symbol11Rect = CGRect(x: 7, y: 25.84, width: 7, height: 13)
         context.saveGState()
         context.clip(to: symbol11Rect)
         context.translateBy(x: symbol11Rect.minX, y: symbol11Rect.minY)
@@ -1422,23 +863,13 @@ public class ScorecardStyleKit : NSObject {
     //// Generated Images
 
     public dynamic class func imageOfCard(color3: UIColor = UIColor(red: 0.012, green: 0.549, blue: 0.875, alpha: 1.000), holeNumber: String = "3", name1: String = "Kenny", name2: String = "Jonah", player1Hole1: String = "2", player1Hole2: String = "2", player1Hole3: String = "2", player1Hole4: String = "2", player1Hole5: String = "2", player1Hole6: String = "2", player1Hole7: String = "2", player1Hole8: String = "2", player1Hole9: String = "2", player2Hole1: String = "2", player2Hole2: String = "2", player2Hole3: String = "2", player2Hole4: String = "2", player2Hole5: String = "2", player2Hole6: String = "2", player2Hole7: String = "2", player2Hole8: String = "2", player2Hole9: String = "2", player1Total: String = "18", player2Total: String = "10") -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(CGSize(width: 200, height: 311), false, 0)
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: 200, height: 312), false, 0)
             ScorecardStyleKit.drawCard(color3: color3, holeNumber: holeNumber, name1: name1, name2: name2, player1Hole1: player1Hole1, player1Hole2: player1Hole2, player1Hole3: player1Hole3, player1Hole4: player1Hole4, player1Hole5: player1Hole5, player1Hole6: player1Hole6, player1Hole7: player1Hole7, player1Hole8: player1Hole8, player1Hole9: player1Hole9, player2Hole1: player2Hole1, player2Hole2: player2Hole2, player2Hole3: player2Hole3, player2Hole4: player2Hole4, player2Hole5: player2Hole5, player2Hole6: player2Hole6, player2Hole7: player2Hole7, player2Hole8: player2Hole8, player2Hole9: player2Hole9, player1Total: player1Total, player2Total: player2Total)
 
         let imageOfCard = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
 
         return imageOfCard
-    }
-
-    public dynamic class func imageOfCard2(color3: UIColor = UIColor(red: 0.012, green: 0.549, blue: 0.875, alpha: 1.000)) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(CGSize(width: 302, height: 457), false, 0)
-            ScorecardStyleKit.drawCard2(color3: color3)
-
-        let imageOfCard2 = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-
-        return imageOfCard2
     }
 
     public dynamic class var imageOfContinueButton: UIImage {
@@ -1456,7 +887,7 @@ public class ScorecardStyleKit : NSObject {
     }
 
     public dynamic class func imageOfHoleInfo(color3: UIColor = UIColor(red: 0.012, green: 0.549, blue: 0.875, alpha: 1.000), parHole1: String = "3", parHole2: String = "3", parHole3: String = "3", parHole4: String = "3", parHole5: String = "3", parHole6: String = "3", parHole7: String = "3", parHole8: String = "3", parHole9: String = "3") -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(CGSize(width: 35, height: 242), false, 0)
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: 35, height: 241), false, 0)
             ScorecardStyleKit.drawHoleInfo(color3: color3, parHole1: parHole1, parHole2: parHole2, parHole3: parHole3, parHole4: parHole4, parHole5: parHole5, parHole6: parHole6, parHole7: parHole7, parHole8: parHole8, parHole9: parHole9)
 
         let imageOfHoleInfo = UIGraphicsGetImageFromCurrentImageContext()!

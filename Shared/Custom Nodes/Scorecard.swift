@@ -77,6 +77,7 @@ class Scorecard: SKScene {
                           player2Hole7: player2Strokes[safe: 6]?.string ?? shotsDefault,
                           player2Hole8: player2Strokes[safe: 7]?.string ?? shotsDefault,
                           player2Hole9: player2Strokes[safe: 8]?.string ?? shotsDefault,
+                        
                           player1Total: player1Strokes.reduce(0, +).string!,
                           player2Total: player2Strokes.reduce(0, +).string!)
 
@@ -123,7 +124,7 @@ class Scorecard: SKScene {
     }
     
     func showHoleInfo() {
-        let slide = SKAction.moveBy(x: -50, y: 0, duration: 0.8)
+        let slide = SKAction.moveBy(x: -48, y: 0, duration: 0.8)
         slide.timingMode = .easeOut
         
         infoPanel.run(slide)

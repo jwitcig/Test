@@ -17,12 +17,6 @@ class ShotToken: SKSpriteNode {
             return #imageLiteral(resourceName: "Eagle")
         } else if shots == par - 1 {
             return #imageLiteral(resourceName: "Birdie")
-        } else if shots == par {
-            return #imageLiteral(resourceName: "Par")
-        } else if shots == par + 1 {
-            return #imageLiteral(resourceName: "Bogey")
-        } else if shots == par - 2 {
-            return #imageLiteral(resourceName: "DoubleBogey")
         }
         return nil
     }

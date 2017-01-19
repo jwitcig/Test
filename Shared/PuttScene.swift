@@ -551,7 +551,6 @@ class PuttScene: SKScene {
         let cancel = UITapGestureRecognizer(target: self, action: #selector(PuttScene.cancelShot(recognizer:)))
         view?.addGestureRecognizer(cancel)
         
-        
         // if no ball tracking, move camera toward ball
         if !isBallTrackingEnabled {
             let ballPosition = convert(ball.position, from: ball.parent!)
@@ -562,7 +561,6 @@ class PuttScene: SKScene {
                 camera?.run(pan, withKey: "trackingEnabler")
             }
         }
-
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -854,7 +852,6 @@ extension PuttScene: SKPhysicsContactDelegate {
             
             shotIndicator.removeFromParent()
             
-                    
             let ballInHoleKey = "spiral"
             
             var ballPosition: CGPoint {
@@ -867,12 +864,12 @@ extension PuttScene: SKPhysicsContactDelegate {
             
             lockedDistanceToHole = distance
             
-            let delay = SKAction.wait(forDuration: 0.005)
+            let delay = SKAction.wait(forDuration: 0.05)
             let move = SKAction.run {
 //                let ballPosition = hole.parent!.convert(self.ball.position, from: self.ball.parent!)
 //
 //                let distance = ballPosition.distance(toPoint: hole.position)-1
-                guard lockedDistanceToHole > 1, !self.holeComplete else {
+                guard lockedDistanceToHole > 1 && !self.holeComplete else {
                     self.holeComplete = true
                     
                     self.ball.removeAction(forKey: ballInHoleKey)
@@ -895,12 +892,11 @@ extension PuttScene: SKPhysicsContactDelegate {
                     return
                 }
                 
-                
                 if let joint = holeCupConstraint, let index = self.ball.constraints?.index(of: joint) {
                     self.ball.constraints?.remove(at: index)
                 }
                 
-                lockedDistanceToHole -= 0.4
+                lockedDistanceToHole -= 2
                 lockedDistanceToHole = lockedDistanceToHole < distance ? lockedDistanceToHole : distance
                 
                 let range = SKRange(upperLimit: lockedDistanceToHole)
@@ -934,6 +930,7 @@ extension PuttScene: SKPhysicsContactDelegate {
                 pulse.run(sequence)
             }
         }
+        
         holeComplete = true
     }
     
@@ -994,7 +991,7 @@ extension PuttScene: SKPhysicsContactDelegate {
         let duration: TimeInterval = 0.8
         scorecard.children.filter{$0 != scorecard.token}.forEach {
             let scale = camera!.xScale
-            $0.setScale(scale)
+//            $0.setScale(scale)
             
             let x = ($0.position.x * scale) + camera!.position.x
             let y = ($0.position.y * scale) + camera!.position.y
