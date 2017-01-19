@@ -19,6 +19,7 @@
 		8B1162491E2E06DC005520DB /* nebulaHole9-9.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B1162401E2E06DC005520DB /* nebulaHole9-9.svg */; };
 		8B3899F11E2EF3A8002E63CE /* ballRollingFadeInOut.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B3899EF1E2EF3A3002E63CE /* ballRollingFadeInOut.mp3 */; };
 		8B40C9821E2F6DA70022E4ED /* NebulaCloud.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B40C9811E2F6DA70022E4ED /* NebulaCloud.sks */; };
+		8B4BF5B11E3049450045FD56 /* ScorecardStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4BF5B01E3049450045FD56 /* ScorecardStyleKit.swift */; };
 		8B63C04C1E2E2ECB004C028C /* timberHole1-1.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0431E2E2ECB004C028C /* timberHole1-1.svg */; };
 		8B63C04D1E2E2ECB004C028C /* timberHole1-1.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0431E2E2ECB004C028C /* timberHole1-1.svg */; };
 		8B63C04E1E2E2ECB004C028C /* timberHole2-2.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B63C0441E2E2ECB004C028C /* timberHole2-2.svg */; };
@@ -53,7 +54,6 @@
 		8B985A7F1E2E39480047CA7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B985A7D1E2E39480047CA7B /* GoogleService-Info.plist */; };
 		8BA977C91E2F3C00002F314E /* coinSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8BA977C71E2F3B6D002F314E /* coinSound.wav */; };
 		8BA977CC1E2F412D002F314E /* ballDrop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BA977CA1E2F412B002F314E /* ballDrop.mp3 */; };
-		8BA977CE1E2F5D7E002F314E /* ScorecardStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA977CD1E2F5D7E002F314E /* ScorecardStyleKit.swift */; };
 		8BB587041E2F3AB400FEF4EA /* blazeHole1-1.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8BB586F21E2F3AB100FEF4EA /* blazeHole1-1.svg */; };
 		8BB587051E2F3AB400FEF4EA /* blazeHole2-2.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8BB586F31E2F3AB100FEF4EA /* blazeHole2-2.svg */; };
 		8BB587061E2F3AB400FEF4EA /* blazeHole3-3.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8BB586F41E2F3AB100FEF4EA /* blazeHole3-3.svg */; };
@@ -215,6 +215,7 @@
 		8B35A2311E218CF90063520C /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		8B3899EF1E2EF3A3002E63CE /* ballRollingFadeInOut.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ballRollingFadeInOut.mp3; sourceTree = "<group>"; };
 		8B40C9811E2F6DA70022E4ED /* NebulaCloud.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = NebulaCloud.sks; sourceTree = "<group>"; };
+		8B4BF5B01E3049450045FD56 /* ScorecardStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScorecardStyleKit.swift; sourceTree = "<group>"; };
 		8B5799161E2A0F850083228D /* Legend of Ace - Desert LocationCasual Environmental Ambience by DFAD.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Legend of Ace - Desert LocationCasual Environmental Ambience by DFAD.mp3"; sourceTree = "<group>"; };
 		8B5799171E2A0F850083228D /* Wind_StayOnBeat.com.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Wind_StayOnBeat.com.mp3; sourceTree = "<group>"; };
 		8B5799191E2A0F850083228D /* click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = click.mp3; sourceTree = "<group>"; };
@@ -286,7 +287,6 @@
 		8B9FD4541E2A390F00FE4D3D /* FlagBobbing.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FlagBobbing.sks; sourceTree = "<group>"; };
 		8BA977C71E2F3B6D002F314E /* coinSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = coinSound.wav; path = ../coinSound.wav; sourceTree = "<group>"; };
 		8BA977CA1E2F412B002F314E /* ballDrop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ballDrop.mp3; sourceTree = "<group>"; };
-		8BA977CD1E2F5D7E002F314E /* ScorecardStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScorecardStyleKit.swift; sourceTree = "<group>"; };
 		8BB586F21E2F3AB100FEF4EA /* blazeHole1-1.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "blazeHole1-1.svg"; sourceTree = "<group>"; };
 		8BB586F31E2F3AB100FEF4EA /* blazeHole2-2.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "blazeHole2-2.svg"; sourceTree = "<group>"; };
 		8BB586F41E2F3AB100FEF4EA /* blazeHole3-3.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "blazeHole3-3.svg"; sourceTree = "<group>"; };
@@ -691,7 +691,7 @@
 			children = (
 				8B1162371E2E06BA005520DB /* SVGs */,
 				8B9620361E1C605F00678257 /* LogoStyleKit.swift */,
-				8BA977CD1E2F5D7E002F314E /* ScorecardStyleKit.swift */,
+				8B4BF5B01E3049450045FD56 /* ScorecardStyleKit.swift */,
 				8B9620311E1C603400678257 /* SharedAssets.xcassets */,
 				8B5799141E2A0F850083228D /* Audio */,
 				8B961F231E1C601600678257 /* Fonts */,
@@ -1140,6 +1140,7 @@
 					8BD652641E2D92A3001FA373 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 349WFX4WJR;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Manual;
 					};
 					8BD6526D1E2D92A3001FA373 = {
@@ -1382,7 +1383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BD652941E2D93AE001FA373 /* GameViewController.swift in Sources */,
-				8BA977CE1E2F5D7E002F314E /* ScorecardStyleKit.swift in Sources */,
+				8B4BF5B11E3049450045FD56 /* ScorecardStyleKit.swift in Sources */,
 				8BD652AC1E2D93AE001FA373 /* Ball.swift in Sources */,
 				8BD652961E2D93AE001FA373 /* LogoStyleKit.swift in Sources */,
 				8BD652AF1E2D93AE001FA373 /* Wall.swift in Sources */,
@@ -1477,14 +1478,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 349WFX4WJR;
 				INFOPLIST_FILE = MrPutt/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jwitapps.MrPutt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "51ba0a67-d0ed-4ea3-b7f3-13cfa1bd2817";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.jwitapps.MrPutt";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1497,11 +1501,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 349WFX4WJR;
 				INFOPLIST_FILE = MrPutt/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jwitapps.MrPutt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "fe55cbea-9f3e-46db-8485-06d191e8e7d3";
