@@ -26,6 +26,9 @@
 		8B13C6BD1E30878A00FAD4BB /* timberHole9-9.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B13C6B41E30878A00FAD4BB /* timberHole9-9.svg */; };
 		8B13C6BF1E30878A00FAD4BB /* timberHole5-5.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B13C6B61E30878A00FAD4BB /* timberHole5-5.svg */; };
 		8B3899F11E2EF3A8002E63CE /* ballRollingFadeInOut.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B3899EF1E2EF3A3002E63CE /* ballRollingFadeInOut.mp3 */; };
+		8B3D39A51E30AA7500959124 /* golfSwingHit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B1F32E31E30A9A2007C27BD /* golfSwingHit.wav */; };
+		8B3D39A61E30AA7B00959124 /* scorecard2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B1F32DF1E30A918007C27BD /* scorecard2.wav */; };
+		8B3D39A71E30AA8700959124 /* win.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B1F32E11E30A953007C27BD /* win.wav */; };
 		8B3ED4401E307F3F00564D7F /* AsteroidLarge.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B3ED43F1E307F3F00564D7F /* AsteroidLarge.sks */; };
 		8B3ED4421E30827C00564D7F /* Leaves1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B3ED4411E30827C00564D7F /* Leaves1.sks */; };
 		8B3ED4451E30834700564D7F /* Leaves2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B3ED4431E30834700564D7F /* Leaves2.sks */; };
@@ -88,9 +91,8 @@
 		8BD652A11E2D93AE001FA373 /* woodHit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B57991E1E2A0F850083228D /* woodHit.mp3 */; };
 		8BD652A31E2D93AE001FA373 /* portalAmbience.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B5799211E2A0F850083228D /* portalAmbience.mp3 */; };
 		8BD652A41E2D93AE001FA373 /* portalTransfer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B5799221E2A0F850083228D /* portalTransfer.mp3 */; };
-		8BD652A51E2D93AE001FA373 /* scoreCard.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B5799241E2A0F850083228D /* scoreCard.mp3 */; };
+		8BD652A51E2D93AE001FA373 /* scorecard.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B5799241E2A0F850083228D /* scorecard.mp3 */; };
 		8BD652A61E2D93AE001FA373 /* gameOver.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B5799261E2A0F850083228D /* gameOver.mp3 */; };
-		8BD652A71E2D93AE001FA373 /* winGame.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B5799271E2A0F850083228D /* winGame.mp3 */; };
 		8BD652A81E2D93AE001FA373 /* Bebas.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F211E1C601600678257 /* Bebas.ttf */; };
 		8BD652A91E2D93AE001FA373 /* Neutra2Display-Titled.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F221E1C601600678257 /* Neutra2Display-Titled.otf */; };
 		8BD652AA1E2D93AE001FA373 /* Actions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B961F241E1C601600678257 /* Actions.plist */; };
@@ -206,6 +208,9 @@
 		8B13C6B31E30878A00FAD4BB /* timberHole8-8.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole8-8.svg"; sourceTree = "<group>"; };
 		8B13C6B41E30878A00FAD4BB /* timberHole9-9.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole9-9.svg"; sourceTree = "<group>"; };
 		8B13C6B61E30878A00FAD4BB /* timberHole5-5.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "timberHole5-5.svg"; sourceTree = "<group>"; };
+		8B1F32DF1E30A918007C27BD /* scorecard2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = scorecard2.wav; sourceTree = "<group>"; };
+		8B1F32E11E30A953007C27BD /* win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = win.wav; sourceTree = "<group>"; };
+		8B1F32E31E30A9A2007C27BD /* golfSwingHit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = golfSwingHit.wav; sourceTree = "<group>"; };
 		8B25439A1E2D904600326E7B /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		8B2543C01E2D918800326E7B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B279D2D1E2724C30094DC62 /* Scorecard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scorecard.swift; sourceTree = "<group>"; };
@@ -232,9 +237,8 @@
 		8B57991E1E2A0F850083228D /* woodHit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = woodHit.mp3; sourceTree = "<group>"; };
 		8B5799211E2A0F850083228D /* portalAmbience.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = portalAmbience.mp3; sourceTree = "<group>"; };
 		8B5799221E2A0F850083228D /* portalTransfer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = portalTransfer.mp3; sourceTree = "<group>"; };
-		8B5799241E2A0F850083228D /* scoreCard.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = scoreCard.mp3; sourceTree = "<group>"; };
+		8B5799241E2A0F850083228D /* scorecard.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = scorecard.mp3; sourceTree = "<group>"; };
 		8B5799261E2A0F850083228D /* gameOver.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gameOver.mp3; sourceTree = "<group>"; };
-		8B5799271E2A0F850083228D /* winGame.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = winGame.mp3; sourceTree = "<group>"; };
 		8B5799421E2A18D30083228D /* BallDrop.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BallDrop.sks; sourceTree = "<group>"; };
 		8B5F8B401E22F925009C262F /* HoleTile.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HoleTile.sks; sourceTree = "<group>"; };
 		8B6387071E21ECEE0059CFD2 /* SettingsButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsButton.xib; sourceTree = "<group>"; };
@@ -599,6 +603,7 @@
 			isa = PBXGroup;
 			children = (
 				8B57991C1E2A0F850083228D /* clubHit.wav */,
+				8B1F32E31E30A9A2007C27BD /* golfSwingHit.wav */,
 				8B3899EF1E2EF3A3002E63CE /* ballRollingFadeInOut.mp3 */,
 				8B57991D1E2A0F850083228D /* softWall.mp3 */,
 				8B57991E1E2A0F850083228D /* woodHit.mp3 */,
@@ -620,7 +625,8 @@
 		8B5799231E2A0F850083228D /* UI Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				8B5799241E2A0F850083228D /* scoreCard.mp3 */,
+				8B5799241E2A0F850083228D /* scorecard.mp3 */,
+				8B1F32DF1E30A918007C27BD /* scorecard2.wav */,
 				8BA977C71E2F3B6D002F314E /* coinSound.wav */,
 			);
 			path = "UI Sounds";
@@ -630,7 +636,7 @@
 			isa = PBXGroup;
 			children = (
 				8B5799261E2A0F850083228D /* gameOver.mp3 */,
-				8B5799271E2A0F850083228D /* winGame.mp3 */,
+				8B1F32E11E30A953007C27BD /* win.wav */,
 			);
 			path = "Win-Loss";
 			sourceTree = "<group>";
@@ -1198,6 +1204,7 @@
 				8BD652C61E2D93AE001FA373 /* Grid.sks in Resources */,
 				8BD652D31E2D9660001FA373 /* MainInterface.storyboard in Resources */,
 				8B1162491E2E06DC005520DB /* nebulaHole9-9.svg in Resources */,
+				8B3D39A61E30AA7B00959124 /* scorecard2.wav in Resources */,
 				8BB5870C1E2F3AB400FEF4EA /* blazeHole9-9.svg in Resources */,
 				8B13C6BC1E30878A00FAD4BB /* timberHole8-8.svg in Resources */,
 				8BD652CA1E2D93AE001FA373 /* HoleTile.sks in Resources */,
@@ -1218,10 +1225,10 @@
 				8BB5870A1E2F3AB400FEF4EA /* blazeHole7-7.svg in Resources */,
 				8B1162451E2E06DC005520DB /* nebulaHole5-5.svg in Resources */,
 				8BD6528E1E2D93AE001FA373 /* SettingsButton.xib in Resources */,
+				8B3D39A71E30AA8700959124 /* win.wav in Resources */,
 				8BD652A31E2D93AE001FA373 /* portalAmbience.mp3 in Resources */,
 				8BF679D31E2D96FB00EF44FE /* Frost-Hole2.sks in Resources */,
 				8BD652C41E2D93AE001FA373 /* iceHit.sks in Resources */,
-				8BD652A71E2D93AE001FA373 /* winGame.mp3 in Resources */,
 				8B3ED4401E307F3F00564D7F /* AsteroidLarge.sks in Resources */,
 				8BF679D91E2D96FB00EF44FE /* Frost-Hole8.sks in Resources */,
 				8BD652AB1E2D93AE001FA373 /* HolePars.plist in Resources */,
@@ -1238,7 +1245,7 @@
 				8BB587041E2F3AB400FEF4EA /* blazeHole1-1.svg in Resources */,
 				8B1162421E2E06DC005520DB /* nebulaHole2-2.svg in Resources */,
 				8BD652C51E2D93AE001FA373 /* Ball.sks in Resources */,
-				8BD652A51E2D93AE001FA373 /* scoreCard.mp3 in Resources */,
+				8BD652A51E2D93AE001FA373 /* scorecard.mp3 in Resources */,
 				8BD652D51E2D9664001FA373 /* PlaceholderiMessageAssets.xcassets in Resources */,
 				8BF679D81E2D96FB00EF44FE /* Frost-Hole7.sks in Resources */,
 				8B9C6F6E1E30952B0065D205 /* timberHole1-1.svg in Resources */,
@@ -1280,6 +1287,7 @@
 				8BD652A91E2D93AE001FA373 /* Neutra2Display-Titled.otf in Resources */,
 				8BD652891E2D93AE001FA373 /* CoursePreviewView.xib in Resources */,
 				8BD652C81E2D93AE001FA373 /* Hill.sks in Resources */,
+				8B3D39A51E30AA7500959124 /* golfSwingHit.wav in Resources */,
 				8BF679DA1E2D96FB00EF44FE /* Frost-Hole9.sks in Resources */,
 				8BD652911E2D93AE001FA373 /* UserControlsView.xib in Resources */,
 				8B13C6BB1E30878A00FAD4BB /* timberHole7-7.svg in Resources */,
