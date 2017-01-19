@@ -8,15 +8,17 @@
 
 import SpriteKit
 
+import JWSwiftTools
+
 extension UIColor {
     var r: CGFloat {
-        return cgColor.components?[0] ?? 0
+        return cgColor.components?[safe: 0] ?? 0
     }
     var g: CGFloat {
-        return cgColor.components?[1] ?? 0
+        return cgColor.components?[safe: 1] ?? 0
     }
     var b: CGFloat {
-        return cgColor.components?[2] ?? 0
+        return cgColor.components?[safe: 2] ?? 0
     }
 }
 

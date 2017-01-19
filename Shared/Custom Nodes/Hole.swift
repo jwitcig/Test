@@ -12,16 +12,22 @@ import UIKit
 class Hole: SKSpriteNode {
     static let name = "hole"
     
+    lazy var bodyPiece: SKSpriteNode = {
+        return self.childNode(withName: "bodyPiece")! as! SKSpriteNode
+    }()
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        physicsBody = adjustedPhysicsBody()
+        physicsBody = nil
+        
+        bodyPiece.physicsBody = adjustedPhysicsBody()
     }
     
     func adjustedPhysicsBody() -> SKPhysicsBody? {
-        physicsBody?.categoryBitMask = Category.hole.rawValue
-        physicsBody?.collisionBitMask = Category.none.rawValue
-        physicsBody?.contactTestBitMask = Category.ball.rawValue
-        return physicsBody
+        bodyPiece.physicsBody?.categoryBitMask = Category.hole.rawValue
+        bodyPiece.physicsBody?.collisionBitMask = Category.none.rawValue
+        bodyPiece.physicsBody?.contactTestBitMask = Category.ball.rawValue
+        return bodyPiece.physicsBody
     }
 }
