@@ -79,9 +79,20 @@ class GameViewController: UIViewController {
         toolsContainer.addSubview(settings)
         toolsContainer.addSubview(controls)
         
-        menuHiddenConstraints = constrain(toolsContainer, settings, controls) {
+        hud = HUDView.create(par: 0)
+        toolsContainer.addSubview(hud)
+        constrain(hud, toolsContainer) {
+            $0.trailing == $1.trailing - 10
+            
+            $0.width == 120
+            $0.height == 40
+        }
+        hud.isHidden = true
+        
+        menuHiddenConstraints = constrain(toolsContainer, settings, controls, hud) {
             $1.bottom == $0.top
             $2.bottom == $0.top
+            $3.bottom == $0.top
         }
         
         constrain(toolsContainer, settings, controls) {
@@ -97,24 +108,13 @@ class GameViewController: UIViewController {
         
         menuHiddenConstraints.active = false
         
-        constrain(toolsContainer, settings, controls) {
+        constrain(toolsContainer, settings, controls, hud) {
             $1.top == $0.top
             $2.top == $0.top
+            $3.top == $0.top + 10
         }
         
         UIView.animate(withDuration: 0.4, delay: 2, usingSpringWithDamping: 0.6, initialSpringVelocity: 20, options: .curveEaseInOut, animations: toolsContainer.layoutIfNeeded, completion: nil)
-        
-        hud = HUDView.create(par: 0)
-        toolsContainer.addSubview(hud)
-        constrain(hud, toolsContainer) {
-            $0.top == $1.top + 10
-            $0.trailing == $1.trailing - 10
-            
-            $0.width == 120
-            $0.height == 40
-            
-        }
-        hud.isHidden = true
         
         let waitingForOpponent = WaitingForOpponentView()
         view.addSubview(waitingForOpponent)

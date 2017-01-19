@@ -90,27 +90,7 @@ class MessagesViewController: MSMessagesAppViewController {
     }
     
     override func didTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
-        switch presentationStyle {
-        case .compact:
-            if let controller = gameController {
-                controller.tearDown()
-                throwAway(controller: controller)
-                gameController = nil
-            }
-            
-            if let controller = courseController {
-                throwAway(controller: controller)
-                courseController = nil
-            }
-            
-            let controller = createCourseSelectionController()
-            controller.mainController = self
-            courseController = controller
-            present(controller)
-
-        default:
-            break
-        }
+        
     }
 }
 
