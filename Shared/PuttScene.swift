@@ -454,16 +454,16 @@ class PuttScene: SKScene {
             // check what camera bounds can be set, set them
             passivelyEnableCameraBounds()
 
-            // reapplies ball tracking constraint, needs to scale with scene
-            if isBallTrackingEnabled {
-                if let constraint = ballTracking, let index = camera.constraints?.index(of: constraint) {
-                    camera.constraints?.remove(at: index)
-                }
-                
-                let range = SKRange(value: 0, variance: ballFreedomRadius)
-                ballTracking = SKConstraint.distance(range, to: ball)
-                camera.constraints?.insert(ballTracking!, at: 0)
-            }
+//            // reapplies ball tracking constraint, needs to scale with scene
+//            if isBallTrackingEnabled {
+//                if let constraint = ballTracking, let index = camera.constraints?.index(of: constraint) {
+//                    camera.constraints?.remove(at: index)
+//                }
+//                
+//                let range = SKRange(value: 0, variance: ballFreedomRadius)
+//                ballTracking = SKConstraint.distance(range, to: ball)
+//                camera.constraints?.insert(ballTracking!, at: 0)
+//            }
         }
     }
 
@@ -550,6 +550,19 @@ class PuttScene: SKScene {
         
         let cancel = UITapGestureRecognizer(target: self, action: #selector(PuttScene.cancelShot(recognizer:)))
         view?.addGestureRecognizer(cancel)
+        
+        
+        // if no ball tracking, move camera toward ball
+        if !isBallTrackingEnabled {
+            let ballPosition = convert(ball.position, from: ball.parent!)
+            
+            if ballPosition.distance(toPoint: camera!.position) > ballFreedomRadius {
+                let pan = SKAction.move(to: ballPosition, duration: 1)
+                pan.timingMode = .easeInEaseOut
+                camera?.run(pan, withKey: "trackingEnabler")
+            }
+        }
+
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -625,15 +638,6 @@ class PuttScene: SKScene {
                      position: convert(ball.position, from: ball.parent!))
         // shot data tracked for sending
         shots.append(shot)
-        
-        // if no ball tracking, move camera toward ball
-        if !isBallTrackingEnabled {
-            let ballPosition = convert(ball.position, from: ball.parent!)
-            
-            let pan = SKAction.move(to: ballPosition, duration: 1)
-            pan.timingMode = .easeIn
-            camera?.run(pan, withKey: "trackingEnabler")
-        }
     }
     
     // MARK: Game Loop
@@ -644,6 +648,12 @@ class PuttScene: SKScene {
         ballPrePhysicsVelocity = ball.physicsBody?.velocity ?? .zero
         
         if let body = ball.physicsBody, body.velocity.magnitude < 5.0 {
+            
+            if let ballTracking = ballTracking, let index = camera?.constraints?.index(of: ballTracking), body.isResting {
+                camera?.constraints?.remove(at: index)
+                self.ballTracking = nil
+            }
+            
             if shotIndicator.ballIndicator.alpha != 1.0 {
                 updateShotIndicatorPosition()
                 shotIndicator.ballStopped()
@@ -653,6 +663,12 @@ class PuttScene: SKScene {
             if ballPosition.distance(toPoint: hole.position) > 150, !flag.isWiggling {
                 flag.lower()
             }
+        }
+        
+        let ballPosition = convert(ball.position, from: ball.parent!)
+        let distanceFromCamera = ballPosition.distance(toPoint: camera!.position)
+        if adjustingShot, distanceFromCamera <= ballFreedomRadius {
+            passivelyEnableBallTracking()
         }
     }
     
@@ -668,9 +684,7 @@ class PuttScene: SKScene {
             reflectionVelocity = nil
         }
         
-        if !isBallTrackingEnabled {
-            passivelyEnableBallTracking()
-        } else if isBallTrackingEnabled && !isCameraBounded {
+        if !isCameraBounded {
             passivelyEnableCameraBounds()
         }
     }
@@ -680,10 +694,10 @@ class PuttScene: SKScene {
         
         // if ball is withing tracking range, start tracking
         guard let _ = camera?.action(forKey: "trackingEnabler"),
-            camera!.position.distance(toPoint: ballPosition) < ballFreedomRadius else {
+            camera!.position.distance(toPoint: ballPosition) <= ballFreedomRadius else {
             return
         }
-        let tracking = SKConstraint.distance(SKRange(value: 0, variance: ballFreedomRadius), to: ball)
+        let tracking = SKConstraint.distance(SKRange(upperLimit: ballFreedomRadius), to: ball)
         if let _ = camera?.constraints {
             camera?.constraints?.insert(tracking, at: 0)
         } else {
@@ -695,44 +709,35 @@ class PuttScene: SKScene {
     }
     
     func passivelyEnableCameraBounds() {
-        let cameraSize = CGSize(width: size.width * camera!.xScale, height: size.height * camera!.yScale)
+        let cameraSize = CGSize(width: size.width * camera!.xScale,
+                               height: size.height * camera!.yScale)
         
-        var xRange: SKRange!
-        var yRange: SKRange!
-        
-        if cameraLimiter.width < cameraSize.width {
+        var lowerX = cameraLimiter.minX - cameraLimiter.width/2 + cameraSize.width/2
+        var upperX = cameraLimiter.maxX - cameraLimiter.width/2 - cameraSize.width/2
 
-        } else {
-//            xRange = SKRange(lowerLimit: cameraLimiter.minX + cameraSize.width/2,
-//                             upperLimit: cameraLimiter.maxX - cameraSize.width/2)
+        if lowerX > upperX {
+            lowerX = 0
+            upperX = 0
         }
-        xRange = SKRange(lowerLimit: cameraLimiter.minX - cameraLimiter.width/2 + cameraSize.width/2,
-                         upperLimit: cameraLimiter.maxX - cameraLimiter.width/2 - cameraSize.width/2)
-
+      
+        var lowerY = cameraLimiter.minY - cameraLimiter.size.height/2 + cameraSize.height/2
+        var upperY = cameraLimiter.maxY - cameraLimiter.size.height/2 - cameraSize.height/2
         
-        if cameraLimiter.height < cameraSize.height {
-
-        } else {
-//            yRange = SKRange(lowerLimit: cameraLimiter.minY + cameraSize.height/2,
-//                             upperLimit: cameraLimiter.maxY - cameraSize.height/2)
-        }
-        yRange = SKRange(lowerLimit: cameraLimiter.minY - cameraLimiter.size.height/2 + cameraSize.height/2,
-                         upperLimit: cameraLimiter.maxY - cameraLimiter.size.height/2 - cameraSize.height/2)
-
-        camera?.constraints = camera?.constraints ?? []
-        
-        if let range = xRange /*, range.closedInterval.contains(camera!.position.x), cameraXBound == nil */ {
-            
-            cameraXBound = SKConstraint.positionX(range)
-            
-            camera?.constraints?.insert(cameraXBound!, at: camera!.constraints!.count)
+        if lowerY > upperY {
+            lowerY = 0
+            upperY = 0
         }
         
-        if let range = yRange /*, range.closedInterval.contains(camera!.position.y), cameraYBound == nil */ {
-            
-            cameraYBound = SKConstraint.positionY(range)
-            camera?.constraints?.insert(cameraYBound!, at: camera!.constraints!.count)
-        }
+        let xRange = SKRange(lowerLimit: lowerX, upperLimit: upperX)
+        let yRange = SKRange(lowerLimit: lowerY, upperLimit: upperY)
+
+        cameraXBound = SKConstraint.positionX(xRange)
+        cameraYBound = SKConstraint.positionY(yRange)
+ 
+        var constraints = camera?.constraints ?? []
+        constraints.append(cameraXBound!)
+        constraints.append(cameraYBound!)
+        camera?.constraints = constraints
     }
 }
 
