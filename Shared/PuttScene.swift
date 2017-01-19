@@ -63,7 +63,7 @@ class PuttScene: SKScene {
             let par = HoleInfo.par(forHole: holeNumber, in: course)
             if shots.count > par {
                 UIView.animate(withDuration: 0.5) {
-                    self.hud.backgroundColor = .red
+                    self.hud.strokeLabel.textColor = .red
                 }
             }
         }
@@ -419,7 +419,7 @@ class PuttScene: SKScene {
     
     func setDebugOptions(on view: SKView) {
         view.showsFPS = true
-        view.showsPhysics = true
+        view.showsPhysics = false
         view.backgroundColor = .black
     }
     
@@ -761,11 +761,11 @@ var ballPrePhysicsVelocity: CGVector = .zero
 
 var reflectionVelocity: CGVector? = nil
 
-var lastFrameContact: SKPhysicsContact?
-
 var holeCupConstraint: SKConstraint?
 
 var lockedDistanceToHole: CGFloat = 10000000
+
+var lastWallCollision: Date?
 
 extension PuttScene: SKPhysicsContactDelegate {
    
@@ -817,8 +817,6 @@ extension PuttScene: SKPhysicsContactDelegate {
     }
     
     func ballHitWall(_ wall: SKNode, contact: SKPhysicsContact) {
-        ball.physicsBody?.applyImpulse(contact.contactNormal * 5)
-    
         let reflected = reflect(velocity: ballPrePhysicsVelocity,
                                  for: contact,
                                  with: wall.physicsBody!)
@@ -829,14 +827,26 @@ extension PuttScene: SKPhysicsContactDelegate {
             let isEffectsOn = settings.value(forKey: Options.effects.rawValue) as? Bool ?? true
             
             if isEffectsOn {
-                let sound = AudioPlayer()
-                sound.play("softWall") {
-                    if let index = self.temporaryPlayers.index(of: sound) {
-                        self.temporaryPlayers.remove(at: index)
+                var shouldPlaySound = true
+                
+                if let lastTime = lastWallCollision {
+                    if lastTime.timeIntervalSinceNow > -0.1 {
+                        shouldPlaySound = false
                     }
                 }
-                sound.volume = (Float(angle) / (.pi / 3.0))
-                temporaryPlayers.append(sound)
+                
+                lastWallCollision = Date()
+                
+                if shouldPlaySound {
+                    let sound = AudioPlayer()
+                    sound.play("softWall") {
+                        if let index = self.temporaryPlayers.index(of: sound) {
+                            self.temporaryPlayers.remove(at: index)
+                        }
+                    }
+                    sound.volume = (Float(angle) / (.pi / 3.0))
+                    temporaryPlayers.append(sound)
+                }
             }
             return
         }
@@ -845,32 +855,31 @@ extension PuttScene: SKPhysicsContactDelegate {
         let isEffectsOn = settings.value(forKey: Options.effects.rawValue) as? Bool ?? true
     
         if isEffectsOn {
-            let sound = AudioPlayer()
-            sound.play("softWall") {
-                if let index = self.temporaryPlayers.index(of: sound) {
-                    self.temporaryPlayers.remove(at: index)
+            var shouldPlaySound = true
+            
+            if let lastTime = lastWallCollision {
+                if lastTime.timeIntervalSinceNow > -0.1 {
+                    shouldPlaySound = false
                 }
             }
-            sound.volume = Float(ball.physicsBody!.velocity.magnitude / 50.0)
-            temporaryPlayers.append(sound)
+            
+            lastWallCollision = Date()
+            
+            if shouldPlaySound {
+                let sound = AudioPlayer()
+                sound.play("softWall") {
+                    if let index = self.temporaryPlayers.index(of: sound) {
+                        self.temporaryPlayers.remove(at: index)
+                    }
+                }
+                sound.volume = Float(ball.physicsBody!.velocity.magnitude / 50.0)
+                temporaryPlayers.append(sound)
+            }
         }
         
-//        if let lastFrame = lastFrameContact {
-//            
-//            let difference = acos(lastFrame.contactNormal • contact.contactNormal)
-//            
-//            if difference > 0.5, difference < 2 {
-//                reflected = reflect(velocity: ballPrePhysicsVelocity,
-//                                    for: lastFrame,
-//                                    with: wall.physicsBody!)
-//            } else {
-//                lastFrameContact = contact
-//            }
-//        } else {
-//            lastFrameContact = contact
-//        }
-        
         reflectionVelocity = reflected * 0.7
+        
+        ball.physicsBody?.applyImpulse(contact.contactNormal * 5)
     }
     
     func ballHitHole(_ hole: Hole, contact: SKPhysicsContact) {
