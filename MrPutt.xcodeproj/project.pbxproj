@@ -30,7 +30,6 @@
 		8B0636861E31C8500034487C /* frostHole1-1.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B06367D1E31C8500034487C /* frostHole1-1.svg */; };
 		8B0636891E31C9740034487C /* ballDrop.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8B0636871E31C9720034487C /* ballDrop.m4a */; };
 		8B1162411E2E06DC005520DB /* nebulaHole1-1.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B1162381E2E06DC005520DB /* nebulaHole1-1.svg */; };
-		8B1162421E2E06DC005520DB /* nebulaHole2-2.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B1162391E2E06DC005520DB /* nebulaHole2-2.svg */; };
 		8B1162431E2E06DC005520DB /* nebulaHole3-3.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B11623A1E2E06DC005520DB /* nebulaHole3-3.svg */; };
 		8B1162441E2E06DC005520DB /* nebulaHole4-4.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B11623B1E2E06DC005520DB /* nebulaHole4-4.svg */; };
 		8B1162451E2E06DC005520DB /* nebulaHole5-5.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B11623C1E2E06DC005520DB /* nebulaHole5-5.svg */; };
@@ -62,6 +61,7 @@
 		8BB5870A1E2F3AB400FEF4EA /* blazeHole7-7.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8BB586F81E2F3AB100FEF4EA /* blazeHole7-7.svg */; };
 		8BB5870B1E2F3AB400FEF4EA /* blazeHole8-8.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8BB586F91E2F3AB100FEF4EA /* blazeHole8-8.svg */; };
 		8BB5870C1E2F3AB400FEF4EA /* blazeHole9-9.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8BB586FA1E2F3AB100FEF4EA /* blazeHole9-9.svg */; };
+		8BC7FE291E31D822005C4F29 /* nebulaHole2-2.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8BC7FE281E31D822005C4F29 /* nebulaHole2-2.svg */; };
 		8BD6526F1E2D92A3001FA373 /* iMessageExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8BD6526E1E2D92A3001FA373 /* iMessageExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8BD652721E2D92A3001FA373 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BCF770B1E03CD0200D48A61 /* Messages.framework */; };
 		8BD652831E2D92EC001FA373 /* PlaceholderAppAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D29256831E1F7A60000FB092 /* PlaceholderAppAssets.xcassets */; };
@@ -193,7 +193,6 @@
 		8B0636871E31C9720034487C /* ballDrop.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = ballDrop.m4a; sourceTree = "<group>"; };
 		8B073B661E1C92B7008BBAE6 /* Hill.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hill.sks; sourceTree = "<group>"; };
 		8B1162381E2E06DC005520DB /* nebulaHole1-1.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "nebulaHole1-1.svg"; sourceTree = "<group>"; };
-		8B1162391E2E06DC005520DB /* nebulaHole2-2.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "nebulaHole2-2.svg"; sourceTree = "<group>"; };
 		8B11623A1E2E06DC005520DB /* nebulaHole3-3.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "nebulaHole3-3.svg"; sourceTree = "<group>"; };
 		8B11623B1E2E06DC005520DB /* nebulaHole4-4.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "nebulaHole4-4.svg"; sourceTree = "<group>"; };
 		8B11623C1E2E06DC005520DB /* nebulaHole5-5.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "nebulaHole5-5.svg"; sourceTree = "<group>"; };
@@ -291,6 +290,7 @@
 		8BBD3B5C1E1DAFAB00688836 /* PortalEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PortalEmitter.sks; sourceTree = "<group>"; };
 		8BBD3B5F1E1DB40A00688836 /* Portal.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Portal.sks; sourceTree = "<group>"; };
 		8BBDBD381E1C93E500878B3A /* Portal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Portal.swift; sourceTree = "<group>"; };
+		8BC7FE281E31D822005C4F29 /* nebulaHole2-2.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "nebulaHole2-2.svg"; sourceTree = "<group>"; };
 		8BCF770B1E03CD0200D48A61 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		8BCF77111E03CD0200D48A61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		8BCF77131E03CD0200D48A61 /* iMessageAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = iMessageAssets.xcassets; sourceTree = "<group>"; };
@@ -505,7 +505,7 @@
 			isa = PBXGroup;
 			children = (
 				8B1162381E2E06DC005520DB /* nebulaHole1-1.svg */,
-				8B1162391E2E06DC005520DB /* nebulaHole2-2.svg */,
+				8BC7FE281E31D822005C4F29 /* nebulaHole2-2.svg */,
 				8B11623A1E2E06DC005520DB /* nebulaHole3-3.svg */,
 				8B11623B1E2E06DC005520DB /* nebulaHole4-4.svg */,
 				8B11623C1E2E06DC005520DB /* nebulaHole5-5.svg */,
@@ -1185,6 +1185,7 @@
 				8B0636861E31C8500034487C /* frostHole1-1.svg in Resources */,
 				8B0636851E31C8500034487C /* frostHole2-2.svg in Resources */,
 				8B0636821E31C8500034487C /* frostHole5-5.svg in Resources */,
+				8BC7FE291E31D822005C4F29 /* nebulaHole2-2.svg in Resources */,
 				8BD652C61E2D93AE001FA373 /* Grid.sks in Resources */,
 				8BD652D31E2D9660001FA373 /* MainInterface.storyboard in Resources */,
 				8B1162491E2E06DC005520DB /* nebulaHole9-9.svg in Resources */,
@@ -1223,7 +1224,6 @@
 				8BD652C31E2D93AE001FA373 /* PortalEmitter.sks in Resources */,
 				8B0636601E31C1AC0034487C /* softWall.m4a in Resources */,
 				8BB587041E2F3AB400FEF4EA /* blazeHole1-1.svg in Resources */,
-				8B1162421E2E06DC005520DB /* nebulaHole2-2.svg in Resources */,
 				8BD652C51E2D93AE001FA373 /* Ball.sks in Resources */,
 				8B06366F1E31C8150034487C /* timberHole7-7.svg in Resources */,
 				8BD652A51E2D93AE001FA373 /* scorecard.mp3 in Resources */,
