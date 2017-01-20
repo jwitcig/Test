@@ -29,6 +29,29 @@ public extension SKRange {
     }
 }
 
+func renderImage(from layer: CALayer) -> UIImage {
+    UIGraphicsBeginImageContextWithOptions(layer.bounds.size, false, 0)
+    
+    layer.render(in: UIGraphicsGetCurrentContext()!)
+    let image = UIGraphicsGetImageFromCurrentImageContext()!
+    
+    UIGraphicsEndImageContext()
+    return image
+}
+
+func reflect(velocity entrance: CGVector, for contact: SKPhysicsContact, with body: SKPhysicsBody) -> CGVector {
+    return reflect(vector: entrance, across: contact.contactNormal, at: contact.contactPoint, offOf: body)
+}
+
+func reflect(vector entrance: CGVector, across normal: CGVector, at point: CGPoint, offOf body: SKPhysicsBody) -> CGVector {
+    
+    let normalized = normal.normalized
+    let dot = entrance • normalized
+    let directed = CGVector(dx: dot*normalized.dx, dy: dot*normalized.dy)
+    let scaled = CGVector(dx: 2*directed.dx, dy: 2*directed.dy)
+    return CGVector(dx: entrance.dx-scaled.dx, dy: entrance.dy-scaled.dy)
+}
+
 class PuttScene: SKScene {
     
     var entities: [GKEntity] = []
@@ -76,7 +99,9 @@ class PuttScene: SKScene {
     
     let audio = AudioManager()
     
-    let gestureManager = GestureManager(delegate: self as! UIGestureRecognizerDelegate)
+    lazy var gestureManager: GestureManager = {
+        return GestureManager(delegate: self as UIGestureRecognizerDelegate)
+    }()
     
     var touchNode = SKNode()
     
@@ -91,13 +116,6 @@ class PuttScene: SKScene {
     }()
     
     var limiter: CameraLimiter!
-    
-    var cameraLimiter: CGRect = .zero
-    
-    var ballTracking: SKConstraint?
-    var isBallTrackingEnabled: Bool {
-        return ballTracking != nil
-    }
     
     var scorecard: Scorecard?
     
@@ -154,7 +172,10 @@ class PuttScene: SKScene {
         ball.visual.node.removeFromParent()
         add(entity: ball)
         
-        limiter = CameraLimiter(camera: camera!, freedomRadius: {
+        let holeData = HoleData(holeNumber: holeNumber, course: course)
+        let size = holeData.size
+        let cameraBox = CGRect(x: 0, y: 0, width: size.width + 100, height: size.height + 100)
+        limiter = CameraLimiter(camera: camera!, boundingBox: cameraBox, freedomRadius: {
             return self.size.width * self.camera!.xScale * 0.4
         })
         
@@ -191,15 +212,12 @@ class PuttScene: SKScene {
         
         flag.wiggle()
         
-        let size = holeSize()
-        cameraLimiter = CGRect(x: 0, y: 0, width: size.width + 100, height: size.height + 100)
-        
         passivelyEnableCameraBounds()
         
-        parse(url: url)
+        holeData.parse(scene: self)
         
-        let ballPosition = ballLocation(url: url)
-        let holePosition = holeLocation(url: url)
+        let ballPosition = holeData.ballLocation
+        let holePosition = holeData.holeLocation
         
         camera?.position = holePosition
         
@@ -234,164 +252,6 @@ class PuttScene: SKScene {
         if let visual = entity.component(ofType: RenderComponent.self) {
             addChild(visual.node)
         }
-    }
-    
-    var url: URL {
-        let coursePrefix = course.name.lowercased()
-        return Bundle(for: PuttScene.self).url(forResource: "\(coursePrefix)Hole\(holeNumber!)-\(holeNumber!)", withExtension: "svg")!
-    }
-    
-    func parse(url: URL) {
-        
-        let paths: [SVGBezierPath] = beziers(url: url).map {
-            SVGBezierPath.paths(fromSVGString: $0).first! as! SVGBezierPath
-        }
-        
-        for path in paths {
-            let layer = CAShapeLayer()
-            layer.path = path.cgPath
-            
-            let size = holeSize()
-            
-            let transform = CGAffineTransform(scaleX: 1, y: -1).translatedBy(x: -size.width/2, y: -size.height/2)
-            
-            let pathCopy = CGMutablePath()
-            pathCopy.addPath(path.cgPath, transform: transform)
-            
-            layer.lineWidth = 2
-            layer.strokeColor = path.svgAttributes["stroke"] as! CGColor?
-            layer.fillColor = path.svgAttributes["fill"] as! CGColor?
-            
-            let physics = SKNode()
-            physics.name = "wall"
-            physics.position = CGPoint(x: 0, y: 0)
-            physics.physicsBody = SKPhysicsBody(edgeLoopFrom: pathCopy)
-            physics.physicsBody?.isDynamic = false
-            physics.physicsBody?.collisionBitMask = Category.ball.rawValue
-            addChild(physics)
-        }
-        
-        let coursePrefix = course.name.lowercased()
-
-        let texture = SKTexture(imageNamed: "\(coursePrefix)Hole\(holeNumber!)")
-        let sprite = SKSpriteNode(texture: texture)
-        sprite.zPosition = -1
-        sprite.position = CGPoint(x: 0, y: 0)
-        addChild(sprite)
-    }
-    
-    func holeLocation(url: URL) -> CGPoint {
-        let data = try! Data(contentsOf: url)
-        let xml = SWXMLHash.parse(data)
-       
-        let hole = all(indexer: xml).filter {
-            var id = ""
-            do {
-                id = try $0.value(ofAttribute: "id") as String
-            } catch { }
-            
-            return id.contains("end")
-        }[0]
-        let x = CGFloat((try! hole.value(ofAttribute: "x") as String).double!)
-        let y = CGFloat((try! hole.value(ofAttribute: "y") as String).double!)
-        
-        let size = holeSize()
-
-        return CGPoint(x: x-size.width/2, y: -(y-size.height/2))
-    }
-    
-    func ballLocation(url: URL) -> CGPoint {
-        let data = try! Data(contentsOf: url)
-        let xml = SWXMLHash.parse(data)
-        
-        
-        let ball = all(indexer: xml).filter {
-            var id = ""
-            do {
-                id = try $0.value(ofAttribute: "id") as String
-            } catch { }
-            
-            return id.contains("ball")
-        }[0]
-        
-        let x = CGFloat((try! ball.value(ofAttribute: "x") as String).double!)
-        let y = CGFloat((try! ball.value(ofAttribute: "y") as String).double!)
-        
-        let size = holeSize()
-        
-        return CGPoint(x: x-size.width/2, y: -(y-size.height/2))
-    }
-    
-    func holeSize() -> CGSize {
-        
-        
-        let data = try! Data(contentsOf: url)
-        let xml = SWXMLHash.parse(data)
-        
-        let svg: XMLIndexer = xml["svg"]
-        
-        let width = try! (svg.value(ofAttribute: "width") as String).int!
-        let height = try! (svg.value(ofAttribute: "height") as String).int!
-        
-        return CGSize(width: width, height: height)
-    }
-    
-    func all(indexer: XMLIndexer, withName name: String? = nil) -> [XMLIndexer] {
-        var indexers: [XMLIndexer] = indexer.children
-        
-        for child in indexer.children {
-            indexers.append(contentsOf: all(indexer: child, withName: name))
-        }
-        
-        if let name = name {
-            return indexers.filter {
-                ($0.element?.name == name) == true
-            }
-        }
-        return indexers
-    }
-    
-    func beziers(url: URL) -> [String] {
-        let data = try! Data(contentsOf: url)
-        let xml = SWXMLHash.parse(data)
-    
-        let allPaths = all(indexer: xml, withName: "path")
-        
-        let strings: [String] = allPaths.map {
-            $0.element!.description
-        }
-        
-        var corrected: [String] = strings.map {
-            guard let startRange = $0.range(of: "stroke=") else { return $0 }
-            
-            let start = $0.index(before: startRange.lowerBound)
-            
-            guard let end = $0.range(of: ")\"", options: .caseInsensitive, range: start..<$0.endIndex, locale: nil) else { return $0 }
-            
-            return $0.replacingCharacters(in: start..<end.upperBound, with: "")
-        }
-            
-        corrected = corrected.map {
-            guard let startRange = $0.range(of: "fill=") else { return $0 }
-            
-            let start = $0.index(before: startRange.lowerBound)
-            
-            guard let end = $0.range(of: ")\"", options: .caseInsensitive, range: start..<$0.endIndex, locale: nil) else { return $0 }
-            
-            return $0.replacingCharacters(in: start..<end.upperBound, with: "")
-        }
-        
-        return corrected
-    }
-    
-    func renderImage(from layer: CALayer) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(layer.bounds.size, false, 0)
-        
-        layer.render(in: UIGraphicsGetCurrentContext()!)
-        let image = UIGraphicsGetImageFromCurrentImageContext()!
-        
-        UIGraphicsEndImageContext()
-        return image
     }
     
     func updateShotIndicatorPosition() {
@@ -460,17 +320,6 @@ class PuttScene: SKScene {
         
             // check what camera bounds can be set, set them
             passivelyEnableCameraBounds()
-
-//            // reapplies ball tracking constraint, needs to scale with scene
-//            if isBallTrackingEnabled {
-//                if let constraint = ballTracking, let index = camera.constraints?.index(of: constraint) {
-//                    camera.constraints?.remove(at: index)
-//                }
-//                
-//                let range = SKRange(value: 0, variance: ballFreedomRadius)
-//                ballTracking = SKConstraint.distance(range, to: ball)
-//                camera.constraints?.insert(ballTracking!, at: 0)
-//            }
         }
     }
 
@@ -556,7 +405,7 @@ class PuttScene: SKScene {
         view?.addGestureRecognizer(cancel)
         
         // if no ball tracking, move camera toward ball
-        if !isBallTrackingEnabled {
+        if !limiter.isBallTrackingEnabled {
             let ballPosition = ball.visual.position(in: self)!
             
             if ballPosition.distance(toPoint: camera!.position) > limiter.freedomRadius {
@@ -608,10 +457,13 @@ class PuttScene: SKScene {
     }
    
     func takeShot(at angle: CGFloat, with power: CGFloat) {
-        print("\(angle) - \(power)")
-        
-        let stroke = CGVector(dx: cos(angle) * power,
-                              dy: sin(angle) * power)
+        let shot = Shot(power: power,
+                        angle: angle,
+                     position: ball.visual.position(in: self)!)
+        // shot data tracked for sending
+        shots.append(shot)
+
+        ball.physics.body.applyImpulse(shot.stroke)
         
         let settings = UserDefaults.standard
         let isEffectsOn = settings.value(forKey: Options.effects.rawValue) as? Bool ?? true
@@ -627,19 +479,11 @@ class PuttScene: SKScene {
             let remove = SKAction.sequence([
                 SKAction.wait(forDuration: 1),
                 SKAction.removeFromParent(),
-                ])
+            ])
             sound.run(SKAction.group([setVolume, SKAction.play(), remove]))
-
+            
             addChild(sound)
         }
-        
-        ball.physics.body.applyImpulse(stroke)
-        
-        let shot = Shot(power: power,
-                        angle: angle,
-                     position: ball.visual.position(in: self)!)
-        // shot data tracked for sending
-        shots.append(shot)
     }
     
     // MARK: Game Loop
@@ -653,9 +497,9 @@ class PuttScene: SKScene {
         
         if body.velocity.magnitude < 5.0 {
             
-            if let ballTracking = ballTracking, let index = camera?.constraints?.index(of: ballTracking), body.isResting {
+            if let ballTracking = limiter.ballTracking, let index = camera?.constraints?.index(of: ballTracking), body.isResting {
                 camera?.constraints?.remove(at: index)
-                self.ballTracking = nil
+                self.limiter.ballTracking = nil
             }
             
             if shotIndicator.ballIndicator.alpha != 1.0 {
@@ -674,11 +518,6 @@ class PuttScene: SKScene {
         if adjustingShot, distanceFromCamera <= limiter.freedomRadius {
             passivelyEnableBallTracking()
         }
-    }
-    
-    override func didSimulatePhysics() {
-        
-        
     }
     
     override func didFinishUpdate() {
@@ -710,12 +549,14 @@ class PuttScene: SKScene {
         }
         camera?.removeAction(forKey: "trackingEnabler")
         
-        ballTracking = tracking
+        limiter.ballTracking = tracking
     }
     
     func passivelyEnableCameraBounds() {
         let cameraSize = CGSize(width: size.width * camera!.xScale,
                                height: size.height * camera!.yScale)
+        
+        let cameraLimiter = limiter.boundingBox
         
         var lowerX = cameraLimiter.minX - cameraLimiter.width/2 + cameraSize.width/2
         var upperX = cameraLimiter.maxX - cameraLimiter.width/2 - cameraSize.width/2
@@ -792,19 +633,6 @@ extension PuttScene: SKPhysicsContactDelegate {
         if let _ = node(withName: Ball.name), let _ = node(withName: Wall.nodeName) {
             
         }
-    }
-    
-    func reflect(velocity entrance: CGVector, for contact: SKPhysicsContact, with body: SKPhysicsBody) -> CGVector {
-        return reflect(vector: entrance, across: contact.contactNormal, at: contact.contactPoint, offOf: body)
-    }
-    
-    func reflect(vector entrance: CGVector, across normal: CGVector, at point: CGPoint, offOf body: SKPhysicsBody) -> CGVector {
-  
-        let normalized = normal.normalized        
-        let dot = entrance • normalized
-        let directed = CGVector(dx: dot*normalized.dx, dy: dot*normalized.dy)
-        let scaled = CGVector(dx: 2*directed.dx, dy: 2*directed.dy)
-        return CGVector(dx: entrance.dx-scaled.dx, dy: entrance.dy-scaled.dy)
     }
     
     func ballHitWall(_ wall: SKNode, contact: SKPhysicsContact) {

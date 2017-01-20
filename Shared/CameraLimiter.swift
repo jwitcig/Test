@@ -12,20 +12,29 @@ class CameraLimiter {
 
     let camera: SKCameraNode
     
+    let boundingBox: CGRect
+    
+    var xBound: SKConstraint?
+    var yBound: SKConstraint?
+
+    var isActive: Bool {
+        return xBound != nil && yBound != nil
+    }
+    
     private let freedomRadiusBlock: ()->CGFloat
     var freedomRadius: CGFloat {
         return freedomRadiusBlock()
     }
     
-    var xBound: SKConstraint?
-    var yBound: SKConstraint?
-    
-    var isActive: Bool {
-        return xBound != nil && yBound != nil
+    var ballTracking: SKConstraint?
+    var isBallTrackingEnabled: Bool {
+        return ballTracking != nil
     }
-    
-    init(camera: SKCameraNode, freedomRadius: @escaping ()->CGFloat) {
+
+    init(camera: SKCameraNode, boundingBox: CGRect, freedomRadius: @escaping ()->CGFloat) {
         self.camera = camera
+        
+        self.boundingBox = boundingBox
         
         self.freedomRadiusBlock = freedomRadius
     }
