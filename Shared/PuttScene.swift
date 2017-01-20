@@ -17,7 +17,6 @@ import FirebaseAnalytics
 import PocketSVG
 import SWXMLHash
 
-
 private var settingsContext = 0
 
 public extension SKRange {
@@ -183,7 +182,7 @@ class PuttScene: SKScene {
         
             let sound = SKAction.run {
                 let audio = AudioPlayer()
-                audio.play("ballDrop") {
+                audio.play("ballDrop", ofType: "m4a") {
                     if let index = self.temporaryPlayers.index(of: audio) {
                         self.temporaryPlayers.remove(at: index)
                     }
