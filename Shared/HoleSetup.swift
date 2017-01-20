@@ -57,8 +57,8 @@ class HoleSetup {
         let music = AudioPlayer()
         music.play("Too Cool")
 
-        scene.backgroundMusic = music
-        scene.backgroundMusic?.volume = 0.2
+        scene.audio.backgroundMusic = music
+        scene.audio.backgroundMusic?.volume = 0.2
         
         let settings = UserDefaults.standard
         let isMusicOn = settings.value(forKey: Options.gameMusic.rawValue) as? Bool ?? true

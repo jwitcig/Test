@@ -148,6 +148,6 @@ class CourseSelectionViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        mainController?.gameController?.scene?.backgroundMusic?.pause()
+        mainController?.gameController?.scene?.audio.backgroundMusic?.pause()
     }
 }

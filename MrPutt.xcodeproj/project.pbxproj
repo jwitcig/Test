@@ -138,6 +138,11 @@
 		8BF679DA1E2D96FB00EF44FE /* Frost-Hole9.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B13B3541E1C891900C0044A /* Frost-Hole9.sks */; };
 		8BF679DB1E2D96FB00EF44FE /* FrostBackground.sks in Resources */ = {isa = PBXBuildFile; fileRef = E87030731E21D07A008A7DDD /* FrostBackground.sks */; };
 		8BF679DC1E2D96FB00EF44FE /* frostOutsideTile.sks in Resources */ = {isa = PBXBuildFile; fileRef = E85FE18F1E28930F008440B7 /* frostOutsideTile.sks */; };
+		8BF9DEB01E320F0800A7CBF8 /* GameplayClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9DEAF1E320F0800A7CBF8 /* GameplayClasses.swift */; };
+		8BF9DEB21E320F3000A7CBF8 /* BallEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9DEB11E320F3000A7CBF8 /* BallEntity.swift */; };
+		8BF9DEB41E32192B00A7CBF8 /* CameraLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9DEB31E32192B00A7CBF8 /* CameraLimiter.swift */; };
+		8BF9DEB61E321B4900A7CBF8 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9DEB51E321B4900A7CBF8 /* AudioManager.swift */; };
+		8BF9DEB81E32204800A7CBF8 /* GestureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9DEB71E32204800A7CBF8 /* GestureManager.swift */; };
 		C25C64895225817792090D61 /* Pods_MrPutt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F495C1ADA843DFFC65FCFC3C /* Pods_MrPutt.framework */; };
 /* End PBXBuildFile section */
 
@@ -297,6 +302,11 @@
 		8BCF77151E03CD0200D48A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BD652651E2D92A3001FA373 /* MrPutt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MrPutt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BD6526E1E2D92A3001FA373 /* iMessageExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = iMessageExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BF9DEAF1E320F0800A7CBF8 /* GameplayClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameplayClasses.swift; sourceTree = "<group>"; };
+		8BF9DEB11E320F3000A7CBF8 /* BallEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallEntity.swift; sourceTree = "<group>"; };
+		8BF9DEB31E32192B00A7CBF8 /* CameraLimiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraLimiter.swift; sourceTree = "<group>"; };
+		8BF9DEB51E321B4900A7CBF8 /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		8BF9DEB71E32204800A7CBF8 /* GestureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureManager.swift; sourceTree = "<group>"; };
 		8F233FA75BF56CABCE8E437B /* Pods-testGolf-iMessageExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGolf-iMessageExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testGolf-iMessageExtension/Pods-testGolf-iMessageExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		8F24A3D33C0A0B644C3537BB /* Pods-MrPutt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MrPutt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MrPutt/Pods-MrPutt.debug.xcconfig"; sourceTree = "<group>"; };
 		90256A5B1AAB50A8F1542411 /* Pods-testGolf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGolf.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testGolf/Pods-testGolf.debug.xcconfig"; sourceTree = "<group>"; };
@@ -826,6 +836,11 @@
 			isa = PBXGroup;
 			children = (
 				8B985A7D1E2E39480047CA7B /* GoogleService-Info.plist */,
+				8BF9DEAF1E320F0800A7CBF8 /* GameplayClasses.swift */,
+				8BF9DEB11E320F3000A7CBF8 /* BallEntity.swift */,
+				8BF9DEB31E32192B00A7CBF8 /* CameraLimiter.swift */,
+				8BF9DEB51E321B4900A7CBF8 /* AudioManager.swift */,
+				8BF9DEB71E32204800A7CBF8 /* GestureManager.swift */,
 				8B35A2231E21895B0063520C /* Views */,
 				8B96208B1E1C623400678257 /* ViewControllers */,
 				8B961F261E1C601600678257 /* Assets */,
@@ -1365,9 +1380,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BD652941E2D93AE001FA373 /* GameViewController.swift in Sources */,
+				8BF9DEB21E320F3000A7CBF8 /* BallEntity.swift in Sources */,
 				8B4BF5B11E3049450045FD56 /* ScorecardStyleKit.swift in Sources */,
 				8BD652AC1E2D93AE001FA373 /* Ball.swift in Sources */,
 				8BD652961E2D93AE001FA373 /* LogoStyleKit.swift in Sources */,
+				8BF9DEB81E32204800A7CBF8 /* GestureManager.swift in Sources */,
 				8BD652AF1E2D93AE001FA373 /* Wall.swift in Sources */,
 				8BD652931E2D93AE001FA373 /* CourseSelectionViewController.swift in Sources */,
 				8BD652B11E2D93AE001FA373 /* Scorecard.swift in Sources */,
@@ -1377,12 +1394,15 @@
 				8BD6528A1E2D93AE001FA373 /* InGameMenuView.swift in Sources */,
 				8BD652B31E2D93AE001FA373 /* Flag.swift in Sources */,
 				8B9012D51E2DEAE300EC9FEC /* HUDView.swift in Sources */,
+				8BF9DEB41E32192B00A7CBF8 /* CameraLimiter.swift in Sources */,
 				8BD652881E2D93AE001FA373 /* CoursePreviewView.swift in Sources */,
+				8BF9DEB01E320F0800A7CBF8 /* GameplayClasses.swift in Sources */,
 				8BD652901E2D93AE001FA373 /* UserControlsView.swift in Sources */,
 				8BD652AE1E2D93AE001FA373 /* Mat.swift in Sources */,
 				8BD652AD1E2D93AE001FA373 /* Hole.swift in Sources */,
 				8BD652B71E2D93AE001FA373 /* Putt.swift in Sources */,
 				8BD652B81E2D93AE001FA373 /* PuttScene.swift in Sources */,
+				8BF9DEB61E321B4900A7CBF8 /* AudioManager.swift in Sources */,
 				8BD652B51E2D93AE001FA373 /* Data.swift in Sources */,
 				8BD652B01E2D93AE001FA373 /* Portal.swift in Sources */,
 				8BD652B41E2D93AE001FA373 /* ShotToken.swift in Sources */,
