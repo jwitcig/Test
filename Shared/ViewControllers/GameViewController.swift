@@ -356,7 +356,7 @@ class GameViewController: UIViewController {
     
     func tearDown() {
         view.removeFromSuperview()
-        scene.backgroundMusic?.pause()
+        scene.audio.backgroundMusic?.pause()
         sceneView.presentScene(nil)
     }
     
