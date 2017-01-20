@@ -143,6 +143,7 @@
 		8BF9DEB41E32192B00A7CBF8 /* CameraLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9DEB31E32192B00A7CBF8 /* CameraLimiter.swift */; };
 		8BF9DEB61E321B4900A7CBF8 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9DEB51E321B4900A7CBF8 /* AudioManager.swift */; };
 		8BF9DEB81E32204800A7CBF8 /* GestureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9DEB71E32204800A7CBF8 /* GestureManager.swift */; };
+		8BF9DEBA1E3226AC00A7CBF8 /* HoleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9DEB91E3226AC00A7CBF8 /* HoleData.swift */; };
 		C25C64895225817792090D61 /* Pods_MrPutt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F495C1ADA843DFFC65FCFC3C /* Pods_MrPutt.framework */; };
 /* End PBXBuildFile section */
 
@@ -307,6 +308,7 @@
 		8BF9DEB31E32192B00A7CBF8 /* CameraLimiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraLimiter.swift; sourceTree = "<group>"; };
 		8BF9DEB51E321B4900A7CBF8 /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		8BF9DEB71E32204800A7CBF8 /* GestureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureManager.swift; sourceTree = "<group>"; };
+		8BF9DEB91E3226AC00A7CBF8 /* HoleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoleData.swift; sourceTree = "<group>"; };
 		8F233FA75BF56CABCE8E437B /* Pods-testGolf-iMessageExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGolf-iMessageExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testGolf-iMessageExtension/Pods-testGolf-iMessageExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		8F24A3D33C0A0B644C3537BB /* Pods-MrPutt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MrPutt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MrPutt/Pods-MrPutt.debug.xcconfig"; sourceTree = "<group>"; };
 		90256A5B1AAB50A8F1542411 /* Pods-testGolf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGolf.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testGolf/Pods-testGolf.debug.xcconfig"; sourceTree = "<group>"; };
@@ -841,6 +843,7 @@
 				8BF9DEB31E32192B00A7CBF8 /* CameraLimiter.swift */,
 				8BF9DEB51E321B4900A7CBF8 /* AudioManager.swift */,
 				8BF9DEB71E32204800A7CBF8 /* GestureManager.swift */,
+				8BF9DEB91E3226AC00A7CBF8 /* HoleData.swift */,
 				8B35A2231E21895B0063520C /* Views */,
 				8B96208B1E1C623400678257 /* ViewControllers */,
 				8B961F261E1C601600678257 /* Assets */,
@@ -1387,6 +1390,7 @@
 				8BF9DEB81E32204800A7CBF8 /* GestureManager.swift in Sources */,
 				8BD652AF1E2D93AE001FA373 /* Wall.swift in Sources */,
 				8BD652931E2D93AE001FA373 /* CourseSelectionViewController.swift in Sources */,
+				8BF9DEBA1E3226AC00A7CBF8 /* HoleData.swift in Sources */,
 				8BD652B11E2D93AE001FA373 /* Scorecard.swift in Sources */,
 				8BD652921E2D93AE001FA373 /* WaitingForOpponentView.swift in Sources */,
 				8BD6528C1E2D93AE001FA373 /* InGameOptionView.swift in Sources */,

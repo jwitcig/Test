@@ -65,9 +65,8 @@ class HoleSetup {
         if !isMusicOn {
             music.pause()
         }
-        
-        let holeSize = scene.holeSize()
-
+    
+        let holeSize = HoleData(holeNumber: hole, course: course).size
         
         switch course {
             

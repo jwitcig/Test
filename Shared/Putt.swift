@@ -73,6 +73,11 @@ struct Shot {
     let power: CGFloat
     let angle: CGFloat
     let position: CGPoint
+    
+    var stroke: CGVector {
+        return CGVector(dx: cos(angle) * power,
+                        dy: sin(angle) * power)
+    }
 }
 
 class ClockTimer {
