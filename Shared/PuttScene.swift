@@ -175,7 +175,6 @@ class PuttScene: SKScene {
         lastShotTime = Date()
         
         ball.visual.node.removeFromParent()
-        add(entity: ball)
         
         flag.updateFlag(hole: holeNumber)
         
@@ -233,9 +232,12 @@ class PuttScene: SKScene {
         camera?.run(pan)
     
         ball.visual.node.alpha = 0
+        ball.ballTrail!.alpha = 0
         ball.ballTrail!.particleAlpha = 0
         shotIndicator.alpha = 0
         hole.alpha = 0
+        
+        add(entity: ball)
         
         let placement = SKAction.run {
             self.shotIndicator.position = ballPosition
@@ -247,6 +249,7 @@ class PuttScene: SKScene {
             self.ball.visual.node.run(fade)
             self.hole.run(fade)
             
+            self.ball.ballTrail!.alpha = 1
             self.ball.ballTrail!.particleAlpha = 1
             self.shotIndicator.run(fade)
         }
@@ -276,7 +279,7 @@ class PuttScene: SKScene {
     }
     
     func setDebugOptions(on view: SKView) {
-        view.showsFPS = true
+        view.showsFPS = false
         view.showsPhysics = false
         view.backgroundColor = .black
     }
@@ -415,6 +418,9 @@ class PuttScene: SKScene {
         if distanceToHole <= 150 {
             flag.raise()
             
+            let fadeDown = SKAction.fadeAlpha(to: 0.6, duration: 0.4)
+            shotIndicator.run(fadeDown)
+            
             let params = [
                 "hole_number": holeNumber as NSObject,
                 "course": course.name as NSObject,
@@ -459,6 +465,10 @@ class PuttScene: SKScene {
                 camera?.run(pan, withKey: "trackingEnabler")
             }
         }
+        
+//        if ball.visual.position(in: hole.parent!)!.distance(toPoint: hole.position) < shotIndicator.ballIndicator.size.width {
+//            
+//      }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
