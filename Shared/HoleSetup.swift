@@ -55,9 +55,8 @@ class HoleSetup {
     static func setup(_ scene: PuttScene, forHole hole: Int, inCourse course: CoursePack.Type) {
 
         let music = AudioPlayer()
-        music.play("Too Cool")
-
         scene.audio.backgroundMusic = music
+        music.play("Too Cool")
         scene.audio.backgroundMusic?.volume = 0.2
         
         let settings = UserDefaults.standard
@@ -65,7 +64,7 @@ class HoleSetup {
         if !isMusicOn {
             music.pause()
         }
-    
+        
         let holeSize = HoleData(holeNumber: hole, course: course).size
         
         switch course {

@@ -150,6 +150,19 @@ class PuttScene: SKScene {
         FIRAnalytics.logEvent(withName: "RoundStart", parameters: params)
         
         setDebugOptions(on: view)
+        
+        let session = AVAudioSession.sharedInstance()
+        do {
+            try session.setCategory(AVAudioSessionCategoryAmbient, with: [.mixWithOthers])
+            try session.setActive(true, with: [])
+        } catch {
+            print(error)
+        }
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(AudioPlayer.playInterrupt(notification:)),
+                                               name: NSNotification.Name.AVAudioSessionInterruption,
+                                               object: session)
     
         scaleMode = .resizeFill
         
