@@ -10,6 +10,8 @@ import UIKit
 
 import Cartography
 
+import FirebaseAnalytics
+
 class InGameMenuView: UIView {
 
     @IBOutlet weak var mainStackView: UIStackView!
@@ -77,6 +79,8 @@ class InGameMenuView: UIView {
         }
         settings.synchronize()
         dismiss()
+        
+        FIRAnalytics.logEvent(withName: "SettingsCancelled", parameters: nil)
     }
     
     func show() {
@@ -109,6 +113,20 @@ class InGameMenuView: UIView {
             self.didFinishMotion()
         }
         dismissBlock()
+        
+        for old in lastSavedOptions {
+            if let newOption = (options.filter{ $0.optionName == old.key }).first, let oldValue = old.value as? Bool {
+                
+                if newOption.enabled != oldValue {
+                    
+                    let params = [
+                        "option_name": newOption.optionName as NSObject,
+                        kFIRParameterValue: NSNumber(value: newOption.enabled ? 1 : 0),
+                    ]
+                    FIRAnalytics.logEvent(withName: "SettingChanged", parameters: params)
+                }
+            }
+        }
     }
     
     func updateLastSaved() {

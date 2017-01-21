@@ -56,6 +56,8 @@ class PuttScene: SKScene {
     
     var entities: [GKEntity] = []
     
+    var startTime: Date!
+    
     lazy var ball: BallEntity = {
         let node = self.childNode(withName: "//\(Ball.name)")! as! Ball
         return BallEntity(node: node, physics: node.physicsBody!)
@@ -168,6 +170,9 @@ class PuttScene: SKScene {
         setupAmbience()
         
         mat.removeFromParent()
+        
+        startTime = Date()
+        lastShotTime = Date()
         
         ball.visual.node.removeFromParent()
         add(entity: ball)
@@ -305,6 +310,12 @@ class PuttScene: SKScene {
         if recognizer.state == .began {
             // align recognizer scale with existing camera scale
             recognizer.scale = 1 / camera.xScale
+            
+            let params: [String : NSObject] = [
+                "hole_number": holeNumber as NSObject,
+                "course": course.name as NSObject,
+            ]
+            FIRAnalytics.logEvent(withName: "ZoomGesture", parameters: params)
         }
         
         if (0.6...1.3).contains(recognizer.scale) {
@@ -325,15 +336,22 @@ class PuttScene: SKScene {
             let existing = camera.xScale
 //            camera.childNode(withName: "background")?.setScale(1 / existing / 0.8)
             
-            
-            let scale = SKAction.scale(to: 1 / existing / 0.8, duration: 0.1)
-            camera.childNode(withName: "background")?.run(scale)
+            camera.childNode(withName: "background")?.setScale(1 / existing / 0.8)
+//            let scale = SKAction.scale(to: 1 / existing / 0.8, duration: 0.1)
+//            camera.childNode(withName: "background")?.run(scale)
         }
     }
 
     func handlePan(recognizer: UIPanGestureRecognizer) {
         if recognizer.state == .began {
             recognizer.setTranslation(.zero, in: recognizer.view)
+            
+            let params: [String : NSObject] = [
+                "hole_number": holeNumber as NSObject,
+                "course": course.name as NSObject,
+            ]
+            FIRAnalytics.logEvent(withName: "PanGesture", parameters: params)
+
         } else if recognizer.state == .changed {
             let translation = recognizer.translation(in: recognizer.view)
 
@@ -380,12 +398,27 @@ class PuttScene: SKScene {
         shotIndicator.shotCancelled()
         
         view?.removeGestureRecognizer(recognizer)
+        
+        let params: [String : NSObject] = [
+            "hole_number": holeNumber as NSObject,
+            "course": course.name as NSObject,
+        ]
+        FIRAnalytics.logEvent(withName: "ShotCancelled", parameters: params)
     }
     
     func beginShot() {
         let ballPosition = hole.parent!.convert(ball.visual.position, from: ball.visual.parent!)
-        if ballPosition.distance(toPoint: hole.position) <= 150 {
+        
+        let distanceToHole = ballPosition.distance(toPoint: hole.position)
+        if distanceToHole <= 150 {
             flag.raise()
+            
+            let params = [
+                "hole_number": holeNumber as NSObject,
+                "course": course.name as NSObject,
+                kFIRParameterValue: distanceToHole as NSObject,
+            ]
+            FIRAnalytics.logEvent(withName: "ShotNearHole", parameters: params)
         }
         
         let settings = UserDefaults.standard
@@ -465,6 +498,8 @@ class PuttScene: SKScene {
             shotIndicator.shotTaken()
         }
     }
+    
+    var lastShotTime: Date!
    
     func takeShot(at angle: CGFloat, with power: CGFloat) {
         let shot = Shot(power: power,
@@ -494,6 +529,16 @@ class PuttScene: SKScene {
             
             addChild(sound)
         }
+        
+        let params: [String : NSObject] = [
+            "power": power as NSObject,
+            kFIRParameterValue: power as NSObject,
+            "hole_number": holeNumber as NSObject,
+            "course": course.name as NSObject,
+            "duration": Date().timeIntervalSince1970 - lastShotTime.timeIntervalSince1970 as NSObject
+        ]
+        lastShotTime = Date()
+        FIRAnalytics.logEvent(withName: "ShotTaken", parameters: params)
     }
     
     // MARK: Game Loop
@@ -650,6 +695,16 @@ extension PuttScene: SKPhysicsContactDelegate {
     }
     
     func ballHitWall(_ wall: SKNode, contact: SKPhysicsContact) {
+        defer {
+            let params: [String : NSObject] = [
+                "hole_number": holeNumber as NSObject,
+                "course": course.name as NSObject,
+                "speed": ball.physics.body.velocity.magnitude as NSObject,
+                kFIRParameterValue: ball.physics.body.velocity.magnitude as NSObject,
+            ]
+            FIRAnalytics.logEvent(withName: "WallHit", parameters: params)
+        }
+        
         let reflected = reflect(velocity: ballPrePhysicsVelocity,
                                  for: contact,
                                  with: wall.physicsBody!)
@@ -728,7 +783,6 @@ extension PuttScene: SKPhysicsContactDelegate {
     }
     
     func ballHitHole(_ hole: Hole, contact: SKPhysicsContact) {
-        
         guard !holeComplete else { return }
         // if hole isn't already completed
         // collision can occur several times during animation
@@ -793,6 +847,15 @@ extension PuttScene: SKPhysicsContactDelegate {
                     let manager = self.gestureManager
                     manager.remove(recognizer: manager.pan, from: self.view!)
                     manager.remove(recognizer: manager.zoom, from: self.view!)
+                    
+                    let params: [String : NSObject] = [
+                        "hole_number": self.holeNumber as NSObject,
+                        "course": self.course.name as NSObject,
+                        kFIRParameterValue: self.shots.count as NSObject,
+                        
+                        "duration": Date().timeIntervalSince1970 - self.startTime.timeIntervalSince1970 as NSObject
+                    ]
+                    FIRAnalytics.logEvent(withName: "HoleFinish", parameters: params)
                     return
                 }
                 

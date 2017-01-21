@@ -15,6 +15,8 @@ import Game
 import iMessageTools
 import JWSwiftTools
 
+import FirebaseAnalytics
+
 public extension CGPoint {
     public func angle(toPoint point: CGPoint) -> CGFloat {
         let origin = CGPoint(x: point.x - self.x, y: point.y - self.y)
@@ -424,6 +426,21 @@ struct PuttMessageLayoutBuilder: MessageLayoutBuilder {
         case .tie:
             layout.imageTitle = "It's a tie!"
         }
+        
+        let scoreDifference = abs(localPlayerScore - remotePlayerScore)
+        
+        let params = [
+            "hole_number": session.initial.holeNumber as NSObject,
+            "course": session.initial.course.name as NSObject,
+            "score_difference": scoreDifference as NSObject,
+            
+            "player1_score": localPlayerScore as NSObject,
+            "player2_score": remotePlayerScore as NSObject,
+            
+            kFIRParameterValue: scoreDifference as NSObject,
+        ]
+        FIRAnalytics.logEvent(withName: "MatchCompleted", parameters: params)
+        
         return layout
     }
     

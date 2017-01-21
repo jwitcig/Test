@@ -19,6 +19,8 @@ import JWSwiftTools
 
 import CoreImage
 
+import FirebaseAnalytics
+
 enum Options: String {
     case gameMusic = "Music"
     case effects = "Effects"
@@ -55,6 +57,8 @@ class GameViewController: UIViewController {
     var menuHiddenConstraints: ConstraintGroup!
     
     var hud: HUDView!
+    
+    var gameCompleted = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -256,6 +260,8 @@ class GameViewController: UIViewController {
         } else if controlsPane?.isShown == true {
             controlsPane?.dismiss()
         } else {
+            FIRAnalytics.logEvent(withName: "SettingsShown", parameters: nil)
+            
             scene.isUserInteractionEnabled = false
             settingsPane.show()
             
@@ -299,11 +305,13 @@ class GameViewController: UIViewController {
 
         toolsContainer.layoutIfNeeded()
         
-        if controlsPane.isShown  {
+        if controlsPane.isShown {
             controlsPane.dismiss()
         } else if settingsPane?.isShown == true {
             settingsPane?.dismiss()
         } else {
+            FIRAnalytics.logEvent(withName: "ControlsShown", parameters: nil)
+            
             scene.isUserInteractionEnabled = false
             controlsPane.show()
             
@@ -367,6 +375,8 @@ class GameViewController: UIViewController {
     }
     
     func finished(session: PuttSession) {
+        gameCompleted = true
+        
         let hole = session.initial.holeNumber
         
         let names = ("You", "Them")

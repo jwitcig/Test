@@ -43,10 +43,14 @@ class MessagesViewController: MSMessagesAppViewController {
     
     override func didSelect(_ message: MSMessage, conversation: MSConversation) {
         handleStarterEvent(message: message, conversation: conversation)
+        
+        FIRAnalytics.logEvent(withName: "OpenMessage", parameters: nil)
     }
     
     override func didStartSending(_ message: MSMessage, conversation: MSConversation) {
         isAwaitingResponse = true
+        
+        FIRAnalytics.logEvent(withName: "GameSent", parameters: nil)
     }
     
     override func didCancelSending(_ message: MSMessage, conversation: MSConversation) {
@@ -55,6 +59,8 @@ class MessagesViewController: MSMessagesAppViewController {
         if let controller = gameController {
             throwAway(controller: controller)
         }
+        
+        FIRAnalytics.logEvent(withName: "SendCancelled", parameters: nil)
     }
     
     fileprivate func showWaitingForOpponent() {
@@ -69,6 +75,8 @@ class MessagesViewController: MSMessagesAppViewController {
         gameController = controller
         
         present(controller)
+        
+        FIRAnalytics.logEvent(withName: "WaitingScreenShown", parameters: nil)
     }
     
     func createGameController(fromReader reader: PuttMessageReader? = nil, course: CoursePack.Type? = nil) -> GameViewController {
@@ -90,6 +98,18 @@ class MessagesViewController: MSMessagesAppViewController {
     }
     
     override func didTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
+        
+        switch presentationStyle {
+            
+        case .compact:
+            let params = [
+                "game_finished": (gameController?.gameCompleted ?? true) as NSObject
+            ]
+            FIRAnalytics.logEvent(withName: "AppCollapsed", parameters: params)
+            
+        case .expanded:
+            break
+        }
         
     }
 }
