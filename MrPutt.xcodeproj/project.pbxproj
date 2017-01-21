@@ -62,6 +62,7 @@
 		8BC53D1C1E332EBB005D9ABD /* blazeHole2-2.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8BC53CF71E332EBB005D9ABD /* blazeHole2-2.svg */; };
 		8BC53D1D1E332EBB005D9ABD /* blazeHole1-1.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8BC53CF81E332EBB005D9ABD /* blazeHole1-1.svg */; };
 		8BC53D1F1E332F7C005D9ABD /* ScorecardStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC53D1E1E332F7C005D9ABD /* ScorecardStyleKit.swift */; };
+		8BC53D231E3361B2005D9ABD /* TilesStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC53D221E3361B2005D9ABD /* TilesStyleKit.swift */; };
 		8BD6526F1E2D92A3001FA373 /* iMessageExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8BD6526E1E2D92A3001FA373 /* iMessageExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8BD652721E2D92A3001FA373 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BCF770B1E03CD0200D48A61 /* Messages.framework */; };
 		8BD652831E2D92EC001FA373 /* PlaceholderAppAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D29256831E1F7A60000FB092 /* PlaceholderAppAssets.xcassets */; };
@@ -297,6 +298,7 @@
 		8BC53CF71E332EBB005D9ABD /* blazeHole2-2.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "blazeHole2-2.svg"; sourceTree = "<group>"; };
 		8BC53CF81E332EBB005D9ABD /* blazeHole1-1.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "blazeHole1-1.svg"; sourceTree = "<group>"; };
 		8BC53D1E1E332F7C005D9ABD /* ScorecardStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScorecardStyleKit.swift; sourceTree = "<group>"; };
+		8BC53D221E3361B2005D9ABD /* TilesStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TilesStyleKit.swift; sourceTree = "<group>"; };
 		8BCF770B1E03CD0200D48A61 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		8BCF77111E03CD0200D48A61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		8BCF77131E03CD0200D48A61 /* iMessageAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = iMessageAssets.xcassets; sourceTree = "<group>"; };
@@ -691,6 +693,7 @@
 				8B1162371E2E06BA005520DB /* SVGs */,
 				8B9620361E1C605F00678257 /* LogoStyleKit.swift */,
 				8BC53D1E1E332F7C005D9ABD /* ScorecardStyleKit.swift */,
+				8BC53D221E3361B2005D9ABD /* TilesStyleKit.swift */,
 				8B9620311E1C603400678257 /* SharedAssets.xcassets */,
 				8B5799141E2A0F850083228D /* Audio */,
 				8B961F231E1C601600678257 /* Fonts */,
@@ -1397,6 +1400,7 @@
 				8BD6528A1E2D93AE001FA373 /* InGameMenuView.swift in Sources */,
 				8BD652B31E2D93AE001FA373 /* Flag.swift in Sources */,
 				8B9012D51E2DEAE300EC9FEC /* HUDView.swift in Sources */,
+				8BC53D231E3361B2005D9ABD /* TilesStyleKit.swift in Sources */,
 				8BF9DEB41E32192B00A7CBF8 /* CameraLimiter.swift in Sources */,
 				8BD652881E2D93AE001FA373 /* CoursePreviewView.swift in Sources */,
 				8BF9DEB01E320F0800A7CBF8 /* GameplayClasses.swift in Sources */,

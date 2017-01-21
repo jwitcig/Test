@@ -177,6 +177,8 @@ class PuttScene: SKScene {
         ball.visual.node.removeFromParent()
         add(entity: ball)
         
+        flag.updateFlag(hole: holeNumber)
+        
         let holeData = HoleData(holeNumber: holeNumber, course: course)
         let size = holeData.size
         let cameraBox = CGRect(x: 0, y: 0, width: size.width + 100, height: size.height + 100)

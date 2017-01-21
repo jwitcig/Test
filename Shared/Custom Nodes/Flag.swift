@@ -19,6 +19,11 @@ class Flag: SKSpriteNode {
         super.init(coder: aDecoder)
     }
     
+    func updateFlag(hole: Int) {
+        let image = TilesStyleKit.imageOfHoleFlag(holeNumber: hole.string!)
+        texture = SKTexture(image: image)
+    }
+    
     func raise() {
         if let raise = SKAction(named: "RaiseFlag"), isWiggling {
             isWiggling = false
