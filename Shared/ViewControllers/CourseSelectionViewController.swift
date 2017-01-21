@@ -31,57 +31,39 @@ class AudioPlayer: NSObject {
         guard let url = Bundle(for: AudioPlayer.self).url(forResource: fileName, withExtension: fileType) else { return }
         
         self.completion = completion
-        
+
         do {
             self.player = try AVAudioPlayer(contentsOf: url)
             self.player?.delegate = self
             self.player?.prepareToPlay()
             self.player?.play()
         } catch { }
-        
-        
-        
-        
-        let session = AVAudioSession.sharedInstance()
-        do {
-            try session.setCategory(AVAudioSessionCategoryPlayback, with: .mixWithOthers)
-        } catch { }
-    
-        NotificationCenter.default.addObserver(self,
-                                      selector: #selector(AudioPlayer.playInterrupt(notification:)),
-                                          name: NSNotification.Name.AVAudioSessionInterruption,
-                                        object: session)
     }
     
     func resume() {
         player?.play()
+        print("resume")
     }
     
     func pause() {
         player?.pause()
+        print("paused")
     }
     
     func playInterrupt(notification: Notification) {
-        if notification.name == NSNotification.Name.AVAudioSessionInterruption && notification.userInfo != nil {
-            var info = notification.userInfo!
-            var intValue: UInt = 0
+        //Check the type of notification, especially if you are sending multiple AVAudioSession events here
+        if notification.name == NSNotification.Name.AVAudioSessionInterruption {
             
-            (info[AVAudioSessionInterruptionTypeKey] as! NSValue).getValue(&intValue)
-            
-            if let type = AVAudioSessionInterruptionType(rawValue: intValue) {
-                switch type {
-                case .began:
-                    player?.pause()
-                case .ended:
-                    _ = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(AudioPlayer.resumeNow(timer:)), userInfo: nil, repeats: false)
-                }
+            if let interruptionType = notification.userInfo?[AVAudioSessionInterruptionTypeKey] as? AVAudioSessionInterruptionType, interruptionType == AVAudioSessionInterruptionType.began {
+        
+            } else {
+                
+                let time = DispatchTime.now() + 0.01
+                DispatchQueue.main.asyncAfter(deadline: time, execute: { 
+                    self.resume()
+                })
             }
         }
-    }
-    
-    func resumeNow(timer: Timer) {
-        player?.prepareToPlay()
-        player?.play()
     }
 }
 
