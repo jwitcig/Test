@@ -25,6 +25,8 @@ class AudioPlayer: NSObject {
     
     var completion: (()->Void)?
     
+    var wasInterrupted = false
+    
     func play(_ fileName: String, ofType fileType: String = "mp3", completion: (()->Void)? = nil) {
         guard let url = Bundle(for: AudioPlayer.self).url(forResource: fileName, withExtension: fileType) else { return }
         
@@ -36,6 +38,19 @@ class AudioPlayer: NSObject {
             self.player?.prepareToPlay()
             self.player?.play()
         } catch { }
+        
+        
+        
+        
+        let session = AVAudioSession.sharedInstance()
+        do {
+            try session.setCategory(AVAudioSessionCategoryPlayback, with: .mixWithOthers)
+        } catch { }
+    
+        NotificationCenter.default.addObserver(self,
+                                      selector: #selector(AudioPlayer.playInterrupt(notification:)),
+                                          name: NSNotification.Name.AVAudioSessionInterruption,
+                                        object: session)
     }
     
     func resume() {
@@ -44,6 +59,29 @@ class AudioPlayer: NSObject {
     
     func pause() {
         player?.pause()
+    }
+    
+    func playInterrupt(notification: Notification) {
+        if notification.name == NSNotification.Name.AVAudioSessionInterruption && notification.userInfo != nil {
+            var info = notification.userInfo!
+            var intValue: UInt = 0
+            
+            (info[AVAudioSessionInterruptionTypeKey] as! NSValue).getValue(&intValue)
+            
+            if let type = AVAudioSessionInterruptionType(rawValue: intValue) {
+                switch type {
+                case .began:
+                    player?.pause()
+                case .ended:
+                    _ = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(AudioPlayer.resumeNow(timer:)), userInfo: nil, repeats: false)
+                }
+            }
+        }
+    }
+    
+    func resumeNow(timer: Timer) {
+        player?.prepareToPlay()
+        player?.play()
     }
 }
 
@@ -54,6 +92,8 @@ extension AudioPlayer: AVAudioPlayerDelegate {
 }
 
 class CourseSelectionViewController: UIViewController {
+    
+    @IBOutlet weak var backgroundImageView: UIImageView!
     
     @IBOutlet weak var scrollView: UIScrollView!
     let contentView = UIView()
@@ -69,6 +109,8 @@ class CourseSelectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "courseSelectionBackground"))
     
         scrollView.addSubview(contentView)
         constrain(contentView, scrollView) {

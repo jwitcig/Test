@@ -83,7 +83,7 @@ class Scorecard: SKScene {
                           player2Total: player2Strokes.reduce(0, +).string!)
 
         let parDefault = "-"
-        let infoImage = ScorecardStyleKit.imageOfHoleInfo(color3: .white,
+        let infoImage = ScorecardStyleKit.imageOfHoleInfo(
                                       parHole1: pars[safe: 0]?.string ?? parDefault,
                                       parHole2: pars[safe: 1]?.string ?? parDefault,
                                       parHole3: pars[safe: 2]?.string ?? parDefault,

@@ -286,6 +286,7 @@ class PuttScene: SKScene {
         camera?.zPosition = -10
         
         let background = SKSpriteNode(imageNamed: course.name.lowercased()+"Background")
+        background.name = "background"
         background.size = CGSize(width: 800, height: 1600)
         camera?.addChild(background)
     }
@@ -320,6 +321,13 @@ class PuttScene: SKScene {
         
             // check what camera bounds can be set, set them
             passivelyEnableCameraBounds()
+            
+            let existing = camera.xScale
+//            camera.childNode(withName: "background")?.setScale(1 / existing / 0.8)
+            
+            
+            let scale = SKAction.scale(to: 1 / existing / 0.8, duration: 0.1)
+            camera.childNode(withName: "background")?.run(scale)
         }
     }
 
@@ -343,6 +351,8 @@ class PuttScene: SKScene {
 
     var adjustingShot = false
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard touches.count == 1 else { return }
+        
         for touch in touches {
             
             let location = touch.location(in: ball.visual.parent!)
@@ -428,7 +438,7 @@ class PuttScene: SKScene {
             touchNode.position = touch.location(in: ball.visual.node)
             
             let ballLocation = ball.visual.position(in: self)!
-            shotIndicator.power = (touchLocation.distance(toPoint: ballLocation) * camera!.xScale - shotIndicator.ballIndicator.size.width / 2) / 90.0
+            shotIndicator.power = (touchLocation.distance(toPoint: ballLocation) / camera!.xScale - shotIndicator.ballIndicator.size.width / 2) / 60.0
         }
     }
     
@@ -531,6 +541,10 @@ class PuttScene: SKScene {
         if !limiter.isActive {
             passivelyEnableCameraBounds()
         }
+    }
+    
+    override func didSimulatePhysics() {
+        ball.ballTrail?.particleAlpha = 0.1 + (ball.physics.body.velocity.magnitude / 80.0) * 0.2
     }
     
     func passivelyEnableBallTracking() {
@@ -890,8 +904,11 @@ extension PuttScene: SKPhysicsContactDelegate {
             let y = ($0.position.y * scale) + camera!.position.y
             let destination: CGPoint = self.convert(CGPoint(x: x, y: y), to: scorecard)
             
-            $0.position = CGPoint(x: destination.x-self.size.width*scale, y: destination.y-self.size.height*scale)
-    
+//            $0.position = CGPoint(x: destination.x-self.size.width*scale, y: destination.y-self.size.height*scale)
+
+            $0.position = CGPoint(x: destination.x-self.size.width*scale, y: destination.y)
+
+            
             let slide = SKAction.move(to: destination, duration: duration)
             slide.timingMode = .easeOut
             
@@ -961,17 +978,5 @@ extension PuttScene: UIGestureRecognizerDelegate {
             return true
         }
         return false
-    }
-    
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        let manager = gestureManager
-
-        if gestureRecognizer == manager.pan || gestureRecognizer == manager.zoom {
-            if adjustingShot {
-                return false
-            }
-        }
-        
-        return true
     }
 }

@@ -36,21 +36,12 @@ class ShotIndicator: SKNode {
             let red = UIColor(red: 0.882, green: 0.071, blue: 0.071, alpha: 1)
             let yellow = UIColor(red: 1.0, green: 0.943, blue: 0.023, alpha: 1)
             let green = UIColor(red: 0.086, green: 0.839, blue: 0.324, alpha: 1)
-        
+            
             func color(forPower: CGFloat) -> UIColor {
-                if power < 0.5 {
-                    let step = power / 0.5
-                    return UIColor(red: green.r + (yellow.r - green.r)*step,
-                                 green: green.g + (yellow.g - green.g)*step,
-                                  blue: green.b + (yellow.b - green.b)*step,
-                                 alpha: 1)
-                } else {
-                    let step = (power - 0.5) / 0.5
-                    return UIColor(red: yellow.r + (red.r - yellow.r)*step,
-                                 green: yellow.g + (red.g - yellow.g)*step,
-                                  blue: yellow.b + (red.b - yellow.b)*step,
-                                 alpha: 1)
-                }
+                return UIColor(red: yellow.r + (red.r - yellow.r)*power,
+                             green: yellow.g + (red.g - yellow.g)*power,
+                              blue: yellow.b + (red.b - yellow.b)*power,
+                             alpha: 1)
             }
             
             powerIndicator.fillColor = color(forPower: power)

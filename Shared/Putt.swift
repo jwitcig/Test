@@ -394,6 +394,19 @@ struct PuttMessageLayoutBuilder: MessageLayoutBuilder {
         let layout = MSMessageTemplateLayout()
         layout.image = UIImage(named: "MessageImage\(session.initial.course.name)")
         
+        let localPlayerScore = session.instance.shots.reduce(0, +)
+        let remotePlayerScore = session.instance.opponentShots.reduce(0, +)
+        
+        if let localPlayer = conversation?.localParticipantIdentifier {
+            layout.caption = "$\(localPlayer)"
+            layout.subcaption = localPlayerScore.string
+        }
+        
+        if let remotePlayer = conversation?.remoteParticipantIdentifiers.first {
+            layout.trailingCaption = "$\(remotePlayer)"
+            layout.trailingSubcaption = remotePlayerScore.string
+        }
+        
         switch winner {
             
         case .you:
@@ -450,8 +463,6 @@ struct PuttMessageLayoutBuilder: MessageLayoutBuilder {
                 layout.trailingSubcaption = winningEmoji + (layout.trailingSubcaption ?? "")
             }
         }
-        
-        
         return layout
     }
 }

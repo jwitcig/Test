@@ -36,8 +36,8 @@ class Ball: SKSpriteNode {
     /* Should be called once ball is added to scene */
     func updateTrailEmitter() {
         ballTrail.targetNode = scene
-        ballTrail.particleScale *= 0.15
-        ballTrail.particleScaleSpeed *= 0.15
+        ballTrail.particleScale *= 1.0
+        ballTrail.particleScaleSpeed *= 1.0
     }
     
     func enableTrail() {
