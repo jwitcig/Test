@@ -592,6 +592,15 @@ class PuttScene: SKScene {
     
     override func didSimulatePhysics() {
         ball.ballTrail?.particleAlpha = 0.1 + (ball.physics.body.velocity.magnitude / 80.0) * 0.2
+        
+        if holeComplete {
+            let distanceToHole = ball.visual.position(in: hole.parent!)!.distance(toPoint: hole.position)
+            
+            if distanceToHole < 5 {
+                
+                (hole.childNode(withName: "gravity") as? SKFieldNode)?.strength = 30
+            }
+        }
     }
     
     func passivelyEnableBallTracking() {
@@ -655,8 +664,6 @@ var ballPrePhysicsVelocity: CGVector = .zero
 var reflectionVelocity: CGVector? = nil
 
 var holeCupConstraint: SKConstraint?
-
-var lockedDistanceToHole: CGFloat = 10000000
 
 var lastWallCollision: (SKPhysicsContact, CGVector, TimeInterval)?
 
@@ -792,12 +799,10 @@ extension PuttScene: SKPhysicsContactDelegate {
         if let drop = SKAction(named: "Drop") {
             let holePosition = hole.parent!.convert(hole.position, to: ball.visual.parent!)
             
-            let insideHole = SKAction.move(to: holePosition, duration: drop.duration/3)
-            insideHole.timingMode = .easeOut
             let stopTrail = SKAction.run {
                 self.ball.disableTrail()
             }
-            let group = SKAction.group([drop, insideHole, stopTrail])
+            let group = SKAction.group([drop, stopTrail])
 
             // stop ball's existing motion
 //            ball.physicsBody?.velocity = .zero
@@ -808,79 +813,47 @@ extension PuttScene: SKPhysicsContactDelegate {
             
             shotIndicator.removeFromParent()
             
-            let ballInHoleKey = "spiral"
-            
-            var ballPosition: CGPoint {
-                return hole.parent!.convert(self.ball.visual.position, from: self.ball.visual.parent!)
-            }
-            
-            var distance: CGFloat {
-                return ballPosition.distance(toPoint: hole.position)
-            }
-            
-            lockedDistanceToHole = distance
-            
-            let delay = SKAction.wait(forDuration: 0.05)
-            let move = SKAction.run {
-//                let ballPosition = hole.parent!.convert(self.ball.position, from: self.ball.parent!)
-//
-//                let distance = ballPosition.distance(toPoint: hole.position)-1
-                guard lockedDistanceToHole > 1 && !self.holeComplete else {
-                    self.holeComplete = true
-                    
-                    self.ball.visual.node.removeAction(forKey: ballInHoleKey)
-                    let settings = UserDefaults.standard
-                    let isEffectsOn = settings.value(forKey: Options.effects.rawValue) as? Bool ?? true
-                
-                    if isEffectsOn {
-                        let sound = AudioPlayer()
-                        sound.play("ballMade") {
-                            if let index = self.audio.temporaryPlayers.index(of: sound) {
-                                self.audio.temporaryPlayers.remove(at: index)
-                            }
-                        }
-                        self.audio.temporaryPlayers.append(sound)
+            let settings = UserDefaults.standard
+            let isEffectsOn = settings.value(forKey: Options.effects.rawValue) as? Bool ?? true
+        
+            if isEffectsOn {
+                let sound = AudioPlayer()
+                sound.play("ballInHole", ofType: "m4a") {
+                    if let index = self.audio.temporaryPlayers.index(of: sound) {
+                        self.audio.temporaryPlayers.remove(at: index)
                     }
-                    
-                    self.ball.visual.node.run(group)
-
-                    self.game.finish()
-                    
-                    let manager = self.gestureManager
-                    manager.remove(recognizer: manager.pan, from: self.view!)
-                    manager.remove(recognizer: manager.zoom, from: self.view!)
-                    
-                    let params: [String : NSObject] = [
-                        "hole_number": self.holeNumber as NSObject,
-                        "course": self.course.name as NSObject,
-                        kFIRParameterValue: self.shots.count as NSObject,
-                        
-                        "duration": Date().timeIntervalSince1970 - self.startTime.timeIntervalSince1970 as NSObject
-                    ]
-                    FIRAnalytics.logEvent(withName: "HoleFinish", parameters: params)
-                    return
                 }
-                
-                if let joint = holeCupConstraint, let index = self.ball.visual.node.constraints?.index(of: joint) {
-                    self.ball.visual.node.constraints?.remove(at: index)
-                }
-                
-                lockedDistanceToHole -= 2
-                lockedDistanceToHole = lockedDistanceToHole < distance ? lockedDistanceToHole : distance
-                
-                let range = SKRange(upperLimit: lockedDistanceToHole)
-                let joint = SKConstraint.distance(range, to: hole)
-                holeCupConstraint = joint
-                
-                var constraints = self.ball.visual.node.constraints ?? []
-                constraints.append(joint)
-                self.ball.visual.node.constraints = constraints
+                audio.temporaryPlayers.append(sound)
             }
             
-            let sequence = SKAction.sequence([delay, move])
-            ball.visual.node.run(SKAction.repeatForever(sequence), withKey: ballInHoleKey)
+            ball.visual.node.run(group)
+
+            let gravity = hole.childNode(withName: "gravity") as? SKFieldNode
+            gravity?.strength = 100
+            game.finish()
             
-            return
+            let distanceToHole = hole.size.width / 2 - 1
+            
+            let range = SKRange(upperLimit: distanceToHole)
+            let limit = SKConstraint.distance(range, to: hole)
+            
+            self.ball.visual.node.constraints = self.ball.visual.node.constraints ?? []
+            self.ball.visual.node.constraints?.append(limit)
+
+            let manager = self.gestureManager
+            manager.remove(recognizer: manager.pan, from: self.view!)
+            manager.remove(recognizer: manager.zoom, from: self.view!)
+            
+            let params: [String : NSObject] = [
+                "hole_number": self.holeNumber as NSObject,
+                "course": self.course.name as NSObject,
+                kFIRParameterValue: self.shots.count as NSObject,
+                
+                "duration": Date().timeIntervalSince1970 - self.startTime.timeIntervalSince1970 as NSObject
+            ]
+            FIRAnalytics.logEvent(withName: "HoleFinish", parameters: params)
+
+        
             let par = HoleInfo.par(forHole: holeNumber, in: course)
             
             if let holeParent = hole.parent {
@@ -941,9 +914,7 @@ extension PuttScene: SKPhysicsContactDelegate {
     
     func preScorecardTearDown() {
         enumerateChildNodes(withName: "//portalEmitter") { node, stop in
-            guard let portal = node as? SKEmitterNode else { return }
-            
-            portal.particleBirthRate = 0
+            (node as? SKEmitterNode)?.particleBirthRate = 0
         }
     }
     
