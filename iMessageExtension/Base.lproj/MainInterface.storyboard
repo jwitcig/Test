@@ -48,7 +48,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="courseSelectionBackground" translatesAutoresizingMaskIntoConstraints="NO" id="4tM-Ze-Zt2">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4tM-Ze-Zt2">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4f-mG-lVD">
@@ -71,6 +71,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="200"/>
                     <connections>
+                        <outlet property="backgroundImageView" destination="4tM-Ze-Zt2" id="yIG-dm-iFt"/>
                         <outlet property="headerView" destination="vL2-kg-raA" id="pQi-WN-ozb"/>
                         <outlet property="scrollView" destination="E4f-mG-lVD" id="Ytf-p0-Gyc"/>
                     </connections>
@@ -132,6 +133,5 @@
     </scenes>
     <resources>
         <image name="IconSmall" width="300" height="300"/>
-        <image name="courseSelectionBackground" width="80" height="80"/>
     </resources>
 </document>

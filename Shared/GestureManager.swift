@@ -15,14 +15,12 @@ class GestureManager {
         let pan = UIPanGestureRecognizer(target: self.delegate, action: #selector(PuttScene.handlePan(recognizer:)))
         pan.minimumNumberOfTouches = 2
         pan.delegate = self.delegate
-        pan.cancelsTouchesInView = false
         return pan
     }()
     
     lazy var zoom: UIPinchGestureRecognizer = {
         let zoom = UIPinchGestureRecognizer(target: self.delegate, action: #selector(PuttScene.handleZoom(recognizer:)))
         zoom.delegate = self.delegate
-        zoom.cancelsTouchesInView = false
         return zoom
     }()
     
