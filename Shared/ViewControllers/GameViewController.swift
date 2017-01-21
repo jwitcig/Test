@@ -403,7 +403,7 @@ class GameViewController: UIViewController {
         
         scene.preScorecardTearDown()
         
-        let when = DispatchTime.now() + 0.8
+        let when = DispatchTime.now() + 0.6
         DispatchQueue.main.asyncAfter(deadline: when) { 
             self.scene.showScorecard(hole: hole, names: names, player1Strokes: player1Strokes, player2Strokes: player2Strokes, pars: pars) {
                 

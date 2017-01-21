@@ -22,6 +22,8 @@ class Hole: SKSpriteNode {
         physicsBody = nil
         
         bodyPiece.physicsBody = adjustedPhysicsBody()
+        
+        (childNode(withName: "gravity") as? SKFieldNode)?.region = SKRegion(radius: Float(size.width)/2.0)
     }
     
     func adjustedPhysicsBody() -> SKPhysicsBody? {
