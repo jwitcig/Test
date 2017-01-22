@@ -11,6 +11,9 @@
 		8B0636601E31C1AC0034487C /* softWall.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8B06365F1E31C1AC0034487C /* softWall.m4a */; };
 		8B0636621E31C1FB0034487C /* Too Cool.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B0636611E31C1FB0034487C /* Too Cool.mp3 */; };
 		8B0636891E31C9740034487C /* ballDrop.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8B0636871E31C9720034487C /* ballDrop.m4a */; };
+		8B1FE7B51E34899F0021F5CF /* PuttScene+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1FE7B41E34899F0021F5CF /* PuttScene+Config.swift */; };
+		8B1FE7B71E348B430021F5CF /* PuttScene+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1FE7B61E348B430021F5CF /* PuttScene+Gestures.swift */; };
+		8B1FE7B91E348CFB0021F5CF /* PuttScene+Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1FE7B81E348CFB0021F5CF /* PuttScene+Camera.swift */; };
 		8B3D39A51E30AA7500959124 /* clubHit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B1F32E31E30A9A2007C27BD /* clubHit.wav */; };
 		8B3D39A61E30AA7B00959124 /* scorecard2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B1F32DF1E30A918007C27BD /* scorecard2.wav */; };
 		8B3D39A71E30AA8700959124 /* win.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B1F32E11E30A953007C27BD /* win.wav */; };
@@ -26,6 +29,10 @@
 		8B9012D51E2DEAE300EC9FEC /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9012D41E2DEAE300EC9FEC /* HUDView.swift */; };
 		8B985A7E1E2E39480047CA7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B985A7D1E2E39480047CA7B /* GoogleService-Info.plist */; };
 		8B985A7F1E2E39480047CA7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B985A7D1E2E39480047CA7B /* GoogleService-Info.plist */; };
+		8B9E61291E347E0C00A6E3F0 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9E61281E347E0C00A6E3F0 /* UserSettings.swift */; };
+		8B9E612B1E34800E00A6E3F0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9E612A1E34800E00A6E3F0 /* Extensions.swift */; };
+		8B9E612D1E34809000A6E3F0 /* TimeKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9E612C1E34809000A6E3F0 /* TimeKeeper.swift */; };
+		8B9E612F1E3480B300A6E3F0 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9E612E1E3480B300A6E3F0 /* Structs.swift */; };
 		8BA977C91E2F3C00002F314E /* coinSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8BA977C71E2F3B6D002F314E /* coinSound.wav */; };
 		8BC3ECCF1E3377F8001211FF /* ballInHole.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8BC3ECCE1E3377F8001211FF /* ballInHole.m4a */; };
 		8BC53CF91E332EBB005D9ABD /* timberHole9-9.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8BC53CD41E332EBB005D9ABD /* timberHole9-9.svg */; };
@@ -202,6 +209,9 @@
 		8B1F32DF1E30A918007C27BD /* scorecard2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = scorecard2.wav; sourceTree = "<group>"; };
 		8B1F32E11E30A953007C27BD /* win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = win.wav; sourceTree = "<group>"; };
 		8B1F32E31E30A9A2007C27BD /* clubHit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = clubHit.wav; sourceTree = "<group>"; };
+		8B1FE7B41E34899F0021F5CF /* PuttScene+Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PuttScene+Config.swift"; sourceTree = "<group>"; };
+		8B1FE7B61E348B430021F5CF /* PuttScene+Gestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PuttScene+Gestures.swift"; sourceTree = "<group>"; };
+		8B1FE7B81E348CFB0021F5CF /* PuttScene+Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PuttScene+Camera.swift"; sourceTree = "<group>"; };
 		8B25439A1E2D904600326E7B /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		8B2543C01E2D918800326E7B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B279D2D1E2724C30094DC62 /* Scorecard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scorecard.swift; sourceTree = "<group>"; };
@@ -259,6 +269,10 @@
 		8B9620311E1C603400678257 /* SharedAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SharedAssets.xcassets; sourceTree = "<group>"; };
 		8B9620361E1C605F00678257 /* LogoStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoStyleKit.swift; sourceTree = "<group>"; };
 		8B985A7D1E2E39480047CA7B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8B9E61281E347E0C00A6E3F0 /* UserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		8B9E612A1E34800E00A6E3F0 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		8B9E612C1E34809000A6E3F0 /* TimeKeeper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeKeeper.swift; sourceTree = "<group>"; };
+		8B9E612E1E3480B300A6E3F0 /* Structs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
 		8B9FD4481E2A353500FE4D3D /* Flag.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Flag.sks; sourceTree = "<group>"; };
 		8B9FD44B1E2A357F00FE4D3D /* Flag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flag.swift; sourceTree = "<group>"; };
 		8B9FD44E1E2A362100FE4D3D /* RaiseFlag.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RaiseFlag.sks; sourceTree = "<group>"; };
@@ -859,6 +873,10 @@
 				8BF9DEB51E321B4900A7CBF8 /* AudioManager.swift */,
 				8BF9DEB71E32204800A7CBF8 /* GestureManager.swift */,
 				8BF9DEB91E3226AC00A7CBF8 /* HoleData.swift */,
+				8B9E61281E347E0C00A6E3F0 /* UserSettings.swift */,
+				8B9E612A1E34800E00A6E3F0 /* Extensions.swift */,
+				8B9E612C1E34809000A6E3F0 /* TimeKeeper.swift */,
+				8B9E612E1E3480B300A6E3F0 /* Structs.swift */,
 				8B35A2231E21895B0063520C /* Views */,
 				8B96208B1E1C623400678257 /* ViewControllers */,
 				8B961F261E1C601600678257 /* Assets */,
@@ -867,6 +885,9 @@
 				8B961F2D1E1C601600678257 /* HoleSetup.swift */,
 				8B961F2E1E1C601600678257 /* Putt.swift */,
 				8B961F2F1E1C601600678257 /* PuttScene.swift */,
+				8B1FE7B41E34899F0021F5CF /* PuttScene+Config.swift */,
+				8B1FE7B61E348B430021F5CF /* PuttScene+Gestures.swift */,
+				8B1FE7B81E348CFB0021F5CF /* PuttScene+Camera.swift */,
 				8B961F541E1C601600678257 /* SpriteKit */,
 			);
 			path = Shared;
@@ -1409,12 +1430,17 @@
 				8BD652921E2D93AE001FA373 /* WaitingForOpponentView.swift in Sources */,
 				8BD6528C1E2D93AE001FA373 /* InGameOptionView.swift in Sources */,
 				8BD652B21E2D93AE001FA373 /* ShotIndicator.swift in Sources */,
+				8B9E612D1E34809000A6E3F0 /* TimeKeeper.swift in Sources */,
 				8BD6528A1E2D93AE001FA373 /* InGameMenuView.swift in Sources */,
+				8B1FE7B91E348CFB0021F5CF /* PuttScene+Camera.swift in Sources */,
+				8B9E61291E347E0C00A6E3F0 /* UserSettings.swift in Sources */,
+				8B9E612B1E34800E00A6E3F0 /* Extensions.swift in Sources */,
 				8BD652B31E2D93AE001FA373 /* Flag.swift in Sources */,
 				8B9012D51E2DEAE300EC9FEC /* HUDView.swift in Sources */,
 				8B4071EA1E346B1100A34C05 /* NebulaStyleKit.swift in Sources */,
 				8BC53D231E3361B2005D9ABD /* TilesStyleKit.swift in Sources */,
 				8BF9DEB41E32192B00A7CBF8 /* CameraLimiter.swift in Sources */,
+				8B1FE7B51E34899F0021F5CF /* PuttScene+Config.swift in Sources */,
 				8BD652881E2D93AE001FA373 /* CoursePreviewView.swift in Sources */,
 				8BF9DEB01E320F0800A7CBF8 /* GameplayClasses.swift in Sources */,
 				8BD652901E2D93AE001FA373 /* UserControlsView.swift in Sources */,
@@ -1422,6 +1448,8 @@
 				8BFF79B61E346626005DECFF /* FrostStyleKit.swift in Sources */,
 				8BD652AD1E2D93AE001FA373 /* Hole.swift in Sources */,
 				8BD652B71E2D93AE001FA373 /* Putt.swift in Sources */,
+				8B9E612F1E3480B300A6E3F0 /* Structs.swift in Sources */,
+				8B1FE7B71E348B430021F5CF /* PuttScene+Gestures.swift in Sources */,
 				8BD652B81E2D93AE001FA373 /* PuttScene.swift in Sources */,
 				8BF9DEB61E321B4900A7CBF8 /* AudioManager.swift in Sources */,
 				8BD652B51E2D93AE001FA373 /* Data.swift in Sources */,
