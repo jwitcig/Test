@@ -59,12 +59,10 @@ class PuttScene: SKScene {
     var startTime: Date!
     
     lazy var ball: BallEntity = {
-        let node = self.childNode(withName: "//\(Ball.name)")! as! Ball
+        let scene = SKScene(fileNamed: "Ball")!
+        let node = scene.childNode(withName: "//\(Ball.name)")! as! Ball
+        node.removeFromParent()
         return BallEntity(node: node, physics: node.physicsBody!)
-    }()
-    
-    lazy var mat: Mat = {
-        return self.childNode(withName: "//\(Mat.name)")! as! Mat
     }()
     
     lazy var hole: Hole = {
@@ -110,11 +108,7 @@ class PuttScene: SKScene {
     var hud: HUDView!
     
     lazy var shotIndicator: ShotIndicator = {
-        if let matRotation = self.childNode(withName: "//\(Mat.name)")?.parent?.parent?.zRotation {
-            let offset = SKRange(constantValue: matRotation + .pi/2)
-            return ShotIndicator(orientToward: self.touchNode, withOffset: offset)
-        }
-        return ShotIndicator(orientToward: self.touchNode, withOffset: SKRange(constantValue: 0))
+        return ShotIndicator(orientToward: self.touchNode, withOffset: SKRange(constantValue: .pi/2))
     }()
     
     var limiter: CameraLimiter!
@@ -154,6 +148,8 @@ class PuttScene: SKScene {
         
         scaleMode = .resizeFill
         
+        add(entity: ball)
+        
         removeGrid()
         
         addGestureRecognizers(in: view)
@@ -170,12 +166,8 @@ class PuttScene: SKScene {
         
         setupAmbience()
         
-        mat.removeFromParent()
-        
         startTime = Date()
         lastShotTime = Date()
-        
-        ball.visual.node.removeFromParent()
         
         flag.updateFlag(hole: holeNumber)
         
@@ -237,8 +229,6 @@ class PuttScene: SKScene {
         ball.ballTrail!.particleAlpha = 0
         shotIndicator.alpha = 0
         hole.alpha = 0
-        
-        add(entity: ball)
         
         let placement = SKAction.run {
             self.shotIndicator.position = ballPosition

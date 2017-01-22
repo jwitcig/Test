@@ -139,9 +139,110 @@ class HoleData {
             scene.addChild(physics)
         }
         
-        let coursePrefix = course.name.lowercased()
+        var image: UIImage!
         
-        let texture = SKTexture(imageNamed: "\(coursePrefix)Hole\(holeNumber)")
+        switch course {
+            
+        case is Frost.Type:
+            switch holeNumber {
+            case 1:
+                image = FrostStyleKit.imageOfFrostHole1
+            case 2:
+                image = FrostStyleKit.imageOfFrostHole2
+            case 3:
+                image = FrostStyleKit.imageOfFrostHole3
+            case 4:
+                image = FrostStyleKit.imageOfFrostHole4
+            case 5:
+                image = FrostStyleKit.imageOfFrostHole5
+            case 6:
+                image = FrostStyleKit.imageOfFrostHole6
+            case 7:
+                image = FrostStyleKit.imageOfFrostHole7
+            case 8:
+                image = FrostStyleKit.imageOfFrostHole8
+            case 9:
+                image = FrostStyleKit.imageOfFrostHole9
+            default:
+                fatalError()
+            }
+        case is Blaze.Type:
+            switch holeNumber {
+            case 1:
+                image = BlazeStyleKit.imageOfBlazeHole1
+            case 2:
+                image = BlazeStyleKit.imageOfBlazeHole2
+            case 3:
+                image = BlazeStyleKit.imageOfBlazeHole3
+            case 4:
+                image = BlazeStyleKit.imageOfBlazeHole4
+            case 5:
+                image = BlazeStyleKit.imageOfBlazeHole5
+            case 6:
+                image = BlazeStyleKit.imageOfBlazeHole6
+            case 7:
+                image = BlazeStyleKit.imageOfBlazeHole7
+            case 8:
+                image = BlazeStyleKit.imageOfBlazeHole8
+            case 9:
+                image = BlazeStyleKit.imageOfBlazeHole9
+            default:
+                fatalError()
+            }
+        case is Timber.Type:
+            switch holeNumber {
+            case 1:
+                image = TimberStyleKit.imageOfTimberHole1
+            case 2:
+                image = TimberStyleKit.imageOfTimberHole2
+            case 3:
+                image = TimberStyleKit.imageOfTimberHole3
+            case 4:
+                image = TimberStyleKit.imageOfTimberHole4
+            case 5:
+                image = TimberStyleKit.imageOfTimberHole5
+            case 6:
+                image = TimberStyleKit.imageOfTimberHole6
+            case 7:
+                image = TimberStyleKit.imageOfTimberHole7
+            case 8:
+                image = TimberStyleKit.imageOfTimberHole8
+            case 9:
+                image = TimberStyleKit.imageOfTimberHole9
+            default:
+                fatalError()
+            }
+
+        case is Nebula.Type:
+            switch holeNumber {
+            case 1:
+                image = NebulaStyleKit.imageOfNebulaHole1
+            case 2:
+                image = TimberStyleKit.imageOfTimberHole2
+            case 3:
+                image = TimberStyleKit.imageOfTimberHole3
+            case 4:
+                image = TimberStyleKit.imageOfTimberHole4
+            case 5:
+                image = TimberStyleKit.imageOfTimberHole5
+            case 6:
+                image = TimberStyleKit.imageOfTimberHole6
+            case 7:
+                image = TimberStyleKit.imageOfTimberHole7
+            case 8:
+                image = TimberStyleKit.imageOfTimberHole8
+            case 9:
+                image = TimberStyleKit.imageOfTimberHole9
+            default:
+                fatalError()
+            }
+            
+        default:
+            fatalError()
+        }
+        
+        let texture = SKTexture(image: image)
+        
         let sprite = SKSpriteNode(texture: texture)
         sprite.zPosition = -1
         sprite.position = CGPoint(x: 0, y: 0)
