@@ -62,3 +62,13 @@ public func *(vector: CGVector, scalar: CGFloat) -> CGVector {
 public func /(vector: CGVector, scalar: CGFloat) -> CGVector {
     return CGVector(dx: vector.dx/scalar, dy: vector.dy/scalar)
 }
+
+extension UIColor {
+    var r: CGFloat { return component(atIndex: 0) ?? 0 }
+    var g: CGFloat { return component(atIndex: 1) ?? 0 }
+    var b: CGFloat { return component(atIndex: 2) ?? 0 }
+    
+    func component(atIndex index: Int) -> CGFloat? {
+        return cgColor.components?[safe: index]
+    }
+}
