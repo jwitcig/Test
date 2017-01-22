@@ -74,6 +74,11 @@ class MessagesViewController: MSMessagesAppViewController {
             throwAway(controller: controller)
         }
         
+        if courseController == nil {
+            courseController = createCourseSelectionController()
+        }
+        present(courseController!)
+        
         FIRAnalytics.logEvent(withName: "SendCancelled", parameters: nil)
     }
     

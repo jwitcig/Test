@@ -44,12 +44,7 @@ func reflect(velocity entrance: CGVector, for contact: SKPhysicsContact, with bo
 }
 
 func reflect(vector entrance: CGVector, across normal: CGVector, at point: CGPoint, offOf body: SKPhysicsBody) -> CGVector {
-    
-    let normalized = normal.normalized
-    let dot = entrance • normalized
-    let directed = CGVector(dx: dot*normalized.dx, dy: dot*normalized.dy)
-    let scaled = CGVector(dx: 2*directed.dx, dy: 2*directed.dy)
-    return CGVector(dx: entrance.dx-scaled.dx, dy: entrance.dy-scaled.dy)
+    return entrance - (normal * (entrance • normal) * 2)
 }
 
 class PuttScene: SKScene {

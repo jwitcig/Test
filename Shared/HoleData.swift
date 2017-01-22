@@ -218,21 +218,21 @@ class HoleData {
             case 1:
                 image = NebulaStyleKit.imageOfNebulaHole1
             case 2:
-                image = TimberStyleKit.imageOfTimberHole2
+                image = NebulaStyleKit.imageOfNebulaHole2
             case 3:
-                image = TimberStyleKit.imageOfTimberHole3
+                image = NebulaStyleKit.imageOfNebulaHole3
             case 4:
-                image = TimberStyleKit.imageOfTimberHole4
+                image = NebulaStyleKit.imageOfNebulaHole4
             case 5:
-                image = TimberStyleKit.imageOfTimberHole5
+                image = NebulaStyleKit.imageOfNebulaHole5
             case 6:
-                image = TimberStyleKit.imageOfTimberHole6
+                image = NebulaStyleKit.imageOfNebulaHole6
             case 7:
-                image = TimberStyleKit.imageOfTimberHole7
+                image = NebulaStyleKit.imageOfNebulaHole7
             case 8:
-                image = TimberStyleKit.imageOfTimberHole8
+                image = NebulaStyleKit.imageOfNebulaHole8
             case 9:
-                image = TimberStyleKit.imageOfTimberHole9
+                image = NebulaStyleKit.imageOfNebulaHole9
             default:
                 fatalError()
             }
