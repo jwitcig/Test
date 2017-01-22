@@ -17,36 +17,6 @@ import FirebaseAnalytics
 import PocketSVG
 import SWXMLHash
 
-private var settingsContext = 0
-
-public extension SKRange {
-    public var openInterval: Range<CGFloat> {
-        return lowerLimit..<upperLimit
-    }
-    
-    public var closedInterval: ClosedRange<CGFloat> {
-        return lowerLimit...upperLimit
-    }
-}
-
-func renderImage(from layer: CALayer) -> UIImage {
-    UIGraphicsBeginImageContextWithOptions(layer.bounds.size, false, 0)
-    
-    layer.render(in: UIGraphicsGetCurrentContext()!)
-    let image = UIGraphicsGetImageFromCurrentImageContext()!
-    
-    UIGraphicsEndImageContext()
-    return image
-}
-
-func reflect(velocity entrance: CGVector, for contact: SKPhysicsContact, with body: SKPhysicsBody) -> CGVector {
-    return reflect(vector: entrance, across: contact.contactNormal, at: contact.contactPoint, offOf: body)
-}
-
-func reflect(vector entrance: CGVector, across normal: CGVector, at point: CGPoint, offOf body: SKPhysicsBody) -> CGVector {
-    return entrance - (normal * (entrance • normal) * 2)
-}
-
 class PuttScene: SKScene {
     
     var entities: [GKEntity] = []
@@ -80,7 +50,6 @@ class PuttScene: SKScene {
         didSet {
             hud.strokes = shots.count
             
-            let par = HoleInfo.par(forHole: holeNumber, in: course)
             if shots.count > par {
                 UIView.animate(withDuration: 0.5) {
                     self.hud.strokeLabel.textColor = .red
@@ -91,6 +60,10 @@ class PuttScene: SKScene {
     
     var course: CoursePack.Type!
     var holeNumber: Int!
+    
+    lazy var par: Int = {
+        return HoleInfo.par(forHole: self.holeNumber, in: self.course)
+    }()
     
     let audio = AudioManager()
     
@@ -112,8 +85,32 @@ class PuttScene: SKScene {
     
     // MARK: Scene Lifecycle
 
+    override func didMove(to view: SKView) {
+        scaleMode = .resizeFill
+        
+        let holeData = HoleData(holeNumber: holeNumber, course: course)
+        configure(for: holeData, in: view)
+        
+        initiate(with: holeData)
+        initiateAnimations(with: holeData)
+        
+        drawHole(for: holeData)
+
+        passivelyEnableCameraBounds()
+        
+        let params: [String : NSObject] = [
+            "course": course.name as NSObject,
+            "hole": course.holeCount as NSObject,
+        ]
+        FIRAnalytics.logEvent(withName: "RoundStart", parameters: params)
+    }
+    
+    func drawHole(for holeData: HoleData) {
+        holeData.parse(scene: self)
+    }
+    
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if context == &settingsContext {
+        if context == &UserSettings.context {
             
             if let newValue = change?[.newKey] {
                 if keyPath == Options.gameMusic.rawValue {
@@ -131,117 +128,6 @@ class PuttScene: SKScene {
             super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
         }
     }
-
-    override func didMove(to view: SKView) {
-        let params: [String : NSObject] = [
-            "course": course.name as NSObject,
-            "hole": course.holeCount as NSObject,
-        ]
-        FIRAnalytics.logEvent(withName: "RoundStart", parameters: params)
-        
-        setDebugOptions(on: view)
-        
-        scaleMode = .resizeFill
-        
-        add(entity: ball)
-        
-        removeGrid()
-        
-        addGestureRecognizers(in: view)
-        
-        setupPhysics()
-        
-        setupCamera()
-    
-        ball.updateTrailEmitter()
-        
-        addSettingsListener(forKey: "Music")
-        
-        addChild(shotIndicator)
-        
-        setupAmbience()
-        
-        startTime = Date()
-        lastShotTime = Date()
-        
-        flag.updateFlag(hole: holeNumber)
-        
-        let holeData = HoleData(holeNumber: holeNumber, course: course)
-        let size = holeData.size
-        let cameraBox = CGRect(x: 0, y: 0, width: size.width + 100, height: size.height + 100)
-        limiter = CameraLimiter(camera: camera!, boundingBox: cameraBox, freedomRadius: { [unowned self] in
-            return self.size.width * self.camera!.xScale * 0.4
-        })
-        
-        let delay = SKAction.wait(forDuration: 0.9)
-        
-        let settings = UserDefaults.standard
-        let isEffectsOn = settings.value(forKey: Options.effects.rawValue) as? Bool ?? true
-        
-        if isEffectsOn {
-        
-            let sound = SKAction.run {
-                let audio = AudioPlayer()
-                audio.play("ballDrop", ofType: "m4a") { [weak self] in
-                    if let index = self?.audio.temporaryPlayers.index(of: audio) {
-                        self?.audio.temporaryPlayers.remove(at: index)
-                    }
-                }
-                audio.volume = 0.8
-                self.audio.temporaryPlayers.append(audio)
-            }
-            run(SKAction.sequence([delay, sound]))
-        }
-        
-        if let ballDrop = SKAction(named: "BallDrop") {
-            run(SKAction.sequence([delay, ballDrop]))
-        }
-        
-        shotIndicator.shotTaken()
-
-        let beginShot = SKAction.run {
-            self.shotIndicator.ballStopped()
-        }
-        run(SKAction.sequence([delay, beginShot]))
-        
-        flag.wiggle()
-        
-        passivelyEnableCameraBounds()
-        
-        holeData.parse(scene: self)
-        
-        let ballPosition = holeData.ballLocation
-        let holePosition = holeData.holeLocation
-        
-        camera?.position = holePosition
-        
-        let pan = SKAction.move(to: ballPosition, duration: 4.0)
-        pan.timingMode = .easeOut
-        camera?.run(pan)
-    
-        ball.visual.node.alpha = 0
-        ball.ballTrail!.alpha = 0
-        ball.ballTrail!.particleAlpha = 0
-        shotIndicator.alpha = 0
-        hole.alpha = 0
-        
-        let placement = SKAction.run {
-            self.shotIndicator.position = ballPosition
-            self.ball.visual.position = self.convert(ballPosition, to: self.ball.visual.parent!)
-            self.hole.position = self.convert(holePosition, to: self.hole.parent!)
-        }
-        let fadeIn = SKAction.run {
-            let fade = SKAction.fadeIn(withDuration: 0.5)
-            self.ball.visual.node.run(fade)
-            self.hole.run(fade)
-            
-            self.ball.ballTrail!.alpha = 1
-            self.ball.ballTrail!.particleAlpha = 1
-            self.shotIndicator.run(fade)
-        }
-        let wait = SKAction.wait(forDuration: 2)
-        run(SKAction.sequence([wait, placement, fadeIn]))
-    }
     
     func add(entity: GKEntity) {
         entities.append(entity)
@@ -257,144 +143,7 @@ class PuttScene: SKScene {
     }
     
     func addSettingsListener(forKey key: String) {
-        UserDefaults.standard.addObserver(self, forKeyPath: key, options: .new, context: &settingsContext)
-    }
-    
-    func removeGrid() {
-        childNode(withName: "grid")?.removeFromParent()
-    }
-    
-    func setDebugOptions(on view: SKView) {
-        view.showsFPS = false
-        view.showsPhysics = false
-        view.backgroundColor = .black
-    }
-    
-    func setupPhysics() {
-        // sends contact notifications to didBegin(contact:)
-        physicsWorld.contactDelegate = self
-        
-        // positional audio target
-        listener = ball.visual.node
-    }
-    
-    func setupCamera() {
-        camera?.zPosition = -10
-        
-        let background = SKSpriteNode(imageNamed: course.name.lowercased()+"Background")
-        background.name = "background"
-        background.size = CGSize(width: 800, height: 1600)
-        camera?.addChild(background)
-    }
-    
-    func setupAmbience() {
-       HoleSetup.setup(self, forHole: holeNumber, inCourse: course)
-    }
-    
-    func addGestureRecognizers(in view: SKView) {
-        gestureManager.addRecognizers(to: view)
-    }
-
-    func handleZoom(recognizer: UIPinchGestureRecognizer) {
-        guard let camera = camera else { return }
-        
-        if recognizer.state == .began {
-            // align recognizer scale with existing camera scale
-            recognizer.scale = 1 / camera.xScale
-            
-            let params: [String : NSObject] = [
-                "hole_number": holeNumber as NSObject,
-                "course": course.name as NSObject,
-            ]
-            FIRAnalytics.logEvent(withName: "ZoomGesture", parameters: params)
-        }
-        
-        if (0.6...1.3).contains(recognizer.scale) {
-            
-            // if within allowable range, set camera scale
-            camera.setScale(1 / recognizer.scale)
-            
-            // remove existing camera bounds
-            [limiter.xBound, limiter.yBound].forEach {
-                if let bound = $0, let index = camera.constraints?.index(of: bound) {
-                    camera.constraints?.remove(at: index)
-                }
-            }
-        
-            // check what camera bounds can be set, set them
-            passivelyEnableCameraBounds()
-            
-            let existing = camera.xScale
-//            camera.childNode(withName: "background")?.setScale(1 / existing / 0.8)
-            
-            camera.childNode(withName: "background")?.setScale(1 / existing / 0.8)
-//            let scale = SKAction.scale(to: 1 / existing / 0.8, duration: 0.1)
-//            camera.childNode(withName: "background")?.run(scale)
-        }
-    }
-
-    func handlePan(recognizer: UIPanGestureRecognizer) {
-        if recognizer.state == .began {
-            recognizer.setTranslation(.zero, in: recognizer.view)
-            
-            let params: [String : NSObject] = [
-                "hole_number": holeNumber as NSObject,
-                "course": course.name as NSObject,
-            ]
-            FIRAnalytics.logEvent(withName: "PanGesture", parameters: params)
-
-        } else if recognizer.state == .changed {
-            let translation = recognizer.translation(in: recognizer.view)
-
-            let pan = SKAction.moveBy(x: -translation.x, y: translation.y, duration: 0)
-            camera?.run(pan)
-
-            // reset recognizer to current camera state
-            recognizer.setTranslation(.zero, in: recognizer.view)
-        }
-    }
-
-    // MARK: Animations
-
-    // MARK: Touch Handling
-
-    var adjustingShot = false
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard touches.count == 1 else { return }
-        
-        for touch in touches {
-            
-            let location = touch.location(in: ball.visual.parent!)
-            
-            if !adjustingShot {
-                if location.distance(toPoint: ball.visual.position) <= 100 {
-                    if ball.physics.body.velocity.magnitude < 5.0 {
-                        beginShot()
-                        
-                        shotIndicator.showAngle()
-                    }
-                }
-            }
-        }
-    }
-    
-    func cancelShot(recognizer: UITapGestureRecognizer) {
-        adjustingShot = false
-        
-        let ballPosition = ball.visual.position(in: hole.parent!)!
-        if ballPosition.distance(toPoint: hole.position) <= 150 {
-            flag.lower()
-        }
-        
-        shotIndicator.shotCancelled()
-        
-        view?.removeGestureRecognizer(recognizer)
-        
-        let params: [String : NSObject] = [
-            "hole_number": holeNumber as NSObject,
-            "course": course.name as NSObject,
-        ]
-        FIRAnalytics.logEvent(withName: "ShotCancelled", parameters: params)
+        UserDefaults.standard.addObserver(self, forKeyPath: key, options: .new, context: &UserSettings.context)
     }
     
     func beginShot() {
@@ -415,10 +164,7 @@ class PuttScene: SKScene {
             FIRAnalytics.logEvent(withName: "ShotNearHole", parameters: params)
         }
         
-        let settings = UserDefaults.standard
-        let isEffectsOn = settings.value(forKey: Options.effects.rawValue) as? Bool ?? true
-        
-        if isEffectsOn {
+        if UserSettings.current.isEffectsEnabled {
             let selection = SKAction.playSoundFileNamed("ballSelect.mp3", waitForCompletion: false)
             ball.visual.node.run(selection)
         }
@@ -451,52 +197,10 @@ class PuttScene: SKScene {
                 camera?.run(pan, withKey: "trackingEnabler")
             }
         }
-        
-//        if ball.visual.position(in: hole.parent!)!.distance(toPoint: hole.position) < shotIndicator.ballIndicator.size.width {
-//            
-//      }
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
-            let touchLocation = touch.location(in: self)
-            
-            guard adjustingShot else { return }
-            
-            if touchNode.parent == nil {
-                addChild(touchNode)
-            }
-            touchNode.position = touch.location(in: ball.visual.node)
-            
-            let ballLocation = ball.visual.position(in: self)!
-            shotIndicator.power = (touchLocation.distance(toPoint: ballLocation) / camera!.xScale - shotIndicator.ballIndicator.size.width / 2) / 60.0
-        }
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
-            let touchLocation = touch.location(in: self)
-            
-            guard adjustingShot else { return }
+    var adjustingShot = false
 
-            let ballPosition = ball.visual.position(in: self)!
-            
-            let shotThreshold = shotIndicator.ballIndicator.size.width / 2
-            
-            guard ballPosition.distance(toPoint: touchLocation) > shotThreshold else {
-                adjustingShot = false
-                return
-            }
-            
-            let angle = ballPosition.angle(toPoint: touchLocation) + .pi
-            
-            adjustingShot = false
-            takeShot(at: angle, with: shotIndicator.power * 600)
-            
-            shotIndicator.shotTaken()
-        }
-    }
-    
     var lastShotTime: Date!
    
     func takeShot(at angle: CGFloat, with power: CGFloat) {
@@ -508,10 +212,7 @@ class PuttScene: SKScene {
 
         ball.physics.body.applyImpulse(shot.stroke)
         
-        let settings = UserDefaults.standard
-        let isEffectsOn = settings.value(forKey: Options.effects.rawValue) as? Bool ?? true
-        
-        if isEffectsOn {
+        if UserSettings.current.isEffectsEnabled {
             let sound = SKAudioNode(fileNamed: "clubHit.wav")
             sound.autoplayLooped = false
             sound.position = ball.visual.position(in: self)!
@@ -548,8 +249,37 @@ class PuttScene: SKScene {
         
         ballPrePhysicsVelocity = body.velocity
         
-        if body.velocity.magnitude < 5.0 {
+        let ballPosition = ball.visual.position(in: self)!
+        let distanceFromCamera = ballPosition.distance(toPoint: camera!.position)
+        if adjustingShot, distanceFromCamera <= limiter.freedomRadius {
+            passivelyEnableBallTracking()
+        }
+    }
+    
+    override func didFinishUpdate() {
+        // if there is a wall reflection pending, apply it
+        if let reflection = reflectionVelocity {
+            ball.physics.body.applyImpulse(reflection/3)
+            reflectionVelocity = nil
+        }
+        
+        if !limiter.isActive {
+            passivelyEnableCameraBounds()
+        }
+    }
+    
+    override func didSimulatePhysics() {
+        ball.ballTrail?.particleAlpha = 0.1 + (ball.physics.body.velocity.magnitude / 80.0) * 0.2
+        if holeComplete {
+            let distanceToHole = ball.visual.position(in: hole.parent!)!.distance(toPoint: hole.position)
             
+            if distanceToHole < 5 {
+                (hole.childNode(withName: "gravity") as? SKFieldNode)?.strength = 30
+            }
+        }
+        
+        let body = ball.physics.body
+        if body.velocity.magnitude < 5.0 {
             if let ballTracking = limiter.ballTracking, let index = camera?.constraints?.index(of: ballTracking), body.isResting {
                 camera?.constraints?.remove(at: index)
                 self.limiter.ballTracking = nil
@@ -565,91 +295,7 @@ class PuttScene: SKScene {
                 flag.lower()
             }
         }
-        
-        let ballPosition = ball.visual.position(in: self)!
-        let distanceFromCamera = ballPosition.distance(toPoint: camera!.position)
-        if adjustingShot, distanceFromCamera <= limiter.freedomRadius {
-            passivelyEnableBallTracking()
-        }
-    }
-    
-    override func didFinishUpdate() {
-        // if there is a wall reflection pending, apply it
-        if let reflection = reflectionVelocity {
-//            ball.physicsBody?.velocity = reflection
-            ball.physics.body.applyImpulse(reflection/3)
-            reflectionVelocity = nil
-        }
-        
-        if !limiter.isActive {
-            passivelyEnableCameraBounds()
-        }
-    }
-    
-    override func didSimulatePhysics() {
-        ball.ballTrail?.particleAlpha = 0.1 + (ball.physics.body.velocity.magnitude / 80.0) * 0.2
-        
-        if holeComplete {
-            let distanceToHole = ball.visual.position(in: hole.parent!)!.distance(toPoint: hole.position)
-            
-            if distanceToHole < 5 {
-                
-                (hole.childNode(withName: "gravity") as? SKFieldNode)?.strength = 30
-            }
-        }
-    }
-    
-    func passivelyEnableBallTracking() {
-        let ballPosition = ball.visual.position(in: self)!
-        
-        // if ball is withing tracking range, start tracking
-        guard let _ = camera?.action(forKey: "trackingEnabler"),
-            camera!.position.distance(toPoint: ballPosition) <= limiter.freedomRadius else {
-            return
-        }
-        let tracking = SKConstraint.distance(SKRange(upperLimit: limiter.freedomRadius), to: ball.visual.node)
-        if let _ = camera?.constraints {
-            camera?.constraints?.insert(tracking, at: 0)
-        } else {
-            camera?.constraints = [tracking]
-        }
-        camera?.removeAction(forKey: "trackingEnabler")
-        
-        limiter.ballTracking = tracking
-    }
-    
-    func passivelyEnableCameraBounds() {
-        let cameraSize = CGSize(width: size.width * camera!.xScale,
-                               height: size.height * camera!.yScale)
-        
-        let cameraLimiter = limiter.boundingBox
-        
-        var lowerX = cameraLimiter.minX - cameraLimiter.width/2 + cameraSize.width/2
-        var upperX = cameraLimiter.maxX - cameraLimiter.width/2 - cameraSize.width/2
 
-        if lowerX > upperX {
-            lowerX = 0
-            upperX = 0
-        }
-      
-        var lowerY = cameraLimiter.minY - cameraLimiter.size.height/2 + cameraSize.height/2
-        var upperY = cameraLimiter.maxY - cameraLimiter.size.height/2 - cameraSize.height/2
-        
-        if lowerY > upperY {
-            lowerY = 0
-            upperY = 0
-        }
-        
-        let xRange = SKRange(lowerLimit: lowerX, upperLimit: upperX)
-        let yRange = SKRange(lowerLimit: lowerY, upperLimit: upperY)
-
-        limiter.xBound = SKConstraint.positionX(xRange)
-        limiter.yBound = SKConstraint.positionY(yRange)
- 
-        var constraints = camera?.constraints ?? []
-        constraints.append(limiter.xBound!)
-        constraints.append(limiter.yBound!)
-        camera?.constraints = constraints
     }
     
     deinit {
@@ -715,79 +361,59 @@ extension PuttScene: SKPhysicsContactDelegate {
         }
         
         let reflected = reflect(velocity: ballPrePhysicsVelocity,
-                                 for: contact,
-                                 with: wall.physicsBody!)
+                                     for: contact,
+                                    with: wall.physicsBody!)
         let angle = acos(reflected.normalized • ballPrePhysicsVelocity.normalized)
 
+        // guard for high angles
         guard angle > .pi / 3.0 else {
             
-//            let settings = UserDefaults.standard
-//            let isEffectsOn = settings.value(forKey: Options.effects.rawValue) as? Bool ?? true
-//            
-//            if isEffectsOn {
-//                var shouldPlaySound = true
-//                
-                defer {
-                    let currentTime = Date().timeIntervalSince1970
-                    if let lastTime = lastWallCollision?.2 {
-                        
-                        if currentTime - lastTime < 0.1 {
-                            lastWallCollision = (contact, ball.physics.body.velocity, Date().timeIntervalSince1970)
-                        } else {
-                            lastWallCollision = nil
-
-                        }
-                        
-                    } else {
+            defer {
+                let currentTime = Date().timeIntervalSince1970
+                if let lastTime = lastWallCollision?.2 {
+                    if currentTime - lastTime < 0.1 {
                         lastWallCollision = (contact, ball.physics.body.velocity, Date().timeIntervalSince1970)
+                    } else {
+                        lastWallCollision = nil
                     }
+                } else {
+                    lastWallCollision = (contact, ball.physics.body.velocity, Date().timeIntervalSince1970)
                 }
-                
-                if let (lastContact, lastVelocity, _) = lastWallCollision {
-                    
-                    if acos(lastContact.contactNormal • contact.contactNormal) < .pi / 4,
-                        acos(ball.physics.body.velocity.normalized • lastVelocity.normalized) < .pi / 4 {
-                        
-                        return
-                    }
-                }
-                
-//                if shouldPlaySound {
-                    let sound = AudioPlayer()
-                    sound.play("softWall", ofType: "m4a") { [weak self] in
-                        if let index = self?.audio.temporaryPlayers.index(of: sound) {
-                            self?.audio.temporaryPlayers.remove(at: index)
-                        }
-                    }
-                    sound.volume = (Float(angle) / (.pi / 3.0))
-                    self.audio.temporaryPlayers.append(sound)
-//                }
-//            }
-            return
-        }
-
-        let settings = UserDefaults.standard
-        let isEffectsOn = settings.value(forKey: Options.effects.rawValue) as? Bool ?? true
-    
-        if isEffectsOn {
-            var shouldPlaySound = true
+            }
             
-            if shouldPlaySound {
+            if let (lastContact, lastVelocity, _) = lastWallCollision {
+                if acos(lastContact.contactNormal • contact.contactNormal) < .pi / 4,
+                    acos(ball.physics.body.velocity.normalized • lastVelocity.normalized) < .pi / 4 {
+                    return
+                }
+            }
+                
+            if UserSettings.current.isEffectsEnabled {
                 let sound = AudioPlayer()
                 sound.play("softWall", ofType: "m4a") { [weak self] in
                     if let index = self?.audio.temporaryPlayers.index(of: sound) {
                         self?.audio.temporaryPlayers.remove(at: index)
                     }
                 }
-                sound.volume = Float(ball.physics.body.velocity.magnitude / 50.0)
-                audio.temporaryPlayers.append(sound)
+                sound.volume = (Float(angle) / (.pi / 3.0))
+                self.audio.temporaryPlayers.append(sound)
             }
+            return
+        }
+
+        if UserSettings.current.isEffectsEnabled {
+            let sound = AudioPlayer()
+            sound.play("softWall", ofType: "m4a") { [weak self] in
+                if let index = self?.audio.temporaryPlayers.index(of: sound) {
+                    self?.audio.temporaryPlayers.remove(at: index)
+                }
+            }
+            sound.volume = Float(ball.physics.body.velocity.magnitude / 50.0)
+            audio.temporaryPlayers.append(sound)
         }
         
         reflectionVelocity = reflected
-        
-//        reflectionVelocity = reflected * 0.7
-        
+    
         ball.physics.body.applyImpulse(contact.contactNormal * 5)
     }
     
@@ -803,20 +429,10 @@ extension PuttScene: SKPhysicsContactDelegate {
                 self.ball.disableTrail()
             }
             let group = SKAction.group([drop, stopTrail])
-
-            // stop ball's existing motion
-//            ball.physicsBody?.velocity = .zero
-            
-//            ball.run(group)
-            
-//            game.finish()
             
             shotIndicator.removeFromParent()
             
-            let settings = UserDefaults.standard
-            let isEffectsOn = settings.value(forKey: Options.effects.rawValue) as? Bool ?? true
-        
-            if isEffectsOn {
+            if UserSettings.current.isEffectsEnabled {
                 let sound = AudioPlayer()
                 sound.play("ballInHole", ofType: "m4a") { [weak self] in
                     if let index = self?.audio.temporaryPlayers.index(of: sound) {
@@ -853,9 +469,6 @@ extension PuttScene: SKPhysicsContactDelegate {
             ]
             FIRAnalytics.logEvent(withName: "HoleFinish", parameters: params)
 
-        
-            let par = HoleInfo.par(forHole: holeNumber, in: course)
-            
             if let holeParent = hole.parent {
                 let pulse = SKSpriteNode(imageNamed: "holeBurst")
                 pulse.size = CGSize(width: hole.size.width*(0.9), height: hole.size.height*(0.9))
@@ -968,11 +581,7 @@ extension PuttScene: SKPhysicsContactDelegate {
         let touch = UITapGestureRecognizer(target: self, action: #selector(PuttScene.sceneClosePressed(recognizer:)))
         view?.addGestureRecognizer(touch)
         
-        
-        let settings = UserDefaults.standard
-        let isEffectsOn = settings.value(forKey: Options.effects.rawValue) as? Bool ?? true
-        
-        if isEffectsOn {
+        if UserSettings.current.isEffectsEnabled {
             let temporary = AudioPlayer()
             temporary.play("scorecard2", ofType: "wav") { [weak self] in
                 if let index = self?.audio.temporaryPlayers.index(of: temporary) {
@@ -1003,16 +612,10 @@ extension PuttScene: SKPhysicsContactDelegate {
     }
 }
 
-extension PuttScene: UIGestureRecognizerDelegate {
-    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        let manager = gestureManager
-        
-        if gestureRecognizer == manager.pan && otherGestureRecognizer == manager.zoom {
-            return true
-        }
-        if gestureRecognizer == manager.zoom && otherGestureRecognizer == manager.pan {
-            return true
-        }
-        return false
-    }
+func reflect(velocity entrance: CGVector, for contact: SKPhysicsContact, with body: SKPhysicsBody) -> CGVector {
+    return reflect(vector: entrance, across: contact.contactNormal, at: contact.contactPoint, offOf: body)
+}
+
+func reflect(vector entrance: CGVector, across normal: CGVector, at point: CGPoint, offOf body: SKPhysicsBody) -> CGVector {
+    return entrance - (normal * (entrance • normal) * 2)
 }

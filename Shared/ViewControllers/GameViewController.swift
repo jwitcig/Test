@@ -174,16 +174,14 @@ class GameViewController: UIViewController {
     
     func createSettingsPane() -> InGameMenuView {
         let settingsPane = InGameMenuView.create(motionDuration: menuAnimationTime)
-        
-        let settings = UserDefaults.standard
-        
+                
         let music = InGameOptionView.create()
         music.optionName = Options.gameMusic.rawValue
-        music.enabled = settings.value(forKey: music.optionName) as? Bool ?? true
+        music.enabled = UserSettings.current.isMusicEnabled
         
         let effects = InGameOptionView.create()
         effects.optionName = "Effects"
-        effects.enabled = settings.value(forKey: effects.optionName) as? Bool ?? true
+        effects.enabled = UserSettings.current.isEffectsEnabled
     
         settingsPane.options = [music, effects]
         return settingsPane

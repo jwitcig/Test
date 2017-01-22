@@ -58,10 +58,8 @@ class HoleSetup {
         scene.audio.backgroundMusic = music
         music.play("Too Cool")
         scene.audio.backgroundMusic?.volume = 0.2
-        
-        let settings = UserDefaults.standard
-        let isMusicOn = settings.value(forKey: Options.gameMusic.rawValue) as? Bool ?? true
-        if !isMusicOn {
+
+        if !UserSettings.current.isMusicEnabled {
             music.pause()
         }
         

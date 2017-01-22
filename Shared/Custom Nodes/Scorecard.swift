@@ -141,10 +141,8 @@ class Scorecard: SKScene {
         move.timingMode = .easeInEaseOut
         token.run(move)
         
-        let settings = UserDefaults.standard
-        let isEffectsOn = settings.value(forKey: Options.effects.rawValue) as? Bool ?? true
     
-        if isEffectsOn {
+        if UserSettings.current.isEffectsEnabled {
             let sound = SKAction.playSoundFileNamed("coinSound.wav", waitForCompletion: false)
             let delay = SKAction.wait(forDuration: animationDuration/2)
             let sequence = SKAction.sequence([delay, sound])
