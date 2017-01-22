@@ -125,6 +125,7 @@ class PuttScene: SKScene {
 
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if context == &settingsContext {
+            
             if let newValue = change?[.newKey] {
                 if keyPath == Options.gameMusic.rawValue {
                     
@@ -151,19 +152,6 @@ class PuttScene: SKScene {
         
         setDebugOptions(on: view)
         
-        let session = AVAudioSession.sharedInstance()
-        do {
-            try session.setCategory(AVAudioSessionCategoryAmbient, with: [.mixWithOthers])
-            try session.setActive(true, with: [])
-        } catch {
-            print(error)
-        }
-        
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(AudioPlayer.playInterrupt(notification:)),
-                                               name: NSNotification.Name.AVAudioSessionInterruption,
-                                               object: session)
-    
         scaleMode = .resizeFill
         
         removeGrid()
@@ -194,7 +182,7 @@ class PuttScene: SKScene {
         let holeData = HoleData(holeNumber: holeNumber, course: course)
         let size = holeData.size
         let cameraBox = CGRect(x: 0, y: 0, width: size.width + 100, height: size.height + 100)
-        limiter = CameraLimiter(camera: camera!, boundingBox: cameraBox, freedomRadius: {
+        limiter = CameraLimiter(camera: camera!, boundingBox: cameraBox, freedomRadius: { [unowned self] in
             return self.size.width * self.camera!.xScale * 0.4
         })
         
@@ -207,9 +195,9 @@ class PuttScene: SKScene {
         
             let sound = SKAction.run {
                 let audio = AudioPlayer()
-                audio.play("ballDrop", ofType: "m4a") {
-                    if let index = self.audio.temporaryPlayers.index(of: audio) {
-                        self.audio.temporaryPlayers.remove(at: index)
+                audio.play("ballDrop", ofType: "m4a") { [weak self] in
+                    if let index = self?.audio.temporaryPlayers.index(of: audio) {
+                        self?.audio.temporaryPlayers.remove(at: index)
                     }
                 }
                 audio.volume = 0.8
@@ -678,6 +666,10 @@ class PuttScene: SKScene {
         constraints.append(limiter.yBound!)
         camera?.constraints = constraints
     }
+    
+    deinit {
+        print("PuttScene is gone!")
+    }
 }
 
 // MARK: Contact Delegate
@@ -777,9 +769,9 @@ extension PuttScene: SKPhysicsContactDelegate {
                 
 //                if shouldPlaySound {
                     let sound = AudioPlayer()
-                    sound.play("softWall", ofType: "m4a") {
-                        if let index = self.audio.temporaryPlayers.index(of: sound) {
-                            self.audio.temporaryPlayers.remove(at: index)
+                    sound.play("softWall", ofType: "m4a") { [weak self] in
+                        if let index = self?.audio.temporaryPlayers.index(of: sound) {
+                            self?.audio.temporaryPlayers.remove(at: index)
                         }
                     }
                     sound.volume = (Float(angle) / (.pi / 3.0))
@@ -797,9 +789,9 @@ extension PuttScene: SKPhysicsContactDelegate {
             
             if shouldPlaySound {
                 let sound = AudioPlayer()
-                sound.play("softWall", ofType: "m4a") {
-                    if let index = self.audio.temporaryPlayers.index(of: sound) {
-                        self.audio.temporaryPlayers.remove(at: index)
+                sound.play("softWall", ofType: "m4a") { [weak self] in
+                    if let index = self?.audio.temporaryPlayers.index(of: sound) {
+                        self?.audio.temporaryPlayers.remove(at: index)
                     }
                 }
                 sound.volume = Float(ball.physics.body.velocity.magnitude / 50.0)
@@ -841,9 +833,9 @@ extension PuttScene: SKPhysicsContactDelegate {
         
             if isEffectsOn {
                 let sound = AudioPlayer()
-                sound.play("ballInHole", ofType: "m4a") {
-                    if let index = self.audio.temporaryPlayers.index(of: sound) {
-                        self.audio.temporaryPlayers.remove(at: index)
+                sound.play("ballInHole", ofType: "m4a") { [weak self] in
+                    if let index = self?.audio.temporaryPlayers.index(of: sound) {
+                        self?.audio.temporaryPlayers.remove(at: index)
                     }
                 }
                 audio.temporaryPlayers.append(sound)
@@ -942,7 +934,7 @@ extension PuttScene: SKPhysicsContactDelegate {
     }
     
     func postScorecardTearDown() {
-        audio.backgroundMusic?.pause()
+        audio.backgroundMusic = nil
     }
     
     func showScorecard(hole: Int, names: (String, String), player1Strokes: [Int], player2Strokes: [Int], pars: [Int], donePressed: @escaping ()->Void) {
@@ -997,9 +989,9 @@ extension PuttScene: SKPhysicsContactDelegate {
         
         if isEffectsOn {
             let temporary = AudioPlayer()
-            temporary.play("scorecard2", ofType: "wav") {
-                if let index = self.audio.temporaryPlayers.index(of: temporary) {
-                    self.audio.temporaryPlayers.remove(at: index)
+            temporary.play("scorecard2", ofType: "wav") { [weak self] in
+                if let index = self?.audio.temporaryPlayers.index(of: temporary) {
+                    self?.audio.temporaryPlayers.remove(at: index)
                 }
             }
             audio.temporaryPlayers.append(temporary)
