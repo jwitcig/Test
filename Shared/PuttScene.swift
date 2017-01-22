@@ -19,7 +19,9 @@ import SWXMLHash
 
 class PuttScene: SKScene {
     
-    var entities: [GKEntity] = []
+    lazy var entityManager: EntityManager = {
+        return EntityManager(world: self)
+    }()
     
     var startTime: Date!
     
@@ -30,8 +32,14 @@ class PuttScene: SKScene {
         return BallEntity(node: node, physics: node.physicsBody!)
     }()
     
-    lazy var hole: Hole = {
-        return self.childNode(withName: "//\(Hole.name)")! as! Hole
+    lazy var shotIndicator: ShotIndicator = {
+        return ShotIndicator(orientToward: self.touchNode, withOffset: SKRange(constantValue: .pi/2))
+    }()
+    
+    lazy var hole: HoleEntity = {
+        let node = self.childNode(withName: "//\(Hole.name)")! as! Hole
+        node.removeFromParent()
+        return HoleEntity(node: node)
     }()
     
     lazy var flag: Flag = {
@@ -75,10 +83,6 @@ class PuttScene: SKScene {
     
     var hud: HUDView!
     
-    lazy var shotIndicator: ShotIndicator = {
-        return ShotIndicator(orientToward: self.touchNode, withOffset: SKRange(constantValue: .pi/2))
-    }()
-    
     var limiter: CameraLimiter!
     
     var scorecard: Scorecard?
@@ -105,10 +109,6 @@ class PuttScene: SKScene {
         FIRAnalytics.logEvent(withName: "RoundStart", parameters: params)
     }
     
-    func drawHole(for holeData: HoleData) {
-        holeData.parse(scene: self)
-    }
-    
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if context == &UserSettings.context {
             
@@ -129,32 +129,21 @@ class PuttScene: SKScene {
         }
     }
     
-    func add(entity: GKEntity) {
-        entities.append(entity)
-        if let visual = entity.component(ofType: RenderComponent.self) {
-            addChild(visual.node)
-        }
-    }
-    
     func updateShotIndicatorPosition() {
-        if let shotIndicatorParent = shotIndicator.parent, let ballParent = ball.visual.parent {
-            shotIndicator.position = ballParent.convert(ball.visual.position, to: shotIndicatorParent)
+        if let shotIndicatorParent = shotIndicator.visual.parent, let ballParent = ball.visual.parent {
+            shotIndicator.visual.position = ballParent.convert(ball.visual.position, to: shotIndicatorParent)
         }
-    }
-    
-    func addSettingsListener(forKey key: String) {
-        UserDefaults.standard.addObserver(self, forKeyPath: key, options: .new, context: &UserSettings.context)
     }
     
     func beginShot() {
-        let ballPosition = hole.parent!.convert(ball.visual.position, from: ball.visual.parent!)
+        let ballPosition = ball.visual.position(in: hole.visual.parent!)!
         
-        let distanceToHole = ballPosition.distance(toPoint: hole.position)
+        let distanceToHole = ballPosition.distance(toPoint: hole.visual.position)
         if distanceToHole <= 150 {
             flag.raise()
             
             let fadeDown = SKAction.fadeAlpha(to: 0.6, duration: 0.4)
-            shotIndicator.run(fadeDown)
+            shotIndicator.visual.node.run(fadeDown)
             
             let params = [
                 "hole_number": holeNumber as NSObject,
@@ -181,7 +170,7 @@ class PuttScene: SKScene {
         // force ball to a halt
         ball.physics.body.velocity = .zero
         
-        shotIndicator.position = convert(ball.visual.position, from: ball.visual.parent!)
+        shotIndicator.visual.position = convert(ball.visual.position, from: ball.visual.parent!)
         adjustingShot = true
         
         let cancel = UITapGestureRecognizer(target: self, action: #selector(PuttScene.cancelShot(recognizer:)))
@@ -271,10 +260,10 @@ class PuttScene: SKScene {
     override func didSimulatePhysics() {
         ball.ballTrail?.particleAlpha = 0.1 + (ball.physics.body.velocity.magnitude / 80.0) * 0.2
         if holeComplete {
-            let distanceToHole = ball.visual.position(in: hole.parent!)!.distance(toPoint: hole.position)
+            let distanceToHole = ball.visual.position(in: hole.visual.parent!)!.distance(toPoint: hole.visual.position)
             
             if distanceToHole < 5 {
-                (hole.childNode(withName: "gravity") as? SKFieldNode)?.strength = 30
+                (hole.visual.node.childNode(withName: "gravity") as? SKFieldNode)?.strength = 30
             }
         }
         
@@ -290,8 +279,8 @@ class PuttScene: SKScene {
                 shotIndicator.ballStopped()
             }
             
-            let ballPosition = ball.visual.position(in: hole.parent!)!
-            if ballPosition.distance(toPoint: hole.position) > 150, !flag.isWiggling {
+            let ballPosition = ball.visual.position(in: hole.visual.parent!)!
+            if ballPosition.distance(toPoint: hole.visual.position) > 150, !flag.isWiggling {
                 flag.lower()
             }
         }
@@ -423,14 +412,10 @@ extension PuttScene: SKPhysicsContactDelegate {
         // collision can occur several times during animation
         
         if let drop = SKAction(named: "Drop") {
-            let holePosition = hole.parent!.convert(hole.position, to: ball.visual.parent!)
-            
-            let stopTrail = SKAction.run {
-                self.ball.disableTrail()
-            }
+            let stopTrail = SKAction.run(ball.disableTrail)
             let group = SKAction.group([drop, stopTrail])
             
-            shotIndicator.removeFromParent()
+            entityManager.remove(entity: shotIndicator)
             
             if UserSettings.current.isEffectsEnabled {
                 let sound = AudioPlayer()
@@ -448,17 +433,18 @@ extension PuttScene: SKPhysicsContactDelegate {
             gravity?.strength = 100
             game.finish()
             
-            let distanceToHole = hole.size.width / 2 - 1
+            let distanceToHole = (hole.size.width / 2) - 1
             
             let range = SKRange(upperLimit: distanceToHole)
             let limit = SKConstraint.distance(range, to: hole)
             
-            self.ball.visual.node.constraints = self.ball.visual.node.constraints ?? []
-            self.ball.visual.node.constraints?.append(limit)
+            ball.visual.node.constraints = ball.visual.node.constraints ?? []
+            ball.visual.node.constraints?.append(limit)
 
-            let manager = self.gestureManager
-            manager.remove(recognizer: manager.pan, from: self.view!)
-            manager.remove(recognizer: manager.zoom, from: self.view!)
+            if let view = self.view {
+                let recognizers: [UIGestureRecognizer] = [gestureManager.pan, gestureManager.zoom]
+                gestureManager.remove(recognizers: recognizers, from: view)
+            }
             
             let params: [String : NSObject] = [
                 "hole_number": self.holeNumber as NSObject,

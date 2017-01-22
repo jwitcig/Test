@@ -128,8 +128,8 @@ extension PuttScene {
     func cancelShot(recognizer: UITapGestureRecognizer) {
         adjustingShot = false
         
-        let ballPosition = ball.visual.position(in: hole.parent!)!
-        if ballPosition.distance(toPoint: hole.position) <= 150 {
+        let ballPosition = ball.visual.position(in: hole.visual.parent!)!
+        if ballPosition.distance(toPoint: hole.visual.position) <= 150 {
             flag.lower()
         }
         

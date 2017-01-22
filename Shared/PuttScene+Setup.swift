@@ -1,5 +1,5 @@
 //
-//  PuttScene+Config.swift
+//  PuttScene+Setup.swift
 //  MrPutt
 //
 //  Created by Developer on 1/22/17.
@@ -31,6 +31,10 @@ extension PuttScene {
         lastShotTime = Date()
     }
     
+    func drawHole(for holeData: HoleData) {
+        holeData.parse(scene: self)
+    }
+    
     func removeGrid() {
         childNode(withName: "grid")?.removeFromParent()
     }
@@ -59,8 +63,9 @@ extension PuttScene {
     
     // Sets position and initial state for nodes
     func initiate(with holeData: HoleData) {
-        add(entity: ball)
-        addChild(shotIndicator)
+        entityManager.add(entity: ball)
+        entityManager.add(entity: shotIndicator)
+        entityManager.add(entity: hole)
         
         flag.updateFlag(hole: holeNumber)
         
@@ -73,15 +78,15 @@ extension PuttScene {
         ball.visual.node.alpha = 0
         ball.ballTrail!.alpha = 0
         ball.ballTrail!.particleAlpha = 0
-        shotIndicator.alpha = 0
-        hole.alpha = 0
+        shotIndicator.visual.node.alpha = 0
+        hole.visual.node.alpha = 0
         
         let ballPosition = holeData.ballLocation
         let holePosition = holeData.holeLocation
         
-        shotIndicator.position = ballPosition
+        shotIndicator.visual.position = ballPosition
         ball.visual.position = convert(ballPosition, to: ball.visual.parent!)
-        hole.position = convert(holePosition, to: hole.parent!)
+        hole.visual.position = convert(holePosition, to: hole.visual.parent!)
     }
     
     func initiateAnimations(with holeData: HoleData) {
@@ -122,13 +127,16 @@ extension PuttScene {
         let fadeIn = SKAction.run {
             let fade = SKAction.fadeIn(withDuration: 0.5)
             self.ball.visual.node.run(fade)
-            self.hole.run(fade)
+            self.hole.visual.node.run(fade)
             
             self.ball.ballTrail!.alpha = 1
             self.ball.ballTrail!.particleAlpha = 1
-            self.shotIndicator.run(fade)
+            self.shotIndicator.visual.node.run(fade)
         }
         run(SKAction.sequence([wait, fadeIn]))
-
+    }
+    
+    func addSettingsListener(forKey key: String) {
+        UserDefaults.standard.addObserver(self, forKeyPath: key, options: .new, context: &UserSettings.context)
     }
 }

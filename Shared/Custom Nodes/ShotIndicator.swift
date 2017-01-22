@@ -6,32 +6,23 @@
 //  Copyright © 2017 CodeWithKenny. All rights reserved.
 //
 
+import GameplayKit
 import SpriteKit
 
 import JWSwiftTools
 
-extension UIColor {
-    var r: CGFloat {
-        return cgColor.components?[safe: 0] ?? 0
+class ShotIndicator: GKEntity {
+    
+    var visual: RenderComponent {
+        return component(ofType: RenderComponent.self)!
     }
-    var g: CGFloat {
-        return cgColor.components?[safe: 1] ?? 0
-    }
-    var b: CGFloat {
-        return cgColor.components?[safe: 2] ?? 0
-    }
-}
-
-class ShotIndicator: SKNode {
     
     let motionDuration: TimeInterval = 0.2
-
+    
     var power: CGFloat = 0 {
         didSet {
             power = power < 0 ? 0 : power
             power = power > 1 ? 1 : power
-            
-            powerIndicator.setScale(power)
             
             let red = UIColor(red: 0.882, green: 0.071, blue: 0.071, alpha: 1)
             let yellow = UIColor(red: 1.0, green: 0.943, blue: 0.023, alpha: 1)
@@ -39,11 +30,12 @@ class ShotIndicator: SKNode {
             
             func color(forPower: CGFloat) -> UIColor {
                 return UIColor(red: yellow.r + (red.r - yellow.r)*power,
-                             green: yellow.g + (red.g - yellow.g)*power,
-                              blue: yellow.b + (red.b - yellow.b)*power,
-                             alpha: 1)
+                               green: yellow.g + (red.g - yellow.g)*power,
+                               blue: yellow.b + (red.b - yellow.b)*power,
+                               alpha: 1)
             }
             
+            powerIndicator.setScale(power)
             powerIndicator.fillColor = color(forPower: power)
         }
     }
@@ -69,9 +61,12 @@ class ShotIndicator: SKNode {
         let orient = SKConstraint.orient(to: node, offset: offset)
         angleIndicator.constraints = [orient]
         
-        addChild(angleIndicator)
-        addChild(ballIndicator)
-        addChild(powerIndicator)
+        let visual = RenderComponent(node: SKNode())
+        visual.node.addChild(angleIndicator)
+        visual.node.addChild(ballIndicator)
+        visual.node.addChild(powerIndicator)
+        
+        addComponent(visual)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -102,3 +97,4 @@ class ShotIndicator: SKNode {
     }
     
 }
+
