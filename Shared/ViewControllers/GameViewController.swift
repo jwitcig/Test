@@ -152,8 +152,6 @@ class GameViewController: UIViewController {
 
         scene.game = Putt(previousSession: previousSession, initial: previousSession?.initial, padding: nil, cycle: cycle)
         
-        HoleSetup.setup(scene, forHole: hole, inCourse: course)
-    
         orientationManager?.requestPresentationStyle(.expanded)
         sceneView.presentScene(scene)
 
@@ -368,6 +366,10 @@ class GameViewController: UIViewController {
         sceneView.presentScene(nil)
     }
     
+    deinit {
+        print("GameViewController is gone!")
+    }
+    
     // MARK: Game Cycle
     
     func started() {
@@ -423,6 +425,7 @@ class GameViewController: UIViewController {
                 let fadeOut = SKAction.fadeOut(withDuration: 0.5)
                 let remove = SKAction.run {
                     self.sceneView.presentScene(nil)
+                    self.scene = nil
                 }
                 self.scene.run(SKAction.sequence([fadeOut, remove]))
             }

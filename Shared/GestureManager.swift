@@ -9,7 +9,7 @@
 import UIKit
 
 class GestureManager {
-    let delegate: UIGestureRecognizerDelegate
+    weak var delegate: UIGestureRecognizerDelegate?
     
     lazy var pan: UIPanGestureRecognizer = {
         let pan = UIPanGestureRecognizer(target: self.delegate, action: #selector(PuttScene.handlePan(recognizer:)))

@@ -6,6 +6,7 @@
 //  Copyright © 2016 CodeWithKenny. All rights reserved.
 //
 
+import AVFoundation
 import Messages
 import UIKit
 
@@ -28,6 +29,19 @@ class MessagesViewController: MSMessagesAppViewController {
         if FIRApp.defaultApp() == nil {
             FIRApp.configure()
         }
+        
+        let session = AVAudioSession.sharedInstance()
+        do {
+            try session.setCategory(AVAudioSessionCategoryAmbient, with: [.mixWithOthers])
+            try session.setActive(true, with: [])
+        } catch {
+            print(error)
+        }
+        
+//        NotificationCenter.default.addObserver(self,
+//                                               selector: #selector(AudioPlayer.playInterrupt(notification:)),
+//                                               name: NSNotification.Name.AVAudioSessionInterruption,
+//                                               object: session)
     }
     
     override func willBecomeActive(with conversation: MSConversation) {

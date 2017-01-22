@@ -32,12 +32,19 @@ class AudioPlayer: NSObject {
         
         self.completion = completion
 
-        do {
-            self.player = try AVAudioPlayer(contentsOf: url)
-            self.player?.delegate = self
-            self.player?.prepareToPlay()
-            self.player?.play()
-        } catch { }
+        DispatchQueue.main.async {
+            do {
+                self.player = try AVAudioPlayer(contentsOf: url)
+                self.player?.delegate = self
+                self.player?.prepareToPlay()
+//                DispatchQueue.main.sync {
+                    self.resume()
+//                }
+            } catch {
+                print("audio error: \(error)")
+            }
+        }
+        
     }
     
     func resume() {
