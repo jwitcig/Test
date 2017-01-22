@@ -37,38 +37,32 @@ class AudioPlayer: NSObject {
                 self.player = try AVAudioPlayer(contentsOf: url)
                 self.player?.delegate = self
                 self.player?.prepareToPlay()
-//                DispatchQueue.main.sync {
-                    self.resume()
-//                }
+                self.resume()
             } catch {
                 print("audio error: \(error)")
             }
         }
-        
     }
     
     func resume() {
+        player?.prepareToPlay()
         player?.play()
-        print("resume")
     }
     
     func pause() {
         player?.pause()
-        print("paused")
     }
     
     func playInterrupt(notification: Notification) {
         //Check the type of notification, especially if you are sending multiple AVAudioSession events here
         if notification.name == NSNotification.Name.AVAudioSessionInterruption {
             
-            if let interruptionType = notification.userInfo?[AVAudioSessionInterruptionTypeKey] as? AVAudioSessionInterruptionType, interruptionType == AVAudioSessionInterruptionType.began {
-        
-            } else {
+            let interruptionType = notification.userInfo?[AVAudioSessionInterruptionTypeKey] as? AVAudioSessionInterruptionType
+            
+            if let type = interruptionType, type == .began {
                 
-                let time = DispatchTime.now() + 0.01
-                DispatchQueue.main.asyncAfter(deadline: time, execute: { 
-                    self.resume()
-                })
+            } else {
+                DispatchQueue.main.async(execute: resume)
             }
         }
     }
