@@ -16,7 +16,7 @@ extension PuttScene {
         
         let background = SKSpriteNode(imageNamed: course.name.lowercased()+"Background")
         background.name = "background"
-        background.size = CGSize(width: 800, height: 1600)
+        background.size = CGSize(width: 1200, height: 2400)
         camera?.addChild(background)
     }
     

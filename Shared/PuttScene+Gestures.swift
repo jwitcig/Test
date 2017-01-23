@@ -101,7 +101,9 @@ extension PuttScene {
             // check what camera bounds can be set, set them
             passivelyEnableCameraBounds()
             
-            camera.childNode(withName: "background")?.setScale(1 / camera.xScale / 0.8)
+            let background = camera.childNode(withName: "background")
+                
+            background?.setScale(1 / camera.xScale / 0.8)
         }
     }
     

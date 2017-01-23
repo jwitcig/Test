@@ -233,8 +233,11 @@ class GameViewController: UIViewController {
             settingsPane.hiddenConstraints.active = true
             
             constrain(settingsPane, toolsContainer) {
-                $0.width == $1.width * 0.8
-                $0.height >= $1.height * 0.5
+                $0.width == $1.width * 0.8 ~ 900
+                $0.height >= $1.height * 0.5 ~ 900
+            
+                $0.width <= 300
+                $0.height <= 300
                 
                 $0.centerX == $1.centerX
             }
@@ -284,7 +287,9 @@ class GameViewController: UIViewController {
             
             constrain(controlsPane, toolsContainer) {
                 $0.width == $0.height * 1221.0/2325.0
-                $0.height == $1.height * 0.9
+                $0.height == $1.height * 0.9 ~ 900
+                
+                $0.height <= 400
                 
                 $0.centerX == $1.centerX
             }
