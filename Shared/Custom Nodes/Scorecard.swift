@@ -133,7 +133,7 @@ class Scorecard: SKScene {
     
     func showToken() {
         guard let token = token else { return }
-        let destination = CGPoint(x: card.frame.maxX-token.size.width/1.5, y: card.frame.maxY-token.size.height/2 + 2)
+        let destination = CGPoint(x: card.frame.maxX-token.size.width/1.5, y: card.frame.maxY-token.size.height/2)
     
         let animationDuration: TimeInterval = 0.5
         
