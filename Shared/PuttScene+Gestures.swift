@@ -52,23 +52,24 @@ extension PuttScene {
             let touchLocation = touch.location(in: self)
             
             guard adjustingShot else { return }
-            
+            adjustingShot = false
+
             let ballPosition = ball.visual.position(in: self)!
             
             let shotThreshold = shotIndicator.ballIndicator.size.width / 2
             
-            guard ballPosition.distance(toPoint: touchLocation) > shotThreshold else {
-                adjustingShot = false
-                return
-            }
+            guard ballPosition.distance(toPoint: touchLocation) > shotThreshold else { return }
             
             let angle = ballPosition.angle(toPoint: touchLocation) + .pi
             
-            adjustingShot = false
             takeShot(at: angle, with: shotIndicator.power * 600)
             
             shotIndicator.shotTaken()
         }
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        adjustingShot = false
     }
     
     func handleZoom(recognizer: UIPinchGestureRecognizer) {
@@ -156,5 +157,18 @@ extension PuttScene: UIGestureRecognizerDelegate {
             return true
         }
         return false
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if gestureRecognizer == gestureManager.pan {
+            
+            let location = touch.location(in: self)
+            let ballLocation = ball.visual.position(in: self)!
+            
+            if location.distance(toPoint: ballLocation) <= 100, !adjustingShot {
+                return false
+            }
+        }
+        return true
     }
 }

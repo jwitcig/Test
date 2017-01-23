@@ -13,7 +13,7 @@ class GestureManager {
     
     lazy var pan: UIPanGestureRecognizer = {
         let pan = UIPanGestureRecognizer(target: self.delegate, action: #selector(PuttScene.handlePan(recognizer:)))
-        pan.minimumNumberOfTouches = 2
+        pan.minimumNumberOfTouches = 1
         pan.delegate = self.delegate
         return pan
     }()
