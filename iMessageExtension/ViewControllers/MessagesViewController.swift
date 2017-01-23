@@ -183,6 +183,7 @@ public extension FirebaseConfigurable {
         guard FIRApp.defaultApp() == nil else { return }
         
         let options = FIROptions(contentsOfFile: bundle.path(forResource: servicesFileName, ofType: "plist"))!
+        
         FIRApp.configure(with: options)
     }
 }
