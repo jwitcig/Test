@@ -20,11 +20,11 @@ extension PuttScene {
             let location = touch.location(in: ball.visual.parent!)
             
             if !adjustingShot {
-                if location.distance(toPoint: ball.visual.position) <= 100 {
-                    if ball.physics.body.velocity.magnitude < 5.0 {
-                        beginShot()
+                if location.distance(toPoint: self.ball.visual.position) <= 100 {
+                    if self.ball.physics.body.velocity.magnitude < 5.0 {
+                        self.beginShot()
                         
-                        shotIndicator.showAngle()
+                        self.shotIndicator.showAngle()
                     }
                 }
             }

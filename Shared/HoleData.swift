@@ -189,26 +189,26 @@ class HoleData {
             default:
                 fatalError()
             }
-        case is Timber.Type:
+        case is Retro.Type:
             switch holeNumber {
             case 1:
-                image = TimberStyleKit.imageOfTimberHole1
+                image = RetroStyleKit.imageOfRetroHole1
             case 2:
-                image = TimberStyleKit.imageOfTimberHole2
+                image = RetroStyleKit.imageOfRetroHole2
             case 3:
-                image = TimberStyleKit.imageOfTimberHole3
+                image = RetroStyleKit.imageOfRetroHole3
             case 4:
-                image = TimberStyleKit.imageOfTimberHole4
+                image = RetroStyleKit.imageOfRetroHole4
             case 5:
-                image = TimberStyleKit.imageOfTimberHole5
+                image = RetroStyleKit.imageOfRetroHole5
             case 6:
-                image = TimberStyleKit.imageOfTimberHole6
+                image = RetroStyleKit.imageOfRetroHole6
             case 7:
-                image = TimberStyleKit.imageOfTimberHole7
+                image = RetroStyleKit.imageOfRetroHole7
             case 8:
-                image = TimberStyleKit.imageOfTimberHole8
+                image = RetroStyleKit.imageOfRetroHole8
             case 9:
-                image = TimberStyleKit.imageOfTimberHole9
+                image = RetroStyleKit.imageOfRetroHole9
             default:
                 fatalError()
             }

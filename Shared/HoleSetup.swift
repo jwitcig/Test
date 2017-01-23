@@ -20,7 +20,7 @@ struct Course {
         let packs: [CoursePack.Type] = [
             Frost.self,
             Blaze.self,
-            Timber.self,
+            Retro.self,
             Nebula.self,
         ]
         return packs.filter { $0.name == name }.first
@@ -39,10 +39,10 @@ struct Blaze: CoursePack {
     static let previewImage = #imageLiteral(resourceName: "blazePreview")
 }
 
-struct Timber: CoursePack {
-    static let name = "Timber"
+struct Retro: CoursePack {
+    static let name = "Retro"
     static let holeCount = 9
-    static let previewImage = #imageLiteral(resourceName: "timberPreview")
+    static let previewImage = #imageLiteral(resourceName: "retroPreview")
 }
 
 struct Nebula: CoursePack {
@@ -89,35 +89,8 @@ class HoleSetup {
             default:
                 break
             }
+            case is Retro.Type:
             
-        case is Timber.Type:
-            
-            if let leaf1 = SKEmitterNode(fileNamed: "Leaves1") {
-                let density = leaf1.particleBirthRate / leaf1.particlePositionRange.dx
-                leaf1.position = CGPoint(x: 0, y: holeSize.height * 1.2)
-                leaf1.particlePositionRange = CGVector(dx: holeSize.width * 2, dy: 0)
-                leaf1.particleBirthRate = density * leaf1.particlePositionRange.dx
-                leaf1.advanceSimulationTime(TimeInterval(leaf1.particleLifetime))
-                scene.addChild(leaf1)
-            }
-            
-            if let leaf2 = SKEmitterNode(fileNamed: "Leaves2") {
-                let density = leaf2.particleBirthRate / leaf2.particlePositionRange.dx
-                leaf2.position = CGPoint(x: 0, y: holeSize.height * 1.2)
-                leaf2.particlePositionRange = CGVector(dx: holeSize.width * 2, dy: 0)
-                leaf2.particleBirthRate = density * leaf2.particlePositionRange.dx
-                leaf2.advanceSimulationTime(TimeInterval(leaf2.particleLifetime))
-                scene.addChild(leaf2)
-            }
-            
-            if let leaf3 = SKEmitterNode(fileNamed: "Leaves3") {
-                let density = leaf3.particleBirthRate / leaf3.particlePositionRange.dx
-                leaf3.position = CGPoint(x: 0, y: holeSize.height * 1.2)
-                leaf3.particlePositionRange = CGVector(dx: holeSize.width * 2, dy: 0)
-                leaf3.particleBirthRate = density * leaf3.particlePositionRange.dx
-                leaf3.advanceSimulationTime(TimeInterval(leaf3.particleLifetime))
-                scene.addChild(leaf3)
-            }
             
             switch hole {
             default:
