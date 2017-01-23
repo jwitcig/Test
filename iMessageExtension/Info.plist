@@ -42,5 +42,7 @@
 	<string>Default-568</string>
 	<key>UILaunchImageSize</key>
 	<string>{320, 568}</string>
+	<key>Google Services File</key>
+	<string>$(GOOGLE_SERVICES_FILE)</string>
 </dict>
 </plist>
