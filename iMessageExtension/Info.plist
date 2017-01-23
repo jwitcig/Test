@@ -23,7 +23,9 @@
 	<key>CFBundleShortVersionString</key>
 	<string>0.1</string>
 	<key>CFBundleVersion</key>
-	<string>369</string>
+	<string>371</string>
+	<key>Google Services File</key>
+	<string>$(GOOGLE_SERVICES_FILE)</string>
 	<key>MSMessagesExtensionStoreIconName</key>
 	<string>Yo</string>
 	<key>NSExtension</key>
@@ -42,7 +44,5 @@
 	<string>Default-568</string>
 	<key>UILaunchImageSize</key>
 	<string>{320, 568}</string>
-	<key>Google Services File</key>
-	<string>$(GOOGLE_SERVICES_FILE)</string>
 </dict>
 </plist>
