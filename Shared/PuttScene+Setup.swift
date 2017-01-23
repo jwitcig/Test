@@ -97,11 +97,10 @@ extension PuttScene {
         let delay = SKAction.wait(forDuration: 0.9)
         
         if let ballDrop = SKAction(named: "BallDrop") {
-            run(SKAction.sequence([delay, ballDrop]))
+            ball.visual.node.run(SKAction.sequence([delay, ballDrop]))
         }
         
         run(SKAction.sequence([delay, beginShot]))
-        
         
         if UserSettings.current.isEffectsEnabled {
             let sound = SKAction.run {
@@ -121,8 +120,7 @@ extension PuttScene {
         let pan = SKAction.move(to: holeData.ballLocation, duration: 4.0)
         pan.timingMode = .easeOut
         camera?.run(pan)
-        
-        
+
         let wait = SKAction.wait(forDuration: 2)
         let fadeIn = SKAction.run {
             let fade = SKAction.fadeIn(withDuration: 0.5)

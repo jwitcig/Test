@@ -283,6 +283,8 @@ class PuttScene: SKScene {
             if ballPosition.distance(toPoint: hole.visual.position) > 150, !flag.isWiggling {
                 flag.lower()
             }
+        } else {
+            shotIndicator.shotTaken()
         }
 
     }

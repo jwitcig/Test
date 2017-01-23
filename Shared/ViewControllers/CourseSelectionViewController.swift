@@ -129,7 +129,7 @@ class CourseSelectionViewController: UIViewController {
         let courses: [CoursePack.Type] = [
             Frost.self,
             Blaze.self,
-            Timber.self,
+            Retro.self,
             Nebula.self,
         ]
         let previews: [CoursePreviewView] = courses.map {
