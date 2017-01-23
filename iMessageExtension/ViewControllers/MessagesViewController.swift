@@ -15,7 +15,7 @@ import Firebase
 import FirebaseDatabase
 import iMessageTools
 
-class MessagesViewController: MSMessagesAppViewController {
+class MessagesViewController: MSMessagesAppViewController, FirebaseConfigurable {
     var courseController: CourseSelectionViewController?
     var gameController: GameViewController?
     
@@ -27,7 +27,7 @@ class MessagesViewController: MSMessagesAppViewController {
         super.viewDidLoad()
         
         if FIRApp.defaultApp() == nil {
-            FIRApp.configure()
+            configureFirebase()
         }
         
         let session = AVAudioSession.sharedInstance()
@@ -37,11 +37,6 @@ class MessagesViewController: MSMessagesAppViewController {
         } catch {
             print(error)
         }
-        
-//        NotificationCenter.default.addObserver(self,
-//                                               selector: #selector(AudioPlayer.playInterrupt(notification:)),
-//                                               name: NSNotification.Name.AVAudioSessionInterruption,
-//                                               object: session)
     }
     
     override func willBecomeActive(with conversation: MSConversation) {
@@ -168,3 +163,26 @@ extension MessagesViewController: iMessageCycle {
 }
 
 extension MessagesViewController: MessageSender { }
+
+public protocol FirebaseConfigurable: class {
+    var servicesFileName: String { get }
+    
+    func configureFirebase()
+}
+
+public extension FirebaseConfigurable {
+    internal var bundle: Bundle {
+        return Bundle(for: type(of: self) as AnyClass)
+    }
+    
+    internal var servicesFileName: String {
+        return bundle.infoDictionary!["Google Services File"] as! String
+    }
+    
+    public func configureFirebase() {
+        guard FIRApp.defaultApp() == nil else { return }
+        
+        let options = FIROptions(contentsOfFile: bundle.path(forResource: servicesFileName, ofType: "plist"))!
+        FIRApp.configure(with: options)
+    }
+}
