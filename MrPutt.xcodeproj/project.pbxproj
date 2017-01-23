@@ -34,6 +34,7 @@
 		8B6ED6D21E359BC200A82200 /* retroHole2-2.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B6ED6C91E359BC200A82200 /* retroHole2-2.svg */; };
 		8B6ED6D31E359BC200A82200 /* retroHole1-1.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8B6ED6CA1E359BC200A82200 /* retroHole1-1.svg */; };
 		8B6ED6D51E359BD800A82200 /* RetroStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6ED6D41E359BD800A82200 /* RetroStyleKit.swift */; };
+		8B6ED6D71E35B3EC00A82200 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B6ED6D61E35B3EC00A82200 /* GoogleService-Info.plist */; };
 		8B9012D31E2DEACD00EC9FEC /* HUDView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B9012D21E2DEACD00EC9FEC /* HUDView.xib */; };
 		8B9012D51E2DEAE300EC9FEC /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9012D41E2DEAE300EC9FEC /* HUDView.swift */; };
 		8B985A7E1E2E39480047CA7B /* GoogleService-Info-Dev.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B985A7D1E2E39480047CA7B /* GoogleService-Info-Dev.plist */; };
@@ -248,6 +249,7 @@
 		8B6ED6C91E359BC200A82200 /* retroHole2-2.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "retroHole2-2.svg"; sourceTree = "<group>"; };
 		8B6ED6CA1E359BC200A82200 /* retroHole1-1.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "retroHole1-1.svg"; sourceTree = "<group>"; };
 		8B6ED6D41E359BD800A82200 /* RetroStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetroStyleKit.swift; sourceTree = "<group>"; };
+		8B6ED6D61E35B3EC00A82200 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8B8A304B1E28A93F00A681EF /* ShotIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotIndicator.swift; sourceTree = "<group>"; };
 		8B8A304E1E297D8E00A681EF /* ControlsButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ControlsButton.xib; sourceTree = "<group>"; };
 		8B8A30511E297E4C00A681EF /* UserControlsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserControlsView.xib; sourceTree = "<group>"; };
@@ -868,6 +870,7 @@
 		8B961F581E1C601600678257 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				8B6ED6D61E35B3EC00A82200 /* GoogleService-Info.plist */,
 				8B985A7D1E2E39480047CA7B /* GoogleService-Info-Dev.plist */,
 				8BF9DEAF1E320F0800A7CBF8 /* GameplayClasses.swift */,
 				8BF9DEB11E320F3000A7CBF8 /* BallEntity.swift */,
@@ -1262,6 +1265,7 @@
 				8BD6529B1E2D93AE001FA373 /* click.mp3 in Resources */,
 				8BD6528E1E2D93AE001FA373 /* SettingsButton.xib in Resources */,
 				8B0636891E31C9740034487C /* ballDrop.m4a in Resources */,
+				8B6ED6D71E35B3EC00A82200 /* GoogleService-Info.plist in Resources */,
 				8BC53D091E332EBB005D9ABD /* nebulaHole2-2.svg in Resources */,
 				8B3D39A71E30AA8700959124 /* win.wav in Resources */,
 				8BF679D31E2D96FB00EF44FE /* Frost-Hole2.sks in Resources */,

@@ -40,7 +40,7 @@ extension PuttScene {
     }
     
     func setDebugOptions(on view: SKView) {
-        view.showsFPS = true
+        view.showsFPS = false
         view.showsPhysics = false
         view.backgroundColor = .black
     }
