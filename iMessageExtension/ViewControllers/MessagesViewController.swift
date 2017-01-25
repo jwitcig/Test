@@ -27,7 +27,7 @@ class MessagesViewController: MSMessagesAppViewController, FirebaseConfigurable 
         super.viewDidLoad()
         
         if FIRApp.defaultApp() == nil {
-            configureFirebase()
+//            configureFirebase()
         }
         
         let session = AVAudioSession.sharedInstance()
