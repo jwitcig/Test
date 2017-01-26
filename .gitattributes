@@ -1,1 +1,2 @@
 *.xcassets filter=lfs diff=lfs merge=lfs -text
+Shared/Assets filter=lfs diff=lfs merge=lfs -text
